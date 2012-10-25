@@ -22,8 +22,8 @@
   </target>
 
   <target name="-copy.files" description="copy the generated files to the resources folder">
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc/${output.r}" />
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc.en/${output.r}" />
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/xml/doc/${output.r}" />
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/xml/doc.en/${output.r}" />
   </target>
 
   <target name="-keywords.to.register_data.win" depends="-check.os" if="isWindows" description="generates register_data.xml">
