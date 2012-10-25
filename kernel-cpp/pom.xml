@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.sos.scheduler.engine.documentation</groupId>
+        <artifactId>main</artifactId>
+        <version>1.5.2298</version>
+    </parent>
+
+    <!-- groupId>com.sos.scheduler.engine</groupId -->
+    <artifactId>kernel-cpp</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <inceptionYear>2010</inceptionYear>
+    <version>1.5.2298-SNAPSHOT</version>
+    
+
+    <build>
+        <!-- finalName>${project.groupId}</finalName -->
+        
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>prepare</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="prepare_build.xml" target="all">
+                                    <property name="settings.localRepository" value="${settings.localRepository}" />
+                                </ant>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>package-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <descriptors>
+                                <descriptor>src/main/assembly/complete.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+	
+    <scm>
+        <connection>scm:git:git@github.com:sos-berlin/scheduler-engine-docu.git</connection>
+        <developerConnection>scm:git:git@github.com:sos-berlin/scheduler-engine-docu.git</developerConnection>
+        <url>https://github.com/sos-berlin/scheduler-engine-docu</url>
+    </scm>
+
+</project>

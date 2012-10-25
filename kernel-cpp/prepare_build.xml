@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="com.sos.scheduler.build" basedir=".">
+
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${env.USERPROFILE}/.m2/repository/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar"/>
+  
+  <propertyregex property="base" override="true" global="true" input="${basedir}" regexp="\\" replace="/" />  
+  <property name="source.root"        value="${base}/src/main" />
+  <property name="script.root"        value="${source.root}/scripts" />
+  <property name="perl.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml.pl" />
+  <property name="script.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml" />
+  <property name="generated.dir" value="${basedir}/target/generated" />
+
+  <property name="output.r" value="register_data.xml"/>
+
+  <target name="all" depends="prepare, keywords.to.register_data">
+    <echo>DONE!</echo>
+  </target>
+
+  <target name="prepare" description="prepare the build">
+    <echo>base=${basedir}</echo>
+    <mkdir dir="${generated.dir}" />
+  </target>
+
+  <target name="keywords.to.register_data" description="generates register_data.xml">
+    <echo>generating register-data.xml ...</echo>
+
+<!--
+    Diese Variante funktioniert unter Linux nicht, auch dann nicht, wenn perl direkt aufgerufen wird
+    und nicht über bash
+    Die Variante über ein eigenes Script ist derzeit die einzige, die unter Windows und Linux funktioniert.
+    <exec executable="bash" dir="${basedir}/doc" output="${generated.dir}/${output.r}">
+      <arg value="-c" />
+      <arg value="&quot;" />
+      <arg value="perl" />
+      <arg value="../${perl.keywordtoxml}" />
+      <arg value="*.xml" />
+      <arg value="xml/*.xml" />
+      <arg value="xml/answer/*.xml" />
+      <arg value="api/*.xml" />
+      <arg value="&quot;" />
+    </exec>
+-->   
+    <propertyregex property="script.cygwin" override="true" global="true" input="${script.root}/scheduler_keyword_to_xml" regexp="^(.):(.*)" replace="/cygdrive/\1\2" />
+    <echo>cygbase=${script.cygwin}</echo>
+    <exec executable="bash" dir="${script.root}" output="${generated.dir}/${output.r}" osfamily="windows" logError="false">
+      <arg value="-c" />
+      <arg value="&quot;" />
+      <arg value="${script.cygwin}" />
+      <arg value="&quot;" />
+    </exec>
+
+    <exec executable="${script.keywordtoxml}" dir="${script.root}" output="${generated.dir}/${output.r}" osfamily="unix"/>
+    
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc/${output.r}" />
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc.en/${output.r}" />
+
+  </target>
+
+</project>
