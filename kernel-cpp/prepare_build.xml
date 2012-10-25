@@ -3,7 +3,7 @@
 
   <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${env.USERPROFILE}/.m2/repository/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar"/>
   
-  <propertyregex property="base" override="true" global="true" input="${basedir}" regexp="\\" replace="/" />  
+  <propertyregex property="base" override="true" global="true" input="${basedir}" regexp="\\" replace="/" defaultValue="${basedir}" />  
   <property name="source.root"        value="${base}/src/main" />
   <property name="script.root"        value="${source.root}/scripts" />
   <property name="perl.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml.pl" />
@@ -12,48 +12,45 @@
 
   <property name="output.r" value="register_data.xml"/>
 
-  <target name="all" depends="prepare, keywords.to.register_data">
+  <target name="all" depends="-prepare, -keywords.to.register_data.win, -keywords.to.register_data.ux, -copy.files">
     <echo>DONE!</echo>
   </target>
 
-  <target name="prepare" description="prepare the build">
+  <target name="-prepare" description="prepare the build">
     <echo>base=${basedir}</echo>
     <mkdir dir="${generated.dir}" />
   </target>
 
-  <target name="keywords.to.register_data" description="generates register_data.xml">
-    <echo>generating register-data.xml ...</echo>
+  <target name="-copy.files" description="copy the generated files to the resources folder">
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc/${output.r}" />
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc.en/${output.r}" />
+  </target>
 
-<!--
-    Diese Variante funktioniert unter Linux nicht, auch dann nicht, wenn perl direkt aufgerufen wird
-    und nicht über bash
-    Die Variante über ein eigenes Script ist derzeit die einzige, die unter Windows und Linux funktioniert.
-    <exec executable="bash" dir="${basedir}/doc" output="${generated.dir}/${output.r}">
-      <arg value="-c" />
-      <arg value="&quot;" />
-      <arg value="perl" />
-      <arg value="../${perl.keywordtoxml}" />
-      <arg value="*.xml" />
-      <arg value="xml/*.xml" />
-      <arg value="xml/answer/*.xml" />
-      <arg value="api/*.xml" />
-      <arg value="&quot;" />
-    </exec>
--->   
+  <target name="-keywords.to.register_data.win" depends="-check.os" if="isWindows" description="generates register_data.xml">
+    <echo>generating register-data.xml ...</echo>
     <propertyregex property="script.cygwin" override="true" global="true" input="${script.root}/scheduler_keyword_to_xml" regexp="^(.):(.*)" replace="/cygdrive/\1\2" />
     <echo>cygbase=${script.cygwin}</echo>
-    <exec executable="bash" dir="${script.root}" output="${generated.dir}/${output.r}" osfamily="windows" logError="false">
+    <exec executable="bash" dir="${script.root}" output="${generated.dir}/${output.r}" logError="false">
       <arg value="-c" />
       <arg value="&quot;" />
       <arg value="${script.cygwin}" />
       <arg value="&quot;" />
     </exec>
+  </target>
 
-    <exec executable="${script.keywordtoxml}" dir="${script.root}" output="${generated.dir}/${output.r}" osfamily="unix"/>
-    
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc/${output.r}" />
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/resources/doc.en/${output.r}" />
-
+  <target name="-keywords.to.register_data.ux" depends="-check.os" if="isLinux" description="generates register_data.xml">
+    <echo>generating register-data.xml ...</echo>
+    <exec executable="${script.keywordtoxml}" dir="${script.root}" output="${generated.dir}/${output.r}" />
+  </target>
+  
+  <target name="-check.os">
+  	<condition property="isWindows">
+  		<os family="windows" />
+  	</condition>
+  
+  	<condition property="isLinux">
+  		<os family="unix" />
+  	</condition>
   </target>
 
 </project>

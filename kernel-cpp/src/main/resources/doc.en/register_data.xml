@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="scheduler.xsl" type="text/xsl"?>
 
-<!-- ACHTUNG: NICHT AENDERN! xml/*.xml: No such file or directory at ../../scripts/scheduler_keyword_to_xml.pl line 64.
-DIESE DATEI IST GENERIERT VON scheduler_keyword_to_xml.pl -->
+<!-- ACHTUNG: NICHT AENDERN! DIESE DATEI IST GENERIERT VON scheduler_keyword_to_xml.pl -->
 
 <register_data
     author="$Author: scheduler_keyword_to_xml.pl $"
 >
+xml/*.xml: No such file or directory at ../../scripts/scheduler_keyword_to_xml.pl line 64.
