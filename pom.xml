@@ -2,21 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sos.scheduler.engine.documentation</groupId>
-    <artifactId>main</artifactId>
-    <packaging>pom</packaging>
-
     <parent>
-        <groupId>com.sos.scheduler.engine</groupId>
+        <groupId>com.sos.scheduler.enginedoc</groupId>
         <artifactId>parent</artifactId>
-        <version>1.5.2263-beta</version>
+        <version>1.5.2298-SNAPSHOT</version>
+        <relativePath>parent</relativePath>
     </parent>
 
+    <groupId>com.sos.scheduler.enginedoc</groupId>
+    <artifactId>enginedoc</artifactId>
+    <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <inceptionYear>2012</inceptionYear>
-    <version>1.5.2298</version>
 
     <modules>
+        <module>parent</module>
+        <module>common</module>
         <module>kernel-cpp</module>
     </modules>
 
@@ -27,12 +28,30 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <tagBase>scm:git:git@github.com:sos-berlin/scheduler-engine.git</tagBase>
+                    <tagBase>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</tagBase>
                     <!--tagNameFormat>{1}</tagNameFormat--><!-- {0} ist ${project.artifactId}, {1} ist ${project.version} -->
                 </configuration>
             </plugin>
         </plugins>
 
     </build>
+	
+    <scm>
+        <connection>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</connection>
+        <developerConnection>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</developerConnection>
+        <url>https://github.com/sos-berlin/scheduler-engine-doc</url>
+    </scm>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <!-- Versionsbezeichnungen für die nächste Freigabe und die darauffolgende Entwicklungsversion hier einstellen -->
+                <releaseVersion>1.5.2299</releaseVersion>  <!-- Normalerweise ${project.version} ohne -SNAPSHOT -->
+                <developmentVersion>1.5.2300-SNAPSHOT</developmentVersion>
+                <tag>v${releaseVersion}</tag>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

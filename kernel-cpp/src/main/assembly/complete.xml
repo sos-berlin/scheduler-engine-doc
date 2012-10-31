@@ -9,11 +9,11 @@
 
     <fileSets>
         <fileSet>
-        		<directory>src/main/xml/doc</directory>
+        		<directory>src/main/resources/doc</directory>
             <outputDirectory>/src/doc.de</outputDirectory>
         </fileSet>
         <fileSet>
-        		<directory>src/main/xml/doc.en</directory>
+        		<directory>src/main/resources/doc.en</directory>
             <outputDirectory>/src/doc.en</outputDirectory>
         </fileSet>
     </fileSets>

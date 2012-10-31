@@ -9,21 +9,38 @@
   <property name="perl.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml.pl" />
   <property name="script.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml" />
   <property name="generated.dir" value="${basedir}/target/generated" />
+	<property name="dependency.dir" value="${basedir}/target/dependency" />
+	<property name="resources.target.dir" value="${source.root}/resources" />
+	<property name="common.generated.dir" value="${generated.dir}/com/sos/scheduler/enginedoc" />
 
   <property name="output.r" value="register_data.xml"/>
 
-  <target name="all" depends="-prepare, -keywords.to.register_data.win, -keywords.to.register_data.ux, -copy.files">
+  <target name="all" depends="-prepare, -keywords.to.register_data.win, -keywords.to.register_data.ux, -copy.generated-files, -copy.common-files">
     <echo>DONE!</echo>
   </target>
 
   <target name="-prepare" description="prepare the build">
     <echo>base=${basedir}</echo>
     <mkdir dir="${generated.dir}" />
+		<unzip dest="${generated.dir}">
+	    <fileset dir="${dependency.dir}">
+	        <include name="common-*-kernel-cpp.jar"/>
+	    </fileset>
+		</unzip>
   </target>
 
-  <target name="-copy.files" description="copy the generated files to the resources folder">
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/xml/doc/${output.r}" />
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${source.root}/xml/doc.en/${output.r}" />
+  <target name="-copy.generated-files" description="copy the generated files to the resources folder">
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${resources.target.dir}/doc/${output.r}" />
+    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${resources.target.dir}/doc.en/${output.r}" />
+  </target>
+
+  <target name="-copy.common-files" description="copy the common files to the resources folder">
+    <copy verbose="true" todir="${resources.target.dir}/doc">
+       <fileset dir="${common.generated.dir}" />
+    </copy>
+    <copy verbose="true" todir="${resources.target.dir}/doc.en">
+       <fileset dir="${common.generated.dir}" />
+    </copy>
   </target>
 
   <target name="-keywords.to.register_data.win" depends="-check.os" if="isWindows" description="generates register_data.xml">
