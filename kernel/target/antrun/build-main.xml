@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="main"  >
-<target name="main">
-  <ant antfile="prepare_build.xml" target="all">
-    <property name="settings.localRepository" value="${settings.localRepository}"/>
-  </ant>
-</target>
-</project>
