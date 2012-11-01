@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>enginedoc-kernel</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>${project.artifactId}</name>
     <inceptionYear>2012</inceptionYear>
     
@@ -63,28 +63,14 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>package-all</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <appendAssemblyId>false</appendAssemblyId>
-                            <descriptors>
-                                <descriptor>src/main/assembly/complete.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/doc</directory>
+            </resource>
+        </resources>
         
     </build>
 
