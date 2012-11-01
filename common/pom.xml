@@ -8,39 +8,9 @@
         <version>1.5.2305-SNAPSHOT</version>
     </parent>
 
-    <artifactId>common</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>enginedoc-common</artifactId>
+    <packaging>jar</packaging>
     <name>${project.artifactId}</name>
     <inceptionYear>2012</inceptionYear>
-    
-
-    <build>
-        <!-- finalName>${project.groupId}</finalName -->
-        
-        <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>package-all</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <appendAssemblyId>true</appendAssemblyId>
-                            <descriptors>
-                                <descriptor>src/main/assembly/common-files.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            
-        </plugins>
-        
-    </build>
 
 </project>

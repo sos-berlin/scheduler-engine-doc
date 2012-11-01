@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.sos.scheduler.enginedoc</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>enginedoc-parent</artifactId>
     <version>1.5.2305-SNAPSHOT</version>
 
     <description>parent pom of scheduler-engine-doc with the global settings</description>
@@ -84,6 +84,12 @@
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.1</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
             </plugin>
 
           </plugins>

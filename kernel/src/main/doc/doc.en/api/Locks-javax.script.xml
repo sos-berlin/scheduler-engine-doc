@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- $Id$ -->
+
+<?xml-stylesheet href="api-javax.script.xsl" type="text/xsl"?>
+
+
+<api.class
+    name                 = "Locks"
+    base_dir             = "../"
+/>
