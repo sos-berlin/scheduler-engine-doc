@@ -12,5 +12,7 @@
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
     <inceptionYear>2012</inceptionYear>
+    
+    <build/>
 
 </project>
