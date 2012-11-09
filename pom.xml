@@ -6,7 +6,7 @@
         <groupId>com.sos.scheduler.enginedoc</groupId>
         <artifactId>enginedoc-parent</artifactId>
         <version>1.5.2305-SNAPSHOT</version>
-        <relativePath>parent</relativePath>
+        <relativePath>enginedoc-parent</relativePath>
     </parent>
 
     <groupId>com.sos.scheduler.enginedoc</groupId>
@@ -16,9 +16,9 @@
     <inceptionYear>2012</inceptionYear>
 
     <modules>
-        <module>parent</module>
-        <module>common</module>
-        <module>kernel</module>
+        <module>enginedoc-parent</module>
+        <module>enginedoc-common</module>
+        <module>enginedoc-kernel</module>
     </modules>
 
     <build>
