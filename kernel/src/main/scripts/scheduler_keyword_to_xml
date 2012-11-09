@@ -1,4 +1,4 @@
 #! /bin/bash
-cd ../resources/doc
-perl ../../scripts/scheduler_keyword_to_xml.pl *.xml xml/*.xml xml/answer/*.xml api/*.xml
-cd ..
+cd ../doc/enginedoc/doc.de
+perl ../../../scripts/scheduler_keyword_to_xml.pl *.xml xml/*.xml xml/answer/*.xml api/*.xml
+cd ../..
