@@ -4,7 +4,7 @@
     
     <groupId>com.sos.scheduler.enginedoc</groupId>
     <artifactId>enginedoc-parent</artifactId>
-    <version>1.5.2334-beta-ux</version>
+    <version>1.5.2335-SNAPSHOT</version>
 
     <description>parent pom of scheduler-engine-doc with the global settings</description>
 
