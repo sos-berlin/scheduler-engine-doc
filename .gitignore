@@ -1,5 +1,7 @@
 # .gitignore
 
+Thumbs.db
+
 # SUBVERSION
 .svn/
 
@@ -17,4 +19,5 @@
 /out/
 *.iml
 atlassian-ide-plugin.xml
+
 
