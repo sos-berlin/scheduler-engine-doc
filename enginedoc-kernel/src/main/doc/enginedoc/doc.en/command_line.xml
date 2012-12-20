@@ -564,6 +564,139 @@
             </description>
         </command_option>
 
+        <command_option name="java_class_path" type="file_names" prepend="yes" subst_env="yes" title="Java class path for JobScheduler process">
+           <!--type      = "dateinamen"
+               prepend   = "yes"
+               subst_env = "yes"
+               title     = "Java-Classpath">-->
+          <example>
+              <pre>class_path = s:\prod\bind\sos.*.jar;c:\jar\my.jar;c:\jar\*</pre>
+          </example>
+          <description>
+              <p>
+                  The Java <code>CLASS_PATH</code> setting is made here.
+                  This is a list of paths - on Windows Systems these paths are separated by semi-colons (;),
+                  on Unix systems by colons (:).
+              <!--Für Java kann hier der <code>CLASS_PATH</code> eingestellt werden.
+                  Das ist eine Liste von Pfaden, in Windows durch Semikolons (;), in Unix
+                  durch Doppelpunkte getrennt.-->
+              </p>
+              <p>
+                  Note that jokers can be used in these paths.
+                  The Job Scheduler then replaces these jokers with the respective file names.
+                  i.e. those existing in the file system.
+              <!--In den einzelnen Pfaden können Joker benutzt werden.  
+                  Der Job Scheduler ersetzt diese Pfade durch die tatsächlichen, im Dateisystem vorhandenen.-->
+              </p>
+              <ul>
+                  <li>
+                      On Windows systems, the <code>*</code> and <code>?</code> characters may be used after the last directory separator.
+                  <!--Unter Windows sind hinter dem letzten Verzeichnisstrich die Zeichen <code>*</code> und <code>?</code> möglich.-->
+                  </li>
+                  <li>
+                      On Unix systems the <code>[</code> and <code>]</code> characters can also be 
+                      used.
+                      Jokers can be used in every folder name of a path
+                      (as in the <code>csh</code> shell).
+                  <!--Unter Unix außerdem die Zeichen <code>[</code> und <code>]</code>;
+                      die Joker können auch in jedem Verzeichnis des Pfads auftreten
+                      (wie in der Shell <code>csh</code>).-->
+                  </li>
+                  <li>
+                      Linux (GNU) also recognizes the <code>{,}</code> characters, 
+                      when used in the following syntax:<br/>
+                      "<i>xxx</i><code>{</code><i>alternative1</i><code>,</code><i>alternative2</i><code>,</code>...<code>}</code><i>xxx</i>",
+                      e.g. <code>/dir/sos.{hostware,mail.spooler}.jar</code>.
+                  <!--Linux (Gnu) kennt außerdem die Zeichen <code>{,}</code> in der Syntax 
+                      "<i>xxx</i><code>{</code><i>alternative1</i><code>,</code><i>alternative2</i><code>,</code>...<code>}</code><i>xxx</i>",
+                      z.B. <code>/dir/sos.{hostware,mail.spooler}.jar</code>.-->
+                  </li>
+              </ul>
+              <p>
+                  The following points apply to every path in the <code>class_path</code>:
+              <!--Dabei gilt für jeden Pfad in <code>class_path</code>:-->
+              </p>
+              <ul>
+                  <li>
+                      A path without a joker will be handed over to Java unchanged.
+                  <!--Ein Pfad ohne Joker wird unverändert an Java übergeben.-->
+                  </li>
+                  <li>
+                      A path containing a joker will be converted to the existing path before being handed over.
+                  <!--Ein Pfad mit Joker wird in die tatsächlichen, im Dateisystem vorhandenen Pfade aufgelöst.-->
+                  </li>
+                  <li>
+                      Should no path corresponding to a joker be found then the path will be ignored.
+                  <!--Wenn auf den Pfad mit Joker kein tatsächlicher Pfad passt, 
+                      wird er ignoriert.-->
+                  </li>
+                  <li>
+                      A path will also be ignored should it refer to a directory which cannot be read.
+                  <!--Wenn ein Pfad mit ein nicht lesbares Verzeichnis bezeichnet, 
+                      wird es ignoriert.-->
+                  </li>
+                  <!--li>
+                      Unter Linux sind die generierenden Zeichen <code>{</code> und <code>}</code> möglich.
+                      Sie erzeugen Pfade, unabhängig davon, ob es sie wirklich gibt.
+                      Beispiel: 
+                      "<code>/dir/sos.{hostware,mail.spooler}.jar</code>"
+                      wird zu
+                      "<code>/dir/sos.hostware.jar:/dir/sos.mail.jar:/dir/sos.spooler.jar</code>".
+                  </li-->
+                  <li>
+                      Environment variables (e.g. <code>${HOME}</code>) will be replaced 
+                      before a path is converted.
+                  <!--Umgebungsvariablen (z.B. <code>${HOME}</code>) werden vorher ersetzt.-->
+                  </li>
+              </ul>
+              <p>
+                  These settings are generally made in the
+                  <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/> file.
+              <!--Der allgemeine Platz für diese Einstellung ist
+                  <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/>.-->
+              </p>
+          </description>
+        </command_option>
+
+        <command_option name="java_options" type="text" prepend="yes" subst_env="yes" title="Java options for JobScheduler process">
+          <!--title     = "Java-Optionen">-->
+          <description>
+              <p>
+                  This setting specifies the directory in which the HostJava is installed -
+                  e.g. <code>-Djava.library.path=</code>.
+              <!--Hier können Sie z.B. mit <code>-Djava.library.path=</code> das Verzeichnis angeben,
+                  in dem HostJava installiert ist.-->
+              </p>
+              <p>
+                  These options are passed to the Java Virtual Machine.
+              <!--Die Optionen werden der Java Virtual Machine übergeben.-->
+              </p>
+              <p>
+                  These settings are generally made using
+                  <scheduler_ini_entry file="sos.ini" section="java" entry="options"/>.
+              <!--Der allgemeine Platz für diese Einstellung ist
+                  <scheduler_ini_entry file="sos.ini" section="java" entry="options"/>.-->
+              </p>
+          </description>
+        </command_option>
+
+        <command_option name="job_java_class_path" type="file_names" prepend="yes" subst_env="yes" title="Java class path for Jobs">
+          <description>
+            See <scheduler_option name="java-class-path"/>
+          </description>
+        </command_option>
+
+        <command_option name="job_java_options" type="text" prepend="yes" subst_env="yes" title="Java options for Jobs">
+          <description>
+            <p>
+              See <scheduler_option name="java-options"/>
+            </p>
+            <p>
+              See also <scheduler_element name="job" attribute="java-options" />.
+            </p>
+          </description>
+        </command_option>
+
         <example>
             <pre>c:\bin\scheduler.exe c:\scheduler\config.xml -log-dir=c:\scheduler\logs</pre>
         </example>

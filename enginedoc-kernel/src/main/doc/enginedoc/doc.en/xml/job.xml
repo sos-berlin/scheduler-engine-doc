@@ -362,13 +362,13 @@
                     Is only effective when a job runs as its own process
                     (see <scheduler_element name="process_classes"/>) 
                     and either the job or monitor is implemented in Java.
-                    The options are handed over together with the 
-                    <scheduler_element name="config" attribute="java_options"/> Java options.
+                    The options are handed over together with the commandline option 
+                    <scheduler_option name="job-java-options"/> Java options.
                     The interpretation of these options depends on Java.
                 <!--Wirkt nur, wenn der Job als eigener Prozess ausgeführt wird 
                     (s. <scheduler_element name="process_classes"/>) und der Job oder der Monitor in Java implementiert ist.
-                    Die Optionen werden zusammen mit den Optionen aus 
-                    <scheduler_element name="config" attribute="java_options"/> Java übergeben.
+                    Die Optionen werden zusammen mit den Optionen aus dem Kommandozeilenparameter
+                    <scheduler_option name="job-java-options"/> Java übergeben.
                     Wie gleichnamige Optionen interpretiert werden, hängt von Java ab.-->
                 </p>
             </description>

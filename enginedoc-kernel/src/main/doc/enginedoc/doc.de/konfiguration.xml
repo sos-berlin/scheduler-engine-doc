@@ -109,8 +109,6 @@
             configuration_update_event = "…"
             include_path         = "…"
             ip_address           = "…"
-            java_class_path      = "…"
-            java_options         = "…"    
             log_dir              = "…"
             mail_xslt_stylesheet = "…"
             param                = "…"

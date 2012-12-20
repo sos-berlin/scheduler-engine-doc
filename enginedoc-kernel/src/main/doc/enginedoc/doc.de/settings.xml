@@ -754,7 +754,6 @@ db = scheduler.mdb
         </description>
     </setting>
 
-
     <setting setting = "mail_xslt_stylesheet"
              type    = "path"
              title   = "Pfad des XSLT-Stylesheets zur eMail-Aufbereitung">
@@ -766,102 +765,6 @@ db = scheduler.mdb
             </p>
         </description>
     </setting>
-    
-
-    <setting setting   = "java_class_path"
-             type      = "dateinamen"
-             prepend   = "yes"
-             subst_env = "yes"
-             title     = "Java-Classpath">
-        <example>
-            <pre>class_path = s:\prod\bind\sos.*.jar;c:\jar\my.jar;c:\jar\*</pre>
-        </example>
-        <description>
-            <p>
-                Für Java kann hier der <code>CLASS_PATH</code> eingestellt werden.
-                Das ist eine Liste von Pfaden, in Windows durch Semikolons (;), in Unix
-                durch Doppelpunkte getrennt.
-            </p>
-            <p>
-                In den einzelnen Pfaden können Joker benutzt werden.  
-                Der Job Scheduler ersetzt diese Pfade durch die tatsächlichen, im Dateisystem vorhandenen.
-            </p>
-            <ul>
-                <li>
-                    Unter Windows sind hinter dem letzten Verzeichnisstrich die Zeichen <code>*</code> und <code>?</code> möglich.
-                </li>
-                <li>
-                    Unter Unix außerdem die Zeichen <code>[</code> und <code>]</code>;
-                    die Joker können auch in jedem Verzeichnis des Pfads auftreten
-                    (wie in der Shell <code>csh</code>).
-                </li>
-                <li>
-                    Linux (Gnu) kennt außerdem die Zeichen <code>{,}</code> in der Syntax 
-                    "<i>xxx</i><code>{</code><i>alternative1</i><code>,</code><i>alternative2</i><code>,</code>...<code>}</code><i>xxx</i>",
-                    z.B. <code>/dir/sos.{hostware,mail.spooler}.jar</code>.
-                </li>
-            </ul>
-            <p>
-                Dabei gilt für jeden Pfad in <code>class_path</code>:
-            </p>
-            <ul>
-                <li>
-                    Ein Pfad ohne Joker wird unverändert an Java übergeben.
-                </li>
-                <li>
-                    Ein Pfad mit Joker wird in die tatsächlichen, im Dateisystem vorhandenen Pfade aufgelöst.
-                </li>
-                <li>
-                    Wenn auf den Pfad mit Joker kein tatsächlicher Pfad passt, 
-                    wird er ignoriert.
-                </li>
-                <li>
-                    Wenn ein Pfad mit ein nicht lesbares Verzeichnis bezeichnet, 
-                    wird es ignoriert.
-                </li>
-                <!--li>
-                    Unter Linux sind die generierenden Zeichen <code>{</code> und <code>}</code> möglich.
-                    Sie erzeugen Pfade, unabhängig davon, ob es sie wirklich gibt.
-                    Beispiel: 
-                    "<code>/dir/sos.{hostware,mail.spooler}.jar</code>"
-                    wird zu
-                    "<code>/dir/sos.hostware.jar:/dir/sos.mail.jar:/dir/sos.spooler.jar</code>".
-                </li-->
-                <li>
-                    Umgebungsvariablen (z.B. <code>${HOME}</code>) werden vorher ersetzt.
-                </li>
-            </ul>
-            <p>
-                Der allgemeine Platz für diese Einstellung ist 
-                <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/>.
-            </p>
-        </description>
-    </setting>
-
-
-    <setting setting   = "java_options"
-             type      = "text"
-             prepend   = "yes"
-             subst_env = "yes"
-             title     = "Java-Optionen">
-        <description>
-            <p>
-                Hier können Sie z.B. mit <code>-Djava.library.path=</code> das Verzeichnis angeben,
-                in dem HostJava installiert ist.
-            </p>
-            <p>
-                Die Optionen werden der Java Virtual Machine übergeben.
-            </p>
-            <p>
-                Der allgemeine Platz für diese Einstellung ist
-                <scheduler_ini_entry file="sos.ini" section="java" entry="options"/>.
-            </p>
-        </description>
-        <example>
-            <pre>options = -Xdebug -Djava.library.path=s:/prod/bind</pre>
-        </example>
-    </setting>
-
 
     <setting setting = "javac"
              type    = "dateiname"
