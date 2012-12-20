@@ -247,6 +247,8 @@
             </description>
         </xml_attribute>
 
+        <xml_attribute setting="time_zone" />
+
         <xml_attribute setting="include_path" subst_env="yes"/>
 
         <!-- Veraltet: xml_attribute name="priority_max" type="zahl" initial="1000">

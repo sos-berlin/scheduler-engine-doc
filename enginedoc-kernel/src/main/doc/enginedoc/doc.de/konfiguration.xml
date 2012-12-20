@@ -119,7 +119,8 @@
             spooler_id           = ""
             supervisor           = "hostname:4444"
             tcp_port             = "4444"
-            udp_port             = "4444">
+            udp_port             = "4444"
+            time_zone            = "...">
             
         &lt;<scheduler_a href="xml/base.xml">base</scheduler_a> file="…"/>
 

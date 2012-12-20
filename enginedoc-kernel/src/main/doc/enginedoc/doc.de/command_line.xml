@@ -707,6 +707,9 @@
                 </p>
             </description>
         </command_option>
+
+        <command_option name="time-zone"   setting="time_zone"/>
+
     </command_options>
 
 

@@ -209,6 +209,23 @@ log = scheduler.wait com_server.* >scheduler.log</pre>
         </description>
     </setting>
 
+    <setting setting= "time_zone"
+             type   = "text"
+             title  = "Zeitzone des JobSchedulers">
+        <description>
+                <p>
+                    Bestimmt nach welcher Zeitzone ein Auftrag bzw. Job startet. Die Angabe einer Zeitzone folgt dabei der <a href="http://en.wikipedia.org/wiki/Zoneinfo#Names_of_time_zones">tz Datenbank</a>.
+                    Eine <a href="http://joda-time.sourceforge.net/timezones.html">Liste möglicher Zeitzonen</a> befindet sich in der Dokumentation der <a href="http://joda-time.sourceforge.net/">Joda API</a>, welche für die Zeitfunktionen verwendet wird.
+                </p>
+                <p>
+                    Fehlt die Angabe einer Zeitzone, arbeitet der JobScheduler mit der locale Einstellung des Rechners.
+                </p>
+        </description>
+        <example>
+            <pre>&lt;config time_zone="Europe/Berlin"></pre>
+        </example>
+    </setting>
+
     
     <setting setting = "ip_address" 
              type    = "ip_number" 

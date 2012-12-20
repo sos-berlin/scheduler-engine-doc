@@ -19,6 +19,18 @@
 
 
     <xml_attributes>
+
+         <xml_attribute name="time_zone" type="text" title="Zeitzone des Auftrages / des Jobs / des Schedules">
+            <description>
+                <p>
+                    Überschreibt die globale Einstellung der Zeitzone für ein JobScheduler Objekt (Auftrag, Job, Schedule).
+                </p>
+                <p>
+                    Siehe <scheduler_element name="config" attribute="time_zone"/>.
+                </p>
+            </description>
+        </xml_attribute>
+
         <xml_attribute name="schedule" path="path" title="Abzurufender Zeitplan">
             <description>
                 <p>
