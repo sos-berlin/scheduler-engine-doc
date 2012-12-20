@@ -363,6 +363,7 @@
             </messages>
         </command_option>
 
+        <command_option name="time-zone"   setting="time_zone"/>
 
 				<!-- 2010-04-27-SS-JS-462 - siehe Option config
         <command_option name="configuraton-directory" title="Konfigurationsverzeichnis">
@@ -707,8 +708,6 @@
                 </p>
             </description>
         </command_option>
-
-        <command_option name="time-zone"   setting="time_zone"/>
 
     </command_options>
 
