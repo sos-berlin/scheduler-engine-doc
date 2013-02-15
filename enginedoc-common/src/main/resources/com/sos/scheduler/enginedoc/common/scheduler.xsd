@@ -369,7 +369,7 @@
                         <xsd:attribute name="delay" use="required">
                             <xsd:simpleType>
                                 <xsd:restriction base="String"/>
-                                <!-- Das lässt libxslt abstürzen: 
+                                <!-- Das lässt libxslt abstürzen:
                                 <xsd:union>
                                     <xsd:simpleType>
                                         <xsd:restriction base="Duration"/>
@@ -629,6 +629,7 @@
                         <xsd:enumeration value="unstop"/>
                         <xsd:enumeration value="start"/>
                         <xsd:enumeration value="wake"/>
+                        <xsd:enumeration value="wake_when_in_period"/>
                         <xsd:enumeration value="end"/>
                         <xsd:enumeration value="suspend"/>
                         <xsd:enumeration value="continue"/>
