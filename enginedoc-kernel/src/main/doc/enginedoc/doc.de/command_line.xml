@@ -220,9 +220,9 @@
 
         <command_option name="ip-address"   setting="ip_address"/>
         
-        <command_option name="java-class-path" type="dateinamen" prepend="yes" subst_env="yes" title="Java-Classpath für den JobScheduler">
+        <command_option name="java-classpath" type="dateinamen" prepend="yes" subst_env="yes" title="Java-Classpath für den JobScheduler">
           <example>
-              <pre>class_path = s:\prod\bind\sos.*.jar;c:\jar\my.jar;c:\jar\*</pre>
+              <pre>scheduler -java-classpath = s:\prod\bind\sos.*.jar;c:\jar\my.jar;c:\jar\*</pre>
           </example>
           <description>
               <p>
@@ -305,9 +305,9 @@
           </example>
         </command_option>
         
-        <command_option name="job-java-class-path" type="dateinamen" prepend="yes" subst_env="yes" title="Java-Classpath für Jobs">
+        <command_option name="job-java-classpath" type="dateinamen" prepend="yes" subst_env="yes" title="Java-Classpath für Jobs">
           <description>
-            Siehe <scheduler_option name="java-class-path"/>
+            Siehe <scheduler_option name="java-classpath"/>
           </description>
         </command_option>
              

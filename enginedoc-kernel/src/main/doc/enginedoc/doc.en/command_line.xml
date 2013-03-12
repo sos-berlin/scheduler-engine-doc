@@ -564,13 +564,13 @@
             </description>
         </command_option>
 
-        <command_option name="java_class_path" type="file_names" prepend="yes" subst_env="yes" title="Java class path for JobScheduler process">
+        <command_option name="java-classpath" type="file_names" prepend="yes" subst_env="yes" title="Java class path for JobScheduler process">
            <!--type      = "dateinamen"
                prepend   = "yes"
                subst_env = "yes"
                title     = "Java-Classpath">-->
           <example>
-              <pre>class_path = s:\prod\bind\sos.*.jar;c:\jar\my.jar;c:\jar\*</pre>
+              <pre>scheduler -java-classpath = s:\prod\bind\sos.*.jar;c:\jar\my.jar;c:\jar\*</pre>
           </example>
           <description>
               <p>
@@ -680,9 +680,9 @@
           </description>
         </command_option>
 
-        <command_option name="job_java_class_path" type="file_names" prepend="yes" subst_env="yes" title="Java class path for Jobs">
+        <command_option name="job-java-classpath" type="file_names" prepend="yes" subst_env="yes" title="Java class path for Jobs">
           <description>
-            See <scheduler_option name="java-class-path"/>
+            See <scheduler_option name="java-classpath"/>
           </description>
         </command_option>
 
