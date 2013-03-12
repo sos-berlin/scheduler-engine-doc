@@ -32,6 +32,7 @@
         <scheduler_command name="job_chain_node.modify" answer="ok"/>
         <scheduler_command name="job.why"              answer="job" />
         <scheduler_command name="kill_task"            answer="ok"/>
+        <scheduler_command name="licence.use"          answer="ok"/>
         <scheduler_command name="lock"                 answer="ok"/>
         <scheduler_command name="lock.remove"          answer="ok"/>
         <scheduler_command name="modify_job"           answer="ok"/>
