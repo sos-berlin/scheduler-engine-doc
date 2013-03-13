@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+call prepare-setup.sh <version> to use this pom
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.sos.scheduler.enginedoc</groupId>
+        <artifactId>enginedoc</artifactId>
+        <version>1.5.2335-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>enginedoc-setup</artifactId>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+    <inceptionYear>2013</inceptionYear>
+
+    <properties>
+        <target.dir>target/setup</target.dir>
+    </properties>
+
+
+    <profiles>
+
+        <profile>
+            <id>purge-local-repo</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <!-- purge local repository for com.sos.scheduler.engine to ensure to load the actual version from remote repository and save disc space -->
+                            <execution>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <ant antfile="prepare-setup.xml" target="purge.local">
+                                            <property name="settings.localRepository" value="${settings.localRepository}"/>
+                                        </ant>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+    <repositories>
+        <repository>
+            <id>sos</id>
+            <name>SOS Internal Repository</name>
+            <url>http://archiva.sos:8080/archiva/repository/sos</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <!-- updatePolicy>always</updatePolicy -->
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>enginedoc-kernel</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <!-- destFileName>${project.groupId}-${project.version}.jar</destFileName -->
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <configuration>
+                    <target>
+                        <ant antfile="prepare-setup.xml" target="setup.platform">
+                            <property name="target.dir" value="${target.dir}" />
+                            <property name="setup.version" value="${project.version}" />
+                            <property name="settings.localRepository" value="${settings.localRepository}" />
+                        </ant>
+                    </target>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>do-setup</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+    </dependencies>
+
+</project>
