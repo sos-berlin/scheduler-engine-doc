@@ -19,7 +19,6 @@
         <module>enginedoc-parent</module>
         <module>enginedoc-common</module>
         <module>enginedoc-kernel</module>
-        <module>enginedoc-setup</module>
     </modules>
 
     <build>
