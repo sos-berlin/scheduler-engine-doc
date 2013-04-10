@@ -17,7 +17,7 @@
     <scheduler_keyword keyword="Historie"/>-->
 
 <p>
-    The JobScheduler be used either with a database. 
+    The JobScheduler be used either with or without a database. 
     Operation with a database has the following advantages:
 <!--Der JobScheduler sollte mit einer Datenbank betrieben werden. Der Betrieb mit Datenbank hat folgende Vorteile:-->
 </p>

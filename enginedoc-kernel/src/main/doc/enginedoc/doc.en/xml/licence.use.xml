@@ -6,15 +6,17 @@
 <xml_element name     = "licence.use"
              parent_page = "../xml_commands.xml"
              category = "Kommando"
-             title    = "Löscht eine Sperre"
+             title    = "Deletes a lock"
              base_dir = "../"
              author   = "$Author: jz $"
              date     = "$Date: 2008-10-21 23:20:44 +0200 (Tue, 21 Oct 2008) $">
+         <!--title    = "Löscht eine Sperre"-->
 
 
     <description>
         <p>
-            Fügt einen Lizenzschlüssel hinzu.
+            Adds a license key.
+        <!--Fügt einen Lizenzschlüssel hinzu.-->
         </p>
     </description>
 
@@ -28,10 +30,12 @@
         <xml_attribute name="key" type="licence_key" title="Lizenzschlüssel">
             <description>
                 <p>
-                    Der Lizenzschlüssel wird dem Lizenzschlüsselbund hinzugefügt.
+                    The licence key is added to the licence keyring.
+                <!--Der Lizenzschlüssel wird dem Lizenzschlüsselbund hinzugefügt.-->
                 </p>
                 <p>
-                    Siehe auch <scheduler_ini_entry file="sos.ini" section="licence" entry="key1"/>.
+                    See also <scheduler_ini_entry file="sos.ini" section="licence" entry="key1"/>.
+                <!--Siehe auch <scheduler_ini_entry file="sos.ini" section="licence" entry="key1"/>.-->
                 </p>
             </description>
         </xml_attribute>

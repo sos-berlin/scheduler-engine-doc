@@ -2,7 +2,7 @@
 <?xml-stylesheet href="../../scheduler.xsl" type="text/xsl"?>
 <xml_element
 	name="obstacle"
-	title="Gründe, die den Start des Jobs nicht erlauben"
+	title="Reasons that a job start may not be allowed"
 	category="Antwort"
 	sub_directory="answer/"
 	base_dir="../../"
@@ -10,121 +10,150 @@
 	author="ss"
 	date="16.07.2011-14:05:01"
 >
+<!--title="Gründe, die den Start des Jobs nicht erlauben"-->
+
 	<xml_parent_elements>
 		<xml_parent_element name="job.why"/>
 	</xml_parent_elements>
 	<xml_attributes>
-		<xml_attribute name="state" type="string" title="Status des Jobs / der Task / des Jobkettenknoten">
+        <xml_attribute name="state" type="string" title="The status of the job / task / job chain nodes">
+    <!--<xml_attribute name="state" type="string" title="Status des Jobs / der Task / des Jobkettenknoten">-->
       <description>
           <p>
-              Der Status lässt einen Start nicht zu.
+              The status may be prohibiting the start.
+          <!--Der Status lässt einen Start nicht zu.-->
           </p>
       </description>
 		</xml_attribute>
 
-		<xml_attribute name="order_controlled" type="boolean" title="Ist der Job als Orderjob definiert?">
+        <xml_attribute name="order_controlled" type="boolean" title="Is the job defined as an order job?">
+    <!--<xml_attribute name="order_controlled" type="boolean" title="Ist der Job als Orderjob definiert?">-->
       <description>
           <p>
-            Der Job ist als Orderjob definiert, aber nicht Bestandteil einer Jobkette.
+            The job is defined as an order job but is not part of a job chain.
+        <!--Der Job ist als Orderjob definiert, aber nicht Bestandteil einer Jobkette.-->
           </p>
       </description>
 		</xml_attribute>
 
-		<xml_attribute name="max_tasks" type="number" title="Max. Anzahl von tasks für den Job">
+        <xml_attribute name="max_tasks" type="number" title="The max.number of tasks allowed for the job">
+    <!--<xml_attribute name="max_tasks" type="number" title="Max. Anzahl von tasks für den Job">-->
       <description>
           <p>
-            Dieses Attribut wird geliefert, wenn der Job nicht anlaufen kann, weil bereits die maximale Anzahl an tasks
+            This attribute will be returned when a job cannot run because the maximum number of tasks allowed for the job
+            has already been reached. It is always returned together with the running_tasks attribute, 
+            which provides information about how many tasks the job is running in.
+        <!--Dieses Attribut wird geliefert, wenn der Job nicht anlaufen kann, weil bereits die maximale Anzahl an tasks
             erreicht ist. Es wird immer zusammen mit dem Attribut running_tasks geliefert, welches Auskunft darüber gibt,
-            wie viele tasks des Jobs tatsächlich laufen.
+            wie viele tasks des Jobs tatsächlich laufen.-->
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="running_tasks" type="number" title="Anzahl laufender tasks für den Job">
+        <xml_attribute name="running_tasks" type="number" title="Number of tasks running for a job">
+    <!--<xml_attribute name="running_tasks" type="number" title="Anzahl laufender tasks für den Job">-->
       <description>
           <p>
-            Dieses Attribut wird geliefert, wenn der Job nicht anlaufen kann, weil bereits die maximale Anzahl an tasks
+            This attribute is returned when a job cannot start because the maximum number of tasks allowed for the job
+            has already been reached. It is always returned together with the max_tasks attribute, 
+            which provides information about the number of tasks the job may start.
+        <!--Dieses Attribut wird geliefert, wenn der Job nicht anlaufen kann, weil bereits die maximale Anzahl an tasks
             erreicht ist. Es wird immer zusammen mit dem Attribut max_tasks geliefert, welches Auskunft darüber gibt,
-            wie viele tasks des Jobs maximal laufen dürfen.
+            wie viele tasks des Jobs maximal laufen dürfen.-->
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="waiting_for_process" type="boolean" title="Der job wartet darauf, dass ihm ein Prozess zugewiesen wird">
+        <xml_attribute name="waiting_for_process" type="boolean" title="The job is waiting to be allocated a process">
+    <!--<xml_attribute name="waiting_for_process" type="boolean" title="Der job wartet darauf, dass ihm ein Prozess zugewiesen wird">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="waiting_for_process_try_again" type="boolean" title="Der job wird erneut versuchen einen Prozess zu erhalten">
+        <xml_attribute name="waiting_for_process_try_again" type="boolean" title="The job is waiting to be allocated to be allocated a process">
+    <!--<xml_attribute name="waiting_for_process_try_again" type="boolean" title="Der job wird erneut versuchen einen Prozess zu erhalten">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="scheduler_state" type="string" title="Status des JobSchedulers">
+        <xml_attribute name="scheduler_state" type="string" title="The status of the JobSchedulers">
+    <!--<xml_attribute name="scheduler_state" type="string" title="Status des JobSchedulers">-->
       <description>
           <p>
-            Der Status des JobSchedulers lässt den Start des Jobs nicht zu.
+            The JobScheduler status does not allow the job to be started.
+        <!--Der Status des JobSchedulers lässt den Start des Jobs nicht zu.-->
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="in_period" type="boolean" title="Befindet sich der Job in seinem definiertem Zeitfenster">
+        <xml_attribute name="in_period" type="boolean" title="The job is in its predefined time slot">
+    <!--<xml_attribute name="in_period" type="boolean" title="Befindet sich der Job in seinem definiertem Zeitfenster">-->
       <description>
           <p>
-            Der Job befindet sich nicht im Zeitfenster seiner runtime.
+            The job is not in its runtime slot.<!-- ?? Nicht? -->
+        <!--Der Job befindet sich nicht im Zeitfenster seiner runtime.-->
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="locks_available" type="boolean" title="(immer 'false') Ein oder mehrere locks sind nicht verfügbar">
-      <description>
-          <p>
-          </p>
-      </description>
-		</xml_attribute>
-		
-		<xml_attribute name="process_class_is_unknown" type="boolean" title="(immer 'true') Prozessklasse des Jobs ist unbekannt">
-      <description>
-          <p>
-          </p>
-      </description>
-		</xml_attribute>
-		
-		<xml_attribute name="process_class" type="string" title="Name der Prozessklasse">
-      <description>
-          <p>
-            Dieses Attribut wird immer zusammen mit dem Attribut process_of_process_class_available geliefert.
-          </p>
-      </description>
-		</xml_attribute>
-		
-		<xml_attribute name="process_of_process_class_available" type="string" title="(immer 'false') Kein Prozess mehr verfügbar">
-      <description>
-          <p>
-            Die mit dem Attribut process_class benannte Prozessklasse kann keinen zusätzlichen Prozess zum Start des Jobs zur Verfügung stellen.
-          </p>
-      </description>
-		</xml_attribute>
-		
-		<xml_attribute name="now" type="hh:mm[:ss]" title="Aktuelle Uhrzeit (zum Zeitpunkt der Ausführung des Kommandos)">
+        <xml_attribute name="locks_available" type="boolean" title="(always 'false') One or more locks are not available">
+    <!--<xml_attribute name="locks_available" type="boolean" title="(immer 'false') Ein oder mehrere locks sind nicht verfügbar">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="not_ending_tasks" type="number" title="Anzahl der nicht beendeten tasks des jobs">
+        <xml_attribute name="process_class_is_unknown" type="boolean" title="(immer 'true') The job process class is not known">
+    <!--<xml_attribute name="process_class_is_unknown" type="boolean" title="(immer 'true') Prozessklasse des Jobs ist unbekannt">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="directory_changed" type="boolean" title="Wurden Änderungen im Dateisystem festgestellt">
+        <xml_attribute name="process_class" type="string" title="The process class name">
+    <!--<xml_attribute name="process_class" type="string" title="Name der Prozessklasse">-->
+      <description>
+          <p>
+            This attribute is always returned with the process_of_process_class_available attribute.
+        <!--Dieses Attribut wird immer zusammen mit dem Attribut process_of_process_class_available geliefert.-->
+          </p>
+      </description>
+		</xml_attribute>
+		
+        <xml_attribute name="process_of_process_class_available" type="string" title="(always 'false') No more processes are available">
+    <!--<xml_attribute name="process_of_process_class_available" type="string" title="(immer 'false') Kein Prozess mehr verfügbar">-->
+      <description>
+          <p>
+            The process class named in the process_class attribute cannot make an additional process available to start the job.
+        <!--Die mit dem Attribut process_class benannte Prozessklasse kann keinen zusätzlichen Prozess zum Start des Jobs zur Verfügung stellen.-->
+          </p>
+      </description>
+		</xml_attribute>
+		
+        <xml_attribute name="now" type="hh:mm[:ss]" title="Current time (at the time of the execution of the command)">
+    <!--<xml_attribute name="now" type="hh:mm[:ss]" title="Aktuelle Uhrzeit (zum Zeitpunkt der Ausführung des Kommandos)">-->
+      <description>
+          <p>
+          </p>
+      </description>
+		</xml_attribute>
+		
+        <xml_attribute name="not_ending_tasks" type="number" title="The number of job tasks that have not ended">
+    <!--<xml_attribute name="not_ending_tasks" type="number" title="Anzahl der nicht beendeten tasks des jobs">-->
+      <description>
+          <p>
+          </p>
+      </description>
+		</xml_attribute>
+		
+        <xml_attribute name="directory_changed" type="boolean" title="Have changes in the file system occured">
+    <!--<xml_attribute name="directory_changed" type="boolean" title="Wurden Änderungen im Dateisystem festgestellt">-->
       <description>
           <p>
           </p>
@@ -138,45 +167,52 @@
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="at" type="hh:mm[:ss]" title="Startzeit der order">
+        <xml_attribute name="at" type="hh:mm[:ss]" title="The order start time">
+    <!--<xml_attribute name="at" type="hh:mm[:ss]" title="Startzeit der order">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="setback" type="hh:mm[:ss]" title="Order befindet sich im Wartezustand bis zur angegebenen Uhrzeit">
+        <xml_attribute name="setback" type="hh:mm[:ss]" title="The order has the waiting state until the time specified">
+    <!--<xml_attribute name="setback" type="hh:mm[:ss]" title="Order befindet sich im Wartezustand bis zur angegebenen Uhrzeit">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="onblacklist" type="boolean" title="Order befindet sich in der blacklist">
+        <xml_attribute name="onblacklist" type="boolean" title="The order is included in the black list">
+    <!--<xml_attribute name="onblacklist" type="boolean" title="Order befindet sich in der blacklist">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="suspended" type="boolean" title="Order ist angehalten (suspended)">
+        <xml_attribute name="suspended" type="boolean" title="The order has been suspended">
+    <!--<xml_attribute name="suspended" type="boolean" title="Order ist angehalten (suspended)">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="is_replacement" type="boolean" title="(immer 'true') Orderkonfiguration wird gerade ersetzt">
+        <xml_attribute name="is_replacement" type="boolean" title="(always 'true') The order configuration is currently being replaced">
+    <!--<xml_attribute name="is_replacement" type="boolean" title="(immer 'true') Orderkonfiguration wird gerade ersetzt">-->
       <description>
           <p>
           </p>
       </description>
 		</xml_attribute>
 		
-		<xml_attribute name="force" type="boolean" title="Job kommt sofort zur Ausführung.">
+        <xml_attribute name="force" type="boolean" title="The job will be executed immediately.">
+    <!--<xml_attribute name="force" type="boolean" title="Job kommt sofort zur Ausführung.">-->
       <description>
           <p>
-          Der job wurde mit dem Attribute <code>force='yes'</code> gestartet.
+          The job is being started with the <code>force='yes'</code> attribute.
+      <!--Der job wurde mit dem Attribute <code>force='yes'</code> gestartet.-->
           </p>
       </description>
 		</xml_attribute>
