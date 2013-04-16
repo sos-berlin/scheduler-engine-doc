@@ -851,6 +851,32 @@ spooler_job.delay_after_error( 20 ) = "STOP";       // Beim 20. aufeinanderfolge
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+    <property name="script_code" access="read">
+
+			<java>
+	      <com>
+	          <com.result>
+	              <com.type type="BSTR"/>
+	          </com.result>
+	      </com>
+
+
+			</java>
+
+      <description>
+          <p>
+              Returns the content of the element <scheduler_element name="script" />.
+          </p>
+      </description>
+
+      <title>
+      	The content of the script element
+     	</title>
+
+    </property>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
     <description>
         <p>
             A task can either be waiting in the order queue or be running.

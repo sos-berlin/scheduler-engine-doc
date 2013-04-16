@@ -736,6 +736,32 @@ spooler_job.max_order_setbacks = 5;                      // Die 5. Rückstellung
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+    <property name="script_code" access="read">
+
+			<java>
+	      <com>
+	          <com.result>
+	              <com.type type="BSTR"/>
+	          </com.result>
+	      </com>
+
+
+			</java>
+
+      <description>
+          <p>
+              Liefert den Inhalt des elements <scheduler_element name="script" />.
+          </p>
+      </description>
+
+      <title>
+      	Der Inhalt des script elementes
+     	</title>
+
+    </property>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
     <description>
         <p>
             Eine Task kann wartend in der Task-Warteschlange des Jobs sein oder laufen.
