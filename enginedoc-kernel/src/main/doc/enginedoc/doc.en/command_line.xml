@@ -302,10 +302,6 @@
                 <!--<code>-validate-xml-</code> schaltet die Validierung ab 
                     (für den Fall, dass das Schema fehlerhaft ist).-->
                 </p>
-                <p>
-                    See <scheduler_option name="show-xml-schema"/>.
-                <!--Siehe <scheduler_option name="show-xml-schema"/>.-->
-                </p>
             </description>
         </command_option>
 
@@ -1062,30 +1058,6 @@
         <example>
             <pre>scheduler -kill -pid-file=/home/scheduler/scheduler.pid</pre>
         </example>
-
-
-    </command_options>
-
-
-    <command_options name="xml_schema" title="Show the XML Schema">
-<!--<command_options name="xml_schema" title="XML-Schema zeigen">-->
-
-
-        <command_option name="show-xml-schema" title="Writes the XML schema to stdout">
-    <!--<command_option name="show-xml-schema" title="schreibt das XML-Schema nach stdout">-->
-            <description>
-                <p>
-                    The Job Scheduler comes with its own XML schema
-                    which XML commands and the XML configuration must conform to.
-                <!--Der Job Scheduler verfügt über ein eingabautes XML-Schema,
-                    dem die XML-Kommandos und die XML-Konfiguration entsprechen müssen.-->
-                </p>
-                <p>
-                    See the <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">Job Scheduler XML Schema</a>.
-                <!--Siehe <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Job Schedulers</a>.-->
-                </p>
-            </description>
-        </command_option>
 
 
     </command_options>

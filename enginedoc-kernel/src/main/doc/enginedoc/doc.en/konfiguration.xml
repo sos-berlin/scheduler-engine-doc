@@ -108,13 +108,9 @@
 <p>
     The Job Scheduler verifies the XML configuration according to the 
     <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">Job Scheduler XML Schema</a>.
-    When the Job Scheduler has been started using the command line, 
-    then the XML schema can be shown using the <scheduler_option name="show-xml-schema"/> command:
-<!--Der Scheduler prüft die XML-Konfiguration gegen das 
-    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</scheduler_a>.
-    Beim Aufruf des Schedulers über die Kommandozeile können Sie sich das Schema mit der Option <scheduler_option name="show-xml-schema"/> ausgeben lassen:-->
+<!--Der Scheduler prüft die XML-Konfiguration gegen das
+    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</scheduler_a>.-->
 </p>
-<pre>…<i>installation path</i>…\bin\scheduler.exe -show-xml-schema</pre>
 <p>
     Clicking on an XML element in the schema list below leads to a description of the element:
 <!--Klicken Sie auf ein XML-Element, um dessen Beschreibung zu sehen.-->

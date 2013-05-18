@@ -94,9 +94,7 @@
 <p>
     Der Scheduler prüft die XML-Konfiguration gegen das 
     <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.
-    Beim Aufruf des Schedulers über die Kommandozeile können Sie sich das Schema mit der Option <scheduler_option name="show-xml-schema"/> ausgeben lassen:
 </p>
-<pre>…<i>installation path</i>…\bin\scheduler.exe -show-xml-schema</pre>
 <p>
     Klicken Sie auf ein XML-Element, um dessen Beschreibung zu sehen.
 </p>
