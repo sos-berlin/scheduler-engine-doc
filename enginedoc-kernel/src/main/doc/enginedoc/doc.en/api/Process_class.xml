@@ -109,6 +109,11 @@
         <example programming_language="javascript">
             <pre>spooler.process_classes.process_class( "my_process_class" ).remote_scheduler = "host:4444";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler->process_classes->process_class( 'my_process_class' )->remote_scheduler( 'host:4444' );</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -139,6 +144,10 @@
         <example programming_language="javascript">
             <pre>spooler.process_classs.process_class( "my_process_class" ).remove();</pre>
         </example>
+
+        <example programming_language="perl">
+            <pre>$spooler->process_classs->process_class( 'my_process_class' )->remove();</pre>
+        </example>
         
         <messages>
             <message code="SCHEDULER-861" level="info"/>
@@ -160,6 +169,13 @@
 var process_class = process_classs.create_process_class();
 process_class.name = "my_process_class";
 process_classs.add_process_class( process_class );</pre>
+    </example>
+
+    <example programming_language="javascript">
+        <pre>my $process_classs = $spooler->process_classs;
+my $process_class = $process_classs->create_process_class();
+$process_class->LetProperty( 'name', 'my_process_class' );
+$process_class->LetProperty( 'add_process_class',  $process_class );</pre>
     </example>
 
 </api.class>

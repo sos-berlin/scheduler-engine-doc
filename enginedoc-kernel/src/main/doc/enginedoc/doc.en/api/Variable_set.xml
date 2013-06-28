@@ -169,6 +169,20 @@ spooler_log.info( variable_set.xml );
 spooler_log.info( "nachname=" + variable_set.value( "nachname" ) );
 spooler_log.info( "vorname =" + variable_set.value( "vorname" ) );</pre></example>
 -->
+
+    <example programming_language="perl">
+        <pre>my $variable_set = $spooler->create_variable_set();
+$spooler_log->info( $variable_set->xml );   // Liefert &lt;?xml version='1.0'?>&lt;sos.spooler.variable_set/>
+
+my $variable_set->LetProperty( 'xml', '&lt;?xml version='1.0'?>' .
+                  '&lt;params>' .
+                      '&lt;param name='surname' value='Meier'/>' .
+                      '&lt;param name='christian name' value='Hans'/>' . 
+                  '&lt;/params>';
+$spooler_log->info( $variable_set->xml );
+$spooler_log->info( 'nachname=' . $variable_set->value( 'surname' ) );
+$spooler_log->info( 'vorname =' . $variable_set->value( 'christian name' ) );</pre></example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

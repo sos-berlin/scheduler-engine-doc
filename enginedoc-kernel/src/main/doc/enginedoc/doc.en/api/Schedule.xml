@@ -65,4 +65,8 @@
     <pre>spooler.schedule( "my_schedule" ).xml = "&lt;schedule>&lt;period single_start='15:00'/>&lt;/schedule>";</pre>
 </example>
 
+<example programming_language="perl">
+    <pre>$spooler->schedule( 'my_schedule' )->xml( '&lt;schedule>&lt;period single_start='15:00'/>&lt;/schedule>' );</pre>
+</example>
+
 </api.class>

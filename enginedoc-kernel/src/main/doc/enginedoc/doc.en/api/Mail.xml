@@ -31,6 +31,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.smtp = "mail.company.com";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->smtp( 'mail.company.com' );</pre>
+        </example>
+
     </property>
 
 
@@ -67,6 +72,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.from = "scheduler@company.com";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->from( 'scheduler@company.com' );</pre>
+        </example>
+
     </property>
 
 
@@ -99,6 +109,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.to = "admin@company.com";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->to( 'admin@company.com' );</pre>
+        </example>
+
     </property>
 
 
@@ -131,6 +146,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.cc = "hans@company.com";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->cc( 'hans@company.com' );</pre>
+        </example>
+
     </property>
 
 
@@ -163,6 +183,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.bcc = "hans@company.com";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->bcc( 'hans@company.com' );</pre>
+        </example>
+
     </property>
 
 
@@ -185,6 +210,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.subject = "Job succeeded";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->subject( 'Job succeeded' );</pre>
+        </example>
+
     </property>
 
 
@@ -212,6 +242,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.body = "Job succeeded";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->body( 'Job succeeded' );</pre>
+        </example>
+
     </property>
 
 
@@ -265,6 +300,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.mail.add_file( "c:/tmp/1.txt", "1.txt", "text/plain", "quoted-printable" );</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->add_file( 'c:/tmp/1.txt', '1.txt', 'text/plain', 'quoted-printable' );</pre>
+        </example>
+
     </method>
 
 
@@ -336,6 +376,13 @@
 spooler_log.info( count + " messages from mail queue sent" );
 spooler_log.info( spooler_log.mail.dequeue_log );</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>my $count = $spooler_log->mail->dequeue();
+$spooler_log->info( $count . ' messages from mail queue sent' );
+$spooler_log->info( $spooler_log->mail->dequeue_log );</pre>
+        </example>
+
     </property>
 
 
@@ -375,6 +422,11 @@ spooler_log.info( spooler_log.mail.dequeue_log );</pre>
         <example programming_language="javascript">
             <pre>spooler_log.mail.xslt_stylesheet_path = "c:/stylesheets/mail.xslt";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->mail->xslt_stylesheet_path( 'c:/stylesheets/mail.xslt' );</pre>
+        </example>
+
     </property>
 
 

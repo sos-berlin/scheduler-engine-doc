@@ -41,6 +41,11 @@
     <example programming_language="javascript">
         <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory );</pre>
     </example>
+	
+    <example programming_language="perl">
+        <pre>$spooler_log->debug( 'The working directory of the Scheduler is ' . $spooler->directory );</pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -98,6 +103,11 @@
     <example programming_language="javascript">
         <pre>spooler_log.info( "The name of this job is " + spooler_job.name );</pre>
     </example>
+	
+    <example programming_language="perl">
+        <pre>$spooler_log->info( 'The name of this job is ' . $spooler_job->name );</pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -128,6 +138,11 @@
     <example programming_language="javascript">
         <pre>spooler_log.info( "The task id is " + spooler_task.id );</pre>
     </example>
+	
+    <example programming_language="perl">
+        <pre>$spooler_log->info( 'The task id is ' . $spooler_task->id );</pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

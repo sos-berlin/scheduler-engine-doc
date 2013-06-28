@@ -37,6 +37,11 @@ spooler_log.info( "state=" + job_chain_node.state() );                      // "
 spooler_log.info( "state=" + job_chain_node.state );                        // "state=100"</pre>
     </example>
 
+	<example programming_language="perl">
+        <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
+$spooler_log->info( 'state=' . $job_chain_node->state );                        // "state=100"</pre>
+    </example>
+
 </property>
 
 
@@ -82,6 +87,11 @@ spooler_log.debug( "error state=" + job_chain_node.error_node().state() );   // 
      spooler_log.debug( "error state=" + job_chain_node.error_node.state );       // "state=999"</pre>
     </example>
 
+    <example programming_language="perl">
+        <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
+     $spooler_log->debug( 'error state=' . $job_chain_node->$error_node->state );       // "state=999"</pre>
+    </example>
+
 </property>
 
 
@@ -107,6 +117,11 @@ spooler_log.debug( "job=" + job_chain_node.job().name() );                   // 
         <pre>var job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
     <!--<pre>var job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
 spooler_log.debug( "job=" + job_chain_node.job.name );                       // "job=job_100"</pre>
+    </example>
+
+    <example programming_language="perl">
+        <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
+$spooler_log->debug( 'job=' . $job_chain_node->job.name );                       // "job=job_100"</pre>
     </example>
 
 </property>
@@ -135,7 +150,13 @@ spooler_log.debug( "next state=" + job_chain_node.next_state() );            // 
     <!--<pre>var job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
 spooler_log.debug( "next_state=" + job_chain_node.next_state );              // "state=200"</pre>
     </example>
-</property>
+
+    <example programming_language="perl">
+        <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
+$spooler_log->debug( 'next_state=' . $job_chain_node->next_state );              // "state=200"</pre>
+    </example>
+
+	</property>
 
 
 <property name="error_state" access="read">
@@ -161,7 +182,13 @@ spooler_log.debug( "error state=" + job_chain_node.error_node().state() );   // 
     <!--<pre>var job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
 spooler_log.debug( "error state=" + job_chain_node.error_node.state );       // "error state=999"</pre>
     </example>
-</property>
+
+    <example programming_language="perl">
+        <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
+$spooler_log->debug( 'error state=' . $job_chain_node->error_node.state );       // "error state=999"</pre>
+    </example>
+
+	</property>
 
 
     <property name="action">
@@ -230,6 +257,11 @@ job_chain_node.set_action( Job_chain_node.ACTION_NEXT_STATE );</pre>
             <pre>var job_chain_node = spooler.job_chain( "my_job_chain" ).node( 100 );
 job_chain_node.action = "next_state";</pre>
         </example>
+
+    <example programming_language="perl">
+        <pre>my $job_chain_node = $spooler->job_chain( 'my_job_chain' )->node( 100 );
+$job_chain_node->action ( 'next_state' );</pre>
+    </example>
 
         <messages>
             <message level="error" code="SCHEDULER-384"/>
