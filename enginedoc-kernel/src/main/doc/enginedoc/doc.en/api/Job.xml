@@ -131,7 +131,7 @@ spooler_job.start_when_directory_changed( "c:/tmp", "^.*[^~]$" );</pre>
 spooler_job.start_when_directory_changed( "c:/tmp", "^.*[^~]$" );</pre>-->
         </example>
 
-        <example programming_language="perl">
+        <example programming_language="perl"> 
             <pre>$spooler_job->start_when_directory_changed( 'c:/tmp' );</pre>
             <pre>// only relevant for files whose names do not end in "~".
 $spooler_job->start_when_directory_changed( 'c:/tmp', '^.*[^~]$' );</pre>
