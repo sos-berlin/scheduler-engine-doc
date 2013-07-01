@@ -691,6 +691,17 @@ $spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       // The Job i
 <!--spooler_job.max_order_setbacks = 5;              // Die 5. Rückstellung versetzt den Auftrag in den Fehlerzustand-->
 </pre>
         </example>
+		
+        <example language="perl">
+            <pre>
+    $spooler_job->LetProperty( 'delay_after_error( 1 )', 60 );  	// for the 1st and 2nd consecutive setbacks of an order:
+																	// delay the order 60s.
+    $spooler_job->LetProperty( 'delay_after_error( 1 )', '01:00' ); // After the 3rd consecutive setback of an order,
+																	// the order will be delayed an hour.
+    $spooler_job->LetProperty( 'max_order_setbacks', 5 );           // The 5th setback sets the order to the error state
+</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

@@ -58,6 +58,11 @@
     <example programming_language="java">
         <pre>spooler_log.info( "Something has happened" );</pre>
     </example>
+
+    <example programming_language="perl">
+        <pre>$spooler_log->LetProperty( 'info', 'Something has happened' );</pre>
+    </example>
+	
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
