@@ -9,7 +9,6 @@
         <relativePath>enginedoc-parent</relativePath>
     </parent>
 
-    <groupId>com.sos.scheduler.enginedoc</groupId>
     <artifactId>enginedoc</artifactId>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
