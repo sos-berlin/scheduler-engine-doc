@@ -262,7 +262,7 @@
     <register_entry register_file='xml/answer/task.xml#attribute_calling' register_title='&lt;task&gt; (Antwort)'  register_keyword='calling' type='definition'/>
 </register_keyword>
 <register_keyword keyword='Categories for Log Files'>
-    <register_entry register_file='log_categories.xml' register_title='XXX'  register_keyword='Categories for Log Files'/>
+    <register_entry register_file='log_categories.xml' register_title='Log Categories'  register_keyword='Categories for Log Files'/>
 </register_keyword>
 <register_keyword keyword='category'>
     <register_keyword_display><code>category=</code></register_keyword_display>
@@ -1777,9 +1777,6 @@
     <register_entry register_file='xml/answer/jobs.xml#' register_title='&lt;jobs&gt; (Antwort)'  register_keyword='jobs' type='definition'/>
     <register_entry register_file='xml/jobs.xml#' register_title='&lt;jobs&gt; (Konfiguration)'  register_keyword='jobs' type='definition'/>
 </register_keyword>
-<register_keyword keyword='Kategorien fürs Log'>
-    <register_entry register_file='log_categories.xml' register_title='XXX'  register_keyword='Kategorien fürs Log'/>
-</register_keyword>
 <register_keyword keyword='key'>
     <register_keyword_display><code>key=</code></register_keyword_display>
     <register_entry register_file='xml/licence.use.xml#attribute_key' register_title='&lt;licence.use&gt; (Kommando)'  register_keyword='key' type='definition'/>
@@ -2094,7 +2091,7 @@
     <register_entry register_file='api/Spooler.xml#method__log' register_title='Spooler.log' register_keyword='log' type='definition'/>
 </register_keyword>
 <register_keyword keyword='Log Categories'>
-    <register_entry register_file='log_categories.xml' register_title='XXX'  register_keyword='Log Categories'/>
+    <register_entry register_file='log_categories.xml' register_title='Log Categories'  register_keyword='Log Categories'/>
 </register_keyword>
 <register_keyword keyword='Log-Datei'>
     <register_entry register_file='protokolle.xml' register_title='Protokolle'  register_keyword='Log-Datei'/>
@@ -2106,9 +2103,6 @@
     <register_entry register_file='protokolle.xml#use_option__log-dir' register_title='Protokolle'  register_keyword='log-dir'/>
     <register_entry register_file='settings.xml#use_option__log-dir' register_title='Einstellungen'  register_keyword='log-dir'/>
     <register_entry register_file='xml/web_service.xml#use_option__log-dir' register_title='&lt;web_service&gt; (Konfiguration)'  register_keyword='log-dir'/>
-</register_keyword>
-<register_keyword keyword='Log-Kategorien'>
-    <register_entry register_file='log_categories.xml' register_title='XXX'  register_keyword='Log-Kategorien'/>
 </register_keyword>
 <register_keyword keyword='log-level'>
     <register_keyword_display><code>-log-level=</code></register_keyword_display>
@@ -3424,21 +3418,21 @@
 <register_keyword keyword='scheduler_log.log_categories.reset'>
     <register_keyword_display><code>&lt;scheduler_log.log_categories.reset&gt;</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_element__scheduler_log.log_categories.reset' register_title='Änderungsprotokoll'  register_keyword='scheduler_log.log_categories.reset'/>
-    <register_entry register_file='log_categories.xml#use_element__scheduler_log.log_categories.reset' register_title='XXX'  register_keyword='scheduler_log.log_categories.reset'/>
+    <register_entry register_file='log_categories.xml#use_element__scheduler_log.log_categories.reset' register_title='Log Categories'  register_keyword='scheduler_log.log_categories.reset'/>
     <register_entry register_file='xml.xml#use_element__scheduler_log.log_categories.reset' register_title='Alle XML-Elemente'  register_keyword='scheduler_log.log_categories.reset'/>
     <register_entry register_file='xml/scheduler_log.log_categories.reset.xml#' register_title='&lt;scheduler_log.log_categories.reset&gt; (Kommando)'  register_keyword='scheduler_log.log_categories.reset' type='definition'/>
 </register_keyword>
 <register_keyword keyword='scheduler_log.log_categories.set'>
     <register_keyword_display><code>&lt;scheduler_log.log_categories.set&gt;</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_element__scheduler_log.log_categories.set' register_title='Änderungsprotokoll'  register_keyword='scheduler_log.log_categories.set'/>
-    <register_entry register_file='log_categories.xml#use_element__scheduler_log.log_categories.set' register_title='XXX'  register_keyword='scheduler_log.log_categories.set'/>
+    <register_entry register_file='log_categories.xml#use_element__scheduler_log.log_categories.set' register_title='Log Categories'  register_keyword='scheduler_log.log_categories.set'/>
     <register_entry register_file='xml.xml#use_element__scheduler_log.log_categories.set' register_title='Alle XML-Elemente'  register_keyword='scheduler_log.log_categories.set'/>
     <register_entry register_file='xml/scheduler_log.log_categories.set.xml#' register_title='&lt;scheduler_log.log_categories.set&gt; (Kommando)'  register_keyword='scheduler_log.log_categories.set' type='definition'/>
 </register_keyword>
 <register_keyword keyword='scheduler_log.log_categories.show'>
     <register_keyword_display><code>&lt;scheduler_log.log_categories.show&gt;</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_element__scheduler_log.log_categories.show' register_title='Änderungsprotokoll'  register_keyword='scheduler_log.log_categories.show'/>
-    <register_entry register_file='log_categories.xml#use_element__scheduler_log.log_categories.show' register_title='XXX'  register_keyword='scheduler_log.log_categories.show'/>
+    <register_entry register_file='log_categories.xml#use_element__scheduler_log.log_categories.show' register_title='Log Categories'  register_keyword='scheduler_log.log_categories.show'/>
     <register_entry register_file='xml.xml#use_element__scheduler_log.log_categories.show' register_title='Alle XML-Elemente'  register_keyword='scheduler_log.log_categories.show'/>
     <register_entry register_file='xml/scheduler_log.log_categories.show.xml#' register_title='&lt;scheduler_log.log_categories.show&gt; (Kommando)'  register_keyword='scheduler_log.log_categories.show' type='definition'/>
 </register_keyword>
@@ -3494,6 +3488,7 @@
 <register_keyword keyword='script'>
     <register_keyword_display><code>&lt;script&gt;</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_element__script' register_title='Änderungsprotokoll'  register_keyword='script'/>
+    <register_entry register_file='api/Job.xml#use_element__script' register_title='Job'  register_keyword='script'/>
     <register_entry register_file='api/Task.xml#use_element__script' register_title='Task'  register_keyword='script'/>
     <register_entry register_file='command_line.xml#use_element__script' register_title='Kommandozeilenoptionen'  register_keyword='script'/>
     <register_entry register_file='job.xml#use_element__script' register_title='Was ist ein Job?'  register_keyword='script'/>
@@ -3505,6 +3500,10 @@
     <register_entry register_file='xml/include.xml#use_element__script' register_title='&lt;include&gt; (Konfiguration)'  register_keyword='script'/>
     <register_entry register_file='xml/job.xml#use_element__script' register_title='&lt;job&gt; (Konfiguration)'  register_keyword='script'/>
     <register_entry register_file='xml/script.xml#' register_title='&lt;script&gt; (Konfiguration)'  register_keyword='script' type='definition'/>
+</register_keyword>
+<register_keyword keyword='script_code (property)'>
+    <register_keyword_display><code>script_code</code> (property)</register_keyword_display>
+    <register_entry register_file='api/Job.xml#method__script_code' register_title='Job.script_code' register_keyword='script_code' type='definition'/>
 </register_keyword>
 <register_keyword keyword='seconds'>
     <register_keyword_display><code>seconds</code></register_keyword_display>
@@ -3607,9 +3606,6 @@
 <register_keyword keyword='show-xml-schema'>
     <register_keyword_display><code>-show-xml-schema=</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_option__show-xml-schema' register_title='Änderungsprotokoll'  register_keyword='show-xml-schema'/>
-    <register_entry register_file='command_line.xml#option_show-xml-schema' register_title='Kommandozeilenoptionen'  register_keyword='show-xml-schema' type='definition'/>
-    <register_entry register_file='command_line.xml#use_option__show-xml-schema' register_title='Kommandozeilenoptionen'  register_keyword='show-xml-schema'/>
-    <register_entry register_file='konfiguration.xml#use_option__show-xml-schema' register_title='Konfiguration in XML'  register_keyword='show-xml-schema'/>
 </register_keyword>
 <register_keyword keyword='show_calendar'>
     <register_keyword_display><code>&lt;show_calendar&gt;</code></register_keyword_display>
