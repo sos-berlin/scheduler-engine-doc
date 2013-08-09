@@ -435,6 +435,12 @@
             <pre>spooler_log.error( "This call of spooler_log.error() sets the exit code to 1" );
 spooler_task.exit_code = 0;   // Reset the exit code</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->error( 'This call of spooler_log.error() sets the exit code to 1' );
+				$spooler_task->LetProperty( 'exit_code', 0 );   # Reset the exit code</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -617,6 +623,11 @@ my $value2 = $parameters->var( "parameter2" );</pre>
         <example programming_language="javascript">
             <pre>spooler_task.priority = +5;    // Unix: Priorität etwas verschlechtern</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_task->LetProperty('priority', +5 );    # Unix: Priorität etwas verschlechtern</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -687,6 +698,11 @@ my $value2 = $parameters->var( "parameter2" );</pre>
         <example programming_language="javascript">
             <pre>spooler_task.priority_class = "below_normal";</pre>
         </example>
+		
+		<example programming_language="perl">
+            <pre>$spooler_task->LetProperty('priority_class', 'below_normal' );</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -748,9 +764,9 @@ spooler_log.info( "order.id=" + order.id + ", order.title=" + order.title );</pr
         </example>
 
         <example programming_language="perl">
-            <pre>my $order = spooler_task.order();
+            <pre>my $order = $spooler_task->order();
 
-$spooler_log->info( 'order.id=' . $order->id . ', order.title=' . $order->title );</pre>
+				$spooler_log->info( 'order.id=' . $order->id . ', order.title=' . $order->title );</pre>
         </example>
 
     </property>

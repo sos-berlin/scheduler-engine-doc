@@ -142,7 +142,7 @@ locks.add_lock( lock );</pre>
 
     <example programming_language="perl">
         <pre>my $locks = $spooler->locks;
-$lock->LetProperty( 'var', $locks->create_lock());
+my $lock = $locks->create_lock();
 $lock->LetProperty( 'name', 'my_lock' );
 $locks->add_lock( $lock );</pre>
     </example>

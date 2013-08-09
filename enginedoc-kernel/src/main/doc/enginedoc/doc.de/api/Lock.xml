@@ -95,6 +95,10 @@
         <example programming_language="javascript">
             <pre>spooler.locks.lock( "my_lock" ).remove();</pre>
         </example>
+
+        <example programming_language="perl">
+            <pre>$spooler->locks->lock( 'my_lock' )->remove();</pre>
+        </example>
         
         <messages>
             <message code="SCHEDULER-161" level="error"/>
@@ -116,6 +120,13 @@
 var lock = locks.create_lock();
 lock.name = "my_lock";
 locks.add_lock( lock );</pre>
+    </example>
+
+    <example programming_language="perl">
+        <pre>my $locks = $spooler->locks;
+my $lock = $locks->create_lock();
+$lock->LetProperty( 'name', 'my_lock' );
+$locks->add_lock( $lock );</pre>
     </example>
 
 </api.class>

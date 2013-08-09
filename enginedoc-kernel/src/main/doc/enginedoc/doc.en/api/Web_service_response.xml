@@ -69,11 +69,11 @@
         </description>
 
         <example programming_language="javascript">
-            <pre>spooler_log.info( "Content-Type: " + spooler_task.order.web_service_operation.header( "Content-Type" ) );</pre>
+            <pre>spooler_log.info( "Content-Type: " + spooler_task.order.web_service_operation.response.header( "Content-Type" ) );</pre>
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->info( 'Content-Type: ' . $spooler_task->order->web_service_operation->header( 'Content-Type' ) );</pre>
+            <pre>$spooler_log->info( 'Content-Type: ' . $spooler_task->order->web_service_operation->response->header( 'Content-Type' ) );</pre>
         </example>
 
     </property>
@@ -190,10 +190,10 @@ response.send();</pre>
 		
         <example programming_language="perl">
             <pre>my $response = $spooler_task->order->web_service_operation->response;
-my $response->LetProperty( 'content_type', 'text/plain' );
-my $response->LetProperty( 'charset_name', 'iso-8859-1' );
-my $response->LetProperty( 'string_content', 'This is the answer' );
-$response->send();</pre>
+				$response->LetProperty( 'content_type', 'text/plain' );
+				$response->LetProperty( 'charset_name', 'iso-8859-1' );
+				$response->LetProperty( 'string_content', 'This is the answer' );
+				$response->send();</pre>
         </example>
 
     </property>

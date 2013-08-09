@@ -64,4 +64,8 @@
         <pre>var supervisor_hostname = spooler.supervisor_client.hostname;</pre>
     </example>
 
+	<example programming_language="perl">
+        <pre>my $supervisor_hostname = $spooler->supervisor_client->hostname;</pre>
+    </example>
+
 </api.class>
