@@ -252,7 +252,6 @@
 		
 		[Job <i>jobname</i>]
 		history            = no|yes
-		history_file       = <i>dateiname</i>
 		history_columns    = <i>feld1</i>,<i> feld2</i>,<i> </i>
 		history_on_process = yes|1|2
 		history_with_log   = no|yes|gzip

@@ -506,16 +506,7 @@ log = scheduler.wait com_server.* >scheduler.log
              title   = "Dateiname der Historie (für datenbanklosen Betrieb)">-->
         <description>
             <p>
-                Should the parameter <code>history=yes</code> be set and the scheduler not be using a database,
-                then it will make an entry in this file for each task carried out.
-                If no name is specified for the history file,
-                then the Job Scheduler will use its own name.
-                Note that the Job Scheduler will only write a history when the
-                <scheduler_option name="log-dir"/> option is set.
-            <!--Der Job Scheduler nimmt einen eigenen Namen, wenn diese Option fehlt.
-                Die Option <scheduler_option name="log-dir"/> muss gesetzt sein - andernfalls schreibt der Job Scheduler die Datei nicht.
-                In diese Datei wird, wenn die Option <code>history=yes</code> gesetzt ist und der Job Scheduler keine Datenbank verwendet,
-                für jede gelaufende Task ein Satz geschrieben.-->
+                (Since version 1.5, file based history are not longer written.)
             </p>
         </description>
     </setting>
