@@ -376,8 +376,6 @@ history_archive    = <u>no</u>|yes|gzip
 
 [Job <i>jobname</i>]
 history            = no|yes
-history_file       = <i>filename</i>
-<!--history_file       = <i>dateiname</i>-->
 history_columns    = <i>field1</i>,<i> field2</i>,<i> </i>...
 <!--history_columns    = <i>feld1</i>,<i> feld2</i>,<i> </i>...-->
 history_on_process = yes|1|2

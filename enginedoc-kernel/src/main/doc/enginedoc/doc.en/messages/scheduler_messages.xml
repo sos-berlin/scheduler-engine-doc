@@ -3006,14 +3006,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-910" weight="debug">
+        <!--message code="SCHEDULER-910" weight="debug">
             <text xml:lang="de">
                 <title>Neue Historiendatei eröffnet: <p1/></title>
             </text>
             <text xml:lang="en">
                 <title>New history file opened: <p1/></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-912" weight="debug">
             <text xml:lang="en">
