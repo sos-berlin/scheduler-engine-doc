@@ -34,6 +34,41 @@
         <p/>
         <hr/>
         <p style="color:red">
+            Die Spidermonkey Implementation von javascript steht nur unter 32 bit zur Verfügung.
+            Um javascript unter 64 bit zu benutzen, kann die "Rhino with Beans" Implementation verwendet werden.
+            Diese steht sowohl unter 32 bit als auch unter 64 bit zur Verfügung.
+            Bei der Benutzung gibt es zwischen beiden Implementationen unterschiede:
+            <a href="http://www.sos-berlin.com/mediawiki/index.php/Differences_between_the_spidermonkey_and_%22rhino_with_beans%22_engines">
+                Differences between the spidermonkey and "rhino with beans" engines
+            </a>
+            <p/>
+            <p/>
+            Die folgende Tabelle zeigt eine Übersicht der verwendeten engine in Abhängigkeit des language-Attributs in &lt;script language="..."&gt;
+            <p>
+                <table border="1">
+                    <tr>
+                        <th>language</th>
+                        <th>engine unter 32 bit</th>
+                        <th>engine unter 64 bit</th>
+                    </tr>
+                    <tr>
+                        <td>javascript</td>
+                        <td>spidermonkey</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>java:javascript</td>
+                        <td>rhino with beans</td>
+                        <td>rhino with beans</td>
+                    </tr>
+                </table>
+            </p>
+            Die Werte "javascript" und "spidermonkey" des language-Attributs sind äquivalent (spidermonkey engine).<br/>
+            Ebenso sind die Werte "java:javascript", "java:rhino" und "java:ecmascript" des language-Attributs äquivalent ("rhino with beans" engine).
+        </p>
+        <p/>
+        <hr/>
+        <p style="color:red">
             Um die API in Powershell nutzen zu können, muss der JobScheduler Powershell Adapter separat
             heruntergeladen und installiert werden. Siehe 
             <a href="http://sourceforge.net/apps/mediawiki/jobscheduler/index.php?title=JSApi_Powershell">
