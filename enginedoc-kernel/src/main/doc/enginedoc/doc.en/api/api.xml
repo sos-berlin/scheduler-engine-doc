@@ -35,6 +35,41 @@
         <p/>
         <hr/>
         <p style="color:red">
+            The spidermonkey implementation of javascript is available only on 32 bit.
+            For using javascript on 64 bit choose the "rhino with beans" implementation.
+            This implementation is available on 32 bit as well as on 64 bit.
+            The usage of both implementations differs, see:
+            <a href="http://www.sos-berlin.com/mediawiki/index.php/Differences_between_the_spidermonkey_and_%22rhino_with_beans%22_engines">
+                Differences between the spidermonkey and "rhino with beans" engines
+            </a>
+            <p/>
+            <p/>
+            The following table shows the used engine dependent on the language attribute in &lt;script language="..."&gt;
+            <p>
+                <table border="1">
+                    <tr>
+                        <th>language</th>
+                        <th>engine on 32 bit</th>
+                        <th>engine on 64 bit</th>
+                    </tr>
+                    <tr>
+                        <td>javascript</td>
+                        <td>spidermonkey</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>java:javascript</td>
+                        <td>rhino with beans</td>
+                        <td>rhino with beans</td>
+                    </tr>
+                </table>
+            </p>
+            In the language attribute the values "javascript" und "spidermonkey" are equivalent (spidermonkey engine).<br/>
+            Furthermore in the language attribute the values "java:javascript", "java:rhino" and "java:ecmascript" are equivalent ("rhino with beans" engine).
+        </p>
+        <p/>
+        <hr/>
+        <p style="color:red">
             In order to use the API in Powershell, a seperate download and installation of the
             JobScheduler Powershell Adapter is required. See
             <a href="http://sourceforge.net/apps/mediawiki/jobscheduler/index.php?title=JSApi_Powershell">

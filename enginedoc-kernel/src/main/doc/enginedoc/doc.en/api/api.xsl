@@ -40,7 +40,7 @@
     <xsl:param name="this_programming_language"/>
     <xsl:param name="href"/>
 
-    <xsl:variable name="plang" select="translate( $this_programming_language, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz' )"/>
+    <xsl:variable name="plang" select="translate( $this_programming_language, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ:', 'abcdefghijklmnopqrstuvwxyz_' )"/>
 
     <xsl:element name="a">
         <xsl:attribute name="id">programming_language_selector__<xsl:value-of select="$plang"/></xsl:attribute>
@@ -226,6 +226,10 @@
 						
 						<xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">Powershell</xsl:with-param>
+                        </xsl:call-template>
+
+                        <xsl:call-template name="programming_language_selector">
+                            <xsl:with-param name="this_programming_language">java:javascript</xsl:with-param>
                         </xsl:call-template>
                         
                     </td>
