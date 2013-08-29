@@ -133,7 +133,7 @@ spooler_job.start_when_directory_changed( "c:/tmp", "^.*[^~]$" );</pre>-->
 
         <example programming_language="perl"> 
             <pre>$spooler_job->start_when_directory_changed( 'c:/tmp' );</pre>
-            <pre>// only relevant for files whose names do not end in "~".
+            <pre># only relevant for files whose names do not end in "~".
 $spooler_job->start_when_directory_changed( 'c:/tmp', '^.*[^~]$' );</pre>
         </example>
 
@@ -525,10 +525,11 @@ spooler_job.delay_after_error( 20 ) = "STOP";       // Beim 20. aufeinanderfolge
 
 		        <example programming_language="perl">
             <pre>
-$spooler_job->LetProperty( 'delay_after_error',  2,  10 );          // A 10 second delay after the 2nd consecutive error
-$spooler_job->LetProperty( 'delay_after_error',  5, '00:01' );      // One minute delay after the 5th consecutive error
-$spooler_job->LetProperty( 'delay_after_error', 10, '24:00' );      // A delay of one day after the 10th consecutive error
-$spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       // The Job is stopped after the 20th consecutive error</pre>
+$spooler_job->LetProperty( 'delay_after_error',  2,  10 );          # A 10 second delay after the 2nd consecutive error
+$spooler_job->LetProperty( 'delay_after_error',  5, '00:01' );      # One minute delay after the 5th consecutive error
+$spooler_job->LetProperty( 'delay_after_error', 10, '24:00' );      # A delay of one day after the 10th consecutive error
+$spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       # The Job is stopped after the 20th consecutive error
+</pre>
 
             <p>
                 Should a (first) error occur whilst a job is being run, 
@@ -580,11 +581,11 @@ $spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       // The Job i
         </description>
 
         <example programming_language="perl">
-            <pre>$spooler_log->info( 'order=' . ( defined $spooler_job->order_queue? "yes" : "no" ) );</pre>
+            <pre>$spooler_log->info( 'order=' . ( defined $spooler_job->order_queue ? "yes" : "no" ) );</pre>
         </example>
 
         <example programming_language="javascript">
-            <pre>spooler_log.info( 'order=' + ( spooler_job.order_queue? "yes" : "no" ) );</pre>
+            <pre>spooler_log.info( 'order=' + ( spooler_job.order_queue ? "yes" : "no" ) );</pre>
         </example>
 
     </property>
@@ -675,30 +676,30 @@ $spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       // The Job i
             </p>
         </description>
 
-        <example language="javascript">
+        <example programming_language="javascript">
             <pre>
-    spooler_job.delay_after_error( 1 ) = 60;         // for the 1st and 2nd consecutive setbacks of an order:
-                                                     // delay the order 60s.
-<!--<pre>spooler_job.delay_after_error( 1 ) = 60;    // 1. bis 2. aufeinderfolgende Rückstellung desselben Auftrags:
+spooler_job.delay_order_after_setback( 1 ) = 60;         // for the 1st and 2nd consecutive setbacks of an order:
+														 // delay the order 60s.
+<!--<pre>spooler_job.delay_order_after_setback( 1 ) = 60;    // 1. bis 2. aufeinderfolgende Rückstellung desselben Auftrags:
                                                      // Auftrag um 60s verzögern.-->
 
-    spooler_job.delay_after_error( 3 ) = "01:00";    // After the 3rd consecutive setback of an order,
-                                                     // the order will be delayed an hour.
-<!--spooler_job.delay_after_error( 3 ) = "01:00";    // Ab 3. aufeinanderfolgender Rückstellung desselben Auftrags:
+spooler_job.delay_order_after_setback( 3 ) = "01:00";    // After the 3rd consecutive setback of an order,
+														 // the order will be delayed an hour.
+<!--spooler_job.delay_order_after_setback( 3 ) = "01:00";    // Ab 3. aufeinanderfolgender Rückstellung desselben Auftrags:
                                                      // Auftrag um eine Stunde verzögern.-->
 
-    spooler_job.max_order_setbacks = 5;              // The 5th setback sets the order to the error state
+spooler_job.max_order_setbacks = 5;              		 // The 5th setback sets the order to the error state
 <!--spooler_job.max_order_setbacks = 5;              // Die 5. Rückstellung versetzt den Auftrag in den Fehlerzustand-->
 </pre>
         </example>
 		
-        <example language="perl">
+        <example programming_language="perl">
             <pre>
-    $spooler_job->LetProperty( 'delay_after_error( 1 )', 60 );  	// for the 1st and 2nd consecutive setbacks of an order:
-																	// delay the order 60s.
-    $spooler_job->LetProperty( 'delay_after_error( 1 )', '01:00' ); // After the 3rd consecutive setback of an order,
-																	// the order will be delayed an hour.
-    $spooler_job->LetProperty( 'max_order_setbacks', 5 );           // The 5th setback sets the order to the error state
+    $spooler_job->LetProperty( 'delay_order_after_setback', 1, 60 );  		# for the 1st and 2nd consecutive setbacks of an order:
+																			# delay the order 60s.
+    $spooler_job->LetProperty( 'delay_order_after_setback', 3, '01:00' ); 	# After the 3rd consecutive setback of an order,
+																			# the order will be delayed an hour.
+    $spooler_job->LetProperty( 'max_order_setbacks', 5 );           		# The 5th setback sets the order to the error state
 </pre>
         </example>
 

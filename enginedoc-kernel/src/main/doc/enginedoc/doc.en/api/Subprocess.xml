@@ -503,7 +503,7 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_task->priority( +5 );    // UNIX: reduce the priority a little</pre>
+            <pre>$spooler_task->LetProperty( 'priority', +5 );			// UNIX: reduce the priority a little</pre>
         </example>
 
     </property>
@@ -590,7 +590,7 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
         </example>
 		
         <example programming_language="perl">
-            <pre>$subprocess->priority_class( 'below_normal' );</pre>
+            <pre>$subprocess->LetProperty( 'priority_class', 'below_normal' );</pre>
         </example>
 
     </property>
@@ -726,6 +726,29 @@ if( subprocess.terminated )
 {
     spooler_log.info( "exit code=" + subprocess.exit_code );
     spooler_log.info( "termination signal=" + subprocess.termination_signal );
+}</pre>
+</example>
+
+<example programming_language="perl">
+    <pre>my $subprocess = $spooler_task->create_subprocess();
+
+$subprocess->environment->LetProperty( "test1", "one" );
+$subprocess->environment->LetProperty( "test2", "two" );
+$subprocess->environment->LetProperty( "ignore_error"; true );
+
+$subprocess->start( "sleep 20" );
+
+$spooler_log->info( "pid=" . $subprocess->pid );
+$subprocess->timeout( 10 );
+
+$spooler_log->info( "wait_for_termination ..." );
+my #ok = $subprocess->wait_for_termination( 10 );
+$spooler_log->info( "wait_for_termination ok=" . ok );
+
+if( $subprocess->terminated )
+{
+    $spooler_log->info( "exit code=" . $subprocess->exit_code );
+    $spooler_log->info( "termination signal=" . $subprocess->termination_signal );
 }</pre>
 </example>
 

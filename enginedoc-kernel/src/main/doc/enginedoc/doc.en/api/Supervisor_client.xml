@@ -60,7 +60,7 @@
 
     <description>
         <p>
-            This object is returnmed by <scheduler_method class="Spooler" property="supervisor_client"/> .
+            This object is returned by <scheduler_method class="Spooler" property="supervisor_client"/> .
         <!--<scheduler_method class="Spooler" property="supervisor_client"/> liefert dieses Objekt.-->
         </p>
     </description>

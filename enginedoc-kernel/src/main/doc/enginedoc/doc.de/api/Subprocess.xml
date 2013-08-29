@@ -274,6 +274,13 @@
 subprocess.start( subprocess.env.substitute( "${MY_HOME}/my_program" ) );
 subprocess.wait_for_termination();</pre>
     </example>
+	
+    <example programming_language="perl">
+        <pre>my $subprocess = $spooler_task->create_subprocess();
+$subprocess->LetProperty( 'start', $subprocess->env->substitute( '${MY_HOME}/my_program' ) );
+$subprocess->wait_for_termination();</pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -316,6 +323,12 @@ subprocess.env.value( "my_variable" ) = "my_value"</pre>
 subprocess.set_environment( "my_variable", "my_value" )
 subprocess.env().set_value( "my_variable" ) = "my_value"</pre>
     </example>
+    <example programming_language="perl">
+        <pre>// The following two statements have the same effect
+$subprocess->LetProperty( 'environment', 'my_variable', 'my_value' )
+$subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -408,6 +421,11 @@ subprocess.env().set_value( "my_variable" ) = "my_value"</pre>
         <example programming_language="javascript">
             <pre>subprocess.priority = +5;    // Unix: Priorität etwas verschlechtern</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_task->priority( +5 );    // UNIX: reduce the priority a little</pre>
+        </example>
+
     </property>
 
     !--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -488,6 +506,11 @@ subprocess.env().set_value( "my_variable" ) = "my_value"</pre>
         <example programming_language="javascript">
             <pre>subprocess.priority_class = "below_normal";</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$subprocess->priority_class( 'below_normal' );</pre>
+        </example>
+
     </property>
 
     !--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

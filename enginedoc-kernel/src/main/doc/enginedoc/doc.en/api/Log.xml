@@ -634,9 +634,9 @@ spooler_log.mail.subject = "ended";</pre>
     <pre>$spooler_log->info( "Something for the Log" );
 
 $spooler_log->LetProperty( 'mail_on_warning', 1 );
-$spooler_log->mail->LetProperty( 'from'  , 'scheduler@company.com' );
-$spooler_log->mail->LetProperty( 'to     , 'admin@company.com' );
-$spooler_log->mail->LetProperty( 'subject, 'ended' );</pre>
+$spooler_log->mail->LetProperty( 'from', 'scheduler@company.com' );
+$spooler_log->mail->LetProperty( 'to', 'admin@company.com' );
+$spooler_log->mail->LetProperty( 'subject', 'ended' );</pre>
 </example>
 
 </api.class>

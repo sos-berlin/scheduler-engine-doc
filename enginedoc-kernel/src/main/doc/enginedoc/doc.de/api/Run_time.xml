@@ -86,4 +86,11 @@
 order.run_time.xml = "&lt;run_time>&lt;period single_start='15:00'/>&lt;/run_time>";</pre>
 </example>
 
+<example programming_language="perl">
+    <pre>my $order = $spooler_task->order;
+
+# Repeat order daily at 15:00
+$order->run_time->LetProperty( "xml", "&lt;run_time>&lt;period single_start='15:00'/>&lt;/run_time>" );</pre>
+</example>
+
 </api.class>

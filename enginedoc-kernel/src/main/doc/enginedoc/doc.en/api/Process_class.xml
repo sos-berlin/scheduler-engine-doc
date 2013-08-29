@@ -171,11 +171,13 @@ process_class.name = "my_process_class";
 process_classs.add_process_class( process_class );</pre>
     </example>
 
-    <example programming_language="javascript">
-        <pre>my $process_classs = $spooler->process_classs;
-my $process_class = $process_classs->create_process_class();
-$process_class->LetProperty( 'name', 'my_process_class' );
-$process_class->LetProperty( 'add_process_class',  $process_class );</pre>
+    <example programming_language="perl">
+        <pre>
+			my $process_classs = $spooler->process_classes;
+			my $process_class = $process_classs->create_process_class();
+			$process_class->LetProperty( 'name', 'my_process_class' );
+			$process_classs->add_process_class( $process_class );
+		</pre>
     </example>
 
 </api.class>

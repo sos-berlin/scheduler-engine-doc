@@ -66,6 +66,11 @@
         <example programming_language="javascript">
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order.web_service_operation.header( "Content-Type" ) );</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>$spooler_log->info( 'Content-Type: ' . $spooler_task->order->web_service_operation->header( 'Content-Type' ) );</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -114,6 +119,15 @@ spooler_log.info( request.header( "Content-Type" ) );   // ==> text/xml; charset
 spooler_log.info( request.content_type );               // ==> text/xml
 spooler_log.info( request.charset_name );               // ==> utf-8</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>my $request = $spooler_task->order->web_service_operation->request;
+
+$spooler_log->info( $request->header( 'Content-Type' ) );   // ==> text/xml; charset=utf-8
+$spooler_log->info( $request->content_type );               // ==> text/xml
+$spooler_log->info( $request->charset_name );               // ==> utf-8</pre>
+        </example>
+
 
     </property>
 
@@ -155,6 +169,15 @@ response.charset_name = "iso-8859-1";
 response.string_content = "This is the answer";
 response.send();</pre>
         </example>
+		
+        <example programming_language="perl">
+            <pre>my $response = $spooler_task->order->web_service_operation->response;
+				$response->LetProperty( 'content_type', 'text/plain' );
+				$response->LetProperty( 'charset_name', 'iso-8859-1' );
+				$response->LetProperty( 'string_content', 'This is the answer' );
+				$response->send();</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

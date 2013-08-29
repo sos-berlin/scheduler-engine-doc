@@ -33,7 +33,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->smtp( 'mail.company.com' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'smtp', 'mail.company.com' );</pre>
         </example>
 
     </property>
@@ -74,7 +74,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->from( 'scheduler@company.com' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'from', 'scheduler@company.com' );</pre>
         </example>
 
     </property>
@@ -111,7 +111,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->to( 'admin@company.com' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'to', 'admin@company.com' );</pre>
         </example>
 
     </property>
@@ -148,7 +148,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->cc( 'hans@company.com' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'cc', 'hans@company.com' );</pre>
         </example>
 
     </property>
@@ -185,7 +185,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->bcc( 'hans@company.com' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'bcc', 'hans@company.com' );</pre>
         </example>
 
     </property>
@@ -212,7 +212,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->subject( 'Job succeeded' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'subject', 'Job succeeded' );</pre>
         </example>
 
     </property>
@@ -244,7 +244,7 @@
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->body( 'Job succeeded' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'body', 'Job succeeded' );</pre>
         </example>
 
     </property>
@@ -424,7 +424,7 @@ $spooler_log->info( $spooler_log->mail->dequeue_log );</pre>
         </example>
 		
         <example programming_language="perl">
-            <pre>$spooler_log->mail->xslt_stylesheet_path( 'c:/stylesheets/mail.xslt' );</pre>
+            <pre>$spooler_log->mail->LetProperty( 'xslt_stylesheet_path', 'c:/stylesheets/mail.xslt' );</pre>
         </example>
 
     </property>
