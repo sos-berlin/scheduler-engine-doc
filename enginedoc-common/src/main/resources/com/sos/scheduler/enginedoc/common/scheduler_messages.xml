@@ -2940,6 +2940,17 @@
           </text>
        </message>
 
+       <message code="SCHEDULER-483">
+          <text xml:lang="en">
+             <title>Order parameter 'scheduler.remote_scheduler' cannot be used in a cluster (option -exclusive or -distributed-orders)</title>
+          </text>
+       </message>
+
+       <message code="SCHEDULER-484">
+          <text xml:lang="en">
+             <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs</title>
+          </text>
+       </message>
 
     </messages>
 
