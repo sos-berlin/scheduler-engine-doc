@@ -488,10 +488,10 @@ spooler.add_job_chain( my_job_chain );</pre>
 <example programming_language="perl">
     <pre>my $my_job_chain = $spooler->create_job_chain();
 $my_job_chain->LetProperty( 'name', 'JobChain' );
-$my_job_chain->LetProperty( 'add_job', 'job_100', 100,  200, 999 );
-$my_job_chain->LetProperty( 'add_job', 'job_200', 200, 1000, 999 );
-$my_job_chain->LetProperty( 'add_end_state'  999 );
-$my_job_chain->LetProperty( 'add_end_state', 1000 );
+$my_job_chain->add_job( 'job_100', 100,  200, 999 );
+$my_job_chain->add_job( 'job_200', 200, 1000, 999 );
+$my_job_chain->add_end_state( 999 );
+$my_job_chain->add_end_state( 1000 );
 $spooler->add_job_chain( $my_job_chain );</pre>
 </example>
 

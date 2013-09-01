@@ -602,6 +602,7 @@
 }</pre>
     </example>
 
+
     <messages>
         <message code="SCHEDULER-246" level="error"/>
     </messages>
@@ -879,6 +880,12 @@ $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
 spooler_log.info( "For both order log and task log" );</pre>
         </example>
 
+		<example programming_language="perl">
+            <pre>$spooler_task->order->log->info( 'Only for order log, not for task log' );
+                 $spooler_log->info( 'For both order log and task log' );
+			</pre>
+		</example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -1020,7 +1027,7 @@ function spooler_process()
 
 		<example programming_language="perl" title="An Order with a simple Payload">
 <!--<example programming_language="perl" title="Auftrag mit einfacher Nutzlast">-->
-    <pre>// Create order:
+    <pre># Create order:
 {
     my $order = $spooler->create_order();
     $order->LetProperty( 'id'        , 1234 );
@@ -1029,13 +1036,13 @@ function spooler_process()
     $order->LetProperty( 'payload'   , 'This is my payload' );
     $spooler->job_chain( 'my_job_chain' )->add_order( $order );
 }
-...
+  ...
 
-// Process order:
+# Process order:
 sub spooler_process()
 {
     my $order = $spooler_task->order;
-    $spooler_log->info( 'order.payload=" + $order->payload );
+    $spooler_log->info( 'order.payload=' + $order->payload );
     return 1;
 }</pre>
 </example>
@@ -1043,7 +1050,7 @@ sub spooler_process()
 
 		<example programming_language="perl" title="Creating an Order with a Variable_set as a Payload">
 <!--<example programming_language="perl" title="Erzeugen eines Auftrags mit Variable_set als Nutzlast">-->
-    <pre>// Create order:
+    <pre># Create order:
 {
     my $variable_set = $spooler->create_variable_set();
     $variable_set->set_var( 'param_one', 111 );
@@ -1056,7 +1063,7 @@ sub spooler_process()
 }
 ...
 
-// Process order:
+# Process order:
 sub spooler_process()
 {
     my $order = $spooler_task->order;

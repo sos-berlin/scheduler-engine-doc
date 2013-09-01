@@ -234,6 +234,20 @@ while( t.hasMoreTokens() )
 }</pre>
     </example>
 
+    <example programming_language="perl">
+        <pre>my $variable_set = $spooler->create_variable_set();
+			$spooler_log->info( '"' . $variable_set->names . '"' );        # ==> ""
+
+			$variable_set->( "variable_1", "edno");
+			$variable_set->( "variable_2", "dwa";
+
+			$spooler_log->info( '"' . $variable_set->names . '"' );        # ==> "variable_1;variable_2"
+
+			my @names = $variable_set->names->split( ";" );
+ 			foreach my $name(@names){$spooler_log->info( $name . " = " . $variable_set( $name ) );</pre>
+    </example>
+
+
 </property>
 
 
