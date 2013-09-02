@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <xsd:schema 
-    xmlns:xsd          = "http://www.w3.org/2001/XMLSchema" 
+    xmlns:xsd          = "http://www.w3.org/2001/XMLSchema"
     elementFormDefault = "qualified">
 
     <xsd:annotation>
@@ -66,6 +66,7 @@
                         </xsd:element>
                         <xsd:element name="description" minOccurs="0"/>
                     </xsd:sequence>
+                    <xsd:attribute ref="xml:lang" type="xsd:string"/>
                 </xsd:complexType>
             </xsd:element>
         </xsd:sequence>
