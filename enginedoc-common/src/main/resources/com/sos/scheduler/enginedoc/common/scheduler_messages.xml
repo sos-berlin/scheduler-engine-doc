@@ -2330,8 +2330,7 @@
 
         <message code="SCHEDULER-378">
             <text xml:lang="en">
-                <title>After own late heart beat, this Scheduler has been deactivated and
-                the occupied orders have been freed by Scheduler member '<p1/>'</title>
+                <title>After own late heart beat, this Scheduler has been deactivated and the occupied orders have been freed by Scheduler member '<p1/>'</title>
             </text>
         </message>
 
@@ -2919,9 +2918,7 @@
 
        <message code="SCHEDULER-479">
           <text xml:lang="en">
-             <title>
-                No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.
-             </title>
+             <title>No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.</title>
           </text>
        </message>
 
