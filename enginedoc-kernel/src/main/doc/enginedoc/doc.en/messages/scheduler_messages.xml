@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0"?>
 <?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
- 
-<messages 
+
+<messages
     xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation = "../../../zschimmer/messages.xsd"
+    xsi:noNamespaceSchemaLocation = "messages.xsd"
     name     = "scheduler_messages"
     include  = "spooler.h"
-    base_dir = "../" 
+    base_dir = "../"
     package  = "Scheduler"
     author   = "$Author: jz $"
     date     = "$Date: 2011-08-26 11:15:57 +0200 (Fri, 26 Aug 2011) $"
@@ -19,7 +19,7 @@
     <cplusplus namespace="sos"/>
     <cplusplus namespace="scheduler"/>
 
-    
+
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FEHLER-MELDUNGEN-->
 
     <messages>
@@ -56,7 +56,7 @@
                         <i>- Beispiel für eine nähere Beschreibung -</i>
                     </p>
                     <p>
-                        Fehlerhaft ist zum Beispiel <code>&lt;period begin="23:00" end="01:00"/></code>. 
+                        Fehlerhaft ist zum Beispiel <code>&lt;period begin="23:00" end="01:00"/></code>.
                         Eine Periode muss innerhalb eines Kalendertages liegen, zwischen 00:00 und 24:00.
                     </p>
                     <p>
@@ -71,7 +71,7 @@
                         <i>- Example -</i>
                     </p>
                     <p>
-                        An error results from, for example <code>&lt;period begin="23:00" end="01:00"/></code> 
+                        An error results from, for example <code>&lt;period begin="23:00" end="01:00"/></code>
                         as the start and end times must lie within the same day, i.e. between 00:00 und 24:00.
                     </p>
                     <p>
@@ -1281,7 +1281,7 @@
             <text xml:lang="de">
                 <title>Auftrag gehört nicht zu einer Web-Dienst-Operation</title>
             </text>
-            
+
             <text xml:lang="en">
                 <title>Order does not belong to a web service operation</title>
             </text>
@@ -1294,16 +1294,16 @@
             <text xml:lang="de">
                 <title>HTTP-Antwort wird bereits versendet</title>
                 <description>
-                    Nach <scheduler_method class="Web_service_response" method="send"/> 
-                    kann <scheduler_method class="Web_service_response"/> 
+                    Nach <scheduler_method class="Web_service_response" method="send"/>
+                    kann <scheduler_method class="Web_service_response"/>
                     nicht mehr geändert werden.
                 </description>
             </text>
             <text xml:lang="en">
                 <title>HTTP response has already been sent</title>
                 <description>
-                    <scheduler_method class="Web_service_response"/> 
-                    cannot be changed after 
+                    <scheduler_method class="Web_service_response"/>
+                    cannot be changed after
                     <scheduler_method class="Web_service_response" method="send"/>.
                 </description>
             </text>
@@ -1373,7 +1373,7 @@
                 <title><p1/> tasks did not terminate in spite of kill <p2/> seconds ago. Extending deadline for <p3/>s</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-255">
             <text xml:lang="de">
                 <title><p1/> Tasks haben sich nicht beendet trotz kill vor <p2/> seconds. Scheduler bricht ab</title>
@@ -1945,13 +1945,13 @@
                 <title>Could not send mail</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-321">
             <text xml:lang="en">
                 <title>Mail has been sent, but an error occurred when processing the mail queue: <p1/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-322">
             <text xml:lang="en">
                 <title><code>min_tasks=</code><p1/> is greater than <code>max_tasks=</code><p2/></title>
@@ -1962,7 +1962,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-323">
             <text xml:lang="en">
                 <title><code>exit_code</code> is available only when task module is loaded</title>
@@ -1973,7 +1973,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-324">
             <text xml:lang="en">
                 <title>Invalid value for attribute <code>exit_code="<p1/>"</code> in &lt;commands></title>
@@ -1984,7 +1984,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-325">
             <text xml:lang="en">
                 <title>Attribute <code>exit_code</code> is not applicable here</title>
@@ -1995,7 +1995,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-326">
             <text xml:lang="en">
                 <title><code>&lt;commands on_exit_code="<p1/>"></code>: <code>&lt;commands></code> for exit code <p2/> is already defined</title>
@@ -2006,7 +2006,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-327">
             <text xml:lang="en">
                 <title>Last error occurred when executing command: <p1>xml_command</p1></title>
@@ -2017,7 +2017,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-328">
             <text xml:lang="en">
                 <title>Executing &lt;commands on_exit_code="<p1/>">:</title>
@@ -2028,7 +2028,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-329">
             <text xml:lang="en">
                 <title><code>&lt;copy_params from="<p1/>"/></code>: requested parameters are not available</title>
@@ -2039,19 +2039,19 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-330">
             <text xml:lang="en">
                 <title><p1>job</p1> could not be initialized:<br/><p2>error</p2></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-331">
             <text xml:lang="en">
                 <title>Scheduler is terminating after error (see last error line)</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-332">
             <text xml:lang="en">
                 <title>Error in <p1/> while switching to state=<p2/>: <p3/></title>
@@ -2075,19 +2075,19 @@
                 <title>Only "yes", "no" and a number are allowed with <p1/>="<p2/>": <p3>error</p3></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-336">
             <text xml:lang="en">
                 <title>Only "yes", "no" and a list of signal names are allowed with <p1/>="<p2/>": <p3>error</p3></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-337">
             <text xml:lang="en">
                 <title>Signal <p1/> is unknown on this operating system and is ignored</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-338">
             <text xml:lang="en">
                 <title>Order.payload is not a Variable_set</title>
@@ -2111,7 +2111,7 @@
                 <title></title>
             </text>
         </message-->
-        
+
         <message code="SCHEDULER-342">
             <text xml:lang="en">
                 <title>There is no job between order source and order sink in <p1>job_chain</p1></title>
@@ -2330,8 +2330,7 @@
 
         <message code="SCHEDULER-378">
             <text xml:lang="en">
-                <title>After own late heart beat, this Scheduler has been deactivated and 
-                the occupied orders have been freed by Scheduler member '<p1/>'</title>
+                <title>After own late heart beat, this Scheduler has been deactivated and the occupied orders have been freed by Scheduler member '<p1/>'</title>
             </text>
         </message>
 
@@ -2504,7 +2503,7 @@
         </message>
 
         <!-- 410 411 -->
-        
+
         <message code="SCHEDULER-412">
             <text xml:lang="en">
                 <title>Job chains can only be nested once</title>
@@ -2588,7 +2587,7 @@
                 <title>Same Java class <p1/> with source code is used in <p2>job</p2></title>
             </text>
         </message-->
-        
+
         <message code="SCHEDULER-424">
             <text xml:lang="en">
                 <title>'<p1/>' is being removed before '<p2/>'</title>
@@ -2696,7 +2695,7 @@
                 <title>Invalid value in &lt;<p1>element</p1> <p2>attribute</p2>="<p3/>"></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-442">
             <text xml:lang="en">
                 <title>Attribute <p1>attribute</p1> cannot be combined with <p2>attribute</p2></title>
@@ -2714,13 +2713,13 @@
                 <title>&lt;day day="<p1/>"> has been defined already</title>
             </text>
         </message-->
-        
+
         <message code="SCHEDULER-445">
             <text xml:lang="en">
                 <title>Invalid weekday '<p1/>'</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-446">
             <text xml:lang="en">
                 <title>&lt;weekday day="<p1/>" which="<p2/>" has been defined already</title>
@@ -2744,25 +2743,25 @@
                 <title>Syntax error in order parameters file <p1>environment_variable_name</p1>: Missing '=' after variable name</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-450">
             <text xml:lang="en">
                 <title>Java file '<p1/>' could not be deleted</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-451">
             <text xml:lang="en">
                 <title>Database check failed, database is not useable. <p1>error</p1></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-452">
             <text xml:lang="en">
                 <title>Database does not correctly store test values:<br/><p1/> (written value)<br/><p2/> (read value)</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-453">
             <text xml:lang="en">
                 <title>Database does not respect rollback command</title>
@@ -2846,13 +2845,13 @@
                 <title>'<p1>schedule</p1>' is a substitute for another schedule and cannot be used directly</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-467">
             <text xml:lang="en">
                 <title>Attribute '<p1>attribute</p1>' is only valid with attribute '<p2>attribute</p2>'</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-468">
             <text xml:lang="en">
                 <title>Using this call is not possible in this context</title>
@@ -2870,7 +2869,7 @@
                 <title>Path is not absolute: <p1/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-471">
             <text xml:lang="en">
                 <title>Not supported character for encoding '<p1/>'</title>
@@ -2904,7 +2903,7 @@
                 <title>Limiting with max_orders is not possible with distributed orders</title>
             </text>
         </message-->
-        
+
         <message code="SCHEDULER-477">
             <text xml:lang="en">
                 <title>Could not re-open log file. Following lines are not written to this file. <p2/></title>
@@ -2919,9 +2918,7 @@
 
        <message code="SCHEDULER-479">
           <text xml:lang="en">
-             <title>
-                No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.
-             </title>
+             <title>No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.</title>
           </text>
        </message>
 
@@ -2934,6 +2931,24 @@
        <message code="SCHEDULER-481">
           <text xml:lang="en">
              <title>Method '<p1/>' with signature '<p2/>' is not implemented.</title>
+          </text>
+       </message>
+
+       <message code="SCHEDULER-482">
+          <text xml:lang="en">
+             <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
+          </text>
+       </message>
+
+       <message code="SCHEDULER-483">
+          <text xml:lang="en">
+             <title>Order parameter 'scheduler.remote_scheduler' cannot be used in a cluster (option -exclusive or -distributed-orders)</title>
+          </text>
+       </message>
+
+       <message code="SCHEDULER-484">
+          <text xml:lang="en">
+             <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs</title>
           </text>
        </message>
 
@@ -2987,7 +3002,7 @@
                 <title>Opening database: <p1/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-908">
             <text xml:lang="de">
                 <title>Datenbank-Tabelle <p1/> wird um die Spalte <p2/> erweitert: <p3/></title>
@@ -3263,7 +3278,7 @@
                 <title>Removing order from job chain. Order is still being executed by <p1/></title>
             </text>
         </message>
-        
+
         <!--message code="SCHEDULER-940">
             <text xml:lang="de">
                 <title>Auftrag ist aus Jobkette <p1/> entfernt</title>
@@ -3484,7 +3499,7 @@
                 </description>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-965">
             <text xml:lang="en">
                 <title>Executing command <p1/></title>
@@ -3568,25 +3583,25 @@
                 <title>Job is not stopping because of <code>&lt;job stop_on_error="no"></code>. Task error was: <p1/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-978">
             <text xml:lang="en">
                 <title>Job is stopping because of <code>&lt;job stop_on_error="yes"></code>. Task error was: <p1/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-979">
             <text xml:lang="en">
                 <title>Removing file <p1/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-980">
             <text xml:lang="en">
                 <title>Moving file <p1/> to <p2/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-981">
             <text xml:lang="en">
                 <title>File on blacklist has been removed</title>
@@ -3616,13 +3631,13 @@
                 <title><p1>number</p1> more file orders will be added later, after previous orders have been processed</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-986">
             <text xml:lang="en">
                 <title>Continuing reading buffered directory (as of <p1>time</p1>)</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-987">
             <text xml:lang="en">
                 <title>Starting process: <p1>program and arguments</p1></title>
@@ -3866,7 +3881,7 @@
                 <!--title>This is a backup Scheduler and there are no dead Schedulers. So we are waiting for start of non-backup Scheduler</title-->
             </text>
         </message>
-        
+
         <message code="SCHEDULER-832" weight="info">
             <text xml:lang="en">
                 <title>This is a backup Scheduler, waiting for a non-backup Scheduler</title>
@@ -3920,7 +3935,7 @@
                 <title>Order with same ID currently processed by <p1/> will be replaced</title>
             </text>
         </message-->
-        
+
         <message code="SCHEDULER-841" weight="info">
             <text xml:lang="en">
                 <title>It has been requested that the exclusive operation will not be continued</title>
@@ -3932,7 +3947,7 @@
                 <title>Task is going to process <p1>order</p1>, state=<p2/>, on Scheduler <p3/></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-843" weight="info">
             <text xml:lang="en">
                 <title>Task has ended processing of <p1>order</p1>, state=<p2/>, on Scheduler <p3/></title>
@@ -4131,7 +4146,7 @@
                 <title>Temporary files cannot be deleted: <p1>paths</p1></title>
                 <description>
                     <p>
-                      In a windows environment it is possible that files can not be deleted, because another process (e.g. a virus scanner) blocked them. 
+                      In a windows environment it is possible that files can not be deleted, because another process (e.g. a virus scanner) blocked them.
                       JobScheduler try to delete files for a while and if it's failed you'll get the message SCHEDULER-878.
                     </p>
                     <p>
@@ -4164,7 +4179,7 @@
                 <title>Configuration directory '<p1/>' has been removed:<br/><p2>error</p2></title>
             </text>
         </message>
-        
+
         <!--message code="SCHEDULER-882">
             <text xml:lang="en">
                 <title>Unknown database '<p1/>', database script has not be runned</title>
@@ -4176,7 +4191,7 @@
                 <title>Error when executing database script '<p1/>': <p2/></title>
             </text>
         </message-->
-    
+
         <message code="SCHEDULER-884">
             <text xml:lang="en">
                 <title>Configuration directory has been deleted</title>
@@ -4194,19 +4209,19 @@
                 <title>Lock will be removed later, it is held by '<p1/>'</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-887">
             <text xml:lang="en">
                 <title>More lock holders than new max_non_exclusive=<p1/>: <p2>holders</p2></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-888">
             <text xml:lang="en">
                 <title><p1>object_type</p1> cannot be replaced now, it will be done later</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-889">
             <text xml:lang="en">
                 <title>These filenames yield the same object name: '<p1/>' and '<p2/>'. The second is ignored</title>
@@ -4218,76 +4233,76 @@
                 <title><p2>object_type</p2> is going to be removed because its configuration file '<p1/>' has been removed</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-891">
             <text xml:lang="en">
                 <title>Configuration file '<p1/>' (<p2>timestamp</p2>) is going to be be loaded into this new <p3>type</p3></title>
                 <!--title>File '<p1/>' is going to be be loaded into new '<p2>type</p2> <p3>name</p3>'</title-->
             </text>
         </message>
-        
+
         <message code="SCHEDULER-892">
             <text xml:lang="en">
                 <title>This <p3>type</p3> is going to be replaced due to changed configuration file '<p1/>' (<p2>timestamp</p2>)</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-893">
             <text xml:lang="en">
                 <title><p1>objecttype</p1> is '<p2>state</p2>' now</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-894">
             <text xml:lang="en">
                 <title>'<p1/>' will be removed later, it is used by <p2>job_chains</p2></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-895">
             <text xml:lang="en">
                 <title>Configuration directory '<p1/>' does not exist, it will be ignored</title>
             </text>
         </message>
-        
+
         <!--message code="SCHEDULER-896">
             <text xml:lang="en">
                 <title>File will be read again after <p1/> seconds</title>
             </text>
         </message-->
-        
+
         <message code="SCHEDULER-897">
             <text xml:lang="en">
                 <title>Error in replacement ignored::<br/><p2>error</p2></title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-898">
             <text xml:lang="en">
                 <title>Folder is going to be removed because its configuration directory has been removed</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-899">
             <text xml:lang="en">
                 <title>Scheduler has no UDP port, so updated configuration files on supervisor will not be noticed</title>
                 <!--title>Scheduler has no UDP port, so supervisor is polled every <p1/> seconds for updated configuration files</title-->
             </text>
         </message>
-        
-        
+
+
         <message code="SCHEDULER-701">
             <text xml:lang="en">
                 <title>Replicating '<p1/>'</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-702">
             <text xml:lang="en">
                 <title>Removing '<p1/>'</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-703">
             <text xml:lang="en">
                 <title>Local configuration file is ignored, the central configuration file is used instead</title>
@@ -4395,7 +4410,7 @@
                 <title>job_chain <p1/> is deactivated (set max_orders to activate it)</title>
             </text>
         </message>
-        
+
         <message code="SCHEDULER-721" weight="warn" object="Scheduler">
             <text xml:lang="en">
                 <title>Scheduler is not responding quickly, a microstep took <p1/>s</title>
@@ -4418,7 +4433,7 @@
         <!-- <title>...</title> soll in einer Zeile liegen, sonst enthält die Fehlermeldungen die Zeilenwechsel. -->
         <!-- Meldungsnummern ab SCHEDULER-100 sind für Fehler, Nummern ab 700 (oder bald 600) sind für andere Meldungen. -->
 
-        
+
         <!--message code="SCHEDULER-704">
             <text xml:lang="en">
                 <title>Database table <p1/> is being rebuild</title>
@@ -4432,5 +4447,5 @@
         </message-->
 
     </messages>
-    
+
 </messages>
