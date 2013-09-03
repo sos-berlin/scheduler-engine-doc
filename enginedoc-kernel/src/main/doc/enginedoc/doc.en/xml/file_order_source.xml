@@ -166,6 +166,7 @@
     </example>
 
     <messages>
+        <message level="debug" code="SCHEDULER-724"/>
         <message level="error" code="SCHEDULER-342"/>
         <message level="info" code="SCHEDULER-981"/>
         <message level="info" code="SCHEDULER-982"/>

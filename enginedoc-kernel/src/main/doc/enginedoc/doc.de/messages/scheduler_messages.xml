@@ -2937,6 +2937,13 @@
           </text>
        </message>
 
+       <message code="SCHEDULER-482">
+          <text xml:lang="en">
+             <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
+          </text>
+       </message>
+
+
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->
@@ -4411,6 +4418,12 @@
         <message code="SCHEDULER-723" weight="info" object="Scheduler">
             <text xml:lang="en">
                 <title>Cluster member '<p1/>' has been advised for processing of this order</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-724" weight="debug">
+            <text xml:lang="en">
+                <title>Error ignored when trying to obtain directory change notifications for <p1/>: <p2/></title>
             </text>
         </message>
 
