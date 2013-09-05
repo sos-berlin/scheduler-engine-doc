@@ -38,7 +38,9 @@
             The spidermonkey implementation of javascript is available only on 32 bit.
             For using javascript on 64 bit choose the "rhino with beans" implementation.
             This implementation is available on 32 bit as well as on 64 bit.
-            The usage of both implementations differs, see:
+            The "Rhino with Beans" implementation is an extension to rhino and it replaces the spidermonkey implementation.
+            The "Rhino with Beans" implementation suits the purpose to port already existing javascript jobs to 64 bit.
+            The usage of both implementations differs slightly, see:
             <a href="http://www.sos-berlin.com/mediawiki/index.php/Differences_between_the_spidermonkey_and_%22rhino_with_beans%22_engines">
                 Differences between the spidermonkey and "rhino with beans" engines
             </a>
