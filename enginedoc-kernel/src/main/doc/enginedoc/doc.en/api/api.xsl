@@ -39,6 +39,7 @@
 <xsl:template name="programming_language_selector">
     <xsl:param name="this_programming_language"/>
     <xsl:param name="href"/>
+    <xsl:param name="this_programming_language_title"/>
 
     <xsl:variable name="plang" select="translate( $this_programming_language, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ:', 'abcdefghijklmnopqrstuvwxyz_' )"/>
 
@@ -58,7 +59,7 @@
             </xsl:otherwise>
         </xsl:choose>
 
-        <xsl:value-of select="$this_programming_language"/>
+        <xsl:value-of select="$this_programming_language_title"/>
     </xsl:element>
 
 </xsl:template>
@@ -206,30 +207,37 @@
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">Java</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">Java</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">java:JavaScript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">java:JavaScript</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">javax.script</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">javax.script:rhino</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">JavaScript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">Spidermonkey (32bit)</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">PowerShell</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">PowerShell</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">VBScript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">VBScript</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">Perl</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">Perl</xsl:with-param>
                         </xsl:call-template>
 
                     </td>
