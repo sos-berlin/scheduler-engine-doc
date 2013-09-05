@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<!-- $Id$ -->
+<!-- $Id: api-java:javascript.xsl 12125 2013-08-28 12:00:39Z fs $ -->
 
 <xsl:stylesheet xmlns:xsl = "http://www.w3.org/1999/XSL/Transform"
                 version   = "1.0">
@@ -10,6 +10,29 @@
 <xsl:variable name="language_has_properties"       select="true()"/>
 
 <xsl:include href="api.xsl" />
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xsl:template match="property | method " mode="method_name">
+    <xsl:param name="access"/>
+
+    <xsl:if test="parent::api.class/@object_name">
+        <span class="api_object_name">
+            <xsl:value-of select="parent::api.class/@object_name"/>
+            <xsl:text>.</xsl:text>
+        </span>
+    </xsl:if>
+
+    <span class="mono">
+        <xsl:if test="$access='write'">set_</xsl:if>
+        <!--xsl:if test="$access='read'">&#160;&#160;&#160;&#160;</xsl:if>-->
+    </span>
+    <span class="mono" style="font-weight: bold">
+        <xsl:value-of select="@name"/>
+    </span>
+</xsl:template>
+
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 

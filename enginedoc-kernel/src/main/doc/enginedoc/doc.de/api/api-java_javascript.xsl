@@ -11,6 +11,29 @@
 
 <xsl:include href="api.xsl" />
 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xsl:template match="property | method " mode="method_name">
+    <xsl:param name="access"/>
+
+    <xsl:if test="parent::api.class/@object_name">
+        <span class="api_object_name">
+            <xsl:value-of select="parent::api.class/@object_name"/>
+            <xsl:text>.</xsl:text>
+        </span>
+    </xsl:if>
+
+    <span class="mono">
+        <xsl:if test="$access='write'">set_</xsl:if>
+        <!--xsl:if test="$access='read'">&#160;&#160;&#160;&#160;</xsl:if>-->
+    </span>
+    <span class="mono" style="font-weight: bold">
+        <xsl:value-of select="@name"/>
+    </span>
+</xsl:template>
+
+
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <xsl:template match="com.type [ @type='VARIANT' and not( com.type ) ]" mode="no_array">

@@ -95,6 +95,8 @@
     </com>
 
     <not_implemented programming_language="java"/>
+    <not_implemented programming_language="java_javascript"/>
+    <not_implemented programming_language="javax.script"/>
 
     <title>
         Setzt eine Variable
