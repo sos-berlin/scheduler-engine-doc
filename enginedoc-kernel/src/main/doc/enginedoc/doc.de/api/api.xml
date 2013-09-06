@@ -17,52 +17,55 @@
     </title>
 
     <description>
-        <!--Verfügbare Sprachen:-->
-        <!--<p/>-->
-        <!--<p>-->
-            <!--<table border="1">-->
-                <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<th>Sprache</th>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<th>engine unter 32 bit</th>&ndash;&gt;-->
-                <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-                <!--<tr>-->
-                    <!--<td>Java</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Dient zum schreiben von Jobs in Java. Verwendung mit &lt;script language="Java"&gt;</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>java:Javascript</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Dient zum schreiben von Jobs in JavaScript. Verwendet die "rhino with beans" Implementation</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>javax.script:rhino</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Unterstützt die Script-Sprache Rhino, welche die "javax.script" scripting API implementiert. Verwendung mit &lt;script language="javax.script:rhino"&gt;. Andere Script-Sprachen, welche die "javax.script" scripting API implementieren können mit &lt;script language="javax.script:<i>language</i>"&gt; verwendet werden.</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Spidermonkey (32bit)</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Dient zum schreiben von Jobs in JavaScript. Verwendung mit &lt;script language="spidermonkey"&gt;. Verwendet die "spidermonkey" Implementation. Steht nur unter 32 bit zur Verfügung</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>PowerShell</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Dient zum schreiben von Jobs in PowerShell. Verwendung mit &lt;script language="PowerShell"&gt;. Steht nur unter Windows zur Verfügung</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>VBScript</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Dient zum schreiben von Jobs in VBScript. Verwendung mit &lt;script language="VBScript"&gt;. Steht nur unter Windows zur Verfügung</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Perl</td>-->
-                    <!--<td>&lt;script language="java:Javascript"&gt;</td>-->
-                    <!--<td>Dient zum schreiben von Jobs in Perl. Verwendung mit &lt;script language="Perl"&gt;</td>-->
-                <!--</tr>-->
+        Unterstützte Sprachen:
+        <p/>
+        <p>
+            <table border="1" cellpadding="5" style="border-collapse:collapse;">
+                <tr>
 
-            <!--</table>-->
-        <!--</p>-->
+                    <th><b>Sprache</b></th>
+                    <th><b>Aufruf</b></th>
+                    <th><b>Beschreibung</b></th>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td style="white-space:nowrap;">&lt;script language="Java"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in Java.</td>
+                </tr>
+                <tr>
+                    <td>java:JavaScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="java:JavaScript"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in JavaScript. Verwendet die "Rhino with Beans" Implementation.</td>
+                </tr>
+                <tr>
+                    <td>javax.script:rhino</td>
+                    <td style="white-space:nowrap;">&lt;script language="javax.script:rhino"&gt;</td>
+                    <td>Unterstützt die Script-Sprache Rhino, welche die "javax.script" scripting API implementiert.
+                        Andere Script-Sprachen, welche die "javax.script" scripting API implementieren können mit <nobr>&lt;script language="javax.script:<i>language</i>"&gt;</nobr> verwendet werden.</td>
+                </tr>
+                <tr>
+                    <td>Spidermonkey (32bit)</td>
+                    <td style="white-space:nowrap;">&lt;script language="Spidermonkey"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in JavaScript. Verwendet die "spidermonkey" Implementation. Steht nur unter 32 bit zur Verfügung.</td>
+                </tr>
+                <tr>
+                    <td>PowerShell</td>
+                    <td style="white-space:nowrap;">&lt;script language="PowerShell"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in PowerShell. Steht nur unter Windows zur Verfügung.</td>
+                </tr>
+                <tr>
+                    <td>VBScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="VBScript"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in VBScript. Steht nur unter Windows zur Verfügung.</td>
+                </tr>
+                <tr>
+                    <td>Perl</td>
+                    <td style="white-space:nowrap;">&lt;script language="Perl"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in Perl.</td>
+                </tr>
+
+            </table>
+        </p>
         <p/>
         <hr/>
         <p>
@@ -82,7 +85,7 @@
         <p/>
         <hr/>
         <p/>
-        <b>Javascript unter 64 bit:</b>
+        <b>JavaScript unter 64 bit:</b>
         <p style="color:red">
             Die Spidermonkey Implementation von javascript steht nur unter 32 bit zur Verfügung.
             Um javascript unter 64 bit zu benutzen, kann die "Rhino with Beans" Implementation verwendet werden.
@@ -97,26 +100,26 @@
             <p/>
             Die folgende Tabelle zeigt eine Übersicht der verwendeten engine in Abhängigkeit des language-Attributs in &lt;script language="..."&gt;
             <p>
-                <table border="1">
+                <table border="1" cellpadding="5" style="border-collapse:collapse;">
                     <tr>
-                        <th>language</th>
-                        <th>engine unter 32 bit</th>
-                        <th>engine unter 64 bit</th>
+                        <th><b>Sprache</b></th>
+                        <th><b>Engine unter 32 bit</b></th>
+                        <th><b>Engine unter 64 bit</b></th>
                     </tr>
                     <tr>
-                        <td>javascript</td>
-                        <td>spidermonkey</td>
+                        <td>Spidermonkey</td>
+                        <td>Spidermonkey</td>
                         <td>---</td>
                     </tr>
                     <tr>
-                        <td>java:javascript</td>
-                        <td>rhino with beans</td>
-                        <td>rhino with beans</td>
+                        <td>java:JavaScript</td>
+                        <td>Rhino with Beans</td>
+                        <td>Rhino with Beans</td>
                     </tr>
                 </table>
             </p>
-            Die Werte "javascript" und "spidermonkey" des language-Attributs sind äquivalent (spidermonkey engine).<br/>
-            Ebenso sind die Werte "java:javascript", "java:rhino" und "java:ecmascript" des language-Attributs äquivalent ("rhino with beans" engine).
+            Die Werte "Spidermonkey" und "JavaScript" des language-Attributs sind äquivalent (Spidermonkey engine).<br/>
+            Ebenso sind die Werte "java:JavaScript", "java:Rhino" und "java:ECMAScript" des language-Attributs äquivalent ("Rhino with Beans" engine).
         </p>
         <p/>
         <hr/>
