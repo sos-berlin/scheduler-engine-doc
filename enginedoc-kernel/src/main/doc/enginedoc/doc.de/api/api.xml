@@ -17,6 +17,57 @@
     </title>
 
     <description>
+        Unterstützte Sprachen:
+        <p/>
+        <p>
+            <table border="1" cellpadding="5" style="border-collapse:collapse;">
+                <tr>
+
+                    <th><b>Sprache</b></th>
+                    <th><b>Aufruf</b></th>
+                    <th><b>Beschreibung</b></th>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td style="white-space:nowrap;">&lt;script language="Java"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in Java.</td>
+                </tr>
+                <tr>
+                    <td>java:JavaScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="java:JavaScript"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in JavaScript. Verwendet die "Rhino with Beans" Implementation.</td>
+                </tr>
+                <tr>
+                    <td>javax.script:rhino</td>
+                    <td style="white-space:nowrap;">&lt;script language="javax.script:rhino"&gt;</td>
+                    <td>Unterstützt die Script-Sprache Rhino, welche die "javax.script" scripting API implementiert.
+                        Andere Script-Sprachen, welche die "javax.script" scripting API implementieren können mit <nobr>&lt;script language="javax.script:<i>language</i>"&gt;</nobr> verwendet werden.</td>
+                </tr>
+                <tr>
+                    <td>Spidermonkey (32bit)</td>
+                    <td style="white-space:nowrap;">&lt;script language="Spidermonkey"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in JavaScript. Verwendet die "spidermonkey" Implementation. Steht nur unter 32 bit zur Verfügung.</td>
+                </tr>
+                <tr>
+                    <td>PowerShell</td>
+                    <td style="white-space:nowrap;">&lt;script language="PowerShell"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in PowerShell. Steht nur unter Windows zur Verfügung.</td>
+                </tr>
+                <tr>
+                    <td>VBScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="VBScript"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in VBScript. Steht nur unter Windows zur Verfügung.</td>
+                </tr>
+                <tr>
+                    <td>Perl</td>
+                    <td style="white-space:nowrap;">&lt;script language="Perl"&gt;</td>
+                    <td>Dient zum Schreiben von Jobs in Perl.</td>
+                </tr>
+
+            </table>
+        </p>
+        <p/>
+        <hr/>
         <p>
             Jobs, die die Programmschnittstelle des Schedulers nutzen,
             können in den Sprachen Java, JavaScript (Mozilla) und Perl implementiert werden
@@ -33,11 +84,15 @@
         </p>
         <p/>
         <hr/>
+        <p/>
+        <b>JavaScript unter 64 bit:</b>
         <p style="color:red">
             Die Spidermonkey Implementation von javascript steht nur unter 32 bit zur Verfügung.
             Um javascript unter 64 bit zu benutzen, kann die "Rhino with Beans" Implementation verwendet werden.
             Diese steht sowohl unter 32 bit als auch unter 64 bit zur Verfügung.
-            Bei der Benutzung gibt es zwischen beiden Implementationen unterschiede:
+            Die "Rhino with Beans" Implementation ist eine Erweiterung von Rhino und ersetzt die Spidermonkey Implementation.
+            Die "Rhino with Beans" Implementation dient dazu, bestehende javascript-jobs mit geringem Änderungsaufwand auf 64 bit zu portieren.
+            Bei der Benutzung gibt es zwischen beiden Implementationen leichte unterschiede:
             <a href="http://www.sos-berlin.com/mediawiki/index.php/Differences_between_the_spidermonkey_and_%22rhino_with_beans%22_engines">
                 Differences between the spidermonkey and "rhino with beans" engines
             </a>
@@ -45,26 +100,26 @@
             <p/>
             Die folgende Tabelle zeigt eine Übersicht der verwendeten engine in Abhängigkeit des language-Attributs in &lt;script language="..."&gt;
             <p>
-                <table border="1">
+                <table border="1" cellpadding="5" style="border-collapse:collapse;">
                     <tr>
-                        <th>language</th>
-                        <th>engine unter 32 bit</th>
-                        <th>engine unter 64 bit</th>
+                        <th><b>Sprache</b></th>
+                        <th><b>Engine unter 32 bit</b></th>
+                        <th><b>Engine unter 64 bit</b></th>
                     </tr>
                     <tr>
-                        <td>javascript</td>
-                        <td>spidermonkey</td>
+                        <td>Spidermonkey</td>
+                        <td>Spidermonkey</td>
                         <td>---</td>
                     </tr>
                     <tr>
-                        <td>java:javascript</td>
-                        <td>rhino with beans</td>
-                        <td>rhino with beans</td>
+                        <td>java:JavaScript</td>
+                        <td>Rhino with Beans</td>
+                        <td>Rhino with Beans</td>
                     </tr>
                 </table>
             </p>
-            Die Werte "javascript" und "spidermonkey" des language-Attributs sind äquivalent (spidermonkey engine).<br/>
-            Ebenso sind die Werte "java:javascript", "java:rhino" und "java:ecmascript" des language-Attributs äquivalent ("rhino with beans" engine).
+            Die Werte "Spidermonkey" und "JavaScript" des language-Attributs sind äquivalent (Spidermonkey engine).<br/>
+            Ebenso sind die Werte "java:JavaScript", "java:Rhino" und "java:ECMAScript" des language-Attributs äquivalent ("Rhino with Beans" engine).
         </p>
         <p/>
         <hr/>

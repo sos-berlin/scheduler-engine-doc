@@ -4429,6 +4429,12 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-724" weight="debug">
+            <text xml:lang="en">
+                <title>Error ignored when trying to obtain directory change notifications for <p1/>: <p2/></title>
+            </text>
+        </message>
+
         <!-- HINWEIS FÜR NEUE MELDUNGEN: Das Attribut object= nur angeben, wenn die Objektklasse auch bekannt ist. Zschimmer 2009-11-05 -->
         <!-- <title>...</title> soll in einer Zeile liegen, sonst enthält die Fehlermeldungen die Zeilenwechsel. -->
         <!-- Meldungsnummern ab SCHEDULER-100 sind für Fehler, Nummern ab 700 (oder bald 600) sind für andere Meldungen. -->

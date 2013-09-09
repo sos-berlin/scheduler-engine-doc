@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<!-- $Id: api.xsl 14199 2011-01-25 12:13:10Z ss $ -->
+<!-- $Id: api.xsl 14199 2013-08-28 12:13:10Z fs $ -->
 
 
 
@@ -39,6 +39,7 @@
 <xsl:template name="programming_language_selector">
     <xsl:param name="this_programming_language"/>
     <xsl:param name="href"/>
+    <xsl:param name="this_programming_language_title"/>
 
     <xsl:variable name="plang" select="translate( $this_programming_language, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ:', 'abcdefghijklmnopqrstuvwxyz_' )"/>
 
@@ -58,7 +59,7 @@
             </xsl:otherwise>
         </xsl:choose>
 
-        <xsl:value-of select="$this_programming_language"/>
+        <xsl:value-of select="$this_programming_language_title"/>
     </xsl:element>
 
 </xsl:template>
@@ -206,32 +207,39 @@
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">Java</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">Java</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
-                            <xsl:with-param name="this_programming_language">JavaScript</xsl:with-param>
-                        </xsl:call-template>
-
-                        <xsl:call-template name="programming_language_selector">
-                            <xsl:with-param name="this_programming_language">VBScript</xsl:with-param>
-                        </xsl:call-template>
-
-                        <xsl:call-template name="programming_language_selector">
-                            <xsl:with-param name="this_programming_language">Perl</xsl:with-param>
+                            <xsl:with-param name="this_programming_language">java:JavaScript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">java:JavaScript</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">javax.script</xsl:with-param>
-                        </xsl:call-template>
-						
-						<xsl:call-template name="programming_language_selector">
-                            <xsl:with-param name="this_programming_language">Powershell</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">javax.script:rhino</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">
-                            <xsl:with-param name="this_programming_language">java:javascript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language">JavaScript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">Spidermonkey (32bit)</xsl:with-param>
                         </xsl:call-template>
-                        
+
+                        <xsl:call-template name="programming_language_selector">
+                            <xsl:with-param name="this_programming_language">PowerShell</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">PowerShell</xsl:with-param>
+                        </xsl:call-template>
+
+                        <xsl:call-template name="programming_language_selector">
+                            <xsl:with-param name="this_programming_language">VBScript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">VBScript</xsl:with-param>
+                        </xsl:call-template>
+
+                        <xsl:call-template name="programming_language_selector">
+                            <xsl:with-param name="this_programming_language">Perl</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">Perl</xsl:with-param>
+                        </xsl:call-template>
+
                     </td>
 
                     <xsl:if test="/api.class/@name != 'api' and not( /api.class/not_implemented/@programming_language='java' )">
@@ -581,9 +589,9 @@
             </xsl:element>
 
 
-            <xsl:if test="com.parameter or parent::method or not( $language_has_properties or parent::property/@is_variable )">
+            <xsl:if test="com.parameter or parent::method or not( $language_has_properties or parent::property/@is_variable ) or $selected_programming_language='java_javascript'">
                 <xsl:choose>
-                    <xsl:when test="$access='write' and not( $language_has_properties )">
+                    <xsl:when test="$access='write' and ( not( $language_has_properties ) or $selected_programming_language='java_javascript' )">
                         <xsl:apply-templates select="." mode="parameter_list">
                             <xsl:with-param name="parameters" select="java.parameter | java.result | com.parameter | com.result"/>
                             <xsl:with-param name="is_in_table" select="$is_in_table"/>
@@ -595,6 +603,9 @@
                             <xsl:with-param name="is_in_table" select="$is_in_table"/>
                         </xsl:apply-templates>
 					</xsl:when>
+                    <xsl:when test="$selected_programming_language='java_javascript' and $access='read' and count(java.parameter | com.parameter) = 0">
+                        <!-- dann nichts schreiben -->
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="." mode="parameter_list">
                             <xsl:with-param name="parameters" select="java.parameter | com.parameter"/>
@@ -604,7 +615,7 @@
                 </xsl:choose>
             </xsl:if>
 
-            <xsl:if test="parent::property and $language_has_properties and $access='write'">
+            <xsl:if test="parent::property and $language_has_properties and $access='write' and not($selected_programming_language='java_javascript')">
 				<xsl:choose>
 					<xsl:when test="$selected_programming_language='Powershell' and com.parameter">
 						<!-- dann nichts schreiben -->

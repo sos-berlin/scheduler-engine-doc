@@ -15,6 +15,58 @@
     <title>Overview<!--Übersicht--></title>
 
     <description>
+        Supported Languages:
+        <p/>
+        <p>
+            <table border="1" cellpadding="5" style="border-collapse:collapse;">
+                <tr>
+
+                    <th><b>Language</b></th>
+                    <th><b>Call</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td style="white-space:nowrap;">&lt;script language="Java"&gt;</td>
+                    <td>Provides jobs in Java.</td>
+                </tr>
+                <tr>
+                    <td>java:JavaScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="java:JavaScript"&gt;</td>
+                    <td>Provides jobs in JavaScript. Usage of the "Rhino with Beans" implementation.</td>
+                </tr>
+                <tr>
+                    <td>javax.script:rhino</td>
+                    <td style="white-space:nowrap;">&lt;script language="javax.script:rhino"&gt;</td>
+                    <td>Provides the script language Rhino, that implements the "javax.script" scripting API.
+                        Other script languages implementing the "javax.script" scripting API can be used with <nobr>&lt;script language="javax.script:<i>language</i>"&gt;.</nobr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Spidermonkey (32bit)</td>
+                    <td style="white-space:nowrap;">&lt;script language="Spidermonkey"&gt;</td>
+                    <td>Provides jobs in JavaScript. Usage of the "spidermonkey" Implementation. Only available on 32 bit.</td>
+                </tr>
+                <tr>
+                    <td>PowerShell</td>
+                    <td style="white-space:nowrap;">&lt;script language="PowerShell"&gt;</td>
+                    <td>Provides jobs in Jobs in PowerShell. Only available on Windows.</td>
+                </tr>
+                <tr>
+                    <td>VBScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="VBScript"&gt;</td>
+                    <td>Provides jobs in Jobs in VBScript. Only available on Windows.</td>
+                </tr>
+                <tr>
+                    <td>Perl</td>
+                    <td style="white-space:nowrap;">&lt;script language="Perl"&gt;</td>
+                    <td>Provides jobs in Perl.</td>
+                </tr>
+
+            </table>
+        </p>
+        <p/>
+        <hr/>
         <p>
             Jobs which use the Job Scheduler API may be implemented in Java, JavaScript 
             (the Mozilla Spidermonkey implementation) and Perl
@@ -35,37 +87,39 @@
         <p/>
         <hr/>
         <p style="color:red">
-            The spidermonkey implementation of javascript is available only on 32 bit.
-            For using javascript on 64 bit choose the "rhino with beans" implementation.
+            The Spidermonkey implementation of javascript is available only on 32 bit.
+            For using javascript on 64 bit choose the "Rhino with Beans" implementation.
             This implementation is available on 32 bit as well as on 64 bit.
-            The usage of both implementations differs, see:
+            The "Rhino with Beans" implementation is an extension to rhino and it replaces the Spidermonkey implementation.
+            The "Rhino with Beans" implementation suits the purpose to port already existing javascript jobs to 64 bit.
+            The usage of both implementations differs slightly, see:
             <a href="http://www.sos-berlin.com/mediawiki/index.php/Differences_between_the_spidermonkey_and_%22rhino_with_beans%22_engines">
-                Differences between the spidermonkey and "rhino with beans" engines
+                Differences between the Spidermonkey and "Rhino with Beans" engines
             </a>
             <p/>
             <p/>
             The following table shows the used engine dependent on the language attribute in &lt;script language="..."&gt;
             <p>
-                <table border="1">
+                <table border="1" cellpadding="5" style="border-collapse:collapse;">
                     <tr>
-                        <th>language</th>
-                        <th>engine on 32 bit</th>
-                        <th>engine on 64 bit</th>
+                        <th><b>Language</b></th>
+                        <th><b>Engine on 32 bit</b></th>
+                        <th><b>Engine on 64 bit</b></th>
                     </tr>
                     <tr>
-                        <td>javascript</td>
-                        <td>spidermonkey</td>
+                        <td>Spidermonkey</td>
+                        <td>Spidermonkey</td>
                         <td>---</td>
                     </tr>
                     <tr>
-                        <td>java:javascript</td>
-                        <td>rhino with beans</td>
-                        <td>rhino with beans</td>
+                        <td>java:JavaScript</td>
+                        <td>Rhino with Beans</td>
+                        <td>Rhino with Beans</td>
                     </tr>
                 </table>
             </p>
-            In the language attribute the values "javascript" und "spidermonkey" are equivalent (spidermonkey engine).<br/>
-            Furthermore in the language attribute the values "java:javascript", "java:rhino" and "java:ecmascript" are equivalent ("rhino with beans" engine).
+            In the language attribute the values "Spidermonkey" and "JavaScript" are equivalent (Spidermonkey engine).<br/>
+            Furthermore in the language attribute the values "java:JavaScript", "java:Rhino" and "java:ECMAScript" are equivalent ("Rhino with Beans" engine).
         </p>
         <p/>
         <hr/>
