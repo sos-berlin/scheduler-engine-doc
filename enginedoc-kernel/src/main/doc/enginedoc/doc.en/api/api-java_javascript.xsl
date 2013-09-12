@@ -16,6 +16,7 @@
 
 <xsl:template match="property | method " mode="method_name">
     <xsl:param name="access"/>
+    <xsl:param name="com_param"/>
 
     <xsl:if test="parent::api.class/@object_name">
         <span class="api_object_name">
@@ -24,10 +25,13 @@
         </span>
     </xsl:if>
 
-    <span class="mono">
-        <xsl:if test="$access='write'">set_</xsl:if>
-        <!--xsl:if test="$access='read'">&#160;&#160;&#160;&#160;</xsl:if>-->
-    </span>
+    <xsl:if test="$com_param">
+        <span class="mono">
+            <xsl:if test="$access='write'">set_</xsl:if>
+            <!--xsl:if test="$access='read'">&#160;&#160;&#160;&#160;</xsl:if>-->
+        </span>
+    </xsl:if>
+
     <span class="mono" style="font-weight: bold">
         <xsl:value-of select="@name"/>
     </span>
