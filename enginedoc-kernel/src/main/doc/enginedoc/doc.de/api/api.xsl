@@ -585,7 +585,7 @@
 
                 <xsl:apply-templates select="parent::*" mode="method_name">
                     <xsl:with-param name="access" select="$access"/>
-                    <xsl:with-param name="com_param" select="com.parameter"/>
+                    <xsl:with-param name="com_param" select="java.parameter | com.parameter"/>
                 </xsl:apply-templates>
             </xsl:element>
 
@@ -621,9 +621,15 @@
                     <xsl:when test="$selected_programming_language='java_javascript' and com.parameter">
                         <!-- dann nichts schreiben -->
                     </xsl:when>
+                    <xsl:when test="$selected_programming_language='java_javascript' and java.parameter | java.result">
+                        <span class="mono"> = </span>
+                        <xsl:apply-templates select="java.parameter | java.result">
+                            <xsl:with-param name="is_in_table" select="$is_in_table"/>
+                        </xsl:apply-templates>
+                    </xsl:when>
 					<xsl:otherwise>
 						<span class="mono"> = </span>
-						<xsl:apply-templates select="com.result">
+						<xsl:apply-templates select="com.result | java.result">
 							<xsl:with-param name="is_in_table" select="$is_in_table"/>
 						</xsl:apply-templates>
 					</xsl:otherwise>					
