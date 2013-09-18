@@ -1119,23 +1119,25 @@ db = scheduler.mdb
         </description>
     </setting>
 
-    <setting setting = "tmp"
+<!-- See JIRA-1013: Setting for tmp in [spooler] factory.ini does have no effect. 
+	 setting now commented out -->
+<!--<setting setting = "tmp"
              type    = "path"
              title   = "Directory for Temporary Files">
-         <!--title   = "Verzeichnis der temporären Dateien">-->
+         <!- -title   = "Verzeichnis der temporären Dateien">- ->
         <description>
             <p>
-                The default setting is the <code>TMP</code> environment variable.<!-- KURZE-ÜBERSETZUNG MIT JZ ABGESPROCHEN-->
-            <!--Voreinstellung ist die Umgebungsvariable <code>TMP</code>,
-                unter Windows auch <code>TEMP</code>.-->
+                The default setting is the <code>TMP</code> environment variable.<!- - KURZE-ÜBERSETZUNG MIT JZ ABGESPROCHEN- ->
+            <!- -Voreinstellung ist die Umgebungsvariable <code>TMP</code>,
+                unter Windows auch <code>TEMP</code>.- ->
             </p>
             <p>
                 On Unix systems <code>/tmp/</code> is used, should the <code>TMP</code> environment variable
                 not have been set.
-            <!--Unter Unix wird <code>/tmp/</code> verwendet, wenn die Umgebungsvariable nicht gesetzt ist.-->
+            <!- -Unter Unix wird <code>/tmp/</code> verwendet, wenn die Umgebungsvariable nicht gesetzt ist.- ->
             </p>
         </description>
-    </setting>
+    </setting>-->
 
 
     <setting setting = "configuration_directory"

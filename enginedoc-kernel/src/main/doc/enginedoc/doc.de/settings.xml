@@ -847,7 +847,9 @@ db = scheduler.mdb
         </description>
     </setting>
 
-    <setting setting = "tmp"
+<!-- See JIRA-1013: Setting for tmp in [spooler] factory.ini does have no effect.  
+	 setting now commented out -->
+<!--<setting setting = "tmp"
              type    = "path"
              title   = "Verzeichnis der temporären Dateien">
         <description>
@@ -859,7 +861,7 @@ db = scheduler.mdb
                 Unter Unix wird <code>/tmp/</code> verwendet, wenn die Umgebungsvariable nicht gesetzt ist.
             </p>
         </description>
-    </setting>
+    </setting>-->
 
     <setting setting = "configuration_directory"
              type    = "path"
