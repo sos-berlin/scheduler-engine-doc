@@ -840,7 +840,8 @@
             <xsl:with-param name="show_level" select="true()"/>
         </xsl:apply-templates>
 
-        <xsl:apply-templates select="example"/>
+<!-- Template commented out as all 3 examples on this page were being shown twice - AA Sept 2013 -->
+        <!-- <xsl:apply-templates select="example"/>-->
 
     </xsl:template>
 
