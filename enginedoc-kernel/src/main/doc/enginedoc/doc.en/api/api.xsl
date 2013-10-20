@@ -585,11 +585,12 @@
 
                 <xsl:apply-templates select="parent::*" mode="method_name">
                     <xsl:with-param name="access" select="$access"/>
+                    <xsl:with-param name="com_param" select="java.parameter | com.parameter"/>
                 </xsl:apply-templates>
             </xsl:element>
 
 
-            <xsl:if test="com.parameter or parent::method or not( $language_has_properties or parent::property/@is_variable ) or $selected_programming_language='java_javascript'">
+            <xsl:if test="com.parameter or parent::method or not( $language_has_properties or parent::property/@is_variable ) or ($selected_programming_language='java_javascript' and com.parameter)">
                 <xsl:choose>
                     <xsl:when test="$access='write' and ( not( $language_has_properties ) or $selected_programming_language='java_javascript' )">
                         <xsl:apply-templates select="." mode="parameter_list">
@@ -603,9 +604,6 @@
                             <xsl:with-param name="is_in_table" select="$is_in_table"/>
                         </xsl:apply-templates>
 					</xsl:when>
-                    <xsl:when test="$selected_programming_language='java_javascript' and $access='read' and count(java.parameter | com.parameter) = 0">
-                        <!-- dann nichts schreiben -->
-                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="." mode="parameter_list">
                             <xsl:with-param name="parameters" select="java.parameter | com.parameter"/>
@@ -615,14 +613,23 @@
                 </xsl:choose>
             </xsl:if>
 
-            <xsl:if test="parent::property and $language_has_properties and $access='write' and not($selected_programming_language='java_javascript')">
+            <xsl:if test="parent::property and $language_has_properties and $access='write'">
 				<xsl:choose>
 					<xsl:when test="$selected_programming_language='Powershell' and com.parameter">
 						<!-- dann nichts schreiben -->
 					</xsl:when>
+                    <xsl:when test="$selected_programming_language='java_javascript' and com.parameter">
+                        <!-- dann nichts schreiben -->
+                    </xsl:when>
+                    <xsl:when test="$selected_programming_language='java_javascript' and java.parameter | java.result">
+                        <span class="mono"> = </span>
+                        <xsl:apply-templates select="java.parameter | java.result">
+                            <xsl:with-param name="is_in_table" select="$is_in_table"/>
+                        </xsl:apply-templates>
+                    </xsl:when>
 					<xsl:otherwise>
 						<span class="mono"> = </span>
-						<xsl:apply-templates select="com.result">
+						<xsl:apply-templates select="com.result | java.result">
 							<xsl:with-param name="is_in_table" select="$is_in_table"/>
 						</xsl:apply-templates>
 					</xsl:otherwise>					

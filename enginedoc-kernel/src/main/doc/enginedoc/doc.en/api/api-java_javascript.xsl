@@ -11,11 +11,24 @@
 
 <xsl:include href="api.xsl" />
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xsl:template match="property [ java ] | method [ java ]" mode="table_rows">
+    <xsl:param name="show_title"  select="true()"/>
+    <xsl:param name="is_in_table" select="false()"/>
+
+    <xsl:apply-templates select="java" mode="table_row">
+        <xsl:with-param name="show_title"  select="$show_title"/>
+        <xsl:with-param name="is_in_table" select="$is_in_table"/>
+    </xsl:apply-templates>
+
+</xsl:template>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <xsl:template match="property | method " mode="method_name">
     <xsl:param name="access"/>
+    <xsl:param name="com_param"/>
 
     <xsl:if test="parent::api.class/@object_name">
         <span class="api_object_name">
@@ -24,10 +37,13 @@
         </span>
     </xsl:if>
 
-    <span class="mono">
-        <xsl:if test="$access='write'">set_</xsl:if>
-        <!--xsl:if test="$access='read'">&#160;&#160;&#160;&#160;</xsl:if>-->
-    </span>
+    <xsl:if test="$com_param">
+        <span class="mono">
+            <xsl:if test="$access='write'">set_</xsl:if>
+            <!--xsl:if test="$access='read'">&#160;&#160;&#160;&#160;</xsl:if>-->
+        </span>
+    </xsl:if>
+
     <span class="mono" style="font-weight: bold">
         <xsl:value-of select="@name"/>
     </span>
@@ -36,25 +52,27 @@
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<xsl:template match="com.type [ @type='VARIANT' and not( com.type ) ]" mode="no_array">
-    <span class="mono">var</span>
+<xsl:template match="java.type">
+    <span class="mono"><xsl:value-of select="@type"/></span>
 </xsl:template>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <xsl:template match="com.type [ @type='bool' ]" mode="no_array">
     <span class="mono">boolean</span>
 </xsl:template>
 
-<xsl:template match="com.type [ @type='DATE' ]" mode="no_array">
-    <span class="mono">Date</span>
-</xsl:template>
-
 <xsl:template match="com.type [ @type='BSTR' ]" mode="no_array">
-    <span class="mono">string</span>
+    <span class="mono" title="java.lang.String">String</span>
 </xsl:template>
 
-<!--xsl:template match="com.type [ @type='BSTR' and @array ]">
-    <span class="mono" title="Array of strings">string[]</span>
-</xsl:template-->
+<xsl:template match="com.type [ @type='DATE' ]" mode="no_array">
+    <span class="mono">java.util.Date</span>
+</xsl:template>
+
+<xsl:template match="com.type [ @type='VARIANT' and not( com.type ) ]" mode="no_array">
+    <span class="mono" title="java.lang.String">String</span>
+</xsl:template>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 

@@ -201,8 +201,8 @@ response.send();</pre>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
     <property name="binary_content" access="write">
-        <com/>
-        
+        <!--<com/>-->
+
         <java>
             <java.result>
                 <java.type type="byte[]"/>

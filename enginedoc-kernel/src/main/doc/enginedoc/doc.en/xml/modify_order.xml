@@ -77,6 +77,22 @@
             </description>
         </xml_attribute>
 
+        <xml_attribute name="action" type="action">
+            <description>
+                <p>
+                    <code>action="reset"</code> Resets the order:
+                    The order is returned to its original state,
+                    It is no longer suspended and setback is cancelled.
+                    The next start time for the order is calculated as if the order had successfully completed the job chain.
+                </p>
+                <p>
+                    This operation is only possible, when the order is not being carried out by a job.
+                </p>
+            </description>
+            <messages>
+                <message level="error" code="SCHEDULER-217"/>
+            </messages>
+        </xml_attribute>
 
         <xml_attribute name="setback" type="no">
             <description>
