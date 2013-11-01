@@ -590,11 +590,7 @@
             </com.result>
         </com>
 
-        <title>Liefert den Supervisor_client</title>
-
-        <messages>
-            <message level="error" code="SCHEDULER-423"/>
-        </messages>
+        <title>Liefert den Supervisor_client oder <api.null/></title>
     </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
