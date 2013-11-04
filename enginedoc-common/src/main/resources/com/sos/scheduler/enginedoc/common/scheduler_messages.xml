@@ -2467,11 +2467,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-404">
+        <!--message code="SCHEDULER-404">
             <text xml:lang="en">
                 <title>action='<p1/>' is not possible on a distributed job chain</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-405">
             <text xml:lang="en">
