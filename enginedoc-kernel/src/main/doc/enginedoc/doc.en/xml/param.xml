@@ -214,8 +214,11 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
 -->
         <p>
           This parameter determines the maximum size of order logs in the database. The value is in kByte and refers to the database fields 
-          LOG in table SCHEDUELR_ORDER_HISTORY and XML_PAYLOAD in table SCHEDULER_ORDERS. The value of this parameter should be always smaller than the maximum size
-          of the database field XML_PAYLOAD, because this field contains some configuration data of the order beside the log entries.
+          LOG in table SCHEDUELR_ORDER_HISTORY and ORDER_XML in table SCHEDULER_ORDERS.
+        </p>
+        <p>
+          The value of this parameter should be at least 1 kByte smaller than the maximum size of the database field ORDER_XML, because this field contains some additional configuration data of
+          the order beside the log entries, but the parameter <i>scheduler.max_kbyte_of_db_log_entry<i> is a limit for the order log only.
         </p>
         <p>
           The order log will be truncated (from the beginning of the log), if the limit is exceeded.
