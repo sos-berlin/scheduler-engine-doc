@@ -207,14 +207,14 @@
 <register_keyword keyword='backup'>
     <register_keyword_display><code>-backup=</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_option__backup' register_title='Änderungsprotokoll'  register_keyword='backup'/>
-    <register_entry register_file='backupscheduler.xml#use_option__backup' register_title='Backup Job Scheduler'  register_keyword='backup'/>
+    <register_entry register_file='backupscheduler.xml#use_option__backup' register_title='Backup JobScheduler'  register_keyword='backup'/>
     <register_entry register_file='command_line.xml#option_backup' register_title='Kommandozeilenoptionen'  register_keyword='backup' type='definition'/>
     <register_entry register_file='command_line.xml#use_option__backup' register_title='Kommandozeilenoptionen'  register_keyword='backup'/>
 </register_keyword>
 <register_keyword keyword='backup-precedence'>
     <register_keyword_display><code>-backup-precedence=</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_option__backup-precedence' register_title='Änderungsprotokoll'  register_keyword='backup-precedence'/>
-    <register_entry register_file='backupscheduler.xml#use_option__backup-precedence' register_title='Backup Job Scheduler'  register_keyword='backup-precedence'/>
+    <register_entry register_file='backupscheduler.xml#use_option__backup-precedence' register_title='Backup JobScheduler'  register_keyword='backup-precedence'/>
     <register_entry register_file='command_line.xml#option_backup-precedence' register_title='Kommandozeilenoptionen'  register_keyword='backup-precedence' type='definition'/>
     <register_entry register_file='command_line.xml#use_option__backup-precedence' register_title='Kommandozeilenoptionen'  register_keyword='backup-precedence'/>
 </register_keyword>
@@ -999,7 +999,7 @@
     <register_keyword_display><code>-exclusive=</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_option__exclusive' register_title='Änderungsprotokoll'  register_keyword='exclusive'/>
     <register_entry register_file='api/Spooler.xml#use_option__exclusive' register_title='Spooler'  register_keyword='exclusive'/>
-    <register_entry register_file='backupscheduler.xml#use_option__exclusive' register_title='Backup Job Scheduler'  register_keyword='exclusive'/>
+    <register_entry register_file='backupscheduler.xml#use_option__exclusive' register_title='Backup JobScheduler'  register_keyword='exclusive'/>
     <register_entry register_file='command_line.xml#option_exclusive' register_title='Kommandozeilenoptionen'  register_keyword='exclusive' type='definition'/>
     <register_entry register_file='command_line.xml#use_option__exclusive' register_title='Kommandozeilenoptionen'  register_keyword='exclusive'/>
     <register_entry register_file='settings.xml#use_option__exclusive' register_title='Einstellungen'  register_keyword='exclusive'/>
@@ -4125,7 +4125,7 @@
 <register_keyword keyword='terminate'>
     <register_keyword_display><code>&lt;terminate&gt;</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_element__terminate' register_title='Änderungsprotokoll'  register_keyword='terminate'/>
-    <register_entry register_file='backupscheduler.xml#use_element__terminate' register_title='Backup Job Scheduler'  register_keyword='terminate'/>
+    <register_entry register_file='backupscheduler.xml#use_element__terminate' register_title='Backup JobScheduler'  register_keyword='terminate'/>
     <register_entry register_file='command_line.xml#use_element__terminate' register_title='Kommandozeilenoptionen'  register_keyword='terminate'/>
     <register_entry register_file='xml.xml#use_element__terminate' register_title='Alle XML-Elemente'  register_keyword='terminate'/>
     <register_entry register_file='xml/terminate.xml#' register_title='&lt;terminate&gt; (Kommando)'  register_keyword='terminate' type='definition'/>
@@ -4171,7 +4171,7 @@
 </register_keyword>
 <register_keyword keyword='timeout'>
     <register_keyword_display><code>-timeout=</code></register_keyword_display>
-    <register_entry register_file='backupscheduler.xml#use_option__timeout' register_title='Backup Job Scheduler'  register_keyword='timeout'/>
+    <register_entry register_file='backupscheduler.xml#use_option__timeout' register_title='Backup JobScheduler'  register_keyword='timeout'/>
 </register_keyword>
 <register_keyword keyword='timeout'>
     <register_keyword_display><code>timeout</code></register_keyword_display>

@@ -85,6 +85,9 @@
                 <!--Bei <code>once="yes"</code> startet der <span class="sos_name">Scheduler</span>
                     den Job einmal nach Start des <span class="sos_name">Schedulers</span>,
                     sobald die <code>&lt;run_time</code> dies zulässt.-->
+                    In addition persistent jobs with <code>once="yes"</code> are startet instantly
+                    if they are added to a Live-Folder while the JobScheduler is running
+                    and this is allowed by the <code>&lt;run_time&gt;</code>.
                 </p>
             </description>
         </xml_attribute>
