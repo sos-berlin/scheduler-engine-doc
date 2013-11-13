@@ -934,6 +934,24 @@
             <xsd:attribute name="ignore_unknown_hosts" type="Yes_no"/>
         </xsd:complexType>
     </xsd:element>
+
+    <xsd:element name="supervisor.configuration.fetch">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="configuration.file" type="configuration.file"/>
+                    <xsd:element name="configuration.directory" type="configuration.directory"/>
+                </xsd:choice>
+            </xsd:sequence>
+            <xsd:attribute name="version" type="String"/>
+            <xsd:attribute name="scheduler_id" type="String"/>
+            <xsd:attribute name="tcp_port" type="xsd:nonNegativeInteger"/>
+            <xsd:attribute name="udp_port" type="xsd:nonNegativeInteger"/>
+            <xsd:attribute name="is_cluster_member" type="String"/>
+            <xsd:attribute name="interval" type="xsd:nonNegativeInteger" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
     <xsd:element name="supervisor.remote_scheduler.configuration.fetch_updated_files">
         <xsd:complexType>
             <xsd:sequence>

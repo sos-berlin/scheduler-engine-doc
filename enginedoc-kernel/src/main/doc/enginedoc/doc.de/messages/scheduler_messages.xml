@@ -2792,11 +2792,11 @@
             </text>
         </message>
 
-        <!--message code="SCHEDULER-458">
+        <message code="SCHEDULER-458">
             <text xml:lang="en">
-                <title>Remote configuration directory '<p1/>' is missing</title>
+                <title>Remote scheduler has not sent a notification for <p1/>s and has been deregistered</title>
             </text>
-        </message-->
+        </message>
 
         <message code="SCHEDULER-459">
             <text xml:lang="en">
