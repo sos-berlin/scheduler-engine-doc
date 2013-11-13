@@ -948,6 +948,7 @@
             <xsd:attribute name="tcp_port" type="xsd:nonNegativeInteger"/>
             <xsd:attribute name="udp_port" type="xsd:nonNegativeInteger"/>
             <xsd:attribute name="is_cluster_member" type="String"/>
+            <xsd:attribute name="interval" type="xsd:nonNegativeInteger" use="required"/>
         </xsd:complexType>
     </xsd:element>
 
