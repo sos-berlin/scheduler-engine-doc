@@ -107,7 +107,7 @@
 
 <p>
     The Job Scheduler verifies the XML configuration according to the 
-    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">Job Scheduler XML Schema</a>.
+    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">Job Scheduler XML Schema</a> (Is only shown correctly in IE).
 <!--Der Scheduler prüft die XML-Konfiguration gegen das
     <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</scheduler_a>.-->
 </p>

@@ -93,7 +93,7 @@
 
 <p>
     Der Scheduler prüft die XML-Konfiguration gegen das 
-    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.
+    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a> (Nur im IE korekt dargestellt.)
 </p>
 <p>
     Klicken Sie auf ein XML-Element, um dessen Beschreibung zu sehen.
