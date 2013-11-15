@@ -519,6 +519,7 @@
                                 </xsd:attribute>
                                 <xsd:attribute name="max" type="xsd:positiveInteger"/>
                                 <xsd:attribute name="next_state" type="String"/>
+                                <xsd:attribute name="alert_when_directory_missing" type="Yes_no"/>
                             </xsd:complexType>
                         </xsd:element>
                         <xsd:choice maxOccurs="unbounded">
