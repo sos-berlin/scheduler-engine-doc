@@ -946,10 +946,7 @@
             </xsd:sequence>
             <xsd:attribute name="version" type="String"/>
             <xsd:attribute name="scheduler_id" type="String"/>
-            <xsd:attribute name="host" type="String" use="required"/>
-            <xsd:attribute name="tcp_port" type="xsd:nonNegativeInteger" use="required"/>
             <xsd:attribute name="udp_port" type="xsd:nonNegativeInteger"/>
-            <xsd:attribute name="is_cluster_member" type="String"/>
             <xsd:attribute name="interval" type="xsd:nonNegativeInteger" use="required"/>
         </xsd:complexType>
     </xsd:element>
