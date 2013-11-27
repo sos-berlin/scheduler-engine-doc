@@ -164,7 +164,7 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
         </p>
         <p>
           Die Angabe sollte mind. 1 kByte kleiner als die zugelassene Größe des Datenbankfeldes ORDER_XML sein, da in diesem Feld zusätzlich zu den Log-Ausgaben des Auftrages
-          einige von Konfigurationseinstellungen des Auftrages gespeichert werden, sich die Angabe von <i>scheduler.max_kbyte_of_db_log_entry<i> jedoch ausschließlich
+          einige von Konfigurationseinstellungen des Auftrages gespeichert werden, sich die Angabe von <i>scheduler.max_kbyte_of_db_log_entry</i> jedoch ausschließlich
           auf die Größe des Auftragsprotokolls bezieht.
         </p>
         <p>
