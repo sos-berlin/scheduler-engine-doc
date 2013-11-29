@@ -2941,10 +2941,16 @@
        </message>
 
        <message code="SCHEDULER-484">
-          <text xml:lang="en">
-             <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs</title>
-          </text>
-       </message>
+            <text xml:lang="en">
+                <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-485">
+            <text xml:lang="en">
+                <title>Missing JobScheduler ID (spooler_id="" or -id)</title>
+            </text>
+        </message>
 
     </messages>
 
