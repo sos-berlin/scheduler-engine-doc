@@ -2937,6 +2937,11 @@
           </text>
        </message>
 
+        <message code="SCHEDULER-485">
+            <text xml:lang="en">
+                <title>Missing JobScheduler ID (spooler_id="" or -id)</title>
+            </text>
+        </message>
 
     </messages>
 

@@ -944,8 +944,9 @@
                     <xsd:element name="configuration.directory" type="configuration.directory"/>
                 </xsd:choice>
             </xsd:sequence>
-            <xsd:attribute name="version" type="String"/>
-            <xsd:attribute name="scheduler_id" type="String"/>
+            <xsd:attribute name="version" type="String" use="required"/>
+            <xsd:attribute name="scheduler_id" type="String" use="required"/>
+            <xsd:attribute name="cluster_member_id" type="String"/>
             <xsd:attribute name="udp_port" type="xsd:nonNegativeInteger"/>
             <xsd:attribute name="interval" type="xsd:nonNegativeInteger" use="required"/>
         </xsd:complexType>
