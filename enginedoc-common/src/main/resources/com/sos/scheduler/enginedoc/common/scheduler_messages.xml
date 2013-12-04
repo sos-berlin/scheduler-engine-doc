@@ -1641,14 +1641,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-286">
+        <!--message code="SCHEDULER-286">
             <text xml:lang="de">
                 <title>Mehr als <p1/> Kommunikationskanäle. Verbindung abgelehnt</title>
             </text>
             <text xml:lang="en">
                 <title>More than <p1/> communication channels. Connection denied</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-287">
             <text xml:lang="de">
