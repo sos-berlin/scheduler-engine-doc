@@ -2952,6 +2952,12 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-486">
+            <text xml:lang="en">
+                <title>Self-referencing dependency <p1/></title>
+            </text>
+        </message>
+
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->
