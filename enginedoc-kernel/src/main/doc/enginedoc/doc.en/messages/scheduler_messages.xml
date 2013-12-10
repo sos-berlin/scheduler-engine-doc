@@ -368,14 +368,14 @@
             </text>
         </message-->
 
-        <!--<message code="SCHEDULER-136">
+        <message code="SCHEDULER-136">
             <text xml:lang="de">
                 <title>Keine Historie</title>
             </text>
             <text xml:lang="en">
                 <title>No history</title>
             </text>
-        </message>-->
+        </message>
 
         <!--message code="SCHEDULER-137">
             <text xml:lang="de">
@@ -1491,23 +1491,23 @@
             </text>
         </message>
 
-        <!--<message code="SCHEDULER-269">
+        <message code="SCHEDULER-269">
             <text xml:lang="de">
                 <title>Fehler beim Schließen der Job-Historie: <p1/></title>
             </text>
             <text xml:lang="en">
                 <title>Error when closing the job history: <p1/></title>
             </text>
-        </message>-->
+        </message>
 
-        <!--<message code="SCHEDULER-270">
+        <message code="SCHEDULER-270">
             <text xml:lang="de">
                 <title>Historie lässt sich nicht öffnen: <p1/></title>
             </text>
             <text xml:lang="en">
                 <title>Cannot open history: <p1/></title>
             </text>
-        </message>-->
+        </message>
 
         <message code="SCHEDULER-271">
             <text xml:lang="de">
@@ -1842,14 +1842,14 @@
             </text>
         </message>
 
-        <!--<message code="SCHEDULER-307">
+        <message code="SCHEDULER-307">
             <text xml:lang="de">
                 <title>Historiensatz wird wegen vorausgegangenen Datenbankfehlers nicht geschrieben</title>
             </text>
             <text xml:lang="en">
                 <title>Not writing history record because of already existing database problem</title>
             </text>
-        </message>-->
+        </message>
 
         <message code="SCHEDULER-308">
             <text xml:lang="de">
