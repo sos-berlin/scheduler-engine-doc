@@ -91,6 +91,7 @@
                 <scheduler_element name="monitor"/><br/>
                 <scheduler_element name="month"/><br/>
                 <scheduler_element name="monthdays"/><br/>
+                <scheduler_element name="order"/><br/>
                 <scheduler_element name="param"/><br/>
                 <scheduler_element name="params"/><br/>
                 <scheduler_element name="period"/><br/>
