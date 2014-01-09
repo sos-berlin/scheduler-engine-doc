@@ -314,6 +314,8 @@
             </description>
         </xml_attribute>
 
+        <xml_attribute setting="time_zone" />
+
         <xml_attribute setting="include_path" subst_env="yes"/>
 
     <!--<xml_attribute name="priority_max" type="number" initial="1000" title="The Maximum Priority that can be Configured for a Task">-->
