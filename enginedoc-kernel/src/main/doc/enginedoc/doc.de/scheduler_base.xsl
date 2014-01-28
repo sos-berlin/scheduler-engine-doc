@@ -3536,7 +3536,7 @@
                     <a href="http://www.zschimmer.com">Joacim Zschimmer</a>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="$name"/>
+                    <a href="http://www.sos-berlin.com">JobScheduler Team</a>
                 </xsl:otherwise>
             </xsl:choose>,
             <!--xsl:variable name="name" select="document('standards.xml')/standards/authors/author[ @author = current()/@author ]/@full_name"/>

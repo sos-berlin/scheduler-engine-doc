@@ -8,8 +8,8 @@
 <description
     title    = "Alle XML-Elemente"
     base_dir = ""
-    author   = "$Author: ss $"
-    date     = "$Date: 2011-07-19 15:06:30 +0200 (Tue, 19 Jul 2011) $"
+    author   = "$Author: fs $"
+    date     = "$Date: 2013-12-17 11:42:49 +0200 (Tue, 17 Dec 2013) $"
 >
 
 <!--
@@ -91,6 +91,7 @@
                 <scheduler_element name="monitor"/><br/>
                 <scheduler_element name="month"/><br/>
                 <scheduler_element name="monthdays"/><br/>
+                <scheduler_element name="order"/><br/>
                 <scheduler_element name="param"/><br/>
                 <scheduler_element name="params"/><br/>
                 <scheduler_element name="period"/><br/>
