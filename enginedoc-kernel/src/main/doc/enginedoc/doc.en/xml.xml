@@ -8,8 +8,8 @@
 <description
     title    = "All XML Elements"
     base_dir = ""
-    author   = "$Author: jz $"
-    date     = "$Date: 2012-06-12 21:42:49 +0200 (Di, 12 Jun 2012) $"
+    author   = "$Author: fs $"
+    date     = "$Date: 2013-12-17 11:42:49 +0200 (Tue, 17 Dec 2013) $"
 >
 
 <!--
@@ -25,19 +25,15 @@
         <tr>
             <th>
                 <a href="konfiguration.xml">Configuration</a>
-            <!--<a href="konfiguration.xml">Konfiguration</a>-->
             </th>
             <th style="padding-left: 2ex">
                 <a href="xml_commands.xml">Commands</a>
-            <!--<a href="xml_commands.xml">Kommandos</a>-->
             </th>
             <th style="padding-left: 2ex">
                 <a href="xml_commands.xml">Responses</a>
-            <!--<a href="xml_commands.xml">Antworten</a>-->
             </th>
             <th style="padding-left: 2ex">
                 Additional
-            <!--Weitere-->
             </th>
         </tr>
         <tr>
@@ -62,6 +58,9 @@
                 <scheduler_element name="environment"/><br/>
                 <scheduler_element name="file_order_source"/><br/>
                 <scheduler_element name="file_order_sink"/><br/>
+                <scheduler_element name="history"/><br/>
+                <scheduler_element name="history_on_process"/><br/>
+                <scheduler_element name="history_with_log"/><br/>
                 <scheduler_element name="holiday"/><br/>
                 <scheduler_element name="holidays"/><br/>
                 <scheduler_element name="http.authentication"/><br/>
@@ -80,9 +79,19 @@
                 <scheduler_element name="locks"/><br/>
                 <scheduler_element name="lock"/><br/>
                 <scheduler_element name="lock.use"/><br/>
+                <scheduler_element name="log_level"/><br/>
+                <scheduler_element name="log_mail_bcc"/><br/>
+                <scheduler_element name="log_mail_cc"/><br/>
+                <scheduler_element name="log_mail_to"/><br/>
+                <scheduler_element name="mail_on_error"/><br/>
+                <scheduler_element name="mail_on_process"/><br/>
+                <scheduler_element name="mail_on_success"/><br/>
+                <scheduler_element name="mail_on_warning"/><br/>
+                <scheduler_element name="mail_on_delay_after_error"/><br/>
                 <scheduler_element name="monitor"/><br/>
                 <scheduler_element name="month"/><br/>
                 <scheduler_element name="monthdays"/><br/>
+                <scheduler_element name="order"/><br/>
                 <scheduler_element name="param"/><br/>
                 <scheduler_element name="params"/><br/>
                 <scheduler_element name="period"/><br/>
@@ -108,8 +117,10 @@
                 <scheduler_element name="add_order"/><br/>
                 <scheduler_element name="job_chain.modify"/><br/>
                 <scheduler_element name="job_chain_node.modify"/><br/>
+                <scheduler_element name="job.why"/><br/>
                 <scheduler_element name="kill_task"/><br/>
-                <scheduler_element name="lock"/>
+                <scheduler_element name="licence.use"/><br/>
+                <scheduler_element name="lock"/><br/>
                 <scheduler_element name="lock.remove"/><br/>
                 <scheduler_element name="modify_job"/><br/>
                 <scheduler_element name="modify_hot_folder"/><br/>
@@ -197,12 +208,6 @@
     <scheduler_keyword keyword="Schema"/>
     <scheduler_keyword keyword="XML Schema"/>
     <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">The Job Scheduler XML Schema</a>.
-<!--Siehe auch 
-    <a href="konfiguration.xml">XML-Konfiguration</a>,
-    <a href="xml_commands.xml">XML-Kommandos</a> und
-    <scheduler_keyword keyword="Schema"/>
-    <scheduler_keyword keyword="XML-Schema"/>
-    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.-->
 </p>
 
 
