@@ -160,7 +160,7 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
         <li><b>scheduler.max_kbyte_of_db_log_entry</b></li>
         <p>
           Mit diesem Parameter kann die maximale Größe von Auftragsprotokollen in der Datenbank bestimmt werden. Die Angabe erfolgt in kByte und bezieht sich auf die
-          Felder LOG der Tabelle SCHEDUELR_ORDER_HISTORY und ORDER_XML der Tabelle SCHEDULER_ORDERS.
+          Felder LOG der Tabelle SCHEDULER_ORDER_HISTORY und ORDER_XML der Tabelle SCHEDULER_ORDERS.
         </p>
         <p>
           Die Angabe sollte mind. 1 kByte kleiner als die zugelassene Größe des Datenbankfeldes ORDER_XML sein, da in diesem Feld zusätzlich zu den Log-Ausgaben des Auftrages
