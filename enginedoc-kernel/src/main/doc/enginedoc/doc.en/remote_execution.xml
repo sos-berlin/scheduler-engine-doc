@@ -123,7 +123,7 @@ Characteristics of Job Scheduler Agents:
 					</pre>
 			</p>
 		</li>
-		<li>
+<!--<li>
 	      Declaration of a special licence key in file <scheduler_a href="sos_ini.xml">sos.ini</scheduler_a>
 			<p>
 	      If a Job Scheduler should be run as Agent, a special licence key has to defined in section <scheduler_a href="sos_ini_licence.xml">[licence]</scheduler_a>.
@@ -137,7 +137,7 @@ Characteristics of Job Scheduler Agents:
 	      </p>
           <br/><br/>
 		-->
-		</li>
+<!--</li>-->
 		<li>
 				Both Job Schedulers must be started.
 		<!--Beide Job Scheduler müssen gestartet sein.-->

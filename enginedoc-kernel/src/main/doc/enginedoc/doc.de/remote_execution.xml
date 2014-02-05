@@ -101,13 +101,13 @@
         </p>
       </li>
       
-	    <li>
+	<!--<li>
 	      Deklaration eines speziellen Lizenzschlüssels in der Datei <scheduler_a href="sos_ini.xml">sos.ini</scheduler_a>
 	      <p>
 	      Für den Job Scheduler, der als Agent betrieben werden soll, muss ein spezieller Lizenzschlüssel im Abschnitt <scheduler_a href="sos_ini_licence.xml">[licence]</scheduler_a> deklariert worden sein.
 	      </p>
           <br/><br/>
-	    </li>
+	    </li>-->
 
       <li>
         Beide Job Scheduler müssen gestartet sein.
