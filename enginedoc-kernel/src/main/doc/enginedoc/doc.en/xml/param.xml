@@ -208,13 +208,13 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
 <!--
         <p>
           Mit diesem Parameter kann die maximale Größe von Auftragsprotokollen in der Datenbank bestimmt werden. Die Angabe erfolgt in kByte und bezieht sich auf die
-          Felder LOG der Tabelle SCHEDUELR_ORDER_HISTORY und XML_PAYLOAD der Tabelle SCHEDULER_ORDERS. Die Angabe sollte immer kleiner als die zugelassene Größe des 
+          Felder LOG der Tabelle SCHEDULERR_ORDER_HISTORY und XML_PAYLOAD der Tabelle SCHEDULER_ORDERS. Die Angabe sollte immer kleiner als die zugelassene Größe des 
           Datenbankfeldes XML_PAYLOAD sein, da dieses Feld neben den Log-Ausgaben des Auftrages eine Reihe von Konfigurationseinstellungen des Auftrages enthält.
         </p>
 -->
         <p>
           This parameter determines the maximum size of order logs in the database. The value is in kByte and refers to the database fields 
-          LOG in table SCHEDUELR_ORDER_HISTORY and ORDER_XML in table SCHEDULER_ORDERS.
+          LOG in table SCHEDULERR_ORDER_HISTORY and ORDER_XML in table SCHEDULER_ORDERS.
         </p>
         <p>
           The value of this parameter should be at least 1 kByte smaller than the maximum size of the database field ORDER_XML, because this field contains some additional configuration data of

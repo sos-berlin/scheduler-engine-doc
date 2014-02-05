@@ -4443,7 +4443,7 @@
 
         <message code="SCHEDULER-725">
             <text xml:lang="en">
-                <title>Persistent Order '<p1/>' deleted from database</title>
+                <title>Persistent Order deleted from database</title>
             </text>
         </message>
 
