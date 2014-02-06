@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.sos.scheduler.enginedoc</groupId>
         <artifactId>enginedoc-parent</artifactId>
-        <version>1.5.3347-SNAPSHOT</version>
+        <version>1.5-SNAPSHOT</version>
         <relativePath>enginedoc-parent</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
             <properties>
                 <!-- Versionsbezeichnungen für die nächste Freigabe und die darauffolgende Entwicklungsversion hier einstellen -->
                 <releaseVersion>1.5.3346</releaseVersion>  <!-- Normalerweise ${project.version} ohne -SNAPSHOT -->
-                <developmentVersion>1.5.3347-SNAPSHOT</developmentVersion>
+                <developmentVersion>1.5-SNAPSHOT</developmentVersion>
                 <tag>v${releaseVersion}</tag>
             </properties>
         </profile>
