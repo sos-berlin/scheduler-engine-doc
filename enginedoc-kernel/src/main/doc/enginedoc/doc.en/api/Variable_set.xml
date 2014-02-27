@@ -340,7 +340,7 @@ while( t.hasMoreTokens() )
     -->
 
     <p>
-        Variable_set is used for the Job Scheduler variables and task parameters.
+        Variable_set is used for the JobScheduler variables and task parameters.
         A new Variable_set is created using
         <scheduler_method class="Spooler" method="create_variable_set"/>.
     <!--Variablenmengen werden gebraucht für die Scheduler-weiten Variablen und Task-Parameter.
@@ -354,7 +354,7 @@ while( t.hasMoreTokens() )
     </p>
     <p>
         The value of a variable is known as a variant in the COM interface (JavaScript, VBScript, Perl).
-        Because variables are usually written in the Job Scheduler database, 
+        Because variables are usually written in the JobScheduler database, 
         only variant types which can be converted into strings should be used here.
     <!--In COM (JavaScript, VBScript, Perl) ist ein Variablenwert ein Variant.
         Weil die Variablen in der Regel in die Scheduler-Datenbank geschrieben werden,

@@ -48,7 +48,7 @@
         <xml_attribute name="history_id" type="integer">
             <description>
                 <p>
-                    Completed orders are saved in the Job Scheduler database history.
+                    Completed orders are saved in the JobScheduler database history.
                     This can lead to there being more than one entry being made in the history under a particular order id,
                     for example, when an order repeated because of the <scheduler_element name="run_time"/> setting.
                     Each history entry has a history id which can be used to access the entry. 

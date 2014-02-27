@@ -18,7 +18,7 @@
             Eine Nicht-API-Task
             (<scheduler_element name="process"/> oder <scheduler_element name="script" attribute="language" value="shell"/>)
             wird mitsamt ihren Kindprozessen abgebrochen.
-            Dazu ermittelt der Scheduler alle Kindprozesse und 
+            Dazu ermittelt der JobScheduler alle Kindprozesse und 
             bricht sie ab.
             Unter Unix wird außerdem wird die Prozessgruppe des Task-Prozesses abgebrochen.
         </p>

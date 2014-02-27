@@ -40,8 +40,8 @@
                     <scheduler_element name="show_state"/> unsichtbar.-->
                 </p>
                 <p>
-                    The Job Scheduler makes a job chain visible as soon as an order has been added to the chain.
-                <!--Der Scheduler setzt die Jobkette sichtbar, sobald ein Auftrag eingereiht wird.-->
+                    The JobScheduler makes a job chain visible as soon as an order has been added to the chain.
+                <!--Der JobScheduler setzt die Jobkette sichtbar, sobald ein Auftrag eingereiht wird.-->
                 </p>
             </description>
         </xml_attribute>
@@ -54,32 +54,32 @@
                 </p>
                 <div class="indent">
                     <p style="margin-top: 0pt;">
-                        When the Job Scheduler has been configured to store orders in the database,
+                        When the JobScheduler has been configured to store orders in the database,
                         as soon as an order is added to a job's order queue it will be also be stored in the database.
                         After the order has completed the job chain, it will be deleted from the database
-                    <!--Der Scheduler hält die Aufträge in der Datenbank.
+                    <!--Der JobScheduler hält die Aufträge in der Datenbank.
                         Sobald ein Auftrag in die Auftragswarteschlange eines Jobs eingereiht wird,
-                        speichert der Scheduler ihn auch in der Datenbank.
+                        speichert der JobScheduler ihn auch in der Datenbank.
                         Wenn der Auftrag die Jobkette durchlaufen hat, wird er aus der Datenbank entfernt.-->
                     </p>
                     <p>
-                        The Job Scheduler loads orders from the database on starting and setting up the job chains.
+                        The JobScheduler loads orders from the database on starting and setting up the job chains.
                         See <scheduler_method class="Spooler" method="add_job_chain"/>.
-                    <!--Beim Einrichten der Jobkette (beim Start des Schedulers) lädt der Scheduler die Aufträge aus der Datenbank.
+                    <!--Beim Einrichten der Jobkette (beim Start des Schedulers) lädt der JobScheduler die Aufträge aus der Datenbank.
                         Siehe <scheduler_method class="Spooler" method="add_job_chain"/>.-->
                     </p>
                     <p>
-                        This attribute does not function when the Job Scheduler has been configured to work without a database - 
+                        This attribute does not function when the JobScheduler has been configured to work without a database - 
                         see <scheduler_ini_entry file="factory.ini" section="spooler" entry="db"/>.
-                    <!--Wirkungslos, wenn der Scheduler ohne Datenbank arbeitet, siehe <scheduler_ini_entry file="factory.ini" section="spooler" entry="db"/>.-->
+                    <!--Wirkungslos, wenn der JobScheduler ohne Datenbank arbeitet, siehe <scheduler_ini_entry file="factory.ini" section="spooler" entry="db"/>.-->
                     </p>
                 </div>
                 <p>
                     <code>orders_recoverable="no"</code>
                 </p>
                 <p class="indent" style="margin-top: 0pt;">
-                    The Job Scheduler does not store orders in or load orders from a database.
-                <!--Der Scheduler hält nicht die Aufträge in der Datenbank und lädt sie auch nicht daraus.-->
+                    The JobScheduler does not store orders in or load orders from a database.
+                <!--Der JobScheduler hält nicht die Aufträge in der Datenbank und lädt sie auch nicht daraus.-->
                 </p>
                 <p>
                     See <a href="../datenbank.xml">Database</a>.
@@ -93,18 +93,18 @@
             <description>
                 <p>
                     Only works when specified in conjunction with <scheduler_option name="distributed-orders"/>
-                    and causes orders to be distributed over more than one Job Scheduler.
+                    and causes orders to be distributed over more than one JobScheduler.
                 <!--Wirkt nur mit der Kommandozeilenoption <scheduler_option name="distributed-orders"/>
                     und lässt die Aufträge von mehreren Schedulern verteilt ausführen.-->
                 </p>
                 <p>
-                    <code>distributed="no"</code> prevents a job chain from being processed by more than one Job Scheduler.
-                    Instead, causes a job chain to be processed on the one Job Scheduler,
+                    <code>distributed="no"</code> prevents a job chain from being processed by more than one JobScheduler.
+                    Instead, causes a job chain to be processed on the one JobScheduler,
                     as if it were in a non-distributed environment.
                     Note that in this situation, the name of the job chain <i>must</i> be unique in the cluster
-                    (Note that this is not checked by the Job Scheduler).
+                    (Note that this is not checked by the JobScheduler).
                 <!--<code>distributed="no"</code> lässt die Jobkette nicht verteilt,
-                    sondern nur auf diesem Scheduler ausführen,
+                    sondern nur auf diesem JobScheduler ausführen,
                     wie bei einem nicht-verteiltem Scheduler.
                     Der Name der Jobkette <i>muss</i> in diesem Fall im Cluster eindeutig sein
                     (das wird nicht geprüft).-->
@@ -221,7 +221,7 @@
     &lt;/job_chain>
 &lt;/job_chains></pre>
 
-This is the same as the following Scheduler script:
+This is the same as the following JobScheduler script:
 <!--Das ist dasselbe wie folgendes Scheduler-Skript:-->
 
 <pre>&lt;script language="javascript">&lt;![CDATA[

@@ -31,7 +31,7 @@
     <p>
         Der Supervisor kann die Dateien der 
         <scheduler_a href="dynamic_configuration.xml">dateibasierten Konfiguration</scheduler_a>
-        an mehrere Scheduler verteilen.
+        an mehrere JobScheduler verteilen.
     </p>
 
     <p>

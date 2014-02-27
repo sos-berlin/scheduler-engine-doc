@@ -23,7 +23,7 @@
                     <i>filename</i> gibt den Dateinamen der Basiskonfiguration an.
                 </p>
                 <p>
-                    Wenn der Dateiname nicht absolut ist, geht der Scheduler vom Verzeichnis der Konfigurationsdatei aus,
+                    Wenn der Dateiname nicht absolut ist, geht der JobScheduler vom Verzeichnis der Konfigurationsdatei aus,
                     die das <code>&lt;base></code>-Element enthält.
                 </p>
                 <p>
@@ -48,9 +48,9 @@
             ergänzt oder überschreibt.
         </p>
         <p>
-            Der Scheduler verarbeitet die Basiskonfiguration zuerst.
+            Der JobScheduler verarbeitet die Basiskonfiguration zuerst.
         <!--
-            Mit <code>&lt;base&gt;</code> können Sie eine Basiskonfiguration angegeben, die der Scheduler vor der
+            Mit <code>&lt;base&gt;</code> können Sie eine Basiskonfiguration angegeben, die der JobScheduler vor der
             Konfiguration verarbeitet, die <code>&lt;base&gt;</code> enthält.
             Erst danach verarbeitet er die
             Konfiguration, die <code>&lt;base></code> enthält.
@@ -64,12 +64,12 @@
             einstellt.
         </p>
         <p>
-            Eine Basiskonfiguration kann auf eine weitere Basiskonfiguration verweisen. Der Scheduler prüft nicht, ob eine
+            Eine Basiskonfiguration kann auf eine weitere Basiskonfiguration verweisen. Der JobScheduler prüft nicht, ob eine
             Basiskonfiguration selbstbezüglich aufgerufen wird.
         </p>
         <p>
             <code>&lt;base&gt;</code> können Sie wiederholt angeben.
-            Der Scheduler arbeitet sie der Reihe nach ab.
+            Der JobScheduler arbeitet sie der Reihe nach ab.
             Die zweite Basiskonfiguration ergänzt oder überschreibt die Einstellungen der ersten.
         </p>
     </description>

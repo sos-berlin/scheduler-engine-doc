@@ -45,18 +45,18 @@
     <scheduler_keyword keyword="Eclipse"/>
     
     <p>
-        Starts the Job Scheduler using Java,
+        Starts the JobScheduler using Java,
         so that jobs written in Java can be debugged (e.g. using Eclipse).
         See <a href="../javadoc/sos/spooler/Spooler_program.html">Javadoc</a> for information about the methods.
-    <!--Startet den Scheduler über Java, 
+    <!--Startet den JobScheduler über Java, 
         so dass in Java geschriebene Jobs debuggt werden können (z.B. mit Eclipse).
         Zu den Methoden siehe <a href="../javadoc/sos/spooler/Spooler_program.html">Javadoc</a>.-->
     </p>
     <p>
-        The Job Scheduler is started as a Windows application and not as a console program. 
+        The JobScheduler is started as a Windows application and not as a console program. 
         Output to <code>stderr</code> is lost - standard output is shown in Eclipse.
         <scheduler_option name="log-dir" value="*stderr"/> shows no output.
-    <!--Der Scheduler wird als Windows-Applikation, nicht als Konsol-Programm gestartet. 
+    <!--Der JobScheduler wird als Windows-Applikation, nicht als Konsol-Programm gestartet. 
         Ausgaben nach <code>stderr</code> gehen verloren.
         <scheduler_option name="log-dir" value="*stderr"/> liefert keine Ausgabe.-->
     </p>

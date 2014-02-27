@@ -49,10 +49,10 @@
             <description>
                 <p>
                     Specifies the folder in which XML elements should be written.
-                    The Job Scheduler creates this directory if it does not already exist 
+                    The JobScheduler creates this directory if it does not already exist 
                     (including all higher level directories, if necessary to the root directory).
                 <!--Gibt den Ordner an, in das das XML-Element geschrieben werden soll.
-                    Der Scheduler legt das Konfigurationsverzeichnis bei Bedarf an
+                    Der JobScheduler legt das Konfigurationsverzeichnis bei Bedarf an
                     (einschließlich aller oberen Verzeichnisse, bis auf das Wurzelverzeichnis).-->
                 </p>
             </description>

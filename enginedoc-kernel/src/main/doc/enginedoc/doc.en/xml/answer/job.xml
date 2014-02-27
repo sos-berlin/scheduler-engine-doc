@@ -34,7 +34,7 @@
 							<code>state="none"</code>
 						</td>
 						<td valign="baseline" style="padding-top: 1ex; padding-left: 2ex">
-                            The initial status of a job as the Job Scheduler starts.
+                            The initial status of a job as the JobScheduler starts.
                         <!--Der anfängliche Status des Jobs beim Start des Schedulers.-->
 						</td>
 					</tr>
@@ -141,9 +141,9 @@
 		<xml_attribute name="next_start_time" type="yyyy-mm-dd hh:mm:ss.mmm" title="Next planned start time">
 <!--<xml_attribute name="next_start_time" type="yyyy-mm-dd hh:mm:ss.mmm" title="Voraussichtliche nächste Startzeit"/>-->
         <!--TEXT AUSKOMMENTIERT - SEE MAIL JZ 16.03.2006 18:56 -->
-        <!--In order to determine the next start time, the Job Scheduler checks the next hundred periods,
+        <!--In order to determine the next start time, the JobScheduler checks the next hundred periods,
             until it finds a period with <code>single_start</code> or <code>repeat</code>.-->
-        <!--Zur Ermittlung der nächsten Startzeit prüft der Scheduler die nächsten hundert Perioden,
+        <!--Zur Ermittlung der nächsten Startzeit prüft der JobScheduler die nächsten hundert Perioden,
             bis er eine Periode mit <code>single_start</code> oder <code>repeat</code> erreicht.-->
 		</xml_attribute>
 		<xml_attribute name="delay_after_error" type="yyyy-mm-dd hh:mm:ss.mmm" title="delay_after_error takes effect after an error"/>

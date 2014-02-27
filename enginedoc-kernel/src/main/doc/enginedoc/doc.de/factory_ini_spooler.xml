@@ -36,7 +36,7 @@
         <ini_entry name="db_check_integrity" type="yes|no">
             <description>
                 <p>
-                    Der Scheduler führt zusätzliche Prüfungen der Datenbank-Integrität durch.
+                    Der JobScheduler führt zusätzliche Prüfungen der Datenbank-Integrität durch.
                 </p>
             </description>
         </ini_entry>

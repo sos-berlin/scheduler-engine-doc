@@ -106,9 +106,9 @@
             um beim Einfügen eines Auftrags die Eindeutigkeit der Auftragskennung sicherstellen zu können.-->
         </p>
         <p>
-            The Job Scheduler does not accept the submission of an order in a job chain,
+            The JobScheduler does not accept the submission of an order in a job chain,
             when the order ID has already been allocated in that Order_id_space.
-        <!--Der Scheduler lehnt das Einfügen eines Auftrags in eine Jobkette ab,
+        <!--Der JobScheduler lehnt das Einfügen eines Auftrags in eine Jobkette ab,
             wenn die Auftragskennung im Order_id_space bereits vergeben ist.-->
         </p>
         <p>

@@ -3,10 +3,10 @@
 
 <!--$Id$-->
 
-<!--title               = "Vom Scheduler verwendete SQL-Anweisungen für Oracle®"-->
+<!--title               = "Vom JobScheduler verwendete SQL-Anweisungen für Oracle®"-->
 
 <description
-    title               = "SQL Instructions Used by the Job Scheduler for Oracle®"
+    title               = "SQL Instructions Used by the JobScheduler for Oracle®"
     base_dir            = ""
     parent_page         = "scheduler_sql.xml"
     author              = "$Author: ap $"

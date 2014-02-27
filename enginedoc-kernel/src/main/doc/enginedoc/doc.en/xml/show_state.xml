@@ -40,11 +40,11 @@
                 </p>
 
                 <p>
-                    The Job Scheduler filters command replies so that they do not become unnecessarily large.
+                    The JobScheduler filters command replies so that they do not become unnecessarily large.
                     The following key words may be used (if combined, then separated with a comma) 
                     to extend command replies.
                 <!--Damit die Antwort eines Kommandos nicht unnötig groß wird,
-                    filtert der Scheduler sie.
+                    filtert der JobScheduler sie.
                     Mit einer Kombination folgender Schlüsselwörter (durch Komma getrennt)
                     können Sie die Antwort erweitern.-->
                 </p>

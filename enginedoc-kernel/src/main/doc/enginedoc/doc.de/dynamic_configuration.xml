@@ -12,8 +12,8 @@
 >
     <p>
         Jobs, Job-Ketten, Daueraufträge, Prozessklassen und Sperren (im folgenden Objekte genannt)
-        können in einzelnen Dateien gehalten werden, die der Job Scheduler automatisch nach Änderung übernimmt.
-        Der Job Scheduler überwacht Verzeichnisse (<em>Hot Folders</em>), für die hinzugefügte,
+        können in einzelnen Dateien gehalten werden, die der JobScheduler automatisch nach Änderung übernimmt.
+        Der JobScheduler überwacht Verzeichnisse (<em>Hot Folders</em>), für die hinzugefügte,
         geänderte und gelöschte Dateien als entsprechende Operationen zum Hinzufügen, Ändern
         und Entfernen von Jobs, Job-Ketten etc. ausgeführt werden. 
     </p>
@@ -26,7 +26,7 @@
     <h2>Konfigurationsverzeichnis</h2>
     
     <p>
-        Die Dateien liest der Job Scheduler aus dem Konfigurationsvereichnis und dessen Unterverzeichnissen.
+        Die Dateien liest der JobScheduler aus dem Konfigurationsvereichnis und dessen Unterverzeichnissen.
         Das Konfigurationsverzeichnis kann eingestellt werden mit
     </p>
     <ul>
@@ -36,24 +36,24 @@
         </li>
         <li>
             <scheduler_option name="config"/>. 
-            Die Konfigurationsdatei erwartet der Scheduler dann im Konfigurationsverzeichnis (Voreinstellung <code>./config</code>)
+            Die Konfigurationsdatei erwartet der JobScheduler dann im Konfigurationsverzeichnis (Voreinstellung <code>./config</code>)
             unter dem Namen <code>scheduler.xml</code>.
         </li>
     </ul>
     
     <p>
-        Der Job Scheduler überwacht das Konfigurationsverzeichnis und seine Unterverzeichnisse
+        Der JobScheduler überwacht das Konfigurationsverzeichnis und seine Unterverzeichnisse
         und übernimmt hinzugefügte und geänderte Dateien.
-        Löschen einer Datei führt zum Löschen des entsprechenden Objekts im Job Scheduler.
+        Löschen einer Datei führt zum Löschen des entsprechenden Objekts im JobScheduler.
     </p>
 
     <p>
-        Unter Windows verwendet der Job Scheduler die Verzeichnisüberwachung des Betriebsystems, 
+        Unter Windows verwendet der JobScheduler die Verzeichnisüberwachung des Betriebsystems, 
         bemerkt Änderungen also sofort.
         Außerdem prüft er die Verzeichnisse im Minutenabstand.
     </p>
     <p>
-        Unter Unix überwacht der Job Scheduler die Verzeichnisse im Abstand von zwischen 5 und 60 Sekunden.
+        Unter Unix überwacht der JobScheduler die Verzeichnisse im Abstand von zwischen 5 und 60 Sekunden.
         Nach einer Änderung verkürzt er den Abstand auf fünf Sekunden und 
         verlängert ihn, wenn keine Änderung vorliegt, bis auf 60 Sekunden.
     </p>
@@ -177,20 +177,20 @@
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     
-    <h2>Spiegelung des Verzeichnisses im Job Scheduler</h2>
+    <h2>Spiegelung des Verzeichnisses im JobScheduler</h2>
 
     <p>
-        Der Job Scheduler legt für jede Datei mit bekannter Dateinamensendung (<code>.job</code> usw.)
-        ein entsprechendes Objekt im Job Scheduler an und verbindet es mit der Datei.
-        Der Job Scheduler überwacht den Zeitstempel der Datei und geht bei Änderung wie folgt vor.
+        Der JobScheduler legt für jede Datei mit bekannter Dateinamensendung (<code>.job</code> usw.)
+        ein entsprechendes Objekt im JobScheduler an und verbindet es mit der Datei.
+        Der JobScheduler überwacht den Zeitstempel der Datei und geht bei Änderung wie folgt vor.
     </p>
     
     <ul class="big">
         <li>
-            Ein hinzugefügter Dateiname führt zur Anlage eines neuen, noch leeren Objekts im Job Scheduler,
+            Ein hinzugefügter Dateiname führt zur Anlage eines neuen, noch leeren Objekts im JobScheduler,
             das mit der Datei verbunden ist.
             Das Objekt ist mit <scheduler_element name="show_state"/> sichtbar.
-            Z.B. wird eine Datei <code>xxx.job.xml</code> im Job Scheduler gespiegelt als ein Job
+            Z.B. wird eine Datei <code>xxx.job.xml</code> im JobScheduler gespiegelt als ein Job
             <scheduler_element name="job" attribute="name" value="xxx"/>,
             auch wenn die Datei nicht lesbar ist.
         </li>
@@ -201,10 +201,10 @@
         </li>
         <li>
             Wenn während des Löschens die Datei wieder angelegt wird,
-            geht der Job Scheduler wie bei einer geänderten Datei vor.
+            geht der JobScheduler wie bei einer geänderten Datei vor.
         </li>
         <li>
-            Nach einer Änderung einer Datei (der Zeitstempel hat sich geändert) liest der Job Scheduler die Datei.
+            Nach einer Änderung einer Datei (der Zeitstempel hat sich geändert) liest der JobScheduler die Datei.
             Kann die Datei geladen werden, 
             dann tauscht er Prozessklassen und Sperren direkt,
             während er Jobs, Job-Klassen und Daueraufträge verzögert tauscht,
@@ -212,12 +212,12 @@
         </li>
         <li>
             Ein Fehler beim Lesen einer Datei beeinflusst nicht ein bereits vorhandenes Objekt.
-            Der Job Scheduler vermerkt den Fehler im Objekt und verschickt eine eMail.
+            Der JobScheduler vermerkt den Fehler im Objekt und verschickt eine eMail.
             <scheduler_element name="show_state"/> zeigt den Fehler.
         </li>
         <li>
             Objekte mit denselben (Datei)Namen können mehrfach in unterschiedlichen Verzeichnissen
-            vorhanden sein. Der Job Scheduler unterscheidet diese Objekte anhand ihres Pfads.
+            vorhanden sein. Der JobScheduler unterscheidet diese Objekte anhand ihres Pfads.
             Wenn auf Objekte aus anderen Verzeichnissen verwiesen wird, z.B.
             <pre>&lt;job  process_class="<i>/my_project/multi.process_class.xml</i>"/&gt;</pre>
             <pre>&lt;job_chain_node  job="<i>/other_project/hello_world</i>"/&gt;</pre>
@@ -246,12 +246,12 @@
     <h3>Prozessklassen</h3>
 
     <p>
-        Änderungen an einer Prozessklasse übernimmt der Job Scheduler sofort.
+        Änderungen an einer Prozessklasse übernimmt der JobScheduler sofort.
     </p>
     <p>
-        Beim Löschen einer Prozessklasse beendet der Job Scheduler alle zugehörigen Tasks.
+        Beim Löschen einer Prozessklasse beendet der JobScheduler alle zugehörigen Tasks.
         Erst wenn keine Task mehr läuft, löscht er die Prozessklasse.
-        Bis dahin startet der Job Scheduler keine weiteren Tasks, uns verhält sich als ob die Prozessklasse erschöpft wäre.
+        Bis dahin startet der JobScheduler keine weiteren Tasks, uns verhält sich als ob die Prozessklasse erschöpft wäre.
     </p>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -259,12 +259,12 @@
     <h3>Sperren</h3>
 
     <p>
-        Änderungen an einer Sperre übernimmt der Job Scheduler sofort.
+        Änderungen an einer Sperre übernimmt der JobScheduler sofort.
     </p>
     <p>
-        Beim Löschen einer Sperre beendet der Job Scheduler alle zugehörigen Tasks.
+        Beim Löschen einer Sperre beendet der JobScheduler alle zugehörigen Tasks.
         Erst wenn keine Task mehr läuft, löscht er die Sperre.
-        Bis dahin startet der Job Scheduler keine weiteren Tasks, und verhält sich als ob die Sperre belegt wäre.
+        Bis dahin startet der JobScheduler keine weiteren Tasks, und verhält sich als ob die Sperre belegt wäre.
     </p>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -272,10 +272,10 @@
     <h3>Jobs</h3>
 
     <p>
-        Einen geänderten Job übernimmt der Job Scheduler, nachdem er alle Tasks beendet hat.
+        Einen geänderten Job übernimmt der JobScheduler, nachdem er alle Tasks beendet hat.
     </p>
     <p>
-        Beim Löschen verfährt der Job Scheduler ebenso.
+        Beim Löschen verfährt der JobScheduler ebenso.
         Keine neue Tasks werden gestartet.
     </p>
     <p>
@@ -288,14 +288,14 @@
     <h3>Job-Ketten</h3>
 
     <p>
-        Eine geänderte Job-Kette übernimmt der Job Scheduler, nachdem alle Aufträge ihren Job-Schritt beendet haben.
+        Eine geänderte Job-Kette übernimmt der JobScheduler, nachdem alle Aufträge ihren Job-Schritt beendet haben.
         Weitere Job-Schritte werden solange verhindert.
     </p>
     <p>
-        Aufträge in Job-Kettenknoten mit gleichem Auftragszustand übernimmt der Job Scheduler in die geänderte Job-Kette.
+        Aufträge in Job-Kettenknoten mit gleichem Auftragszustand übernimmt der JobScheduler in die geänderte Job-Kette.
     </p>
     <p>
-        Beim Löschen verfährt der Job Scheduler ebenso.
+        Beim Löschen verfährt der JobScheduler ebenso.
     </p>
     <p>
         Fehlt der Job-Kette ein Job, dann sammeln sich die Aufträge im Job-Kettenknoten,
@@ -307,7 +307,7 @@
         Fehlt der Job-Kette eine verschachtelte Job-Kette <scheduler_element name="job_chain_node.job_chain"/>,
         dann ist die gesamte Job-Kette nicht bereit.
         Alle untergeordneten Job-Ketten müssen bekannt sein, 
-        damit der Job Scheduler die Eindeutigkeit der Auftragskennungen sicherstellen kann.
+        damit der JobScheduler die Eindeutigkeit der Auftragskennungen sicherstellen kann.
     </p>
     <p>
         Ebenso wird eine untergeordnete Job-Kette erst gelöscht,

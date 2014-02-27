@@ -20,12 +20,12 @@
     <h2>Der bisherige Algorithmus</h2>
 
     <p>
-        Der Scheduler reagiert auf Ereignisse. 
+        Der JobScheduler reagiert auf Ereignisse. 
         Die "große Schleife" des Schedulers wartet auf das nächste Ereignis,
         um es zu behandeln.
         Dazu ruft er solange Objekte 
         (v.a. Jobs und Tasks) auf, bis keins mehr etwas getan hat.
-        Schließlich wartet der Scheduler auf das nächste Ereignis.
+        Schließlich wartet der JobScheduler auf das nächste Ereignis.
         Dadurch werden nach einem Ereignis und nach einer Operation eines Objekts
         die Folge-Operationen durchgeführt, solange bis bei einem Durchlauf kein Objekt etwas getan hat.
         Dieser Algorithmus stammt noch vom allerersten Scheduler, 
@@ -37,21 +37,21 @@
     <ul>
         <li>
             Es gibt keine Zuordnung zwischen Ereignis und Objekt.
-            Nach einem Ereignis ruft der Scheduler alle Objekte auf,
+            Nach einem Ereignis ruft der JobScheduler alle Objekte auf,
             die dann selbst prüfen müssen, ob sie etwas zu tun haben.
             Wenn auf ein Ereignis hin kein Objekt reagiert,
             kommt es zu einer Schleife,
-            die der Scheduler mit <scheduler_message code="SCHEDULER-261"/> bremst.
+            die der JobScheduler mit <scheduler_message code="SCHEDULER-261"/> bremst.
         </li>
         <li>
             Es ist überflüssig, nach jedem kleinen Ereignis alle Jobs und Tasks zu durchlaufen.
-            Der Scheduler wird durch einen neuen Algorithmus sparsamer mit CPU-Zeit umgehen.
+            Der JobScheduler wird durch einen neuen Algorithmus sparsamer mit CPU-Zeit umgehen.
         </li>
     </ul>
 
     <p>
         Wenn ein async_continue/do_something() eines Objekts true liefert ("something_done"), 
-        wiederholt der Scheduler die Schleife.
+        wiederholt der JobScheduler die Schleife.
         Das soll ersetzt werden durch direkte Signalisierung: 
         wenn zum Beispiel ein Auftrag weitergereicht wird, muss der nächste Job benachrichtigt werden.
         Jobs an hinterer Stelle in einer Jobkette sollten vorrangig gestartet werden. 
@@ -69,7 +69,7 @@
             Auf Ctrl-C und kill-Signal prüfen
         </li>
         <li>
-            Scheduler aktivieren (wenn backup-Scheduler wartet)
+            JobScheduler aktivieren (wenn backup-Scheduler wartet)
         </li>
         <li>
             <scheduler_element name="modify_spooler"/>, 
@@ -110,7 +110,7 @@
             Order_subsystem::check_exception(), Database_order_detector::async_check_exception()
         </li>
         <li>
-            Prüfen, ob Scheduler beendet werden kann (alle Tasks beendet?)
+            Prüfen, ob JobScheduler beendet werden kann (alle Tasks beendet?)
         </li>
         <li>
             Auf Ereignis oder Zeitablauf warten ...
@@ -267,9 +267,9 @@
     
     <h3>Ereignisse für die Verbindung zu einem anderen Scheduler</h3>
     <p>
-        Der andere Scheduler kann 
+        Der andere JobScheduler kann 
         ein Supervisor (<scheduler_element name="config" attribute="supervisor"/>)
-        ein Remote Scheduler (<scheduler_element name="process_class" attribute="remote_scheduler"/>) sein.
+        ein Remote JobScheduler (<scheduler_element name="process_class" attribute="remote_scheduler"/>) sein.
     </p>
     <ul>
         <li>
@@ -307,7 +307,7 @@
     <ul>
         <li>
             Sommerzeitumschaltung:
-            Der Scheduler arbeitet mit lokaler Zeit, weshalb seine Uhr umgestellt werden muss.
+            Der JobScheduler arbeitet mit lokaler Zeit, weshalb seine Uhr umgestellt werden muss.
             Die <scheduler_element name="run_time"/> müssen neu berechnet werden.
         </li>
         <li>
@@ -361,7 +361,7 @@
         <li>
             Wenn ein Objekt a etwas einem anderem Objekt b bereitstellt
             (zum Beispiel stellt eine Jobkette einen Auftrag dem nächsten Job bereit, der dann aufgerufen werdem muss),
-            soll a b benachrichtigen, damit der Scheduler b aufruft.
+            soll a b benachrichtigen, damit der JobScheduler b aufruft.
             Das ist ein <i>internes Ereignis</i> (jetzt zum Beispiel <code>Job::signal()</code>).
         </li>
     </ul>

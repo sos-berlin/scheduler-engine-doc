@@ -37,13 +37,13 @@
         Wenn ein Ereignis ein Auftrag ist, kann er wie üblich erzeugt werden.
         Außerdem ließe sich einführen, 
         dass Aufträge über eine neue Datenbanktabelle,
-        die der Scheduler periodisch abfragt, 
+        die der JobScheduler periodisch abfragt, 
         importiert werden können.
     </p>
 
     <h3>Ereignisse des Schedulers</h3>
     <p>
-        Ereignisse im Scheduler können zu Aufträgen führen.
+        Ereignisse im JobScheduler können zu Aufträgen führen.
     </p>
     
 

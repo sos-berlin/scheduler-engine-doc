@@ -33,8 +33,8 @@
             <!--<code>&lt;select_event event_type="…"/></code> einzelne Ereignistypen (sonst alle Ereignistypen)-->
             </li>
             <li>
-                <code>&lt;select_event scheduler_id="…"/></code> individual Job Scheduler (otherwise all Job Schedulers)
-            <!--<code>&lt;select_event scheduler_id="…"/></code> einzelne Scheduler (sonst alle Scheduler)-->
+                <code>&lt;select_event scheduler_id="…"/></code> individual JobScheduler (otherwise all JobSchedulers)
+            <!--<code>&lt;select_event scheduler_id="…"/></code> einzelne JobScheduler (sonst alle Scheduler)-->
             </li>
         </ul>
     </description>
@@ -51,18 +51,18 @@
             <description>
                 <p>
                     
-                    Specifies the computer name (or IP address) and TCP port number of the Job Scheduler,
+                    Specifies the computer name (or IP address) and TCP port number of the JobScheduler,
                     which should take on the self-supervision role and function as proxy for the
-                    other Job Schedulers.
-                <!--Gibt mit Rechnernamen (oder IP-Adresse) und TCP-Portnummer den Scheduler an,
+                    other JobSchedulers.
+                <!--Gibt mit Rechnernamen (oder IP-Adresse) und TCP-Portnummer den JobScheduler an,
                     der die eigene Supervisor-Funktion zusätzlich annehmen soll und 
                     als Stellvertreter angesprochen werden kann.-->
                 </p>
                 <p>
-                    Other Job Schedulers, which register themselves with this supervisory Job Scheduler using
+                    Other JobSchedulers, which register themselves with this supervisory JobScheduler using
                     <scheduler_element name="config" attribute="supervisor"/>,
                     are provided with the list of proxies.
-                <!--Andere Scheduler, die sich an diesen Scheduler (den Supervisor) mit
+                <!--Andere Scheduler, die sich an diesen JobScheduler (den Supervisor) mit
                     <scheduler_element name="config" attribute="supervisor"/> anschließen,
                     bekommen die Liste der Stellvertreter.-->
                 </p>

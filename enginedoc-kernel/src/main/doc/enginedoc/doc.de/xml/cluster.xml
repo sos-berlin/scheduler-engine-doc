@@ -20,10 +20,10 @@
             <description>
                 <p>
                     Wenn der Herzschlag eines anderen aktiven Schedulers im Cluster sich um diese Frist verspätet,
-                    wird der dieser Scheduler für tot erklärt.
+                    wird der dieser JobScheduler für tot erklärt.
                 </p>
                 <p>
-                    Wenn der eigene Scheduler inaktiv ist und 
+                    Wenn der eigene JobScheduler inaktiv ist und 
                     mit der Option <scheduler_option name="exclusive"/> betrieben wird,
                     kann er anschließend aktiv werden.
                 </p>
@@ -39,8 +39,8 @@
                 <p>
                     Die Einstellung dient zur Selbstkontrolle des Schedulers.
                     Wenn der eigene Herzschlag sich um diese Frist verspätet,
-                    bricht der Scheduler sofort ab und startet sich neu.
-                    Damit kommt der Scheduler der Deaktivierung durch einen anderen Scheduler zuvor,
+                    bricht der JobScheduler sofort ab und startet sich neu.
+                    Damit kommt der JobScheduler der Deaktivierung durch einen anderen JobScheduler zuvor,
                     und verhindert den kurzzeitigen Parallelbetrieb wegen verzögerten Herzschlags.
                 </p>
             </description>

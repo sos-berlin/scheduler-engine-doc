@@ -122,7 +122,7 @@
                         <td valign="baseline" style="padding-top: 1ex"><scheduler_keyword keyword="running_remote_process"/><code>state="running_remote_process"</code></td>
                         <td valign="baseline" style="padding-top: 1ex; padding-left: 2ex">
                             Only when the job is specifed using <scheduler_element name="process"/>: 
-                            the process is running on a remote Job Scheduler.
+                            the process is running on a remote JobScheduler.
                         <!--Nur, wenn der Job mit <scheduler_element name="process"/> definiert ist: Der Prozess läuft unter einem entfernten Scheduler.-->
                         </td>
                     </tr>

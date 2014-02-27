@@ -62,12 +62,12 @@
                     <dd>
                         Den Name der Klasse geben Sie mit dem Attribut <code>java_class</code> an.
                         Sie können den Programm-Code der Java-Klasse als Text in <code>&lt;script></code> angegeben.
-                        Der Scheduler kompiliert den Code mit <code>javac</code>.
+                        Der JobScheduler kompiliert den Code mit <code>javac</code>.
                     </dd>
 
                     <dt><code>language="JavaScript"</code></dt>
                     <dd>
-                        <a href="../script_language_javascript.xml">JavaScript</a> liegt in der Implementierung von Mozilla Spidermonkey vor und wird mit dem Scheduler ausgeliefert.
+                        <a href="../script_language_javascript.xml">JavaScript</a> liegt in der Implementierung von Mozilla Spidermonkey vor und wird mit dem JobScheduler ausgeliefert.
                     </dd>
 
                     <dt><code>language="JScript"</code> oder <code>"VBScript"</code></dt>
@@ -83,7 +83,7 @@
 
                     <dt><code>language="shell"</code></dt>
                     <dd>
-                        Unter Windows übergibt der Scheduler das Skript <code>cmd.exe</code>
+                        Unter Windows übergibt der JobScheduler das Skript <code>cmd.exe</code>
                         (das Skript wird in einer temporären Datei mit der Namensendung <code>.cmd</code> gespeichert).
                     </dd>
                     <dd>
@@ -115,7 +115,7 @@
             <description>
                 <p>
                     Nur unter Windows für <code>language="shell"</code>: 
-                    Gibt die Codierung an, in der der Scheduler die temporäre <code>.cmd</code>-Datei erstellt.
+                    Gibt die Codierung an, in der der JobScheduler die temporäre <code>.cmd</code>-Datei erstellt.
                     Windows verlangt für Batch-Dateien <code>encoding="oem"</code>, was voreingestellt ist.
                     Außerdem möglich: <code>"cp850"</code>, <code>"cp437"</code> und <code>"latin1"</code>.
                 </p>

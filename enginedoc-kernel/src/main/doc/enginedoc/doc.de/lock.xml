@@ -15,7 +15,7 @@
     <scheduler_keyword keyword="Semaphor"/>
 
     <p>
-			Sperren im Job Scheduler verhindern die Ausführung eines Jobs, 
+			Sperren im JobScheduler verhindern die Ausführung eines Jobs, 
 			solange eine bestimmte Sperre von einem oder mehreren anderen Job(s) belegt ist. 
 			Sperren stehen für Jobs in Job-Ketten und für einzelne Jobs zur Verfügung. 
 			Wartet ein Job auf die Freigabe einer Sperre, wird er automatisch gestartet,
@@ -54,7 +54,7 @@
     </p>
     
     <p>
-      Wenn eine Sperre verwendet wird, die nicht deklariert wurde, startet der Job Scheduler 
+      Wenn eine Sperre verwendet wird, die nicht deklariert wurde, startet der JobScheduler 
       den Job nicht.
     </p>
     
@@ -154,7 +154,7 @@
         <code>sqlldr</code> zum Beispiel läuft in einem eigenen Prozess.
     </p>
     <p>
-        Wenn der Scheduler neu gestartet worden ist, aber der die Task ausführende Prozess oder ein Subprozess
+        Wenn der JobScheduler neu gestartet worden ist, aber der die Task ausführende Prozess oder ein Subprozess
         noch läuft (das passiert bei kill -9 auf den Scheduler),
         dann ist die Sperre frei, obwohl die zu schützende Operation noch läuft.
         <!- -Unter Windows könnte das anscheinend mit den <a href="windows_job_objects.xml">Windows-Jobs</a> 
@@ -190,7 +190,7 @@
         wenn die Sperre gesetzt werden konnte. 
         Wenn der Aufruf <code>false</code> liefert, 
         verlässt man spooler_process(). 
-        Der Scheduler wiederholt den Aufruf von spooler_process(), 
+        Der JobScheduler wiederholt den Aufruf von spooler_process(), 
         sobald die Sperre frei ist. 
         Die Sperre wird freigegeben, 
         wenn die Task kein weiteres spooler_process() ausführt (return false, Task.end(), Task.delay_next_process()). 

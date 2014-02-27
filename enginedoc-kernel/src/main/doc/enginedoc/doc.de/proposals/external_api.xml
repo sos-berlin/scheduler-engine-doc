@@ -37,7 +37,7 @@
         <pre>var scheduler = new ActiveXObject( "sos.scheduler" );
 scheduler.connect( "host:4444" );
 
-// scheduler ist jetzt das Objekt spooler des verbundenen Schedulers
+// scheduler ist jetzt das Objekt spooler des verbundenen JobSchedulers
 
 scheduler.log( "Eine Zeile im Hauptprotokoll" );
 

@@ -56,9 +56,9 @@
             <description>
                 <p>
                     <code>order="yes"</code> defines a job as being order controlled.
-                    The Job Scheduler will only start an order controlled job when an order for the job exists.
+                    The JobScheduler will only start an order controlled job when an order for the job exists.
                 <!--Bei <code>order="yes"</code> ist der Job auftragsgesteuert. 
-                    Der Scheduler startet diesen Job nur, wenn ein Auftrag vorliegt.-->
+                    Der JobScheduler startet diesen Job nur, wenn ein Auftrag vorliegt.-->
                 </p>
                 <p>
                     A script can check this attribute using the 
@@ -100,10 +100,10 @@
     <!--<xml_attribute name="min_tasks" type="zahl" initial="0" title="Mindeste Anzahl der stets laufenden Tasks">-->
             <description>
                 <p>
-                    The Job Scheduler keeps this minimum number of tasks running.
+                    The JobScheduler keeps this minimum number of tasks running.
                     This allows order controlled tasks, which require a long time to initialize, 
                     to be held in waiting.
-                <!--Der Scheduler sorgt dafür, das wenigstens die angegebene Anzahl Tasks läuft.
+                <!--Der JobScheduler sorgt dafür, das wenigstens die angegebene Anzahl Tasks läuft.
                     So lassen sich auftragsgesteuerte Tasks in Bereitschaft bringen,
                     die sehr lange für ihre Initialisierung brauchen.-->
                 </p>
@@ -112,13 +112,13 @@
                 <!--<scheduler_element name="job" attribute="tasks"/> muss groß genug sein.-->
                 </p>
                 <p>
-                    The Job Scheduler will start additional tasks when:
-                <!--Der Scheduler startet weitere Tasks, wenn-->
+                    The JobScheduler will start additional tasks when:
+                <!--Der JobScheduler startet weitere Tasks, wenn-->
                 </p>
                 <ul>
                     <li>
                         it is starting
-                    <!--der Scheduler startet-->
+                    <!--der JobScheduler startet-->
                     </li>
                     <li>
                         a task has ended
@@ -159,10 +159,10 @@
                 </ul>
                 <p>
                     In order to prevent an overload, 
-                    the Job Scheduler does not start any new tasks immediately after 
+                    the JobScheduler does not start any new tasks immediately after 
                     a task has been completed.
                     The completion of a task causes a new one to be started only in the following situations:
-                <!--Um ein Heißlaufen zu verhindern, startet der Scheduler keine neuen Tasks,
+                <!--Um ein Heißlaufen zu verhindern, startet der JobScheduler keine neuen Tasks,
                     nachdem sich eine sofort beendet hat.
                     Nur in folgenden Fällen führt das Ende einer Task zum Start einer neuen:-->
                 </p>
@@ -215,12 +215,12 @@
                     or the whole task for a non-API task 
                     (<scheduler_element name="process"/> or <scheduler_element name="script" attribute="language" value="shell"/>). 
                     An error does not occur when the priority of a job has not been set.
-                    Should a task exceed the time allowed, then the Job Scheduler aborts the task.
+                    Should a task exceed the time allowed, then the JobScheduler aborts the task.
                 <!--Befristet eine Task-Operation (spooler_open, spooler_process etc.)
                     oder bei einer Nicht-API-Task 
                     (<scheduler_element name="process"/> oder <scheduler_element name="script" attribute="language" value="shell"/>)
                     die ganze Task. 
-                    Nach Ablauf der Frist bricht der Scheduler die Task ab.-->
+                    Nach Ablauf der Frist bricht der JobScheduler die Task ab.-->
                 </p>
                 <p>
                     <i>duration</i> can be specified in seconds or 
@@ -237,10 +237,10 @@
                 <p>
                     Limits the idle time of an order controlled job (<code>order="yes"</code>).
                     When a task is waiting on the next order and this idle time is exceeded, 
-                    then the Job Scheduler ends the task.
+                    then the JobScheduler ends the task.
                 <!--Begrenzt den Leerlauf eines auftragsgesteuerten Jobs (<code>order="yes"</code>).
                     Wenn eine Task auf den nächsten Auftrag wartet und in der Frist kein Auftrag
-                    eintrifft, beendet der Scheduler sie.-->
+                    eintrifft, beendet der JobScheduler sie.-->
                 </p>
                 <p>
                     The <i>duration</i> can be specified in seconds or in the 
@@ -387,10 +387,10 @@
                     unsichtbar.-->
                 </p>
                 <p>
-                    The Job Scheduler makes a job visible as soon as a task has been loaded when <code>visible="no"</code> is set.
+                    The JobScheduler makes a job visible as soon as a task has been loaded when <code>visible="no"</code> is set.
                     When <code>visible="never"</code> is set, then this job will never be returned when querying using the 
                     <scheduler_element name="show_state"/> command.
-                <!--Bei <code>visible="no"</code> setzt der Scheduler den Job sichtbar, sobald eine Task eingereiht wird.
+                <!--Bei <code>visible="no"</code> setzt der JobScheduler den Job sichtbar, sobald eine Task eingereiht wird.
                     Bei <code>visible="never"</code> ist das nicht der Fall.-->
                 </p>
             </description>
@@ -464,14 +464,14 @@
                 <p>
                     Note that because a task ending with a signal which may be ignored can 
                     cause a TCP connection error (<code>ECONNRESET</code>),
-                    the Job Scheduler is so configured that TCP connection errors only lead to a job being stopped 
+                    the JobScheduler is so configured that TCP connection errors only lead to a job being stopped 
                     when <code>ignore_signals="…"</code> does not apply.
-                    The Job Scheduler reacts to this situation with the <scheduler_message code="SCHEDULER-974"/> message.
+                    The JobScheduler reacts to this situation with the <scheduler_message code="SCHEDULER-974"/> message.
                 <!--Weil eine mit einem zu ignorierenden Signal abbrechende Task 
                     trotzdem zuerst einen TCP-Verbindungsfehler (<code>ECONNRESET</code>) hervorruft,
                     führen TCP-Verbindungsfehler nur dann zum Stopp des Jobs, wenn
                     <code>ignore_signals="…"</code> nicht zutrifft.
-                    Der Scheduler weist mit der Meldung <scheduler_message code="SCHEDULER-974"/> darauf hin.-->
+                    Der JobScheduler weist mit der Meldung <scheduler_message code="SCHEDULER-974"/> darauf hin.-->
                 </p>
                 <p>
                     See also <scheduler_element name="commands" attribute="on_exit_code" value="SIGTERM"/> 
@@ -508,12 +508,12 @@
                 <p>
                     Specifying <code>stop_on_error="no"</code> does not allow a job to be stopped in this situation. 
                     Should <scheduler_method class="Job_impl" method="spooler_process"/>
-                    end with an exception, then the Job Scheduler sets the order in the error state
+                    end with an exception, then the JobScheduler sets the order in the error state
                     (<scheduler_element name="job_chain_node" attribute="error_state"/>).
                 <!--<code>stop_on_error="no"</code> lässt den Job in diesen Fällen nicht stoppen.
                     Endet 
                     <scheduler_method class="Job_impl" method="spooler_process"/> mit Exception,
-                    versetzt der Scheduler den Auftrag in den Fehlerzustand
+                    versetzt der JobScheduler den Auftrag in den Fehlerzustand
                     (<scheduler_element name="job_chain_node" attribute="error_state"/>).-->
                 </p>
                 <p>
@@ -539,10 +539,10 @@
                     <code>replace="yes"</code> causes any already existing job definition
                     to be replaced.
                     Should this not be possible - for example because a task is running - 
-                    then the Job Scheduler will replace the job later.
+                    then the JobScheduler will replace the job later.
                 <!--<code>replace="yes"</code> lässt diese Job-Definition eine evtl. bereits vorhandene ersetzen.
                     Wenn das nicht möglich ist, weil z.B. gerade eine Task läuft,
-                    dann ersetzt der Scheduler den Job später.-->
+                    dann ersetzt der JobScheduler den Job später.-->
                 </p>
                 <p>
                     An order controlled job (<scheduler_element name="job" attribute="order" value="yes"/>)

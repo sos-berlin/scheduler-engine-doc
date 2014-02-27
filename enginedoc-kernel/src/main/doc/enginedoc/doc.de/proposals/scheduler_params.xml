@@ -15,7 +15,7 @@
     
     <h2>Stand</h2>
     <p>
-        Der Scheduler kennt einerseits <scheduler_option name="param"/> und <scheduler_method class="Spooler" property="param"/>
+        Der JobScheduler kennt einerseits <scheduler_option name="param"/> und <scheduler_method class="Spooler" property="param"/>
         und andererseits <scheduler_method class="Spooler" property="var"/>.
         Letztere Eigenschaft erlaubt ja mehrere Scheduler-weite Variablen, 
         die aber nicht von außen gesetzt werden können. 
@@ -24,7 +24,7 @@
     
     <h2>Vorschlag</h2>
     <p>
-        An der Kommandozeile könnten dem Scheduler weitere Variablen 
+        An der Kommandozeile könnten dem JobScheduler weitere Variablen 
         in der Form <code>NAME=WERT</code> (wie Optionen, nur ohne Strich) 
         übergeben werden. 
         Die Variablen sind dann in <scheduler_method class="Spooler" property="var"/> wiederzufinden.
@@ -54,7 +54,7 @@
 
     <h2>Windows-Dienst</h2>
     <p>
-        Bei der Installation eines Dienstes übernimmt der Scheduler die an der Kommandozeile eingestellten Parameter.
+        Bei der Installation eines Dienstes übernimmt der JobScheduler die an der Kommandozeile eingestellten Parameter.
     </p>
 
 </description>

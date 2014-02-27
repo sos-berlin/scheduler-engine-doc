@@ -34,11 +34,11 @@
                     Dem Skript stehen die Variablen <code>spooler</code> und <code>spooler_log</code> zur Verfügung.-->
                 </p>
                 <p>
-                    <scheduler_method class="Job_impl" method="spooler_init"/> is called as the Scheduler is started (before the start of the job).
+                    <scheduler_method class="Job_impl" method="spooler_init"/> is called as the JobScheduler is started (before the start of the job).
                 <!--<scheduler_method class="Job_impl" method="spooler_init"/> wird beim Start des Schedulers (vor dem Start der Jobs) aufgerufen.-->
                 </p>
                 <p>
-                    <scheduler_method class="Job_impl" method="spooler_exit"/> is called after the Scheduler has ended (after all jobs have ended).
+                    <scheduler_method class="Job_impl" method="spooler_exit"/> is called after the JobScheduler has ended (after all jobs have ended).
                 <!--<scheduler_method class="Job_impl" method="spooler_exit"/> wird bei Beendigung des Schedulers (nach Beendigung aller Jobs) aufgerufen.-->
                 </p>
             </description>
@@ -74,10 +74,10 @@
                     <dd>
                         The class name is defined with the <code>java_class</code> attribute.
                         The program code for the java class can be entered as text in <code>&lt;script&gt;</code> - 
-                        the Job Scheduler then compiles the code using <code>javac</code>.
+                        the JobScheduler then compiles the code using <code>javac</code>.
                     <!--Den Name der Klasse geben Sie mit dem Attribut <code>java_class</code> an.
                         Sie können den Programm-Code der Java-Klasse als Text in <code>&lt;script></code> angegeben.
-                        Der Scheduler kompiliert den Code mit <code>javac</code>.-->
+                        Der JobScheduler kompiliert den Code mit <code>javac</code>.-->
                     </dd>
                     
                     <dt><code>language="JavaScript"</code></dt>
@@ -85,7 +85,7 @@
                         <a href="../script_language_javascript.xml">JavaScript</a> 
                          is available via the SpiderMonkey scripting engine in Windows and UNIX.
                     <!--<a href="../script_language_javascript.xml">JavaScript</a> 
-                        liegt in der Implementierung von Mozilla Spidermonkey vor und wird mit dem Scheduler ausgeliefert.-->
+                        liegt in der Implementierung von Mozilla Spidermonkey vor und wird mit dem JobScheduler ausgeliefert.-->
                     </dd>
                     <dt><code>language="JScript"</code> and <code>"VBScript"</code></dt>
                     <dd>
@@ -104,9 +104,9 @@
                     
                     <dt><code>language="shell"</code></dt>
                     <dd>
-                        On Windows systems the Job Scheduler forwards the script to <code>cmd.exe</code>.
+                        On Windows systems the JobScheduler forwards the script to <code>cmd.exe</code>.
                         (the script is saved as a temporary <code>.cmd</code> file).
-                    <!--Unter Windows übergibt der Scheduler das Skript an <code>cmd.exe</code>
+                    <!--Unter Windows übergibt der JobScheduler das Skript an <code>cmd.exe</code>
                         (das Skript wird in einer temporären Datei mit der Namensendung <code>.cmd</code> gespeichert).-->
                     </dd>
                     <dd>
@@ -247,7 +247,7 @@
     <behavior_with_xml_element element="base" complete="yes">
         <description>
         <!--<p>
-                Attributes (e.g. <code>language=</code>) cannot be changed after the Job Scheduler has been started.
+                Attributes (e.g. <code>language=</code>) cannot be changed after the JobScheduler has been started.
                 Only the script itself can be changed.
                 Nach dem Start des Schedulers können die Attribute (z.B. <code>language=</code>) nicht mehr geändert werden.
                 Nur das Skript selbst ist änderbar.

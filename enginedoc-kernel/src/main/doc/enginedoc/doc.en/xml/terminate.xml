@@ -7,7 +7,7 @@
 <!--         title    = "Scheduler ordentlich beenden"-->
 
 <xml_element name     = "terminate" 
-             title    = "Correct Stopping of the Job Scheduler"
+             title    = "Correct Stopping of the JobScheduler"
              category = "Kommando"
              base_dir = "../"
              parent_page = "../xml_commands.xml"
@@ -16,8 +16,8 @@
 
     <description>
         <p>
-            Correct termination of the Job Scheduler (see <a href="../termination.xml">Terminating the Job Scheduler</a>).
-        <!--Beendet den Scheduler ordentlich (s. <a href="../termination.xml">Beendigung des Schedulers</a>).-->
+            Correct termination of the JobScheduler (see <a href="../termination.xml">Terminating the JobScheduler</a>).
+        <!--Beendet den JobScheduler ordentlich (s. <a href="../termination.xml">Beendigung des Schedulers</a>).-->
         </p>
     </description>
     
@@ -30,10 +30,10 @@
         <xml_attribute name="all_schedulers" type="yes|no" initial="no">
             <description>
                 <p>
-                    Causes all participating Job Schedulers to be stopped
+                    Causes all participating JobSchedulers to be stopped
                     when used in conjunction with <scheduler_option name="exclusive"/> 
                 <!--In Zusammenhang mit <scheduler_option name="exclusive"/> 
-                    werden alle beteiligten Scheduler beendet.-->
+                    werden alle beteiligten JobScheduler beendet.-->
                 </p>
             </description>
         </xml_attribute>
@@ -41,8 +41,8 @@
         <xml_attribute name="restart" type="yes|no" initial="no">
             <description>
                 <p>
-                    Causess the Job Scheduler to restart.
-                <!--Lässt den Scheduler erneut starten.-->
+                    Causess the JobScheduler to restart.
+                <!--Lässt den JobScheduler erneut starten.-->
                 </p>
             </description>
         </xml_attribute>
@@ -50,10 +50,10 @@
         <xml_attribute name="continue_exclusive_operation" type="yes|no" initial="no">
             <description>
                 <p>
-                    Causes an inactive Job Scheduler to take over operation when set in conjunction with 
+                    Causes an inactive JobScheduler to take over operation when set in conjunction with 
                     <scheduler_option name="exclusive"/>.
                 <!--In Zusammenhang mit <scheduler_option name="exclusive"/> wird eingestellt, 
-                    dass ein inaktiver Scheduler den Betrieb übernimmt.-->
+                    dass ein inaktiver JobScheduler den Betrieb übernimmt.-->
                 </p>
             </description>
         </xml_attribute>
@@ -61,9 +61,9 @@
         <xml_attribute name="timeout" type="seconds">
             <description>
                 <p>
-                    When specified, causes the Job Scheduler to break off all tasks 
+                    When specified, causes the JobScheduler to break off all tasks 
                     still running after the time specified.
-                <!--Wenn angegeben, bricht der Scheduler nach der angegeben Frist
+                <!--Wenn angegeben, bricht der JobScheduler nach der angegeben Frist
                     alle Tasks ab, die bis dahin nicht beendet haben.-->
                 </p>
             </description>

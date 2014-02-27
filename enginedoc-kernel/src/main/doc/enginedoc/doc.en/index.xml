@@ -140,7 +140,7 @@
                                 In der <scheduler_a href="sos_ini.xml"/>
                                 werden nur wenige Einstellungen vorgenommen.-->
                                 <!--Hier können einige Einstellungen vorgenommen werden,
-                                die auch andere Produkte als den Scheduler betreffen.-->
+                                die auch andere Produkte als den JobScheduler betreffen.-->
                         <!--</p>
                         </dd>
 
@@ -283,7 +283,7 @@
                         <dd>
                             The JobScheduler can process orders through job chains.
                             Job chains define the order in which jobs are to be executed and can be restarted if required.
-                        <!--Der Scheduler kann Aufträge durch Job-Ketten schleusen.
+                        <!--Der JobScheduler kann Aufträge durch Job-Ketten schleusen.
                             Job-Ketten definieren die Reihenfolge, in der Jobs ausgeführt werden,
                             und sind wiederanlauffähig.-->
                         </dd>

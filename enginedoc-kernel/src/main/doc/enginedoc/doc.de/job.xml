@@ -24,16 +24,16 @@
         Die <scheduler_element name="job">XML-Konfiguration eines Jobs</scheduler_element>
         kann in der zentralen Startkonfigurationsdatei 
         (meist <code>./config/scheduler.xml</code>) oder in Form einer separaten Datei
-        in dem vom Job Scheduler überwachten Konfigurationsverzeichnis (meist <code>./config/live</code>)
+        in dem vom JobScheduler überwachten Konfigurationsverzeichnis (meist <code>./config/live</code>)
         vorgenommen werden, siehe <scheduler_a href="dynamic_configuration.xml"/>
     </p>
     
     
     <h2>Implementierung</h2>
     <p>
-        Der Job Scheduler startet ausführbare Programme und kann
+        Der JobScheduler startet ausführbare Programme und kann
         Jobs mit individuellen Implementierungen starten, die das 
-        API des Job Schedulers nutzen.
+        API des JobSchedulers nutzen.
     </p>
 
     <p><b>Ausführbare Programme</b></p>
@@ -44,7 +44,7 @@
         		Dies bezieht Programme ein, 
         		z.B. JavaScript, VBScript, Perl, PHP, Ruby etc., 
         		für die ggf. ein Interpreter mit der auszuführenden Programmdatei gestartet werden muss.
-        		Java-Klassen können mit der für den Job Scheduler konfigurierten JVM gestartet werden.
+        		Java-Klassen können mit der für den JobScheduler konfigurierten JVM gestartet werden.
     		</p>
     		<p>
         		Ausführbare Programme können mit folgenden Elementen konfiguriert werden:
@@ -55,7 +55,7 @@
             		<p><scheduler_element name="script" attribute="language">&lt;script language="shell"&gt;</scheduler_element></p>
             		<div class="indent">
         						<p>
-        								Der Job Scheduler erzeugt eine Shell für die Ausführung des Programms. 
+        								Der JobScheduler erzeugt eine Shell für die Ausführung des Programms. 
         						</p>
         						<p>
         				    		<u>Beispiele:</u>
@@ -81,7 +81,7 @@
             		<p><scheduler_element name="script" attribute="language">&lt;script language="java"&gt;</scheduler_element></p>
             		<div class="indent">
         						<p>
-        								Der Job Scheduler startet eine JVM für die Ausführung der Java-Klasse. 
+        								Der JobScheduler startet eine JVM für die Ausführung der Java-Klasse. 
         						</p>
         						<p>
         				    		<u>Beispiel:</u>
@@ -97,7 +97,7 @@
         		<br/>
         	  <div class="indent">
         				<p>
-        				    Der Job Scheduler startet das Programm ohne separate Shell.
+        				    Der JobScheduler startet das Programm ohne separate Shell.
         				</p>
         				<p>
         						<u>Beispiele:</u>
@@ -116,15 +116,15 @@
     		</p>
     </div>
 
-    <p><b>Implementierungen mit dem Job Scheduler API</b></p>
+    <p><b>Implementierungen mit dem JobScheduler API</b></p>
     <div class="indent">
       <p>
-        		Job-Implementierungen können das API des Job Schedulers nutzen,
+        		Job-Implementierungen können das API des JobSchedulers nutzen,
         		z.B. zur Protokollierung, Benachrichtigung per eMail, Zugriff auf
         		Job-, Task- und Auftragsobjekte etc.
       </p>
       <p>
-            Der Job Scheduler startet diese Scripte nicht per Interpreter (s.o.) sondern
+            Der JobScheduler startet diese Scripte nicht per Interpreter (s.o.) sondern
             implementiert eine Unterprogrammschnittstelle für den Aufruf von Scripten
             in diesen Sprachen und stellt ihnen Objekte und Methoden zur Verfügung.
       </p>
@@ -151,7 +151,7 @@
       <div class="indent">
         <p>
           JavaScript ist in der Implementierung von SpiderMonkey (http://developer.mozilla.org/en/docs/SpiderMonkey)
-          im Auslieferungsumfang des Job Schedulers für alle Plattformen enthalten.
+          im Auslieferungsumfang des JobSchedulers für alle Plattformen enthalten.
         </p>
         <p>
           Microsoft JScript ist auf Windows Plattformen verfügbar.
@@ -171,7 +171,7 @@
       <div class="indent">
         <p>
           Perl ist auf Unix-Plattformen i.d.R. vorinstalliert. Das Installationsprogramm
-          des Job Schedulers versucht die Unterprogrammschnittstelle passend
+          des JobSchedulers versucht die Unterprogrammschnittstelle passend
           zur vorhandenen Perl Version zu installieren.
         </p>
         <p>
@@ -216,7 +216,7 @@
         <tr>
             <td><scheduler_keyword keyword="stopping"/><code>stopping</code></td>
             <td>
-                Der Job stoppt. Der Scheduler startet keine weitere Task und die laufenden Tasks werden beendet.
+                Der Job stoppt. Der JobScheduler startet keine weitere Task und die laufenden Tasks werden beendet.
                 Sobald alle Tasks des Jobs beendet sind, wechselt der Job in den Zustand <code>stopped</code>.
                 <br/>
                 Siehe das Kommando <scheduler_element name="modify_job" attribute="cmd" value="stop"/>.
@@ -225,7 +225,7 @@
         <tr>
             <td><scheduler_keyword keyword="stopped"/><code>stopped</code></td>
             <td>
-                Keine Task läuft und der Scheduler startet keine weitere Task.
+                Keine Task läuft und der JobScheduler startet keine weitere Task.
                 <br/>
                 Siehe das Kommando <scheduler_element name="modify_job" attribute="cmd" value="stop"/>.
             </td>
@@ -242,7 +242,7 @@
         <tr>
             <td><scheduler_keyword keyword="error"/><code>error</code></td>
             <td>
-                Wenn eine Task mit Fehler geendet hat, startet der Scheduler keine weitere Task.
+                Wenn eine Task mit Fehler geendet hat, startet der JobScheduler keine weitere Task.
                 <!--Der Aufruf <scheduler_method class="Job" property="error"/> liefert den Fehler.-->
             </td>
         </tr>
@@ -252,7 +252,7 @@
     <h2>Zustand des Jobs ändern</h2>
     <p>
         Mit dem Kommando <scheduler_element name="modify_job"/> können Sie den Zustand des Jobs ändern.
-        Die eingebaute <scheduler_a href="http.xml">HTML-Oberfläche</scheduler_a> des Job Schedulers bietet hierfür die  entsprechenden Operationen an.
+        Die eingebaute <scheduler_a href="http.xml">HTML-Oberfläche</scheduler_a> des JobSchedulers bietet hierfür die  entsprechenden Operationen an.
     </p>
 
 
@@ -339,7 +339,7 @@
 
     <h2>Verzeichnisüberwachung</h2>
     <p>
-        Der Job Scheduler kann einen Job bei Änderungen in einem Dateiverzeichnis starten.
+        Der JobScheduler kann einen Job bei Änderungen in einem Dateiverzeichnis starten.
         Näheres im Kapitel <a href="directory_watch.xml">Verzeichnisüberwachung</a>.
     </p>
 
@@ -349,7 +349,7 @@
 
     <p>
         Für einen Job kann ein Monitor Script konfiguriert werden. 
-        Der Job Scheduler ruft Funktionen des Monitor Scripts  bei Start und Ende der Task auf
+        Der JobScheduler ruft Funktionen des Monitor Scripts  bei Start und Ende der Task auf
         sowie vor und nach der Methode <scheduler_method class="Job_impl" method="spooler_process"/>.
     </p>
     <p>

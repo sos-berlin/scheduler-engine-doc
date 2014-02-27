@@ -368,7 +368,7 @@
 
     <description>
         Setzt den Dateinamen fürs Protokoll.
-        Wenn das Protokoll geschlossen wird, kopiert der Scheduler es in diese Datei.
+        Wenn das Protokoll geschlossen wird, kopiert der JobScheduler es in diese Datei.
         Die Datei steht dann der Anwendung zur Verfügung.
     </description>
 </property>
@@ -495,7 +495,7 @@
 
     <h3>eMail-Versand</h3>
     <p>
-        Am Ende einer Task kann der Scheduler das Task-Protokoll per eMail versenden.
+        Am Ende einer Task kann der JobScheduler das Task-Protokoll per eMail versenden.
         In es versendet werden soll, geben diese Eigenschaften an:
     </p>
     <ul>

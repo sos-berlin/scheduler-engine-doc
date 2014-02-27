@@ -50,7 +50,7 @@
                 <p class="list_text">The computer may carry out signalizing commands.</p>
                 <p>level="info"</p>
                 <p class="list_text">The computer may carry out commands which convey information,
-                but which do not change the Job Scheduler's state.</p>
+                but which do not change the JobScheduler's state.</p>
                 <p>level="no_add"</p>
                 <p class="list_text">The computer has full access, 
                 with the exception of <scheduler_element name="add_jobs"/>, <scheduler_element name="job"/> and <scheduler_element name="add_order"/>.</p>
@@ -77,18 +77,18 @@
     <description>
         <p>
             <span class="mono">&lt;allowed_host></span> - 
-            the name or IP address of a computer which is allowed to communicate with the Job Scheduler.
+            the name or IP address of a computer which is allowed to communicate with the JobScheduler.
         <!--<span class="mono">&lt;allowed_host></span>
-            gibt den Namen oder die IP-Nummer eines Rechners an, der Verbindung mit dem Scheduler aufnehmen darf.-->
+            gibt den Namen oder die IP-Nummer eines Rechners an, der Verbindung mit dem JobScheduler aufnehmen darf.-->
         </p>
         <p>
             The IP number may be a network address (class A, B or C),
             in which case all computers belonging to the network are allowed by default. 
             A network address can be recognized in that the last part of the IP number is 0.
-            Note that the Job Scheduler handles the permissions for exact IP numbers with higher priority than network addresses.
+            Note that the JobScheduler handles the permissions for exact IP numbers with higher priority than network addresses.
         <!--Die IP-Nummer kann eine Netzwerkadresse sein (Klasse A, B oder C). 
             Dann werden alle Rechner des Netzwerks zugelassen. Das ist der Fall, wenn der letzte Teil der IP-Nummer 0 ist.
-            Der Scheduler beachtet eine genau angegebene IP-Nummer vor einer Netzwerkadresse.-->
+            Der JobScheduler beachtet eine genau angegebene IP-Nummer vor einer Netzwerkadresse.-->
         </p>
     </description>
     
@@ -102,11 +102,11 @@
         </pre>
         <p>
             The IP addresses 127.0.0.1 and admin.company.com and the addresses in the 
-            Class-C-Network 192.168.1 are allowed to connect with the Job Scheduler. 
+            Class-C-Network 192.168.1 are allowed to connect with the JobScheduler. 
             The last entry, however, restricts the commands which may be carried out 
             to those which deliver information.
         <!--Die IP-Adressen 127.0.0.1 und admin.company.com und die Adressen im 
-            Klasse-C-Netzwerk 192.168.1 dürfen sich mit dem Scheduler verbinden. Der letzte 
+            Klasse-C-Netzwerk 192.168.1 dürfen sich mit dem JobScheduler verbinden. Der letzte 
             Eintrag beschränkt die Kommandos auf die, die Informationen liefern.-->
         </p>
     </example>
@@ -117,7 +117,7 @@
 &lt;/security>
         </pre>
         <p>
-            Any computer has full access to the Job Scheduler.
+            Any computer has full access to the JobScheduler.
         <!--Jeder Rechner hat vollen Zugriff.-->
         </p>
     </example>

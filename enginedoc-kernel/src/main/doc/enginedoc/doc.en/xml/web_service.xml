@@ -19,7 +19,7 @@
 
 
     <xml_attributes>
-        <xml_attribute name="name" type="name" title="The service name in the Job Scheduler">
+        <xml_attribute name="name" type="name" title="The service name in the JobScheduler">
     <!--<xml_attribute name="name" type="name" title="Name des Dienstes im Scheduler">-->
         </xml_attribute>
 
@@ -64,28 +64,28 @@
             <description>
                 <p>
                     When an order is not forwarded to the first job within the allocated waiting time,
-                    then the Job Scheduler will reject HTTP call with "<code>504 Gateway Timeout</code>"
+                    then the JobScheduler will reject HTTP call with "<code>504 Gateway Timeout</code>"
                     and cancel the order with a <scheduler_message code="SCHEDULER-290"/> message.
                 <!--Wenn innerhalb der Frist der Auftrag nicht dem ersten Job zur Ausführung übergeben wird,
-                    lehnt der Scheduler die HTTP-Anforderung mit "<code>504 Gateway Timeout</code>" ab
+                    lehnt der JobScheduler die HTTP-Anforderung mit "<code>504 Gateway Timeout</code>" ab
                     und zieht den Auftrag mit der Meldung <scheduler_message code="SCHEDULER-290"/> zurück.-->
                     <!--
                     Wenn innerhalb der Frist nicht 
                     <scheduler_method class="Web_service_response" method="send"/>
                     gerufen wird, 
-                    beantwortet der Scheduler die HTTP-Operation mit "<code>504 Gateway Timeout</code>".
+                    beantwortet der JobScheduler die HTTP-Operation mit "<code>504 Gateway Timeout</code>".
                     Nachfolgendes <code>send()</code> liefert eine Exception.
                     -->
                 </p>
             </description>
         </xml_attribute>
 
-        <xml_attribute name="request_xslt_stylesheet" type="path" subst_env="yes" title="Transforms a request into a Job Scheduler command">
+        <xml_attribute name="request_xslt_stylesheet" type="path" subst_env="yes" title="Transforms a request into a JobScheduler command">
     <!--<xml_attribute name="request_xslt_stylesheet" type="path" subst_env="yes" title="Transformiert die Anforderung in ein Scheduler-Kommando">-->
             <description>
                 <p>
                     The path to the XSLT style sheet with which the XML document forwarded using HTTP-POST 
-                    is transformed into a Job Scheduler command.
+                    is transformed into a JobScheduler command.
                 <!--Pfad des XSLT-Stylesheets,
                     das das mit HTTP-POST übergebene XML-Dokument
                     in ein Scheduler-Kommando wandelt.-->
@@ -101,11 +101,11 @@
     <!--<xml_attribute name="response_xslt_stylesheet" type="path" subst_env="yes" title="Transformiert die Antwort des Kommandos in die Antwort des Web-Dienstes">-->
             <description>
                 <p>
-                    The path to the XSLT style sheet used to transform the XML result of the Job Scheduler command
+                    The path to the XSLT style sheet used to transform the XML result of the JobScheduler command
                     into an XML document. This style sheet is used to answer a Web Service query.
                 <!--Pfad des XSLT-Stylesheets, 
                     das das XML-Ergebnis des Scheduler-Kommandos in ein XML-Dokument wandelt,
-                    mit der der Scheduler die Web-Dienst-Anfrage beantwortet.-->
+                    mit der der JobScheduler die Web-Dienst-Anfrage beantwortet.-->
                 </p>
                 <p>
                     Cannot be used with the <code>job_chain</code> attribute.
@@ -154,9 +154,9 @@
                 <!--Nur, wenn <code>request_xslt_stylesheet</code> angegeben ist:-->
                 </p>
                 <p>
-                    <code>debug="yes"</code> - the Job Scheduler allows internally created XML documents 
+                    <code>debug="yes"</code> - the JobScheduler allows internally created XML documents 
                     to be saved in the directory specified with <scheduler_option name="log-dir"/>:
-                <!--<code>debug="yes"</code> lässt den Scheduler die intern erzeugten XML-Dokumente in Dateien im mit <scheduler_option name="log-dir"/> 
+                <!--<code>debug="yes"</code> lässt den JobScheduler die intern erzeugten XML-Dokumente in Dateien im mit <scheduler_option name="log-dir"/> 
                     festgelegten Verzeichnis ablegen:-->
                 </p>
                 
@@ -190,8 +190,8 @@
                     </tr>
                 </table>
                 <p>
-                    The Job Scheduler does not clean up the files.
-                <!--Der Scheduler räumt die Dateien nicht ab.-->
+                    The JobScheduler does not clean up the files.
+                <!--Der JobScheduler räumt die Dateien nicht ab.-->
                 </p>
             </description>
         </xml_attribute>
@@ -250,11 +250,11 @@
         <h2>The Procedure with job_chain</h2>
     <!--<h2>Ablauf mit job_chain</h2>-->
         <p>
-            The Job Scheduler creates an order in response to a HTTP-POST to the Web Service URL.
+            The JobScheduler creates an order in response to a HTTP-POST to the Web Service URL.
             It then adds this order to the job chain queue.
             Jobs can access the HTTP data using <scheduler_method class="Order" property="web_service_operation"/>.
             The HTTP query is answered using the <scheduler_method class="Web_service_response" method="send"/> method.
-        <!--Ein HTTP-POST auf den URL-Pfad des Web-Dienstes lässt den Scheduler einen Auftrag
+        <!--Ein HTTP-POST auf den URL-Pfad des Web-Dienstes lässt den JobScheduler einen Auftrag
             erzeugen und ihn in die angegebene Jobkette einreihen.
             Die Jobs haben Zugriff auf die HTTP-Daten über <scheduler_method class="Order" property="web_service_operation"/>.
             Die HTTP-Anfrage wird mit <scheduler_method class="Web_service_response" method="send"/> beantwortet.-->
@@ -270,8 +270,8 @@
 
         <ol>
             <li>
-                The Job Scheduler packs the XML document received with the HTTP-POST into a <scheduler_element name="service_request"/>. 
-            <!--Das mit HTTP-POST übergebene XML-Dokument packt der Scheduler in ein <scheduler_element name="service_request"/>. -->
+                The JobScheduler packs the XML document received with the HTTP-POST into a <scheduler_element name="service_request"/>. 
+            <!--Das mit HTTP-POST übergebene XML-Dokument packt der JobScheduler in ein <scheduler_element name="service_request"/>. -->
                 
                 <pre>&lt;service_request>
     &lt;web_service name="<i>service_name</i>" url_path="<i>url_path</i>"/>
@@ -286,20 +286,20 @@
                 in der Regel <scheduler_element name="add_order"/> oder <scheduler_element name="start_job"/>.-->
             </li>
             <li>
-                The Job Scheduler executes the XML command.
-            <!--Der Scheduler führt das XML-Kommando aus.-->
+                The JobScheduler executes the XML command.
+            <!--Der JobScheduler führt das XML-Kommando aus.-->
             </li>
             <li>
                 The answer to the XML command 
                 (<code>&lt;spooler></code><scheduler_element name="answer" directory="xml/answer/"/>,
                 which can also contain a <scheduler_element directory="xml/answer/" name="ERROR"/> error message) 
                 is transformed by the <code>response_xslt_stylesheet</code> style sheet to a <scheduler_element name="service_response"/>. 
-                The Job Scheduler then returns the content of <scheduler_element name="content"/> 
+                The JobScheduler then returns the content of <scheduler_element name="content"/> 
                 using the open HTTP connection.
             <!--Die Antwort des XML-Kommandos (<code>&lt;spooler></code><scheduler_element name="answer" directory="xml/answer/"/>,
                 die auch eine Fehlermeldung <scheduler_element directory="xml/answer/" name="ERROR"/> enthalten kann) 
                 wird mit dem <code>response_xslt_stylesheet</code> zu einem <scheduler_element name="service_response"/> transformiert. 
-                Der Scheduler liefert den Inhalt von <scheduler_element name="content"/> über die offene HTTP-Verbindung zurück.-->
+                Der JobScheduler liefert den Inhalt von <scheduler_element name="content"/> über die offene HTTP-Verbindung zurück.-->
                 
                 <pre>&lt;service_response>
     &lt;content><i>…xmldata…</i>&lt;/content>
@@ -378,15 +378,15 @@
         <h3>The scheduler_service_forwarding Job Chain</h3>
     <!--<h3>Jobkette scheduler_service_forwarding</h3>-->
         <p>
-            The Job Scheduler packs the <scheduler_element name="service_request"/> 
+            The JobScheduler packs the <scheduler_element name="service_request"/> 
             in the payload of a new order which it then hands over to the predefined
             <code>scheduler_service_forwarding</code> job chain.
-        <!--Der Scheduler packt das <scheduler_element name="service_request"/> in die Payload eines neuen Auftrags 
+        <!--Der JobScheduler packt das <scheduler_element name="service_request"/> in die Payload eines neuen Auftrags 
             und übergibt diesen der vordefinierten Jobkette <code>scheduler_service_forwarding</code>.-->
         </p>
 
         <h3>The scheduler_service_forwarder Job</h3>
-    <!--<h3>Job scheduler_service_forwarder</h3>-->
+    <!--<h3>JobScheduler_service_forwarder</h3>-->
         <p>
             The only job in the <code>scheduler_service_forwarder</code> job chain.
             Uses a URL to make a HTTP connection, transfers data using POST and 

@@ -25,9 +25,9 @@
                 </p>
                 <p>
                     When the file name is not given absolutely, 
-                    then the Job Scheduler assumes that the file is to be found in the directory in which the
+                    then the JobScheduler assumes that the file is to be found in the directory in which the
                     <code>&lt;base&gt;</code> element is to be found.
-                <!--Wenn der Dateiname nicht absolut ist, geht der Scheduler vom Verzeichnis der Konfigurationsdatei aus,
+                <!--Wenn der Dateiname nicht absolut ist, geht der JobScheduler vom Verzeichnis der Konfigurationsdatei aus,
                     die das <code>&lt;base&gt;</code>-Element enthält.-->
                 </p>
                 <p>
@@ -64,15 +64,15 @@
             ergänzt oder überschreibt.-->
         </p>
         <p>
-            The scheduler processes the basic configuration first.
-        <!--Der Scheduler verarbeitet die Basiskonfiguration zuerst.-->
+            The JobScheduler processes the basic configuration first.
+        <!--Der JobScheduler verarbeitet die Basiskonfiguration zuerst.-->
         </p>
         <p>
         <!--The element <code>&lt;base&gt;</code> references a basic configuration in another file that is processed
             before the content of the current configuration element.
-            Having processed the included <code>&lt;base&gt;</code> element, the scheduler interprets the current configuration.
+            Having processed the included <code>&lt;base&gt;</code> element, the JobScheduler interprets the current configuration.
             A <code>&lt;base&gt;</code> configuration contains elements and attributes that may be supplemented or overwritten by the current configuration.-->
-        <!--Mit <code>&lt;base&gt;</code> können Sie eine Basiskonfiguration angegeben, die der Scheduler vor der 
+        <!--Mit <code>&lt;base&gt;</code> können Sie eine Basiskonfiguration angegeben, die der JobScheduler vor der 
             Konfiguration verarbeitet, die <code>&lt;base&gt;</code> enthält.
             Erst danach verarbeitet er die 
             Konfiguration, die <code>&lt;base&gt;</code> enthält.
@@ -88,17 +88,17 @@
         </p>
         <p>
             A basic configuration can call up another basic configuration. 
-            However, note that the Job Scheduler does not test whether a basic configuration refers to itself.
+            However, note that the JobScheduler does not test whether a basic configuration refers to itself.
         <!--Eine Basiskonfiguration kann auf eine weitere Basiskonfiguration verweisen. 
-            Der Scheduler prüft nicht, ob eine 
+            Der JobScheduler prüft nicht, ob eine 
             Basiskonfiguration selbstbezüglich aufgerufen wird.-->
         </p>
         <p>
             <code>&lt;base&gt;</code> can be called repeatedly.
-            The Job Scheduler works through base configurations in the order in which they are called.
+            The JobScheduler works through base configurations in the order in which they are called.
             A second basic configuration can either supplement or overwrite a first.
         <!--<code>&lt;base&gt;</code> können Sie wiederholt angeben.
-            Der Scheduler arbeitet sie der Reihe nach ab.
+            Der JobScheduler arbeitet sie der Reihe nach ab.
             Die zweite Basiskonfiguration ergänzt oder überschreibt die Einstellungen der ersten.-->
         </p>
     </description>

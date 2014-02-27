@@ -12,8 +12,8 @@
         <scheduler_keyword keyword="Events"/>
     <!--<scheduler_keyword keyword="Ereignisse"/>-->
         <p>
-            The Job Scheduler can send e-mails when certain events take place:
-        <!--Der Scheduler kann bei bestimmten Ereignissen eMails verschicken.-->
+            The JobScheduler can send e-mails when certain events take place:
+        <!--Der JobScheduler kann bei bestimmten Ereignissen eMails verschicken.-->
         </p>
         <p>
 
@@ -24,7 +24,7 @@
     <event name="scheduler_started">
         <description>
             <p>
-                The Job Scheduler script has been executed
+                The JobScheduler script has been executed
                 (i.e. arbitrary statements and <scheduler_method class="Job_impl" method="spooler_init" /> have been executed)
                 and returned an error mesage with the 
                 <scheduler_method class="Log" method="error" java_signature="String" />.
@@ -35,7 +35,7 @@
             </p>
             <p>
                 Note that exceptions do not result in this event - but
-                rather to the ending of the Job Scheduler.
+                rather to the ending of the JobScheduler.
                 See the <code>scheduler_fatal_error</code> event.
             <!--Eine Exception führt nicht zu diesem Ereignis.
                 Stattdessen führt sie zur Beendigung des Schedulers.
@@ -49,7 +49,7 @@
         <event.error>
             <description>
                 <p>
-                    Contains the Scheduler script error message
+                    Contains the JobScheduler script error message
                     (see <scheduler_method class="Log" method="error" java_signature="String" />).
                 <!--Enthält die Fehlermeldung des Scheduler-Skripts
                     (s. <scheduler_method class="Log" method="error" java_signature="String" />).-->
@@ -63,9 +63,9 @@
     <event name="scheduler_fatal_error">
         <description>
             <p>
-                The Job Scheduler has been terminated because of an error such as an 
-                exception in  the Scheduler script, a database error or an internal problem.
-            <!--Der Scheduler wird wegen eines Fehlers beendet.
+                The JobScheduler has been terminated because of an error such as an 
+                exception in  the JobScheduler script, a database error or an internal problem.
+            <!--Der JobScheduler wird wegen eines Fehlers beendet.
                 Das kann eine Exception im Scheduler-Skript, ein Datenbankfehler oder ein internes Problem sein.-->
             </p>
             <p>
@@ -136,8 +136,8 @@
                 weil nicht genügend Plattenplatz zur Verfügung steht.-->
             </p>
             <p>
-                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der Scheduler fortgesetzt werden.
-            <!--Mit <code>&lt;modify_spooler cmd="continue"></code> kann der Scheduler fortgesetzt werden.-->
+                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der JobScheduler fortgesetzt werden.
+            <!--Mit <code>&lt;modify_spooler cmd="continue"></code> kann der JobScheduler fortgesetzt werden.-->
             </p>
         </description>
 
@@ -160,8 +160,8 @@
             <!--Die Datenbank hat einen Fehler gemeldet.-->
             </p>
             <p>
-                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der Scheduler fortgesetzt werden.
-            <!--Mit <code>&lt;modify_spooler cmd="continue"></code> kann der Scheduler fortgesetzt werden.-->
+                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der JobScheduler fortgesetzt werden.
+            <!--Mit <code>&lt;modify_spooler cmd="continue"></code> kann der JobScheduler fortgesetzt werden.-->
             </p>
         </description>
 

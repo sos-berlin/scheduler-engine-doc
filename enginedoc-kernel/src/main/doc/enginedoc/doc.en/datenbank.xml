@@ -27,7 +27,7 @@
 <!--<dt>Task-Warteschlange</dt>-->
     <dd>
         The JobScheduler stores all queued tasks in a table 
-        under its scheduler ID (Option <scheduler_option name="id"/>).
+        under its JobScheduler ID (Option <scheduler_option name="id"/>).
         When the JobScheduler restarts, then all queued tasks are reread from the database.
     <!--Der JobScheduler speichert die in den Warteschlangen eingereihten Tasks in einer Tabelle
         unter seiner Scheduler-ID (Option <scheduler_option name="id"/>).
@@ -38,7 +38,7 @@
 <!--<dt>Aufträge</dt>-->
     <dd>
         The JobScheduler saves every order in a database table
-        with the scheduler ID (Option <scheduler_option name="id"/>).
+        with the JobScheduler ID (Option <scheduler_option name="id"/>).
         When the JobScheduler restarts, it rereads the orders from the database.
     <!--Der JobScheduler speichert jeden Auftrag in einer Tabelle 
         unter seiner Scheduler-ID (Option <scheduler_option name="id"/>).

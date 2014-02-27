@@ -164,12 +164,12 @@
     Should the order queue or job chain already have an order with the same <code>id</code>,
     then the already existing order will be overwritten.
     Should the new order have a different priority to the original, 
-    then the scheduler will take this into account.
+    then the JobScheduler will take this into account.
 <!--Wenn ein Auftrag hinzugefügt wird, prüft der Scheduler, ob ein Auftrag mit derselben <code>id</code> 
     schon eingetragen ist (nur, wenn <code>id</code> gesetzt ist).
     Hat die Auftragswarteschlange oder die Job-Kette bereits einen Auftrag mit derselben <code>id</code>,
     dann wird er ersetzt. 
-    Wenn der neue Auftrag eine andere Priorität hat, wird diese vom Scheduler berücksichtigt.-->
+    Wenn der neue Auftrag eine andere Priorität hat, wird diese vom JobScheduler berücksichtigt.-->
 </p>
 
 
@@ -212,7 +212,7 @@
     <scheduler_element name="job" attribute="idle_timeout" value="duration"/>.
     This time should be set to a value such as 30 sec., so that resources can be set free.
 <!--Mit <scheduler_element name="job" attribute="idle_timeout" value="dauer"/> können Sie eine Frist bestimmen,
-    nach der der Scheduler eine wartende Task automatisch beendet. 
+    nach der der JobScheduler eine wartende Task automatisch beendet. 
     Diese Frist sollte auf z.B. 30 Sekunden eingestellt werden, 
     um während der Verarbeitungspausen Ressourcen freizugeben.-->
 </p>

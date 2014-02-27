@@ -9,11 +9,11 @@
 
 <h2>JobScheduler Backup Cluster</h2>
 
-<p>Ein Scheduler Backup-Cluster sorgt für Ausfallsicherheit für einen Scheduler indem ein oder mehrere Ersatz-Scheduler (Backup Scheduler) auf anderen Rechnern gestartet 
-werden. Eine ausfallsicheres System besteht demnach aus einem primären Scheduler und mindestens einem Backup Scheduler. </p>
+<p>Ein JobScheduler Backup-Cluster sorgt für Ausfallsicherheit für einen JobScheduler indem ein oder mehrere Ersatz-Scheduler (Backup Scheduler) auf anderen Rechnern gestartet 
+werden. Eine ausfallsicheres System besteht demnach aus einem primären JobScheduler und mindestens einem Backup Scheduler. </p>
 
 <p>In einem Backup-Cluster zeigen alle JobScheduler ihre Verfügbarkeit durch das Versenden von Herzschlägen an. Alle JobScheduler prüfen, ob die 
-jeweils anderen JobScheduler verfügbar sind. Stellt ein Backup Scheduler fest, dass vom primären Scheduler die Herzschläge über einen längeren Zeitraum
+jeweils anderen JobScheduler verfügbar sind. Stellt ein Backup JobScheduler fest, dass vom primären JobScheduler die Herzschläge über einen längeren Zeitraum
 (ca. 1-2 Minuten) ausbleiben, übernimmt dieser die Verarbeitung. Dabei werden die offenen Aufträge und laufenden Jobs fortgeführt und entsprechend
 der Konfiguration neue Jobs gestartet</p>
 
@@ -43,10 +43,10 @@ Es werden die Datenbanksysteme Oracle, DB2, MySQL und Postgres unterstützt.
 Alle JobScheduler verwenden die selbe Konfigurationsdatei bzw. eine genaue Kopie.
 </li>
 <li>
-Der primäre Scheduler und die Backup Scheduler werden mit der gleichen Scheduler-ID gestartet. 
+Der primäre JobScheduler und die Backup JobScheduler werden mit der gleichen Scheduler-ID gestartet. 
 </li>
 <li>
-Der primäre Scheduler und die Backup Scheduler werden mit der Option <scheduler_option name="exclusive"/> 
+Der primäre JobScheduler und die Backup JobScheduler werden mit der Option <scheduler_option name="exclusive"/> 
 gestartet. 
 </li>
 </ul>
@@ -108,7 +108,7 @@ Der primäre JobScheduler ist nach dem Neustart wieder aktiv.</p>
 aufgerufen wird. Die JobScheduler starten anschließend neu.
 Der primäre JobScheduler ist nach dem Neustart wieder aktiv. 
 Nach Ablauf von 60 Sekunden werden alle noch laufenden Prozessschritte abgebrochen.</p>
-<p>Werden alle JobScheduler neu gestartet, so ist anschließend der primäre Scheduler der aktive JobScheduler</p>
+<p>Werden alle JobScheduler neu gestartet, so ist anschließend der primäre JobScheduler der aktive JobScheduler</p>
 <p>Entspricht dem XML-Kommando &lt;terminate all_schedulers="yes" restart="yes" timeout="60"&gt;</p>
 
 

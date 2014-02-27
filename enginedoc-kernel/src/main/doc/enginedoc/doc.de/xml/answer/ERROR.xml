@@ -16,7 +16,7 @@
         <xml_parent_element name="answer">
             <description>
                 <p>
-                    Wenn das Kommando zu einem Fehler führt, antwortet der Scheduler mit diesem <code>&lt;ERROR></code>-Element.
+                    Wenn das Kommando zu einem Fehler führt, antwortet der JobScheduler mit diesem <code>&lt;ERROR></code>-Element.
                 </p>
             </description>
         </xml_parent_element>

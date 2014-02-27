@@ -14,7 +14,7 @@
 
     <description>
         <p>
-            Beendet den Scheduler ordentlich (s. <a href="../termination.xml">Beendigung des Schedulers</a>).
+            Beendet den JobScheduler ordentlich (s. <a href="../termination.xml">Beendigung des Schedulers</a>).
         </p>
     </description>
 
@@ -28,7 +28,7 @@
             <description>
                 <p>
                     In Zusammenhang mit <scheduler_option name="exclusive"/> 
-                    werden alle beteiligten Scheduler beendet.
+                    werden alle beteiligten JobScheduler beendet.
                 </p>
             </description>
         </xml_attribute>
@@ -36,7 +36,7 @@
         <xml_attribute name="restart" type="yes|no" initial="no">
             <description>
                 <p>
-                    Lässt den Scheduler erneut starten.
+                    Lässt den JobScheduler erneut starten.
                 </p>
             </description>
         </xml_attribute>
@@ -45,7 +45,7 @@
             <description>
                 <p>
                     In Zusammenhang mit <scheduler_option name="exclusive"/> wird eingestellt, 
-                    dass ein inaktiver Scheduler den Betrieb übernimmt.
+                    dass ein inaktiver JobScheduler den Betrieb übernimmt.
                 </p>
             </description>
         </xml_attribute>
@@ -53,7 +53,7 @@
         <xml_attribute name="timeout" type="seconds">
             <description>
                 <p>
-                    Wenn angegeben, bricht der Scheduler nach der angegeben Frist
+                    Wenn angegeben, bricht der JobScheduler nach der angegeben Frist
                     alle Tasks ab, die bis dahin nicht beendet haben.
                 </p>
             </description>

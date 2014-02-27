@@ -27,7 +27,7 @@
         <xml_attribute name="connected" type="number" title="Anzahl der gerade verbundenen Scheduler">
             <description>
                 <p>
-                    Nicht mehr verbundene Scheduler bleiben im Register, werden aber hier nicht gezählt.
+                    Nicht mehr verbundene JobScheduler bleiben im Register, werden aber hier nicht gezählt.
                 </p>
             </description>
         </xml_attribute>

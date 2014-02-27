@@ -4,7 +4,7 @@
 <!--$Id: distributed_tcp.xml 12387 2006-11-30 09:10:11Z jz $-->
 
 <description
-    title               = "Verteilter Scheduler in Peer-to-Peer-Technik (nur eine Stichwortsammlung)"
+    title               = "Verteilter JobScheduler in Peer-to-Peer-Technik (nur eine Stichwortsammlung)"
     base_dir            = "../"
     parent_page         = "index.xml"
     author              = "$Author: jz $"
@@ -20,7 +20,7 @@
     <h2>C) Koordination Peer-to-Peer über TCP, ohne Datenbank (unausgegoren)</h2>
 
     <p>
-        In der XML-Konfiguration werden die teilnehmenden Scheduler aufgeführt.
+        In der XML-Konfiguration werden die teilnehmenden JobScheduler aufgeführt.
     </p>
     <pre>&lt;distributed_scheduler>
     &lt;distributed_node scheduler="<i>host:port</i>" weight="1"/>
@@ -30,8 +30,8 @@
     <p>
         Vorschläge für die Benennung der XML-Elemente sind willkommen.
         Auch Scheduler, die nicht hier aufgeführt sind, können gestartet und der Gruppe hinzugefügt werden.
-        Diese Scheduler bekommen das Gewicht 0.
-        (Was tun wir, wenn <scheduler_element name="security"/> der verschiedenen Scheduler widersprüchlich eingestellt sind?)
+        Diese JobScheduler bekommen das Gewicht 0.
+        (Was tun wir, wenn <scheduler_element name="security"/> der verschiedenen JobScheduler widersprüchlich eingestellt sind?)
         Sie können nicht Koordinator werden?
     </p>
 
@@ -41,26 +41,26 @@
         Es scheint, dass wir nicht ohne einen zentralen Koordinator auskommen.
         Der Koordinator ist vielleicht identisch mit dem Supervisor.
         Ohne diesen Koordinator wird es schwierig, 
-        wenn zwei Scheduler gleichzeitig denselben Auftrag hinzufügen oder ausführen wollen.
+        wenn zwei JobScheduler gleichzeitig denselben Auftrag hinzufügen oder ausführen wollen.
     </p>
     <p>
         Der Koordinator wird von den Schedulern gewählt.
-        Scheduler mit höherem Gewicht werden bevorzugt.
+        JobScheduler mit höherem Gewicht werden bevorzugt.
     </p>
     <p>
         Wenn die Verbindung zum Koordinator ausfällt, wird ein neuer Koordinator gewählt.
         Ebenso, wenn der Koordinator nicht innerhalb einer First antwortet, die TCP-Verbindung aber bestehen bleibt.
     </p>
     <p>
-        Der Koordinator nimmt als Scheduler an der normalen Ausführung von Tasks teil.
+        Der Koordinator nimmt als JobScheduler an der normalen Ausführung von Tasks teil.
     </p>
 
 
     <h3>Bildung der Gruppe</h3>
     <p>
-        Die teilnehmenden Scheduler bilden eine Gruppe.
-        Sie wählen einen Scheduler zum Koordinator, der zu jedem Scheduler eine Verbindung unterhält.
-        Die Scheduler untereinander haben sonst keine ständige Verbindung.
+        Die teilnehmenden JobScheduler bilden eine Gruppe.
+        Sie wählen einen JobScheduler zum Koordinator, der zu jedem JobScheduler eine Verbindung unterhält.
+        Die JobScheduler untereinander haben sonst keine ständige Verbindung.
     </p>
     <p>
         Erste Phase: Normale Registrierung 
@@ -81,7 +81,7 @@
     </table>
 
     <p>
-        Zweite Phase: Registrierung als verteilter Scheduler beim Server,
+        Zweite Phase: Registrierung als verteilter JobScheduler beim Server,
         der damit zum Koordinator-Anwärter wird.
         Der antwortet, sobald er mehr als die Hälfte der Scheduler-Gewichte auf sich vereinigt hat.
     </p>
@@ -102,7 +102,7 @@
     </table>
 
     <p>
-        Nach der Antwort bricht der Scheduler die Verbindung zu den anderen Anwärtern ab.
+        Nach der Antwort bricht der JobScheduler die Verbindung zu den anderen Anwärtern ab.
     </p>
 
     <p>
@@ -111,15 +111,15 @@
 
     <ul>
         <li>
-            Jeder Scheduler baut eine Verbindung zum Scheduler mit dem höchsten Gewicht auf.
+            Jeder JobScheduler baut eine Verbindung zum JobScheduler mit dem höchsten Gewicht auf.
         </li>
         <li>
-            Jeder Scheduler ernennt sich zum provisorischen Koordinator 
+            Jeder JobScheduler ernennt sich zum provisorischen Koordinator 
             und baut Verbindungen zu den anderen Schedulern auf.
         </li>
         <li>
-            Jeder Scheduler schickt über die aufgebauten Verbindungen 
-            die Liste der verbundenen Scheduler mitsamt ihren Gewichten.
+            Jeder JobScheduler schickt über die aufgebauten Verbindungen 
+            die Liste der verbundenen JobScheduler mitsamt ihren Gewichten.
         </li>
         <li>
             
@@ -140,26 +140,26 @@
         </li>
         <li>
             Der Koordinator schreibt den Auftrag in die Datenbank,
-            bestätigt dies dem Scheduler und
+            bestätigt dies dem JobScheduler und
             verteilt ihn an die anderen Scheduler.
         </li>
         <li>
-            Der Scheduler fügt den Auftrag in die eigene Warteschlange ein.
+            Der JobScheduler fügt den Auftrag in die eigene Warteschlange ein.
         </li>
     </ul>
 
     <p>
-        Wenn ein Scheduler bereit ist, den Auftrag einem Job zu übergeben, teilt er dies dem Koordinator mit.
+        Wenn ein JobScheduler bereit ist, den Auftrag einem Job zu übergeben, teilt er dies dem Koordinator mit.
         Der Koordinator bewilligt die Ausführung, 
-        wenn der Auftrag nicht schon von einem anderen Scheduler ausgeführt wird.
+        wenn der Auftrag nicht schon von einem anderen JobScheduler ausgeführt wird.
     </p>
 
     <h3>Änderung des Auftrags</h3>
     <p>
-        Jede Änderung des Auftrags wie bei einem neuen Auftrag vom Koordinator an alle Scheduler verteilt.
+        Jede Änderung des Auftrags wie bei einem neuen Auftrag vom Koordinator an alle JobScheduler verteilt.
     </p>
     <p>
-        Wenn der Auftrag gerade in Ausführung ist, sammelt der Scheduler die Änderungen und übergibt sie am Ende der Ausführung. 
+        Wenn der Auftrag gerade in Ausführung ist, sammelt der JobScheduler die Änderungen und übergibt sie am Ende der Ausführung. 
     </p>
     
     
@@ -169,11 +169,11 @@
 
     <p>
         Wenn der Koordinator nicht innerhalb einer kurzen Frist antwortet, gilt er als ausgefallen.
-        Wenn der Koordinator ausfällt, einigen sich die verbliebenen Scheduler auf einen neuen.
+        Wenn der Koordinator ausfällt, einigen sich die verbliebenen JobScheduler auf einen neuen.
     </p>
     <ul>
         <li>
-            Ein Scheduler stellt den Ausfall fest.
+            Ein JobScheduler stellt den Ausfall fest.
         </li>
         <li>
             Er macht sich zum provisorischen Koordinator
@@ -182,7 +182,7 @@
             Er ruft zur Bildung einer neuen Gruppe mit Neuwahl des Koordinators auf.
         </li>
         <li>
-            Jeder Scheduler prüft seine eigene Verbindung.
+            Jeder JobScheduler prüft seine eigene Verbindung.
         </li>
         <li>
             Wenn alle den Ausfall festgestellt haben, wird ein neuer Koordinator gewählt.
@@ -191,7 +191,7 @@
             Wenn eine Datenbank genutzt wird, liest der Koordinator die Aufträge aus der Datenbank.
         </li>
         <li>
-            Die Scheduler teilen dem neuen Koordinator mit,
+            Die JobScheduler teilen dem neuen Koordinator mit,
             welche Aufträge sie gerade in Ausführung haben.
         </li>
         <li>
@@ -199,50 +199,50 @@
         </li>
     </ul>
     <p>
-        Wenn nur eine Verbindung unterbrochen ist, also ein anderer Scheduler noch Verbindung
+        Wenn nur eine Verbindung unterbrochen ist, also ein anderer JobScheduler noch Verbindung
         zum Koordinator hat,
-        dann hält der Scheduler an und versucht, die Verbindung wieder aufzubauen.
+        dann hält der JobScheduler an und versucht, die Verbindung wieder aufzubauen.
     </p>
 
     
     <h3>Überwachung der Verbindungen</h3>
     <p>
-        Es könnten zwei Gruppen von Scheduler auseinander fallen, wenn alle Verbindungen zwischen den Gruppen ausfallen.
+        Es könnten zwei Gruppen von JobScheduler auseinander fallen, wenn alle Verbindungen zwischen den Gruppen ausfallen.
         Dann würde jede Gruppe die andere für komplette ausgefallen halten und jede für sich einen Koordinator wählen.
         Tasks und Aufträge würden dann doppelte ausgeführt.
         Das würde auch mit nur zwei Schedulern passieren, die dann jeder sich selbst als Koordinator wählen würden.
     </p>
     <p>
-        Wenn ein Scheduler A die Verbindung zum Koordinator verliert, 
-        dann verbindet er sich mit einem anderen Scheduler B.
+        Wenn ein JobScheduler A die Verbindung zum Koordinator verliert, 
+        dann verbindet er sich mit einem anderen JobScheduler B.
         Wenn B eine Verbindung zum Koordinator hat, versucht A die Verbindung zum Koordinator wieder aufzubauen.
         Im anderen Fall veranlasst A die Neubildung der Gruppe.
     </p>
     <p>
-        Die neugebildete Gruppe ist nur lebensfähig, wenn sie mehr als die Hälfte aller Scheduler umfasst.
+        Die neugebildete Gruppe ist nur lebensfähig, wenn sie mehr als die Hälfte aller JobScheduler umfasst.
         Damit wird sichergestellt, dass sich nicht zwei Gruppen bilden.
     </p>
     <p>
         Eine Verfeinerung der Bedingung: 
-        Jeder Scheduler hat ein Gewicht. 
+        Jeder JobScheduler hat ein Gewicht. 
         Eine Gruppe ist lebensfähig, wenn sie mehr als die Hälfte des Gesamtgewichts hat.
-        (Wenn ein weiterer Scheduler ausfällt, sollte die die Hälfte der bisherigen Summe genügen.)
+        (Wenn ein weiterer JobScheduler ausfällt, sollte die die Hälfte der bisherigen Summe genügen.)
     </p>
     <!--p>
-        Wenn eine Verbindung abbricht, versucht der Scheduler zunächst sie wieder aufzubauen.
-        Nur, wenn bei der Fehlermeldung <code>ECONNREFUSED</code> gilt der angesprochene Scheduler als nicht erreichbar.
+        Wenn eine Verbindung abbricht, versucht der JobScheduler zunächst sie wieder aufzubauen.
+        Nur, wenn bei der Fehlermeldung <code>ECONNREFUSED</code> gilt der angesprochene JobScheduler als nicht erreichbar.
         Bei anderen Fehlern (z.B. <code>EHOSTUNREACH</code>) liegt an anderes Problem vor, z.B. ein abgezogenes Netzwerkkabel.
         Netzwerkprobleme müssen vom Administrator gelöst werden.
     </p>
     <p>
-        Ein Scheduler gilt also als ausgefallen, wenn
+        Ein JobScheduler gilt also als ausgefallen, wenn
     </p>
     <ul>
         <li>
             Ein Verbindungsaufbau <code>ECONNREFUSED</code> liefert
         </li>
         <li>
-            Alle anderen Scheduler dies bestätigen oder selbst ein <code>ECONNREFUSED</code> liefern.
+            Alle anderen JobScheduler dies bestätigen oder selbst ein <code>ECONNREFUSED</code> liefern.
         </li>
     </ul>
     <p>
@@ -253,7 +253,7 @@
     <h3>Kritische Situationen</h3>
     <ul>
         <li>
-            Der Koordinator erhält von einem Scheduler die Mitteilung über das Ende eines Jobschritts.
+            Der Koordinator erhält von einem JobScheduler die Mitteilung über das Ende eines Jobschritts.
         </li>
         <li>
             Er schreibt den neuen Zustand in die Datenbank, dann Commit.
@@ -267,7 +267,7 @@
             aus der Datenbank.
         </li>
         <li>
-            Der Scheduler wiederholt die Mitteilung über das Ende des Jobschritts.
+            Der JobScheduler wiederholt die Mitteilung über das Ende des Jobschritts.
         </li>
         <li>
             Der Koordinator erkennt, dass der neue Zustand bereits in der Datenbank eingetragen ist.
@@ -279,13 +279,13 @@
 
     <ul>
         <li>
-            Der Koordinator erhält von einem Scheduler die Mitteilung über das Ende eines Jobschritts.
+            Der Koordinator erhält von einem JobScheduler die Mitteilung über das Ende eines Jobschritts.
         </li>
         <li>
             Er schreibt den neuen Zustand in die Datenbank, dann Commit.
         </li>
         <li>
-            Das Netzwerkkabel zwischen Scheduler und Koordinator wird abgezogen.
+            Das Netzwerkkabel zwischen JobScheduler und Koordinator wird abgezogen.
         </li>
         <li>
             

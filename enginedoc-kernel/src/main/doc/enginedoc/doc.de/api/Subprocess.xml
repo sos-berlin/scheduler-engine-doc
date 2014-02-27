@@ -175,7 +175,7 @@
             Wenn das Ende des Subprocesses nicht mit
             <scheduler_method class="Subprocess" property="wait_for_termination"/>
             abgewartet worden ist,
-            tut das der Scheduler bei Task-Ende.
+            tut das der JobScheduler bei Task-Ende.
             Wenn dann der Subprocess mit
             <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code> endet,
             stoppt der Job mit Fehler.
@@ -219,7 +219,7 @@
 
     <description>
         <p>
-            Nach Ablauf der Zeit bricht der Scheduler den Subprozess ab (Unix: mit <code>SIGKILL</code>).
+            Nach Ablauf der Zeit bricht der JobScheduler den Subprozess ab (Unix: mit <code>SIGKILL</code>).
         </p>
         <p>
             Bei Ausführung auf einem entfernten Rechner mit <scheduler_element name="process_class" attribute="remote_scheduler"/>
@@ -537,7 +537,7 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             <p>
                 <code>own_process_group</code> lässt den Subprozess in einer eigenen Prozessgruppe starten,
                 indem der Systemaufruf <code>setpgid(0,0)</code> ausgeführt wird.
-                Wenn der Scheduler den Subprozess abbricht, bricht er die ganze Prozessgruppe ab.
+                Wenn der JobScheduler den Subprozess abbricht, bricht er die ganze Prozessgruppe ab.
             </p>
             
         </description>

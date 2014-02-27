@@ -46,7 +46,7 @@
                 <p>
                     Attribut <code>setback_count=</code> gibt die maximale Anzahl aufeinanderfolgender Rückstellungen an.
                     Bei einer weiteren Rückstellung (<scheduler_method class="Order" method="setback"/>)
-                    versetzt der Scheduler den Auftrag in den Fehlerzustand <scheduler_method class="Job_chain_node" property="error_state"/>.
+                    versetzt der JobScheduler den Auftrag in den Fehlerzustand <scheduler_method class="Job_chain_node" property="error_state"/>.
                 </p>
                 <p>
                     Siehe <scheduler_method class="Job" property="max_order_setbacks"/>.

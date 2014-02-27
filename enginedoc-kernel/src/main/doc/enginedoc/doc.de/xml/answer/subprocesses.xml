@@ -24,7 +24,7 @@
                 <p>
                     Bei
                     <scheduler_element name="modify_spooler" attribute="cmd" value="abort_immediately"/>
-                    bricht der Scheduler diese Prozesse ab, bevor er sich selbst abbricht.
+                    bricht der JobScheduler diese Prozesse ab, bevor er sich selbst abbricht.
                 </p>
             </description>
         </xml_parent_element>

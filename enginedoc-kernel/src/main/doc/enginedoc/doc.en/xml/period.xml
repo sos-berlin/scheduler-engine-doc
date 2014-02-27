@@ -34,10 +34,10 @@
                 <p>
                     The end of the operating period.
                     Should <code>let_run="no"</code> have been set and no further operating period is designated,
-                    then the Job Scheduler ends all tasks which are running (using <code>spooler_close()</code>).
+                    then the JobScheduler ends all tasks which are running (using <code>spooler_close()</code>).
                 <!--Um diese Zeit endet die Periode.
                     Wenn dann <code>let_run="no"</code> gesetzt ist und keine weitere Periode gilt,
-                    beendet der Scheduler laufende Tasks (durch Aufruf von <code>spooler_close()</code>).-->
+                    beendet der JobScheduler laufende Tasks (durch Aufruf von <code>spooler_close()</code>).-->
                 </p>
             </description>
         </xml_attribute>
@@ -50,7 +50,7 @@
                     as far as allowed by the <code>&lt;run_time></code> attribute.
                     This repeat interval can be specified in <i>hh:mm</i>, in <i>hh:mm:ss</i> or in seconds.
                 <!--Der Job wird, wenn er nicht schon läuft, zu Beginn der Periode gestartet.
-                    Nach Jobende soll der Scheduler den Job nach ablauf der angegebenen Zeit erneut starten, 
+                    Nach Jobende soll der JobScheduler den Job nach ablauf der angegebenen Zeit erneut starten, 
                     soweit die <code>&lt;run_time></code> das zulässt.
                     Die Wiederholung kann im Format <i>hh:mm</i> oder <i>hh:mm:ss</i> oder in Sekunden angegeben werden.-->
                 </p>
@@ -71,7 +71,7 @@
             <description>
                 <p>
                     Similar to <code>repeat</code> but allows the <code>begin</code> and <code>end</code> times to be specified
-                    independently of a Job Scheduler's operating period.
+                    independently of a JobScheduler's operating period.
                 </p>
                 <p>
                     Starts a job, should it not already be running, at the beginning of a specified time period.
@@ -122,16 +122,16 @@
                     Für auftragsgesteuerte Jobs sollte Einstellung <code>let_run="no"</code> eingestellt werden.-->
                 </p>
                 <p>
-                    <code>let_run="yes"</code> allows the Job Scheduler to let a task continue running,
+                    <code>let_run="yes"</code> allows the JobScheduler to let a task continue running,
                     even though this is not allowed by the <code>&lt;run_time&gt;</code> attribute.
-                <!--<code>let_run="yes"</code> gibt an, dass der Scheduler die Task weiterlaufen lassen soll,
+                <!--<code>let_run="yes"</code> gibt an, dass der JobScheduler die Task weiterlaufen lassen soll,
                     auch wenn die <code>&lt;run_time></code> das eigentlich nicht mehr zulässt.-->
                 </p>
                 <p>
-                    <code>let_run="no"</code> causes the Job Scheduler to end a task
+                    <code>let_run="no"</code> causes the JobScheduler to end a task
                     (spooler_close is evoked instead of spooler_process), 
                     as soon as the <code>&lt;run_time&gt;</code> is no longer valid.
-                <!--Bei <code>let_run="no"</code> beendet der Scheduler die Task
+                <!--Bei <code>let_run="no"</code> beendet der JobScheduler die Task
                     (ruft also nicht mehr spooler_process, sondern spooler_close auf), 
                     sobald die <code>&lt;run_time></code> nicht mehr gilt.-->
                 </p>

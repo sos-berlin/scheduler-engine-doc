@@ -21,7 +21,7 @@
             <description>
                 <p>
                     <code>ignore="yes"</code> allows operation with process classes to be disabled.
-                    This means that tasks run as a part of the Job Scheduler process,
+                    This means that tasks run as a part of the JobScheduler process,
                     which enables debugging of tasks and orders to be carried out.
                 <!--<code>ignore="yes"</code> unterdrückt den Betrieb mit Prozessklassen,
                     d.h. die Tasks laufen im Prozess des Schedulers,

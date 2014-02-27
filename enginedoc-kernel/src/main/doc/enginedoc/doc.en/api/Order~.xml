@@ -157,10 +157,10 @@
     <description>
         <p>
             A job can also be directly specified for an order.
-            The Job Scheduler then sets the order state to the state of the job in the job chain.
+            The JobScheduler then sets the order state to the state of the job in the job chain.
             Generally, however, this is done using the <scheduler_method class="Order" property="state"/> method.
         <!--Sie können den Job auch direkt setzen.
-            Dann stellt der Scheduler den Zustand des Auftrags auf den Zustand des Jobs in der Jobkette ein.
+            Dann stellt der JobScheduler den Zustand des Auftrags auf den Zustand des Jobs in der Jobkette ein.
             In der Regel wird man aber <scheduler_method class="Order" property="state"/> verwenden.-->
         </p>
     </description>
@@ -364,7 +364,7 @@
             The counter is set to 0 when 
             <scheduler_method class="Job_impl" method="spooler_process"/>
             is completely carried out without this method being called.
-            Note that all counters are set to zero when the Job Scheduler is started.
+            Note that all counters are set to zero when the JobScheduler is started.
         <!--Der Auftrag zählt aufeinander folgende Aufrufe dieser Methode,
             was von <scheduler_element name="delay_order_after_setback"/>
             berücksichtigt wird.
@@ -816,13 +816,13 @@ $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
             <p>
                 This means that an order with the completed state can be suspended,
                 which in turn means that it will not be removed.
-                The Job Scheduler will only remove such a suspended order once it is no longer suspended -
+                The JobScheduler will only remove such a suspended order once it is no longer suspended -
                 i.e. <code>order.suspended=false</code> is set.
             <!--Damit kann ein Auftrag in einen Endzustand ausgesetzt werden,
                 womit verhindet wird, dass er entfernt wird.
                 Erst wenn die Aussetzung eines solchen Auftrags aufgehoben wird,
                 (<code>order.suspended=false</code>),
-                entfernt der Scheduler den Auftrag.-->
+                entfernt der JobScheduler den Auftrag.-->
             </p>
             <p>
                 A suspended order with the completed state can be changed using

@@ -3,10 +3,10 @@
 
 <!--$Id$-->
 
-<!--title               = "Vom Scheduler verwendete SQL-Anweisungen"-->
+<!--title               = "Vom JobScheduler verwendete SQL-Anweisungen"-->
 
 <description
-    title               = "SQL Instructions Used by the Job Scheduler"
+    title               = "SQL Instructions Used by the JobScheduler"
     base_dir            = ""
     author              = "$Author: ap $"
     date                = "$Date: 2012-06-12 21:42:49 +0200 (Di, 12 Jun 2012) $"
@@ -29,9 +29,9 @@
 <!--<h2>SQL-Anweisungen zum Einrichten der Tabellen</h2>-->
 
     <p>
-        The instructions the Job Scheduler uses to create any missing database tables are listed below.
+        The instructions the JobScheduler uses to create any missing database tables are listed below.
         Note that the instructions used depend on the database software being used.
-    <!--Der Scheduler richtet beim Start fehlende Tabellen mit folgenden Anweisungen ein.
+    <!--Der JobScheduler richtet beim Start fehlende Tabellen mit folgenden Anweisungen ein.
         Die Anweisungen unterscheiden sich nach verwendeter Datenbank-Software.-->
     </p>
     

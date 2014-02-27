@@ -4,14 +4,14 @@
 <!--$Id: scheduler_script.xml 13119 2007-10-11 16:24:51Z aa $-->
 
 <xml_element name     = "scheduler_script"
-             title    = "Job Scheduler Skript"
+             title    = "JobScheduler Skript"
              category = "Konfiguration"
              base_dir = "../"
              parent_page = "../konfiguration.xml"
              author   = "$Author: aa $"
              date     = "$Date: 2007-10-11 18:24:51 +0200 (Thu, 11 Oct 2007) $">
 
-    <scheduler_keyword keyword="Job Scheduler Skript"/>
+    <scheduler_keyword keyword="JobScheduler Skript"/>
 
     <xml_parent_elements>
         <xml_parent_element name="config"/>
@@ -22,7 +22,7 @@
         <xml_attribute name="name" type="Name" intial="scheduler">
             <description>
                 <p>
-                    Mehrere Job Scheduler Skripte können angegeben werden,
+                    Mehrere JobScheduler Skripte können angegeben werden,
                     wenn jedem ein eigener Name gegeben wird.
                 </p>
             </description>
@@ -31,8 +31,8 @@
         <xml_attribute name="ordering" type="number">
             <description>
                 <p>
-                    Job Scheduler Skripte mit kleinerem <code>ordering</code> werden vorranging aufgerufen.
-                    Umgekehrt beim Beenden des Job Schedulers:
+                    JobScheduler Skripte mit kleinerem <code>ordering</code> werden vorranging aufgerufen.
+                    Umgekehrt beim Beenden des JobSchedulers:
                     <scheduler_method class="Job_impl" method="spooler_exit"/> werden nachrangig aufgerufen.
                 </p>
             </description>
@@ -51,11 +51,11 @@
         </p>
         <p>
             <scheduler_method class="Job_impl" method="spooler_init"/> 
-            wird beim Start des Job Schedulers (vor dem Start der Jobs) aufgerufen.
+            wird beim Start des JobSchedulers (vor dem Start der Jobs) aufgerufen.
         </p>
         <p>
             <scheduler_method class="Job_impl" method="spooler_exit"/> 
-            wird bei Beendigung des Job Schedulers (nach Beendigung aller Jobs) aufgerufen.
+            wird bei Beendigung des JobSchedulers (nach Beendigung aller Jobs) aufgerufen.
         </p>
     </description>
 

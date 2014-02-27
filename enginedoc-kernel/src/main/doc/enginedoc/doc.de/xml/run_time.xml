@@ -49,7 +49,7 @@
                     Gibt gibt den Namen einer Funktion im Scheduler-Skript an, die die nächste Startzeit liefert.
                 </p>
                 <p>
-                    Der Scheduler übergibt der Funktion im ersten Parameter den Zeitpunkt, 
+                    Der JobScheduler übergibt der Funktion im ersten Parameter den Zeitpunkt, 
                     ab dem sie eine Startzeit liefern soll,
                     als Zeichenkette im Format <code>"yyyy-mm-dd HH:MM:SS"</code>.
                 </p>
@@ -59,7 +59,7 @@
                 <p>
                     Rückgabe der Funktion ist ein Zeitpunkt, der nicht vor dem ersten Parameter liegen darf,
                     oder nichts (d.h. <code>""</code> oder <code>Empty</code>).
-                    Der Scheduler erwartet als Rückgabe eine Zeichenkette im Format <code>"yyyy-mm-dd hh:mm:ss"</code>.
+                    Der JobScheduler erwartet als Rückgabe eine Zeichenkette im Format <code>"yyyy-mm-dd hh:mm:ss"</code>.
                 </p>
             </description>
 
@@ -95,7 +95,7 @@
             <description>
                 <p>
                     Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).
                 </p>
@@ -106,7 +106,7 @@
             <description>
                 <p>
                     Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).
                 </p>
@@ -117,7 +117,7 @@
             <description>
                 <p>
                     Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).
                 </p>
@@ -128,7 +128,7 @@
             <description>
                 <p>
                     Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).
                 </p>
@@ -154,7 +154,7 @@
                 </p>
                 <p>
                     Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).
                 </p>
@@ -165,7 +165,7 @@
             <description>
                 <p>
                     Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).
                 </p>
@@ -239,10 +239,10 @@
 
     <description>
         <p>
-            <code>&lt;run_time></code> gibt an, zu welchen Zeiten der Scheduler Tasks dieses Jobs laufen lässt.
+            <code>&lt;run_time></code> gibt an, zu welchen Zeiten der JobScheduler Tasks dieses Jobs laufen lässt.
             Das wird realisiert durch Perioden (s. <scheduler_element name="period"/>).
-            Der Scheduler wählt die erste Periode aus, die zu einer Zeit gilt (deren Ende noch nicht abgelaufen ist).
-            Diese Periode gilt bis zu ihrem Ende. Dann wählt der Scheduler erneut eine Periode aus.
+            Der JobScheduler wählt die erste Periode aus, die zu einer Zeit gilt (deren Ende noch nicht abgelaufen ist).
+            Diese Periode gilt bis zu ihrem Ende. Dann wählt der JobScheduler erneut eine Periode aus.
         </p>
         <p>
             Eine Periode mit <code>single_start</code> gilt nur für einen Zeitpunkt.
@@ -254,7 +254,7 @@
 
         <h3>Sommer- und Winterzeit</h3>
         <p>
-            Der Scheduler berücksichtigt die Zeitumstellung zu Beginn und Ende der Sommerzeit.
+            Der JobScheduler berücksichtigt die Zeitumstellung zu Beginn und Ende der Sommerzeit.
             Es gilt stets die lokale Zeit.
         </p>
         <p>
@@ -314,7 +314,7 @@
             <code>let_run=</code> und
             <code>single_start=</code>
             wirken, wenn kein <scheduler_element name="period"/> angegeben ist,
-            und lassen den Scheduler eins mit denselben Attributen erzeugen.
+            und lassen den JobScheduler eins mit denselben Attributen erzeugen.
         </p>
         <pre>&lt;run_time begin="07:00" end="09:00"/></pre>
         <p>wird zu</p>

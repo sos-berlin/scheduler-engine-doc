@@ -71,14 +71,14 @@
         Die Aufträge sind nach Priorität und Zeitpunkt des Eintreffens geordnet.
     </p>
     <p>
-        Verarbeiten bedeutet, dass der Scheduler die Methode
+        Verarbeiten bedeutet, dass der JobScheduler die Methode
         <scheduler_method class="Job_impl" method="spooler_process"/>
         einer Task des Jobs aufruft.
         Die Methode kann über
         <scheduler_method class="Task" property="order"/>
         auf den Auftrag zugreifen.
         Endet <code>spooler_process()</code> ohne Fehler (ohne Exception),
-        entfernt der Scheduler den Auftrag aus der Auftragswarteschlange.
+        entfernt der JobScheduler den Auftrag aus der Auftragswarteschlange.
         Ist der Auftrag in einer Jobkette, dann rückt der Auftrag an die nächste Position der Jobkette.
     </p>
 </description>

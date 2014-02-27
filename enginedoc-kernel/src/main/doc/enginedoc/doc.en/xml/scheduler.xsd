@@ -4,7 +4,7 @@
     <xsd:annotation>
         <xsd:documentation xml:lang="de">
             $Id: scheduler.xsd 14660 2011-06-23 12:04:10Z jz $
-            Schema für die Scheduler-Konfiguration,
+            Schema für die JobScheduler-Konfiguration,
             s.a. http://www.zschimmer.com/sos/scheduler/konfiguration.html
         </xsd:documentation>
     </xsd:annotation>

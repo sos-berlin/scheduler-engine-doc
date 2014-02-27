@@ -60,7 +60,7 @@
             <code>start_when_directory_changed( "<i>directory</i>", "<i>regex</i>" )</code>.-->
         </p>
         <p>
-            A task is started should a monitored directory be removed after the Job Scheduler has been started.
+            A task is started should a monitored directory be removed after the JobScheduler has been started.
             At the same time the current monitoring job will be stopped.
             No further tasks will be started (because the job has been stopped).
         <!--Wenn das Verzeichnis nach dem Start des Schedulers entfernt wird, also nicht mehr überwacht werden kann,

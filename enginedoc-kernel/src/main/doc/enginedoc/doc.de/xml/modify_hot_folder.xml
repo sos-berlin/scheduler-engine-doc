@@ -42,7 +42,7 @@
             <description>
                 <p>
                     Gibt den Ordner an, in das das XML-Element geschrieben werden soll.
-                    Der Scheduler legt das Konfigurationsverzeichnis bei Bedarf an
+                    Der JobScheduler legt das Konfigurationsverzeichnis bei Bedarf an
                     (einschließlich aller oberen Verzeichnisse, bis auf das Wurzelverzeichnis).
                 </p>
             </description>

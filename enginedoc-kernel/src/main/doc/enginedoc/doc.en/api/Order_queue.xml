@@ -83,23 +83,23 @@
         Die Aufträge sind nach Priorität und Zeitpunkt des Eintreffens geordnet.-->
     </p>
     <p>
-        Processing means that the Job Scheduler calls the 
+        Processing means that the JobScheduler calls the 
         <scheduler_method class="Job_impl" method="spooler_process"/> 
         method for a task.
         This method can access the order using the 
         <scheduler_method class="Task" property="order"/>
         property.
         Should the <code>spooler_process()</code> end without an error (i.e. without any exceptions),
-        then the Job Scheduler removes the order from the order queue.
+        then the JobScheduler removes the order from the order queue.
         If the order is in a job chain then it is moved to the next position in the chain.
-    <!--Verarbeiten bedeutet, dass der Scheduler die Methode
+    <!--Verarbeiten bedeutet, dass der JobScheduler die Methode
         <scheduler_method class="Job_impl" method="spooler_process"/>
         einer Task des Jobs aufruft.
         Die Methode kann über
         <scheduler_method class="Task" property="order"/>
         auf den Auftrag zugreifen.
         Endet <code>spooler_process()</code> ohne Fehler (ohne Exception),
-        entfernt der Scheduler den Auftrag aus der Auftragswarteschlange.
+        entfernt der JobScheduler den Auftrag aus der Auftragswarteschlange.
         Ist der Auftrag in einer Jobkette, dann rückt der Auftrag an die nächste Position der Jobkette.-->
     </p>
 </description>

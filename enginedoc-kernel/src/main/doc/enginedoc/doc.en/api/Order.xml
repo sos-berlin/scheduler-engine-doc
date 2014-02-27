@@ -41,7 +41,7 @@
 
         </p>
         <p>
-            When an <code>id</code> is not set, then the Job Scheduler automatically allocates one using
+            When an <code>id</code> is not set, then the JobScheduler automatically allocates one using
             <scheduler_method class="Job_chain" method="add_order"/>.
         <!--Wenn Sie die <code>id</code> nicht setzen, vergibt
             <scheduler_method class="Job_chain" method="add_order"/> eine Kennung.-->
@@ -209,9 +209,9 @@
         <!--Der Text wird auf der HTML-Oberfläche gezeigt.-->
         </p>
         <p>
-            For non-API jobs the Job Scheduler fills this field with the first line from stdout, 
+            For non-API jobs the JobScheduler fills this field with the first line from stdout, 
             up to a maximum of 100 characters.
-        <!--Für Nicht-API-Jobs füllt der Scheduler dieses Feld mit der ersten Zeile von stdout, max. 100 Zeichen.-->
+        <!--Für Nicht-API-Jobs füllt der JobScheduler dieses Feld mit der ersten Zeile von stdout, max. 100 Zeichen.-->
         </p>
     </description>
 </property>
@@ -351,7 +351,7 @@
             This count is then used by <scheduler_element name="delay_order_after_setback"/>.
             It is set to 0, when <scheduler_method class="Job_impl" method="spooler_process"/>
             is completed without <scheduler_element name="delay_order_after_setback"/> being called.
-            All counters are set to 0 when the Job Scheduler is started.
+            All counters are set to 0 when the JobScheduler is started.
         <!--Der Auftrag zählt aufeinander folgende Aufrufe dieser Methode,
             was von <scheduler_element name="delay_order_after_setback"/>
             berücksichtigt wird.
@@ -836,13 +836,13 @@ $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
             <p>
                 This means that an order can be set to an end state, 
                 which stops it from being removed.
-                The Job Scheduler can remove such an order only when it is not suspended
+                The JobScheduler can remove such an order only when it is not suspended
                  - i.e. <code>order.suspended=false</code>).
             <!--Damit kann ein Auftrag in einen Endzustand ausgesetzt werden,
                 womit verhindet wird, dass er entfernt wird.
                 Erst wenn die Aussetzung eines solchen Auftrags aufgehoben wird,
                 (<code>order.suspended=false</code>),
-                entfernt der Scheduler den Auftrag.-->
+                entfernt der JobScheduler den Auftrag.-->
 
             </p>
             <p>

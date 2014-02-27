@@ -14,7 +14,7 @@
         <xml_parent_element directory="xml/" name="config">
             <description>
                 <p>
-                    Der Scheduler führt die Kommandos nach dem Laden der Konfiguration
+                    Der JobScheduler führt die Kommandos nach dem Laden der Konfiguration
                     und vor dem Scheduler-Skript aus.
                     Die <code>&lt;commands></code> aus den <scheduler_element name="base"/>-Konfigurationen
                     werden zuerst ausgeführt.
@@ -28,7 +28,7 @@
         <xml_parent_element directory="xml/" name="job">
             <description>
                 <p>
-                    Der Scheduler führt die Kommandos aus, wenn eine Task sich beendet.
+                    Der JobScheduler führt die Kommandos aus, wenn eine Task sich beendet.
                     Für manche Kommandos lassen sich die Parameter der beendeten Task 
                     oder (unter bestimmten Bedingungen) des zuletzt ausgeführten Auftrags
                     mit <scheduler_element name="copy_params"/> übernehmen.

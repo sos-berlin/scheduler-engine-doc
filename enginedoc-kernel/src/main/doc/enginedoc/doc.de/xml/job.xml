@@ -51,7 +51,7 @@
         <xml_attribute name="order" type="yes_no" title="Auftragsgesteuerter Job">
             <description>
                 <p>
-                    Bei <code>order="yes"</code> ist der Job auftragsgesteuert. Der Scheduler startet diesen Job nur, wenn ein Auftrag vorliegt.
+                    Bei <code>order="yes"</code> ist der Job auftragsgesteuert. Der JobScheduler startet diesen Job nur, wenn ein Auftrag vorliegt.
                 </p>
                 <p>
                     Ein Skript kann mit <scheduler_method class="Job" property="order_queue"/> das Attribut prüfen.
@@ -81,7 +81,7 @@
         <xml_attribute name="min_tasks" type="zahl" initial="0" title="Mindeste Anzahl der stets laufenden Tasks">
             <description>
                 <p>
-                    Der Scheduler sorgt dafür, das wenigstens die angegebene Anzahl Tasks läuft.
+                    Der JobScheduler sorgt dafür, das wenigstens die angegebene Anzahl Tasks läuft.
                     So lassen sich auftragsgesteuerte Tasks in Bereitschaft bringen,
                     die sehr lange für ihre Initialisierung brauchen.
                 </p>
@@ -89,11 +89,11 @@
                     <scheduler_element name="job" attribute="tasks"/> muss groß genug sein.
                 </p>
                 <p>
-                    Der Scheduler startet weitere Tasks, wenn
+                    Der JobScheduler startet weitere Tasks, wenn
                 </p>
                 <ul>
                     <li>
-                        der Scheduler startet
+                        der JobScheduler startet
                     </li>
                     <li>
                         oder eine Task sich beendet hat
@@ -124,7 +124,7 @@
                     </li>
                 </ul>
                 <p>
-                    Um ein Heißlaufen zu verhindern, startet der Scheduler keine neuen Tasks,
+                    Um ein Heißlaufen zu verhindern, startet der JobScheduler keine neuen Tasks,
                     nachdem sich eine sofort beendet hat.
                     Nur in folgenden Fällen führt das Ende einer Task zum Start einer neuen:
                 </p>
@@ -166,7 +166,7 @@
                     oder bei einer Nicht-API-Task 
                     (<scheduler_element name="process"/> oder <scheduler_element name="script" attribute="language" value="shell"/>)
                     die ganze Task.
-                    Nach Ablauf der Frist bricht der Scheduler die Task ab.
+                    Nach Ablauf der Frist bricht der JobScheduler die Task ab.
                 </p>
                 <p>
                     <i>dauer</i> kann in Sekunden oder im Format <code>HH:MM</code> oder <code>HH:MM:SS</code> angegeben werden.
@@ -179,7 +179,7 @@
                 <p>
                     Begrenzt den Leerlauf eines auftragsgesteuerten Jobs (<code>order="yes"</code>).
                     Wenn eine Task auf den nächsten Auftrag wartet und in der Frist kein Auftrag
-                    eintrifft, beendet der Scheduler sie.
+                    eintrifft, beendet der JobScheduler sie.
                 </p>
                 <p>
                     <i>dauer</i> kann in Sekunden oder im Format <code>HH:MM</code> oder <code>HH:MM:SS</code> angegeben werden.
@@ -274,7 +274,7 @@
                     unsichtbar.
                 </p>
                 <p>
-                    Bei <code>visible="no"</code> setzt der Scheduler den Job sichtbar, sobald eine Task eingereiht wird.
+                    Bei <code>visible="no"</code> setzt der JobScheduler den Job sichtbar, sobald eine Task eingereiht wird.
                     Bei <code>visible="never"</code> ist das nicht der Fall.
                 </p>
             </description>
@@ -341,7 +341,7 @@
                     trotzdem zuerst einen TCP-Verbindungsfehler (<code>ECONNRESET</code>) hervorruft,
                     führen TCP-Verbindungsfehler nur dann zum Stopp des Jobs, wenn
                     <code>ignore_signals="…"</code> nicht zutrifft.
-                    Der Scheduler weist mit der Meldung <scheduler_message code="SCHEDULER-974"/> darauf hin.
+                    Der JobScheduler weist mit der Meldung <scheduler_message code="SCHEDULER-974"/> darauf hin.
                 </p>
                 <p>
                     Siehe auch <scheduler_element name="commands" attribute="on_exit_code" value="SIGTERM"/> 
@@ -373,7 +373,7 @@
                     <code>stop_on_error="no"</code> lässt den Job in diesen Fällen nicht stoppen.
                     Endet 
                     <scheduler_method class="Job_impl" method="spooler_process"/> mit Exception,
-                    versetzt der Scheduler den Auftrag in den Fehlerzustand
+                    versetzt der JobScheduler den Auftrag in den Fehlerzustand
                     (<scheduler_element name="job_chain_node" attribute="error_state"/>).
                 </p>
                 <p>
@@ -395,7 +395,7 @@
                 <p>
                     <code>replace="yes"</code> lässt diese Job-Definition eine evtl. bereits vorhandene ersetzen.
                     Wenn das nicht möglich ist, weil z.B. gerade eine Task läuft,
-                    dann ersetzt der Scheduler den Job später.
+                    dann ersetzt der JobScheduler den Job später.
                 </p>
                 <p>
                     Ein auftragsgesteuerte Job (<scheduler_element name="job" attribute="order" value="yes"/>)
@@ -413,7 +413,7 @@
             <description>
                 <p>
                     Wenn ein Jobschritt vor der angegebenen Zeit beendet wird,
-                    gibt der Scheduler die Warnung <scheduler_message code="SCHEDULER-711"/> aus.
+                    gibt der JobScheduler die Warnung <scheduler_message code="SCHEDULER-711"/> aus.
                 </p>
                 <p>
                     Die Zeit kann im den Formaten <code>HH:MM</code>, <code>HH:MM:SS</code>,
@@ -428,7 +428,7 @@
             <description>
                 <p>
                     Wenn ein Jobschritt länger als die angegebenen Zeit dauert,
-                    gibt der Scheduler die Warnung <scheduler_message code="SCHEDULER-711"/> aus.
+                    gibt der JobScheduler die Warnung <scheduler_message code="SCHEDULER-711"/> aus.
                 </p>
                 <p>
                     Die Zeit kann im den Formaten <code>HH:MM</code>, <code>HH:MM:SS</code>,

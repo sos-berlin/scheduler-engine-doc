@@ -27,12 +27,12 @@
                     hinzugefügten Prozesse aufgelistet.-->
                 </p>
                 <p>
-                    The Job Scheduler breaks off these processes before terminating itself in the event of a 
+                    The JobScheduler breaks off these processes before terminating itself in the event of a 
                     <scheduler_element name="modify_spooler" attribute="cmd" value="abort_immediately"/>
                     command.
                 <!--Bei
                     <scheduler_element name="modify_spooler" attribute="cmd" value="abort_immediately"/>
-                    bricht der Scheduler diese Prozesse ab, bevor er sich selbst abbricht.-->
+                    bricht der JobScheduler diese Prozesse ab, bevor er sich selbst abbricht.-->
                 </p>
             </description>
         </xml_parent_element>

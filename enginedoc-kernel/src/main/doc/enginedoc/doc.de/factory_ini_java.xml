@@ -17,7 +17,7 @@
             <description>
                 <p>
                     Hier können Sie den <code>class_path</code> um Verzeichnisse oder Jars erweitern,
-                    die nur für den Scheduler gelten.
+                    die nur für den JobScheduler gelten.
                     Die Angaben werden der Einstellung in <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/>
                     vorangestellt.
                 </p>

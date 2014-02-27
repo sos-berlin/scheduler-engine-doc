@@ -4,7 +4,7 @@
 <!--$Id$-->
 
 <xml_element name          = "remote_schedulers" 
-             title         = "Registered Job Schedulers"
+             title         = "Registered JobSchedulers"
              category      = "Answer"
              sub_directory = "answer/"
              base_dir      = "../../"
@@ -17,7 +17,7 @@
     </xml_parent_elements>
     
     <xml_attributes>
-        <xml_attribute name="count" type="number" title="Number of registered Job Schedulers">
+        <xml_attribute name="count" type="number" title="Number of registered JobSchedulers">
     <!--<xml_attribute name="count" type="number" title="Anzahl der registrierten Scheduler">-->
             <description>
                 <p>
@@ -25,12 +25,12 @@
             </description>
         </xml_attribute>
 
-        <xml_attribute name="connected" type="number" title="Number of connected Job Schedulers">
+        <xml_attribute name="connected" type="number" title="Number of connected JobSchedulers">
     <!--<xml_attribute name="connected" type="number" title="Anzahl der gerade verbundenen Scheduler">-->
             <description>
                 <p>
                     Schedulers which are no longer connected remain registered, but are no longer counted here.
-                <!--Nicht mehr verbundene Scheduler bleiben im Register, werden aber hier nicht gezählt.-->
+                <!--Nicht mehr verbundene JobScheduler bleiben im Register, werden aber hier nicht gezählt.-->
                 </p>
             </description>
         </xml_attribute>

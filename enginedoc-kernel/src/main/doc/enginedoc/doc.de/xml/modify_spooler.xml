@@ -15,7 +15,7 @@
 
     <description>
         <p>
-            Wenn der Scheduler wegen Plattenplatzmangel für ein Protokoll angehalten hat
+            Wenn der JobScheduler wegen Plattenplatzmangel für ein Protokoll angehalten hat
             (<scheduler_element name="state" attribute="waiting_errno" directory="xml/answer/"/>),
             werden die Subkommandos
             <code>pause</code>,
@@ -44,14 +44,14 @@
                 <dl>
                     <dt><code>cmd="pause"</code></dt>
                     <dd>
-                        Hält den Scheduler vorübergehend an.
-                        Tasks in eigenen Prozessen laufen noch solange weiter, wie sie nicht mit dem Scheduler kommunizieren.
+                        Hält den JobScheduler vorübergehend an.
+                        Tasks in eigenen Prozessen laufen noch solange weiter, wie sie nicht mit dem JobScheduler kommunizieren.
                     </dd>
 
                     <dt><code>cmd="continue"</code></dt>
                     <dd>
                         Hebt <code>cmd="pause"</code> auf.<br/>
-                        Oder setzt den Scheduler fort, wenn er wegen Platzmangels für die Protokolldateien angehalten hat
+                        Oder setzt den JobScheduler fort, wenn er wegen Platzmangels für die Protokolldateien angehalten hat
                         (<scheduler_element name="state" attribute="waiting_errno" directory="xml/answer/">siehe hier</scheduler_element>).                        
                     </dd>
 <!--
@@ -67,19 +67,19 @@
 
                     <dt><code>cmd="terminate"</code></dt>
                     <dd>
-                        Beendet den Scheduler ordentlich
+                        Beendet den JobScheduler ordentlich
                         (näheres <a href="../termination.xml">hier</a>) und <scheduler_method class="Spooler" method="terminate"/>).
                     </dd>
 
                     <dt><code>cmd="terminate_and_restart"</code></dt>
                     <dd>
-                        Beendet den Scheduler ordentlich und versucht ihn dann neu zu starten
+                        Beendet den JobScheduler ordentlich und versucht ihn dann neu zu starten
                         (näheres <a href="../termination.xml">hier</a> und <scheduler_method class="Spooler" method="terminate_and_restart"/>).
                     </dd>
 
                     <dt><code>cmd="let_run_terminate_and_restart"</code></dt>
                     <dd>
-                        Beendet den Scheduler ordentlich und versucht ihn dann neu zu starten.
+                        Beendet den JobScheduler ordentlich und versucht ihn dann neu zu starten.
                         Laufende Tasks werden nicht beendet (außer wartende Tasks im Zustand running_waiting_for_order).
                         Erst wenn sich alle Tasks beendet haben, endet der Scheduler.
                         (Näheres <a href="../termination.xml">hier</a>).
@@ -87,13 +87,13 @@
 
                     <dt><code>cmd="abort_immediately"</code></dt>
                     <dd>
-                        Bricht den Scheduler sofort ab
+                        Bricht den JobScheduler sofort ab
                         (näheres <a href="../termination.xml">hier</a>).
                     </dd>
 
                     <dt><code>cmd="abort_immediately_and_restart"</code></dt>
                     <dd>
-                        Bricht den Scheduler sofort ab und versucht ihn dann neu zu starten
+                        Bricht den JobScheduler sofort ab und versucht ihn dann neu zu starten
                         (näheres <a href="../termination.xml">hier</a>).
                     </dd>
 
@@ -105,7 +105,7 @@
             <description>
                 <p>
                     Für <code>cmd="terminate"</code> und <code>cmd="terminate_and_restart"</code>:
-                    Die Frist, nach der der Scheduler nicht beendete Prozesse abbrechen soll.
+                    Die Frist, nach der der JobScheduler nicht beendete Prozesse abbrechen soll.
                 </p>
                 <p>
                     Voreingestellt ist eine endlose Frist.

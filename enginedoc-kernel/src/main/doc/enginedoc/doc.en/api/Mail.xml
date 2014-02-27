@@ -444,11 +444,11 @@ $spooler_log->info( $spooler_log->mail->dequeue_log );</pre>
 
         <title>
             The XSLT style sheet for e-mail processing.
-            Before sending an e-mail the Job Scheduler 
+            Before sending an e-mail the JobScheduler 
             creates an XML document containing the e-mail headers, subject and body. The content of
             these elements can be adjusted or overwritten by an individual XSLT style sheet. 
             This can be used e.g. to create translations of e-mail content. 
-            Having processed the XSLT style sheet the Job Scheduler sends the resulting content
+            Having processed the XSLT style sheet the JobScheduler sends the resulting content
             of the XML elements as e-mail.
         <!--XSLT-Stylesheet für eMail-Aufbereitung-->
         </title>

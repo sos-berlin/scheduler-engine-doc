@@ -30,7 +30,7 @@
         <p>
             Wenn das Betriebssystem nicht genügend <i>file handles</i> zur Verfügung stellt
             (Unix: max. 1024, begrenzt durch FD_SETSIZE),
-            sollte der Scheduler seine Zahl der offenen Dateien begrenzen.
+            sollte der JobScheduler seine Zahl der offenen Dateien begrenzen.
             Wenn er mehr offene Dateien braucht, schließt er die am längsten nicht benutzte Datei.
             Die wird dann bei Gebrauch wieder eröffnen und korrekt positioniert.
             (Das kann mit der Klasse <code>File</code> implementiert werden.)
@@ -38,7 +38,7 @@
         <p>
             Die Job-Protokolle werden bereits jetzt für jede Zeile geöffnet und geschlossen.
             Wenn die Datei nicht wieder geöffnet werden kann, 
-            liefert der Scheduler einen Fehler, der zum Stopp des Jobs führen kann.
+            liefert der JobScheduler einen Fehler, der zum Stopp des Jobs führen kann.
         </p>
     </div>
 
@@ -134,7 +134,7 @@
     <div class="indent">
         <p style="margin-top: 0px">
             Besonders <scheduler_method class="Log" method="info"/> sollte aus einem beliebigen Thread heraus aufrufbar sein
-            (bisher lehnt der Scheduler das mit einer Exception ab).
+            (bisher lehnt der JobScheduler das mit einer Exception ab).
         </p>
         <p>
             Erweiterung: Die Scheduler-API steht auch zur Verfügung, 
@@ -166,7 +166,7 @@
         <p style="margin-top: 0px">
             Ein Java-Interface für <scheduler_method class="Log"/> würde es ermöglichen,
             Java-Klassen mit einer Protokollierung zu schreiben, 
-            die mit und ohne Scheduler benutzbar wäre.
+            die mit und ohne JobScheduler benutzbar wäre.
         </p>
         <pre>class sos.spooler.Log  implements sos.spooler.Log_interface {...}</pre>
     </div>
@@ -181,11 +181,11 @@
         <p style="margin-top: 0px">
             Die Perl-API ändert sich zwischen den Perl-Versionen. 
             Verschiedene <code>libsosperlscript.so</code> sollten bereitgestellt werden, z.B. <code>libsosperlscript-5.8.7.so</code>.
-            Der Scheduler kann die Version von Perl und bei der Gelegenheit den Pfad von <code>libperl.so</code> mit
+            Der JobScheduler kann die Version von Perl und bei der Gelegenheit den Pfad von <code>libperl.so</code> mit
             einem Aufruf des Kommandos <code>perl</code> herausfinden und dann die passenden Module laden.
         </p>
         <p>
-            Der Scheduler sollte bei einer inkompatiblen Perl-Version den Aufruf abbrechen, 
+            Der JobScheduler sollte bei einer inkompatiblen Perl-Version den Aufruf abbrechen, 
             statt einen Programmabbruch zu riskieren.
         </p>
     </div>
@@ -256,7 +256,7 @@
         Ausgabe des Java-Stacks im Fehlerfall
     </p>
     <p class="indent" style="margin-top: 0px">
-        Der Scheduler könnte bei einer Exception immer den Java-Stack ausgeben,
+        Der JobScheduler könnte bei einer Exception immer den Java-Stack ausgeben,
         damit man nicht mit einer nichts sagenden NullPointerException dasteht.
         Jetzt kann man das mit [java]debug=yes einschalten, allerdings gibt Java dann noch allerhand mehr aus,
         was man meist nicht sehen will.
@@ -268,8 +268,8 @@
     </p>
     <div class="indent">
         <p style="margin-top: 0px">
-            Der Scheduler synchronisiert die Aufträge mit den Dateinamen im Verzeichnis.
-            Jede Änderung im Verzeichnis lässt den Scheduler die Auftragswarteschlangen auf den neuesten Stand bringen.
+            Der JobScheduler synchronisiert die Aufträge mit den Dateinamen im Verzeichnis.
+            Jede Änderung im Verzeichnis lässt den JobScheduler die Auftragswarteschlangen auf den neuesten Stand bringen.
         </p>
     </div>
 
@@ -321,7 +321,7 @@
     </p>
     <p class="indent" style="margin-top: 0px">
         Pipelining implementieren:
-        Bislang verträgt der Scheduler kein zweites <code>GET</code>, solange er nicht das erste beantwortet hat.
+        Bislang verträgt der JobScheduler kein zweites <code>GET</code>, solange er nicht das erste beantwortet hat.
         Die Browser scheinen darauf Rücksicht zu nehmen. In Firefox ist das angeblich einschaltbar.
         Der Aufwand wäre gering.
     </p>
@@ -346,7 +346,7 @@
     <div class="indent">
         <p style="margin-top: 0px">
             Die sollten in eine asynchrone Operation ausgelagert werden, die in einem Thread (oder mehreren) abläuft.
-            Oder wir verzichten drauf. Denn die Operationen blockieren jetzt, was den Scheduler einige Sekunden anhalten kann.
+            Oder wir verzichten drauf. Denn die Operationen blockieren jetzt, was den JobScheduler einige Sekunden anhalten kann.
             Das betrifft u.a.:
         </p>
         <ul>

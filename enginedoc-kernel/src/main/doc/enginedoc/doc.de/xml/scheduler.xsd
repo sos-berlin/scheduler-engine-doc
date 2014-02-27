@@ -4,7 +4,7 @@
     <xsd:annotation>
         <xsd:documentation xml:lang="de">
             $Id: scheduler.xsd 14660 2011-06-23 12:04:10Z jz $
-            Schema für die Scheduler-Konfiguration,
+            Schema für die JobScheduler-Konfiguration,
             s.a. http://www.zschimmer.com/sos/scheduler/konfiguration.html
         </xsd:documentation>
     </xsd:annotation>
@@ -215,7 +215,7 @@
             <xsd:element ref="remote_scheduler.start_remote_task"/>
             <xsd:element ref="remote_scheduler.remote_task.close"/>
             <xsd:element ref="terminate"/>
-            <!-- Nicht für den Scheduler, sondern für Mürüvet Öksüzs Konfigurations-Editor. 2007-10-04 -->
+            <!-- Nicht für den JobScheduler, sondern für Mürüvet Öksüzs Konfigurations-Editor. 2007-10-04 -->
             <!--xsd:element ref="signal_object"/-->
         </xsd:choice>
         <xsd:attribute name="on_exit_code">

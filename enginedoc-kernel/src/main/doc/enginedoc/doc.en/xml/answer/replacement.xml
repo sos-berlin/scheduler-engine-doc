@@ -38,14 +38,14 @@
             In the case of the replacement of a job, the nesting appears as 
             <scheduler_element directory="xml/answer/" name="job"/><scheduler_element directory="xml/answer/" name="replacement"/><scheduler_element directory="xml/answer/" name="job"/>.
             The child element contains the new object, 
-            with which the Job Scheduler is not able to replace the current object.
-            The Job Scheduler replaces the object to be replaced (i.e. the current object) as soon as it is "free".
+            with which the JobScheduler is not able to replace the current object.
+            The JobScheduler replaces the object to be replaced (i.e. the current object) as soon as it is "free".
         <!--Das Kind-Element hat denselben Namen wie das Eltern-Element.
             Bei einem Job zum Beispiel ist die Verschachtelung 
             <scheduler_element directory="xml/answer/" name="job"/><scheduler_element directory="xml/answer/" name="replacement"/><scheduler_element directory="xml/answer/" name="job"/>.
             Das Kind-Element enthält das neue Objekt, 
             das vorhandene noch nicht ersetzen kann.
-            Sobald das zu ersetzende Objekt bereit ist, nimmt der Scheduler die Ersetzung vor.-->
+            Sobald das zu ersetzende Objekt bereit ist, nimmt der JobScheduler die Ersetzung vor.-->
         </p>
     </description>
 

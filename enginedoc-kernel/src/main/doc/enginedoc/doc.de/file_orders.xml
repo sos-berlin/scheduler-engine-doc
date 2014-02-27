@@ -16,7 +16,7 @@
         Wenn eine Job-Kette Dateien aus einem Verzeichnis verarbeiten soll,
         können Sie Dateiaufträge verwenden.
         Ein Dateiauftrag ist ein Auftrag mit einem Verweis auf eine Datei.
-        Der Scheduler überwacht das Verzeichnis und erzeugt zu jeder neuen Datei einen Dateiauftrag.
+        Der JobScheduler überwacht das Verzeichnis und erzeugt zu jeder neuen Datei einen Dateiauftrag.
     </p>
     
     <pre>&lt;job_chain name="<i>my_job_chain</i>">
@@ -76,7 +76,7 @@
         </dt>
         <dd>
             enthält den Pfad, derselbe Wert wie <scheduler_method class="Order" object="order" property="id"/>.
-            Diese für den Scheduler reservierte Variable macht einen Auftrag zum Dateiauftrag.
+            Diese für den JobScheduler reservierte Variable macht einen Auftrag zum Dateiauftrag.
         </dd>
     </dl>
 
@@ -89,7 +89,7 @@
     <h3>Mehrere Auftragsquellen</h3>
     <p>
         Eine Job-Kette kann mehrere Auftragsquellen haben. 
-        Der Scheduler berücksichtigt sie in der angegebenen Reihenfolge.
+        Der JobScheduler berücksichtigt sie in der angegebenen Reihenfolge.
     </p>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -97,7 +97,7 @@
     <h2>Der Dateiauftrag überwacht die Datei</h2>
 
     <p>
-        Der Scheduler entfernt einen Dateiauftrag,
+        Der JobScheduler entfernt einen Dateiauftrag,
         wenn die dazugehörige Datei nicht mehr im Verzeichnis steht
         und
     </p>
@@ -124,10 +124,10 @@
     </p>
     <ul>
         <li>
-            wenn der Scheduler das Verzeichnis liest,
+            wenn der JobScheduler das Verzeichnis liest,
         </li>
         <li>
-            wenn der Scheduler den Dateiauftrag zum ersten Mal einem Job übergibt.
+            wenn der JobScheduler den Dateiauftrag zum ersten Mal einem Job übergibt.
         </li>
     </ul>
 
@@ -142,7 +142,7 @@
     </p>
     <p>
         Wenn aber die Datei bereits entfernt worden ist,
-        gibt der Scheduler eine Warnung aus und der Dateiauftrag ist erledigt.
+        gibt der JobScheduler eine Warnung aus und der Dateiauftrag ist erledigt.
     </p>
     <scheduler_message level="warn" code="SCHEDULER-339"/>
 
@@ -170,7 +170,7 @@
     <p>
         Wenn ein Dateiauftrag ausgeführt ist (einen Endzustand erreicht hat),
         aber die Datei noch vorhanden ist,
-        dann setzt der Scheduler den Auftrag  auf die Schwarze Liste.
+        dann setzt der JobScheduler den Auftrag  auf die Schwarze Liste.
     </p>
     <scheduler_message level="warn" code="SCHEDULER-340"/>
     <p>
@@ -178,7 +178,7 @@
     </p>
     <ul>
         <li>
-            der Scheduler beim Lesen des Verzeichnisses feststellt, dass die Datei entfernt worden ist
+            der JobScheduler beim Lesen des Verzeichnisses feststellt, dass die Datei entfernt worden ist
             <scheduler_message level="info" code="SCHEDULER-981"/>
         </li>
         <li>
@@ -196,17 +196,17 @@
     <p>
         Wenn die Verzeichnisüberwachung auf einen Fehler läuft,
         zum Beispiel weil das Verzeichnis abgehängt worden ist,
-        dann gibt der Scheduler eine Warnung aus
+        dann gibt der JobScheduler eine Warnung aus
         und erzeugt eine eMail
         (die Einstellungen aus <scheduler_ini_entry file="factory.ini" section="spooler"/> gelten).
     </p>
 
     <p>
-        Der Scheduler versucht periodisch die Überwachung erneut zu starten.
+        Der JobScheduler versucht periodisch die Überwachung erneut zu starten.
         Fehlermeldungen dabei werden ignoriert.
         Die Periode ist einstellbar mit <scheduler_element name="file_order_source" attribute="delay_after_error"/>.
         Wenn das Verzeichnis wieder lesbar ist,
-        sendet der Scheduler eine entsprechende eMail und
+        sendet der JobScheduler eine entsprechende eMail und
         gibt diese Meldung aus:
     </p>
     <scheduler_message level="info" code="SCHEDULER-984"/>
@@ -234,14 +234,14 @@
 
     <p>
         Sobald der erste Job zum ersten Mal bereit ist, einen Auftrag auszuführen, 
-        liest der Scheduler das Verzeichnis (mit der Beschränkung durch den Regulären Ausdruck)
+        liest der JobScheduler das Verzeichnis (mit der Beschränkung durch den Regulären Ausdruck)
         und erzeugt daraus Dateiaufträge.
     </p>
     <p>
         Wenn das Verzeichnis viele Dateien enthält
         (mehr als mit <scheduler_element name="file_order_source" attribute="max"/> eingestellt),
         dann verbleibt eine Liste der übrigen Dateien im Speicher,
-        aus der der Scheduler später die weiteren Dateiaufträge erzeugt.
+        aus der der JobScheduler später die weiteren Dateiaufträge erzeugt.
         Die Meldungen dazu sind:
     </p>
 
@@ -249,7 +249,7 @@
     <scheduler_message level="info" code="SCHEDULER-986"/>
 
     <p>
-        Der Scheduler liest das Verzeichnis erneut, wenn
+        Der JobScheduler liest das Verzeichnis erneut, wenn
     </p>
     <ul>
         <li>
@@ -268,10 +268,10 @@
     <h3>Verzeichnisüberwachung durch Microsoft® Windows®</h3>
 
     <p>
-        Unter Windows lässt der Scheduler außerdem das Verzeichnis vom Betriebssystem überwachen.
+        Unter Windows lässt der JobScheduler außerdem das Verzeichnis vom Betriebssystem überwachen.
         Eine Signalisierung veranlasst den Scheduler,
         das Verzeichnis vor Ablauf der Periode zu lesen.
-        Damit reagiert der Scheduler sofort auf eine neue Datei.
+        Damit reagiert der JobScheduler sofort auf eine neue Datei.
     </p>
     <p>
         Trotzdem sollte für ein Verzeichnis auf einem anderen Rechner das Wiederholungsintervall nicht mit
@@ -291,7 +291,7 @@
     <h2>Auftragsgesteuerte Nicht-API-Jobs (&lt;process> und &lt;script language="shell">)</h2>
     <p>
         Einen auftragsgesteuerten <scheduler_element name="process"/>-Job 
-        startet der Scheduler für jeden Dateiauftrag.
+        startet der JobScheduler für jeden Dateiauftrag.
     </p>
     <p>
         Die Umgebungsvariable <scheduler_env name="SCHEDULER_TASK_TRIGGER_FILES"/> enthält den Dateipfad.

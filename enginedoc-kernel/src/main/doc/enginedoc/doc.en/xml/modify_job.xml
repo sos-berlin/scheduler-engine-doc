@@ -49,9 +49,9 @@
                         <td>
                             <p>
                                 Stops a job. 
-                                The Job Scheduler sets the job in the <code>stopping</code> state 
+                                The JobScheduler sets the job in the <code>stopping</code> state 
                                 as long as a task is running, and then in the <code>stopped</code> state.
-                            <!--Stoppt den Job. Der Scheduler versetzt den Job in den Zustand <code>stopping</code> 
+                            <!--Stoppt den Job. Der JobScheduler versetzt den Job in den Zustand <code>stopping</code> 
                                 solange noch eine Task läuft, dann in den Zustand <code>stopped</code>.-->
                             </p>
                             <p>
@@ -80,9 +80,9 @@
                         <td>
                             <p>
                                 Reinterprets the <scheduler_element name="include"/> XML Elements in <scheduler_element name="script"/>.
-                                The Job Scheduler rereads the files and allows the next task to start with the reread program code.
+                                The JobScheduler rereads the files and allows the next task to start with the reread program code.
                                 Wertet die XML-Elemente <scheduler_element name="include"/> in <scheduler_element name="script"/> neu aus.
-                                Der Scheduler liest die Dateien neu ein und lässt die nächste Task mit dem neuen Programmcode starten.
+                                Der JobScheduler liest die Dateien neu ein und lässt die nächste Task mit dem neuen Programmcode starten.
                             </p>
                             <p>
                                 Should an error occur (for example when a file is no longer readable) then 
@@ -132,13 +132,13 @@
                         <td><code>cmd="suspend"</code></td>
                         <td>
                             <p>
-                                The <code>suspend</code> command causes the Job Scheduler not to call any new methods for 
+                                The <code>suspend</code> command causes the JobScheduler not to call any new methods for 
                                 all tasks with the states
                                 <code>running</code>, <code>running_delayed</code> or <code>running_waiting_for_order</code>.
                             <!--Auf alle laufenden Tasks, die im Zustand <code>running</code>, <code>running_delayed</code> oder 
                                 <code>running_waiting_for_order</code> sind,
                                 wird das Kommando <code>suspend</code> angewendet,
-                                d.h. der Scheduler ruft keine weitere Methode des Jobs auf.-->
+                                d.h. der JobScheduler ruft keine weitere Methode des Jobs auf.-->
                             </p>
                         </td>
                     </tr>

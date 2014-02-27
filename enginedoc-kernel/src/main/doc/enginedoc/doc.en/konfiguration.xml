@@ -18,8 +18,8 @@
 <!--<scheduler_keyword keyword="XML-Konfiguration"/>-->
 
 <p>
-    The file containing the XML configuration should be specified when starting the Job Scheduler.
-<!--Beim Start des Scheduler geben Sie die Datei an, die die mit XML formulierte Konfiguration enthält.-->
+    The file containing the XML configuration should be specified when starting the JobScheduler.
+<!--Beim Start des JobScheduler geben Sie die Datei an, die die mit XML formulierte Konfiguration enthält.-->
 </p>
 
 <h2>Example</h2>
@@ -51,20 +51,20 @@
 </pre>
 
 <p>
-    This example shows the configuration of the <code>hello_world</code> job, which the Job Scheduler repeats every 10 seconds. 
+    This example shows the configuration of the <code>hello_world</code> job, which the JobScheduler repeats every 10 seconds. 
 </p>
 <p>
-    When this configuration is saved in the <code>hello_world.xml</code> file, the Job Scheduler could be started as follows (for Windows):
-<!--Konfiguriert ist hier der Job <code>test_job</code>, den der Scheduler alle 10 Sekunden wiederholen wird. 
+    When this configuration is saved in the <code>hello_world.xml</code> file, the JobScheduler could be started as follows (for Windows):
+<!--Konfiguriert ist hier der Job <code>test_job</code>, den der JobScheduler alle 10 Sekunden wiederholen wird. 
 		Wenn diese Konfiguration in der Datei <code>hallo_welt.xml</code> abgelegt ist, 
-		können Sie den Scheduler so starten:-->
+		können Sie den JobScheduler so starten:-->
 </p>
 
 <pre>…<i>scheduler installation path</i>…\bin\scheduler.exe -config=hello_world.xml</pre>
 
 <p>
-    Note that if the Job Scheduler has been started at the command line, it can be stopped using the "Ctrl-C" keys.
-<!--Ein gestarteter Scheduler kann mit Ctrl-C abgebrochen werden.-->
+    Note that if the JobScheduler has been started at the command line, it can be stopped using the "Ctrl-C" keys.
+<!--Ein gestarteter JobScheduler kann mit Ctrl-C abgebrochen werden.-->
 </p>
 
 <p>
@@ -85,7 +85,7 @@
 <p>
     When this configuration is saved in a file
     <code><i>scheduler installation path</i>/config/live/hello_world.job.xml</code>, 
-    then it would be automatically used by a running Job Scheduler.
+    then it would be automatically used by a running JobScheduler.
 </p>
 
 
@@ -97,8 +97,8 @@
     <code>&lt;?xml encoding="ISO-8859-1"?></code>&#160; are allowed.<br/>
 </p>                                                        
 <p>
-    Note that the  Job Scheduler only processes 8 bit Characters (ISO-8859-1).
-<!--Der Scheduler verarbeitet nur 8bit-Zeichen (ISO-8859-1).-->
+    Note that the  JobScheduler only processes 8 bit Characters (ISO-8859-1).
+<!--Der JobScheduler verarbeitet nur 8bit-Zeichen (ISO-8859-1).-->
 </p>
 
 
@@ -106,9 +106,9 @@
 <!--<h2>Schema der Konfiguration</h2>-->
 
 <p>
-    The Job Scheduler verifies the XML configuration according to the 
-    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">Job Scheduler XML Schema</a> (Is only shown correctly in IE).
-<!--Der Scheduler prüft die XML-Konfiguration gegen das
+    The JobScheduler verifies the XML configuration according to the 
+    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">JobScheduler XML Schema</a> (Is only shown correctly in IE).
+<!--Der JobScheduler prüft die XML-Konfiguration gegen das
     <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</scheduler_a>.-->
 </p>
 <p>

@@ -19,7 +19,7 @@
     <dl>
         <dt><scheduler_element name="script" attribute="language" value="JavaScript"/></dt>
         <dd>
-            <a target="mozilla" href="http://www.mozilla.org/js/spidermonkey/">Spidermonkey von Mozilla</a>, wird mit dem Scheduler ausgeliefert.
+            <a target="mozilla" href="http://www.mozilla.org/js/spidermonkey/">Spidermonkey von Mozilla</a>, wird mit dem JobScheduler ausgeliefert.
         </dd>
 
         <dt><scheduler_element name="script" attribute="language" value="JScript"/></dt>

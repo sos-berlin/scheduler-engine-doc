@@ -115,9 +115,9 @@
     <h3>Jobs</h3>
 
     <p>
-        Der Scheduler kann auch auftragsgesteuerte Jobs ersetzen und löschen.
+        Der JobScheduler kann auch auftragsgesteuerte Jobs ersetzen und löschen.
         Um einen Job, auf den ein Jobkettenknoten verweist, löschen zu können, müssen die Aufträge erhalten bleiben.
-        Der Scheduler wird also die Aufträge im Jobkettenknoten speichern.
+        Der JobScheduler wird also die Aufträge im Jobkettenknoten speichern.
         Die Auftragswarteschlange des Jobs enthält nur noch Verweise.
         Aufträge, die von einem Job verarbeitet werden sollen, der gelöscht ist (oder wird),
         bleiben am Jobkettenknoten stehen.
@@ -147,7 +147,7 @@
         </li>
         <li>
             Solange ein Jobkettenknoten auf einen fehlenden Job verweist,
-            hält der Scheduler einen leeren Job vor, der im Zustand <i>vermisst</i> ist.
+            hält der JobScheduler einen leeren Job vor, der im Zustand <i>vermisst</i> ist.
             Einziger Eintrag ist, dass es sich um einen auftragsgesteuerten Job handelt.
         </li>
         <li>
@@ -199,7 +199,7 @@
     </p-->
 
     <p>
-        Beim Austausch einer Jobkette übernimmt der Scheduler Aufträge aus Jobkettenknoten,
+        Beim Austausch einer Jobkette übernimmt der JobScheduler Aufträge aus Jobkettenknoten,
         die (mit gleichem Status) auch in der neuen Jobkette bekannt sind.
         Andere Aufträge gehen verloren.
         Sie bleiben aber in der Datenbank, falls sie dort gespeichert worden sind.
@@ -236,7 +236,7 @@
     
     <p style="color: red">
         Aufträge, die die nicht in einer Jobkette, sondern nur im Job stehen,
-        wird der Scheduler nicht länger unterstützen.
+        wird der JobScheduler nicht länger unterstützen.
     </p>
 
 
@@ -245,7 +245,7 @@
 
     <p>
         Das sind ganz normale Aufträge, die als <scheduler_element name="order"/> in eigenen Dateien gehalten und
-        durch <scheduler_element name="run_time"/> ständig im Scheduler vorgehalten werden.
+        durch <scheduler_element name="run_time"/> ständig im JobScheduler vorgehalten werden.
         Hinzufügen, Ersetzen und Löschen wirken wie
         die Kommandos <scheduler_element name="add_order"/> und <scheduler_element name="remove_order"/>.
     </p>
@@ -293,7 +293,7 @@
     <p>
         <scheduler_element name="lock.remove"/> wird geändert:
         Das Kommando liefert keinen Fehler mehr, wenn noch Tasks die Sperre belegen.
-        Stattdessen beendet der Scheduler die Tasks und verzögert das Löschen der Sperre so lange.
+        Stattdessen beendet der JobScheduler die Tasks und verzögert das Löschen der Sperre so lange.
         Die Fehlermeldung <scheduler_message code="SCHEDULER-886"/> erscheint nicht mehr.
     </p>
     <p>
@@ -332,7 +332,7 @@
                     <scheduler_element name="job"/>
                 </td>
                 <td style="padding-top: 0.5em; " colspan="2">
-                    Der Scheduler beendet laufende Tasks und verhindert neue.
+                    Der JobScheduler beendet laufende Tasks und verhindert neue.
                     Sobald keine Tasks mehr laufen, tauscht er den Job aus
                     bzw. löscht ihn.
                 </td>
@@ -391,11 +391,11 @@
     <h2>Referenzen auf fehlende Objekte</h2>
 
     <p>
-        Der Scheduler wird mit fehlenden Objekten umgehen können.
+        Der JobScheduler wird mit fehlenden Objekten umgehen können.
         Die referenzierten Objekte sind dann unvollständig und deshalb nicht in Betrieb.
     </p>
     <p>
-        Fehlende referenzierte Objekte werden vom Scheduler automatisch eingefügt und als <i>vermisst</i> gekennzeichnet.
+        Fehlende referenzierte Objekte werden vom JobScheduler automatisch eingefügt und als <i>vermisst</i> gekennzeichnet.
         Ein Objekt, das von einem vermissten anderen Objekt abhängt, wird nicht aktiv.
     </p>
     <p>&#160;</p>
@@ -444,7 +444,7 @@
                 </td>
                 <td>
                     Einen vermissten Auftrag, also einen ohne Jobkette, kann es nicht geben,
-                    weil der Scheduler eine Auftragsdatei nur liest,
+                    weil der JobScheduler eine Auftragsdatei nur liest,
                     wenn dessen Jobkette definiert ist.
                 </td>
             </tr>

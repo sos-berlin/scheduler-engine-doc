@@ -99,10 +99,10 @@
     <h3>Beschränkung auf Dateien, die sich exklusiv zum Lesen öffnen lassen</h3>
     <pre>&lt;file_order_source directory="…" check_open="yes"/></pre>
     <p>
-        Mit dieser Einstellung übergibt der Scheduler eine Datei nur, 
+        Mit dieser Einstellung übergibt der JobScheduler eine Datei nur, 
         wenn sie sich zum Lesen öffnen lässt.
         Wenn der Versuch fehlschlägt, ist anzunehmen, dass die Datei noch beschrieben wird.
-        Der Scheduler ignoriert die Datei dann und geht zur nächsten über.
+        Der JobScheduler ignoriert die Datei dann und geht zur nächsten über.
         (<i>Klären, ob das auch für Unix gilt!)</i>
     </p>
 
@@ -133,7 +133,7 @@ while( dir.has_next_path() )
     <h3>Job als Auftragsquelle</h3>
     <p>
         Hier ein Vorschlag, wie ein Job, der Aufträge erzeugt,
-        vom Scheduler bei Bedarf aufgerufen wird:
+        vom JobScheduler bei Bedarf aufgerufen wird:
         "<a href="order_source.xml">Programmierte Auftragsquellen</a>".
     </p>
 

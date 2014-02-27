@@ -17,7 +17,7 @@
 
     <description>
         <p>
-            Resets all log categories back to the values set as the Job Scheduler started.
+            Resets all log categories back to the values set as the JobScheduler started.
         <!--Setzt alle Log-Kategorien auf die für den Scheduler-Start eingestellten Werte zurück.-->
         </p>
         <p>

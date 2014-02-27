@@ -50,14 +50,14 @@
 
         <xml_child_element name="include">
             <description>
-                Allows the Job Scheduler to use a file containing holiday information.
+                Allows the JobScheduler to use a file containing holiday information.
                 An XML document with the <scheduler_element name="holidays"/> root element is expected.
                 Should the path to the file not be specified absolutely, 
-                then the Job Scheduler will assume that the path is relative to the XML configuration file
+                then the JobScheduler will assume that the path is relative to the XML configuration file
                 (<scheduler_option name="config"/>).
-           <!--Lässt den Scheduler eine Datei mit Feiertagen verwenden.
+           <!--Lässt den JobScheduler eine Datei mit Feiertagen verwenden.
                 Erwartet wird ein XML-Dokument mit dem Wurzelement <scheduler_element name="holidays"/>.
-                Wenn der Pfad der Datei nicht absolut ist, geht der Scheduler vom Verzeichnis der XML-Konfigurationsdatei aus
+                Wenn der Pfad der Datei nicht absolut ist, geht der JobScheduler vom Verzeichnis der XML-Konfigurationsdatei aus
                 (<scheduler_option name="config"/>).-->
             </description>
         </xml_child_element>
@@ -65,8 +65,8 @@
     </xml_child_elements>
     
     <description>
-        <code>&lt;holidays></code> defines the days on which the Job Scheduler should not run a job.
-    <!--<code>&lt;holidays></code> führt die Feiertage auf, an denen der Scheduler einen Job nicht laufen lassen soll.-->
+        <code>&lt;holidays></code> defines the days on which the JobScheduler should not run a job.
+    <!--<code>&lt;holidays></code> führt die Feiertage auf, an denen der JobScheduler einen Job nicht laufen lassen soll.-->
     </description>
     
     <example>

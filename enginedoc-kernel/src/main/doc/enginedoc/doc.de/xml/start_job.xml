@@ -86,7 +86,7 @@
                         zu dem Zeitpunkt 
                         <scheduler_element name="run_time"/> oder <scheduler_element name="schedule"/>
                         keine Start zulassen, 
-                        dann verschiebt der Scheduler den Start bis zur nächsten Periode.
+                        dann verschiebt der JobScheduler den Start bis zur nächsten Periode.
                     </li>
                     <li>
                         Daraus ergibt sich, dass <code>at="now"</code> wie <code>at="period"</code> wirkt.

@@ -163,7 +163,7 @@
             Der Text wird auf der HTML-Oberfläche gezeigt.
         </p>
         <p>
-            Für Nicht-API-Jobs füllt der Scheduler dieses Feld mit der ersten Zeile von stdout, max. 100 Zeichen.
+            Für Nicht-API-Jobs füllt der JobScheduler dieses Feld mit der ersten Zeile von stdout, max. 100 Zeichen.
         </p>
     </description>
 </property>
@@ -676,7 +676,7 @@ $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
                 womit verhindet wird, dass er entfernt wird.
                 Erst wenn die Aussetzung eines solchen Auftrags aufgehoben wird,
                 (<code>order.suspended=false</code>),
-                entfernt der Scheduler den Auftrag.
+                entfernt der JobScheduler den Auftrag.
             </p>
             <p>
                 Ein ausgesetzter Auftrag im Endzustand kann mit 

@@ -4,7 +4,7 @@
 <!--$Id: service.xml 13052 2007-09-30 16:47:01Z ap $-->
 
 <description
-    title               = "Der Job Scheduler als Dienst"
+    title               = "Der JobScheduler als Dienst"
     base_dir            = ""
     author              = "$Author: ap $"
     date                = "$Date: 2007-09-30 18:47:01 +0200 (Sun, 30 Sep 2007) $"
@@ -20,7 +20,7 @@
 </table>
 
 <p>
-Der Job Scheduler wird unter Windows als Dienst betrieben. Die Einrichtung erfolgt
+Der JobScheduler wird unter Windows als Dienst betrieben. Die Einrichtung erfolgt
 automatisch mit dem Installationsprogramm. Nachstehend sind die Kommandozeilenoptionen
 beschrieben, die für die Einrichtung relevant sind. Diese Optionen werden vom
 Installationsprogramm ins Start-Script <code>.\bin\jobscheduler.cmd</code> (Windows)
@@ -53,7 +53,7 @@ bzw. <code>./bin/jobscheduler.sh</code> (Unix) übernommen.
 -install-service</font></p>
 
 <p class="indent">Installiert den Dienst. Weitere Kommandozeilenoptionen, die hier nicht aufgeführt
-sind, werden beim Start des Dienstes dem Job Scheduler übergeben (v.a. <font class="mono">-id=</font>,
+sind, werden beim Start des Dienstes dem JobScheduler übergeben (v.a. <font class="mono">-id=</font>,
 <font class="mono">-log-dir=</font>)</p>
 
 <p><br/>
@@ -72,8 +72,8 @@ oder <font class="mono">-install-service</font>.</p>
 
 <p class="indent">Gibt den angezeigten Namen des Dienstes an.</p>
 
-<p class="indent">Voreinstellung bei nicht angegebenen -service-name ist &quot;SOS Job Scheduler&quot;.
-Wenn die Option <font class="mono"> -id=</font> angegeben ist: &quot;SOS Job Scheduler -id=<i>id</i>&quot;.
+<p class="indent">Voreinstellung bei nicht angegebenen -service-name ist &quot;SOS JobScheduler&quot;.
+Wenn die Option <font class="mono"> -id=</font> angegeben ist: &quot;SOS JobScheduler -id=<i>id</i>&quot;.
 Wenn <font class="mono"> -service-name=</font> angegeben ist, ist dies als angezeigter Name voreinstellt.</p>
 
 <p><br/>
@@ -81,7 +81,7 @@ Wenn <font class="mono"> -service-name=</font> angegeben ist, ist dies als angez
 
 <p class="indent">Setzt die Beschreibung des Dienstes. Voreinstellung ist &quot;Job Automation Processor&quot;.&#160;</p>
 
-<p class="indent">In Windows NT 4 ignoriert der Job Scheduler diese Option.</p>
+<p class="indent">In Windows NT 4 ignoriert der JobScheduler diese Option.</p>
 
 <p><br/>
 <font class="mono">-need-service=</font><i>dienst</i></p>
@@ -91,8 +91,8 @@ ist. Windows startet diesen Dienst erst, wenn der andere Dienst läuft. Die
 Option kann mehrfach angegeben werden. Ein unbekannter Dienstname wird von
 Windows nicht bemängelt.&#160;</p>
 <p class="indent">
-Diese Option kann bspw. eingesetzt werden, wenn Job Scheduler und Datenbank auf demselben Server ablaufen
-und sichergestellt werden soll, dass die Datenbank zuerst gestartet ist bevor der Job Scheduler startet.
+Diese Option kann bspw. eingesetzt werden, wenn JobScheduler und Datenbank auf demselben Server ablaufen
+und sichergestellt werden soll, dass die Datenbank zuerst gestartet ist bevor der JobScheduler startet.
 </p>
 
 <p class="indent">Der Name eines Dienstes wird in der Dialogbox zum Dienst in

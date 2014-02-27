@@ -172,7 +172,7 @@
 
         <!--message code="SCHEDULER-114">
             <text xml:lang="de">
-                <title>Der Scheduler läuft als NT-Dienst, der sich nicht selbst neu starten kann. Verwenden Sie die Diensteverwaltung von Windows</title>
+                <title>Der JobScheduler läuft als NT-Dienst, der sich nicht selbst neu starten kann. Verwenden Sie die Diensteverwaltung von Windows</title>
             </text>
             <text xml:lang="en">
                 <title></title>
@@ -700,7 +700,7 @@
                 <title>Java steht nicht zur Verfügung (siehe Fehler beim Start des Schedulers)</title>
             </text>
             <text xml:lang="en">
-                <title>Java is not available (see error message when Scheduler started)</title>
+                <title>Java is not available (see error message when JobScheduler started)</title>
             </text>
         </message>
 
@@ -1361,7 +1361,7 @@
                 <title>Frist zur Beendigung des Schedulers ist abgelaufen, aber <p1/> Tasks laufen noch</title>
             </text>
             <text xml:lang="en">
-                <title>Deadline for terminating Scheduler reached and <p1/> tasks are still running</title>
+                <title>Deadline for terminating JobScheduler reached and <p1/> tasks are still running</title>
             </text>
         </message-->
 
@@ -1376,10 +1376,10 @@
 
         <message code="SCHEDULER-255">
             <text xml:lang="de">
-                <title><p1/> Tasks haben sich nicht beendet trotz kill vor <p2/> seconds. Scheduler bricht ab</title>
+                <title><p1/> Tasks haben sich nicht beendet trotz kill vor <p2/> seconds. JobScheduler bricht ab</title>
             </text>
             <text xml:lang="en">
-                <title><p1/> tasks did not terminate in spite of kill <p2/> seconds ago. Scheduler is aborting</title>
+                <title><p1/> tasks did not terminate in spite of kill <p2/> seconds ago. JobScheduler is aborting</title>
             </text>
         </message>
 
@@ -1388,7 +1388,7 @@
                 <title>Frist zur Beendigung des Schedulers ist abgelaufen, aber <p1/> Tasks haben sich nicht beendet</title>
             </text>
             <text xml:lang="en">
-                <title>Deadline for terminating Scheduler has been reached, but <p1/> tasks are still running</title>
+                <title>Deadline for terminating JobScheduler has been reached, but <p1/> tasks are still running</title>
             </text>
         </message>
 
@@ -1412,19 +1412,19 @@
 
         <!--message code="SCHEDULER-259">
             <text xml:lang="de">
-                <title>Java kann nicht gestartet werden. Scheduler startet ohne Java</title>
+                <title>Java kann nicht gestartet werden. JobScheduler startet ohne Java</title>
             </text>
             <text xml:lang="en">
-                <title>Java did not start. Scheduler is starting without Java</title>
+                <title>Java did not start. JobScheduler is starting without Java</title>
             </text>
         </message-->
 
         <message code="SCHEDULER-260">
             <text xml:lang="en">
-                <title>Error in Scheduler Skript, spooler_exit(): <p1/></title>
+                <title>Error in JobScheduler Skript, spooler_exit(): <p1/></title>
             </text>
             <text xml:lang="en">
-                <title>Error in Scheduler script, spooler_exit(): <p1/></title>
+                <title>Error in JobScheduler script, spooler_exit(): <p1/></title>
             </text>
         </message>
 
@@ -1436,10 +1436,10 @@
 
         <message code="SCHEDULER-262">
             <text xml:lang="de">
-                <title>Abbruch-Signal (<p1/>) empfangen. Der Scheduler wird beendet</title>
+                <title>Abbruch-Signal (<p1/>) empfangen. Der JobScheduler wird beendet</title>
             </text>
             <text xml:lang="en">
-                <title>Kill signal (<p1/>) received. Scheduler is terminating</title>
+                <title>Kill signal (<p1/>) received. JobScheduler is terminating</title>
             </text>
         </message>
 
@@ -1906,7 +1906,7 @@
 
         <message code="SCHEDULER-314">
             <text xml:lang="en">
-                <title>Cannot open database. Scheduler is aborting immediately because of need_db=<p1/></title>
+                <title>Cannot open database. JobScheduler is aborting immediately because of need_db=<p1/></title>
             </text>
         </message>
 
@@ -2240,7 +2240,7 @@
 
         <!--message code="SCHEDULER-364">
             <text xml:lang="en">
-                <title>Clocks seem not to be in sync. Difference to Scheduler member <p2/>'s clock is <p1/>s</title>
+                <title>Clocks seem not to be in sync. Difference to JobScheduler member <p2/>'s clock is <p1/>s</title>
             </text>
         </message-->
 
@@ -2258,7 +2258,7 @@
 
         <!--message code="SCHEDULER-366">
             <text xml:lang="en">
-                <title>This is a distributed, non-exclusive Scheduler and therefore does not support operation '<p1/>'</title>
+                <title>This is a distributed, non-exclusive JobScheduler and therefore does not support operation '<p1/>'</title>
             </text>
         </message-->
 
@@ -2294,7 +2294,7 @@
 
         <message code="SCHEDULER-372">
             <text xml:lang="en">
-                <title>Exclusivity has been stolen by Scheduler member '<p1/>'</title>
+                <title>Exclusivity has been stolen by JobScheduler member '<p1/>'</title>
             </text>
         </message>
 
@@ -2324,19 +2324,19 @@
 
         <message code="SCHEDULER-377">
             <text xml:lang="en">
-                <title>After own late heart beat, Scheduler member '<p1/>' has taken exclusiveness</title>
+                <title>After own late heart beat, JobScheduler member '<p1/>' has taken exclusiveness</title>
             </text>
         </message>
 
         <message code="SCHEDULER-378">
             <text xml:lang="en">
-                <title>After own late heart beat, this Scheduler has been deactivated and the occupied orders have been freed by Scheduler member '<p1/>'</title>
+                <title>After own late heart beat, this JobScheduler has been deactivated and the occupied orders have been freed by JobScheduler member '<p1/>'</title>
             </text>
         </message>
 
         <message code="SCHEDULER-379">
             <text xml:lang="en">
-                <title><p1>order</p1> is occupied by Scheduler member '<p2/>'</title>
+                <title><p1>order</p1> is occupied by JobScheduler member '<p2/>'</title>
             </text>
         </message>
 
@@ -2372,7 +2372,7 @@
 
         <message code="SCHEDULER-386">
             <text xml:lang="en">
-                <title>Last heart beat was <p1>time</p1>, <p2/> seconds ago. Something is delaying Scheduler execution, the Scheduler is aborted immediately</title>
+                <title>Last heart beat was <p1>time</p1>, <p2/> seconds ago. Something is delaying JobScheduler execution, the JobScheduler is aborted immediately</title>
             </text>
         </message>
 
@@ -2414,7 +2414,7 @@
 
         <!--message code="SCHEDULER-395">
             <text xml:lang="en">
-                <title>No Scheduler script</title>
+                <title>No JobScheduler script</title>
             </text>
         </message-->
 
@@ -2782,13 +2782,13 @@
 
         <message code="SCHEDULER-457">
             <text xml:lang="en">
-                <title>Remote scheduler '<p1/>' has not been registered</title>
+                <title>Remote JobScheduler '<p1/>' has not been registered</title>
             </text>
         </message>
 
         <message code="SCHEDULER-458">
             <text xml:lang="en">
-                <title>Remote scheduler has not sent a notification for <p1/>s and has been deregistered</title>
+                <title>Remote JobScheduler has not sent a notification for <p1/>s and has been deregistered</title>
             </text>
         </message>
 
@@ -2884,7 +2884,7 @@
 
         <message code="SCHEDULER-474">
             <text xml:lang="en">
-                <title>Workload scheduler is not responding to UDP message since <p1/> (<p2/>s). Workload scheduler's configuration can not be updated.</title>
+                <title>Workload JobScheduler is not responding to UDP message since <p1/> (<p2/>s). Workload scheduler's configuration can not be updated.</title>
             </text>
         </message>
 
@@ -3700,7 +3700,7 @@
 
         <message code="SCHEDULER-996">
             <text xml:lang="en">
-                <title>No heart beat for <p2/> seconds (<p1>time</p1>) - Scheduler seems to be dead</title>
+                <title>No heart beat for <p2/> seconds (<p1>time</p1>) - JobScheduler seems to be dead</title>
             </text>
         </message>
 
@@ -3727,25 +3727,25 @@
 
         <!--message code="SCHEDULER-804" weight="info">
             <text xml:lang="en">
-                <title>Clock seems to be in sync with Scheduler member <p1/></title>
+                <title>Clock seems to be in sync with JobScheduler member <p1/></title>
             </text>
         </message-->
 
         <!--message code="SCHEDULER-805" weight="warn">
             <text xml:lang="en">
-                <title>Active Scheduler is a little late with his heart beat announced for <p1/></title>
+                <title>Active JobScheduler is a little late with his heart beat announced for <p1/></title>
             </text>
         </message-->
 
         <message code="SCHEDULER-805" weight="info">
             <text xml:lang="en">
-                <title>No Scheduler is active</title>
+                <title>No JobScheduler is active</title>
             </text>
         </message>
 
         <message code="SCHEDULER-806">
             <text xml:lang="en">
-                <title>This Scheduler is active and exclusive now</title>
+                <title>This JobScheduler is active and exclusive now</title>
             </text>
         </message>
 
@@ -3757,7 +3757,7 @@
 
         <message code="SCHEDULER-809">
             <text xml:lang="en">
-                <title>Dead scheduler record has been removed</title>
+                <title>Dead JobScheduler record has been removed</title>
             </text>
         </message>
 
@@ -3775,13 +3775,13 @@
 
         <message code="SCHEDULER-813">
             <text xml:lang="en">
-                <title>Order is occupied by Scheduler '<p1/>'</title>
+                <title>Order is occupied by JobScheduler '<p1/>'</title>
             </text>
         </message>
 
         <message code="SCHEDULER-814">
             <text xml:lang="en">
-                <title>Inactive Scheduler '<p2/>' has the higher backup precedence <p1/> (<p3>http_url</p3>)</title>
+                <title>Inactive JobScheduler '<p2/>' has the higher backup precedence <p1/> (<p3>http_url</p3>)</title>
             </text>
         </message>
 
@@ -3805,7 +3805,7 @@
 
         <!--message code="SCHEDULER-818">
             <text xml:lang="en">
-                <title>Currently active Scheduler has been started, so this inactive Scheduler starts again too</title>
+                <title>Currently active JobScheduler has been started, so this inactive JobScheduler starts again too</title>
             </text>
         </message-->
 
@@ -3835,25 +3835,25 @@
 
         <message code="SCHEDULER-823">
             <text xml:lang="en">
-                <title>Dead Scheduler member '<p1>cluster_member_id</p1>' has resurrected</title>
+                <title>Dead JobScheduler member '<p1>cluster_member_id</p1>' has resurrected</title>
             </text>
         </message>
 
         <!--message code="SCHEDULER-824">
             <text xml:lang="en">
-                <title>The exclusive Scheduler member is '<p1>cluster_member_id</p1>'</title>
+                <title>The exclusive JobScheduler member is '<p1>cluster_member_id</p1>'</title>
             </text>
         </message-->
 
         <message code="SCHEDULER-825">
             <text xml:lang="en">
-                <title>No exclusive Scheduler is running</title>
+                <title>No exclusive JobScheduler is running</title>
             </text>
         </message>
 
         <message code="SCHEDULER-826">
             <text xml:lang="en">
-                <title>That Scheduler has terminated</title>
+                <title>That JobScheduler has terminated</title>
             </text>
         </message>
 
@@ -3865,7 +3865,7 @@
 
         <!--message code="SCHEDULER-828">
             <text xml:lang="en">
-                <title><p1/> inactive Scheduler member records older than <p3/> removed from database table <p2/></title>
+                <title><p1/> inactive JobScheduler member records older than <p3/> removed from database table <p2/></title>
             </text>
         </message-->
 
@@ -3877,14 +3877,14 @@
 
         <message code="SCHEDULER-830">
             <text xml:lang="en">
-                <title>Because all Scheduler tasks have been killed, the order in database has not been updated. Only the occupation has been released</title>
+                <title>Because all JobScheduler tasks have been killed, the order in database has not been updated. Only the occupation has been released</title>
             </text>
         </message>
 
         <message code="SCHEDULER-831">
             <text xml:lang="en">
                 <title>Waiting <p1/>s for start of non-backup Scheduler</title>
-                <!--title>This is a backup Scheduler and there are no dead Schedulers. So we are waiting for start of non-backup Scheduler</title-->
+                <!--title>This is a backup JobScheduler and there are no dead Schedulers. So we are waiting for start of non-backup Scheduler</title-->
             </text>
         </message>
 
@@ -3902,13 +3902,13 @@
 
         <message code="SCHEDULER-834" weight="info">
             <text xml:lang="en">
-                <title>Active Scheduler has terminated properly</title>
+                <title>Active JobScheduler has terminated properly</title>
             </text>
         </message>
 
         <message code="SCHEDULER-835" weight="info">
             <text xml:lang="en">
-                <title>This Scheduler is becoming exclusive now</title>
+                <title>This JobScheduler is becoming exclusive now</title>
             </text>
         </message>
 
@@ -3950,13 +3950,13 @@
 
         <message code="SCHEDULER-842" weight="info">
             <text xml:lang="en">
-                <title>Task is going to process <p1>order</p1>, state=<p2/>, on Scheduler <p3/></title>
+                <title>Task is going to process <p1>order</p1>, state=<p2/>, on JobScheduler <p3/></title>
             </text>
         </message>
 
         <message code="SCHEDULER-843" weight="info">
             <text xml:lang="en">
-                <title>Task has ended processing of <p1>order</p1>, state=<p2/>, on Scheduler <p3/></title>
+                <title>Task has ended processing of <p1>order</p1>, state=<p2/>, on JobScheduler <p3/></title>
             </text>
         </message>
 

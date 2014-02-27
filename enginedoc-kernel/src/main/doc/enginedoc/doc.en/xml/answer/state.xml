@@ -6,7 +6,7 @@
 <!--         title         = "Allgemeiner Zustand des Schedulers"-->
 
 <xml_element name          = "state" 
-             title         = "General Status of the Job Scheduler"
+             title         = "General Status of the JobScheduler"
              category      = "Answer"
              sub_directory = "answer/"
              base_dir      = "../../"
@@ -34,7 +34,7 @@
     <!--<xml_attribute name="spooler_id" type="name" title="Scheduler-Id">-->
             <description>
                 <p>
-                    The Job Scheduler Identifier - see the <scheduler_option name="id"/> option.
+                    The JobScheduler Identifier - see the <scheduler_option name="id"/> option.
                 <!--Die Scheduler-Id, siehe Option <scheduler_option name="id"/>.-->
                 </p>
             </description>
@@ -50,7 +50,7 @@
             </description>
         </xml_attribute>
 
-        <xml_attribute name="spooler_running_since" type="yyyy-mm-dd hh:mm:ss" title="The start time of the Job Scheduler">
+        <xml_attribute name="spooler_running_since" type="yyyy-mm-dd hh:mm:ss" title="The start time of the JobScheduler">
     <!--<xml_attribute name="spooler_running_since" type="yyyy-mm-dd hh:mm:ss" title="Zeitpunkt des Anlaufs des Schedulers">-->
             <description>
                 <p>
@@ -59,10 +59,10 @@
             </description>
         </xml_attribute>
 
-        <xml_attribute name="wait_until" type="yyyy-mm-dd hh:mm:ss|never" title="The next action of the Job Scheduler"/>
+        <xml_attribute name="wait_until" type="yyyy-mm-dd hh:mm:ss|never" title="The next action of the JobScheduler"/>
     <!--<xml_attribute name="wait_until" type="yyyy-mm-dd hh:mm:ss|never" title="Nächste Aktion des Schedulers"/>-->
 
-        <xml_attribute name="state" type="state" title="The state of the Job Scheduler">
+        <xml_attribute name="state" type="state" title="The state of the JobScheduler">
     <!--<xml_attribute name="state" type="state" title="Zustand des Schedulers">-->
             <description>
                 <table cellspacing="0" cellpadding="0">
@@ -71,46 +71,46 @@
                     <tr>
                         <td><code>state="starting"</code></td>
                         <td>
-                            The Job Scheduler is starting.
-                        <!--Der Scheduler startet.-->
+                            The JobScheduler is starting.
+                        <!--Der JobScheduler startet.-->
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="running"</code></td>
                         <td>
-                            The Job Scheduler is running.
-                        <!--Der Scheduler läuft.-->
+                            The JobScheduler is running.
+                        <!--Der JobScheduler läuft.-->
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="paused"</code></td>
                         <td>
-                            The Job Scheduler has paused.
-                        <!--Der Scheduler ist angehalten.-->
+                            The JobScheduler has paused.
+                        <!--Der JobScheduler ist angehalten.-->
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="stopping"</code></td>
                         <td>
-                            The Job Scheduler is stopping.
-                        <!--Der Scheduler ist dabei, sich zu beenden.-->
+                            The JobScheduler is stopping.
+                        <!--Der JobScheduler ist dabei, sich zu beenden.-->
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="stopping_let_run"</code></td>
                         <td>
-                            The Job Scheduler is stopping but is allowing tasks which are still running to come to an end on their own.
-                            See the section on terminating the Job Scheduler <a href="../../termination.xml">here</a>.
-                        <!--Der Scheduler ist dabei, sich zu beenden, lässt aber laufende Tasks noch selbst zum Ende kommen.
+                            The JobScheduler is stopping but is allowing tasks which are still running to come to an end on their own.
+                            See the section on terminating the JobScheduler <a href="../../termination.xml">here</a>.
+                        <!--Der JobScheduler ist dabei, sich zu beenden, lässt aber laufende Tasks noch selbst zum Ende kommen.
                             Zur Beendigung des Schedulers siehe <a href="../../termination.xml">hier</a>.-->
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="stopped"</code></td>
                         <td>
-                            The Job Scheduler has stopped (and is about to terminate itself).
-                            Termination of the Job Scheduler is described <a href="../../termination.xml">here</a>.
-                        <!--Der Scheduler ist gestoppt (gleich beendet er sich).
+                            The JobScheduler has stopped (and is about to terminate itself).
+                            Termination of the JobScheduler is described <a href="../../termination.xml">here</a>.
+                        <!--Der JobScheduler ist gestoppt (gleich beendet er sich).
                             Zur Beendigung des Schedulers siehe <a href="../../termination.xml">hier</a>.-->
                         </td>
                     </tr>
@@ -118,7 +118,7 @@
                 <br/>
                                 
                 <p>
-                    The state of the Job Scheduler can be changed using the <scheduler_element name="modify_spooler" attribute="cmd"/> command.
+                    The state of the JobScheduler can be changed using the <scheduler_element name="modify_spooler" attribute="cmd"/> command.
                 <!--Der Zustand des Schedulers kann mit dem Kommando <scheduler_element name="modify_spooler" attribute="cmd"/> 
                     beeinflusst werden.-->
                 </p>
@@ -137,13 +137,13 @@
         <xml_attribute name="version" type="vv.vv.vv  yyyy-mm-dd">
             <description>
                 <p>
-                    The Job Scheduler version.
+                    The JobScheduler version.
                 <!--Version des Schedulers-->
                 </p>
             </description>
         </xml_attribute>
 
-        <xml_attribute name="pid" type="number" title="The Job Scheduler process id">
+        <xml_attribute name="pid" type="number" title="The JobScheduler process id">
     <!--<xml_attribute name="pid" type="zahl" title="Prozess-Id des Schedulers">-->
             <description>
                 <p>
@@ -161,16 +161,16 @@
             </description>
         </xml_attribute>
 
-        <xml_attribute name="db_waiting" type="yes|no" initial="no" title="Renew the Job Scheduler database connection">
+        <xml_attribute name="db_waiting" type="yes|no" initial="no" title="Renew the JobScheduler database connection">
     <!--<xml_attribute name="db_waiting" type="yes|no" initial="no" title="Scheduler erneuert Datenbankverbindung">-->
             <description>
                 <p>
-                    The <code>db_waiting</code> element is set to <code>"yes"</code>, should the Job Scheduler lose its connection with the database
+                    The <code>db_waiting</code> element is set to <code>"yes"</code>, should the JobScheduler lose its connection with the database
                     and be in the process of reconnecting itself. 
-                    In this situation the Job Scheduler does not execute any jobs.
-                <!--Wenn der Scheduler die Datenbankverbindung verloren hat und versucht, sie wiederherzustellen,
+                    In this situation the JobScheduler does not execute any jobs.
+                <!--Wenn der JobScheduler die Datenbankverbindung verloren hat und versucht, sie wiederherzustellen,
                     ist <code>db_waiting="yes"</code> gesetzt. 
-                    Der Scheduler führt währenddessen keinen Job aus.-->
+                    Der JobScheduler führt währenddessen keinen Job aus.-->
                 </p>
             </description>
         </xml_attribute>
@@ -179,14 +179,14 @@
     <!--<xml_attribute name="waiting_errno" type="number" title="Fehler beim Scheiben eines Protokolls (Platte voll)">-->
             <description>
                 <p>
-                    When this attribute is set, then the Scheduler waits and only reacts to commands via TCP, UDP or HTTP.
+                    When this attribute is set, then the JobScheduler waits and only reacts to commands via TCP, UDP or HTTP.
                 <!--Wenn dieses Attribut gesetzt ist, steht der Scheduduler still und reagiert nur noch auf
                     Kommandos über TCP, UDP und HTTP.-->
                 </p>
                 <p>
-                    The Scheduler can be restarted using 
+                    The JobScheduler can be restarted using 
                     <scheduler_element name="modify_spooler" attribute="cmd" value="continue"/>.
-                <!--Der Scheduler kann mit
+                <!--Der JobScheduler kann mit
                     <scheduler_element name="modify_spooler" attribute="cmd" value="continue"/>
                     fortgesetzt werden.-->
                 </p>
@@ -203,8 +203,8 @@
     <!--<xml_attribute name="loop" type="zahl" title="Interner Wert: Anzahl der Server-Zyklen">-->
             <description>
                 <p>
-                    This value increases as the Job Scheduler executes operations such as a job step or a method callup.
-                <!--Der Wert erhöht sich, wenn der Scheduler Opertionen ausführt, 
+                    This value increases as the JobScheduler executes operations such as a job step or a method callup.
+                <!--Der Wert erhöht sich, wenn der JobScheduler Opertionen ausführt, 
                     z.B. ein Jobschritt oder ein Methodenaufruf aus einem Job heraus.-->
                 </p>
             </description>
@@ -214,8 +214,8 @@
     <!--<xml_attribute name="waits" type="zahl" title="Interner Wert: Anzahl der Wartezustände">-->
             <description>
                 <p>
-                    This value increases by one each time the Job Scheduler does not have to execute a task and enters a waiting state.
-                <!--Der Wert erhöht sich um eins, wenn der Scheduler im Wartezustand ist, 
+                    This value increases by one each time the JobScheduler does not have to execute a task and enters a waiting state.
+                <!--Der Wert erhöht sich um eins, wenn der JobScheduler im Wartezustand ist, 
                     weil gerade nichts zu tun ist.-->
                 </p>
             </description>

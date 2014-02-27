@@ -66,9 +66,9 @@
             The job is restarted after a delay of 10 seconds after the 2nd, 3rd &amp; 4th consecutive errors,<br/>
             after between 5 and 9 errors the job is delayed each time by a minute,<br/>
             after between 10 and 19 errors the job is delayed 24 hours, <br/>
-            after 20 consecutive errors the Job Scheduler stops the job immediately.
-        <!--Nach einem Fehler wiederholt der Scheduler den Job sofort.<br/>
-            Nach dem zweiten bis zum vierten Fehler verzögert der Scheduler den Job um 10 Sekunden,<br/>
+            after 20 consecutive errors the JobScheduler stops the job immediately.
+        <!--Nach einem Fehler wiederholt der JobScheduler den Job sofort.<br/>
+            Nach dem zweiten bis zum vierten Fehler verzögert der JobScheduler den Job um 10 Sekunden,<br/>
             nach dem fünften bis zum neunten Fehler um eine Minute,<br/>
             nach dem zehnten bis zum neunzehnten um 24 Stunden, <br/>
             nach dem zwanzigsten aufeinanderfolgenden Fehler schließlich stoppt der Job.-->

@@ -23,7 +23,7 @@
             <a target="mozilla" href="http://www.mozilla.org/js/spidermonkey/">Spidermonkey from Mozilla</a>, 
             is delivered with the Scheduler.
         <!--<a target="mozilla" href="http://www.mozilla.org/js/spidermonkey/">Spidermonkey von Mozilla</a>, 
-            wird mit dem Scheduler ausgeliefert.-->
+            wird mit dem JobScheduler ausgeliefert.-->
         </dd>
 
         <dt><scheduler_element name="script" attribute="language" value="JScript"/></dt>

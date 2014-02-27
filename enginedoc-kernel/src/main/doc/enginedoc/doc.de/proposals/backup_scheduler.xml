@@ -11,7 +11,7 @@
     date                = "$Date: 2006-12-07 09:24:02 +0100 (Thu, 07 Dec 2006) $"
 >
     <p>
-        Der Scheduler kann aus zwei Mitgliedern bestehen:
+        Der JobScheduler kann aus zwei Mitgliedern bestehen:
         Dem Haupt-Mitglied und dem Backup-Mitglied.
         Letzteres hält sich bereit, um beim Ausfall des Hauptmitglieds den Betrieb zu übernehmen.
         Es kann auf einem anderen Rechner laufen.
@@ -21,7 +21,7 @@
     <!--h3>Begriffe</h3>
     <dl>
         <dt>Scheduler</dt>
-        <dd>Die Mitglieder bildern zusammen einen Scheduler mit einer Scheduler-Id</dd>
+        <dd>Die Mitglieder bildern zusammen einen JobScheduler mit einer Scheduler-Id</dd>
         <dt>Mitglied</dt>
         <dd>Ein laufende Scheduler-Programm</dd>
         <dt></dt>
@@ -59,7 +59,7 @@
         Die Uhren der Rechner und der Datenbank müssen auf einige Sekunden genau gleichlaufen.
     </p>
     <!-->
-        Der Scheduler prüft (beim Start?) die Übereinstimmung seiner Uhr mit der Datenbankuhr.
+        Der JobScheduler prüft (beim Start?) die Übereinstimmung seiner Uhr mit der Datenbankuhr.
         Der Backup-Scheduler bricht bei zu großer Abweichung ab.
     </p-->
     <!--p>
@@ -87,7 +87,7 @@
     <p>
         Normalerweise betreibt das Haupt-Mitglied den Scheduler.
         Es ist dann das aktive Mitglied.
-        Nur das Haupt-Mitglied kann einen ordentlich beendeten Scheduler starten.
+        Nur das Haupt-Mitglied kann einen ordentlich beendeten JobScheduler starten.
     </p>
     <p>
         In der Datenbank trägt sich das Haupt-Mitglied unter seiner Mitgliedskennung
@@ -163,16 +163,16 @@
         </li>
     </ul>
     <p>
-        Die erste Variante bedeutet auch, dass das Backup-Mitglied den Scheduler nicht starten kann.
+        Die erste Variante bedeutet auch, dass das Backup-Mitglied den JobScheduler nicht starten kann.
         Es kann nur den Betrieb übernehmen, wenn er den Ausfall des aktiven Mitglieds bemerkt.
     </p>
     <p>
-        Die zweite Variante bedeutet im Gegenteil, dass der Backup-Scheduler auch den Scheduler starten kann,
+        Die zweite Variante bedeutet im Gegenteil, dass der Backup-Scheduler auch den JobScheduler starten kann,
         wenn das erste Mitglied nicht angelaufen ist (was bei gleichzeitigem Start durch Fristen geregelt werden müsste).
     </p>
     <p>
         <i>Ich bin für die erste Variante.</i>
-        Wenn der Scheduler einmal mit dem Backup-Mitglied gestartet werden muss,
+        Wenn der JobScheduler einmal mit dem Backup-Mitglied gestartet werden muss,
         kann der Administrator vorher seine Rolle wechseln.
     </p-->
 
@@ -183,7 +183,7 @@
         startet als inaktives Mitglied
         und kann das aktive Mitglied bei Ausfall ersetzen.
         Es wird dann zum aktiven Mitglied.
-        Das Backup-Mitglied wird nicht einen ordentlich beendeten Scheduler starten.
+        Das Backup-Mitglied wird nicht einen ordentlich beendeten JobScheduler starten.
     </p>
 
     
@@ -245,24 +245,24 @@
 
     <!--h3>Überwachung des Herzschlags</h3>
     <p>
-        Der zweite Scheduler überwacht das EKG des ersten.
+        Der zweite JobScheduler überwacht das EKG des ersten.
         Sobald dessen Herzschlag aussetzt 
         (<code>next_heart_beat</code> und Nachfrist sind verstrichen),
-        trägt sich der zweite Scheduler als laufender Scheduler ein
+        trägt sich der zweite JobScheduler als laufender JobScheduler ein
         und übernimmt den Betrieb.
         Er hat die Rolle des ersten Schedulers und 
         schreibt nun selbst seinen Herzschlag in die Datenbank.
     </p>
 
     <p>
-        Der Scheduler kann seinen Herzschlag nur in die Datenbank schreiben,
-        wenn er als laufender Scheduler eingetragen ist.
+        Der JobScheduler kann seinen Herzschlag nur in die Datenbank schreiben,
+        wenn er als laufender JobScheduler eingetragen ist.
         Das wird durch eine Where-Klausel geprüft.
-        Wenn er nicht mehr laufender Scheduler ist, bricht er sich und 
+        Wenn er nicht mehr laufender JobScheduler ist, bricht er sich und 
         alle seine Tasks sofort ab.
     </p>
     <p>
-        Außerdem prüft der Scheduler nach jedem Schreiben des Herzschlags,
+        Außerdem prüft der JobScheduler nach jedem Schreiben des Herzschlags,
         ob er sich verspätet hat,
         und gibt in dem Fall eine Warnung aus.
     </p-->
@@ -275,15 +275,15 @@
     </p>
     <p>
         Wenn der Backup-Scheduler den Betrieb übernommen hat, ist er der laufende Scheduler,
-        während der neu startende erste Scheduler Backup-Scheduler wird.
+        während der neu startende erste JobScheduler Backup-Scheduler wird.
     </p>
 
 
     <h3>Vorrang festlegen</h3>
     <p>
-        Wenn ein Scheduler Vorrang haben soll, z.B. beim gleichzeitigen Start zweier Scheduler,
-        kann dem einen Scheduler eine Wartezeit vorgegeben werden.
-        Nur wenn während der Wartezeit sich der andere Scheduler nicht als laufendes Mitglied registriert,
+        Wenn ein JobScheduler Vorrang haben soll, z.B. beim gleichzeitigen Start zweier Scheduler,
+        kann dem einen JobScheduler eine Wartezeit vorgegeben werden.
+        Nur wenn während der Wartezeit sich der andere JobScheduler nicht als laufendes Mitglied registriert,
         übernimmt er den Betrieb.
     </p>
 

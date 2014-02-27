@@ -14,33 +14,33 @@
 <scheduler_keyword keyword="Historie"/>
 
 <p>
-    Der Scheduler kann mit und ohne Datenbank betrieben werden. Der Betrieb mit Datenbank hat folgende Vorteile:
+    Der JobScheduler kann mit und ohne Datenbank betrieben werden. Der Betrieb mit Datenbank hat folgende Vorteile:
 </p>
 
 <dl>
     <dt>Task-Warteschlange</dt>
     <dd>
-        Der Job Scheduler speichert die in den Warteschlangen eingereihten Tasks in einer Tabelle
+        Der JobScheduler speichert die in den Warteschlangen eingereihten Tasks in einer Tabelle
         unter seiner Scheduler-ID  (Option <scheduler_option name="id"/>).
-        Sobald der Job Scheduler erneut startet, liest er die Warteschlange aus der Datenbank.
+        Sobald der JobScheduler erneut startet, liest er die Warteschlange aus der Datenbank.
     </dd>
 
     <dt>Aufträge</dt>
     <dd>
-        Der Job Scheduler speichert jeden Auftrag in einer Tabelle
+        Der JobScheduler speichert jeden Auftrag in einer Tabelle
         unter seiner Scheduler-ID  (Option <scheduler_option name="id"/>).
-        Sobald der Job Scheduler erneut startet, liest er die Aufträge aus der Datenbank.
+        Sobald der JobScheduler erneut startet, liest er die Aufträge aus der Datenbank.
     </dd>
 
     <dt>Task-Historie</dt>
     <dd>
-        Für jede Task schreibt der Job Scheduler einen Satz,
-        außerdem bei Start und Ende des Job Schedulers.
+        Für jede Task schreibt der JobScheduler einen Satz,
+        außerdem bei Start und Ende des JobSchedulers.
     </dd>
 
     <dt>Auftragshistorie</dt>
     <dd>
-        Der Job Scheduler hält den Lauf der Aufträge durch die Job-Ketten in der Auftragshistorie fest.
+        Der JobScheduler hält den Lauf der Aufträge durch die Job-Ketten in der Auftragshistorie fest.
     </dd>
 </dl>
 
@@ -135,13 +135,13 @@
 
 <h2>Fehlertoleranz</h2>
 <p>
-    Der Job Scheduler toleriert Datenbankfehler.
+    Der JobScheduler toleriert Datenbankfehler.
     Dadurch kann er mit einer vorübergehend heruntergefahrenen Datenbank umgehen.
     Näheres hierzu finden sie hier: <scheduler_ini_entry file="factory.ini" section="spooler" entry="need_db"/>.
 </p>
 <p>
-    Wenn eingestellt ist, dass der Job Scheduler nach Verbindungsverlust auf eine erneute Verbindung zur Datenbank warten soll,
-    hält der Job Scheduler solange an.
+    Wenn eingestellt ist, dass der JobScheduler nach Verbindungsverlust auf eine erneute Verbindung zur Datenbank warten soll,
+    hält der JobScheduler solange an.
     Nur Kommandos über TCP oder HTTP verarbeitet er.
     Er kann nicht beendet, nur abgebrochen werden (s. <a href="termination.xml">Beendigung</a>).
 </p>

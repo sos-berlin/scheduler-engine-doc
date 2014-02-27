@@ -22,8 +22,8 @@
         </com>
 
         <title>
-            Adds a lock to a Job Scheduler
-        <!--Fügt dem Scheduler eine Sperre hinzu-->
+            Adds a lock to a JobScheduler
+        <!--Fügt dem JobScheduler eine Sperre hinzu-->
         </title>
       
         <messages>
@@ -47,12 +47,12 @@
         <description>
             <p>
                 Returns a new lock <scheduler_method class="Lock"/>.
-                This lock can be added to the Job Scheduler using
+                This lock can be added to the JobScheduler using
                 <scheduler_method class="Locks" method="add_lock"/>.
             <!--Liefert eine neues <scheduler_method class="Lock"/>.
                 Diese Sperre kann 
                 mit <scheduler_method class="Locks" method="add_lock"/>
-                dem Scheduler hinzugefügt werden.-->
+                dem JobScheduler hinzugefügt werden.-->
             </p>
         </description>
     </method>

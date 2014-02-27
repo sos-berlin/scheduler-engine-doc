@@ -96,7 +96,7 @@
             </com.result>
         </com>
 
-        <title>The address of the remote Job Scheduler, which is to execute a process</title>
+        <title>The address of the remote JobScheduler, which is to execute a process</title>
     <!--<title>Adresse des fernen Schedulers, der die Prozesse ausführen soll</title>-->
 
         <description>
@@ -129,10 +129,10 @@
 
         <description>
             <p>
-                The Job Scheduler delays deletion of the process class as long as tasks are still running.
+                The JobScheduler delays deletion of the process class as long as tasks are still running.
                 No new tasks will be started before the class is deleted.
             <!--Wenn noch Tasks in der Prozessklasse laufen, 
-                verzögert der Scheduler das Löschen bis die letzte Task geendet hat.
+                verzögert der JobScheduler das Löschen bis die letzte Task geendet hat.
                 Solange werden keine neuen Tasks gestartet.-->
             </p>
             <p>

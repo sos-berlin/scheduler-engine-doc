@@ -27,13 +27,13 @@
                 </p>
                 <p>
                     Das Verzeichnis ist für den Supervisor-Betrieb,
-                    bei dem andere Scheduler sich anmelden mit
+                    bei dem andere JobScheduler sich anmelden mit
                     <scheduler_element name="config" attribute="supervisor"/>.
-                    Das Verzeichnis kann für jeden Scheduler ein Unterverzeichnis mit Konfigurationsdateien enthalten,
-                    die der Supervisor zum Scheduler laufend repliziert.
+                    Das Verzeichnis kann für jeden JobScheduler ein Unterverzeichnis mit Konfigurationsdateien enthalten,
+                    die der Supervisor zum JobScheduler laufend repliziert.
                 </p>
                 <p>
-                    Scheduler in einem Cluster 
+                    JobScheduler in einem Cluster 
                     (<scheduler_option name="exclusive"/> oder <scheduler_option name="distributed-orders"/>)
                     erhalten ihre Konfiguration aus einem Verzeichnis mit dem Namen der Scheduler-ID
                     (<scheduler_option name="id"/>).
@@ -48,7 +48,7 @@
                     Diese Dateien sind nachrangig.
                 </p>
                 <p>
-                    Es ist möglich, für einen Scheduler kein Verzeichnis anzugeben. 
+                    Es ist möglich, für einen JobScheduler kein Verzeichnis anzugeben. 
                     Dann wird nur die Konfiguration aus dem Verzeichnis <code>_all</code>, falls vorhanden, übertragen.
                 </p>
             </description>
@@ -72,7 +72,7 @@
                     siehe <scheduler_option name="config"/>.
                 </p>
                 <p>
-                    Diesem Verzeichnis entnimmt der Scheduler die
+                    Diesem Verzeichnis entnimmt der JobScheduler die
                     Definitionen der Jobs usw., 
                     siehe <scheduler_a href="../dynamic_configuration.xml" quote="yes"/>.
                 </p>
@@ -84,13 +84,13 @@
             <description>
                 <p>
                     Der angegebene Job wird gestartet,
-                    wenn der Scheduler eine <i>neue</i> Datei aus dem Konfigurationsverzeichnis geladen hat.
+                    wenn der JobScheduler eine <i>neue</i> Datei aus dem Konfigurationsverzeichnis geladen hat.
                 </p>
 
                 <p>
                     Der Job wird gestartet, so wie es seine <scheduler_element name="run_time"/> zulässt.
                     Er sollte in der Scheduler-Konfigurationsdatei definiert sein, 
-                    damit er bekannt ist, wenn der Scheduler das Konfigurationsverzeichnis liest.
+                    damit er bekannt ist, wenn der JobScheduler das Konfigurationsverzeichnis liest.
                 </p>
 
                 <p>
@@ -130,12 +130,12 @@
             <description>
                 <p>
                     Der angegebene Job wird gestartet,
-                    wenn der Scheduler eine <i>geänderte</i> Datei aus dem Konfigurationsverzeichnis geladen hat.
+                    wenn der JobScheduler eine <i>geänderte</i> Datei aus dem Konfigurationsverzeichnis geladen hat.
                 </p>
                 <p>
                     Der Job wird gestartet, so wie es seine <scheduler_element name="run_time"/> zulässt.
                     Er sollte in der Scheduler-Konfigurationsdatei definiert sein,
-                    damit er bekannt ist, wenn der Scheduler das Konfigurationsverzeichnis liest.
+                    damit er bekannt ist, wenn der JobScheduler das Konfigurationsverzeichnis liest.
                 </p>
                 <p>
                     Parameter und Umgebungsvariablen sind gesetzt wie bei
@@ -149,12 +149,12 @@
             <description>
                 <p>
                     Der angegebene Job wird gestartet,
-                    wenn aus dem Konfigurationsverzeichnis eine im Scheduler geladene Datei entfernt worden ist.
+                    wenn aus dem Konfigurationsverzeichnis eine im JobScheduler geladene Datei entfernt worden ist.
                 </p>
                 <p>
                     Der Job wird gestartet, so wie es seine <scheduler_element name="run_time"/> zulässt.
                     Er sollte in der Scheduler-Konfigurationsdatei definiert sein,
-                    damit er bekannt ist, wenn der Scheduler das Konfigurationsverzeichnis liest.
+                    damit er bekannt ist, wenn der JobScheduler das Konfigurationsverzeichnis liest.
                 </p>
                 <p>
                     Parameter und Umgebungsvariablen sind gesetzt wie bei
@@ -167,17 +167,17 @@
         <xml_attribute name="supervisor" type="host:port">
             <description>
                 <p>
-                    Der Supervisor, bei dem sich dieser Scheduler an- und abmelden soll.
+                    Der Supervisor, bei dem sich dieser JobScheduler an- und abmelden soll.
                     Das geschieht asynchron und Fehler beeinträchtigen nicht den Betrieb.
                 </p>
                 <p>
                     Wenn der Haupt-Scheduler unter Windows läuft,
-                    sollten nicht mehr als vier Scheduler sich bei ihn anmelden.
+                    sollten nicht mehr als vier JobScheduler sich bei ihn anmelden.
                 </p>
                 <p>
-                    Der Supervisor kann für den Scheduler die Konfiguration bestimmen,
+                    Der Supervisor kann für den JobScheduler die Konfiguration bestimmen,
                     s. <scheduler_element name="config" attribute="central_configuration_directory"/>.
-                    Die übernommene Konfiguration hält der Scheduler im Verzeichnis <code>cache</code>.
+                    Die übernommene Konfiguration hält der JobScheduler im Verzeichnis <code>cache</code>.
                 </p>
             </description>
         </xml_attribute>
@@ -239,10 +239,10 @@
         <xml_attribute name="log_dir" type="verzeichnis" option="log-dir" title="Verzeichnis der Protokolle">
             <description>
                 <p>
-                    Gibt das Verzeichnis an, an das der Scheduler die Protokoll schreibt.
+                    Gibt das Verzeichnis an, an das der JobScheduler die Protokoll schreibt.
                 </p>
                 <p>
-                    <code>log_dir="*stderr"</code> lässt den Scheduler das Hauptprotokoll nach stderr schreiben.
+                    <code>log_dir="*stderr"</code> lässt den JobScheduler das Hauptprotokoll nach stderr schreiben.
                 </p>
             </description>
         </xml_attribute>
@@ -273,7 +273,7 @@
     <xml_child_elements>
         <xml_child_element name="base" multiple="yes" title="Basiskonfiguration">
             <description>
-                Eine Basiskonfigurationsdatei kann hier angegeben werden, die der Scheduler zuerst auswertet.
+                Eine Basiskonfigurationsdatei kann hier angegeben werden, die der JobScheduler zuerst auswertet.
                 Die Einstellungen darin bilden die Voreinstellungen für die Konfigurationsdatei, die das Element
                 <code>&lt;base></code> enthält.
             </description>
@@ -316,16 +316,16 @@
         <xml_child_element name="scheduler_script" title="Scheduler-Skript">
             <description>
                 <p>
-                    Das hierin enthaltene Skript führt der Scheduler beim Start, vor jedem Job aus.
+                    Das hierin enthaltene Skript führt der JobScheduler beim Start, vor jedem Job aus.
                     Wenn die Methode <scheduler_method class="Job_impl" method="spooler_init"/> implementiert ist,
-                    ruft der Scheduler sie auf.
+                    ruft der JobScheduler sie auf.
                     Es eignet sich zum Setzen von Scheduler-Variablen.
                 </p>
                 <p>
-                    Bei einem Fehler bricht der Scheduler ab.
+                    Bei einem Fehler bricht der JobScheduler ab.
                 </p>
                 <p>
-                    Das Skript wird erst geschlossen, wenn der Scheduler endet.
+                    Das Skript wird erst geschlossen, wenn der JobScheduler endet.
                 </p>
             </description>
             <example>

@@ -11,8 +11,8 @@
     date                = "$Date: 2006-07-27 10:42:20 +0200 (Thu, 27 Jul 2006) $"
 >
     <p>
-        Der Scheduler hält einen Prozess für die Java-Tasks vor oder lässt die Java-Tasks im eigenen Prozess des Schedulers laufen.
-        Damit lädt der Scheduler nur eine Java Virtual Machine, was den Speicherbedarf und die Startzeit verringert.
+        Der JobScheduler hält einen Prozess für die Java-Tasks vor oder lässt die Java-Tasks im eigenen Prozess des Schedulers laufen.
+        Damit lädt der JobScheduler nur eine Java Virtual Machine, was den Speicherbedarf und die Startzeit verringert.
         Jede Task läuft unabhängig in einem eigenen Java-Thread.
     </p>
     <p>
@@ -22,7 +22,7 @@
         Das bisherige Verfahren mit eigenen Prozessen bleibt bestehen.
     </p>
     <p>
-        Wenn Java im Prozess des Schedulers läuft, kann die Kommunikation zwischen Task und Scheduler beschleunigt werden.
+        Wenn Java im Prozess des Schedulers läuft, kann die Kommunikation zwischen Task und JobScheduler beschleunigt werden.
         Statt über TCP oder Pipes werden die Nachrichten im Speicher mit einfacher Signalisierung ausgetauscht.
     </p>
     <pre>&lt;process_class name="one_process" separate_process="no" max_threads="10"/></pre>
@@ -52,7 +52,7 @@
         <li>
             Sollte nicht für Java-Jobs verwendet werden, 
             die nicht ganz zuverlässige native Implementierungen nutzen.
-            Das sollte der Scheduler mit einer Java-Option oder Security-Einstellung verhindern können.
+            Das sollte der JobScheduler mit einer Java-Option oder Security-Einstellung verhindern können.
         </li>
         <li>
             <scheduler_method class="Task" object="spooler_task" property="stdout_text"/> und

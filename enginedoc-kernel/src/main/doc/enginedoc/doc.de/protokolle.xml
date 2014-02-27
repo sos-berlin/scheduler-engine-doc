@@ -13,7 +13,7 @@
 <scheduler_keyword keyword="Protokoll"/>
 
 <p>
-    Der Scheduler schreibt seine Protokolle in das mit der Option <scheduler_option name="log-dir"/> eingestellte Verzeichnis.
+    Der JobScheduler schreibt seine Protokolle in das mit der Option <scheduler_option name="log-dir"/> eingestellte Verzeichnis.
 </p>
 
     <p>
@@ -38,12 +38,12 @@
 
 <h3>Jobprotokolle</h3>
 <p>
-    Für jeden Job erstellt der Scheduler ein Jobprotokoll
+    Für jeden Job erstellt der JobScheduler ein Jobprotokoll
     mit den Starts der Tasks und eingetroffenen Aufträgen.
     Beispiel: <code>job.mein_job.log</code>
 </p>
 <p>
-    Zeichen im Jobnamen, die nicht im Dateinamen verwendet werden können, tauscht der Scheduler gegen "_".
+    Zeichen im Jobnamen, die nicht im Dateinamen verwendet werden können, tauscht der JobScheduler gegen "_".
 </p>
 
 
@@ -52,7 +52,7 @@
 
 <h3>Taskprotokolle</h3>
 <p>
-    Für jeden Task erstellt der Scheduler ein Taskprotokoll.
+    Für jeden Task erstellt der JobScheduler ein Taskprotokoll.
     Der Dateiname wird aus dem Jobnamen und, wenn mehrere Tasks zugelassen sind, der Task-Id gebildet,
     z.B.: <code>task.mein_job.log</code> und <code>task.ein_job.1234.log</code>.
     Taskprotokolle mit Task-Id werden nach Ende der Task gelöscht.
@@ -64,7 +64,7 @@
 
 <h3>Auftragsprotokolle</h3>
 <p>
-    Für jeden Auftrag erstellt der Scheduler ein Auftragsprotokoll
+    Für jeden Auftrag erstellt der JobScheduler ein Auftragsprotokoll
     mit den Ausgaben aller Tasks, die der Auftrag durchläuft.
     Der Dateiname wird aus der Job-Kette und der Auftrags-Id gebildet,
     z.B.: <code>order.meine_Job-Kette.9876.log</code>.
@@ -78,7 +78,7 @@
 
 <h3>scheduler.log</h3>
 <p>
-    Zur Fehlerdiagnose kann der Scheduler das <code>scheduler.log</code> schreiben.
+    Zur Fehlerdiagnose kann der JobScheduler das <code>scheduler.log</code> schreiben.
     In <scheduler_ini_entry file="factory.ini" section="spooler" entry="log"/> stellen sie den Dateinamen ein.
     In dieser Dokumentation steht <code>factory.ini</code> für den hier eingestellten Dateinamen.
 </p>
@@ -107,18 +107,18 @@
 <h2>Plattenplatzmangel</h2>
 <p>
     Wenn nicht genug Plattenplatz beim Öffnen einer Protokolldatei vorhanden ist, gibt es einen Fehler.
-    Wenn das Hauptprotokoll nicht geöffnet werden kann, bricht der Scheduler ab.
+    Wenn das Hauptprotokoll nicht geöffnet werden kann, bricht der JobScheduler ab.
 </p>
 <p>
     Wenn nicht genug Plattenplatz vorhanden ist, um ein Protokoll fortzuschreiben,
-    hält der Scheduler an.
+    hält der JobScheduler an.
     Er reagiert auf über TCP, UDP oder HTTP übergebene Kommandos.
 </p>
 <p>
     Das Kommando <a href="xml/modify_spooler.xml"><code>&lt;modify_spooler></code></a> wirkt nur eingeschränkt.
 </p>
 <p>
-    Wenn wieder Plattenplatz bereit steht, können Sie den Scheduler fortsetzen mit <code>&lt;modify_scheduler cmd="continue"/></code>.
+    Wenn wieder Plattenplatz bereit steht, können Sie den JobScheduler fortsetzen mit <code>&lt;modify_scheduler cmd="continue"/></code>.
 </p>
 <p>
     Die Datei <code>scheduler.log</code> ist von diesem Verfahren nicht betroffen. Fehler werden hier ignoriert.
@@ -130,7 +130,7 @@
 <h2>Ablage in den Datenbank</h2>
 
 <p>
-    Der Scheduler kann die Task- und Auftragsprotokolle mit in die Historie schreiben.
+    Der JobScheduler kann die Task- und Auftragsprotokolle mit in die Historie schreiben.
     Voraussetzung sind
 </p>
 
@@ -166,7 +166,7 @@
 <h2>eMail-Versand</h2>
 
 <p>
-    Der Scheduler kann das Task-Protokoll per eMail verschicken. Lesen Sie weiter im Kapitel <a href="email.xml">eMail</a>.
+    Der JobScheduler kann das Task-Protokoll per eMail verschicken. Lesen Sie weiter im Kapitel <a href="email.xml">eMail</a>.
 </p>
 
 

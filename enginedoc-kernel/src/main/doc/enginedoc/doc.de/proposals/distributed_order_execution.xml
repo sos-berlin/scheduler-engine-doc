@@ -14,22 +14,22 @@
     
     <ul>
         <li>
-            Mehrere Scheduler teilen sich die Aufgaben:
+            Mehrere JobScheduler teilen sich die Aufgaben:
             Ausführung der Tasks und Aufträge.
         </li>
         <li>
-            Die Scheduler können auf verschiedenen Rechnern laufen.
+            Die JobScheduler können auf verschiedenen Rechnern laufen.
         </li>
         <li>
-            Scheduler können während des Betriebs hinzugefügt und weggenommen werden.
+            JobScheduler können während des Betriebs hinzugefügt und weggenommen werden.
         </li>
         <li>
-            Alle Scheduler können gleich konfiguriert werden.
+            Alle JobScheduler können gleich konfiguriert werden.
             Sie müssen dieselben Jobs und Jobketten haben.
         </li>
         <li>
-            Jeder Scheduler liefert an der XML-Schnittstelle die gleichen Informationen
-            bis vielleicht auf die aktuell ausgeführte Task (die nur in einem Scheduler läuft).
+            Jeder JobScheduler liefert an der XML-Schnittstelle die gleichen Informationen
+            bis vielleicht auf die aktuell ausgeführte Task (die nur in einem JobScheduler läuft).
         </li>
     </ul>
 
@@ -43,7 +43,7 @@
         B) Das hier beschriebene, ebenfalls datenbank-basierte Verfahren
         <br/>
         C) <!--scheduler_a href="distributed_tcp.xml" quote="yes"/-->
-            Verteilter Scheduler in Peer-to-Peer-Technik 
+            Verteilter JobScheduler in Peer-to-Peer-Technik 
     </p>
     <p>
         Ich betrachte nur Aufträge, keine Tasks.
@@ -63,7 +63,7 @@
             (d.h. auch bisher flüchtige Eigenschaften müssen in der Datenbank gehalten werden).
         </li>
         <li>
-            Zum Auftrag ist vermerkt, welcher Scheduler ihn gerade ausführt
+            Zum Auftrag ist vermerkt, welcher JobScheduler ihn gerade ausführt
             "<i>scheduler_id</i><code>.</code><i>host</i><code>:</code><i>port</i>".
         </li>
     </ul>
@@ -87,7 +87,7 @@
 
     <h3>Vor der Ausführung eines Auftrags</h3>
     <p>
-        Wenn ein Scheduler bereit ist, einen Auftrag auszuführen, 
+        Wenn ein JobScheduler bereit ist, einen Auftrag auszuführen, 
         versucht er einen zu belegen:
     </p>
     <pre>select … from scheduler_orders  
@@ -110,7 +110,7 @@ update scheduler_orders
       
 commit</pre>
     <p>
-        Bei Erfolg kann der Scheduler über den Auftrag verfügen.
+        Bei Erfolg kann der JobScheduler über den Auftrag verfügen.
     </p>
 
     
@@ -128,15 +128,15 @@ commit</pre>
 commit</pre>
 
     <p>
-        Wenn das fehlschlägt, weil (wegen Zeitüberschreitung) ein anderer Scheduler den Auftrag belegt hat
+        Wenn das fehlschlägt, weil (wegen Zeitüberschreitung) ein anderer JobScheduler den Auftrag belegt hat
         (<code>processing_scheduler_instance</code> ist verändert worden), 
-        dann schlägt der Scheduler Alarm (er sendet eine eMail).
+        dann schlägt der JobScheduler Alarm (er sendet eine eMail).
     </p>
     
     <h3>Fristüberschreitung — Erkennung durch anderen Scheduler</h3>
     <p>
-        Der ausführende Scheduler steht im Verdacht, stehengeblieben zu sein,
-        wenn der Auftrag vom Scheduler belegt ist (<code>processing_scheduler_instance</code> gefüllt)
+        Der ausführende JobScheduler steht im Verdacht, stehengeblieben zu sein,
+        wenn der Auftrag vom JobScheduler belegt ist (<code>processing_scheduler_instance</code> gefüllt)
         und
     </p>
     <ul>
@@ -152,7 +152,7 @@ commit</pre>
         or ( scheduler_orders.processing_scheduler_instance == scheduler_instances.name  
              and scheduler_instances.next_heart_beat > <i>now</i> )</pre>
     <p>
-        Ein anderer Scheduler kann das feststellen,
+        Ein anderer JobScheduler kann das feststellen,
         wenn er selbst einen Auftrag ausführen will oder durch periodische Überwachung und
     </p>
     <ul>
@@ -161,16 +161,16 @@ commit</pre>
             der Operateur kann dann eine Entscheidung treffen
         </li>
         <li>
-            automatisch den Auftrag dem anscheinend stehengebliebenen Scheduler entziehen
+            automatisch den Auftrag dem anscheinend stehengebliebenen JobScheduler entziehen
             (<code>processing_scheduler_instance=null</code>),
             um ihn selbst auszuführen
             (wer das einstellt, sollte wissen was er tut).
         </li>
     </ul>
 
-    <h3>Fristüberschreitung — Erkennung vom Scheduler selbst</h3>
+    <h3>Fristüberschreitung — Erkennung vom JobScheduler selbst</h3>
     <p>
-        Der Scheduler kann auch selbst prüfen, ob er eine Frist überschreitet.
+        Der JobScheduler kann auch selbst prüfen, ob er eine Frist überschreitet.
         Nachdem er seinen Datensatz in <code>schedulers_instances</code> erneuert hat,
         prüft er, ob dies zu rechten Zeit geschehen ist.
         Wenn nicht, gibt's eine Warnung.
@@ -179,7 +179,7 @@ commit</pre>
 
     <h3>Neustart des ausführenden Schedulers</h3>
     <p>
-        Wenn der einen Auftrag ausführende Scheduler abgebrochen und neu gestartet wird,
+        Wenn der einen Auftrag ausführende JobScheduler abgebrochen und neu gestartet wird,
         gibt er alle von ihm belegten Aufträge frei (und meldet dies).
     </p>
     <pre>update scheduler_orders  
@@ -193,7 +193,7 @@ commit</pre>
         Siehe <scheduler_a href="../file_orders.xml" quote="yes"/>.
     </p>
     <p>
-        Jeder Scheduler kann dasselbe Verzeichnis überwachen.
+        Jeder JobScheduler kann dasselbe Verzeichnis überwachen.
     </p>
     <p>
         Dass ein Auftrag auf der Schwarzen Liste steht
@@ -204,20 +204,20 @@ commit</pre>
     <p>
         Die Liste der schlechten Dateinamen 
         (aus denen sich kein Auftrag machen lässt, weil der Pfad zu lang für die Datenbank ist)
-        wird von jedem Scheduler getrennt im Speicher gehalten.
+        wird von jedem JobScheduler getrennt im Speicher gehalten.
     </p>
     <p>
-        Es würde genügen, wenn nur ein Scheduler Dateinamen zu Aufträgen macht.
+        Es würde genügen, wenn nur ein JobScheduler Dateinamen zu Aufträgen macht.
         Das könnte in der Konfiguration eingestellt werden:
     </p>
     <pre>&lt;file_order_source directory="…" when_scheduler_is_running_on_host="<i>hostname</i>"/></pre>
 
     <p>
-        Vielleicht können wir den das Verzeichnis überwachenden Scheduler auch automatisch auswählen.
-        Beim Ausfall des Scheduler würde ein anderer die Überwachung übernehmen.
-        Der überwachende Scheduler schreibt in die Datenbank, 
+        Vielleicht können wir den das Verzeichnis überwachenden JobScheduler auch automatisch auswählen.
+        Beim Ausfall des JobScheduler würde ein anderer die Überwachung übernehmen.
+        Der überwachende JobScheduler schreibt in die Datenbank, 
         welche Verzeichnisse für welche Jobketten er überwacht.
-        Andere Scheduler überwachen den Herzschlag und beim Ausbleiben bestimmen sie einen neuen.
+        Andere JobScheduler überwachen den Herzschlag und beim Ausbleiben bestimmen sie einen neuen.
     </p>
     <pre>select scheduler_instance_id, scheduler_session_id
     from scheduler_directories
@@ -241,7 +241,7 @@ commit</pre>
             Für den Job muss ein <scheduler_element name="job" attribute="timeout"/> angegeben sein.
         </li>
         <li>
-            In den Datenbanksatz wird vermerkt, welcher Scheduler den Auftrag ausführt
+            In den Datenbanksatz wird vermerkt, welcher JobScheduler den Auftrag ausführt
             zusammen mit dem Ende der First, wann der Auftrag ausgeführt sein muss.
             Das Ende der First wird gebildet aus <code>timeout</code> des Jobs plus einer kleinen Nachfrist 
             für die längste Reaktionszeit des Schedulers (normalerweise Millisekunden, also vielleicht 10-60s).
@@ -253,18 +253,18 @@ commit</pre>
         </li>
         <li>
             Wenn aber die Ausführungskennung eine andere ist,
-            also ein anderer Scheduler nach Fristablauf den Auftrag übernommen hat, schlägt der Scheduler Alarm.
-            Das kann passieren, wenn zwei Scheduler mit verschiedenen Uhren arbeiten (vielleicht kann die Datenbankuhr genutzt werden)
+            also ein anderer JobScheduler nach Fristablauf den Auftrag übernommen hat, schlägt der JobScheduler Alarm.
+            Das kann passieren, wenn zwei JobScheduler mit verschiedenen Uhren arbeiten (vielleicht kann die Datenbankuhr genutzt werden)
             oder wenn die Ausführung des Auftrags die Frist überschreitet,
-            der Scheduler also nach Ablauf des Job-Timeouts aus irgendeiner Ursache nicht dazu kommt, den Taskschritt zurückzusetzen.
+            der JobScheduler also nach Ablauf des Job-Timeouts aus irgendeiner Ursache nicht dazu kommt, den Taskschritt zurückzusetzen.
         </li>
         <li>
-            Für andere Scheduler ist der Auftrag solange gesperrt, wie die Frist läuft.
+            Für andere JobScheduler ist der Auftrag solange gesperrt, wie die Frist läuft.
         </li>
         <li>
             Wenn nach Ablauf der Frist der Satz noch mit der Frist in der Datenbank steht,
             die Ausführung also begonnen, aber noch nicht geendet hat,
-            wird dies von einem (allen?) anderen Scheduler dem Administrator gemeldet,
+            wird dies von einem (allen?) anderen JobScheduler dem Administrator gemeldet,
             der die Situation prüfen und den Auftrag freigeben kann.
         </li>
     </ul-->

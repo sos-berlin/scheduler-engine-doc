@@ -76,7 +76,7 @@
             <p>
                 Wenn keine Task des Jobs läuft und sich das Verzeichnis geändert hat
                 (eine Datei hinzukommt, umbenannt oder entfernt wird),
-                startet der Scheduler innerhalb der <scheduler_element name="run_time"/> eine Task.
+                startet der JobScheduler innerhalb der <scheduler_element name="run_time"/> eine Task.
             </p>
             <p>
                 Um mehrere Verzeichnisse zu überwachen, kann der Aufruf wiederholt werden.
@@ -297,7 +297,7 @@ $spooler->job( 'job_a' )->start( $parameters );</pre>
                 Der Text wird in der HTML-Oberfläche gezeigt.
             </p>
             <p>
-                Für Nicht-API-Jobs füllt der Scheduler dieses Feld mit der ersten Zeile von stdout, max. 100 Zeichen.
+                Für Nicht-API-Jobs füllt der JobScheduler dieses Feld mit der ersten Zeile von stdout, max. 100 Zeichen.
             </p>
         </description>
 
@@ -424,8 +424,8 @@ spooler_job.set_delay_after_error( 10, "24:00" );      // Ab dem 10. aufeinander
 spooler_job.set_delay_after_error( 20, "STOP" );       // Beim 20. aufeinanderfolgenden Fehler den Job stoppen</pre>
 
             <p>
-                Nach einem Fehler wiederholt der Scheduler den Job sofort.<br/>
-                Nach dem zweiten bis zum vierten Fehler verzögert der Scheduler den Job um 10 Sekunden,<br/>
+                Nach einem Fehler wiederholt der JobScheduler den Job sofort.<br/>
+                Nach dem zweiten bis zum vierten Fehler verzögert der JobScheduler den Job um 10 Sekunden,<br/>
                 nach dem fünften bis zum neunten Fehler um eine Minute,<br/>
                 nach dem zehnten bis zum neunzehnten um 24 Stunden, <br/>
                 nach dem zwanzigsten aufeinanderfolgenden Fehler schließlich stoppt der Job.
@@ -440,8 +440,8 @@ spooler_job.delay_after_error( 10 ) = "24:00";      // Ab dem 10. aufeinanderfol
 spooler_job.delay_after_error( 20 ) = "STOP";       // Beim 20. aufeinanderfolgenden Fehler den Job stoppen</pre>
 
             <p>
-                Nach einem Fehler wiederholt der Scheduler den Job sofort.<br/>
-                Nach dem zweiten bis zum vierten Fehler verzögert der Scheduler den Job um 10 Sekunden,<br/>
+                Nach einem Fehler wiederholt der JobScheduler den Job sofort.<br/>
+                Nach dem zweiten bis zum vierten Fehler verzögert der JobScheduler den Job um 10 Sekunden,<br/>
                 nach dem fünften bis zum neunten Fehler um eine Minute,<br/>
                 nach dem zehnten bis zum neunzehnten um 24 Stunden, <br/>
                 nach dem zwanzigsten aufeinanderfolgenden Fehler schließlich stoppt der Job.
@@ -456,8 +456,8 @@ $spooler_job->LetProperty( 'delay_after_error', 10, '24:00' );      # Ab dem 10.
 $spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       # Beim 20. aufeinanderfolgenden Fehler den Job stoppen</pre>
 
             <p>
-                Nach einem Fehler wiederholt der Scheduler den Job sofort.<br/>
-                Nach dem zweiten bis zum vierten Fehler verzögert der Scheduler den Job um 10 Sekunden,<br/>
+                Nach einem Fehler wiederholt der JobScheduler den Job sofort.<br/>
+                Nach dem zweiten bis zum vierten Fehler verzögert der JobScheduler den Job um 10 Sekunden,<br/>
                 nach dem fünften bis zum neunten Fehler um eine Minute,<br/>
                 nach dem zehnten bis zum neunzehnten um 24 Stunden, <br/>
                 nach dem zwanzigsten aufeinanderfolgenden Fehler schließlich stoppt der Job.

@@ -33,15 +33,15 @@
 
 
     <example programming_language="java">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory() );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
 
     <example programming_language="javascript">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
     </example>
 	
     <example programming_language="perl">
-        <pre>$spooler_log->debug( 'The working directory of the Scheduler is ' . $spooler->directory );</pre>
+        <pre>$spooler_log->debug( 'The working directory of the JobScheduler is ' . $spooler->directory );</pre>
     </example>
 
 </property>
@@ -162,7 +162,7 @@
 
     <description>
         <p>
-            Vor dem Laden der Task ruft der Scheduler diese Methode auf.
+            Vor dem Laden der Task ruft der JobScheduler diese Methode auf.
         </p>
     </description>
 
@@ -189,7 +189,7 @@
 
     <description>
         <p>
-            Der Scheduler ruft diese Methode, nachdem die Task geendet hat.
+            Der JobScheduler ruft diese Methode, nachdem die Task geendet hat.
         </p>
     </description>
 
@@ -209,14 +209,14 @@
             <com.type type="bool"/>
             <description>
                 <code>false</code> verhindert den folgenden Aufruf von <scheduler_method class="Job_impl" method="spooler_process"/>.
-                Der Scheduler setzt fort, als hätte <scheduler_method class="Job_impl" method="spooler_process"/> <code>false</code> geliefert.
+                Der JobScheduler setzt fort, als hätte <scheduler_method class="Job_impl" method="spooler_process"/> <code>false</code> geliefert.
             </description>
         </com.result>
     </com>
 
     <description>
         <p>
-            Der Scheduler ruft diese Methode vor jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.
+            Der JobScheduler ruft diese Methode vor jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.
         </p>
     </description>
 
@@ -278,7 +278,7 @@
 
     <description>
         <p>
-            Der Scheduler ruft diese Methode nach jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.
+            Der JobScheduler ruft diese Methode nach jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.
         </p>
     </description>
 

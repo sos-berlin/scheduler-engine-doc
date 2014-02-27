@@ -28,7 +28,7 @@
                 <p>
                     Der Name der Datei, deren Inhalt eingefügt werden soll.
                     Wenn der Dateiname nicht absolut ist,
-                    dann geht der Scheduler abhängig vom umgebenden XML-Element von verschiedenen Verzeichnissen aus:
+                    dann geht der JobScheduler abhängig vom umgebenden XML-Element von verschiedenen Verzeichnissen aus:
                 </p>
                 <dl>
                     <dt>
@@ -81,7 +81,7 @@
                 </p>
                 <p>
                     Wenn die Datei, die das <code>&lt;include></code> enthält, nicht aus einem Konfigurationsverzeichnis stammt,
-                    geht der Scheduler von der Wurzel des Konfigurationsverzeichnisses aus.
+                    geht der JobScheduler von der Wurzel des Konfigurationsverzeichnisses aus.
                 </p>
                 <p>
                     Unter <scheduler_element name="job" child="params"/> und 
@@ -123,16 +123,16 @@
         -->
 
         <p>
-            Wenn der Scheduler die einzuziehende Datei nicht lesen kann:
+            Wenn der JobScheduler die einzuziehende Datei nicht lesen kann:
         </p>
         <ul>
             <li>
-                Im Element <code>&lt;description></code>: Der Scheduler ignoriert Fehler,
+                Im Element <code>&lt;description></code>: Der JobScheduler ignoriert Fehler,
                 fügt aber die Fehlermeldung in die <code>&lt;description></code> ein.
             </li>
             <li>
-                Im Element <code>&lt;script></code>: Der Scheduler versetzt den Job in den Zustand <code>read_error</code>.
-                Das Kommando <scheduler_element name="modify_job" attribute="cmd" value="reread"/> lässt den Scheduler das Skript erneut lesen.
+                Im Element <code>&lt;script></code>: Der JobScheduler versetzt den Job in den Zustand <code>read_error</code>.
+                Das Kommando <scheduler_element name="modify_job" attribute="cmd" value="reread"/> lässt den JobScheduler das Skript erneut lesen.
             </li>
         </ul>
     </description>

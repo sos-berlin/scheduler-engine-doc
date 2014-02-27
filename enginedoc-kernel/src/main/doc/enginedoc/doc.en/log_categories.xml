@@ -66,7 +66,7 @@
     <log_category name="mutex"          mode="explicit" title="Mutual exclusion locks, blocking for thread serialisation">
     </log_category>
 
-    <log_category name="object_server" title="Job Scheduler interface for tasks running in their own processes">
+    <log_category name="object_server" title="JobScheduler interface for tasks running in their own processes">
         <log_category name="call" title="Method Call"/>
         <log_category name="continue"       />
         <log_category name="push" title="Stack-Operation for nested method calls"/>
@@ -85,18 +85,18 @@
         <log_category name="learn" title="Learned (unknown) RTF codes"/>
     </log_category>
 
-    <log_category name="scheduler"   mode="implicit"  title="Job Scheduler">
+    <log_category name="scheduler"   mode="implicit"  title="JobScheduler">
         <log_category name="call"          mode="implicit"   title="Start and end call of a job method, e.g. spooler_process()"/>
         <log_category name="cluster"                         title="Cluster operation"/>
         <log_category name="directory"                       title="Open a directory"/>
         <log_category name="file_order"                      title="&lt;file_order_source>"/>
         <log_category name="http"                            title="HTTP server"/>
         <log_category name="log"                             title="Access to protocol files"/>
-    <!--<log_category name="loop"           mode="explicit"  title="A Job Scheduler micro-cycle"/>--><!-- Auskommentiert nach Telefonat JZ -->
+    <!--<log_category name="loop"           mode="explicit"  title="A JobScheduler micro-cycle"/>--><!-- Auskommentiert nach Telefonat JZ -->
         <log_category name="order"          mode="implicit"  title="Operations on orders (temporary payload setting)"/>
         <log_category name="service"        mode="implicit"  title="Windows service controller"/>
         <log_category name="signal"    />
-        <log_category name="wait"                            title="The Job Scheduler enters the waiting state"/>
+        <log_category name="wait"                            title="The JobScheduler enters the waiting state"/>
         <log_category name="xml"                             title="XML/DOM operations"/>
         <log_category name="nothing_done"                    title="When a job is idle"/>
     </log_category>

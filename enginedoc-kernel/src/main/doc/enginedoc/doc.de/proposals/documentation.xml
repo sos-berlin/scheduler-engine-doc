@@ -40,11 +40,11 @@
         Verzeichnis der Umgebungsvariablen
     </h3>
     <p>
-        Umgebungsvariablen, die der Scheduler für die Jobs setzt.
+        Umgebungsvariablen, die der JobScheduler für die Jobs setzt.
     </p>
     <p>
-        Umgebungsvariablen, die der Scheduler liest (SOS_INI).
-        Und dass die Umgebungsvariablen vom Start im Scheduler abrufbar sind.
+        Umgebungsvariablen, die der JobScheduler liest (SOS_INI).
+        Und dass die Umgebungsvariablen vom Start im JobScheduler abrufbar sind.
         Verzeichnis der Stellen (XML-Attribute), die Umgebungsvariablen auflösen.
     </p>
 

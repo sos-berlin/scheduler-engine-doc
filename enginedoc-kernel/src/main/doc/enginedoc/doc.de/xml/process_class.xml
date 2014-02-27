@@ -46,7 +46,7 @@
                     Begrenzt die Zahl der Prozesse.
                 </p>
                 <p>
-                    Manche Betriebsysteme limitieren die Zahl der Prozesse, die der Scheduler starten darf.
+                    Manche Betriebsysteme limitieren die Zahl der Prozesse, die der JobScheduler starten darf.
                     Es sollten nicht mehr Prozesse konfiguriert werden als das Betriebssystem erlaubt.
                 </p>
                 <p>
@@ -65,7 +65,7 @@
                     (s. <scheduler_element name="config" attribute="tcp_port"/>).
                 </p>
                 <p>
-                    Der entfernte Scheduler muss den Zugriff mit
+                    Der entfernte JobScheduler muss den Zugriff mit
                     <scheduler_element name="allowed_host" attribute="level" value="all"/> erlauben.
                 </p>
                 <p>
@@ -80,7 +80,7 @@
                     <li>
                         <scheduler_method class="Subprocess" property="timeout"/> und 
                         <scheduler_method class="Task" object="spooler_task" method="add_pid"/> wirken nicht.
-                        Der Scheduler kann entfernte Subprozesse, deren Frist abgelaufen ist, nicht abbrechen.
+                        Der JobScheduler kann entfernte Subprozesse, deren Frist abgelaufen ist, nicht abbrechen.
                     </li>
                     <li>
                         <scheduler_method class="Log" method="log_file"/> wird,
@@ -89,7 +89,7 @@
                     </li>
                 </ul>
                 <p>
-                    Einige Einstellungen werden vom entfernten statt vom eigenen Scheduler übernommen:
+                    Einige Einstellungen werden vom entfernten statt vom eigenen JobScheduler übernommen:
                 </p>
                 <ul>
                     <li>

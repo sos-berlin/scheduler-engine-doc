@@ -52,7 +52,7 @@
 		
 		
 		<h5>Starting JOE</h5>
-<!--<h5>Aufruf Scheduler Editor</h5>-->
+<!--<h5>Aufruf JobScheduler Editor</h5>-->
 		
 		<p>
 			JOE belongs to the JobScheduler installation. 
@@ -150,7 +150,7 @@
 				<li>
 					<p>
 						Enter the jobs the JobScheduler should execute, together with the relevant job parameters in the <em>Jobs</em> form. 
-				<!--Tragen Sie im Formular <em>Jobs</em> die Jobs mit den Job-Parametern ein, die der Scheduler ausführen soll.-->
+				<!--Tragen Sie im Formular <em>Jobs</em> die Jobs mit den Job-Parametern ein, die der JobScheduler ausführen soll.-->
 						
 						For each job entered, JOE creates a new branch in the job tree view.
 						Each job has additional forms, 

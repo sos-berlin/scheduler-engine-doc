@@ -27,8 +27,8 @@
 	</xml_attributes>
 	<description>
 		<p>
-            Defines a holiday - a day on which the Job Scheduler should not run a job.
-        <!--Setzt einen Feiertag fest, an dem der Scheduler einen Job nicht laufen lassen soll.-->
+            Defines a holiday - a day on which the JobScheduler should not run a job.
+        <!--Setzt einen Feiertag fest, an dem der JobScheduler einen Job nicht laufen lassen soll.-->
 		</p>
 	</description>
 	<behavior_with_xml_element element="base" replace_attribute="date"/>

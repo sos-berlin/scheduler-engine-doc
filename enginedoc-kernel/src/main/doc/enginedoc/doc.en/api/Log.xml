@@ -258,7 +258,7 @@
         <p>
             Note that when executed on a remote computer with 
             <scheduler_element name="process_class" attribute="remote_scheduler"/>
-            the file is read from the Job Scheduler's file system and not that of the task.
+            the file is read from the JobScheduler's file system and not that of the task.
         <!--Bei Ausführung auf einem entfernten Rechner mit <scheduler_element name="process_class" attribute="remote_scheduler"/>
             wird die Datei vom Dateisystem des Schedulers, nicht der Task, gelesen.-->
         </p>
@@ -436,10 +436,10 @@
 
     <description>
         Sets the name of the log file.
-        The Job Scheduler copies a log into this file after a log has been made.
+        The JobScheduler copies a log into this file after a log has been made.
         This file is then available to other applications.
     <!--Setzt den Dateinamen fürs Protokoll.
-        Wenn das Protokoll geschlossen wird, kopiert der Scheduler es in diese Datei.
+        Wenn das Protokoll geschlossen wird, kopiert der JobScheduler es in diese Datei.
         Die Datei steht dann der Anwendung zur Verfügung.-->
     </description>
 </property>
@@ -569,7 +569,7 @@
 <description>
     <p>
         The <scheduler_method class="Job_impl" property="spooler_log"/> method
-        can be used in a job or in the Job Scheduler start script with
+        can be used in a job or in the JobScheduler start script with
         the methods described here.
     <!--In einem Job oder im Scheduler-Skript stellt
         <scheduler_method class="Job_impl" property="spooler_log"/>
@@ -579,9 +579,9 @@
     <h3>Notification by e-mail</h3>
 <!--<h3>eMail-Versand</h3>-->
     <p>
-        The Job Scheduler can send a log file after a task has been completed per e-mail.
+        The JobScheduler can send a log file after a task has been completed per e-mail.
         The following properties define in which cases this should occur.
-    <!--Am Ende einer Task kann der Scheduler das Task-Protokoll per eMail versenden.
+    <!--Am Ende einer Task kann der JobScheduler das Task-Protokoll per eMail versenden.
         In es versendet werden soll, geben diese Eigenschaften an:-->
     </p>
     <ul>

@@ -36,8 +36,8 @@
         <ini_entry name="db_check_integrity" type="yes|no">
             <description>
                 <p>
-                    The Job Scheduler carries out additional database integrity tests.
-                <!--Der Scheduler führt zusätzliche Prüfungen der Datenbank-Integrität durch.-->
+                    The JobScheduler carries out additional database integrity tests.
+                <!--Der JobScheduler führt zusätzliche Prüfungen der Datenbank-Integrität durch.-->
                 </p>
             </description>
         </ini_entry>
@@ -79,7 +79,7 @@
     
     <description>
         <p>
-            General settings for the Job Scheduler are made in this section.
+            General settings for the JobScheduler are made in this section.
         <!--In diesem Abschnitt werden allgemeine Einstellungen des Schedulers vorgenommen.-->
         </p>
     </description>

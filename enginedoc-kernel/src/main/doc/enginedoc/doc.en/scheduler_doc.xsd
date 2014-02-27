@@ -7,8 +7,8 @@
     <xsd:annotation>
         <xsd:documentation xml:lang="en">
             $Id$
-            Job Scheduler Documentation Schema
-        <!--Schema für die Scheduler-Dokumentation-->
+            JobScheduler Documentation Schema
+        <!--Schema für die JobScheduler-Dokumentation-->
         </xsd:documentation>
     </xsd:annotation>
 

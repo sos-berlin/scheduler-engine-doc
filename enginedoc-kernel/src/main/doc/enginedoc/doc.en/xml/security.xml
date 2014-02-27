@@ -22,9 +22,9 @@
         <xml_attribute name="ignore_unknown_hosts" type="yes_no" initial="no">
             <description>
                 <p>
-                    The Job Scheduler ignores unrecognized or unresolved host names when <code>ignore_unknown_hosts="yes"</code>
+                    The JobScheduler ignores unrecognized or unresolved host names when <code>ignore_unknown_hosts="yes"</code>
                     in <code>&lt;allowed_host></code>. 
-                <!--Mit <code>ignore_unknown_hosts="yes"</code> ignoriert der Scheduler unbekannte oder nicht auflösbare Hostnamen in
+                <!--Mit <code>ignore_unknown_hosts="yes"</code> ignoriert der JobScheduler unbekannte oder nicht auflösbare Hostnamen in
                     <code>&lt;allowed_host></code>. -->
                 </p>
                 <p>

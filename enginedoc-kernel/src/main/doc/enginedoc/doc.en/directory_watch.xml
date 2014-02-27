@@ -13,18 +13,18 @@
 	<p>
         A job which processes files laid up in a directory can be used for directory monitoring.
         The request <scheduler_method class="Job" method="start_when_directory_changed" java_signature="java.lang.String"/>
-        causes the Job Scheduler to start a task as soon as a change occurs in a directory.
+        causes the JobScheduler to start a task as soon as a change occurs in a directory.
     <!--Ein Job, der in einem Verzeichnis eintreffende Dateien verarbeitet, 
         kann sich der Verzeichnisüberwachung bedienen.
         Mit dem Aufruf <scheduler_method class="Job" method="start_when_directory_changed" java_signature="java.lang.String"/>
-        sorgt der Scheduler dafür, dass eine Task läuft, sobald sich das Verzeichnis ändert.-->
+        sorgt der JobScheduler dafür, dass eine Task läuft, sobald sich das Verzeichnis ändert.-->
 	</p>
 	<p>
         Requests can be repeated for a number of directories.
     <!--Sie können den Aufruf für mehrere Verzeichnisse wiederholen.-->
 	</p>
 	<p>
-        A request can be included in the Job Scheduler script 
+        A request can be included in the JobScheduler script 
         (Element <code>&lt;script></code> in <scheduler_element name="config"/>)
         or in a Job itself (in <scheduler_method class="Job_impl" method="spooler_init"/>).
         In the latter case, the job itself must be run before the request can be implemented 
@@ -45,11 +45,11 @@
 	<p>
             The method <scheduler_method class="Job" method="start_when_directory_changed" java_signature="java.lang.String, java.lang.String"/>
             is used to define a regular expression (according to POSIX 1003.2).
-            In this case the Job Scheduler only sees a directory as having been changed 
+            In this case the JobScheduler only sees a directory as having been changed 
             when, after the change, it contains a file or subdirectory whose name fits the regular expression.
         <!--Der Methode <scheduler_method class="Job" method="start_when_directory_changed" java_signature="java.lang.String, java.lang.String"/>
             können Sie einen Regulären Ausdruck (nach POSIX 1003.2) übergeben.
-            Der Scheduler betrachtet dann das Verzeichnis nur als geändert, 
+            Der JobScheduler betrachtet dann das Verzeichnis nur als geändert, 
             wenn es nach der Änderung eine Datei oder ein Verzeichnis enthält,
             dessen Name zum Regulären Ausdruck passt.-->
 	</p>
@@ -88,10 +88,10 @@
 		<h2>Errors when Directory Monitoring</h2>
 <!--<h2>Fehler bei der Verzeichnisüberwachung</h2>-->
 	<p>
-            The Job Scheduler interprets the situation of a directory no longer being accessible 
+            The JobScheduler interprets the situation of a directory no longer being accessible 
             (i.e. it had been deleted or is no longer available) as a change and starts a task.
          <!--Wenn z.B. ein Verzeichnis nicht mehr zugreifbar ist (gelöscht oder nicht mehr erreichbar),
-            gilt das als Änderung und der Scheduler startet eine Task.-->
+            gilt das als Änderung und der JobScheduler startet eine Task.-->
 	</p>
 	<p>
             A repeated

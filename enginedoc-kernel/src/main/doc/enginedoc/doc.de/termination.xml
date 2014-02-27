@@ -12,7 +12,7 @@
 
     <h2>Ordentliches Beenden</h2>
     <p>
-        Der Scheduler beendet sich erst, wenn kein Job mehr läuft.
+        Der JobScheduler beendet sich erst, wenn kein Job mehr läuft.
     </p>
     <p>
         Siehe <scheduler_method class="Spooler" method="terminate"/>
@@ -25,7 +25,7 @@
         Sie können zum Beenden eine Frist angeben.
         Wenn nach Ablauf der First noch Tasks laufen,
         weil sie in z.B. <scheduler_method class="Job_impl" method="spooler_process"/> zu lange verharren,
-        bricht der Scheduler alle noch laufenden Prozesse ab.
+        bricht der JobScheduler alle noch laufenden Prozesse ab.
     </p>
     <p>
         Zuvor verschickt er eine eMail mit dem Hinweis auf Tasks, die abgebrochen werden.
@@ -42,7 +42,7 @@
 
     <h2>Abbruch</h2>
     <p>
-        Der Scheduler bricht allen Prozesse (einschließlich der mit add_pid() registrierten fremden Prozesse) sofort ab
+        Der JobScheduler bricht allen Prozesse (einschließlich der mit add_pid() registrierten fremden Prozesse) sofort ab
         (Unix: <code>kill -s KILL</code>, Windows: <code>TerminateProcess()</code>). Dann bricht er sich selbst ab.
     </p>
     <p>

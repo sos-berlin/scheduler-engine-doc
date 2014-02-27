@@ -4,7 +4,7 @@
 <!--$Id: scheduler_sql_db2.xml 13426 2008-02-21 22:41:44Z ap $-->
 
 <description
-    title               = "Vom Scheduler verwendete SQL-Anweisungen für DB2®"
+    title               = "Vom JobScheduler verwendete SQL-Anweisungen für DB2®"
     base_dir            = ""
     parent_page         = "scheduler_sql.xml"
     author              = "$Author: ap $"

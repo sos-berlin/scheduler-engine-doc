@@ -52,7 +52,7 @@
             </description>
         </xml_attribute>
 
-        <xml_attribute name="connected" type="yes|no" title="no, wenn der Scheduler nicht mehr angebunden ist">
+        <xml_attribute name="connected" type="yes|no" title="no, wenn der JobScheduler nicht mehr angebunden ist">
             <description>
                 <p>
                 </p>

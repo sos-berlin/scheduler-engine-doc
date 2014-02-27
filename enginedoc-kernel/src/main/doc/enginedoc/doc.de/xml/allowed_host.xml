@@ -59,12 +59,12 @@
     <description>
         <p>
             <span class="mono">&lt;allowed_host></span>
-            gibt den Namen oder die IP-Nummer eines Rechners an, der Verbindung mit dem Scheduler aufnehmen darf.
+            gibt den Namen oder die IP-Nummer eines Rechners an, der Verbindung mit dem JobScheduler aufnehmen darf.
         </p>
         <p>
             Die IP-Nummer kann eine Netzwerkadresse sein (Klasse A, B oder C).
             Dann werden alle Rechner des Netzwerks zugelassen. Das ist der Fall, wenn der letzte Teil der IP-Nummer 0 ist.
-            Der Scheduler beachtet eine genau angegebene IP-Nummer vor einer Netzwerkadresse.
+            Der JobScheduler beachtet eine genau angegebene IP-Nummer vor einer Netzwerkadresse.
         </p>
     </description>
 
@@ -76,7 +76,7 @@
 &lt;/security></pre>
         <p>
             Die IP-Adressen 127.0.0.1 und admin.company.com und die Adressen im
-            Klasse-C-Netzwerk 192.168.1 dürfen sich mit dem Scheduler verbinden. Der letzte
+            Klasse-C-Netzwerk 192.168.1 dürfen sich mit dem JobScheduler verbinden. Der letzte
             Eintrag beschränkt die Kommandos auf die, die Informationen liefern.
         </p>
     </example>

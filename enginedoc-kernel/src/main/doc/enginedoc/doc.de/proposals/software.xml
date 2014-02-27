@@ -29,7 +29,7 @@
             Zugriff auf Access (bisher ODBC) über JDBC-ODBC-Brücke.
         </li>
         <li>
-            Erkennung von Datenbankfehlern, bei denen der Scheduler die Verbindung erneuert, verbessern: 
+            Erkennung von Datenbankfehlern, bei denen der JobScheduler die Verbindung erneuert, verbessern: 
             Zurzeit führt jede Exception in einer Transaktion zum erneuten Verbindungsaufbau,
             aber nur Exceptions direkt von der Datenbank (JDBC) sollten dazu führen.
         </li>
@@ -63,7 +63,7 @@
     <pre>SCHEDULER-000  Job has returned an error:
 SCHEDULER-001  Java exception java.lang.ArrayIndexOutOfBoundsException("48") in my_package/My_class.java:1234</pre>
     <p>
-        Der Scheduler ersetzt Z-JAVA-105 durch eigenen Fehlercode. 
+        Der JobScheduler ersetzt Z-JAVA-105 durch eigenen Fehlercode. 
         Methodennamen, Dateiname und Zeilennummer werden gezeigt, 
         vielleicht auch der ganze Aufruf-Stack
         und bestimmt die Job_impl-Methode, hier spooler_process().
@@ -121,7 +121,7 @@ SCHEDULER-001  Java exception java.lang.ArrayIndexOutOfBoundsException("48") in 
     
     <h2>Blockaden vermeiden</h2>
     <p>
-        Einiges könnte in einem Thread laufen, ohne den Scheduler aufzuhalten:
+        Einiges könnte in einem Thread laufen, ohne den JobScheduler aufzuhalten:
     </p>
     <ul>
         <li>
@@ -145,7 +145,7 @@ SCHEDULER-001  Java exception java.lang.ArrayIndexOutOfBoundsException("48") in 
     <ul>
         <li>
             Schreiben und Lesen trennen.
-            Bisher kann der Scheduler nichts empfangen, wenn er am Senden ist. 
+            Bisher kann der JobScheduler nichts empfangen, wenn er am Senden ist. 
         </li>
         <li>
             TCP von Task-Kommunikation mit TCP der XML-Schnittstelle vereinheitlichen.
@@ -154,7 +154,7 @@ SCHEDULER-001  Java exception java.lang.ArrayIndexOutOfBoundsException("48") in 
             Test auf Verbindungsverlust anders als mit ständigen <code>recv()</code> lösen.
         </li>
         <li>
-            Unix: Problem mit gesperrtem Port lösen, wenn der Scheduler bei offener TCP-Verbindung beendet wird.
+            Unix: Problem mit gesperrtem Port lösen, wenn der JobScheduler bei offener TCP-Verbindung beendet wird.
             (Z.B. Gegenstelle veranlassen, die Verbindung zu schließen.)
         </li>
     </ul>
@@ -181,7 +181,7 @@ SCHEDULER-001  Java exception java.lang.ArrayIndexOutOfBoundsException("48") in 
             freigeben, damit sie sich nicht mehr anhäufen.
             Das passiert jetzt bei auftragsgesteuerten Jobs.
             Der Garbage Collector gibt die Aufträge sehr spät frei, 
-            was zu hohem Speicherbedarf im Scheduler und vielen offenen Auftragsprotokollen führt.
+            was zu hohem Speicherbedarf im JobScheduler und vielen offenen Auftragsprotokollen führt.
         </li>
     </ul>
 
@@ -215,7 +215,7 @@ SCHEDULER-001  Java exception java.lang.ArrayIndexOutOfBoundsException("48") in 
     
     <h2>Statische Struktur: Subsysteme</h2>
     <p>
-        Scheduler weiter in Subsysteme unterteilen:
+        JobScheduler weiter in Subsysteme unterteilen:
     </p>
 
     <p>

@@ -35,10 +35,10 @@
     <!--<xml_attribute name="process_class" type="path" title="Name der Sperre">-->
             <description>
                 <p>
-                    The Job Scheduler delays deletion of a process class as long as tasks are still running in it.
+                    The JobScheduler delays deletion of a process class as long as tasks are still running in it.
                     No new tasks will be started during this time.
                 <!--Wenn noch Tasks in der Prozessklasse laufen, 
-                    verzögert der Scheduler das Löschen bis die letzte Task geendet hat.
+                    verzögert der JobScheduler das Löschen bis die letzte Task geendet hat.
                     Solange werden keine neuen Tasks gestartet.-->
                 </p>
                 <p>

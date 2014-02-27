@@ -33,12 +33,12 @@
         The <scheduler_element name="job">XML configuration of a job</scheduler_element>
         can be carried out in the central start configuration file, 
         (which is usually <code>./config/scheduler.xml</code>) or in a separate configuration file 
-        in the configuration directory which is monitored by the Job Scheduler
+        in the configuration directory which is monitored by the JobScheduler
         (usually <code>./config/live</code>) - see also <scheduler_a href="dynamic_configuration.xml"/>
     <!--Die <scheduler_element name="job">XML-Konfiguration eines Jobs</scheduler_element>
         kann in der zentralen Startkonfigurationsdatei 
         (meist <code>./config/scheduler.xml</code>) oder in Form einer separaten Datei
-        in dem vom Job Scheduler überwachten Konfigurationsverzeichnis (meist <code>./config/live</code>)
+        in dem vom JobScheduler überwachten Konfigurationsverzeichnis (meist <code>./config/live</code>)
         vorgenommen werden, siehe <scheduler_a href="dynamic_configuration.xml"/>-->
     </p>
     
@@ -47,11 +47,11 @@
     <h2>Implementation</h2>
 <!--<h2>Implementierung</h2>-->
     <p>
-        The Job Scheduler starts executable programs and can start
-        individually implemented jobs, which use the Job Scheduler's API.
-    <!--Der Job Scheduler startet ausführbare Programme und kann
+        The JobScheduler starts executable programs and can start
+        individually implemented jobs, which use the JobScheduler's API.
+    <!--Der JobScheduler startet ausführbare Programme und kann
         Jobs mit individuellen Implementierungen starten, die das 
-        API des Job Schedulers nutzen.-->
+        API des JobSchedulers nutzen.-->
     </p>
     
     
@@ -65,13 +65,13 @@
         		such as JavaScript, VBScript, Perl, PHP, Ruby etc.
         		for which an interpreter needs to be started with the executable program file,
         		Java classes can be started using the Java Virtual Machine (JVM) configured 
-        		for the Job Scheduler.
+        		for the JobScheduler.
         <!--Sie können beliebig implementiert sein als
         		<i>executable</i>, <i>shell scripte</i>, <i>batch files</i>.
         		Dies bezieht Programme ein, 
         		z.B. JavaScript, VBScript, Perl, PHP, Ruby etc., 
         		für die ggf. ein Interpreter mit der auszuführenden Programmdatei gestartet werden muss.
-        		Java-Klassen können mit der für den Job Scheduler konfigurierten JVM gestartet werden.-->
+        		Java-Klassen können mit der für den JobScheduler konfigurierten JVM gestartet werden.-->
     		</p>
     		<p>
         		Executable programs can be configured using the following elements:
@@ -83,8 +83,8 @@
             		<p><scheduler_element name="script" attribute="language">&lt;script language="shell"&gt;</scheduler_element></p>
             		<div class="indent">
         						<p>
-        								The Job Scheduler creates a shell for the execution of the program. 
-        						<!--Der Job Scheduler erzeugt eine Shell für die Ausführung des Programms. -->
+        								The JobScheduler creates a shell for the execution of the program. 
+        						<!--Der JobScheduler erzeugt eine Shell für die Ausführung des Programms. -->
         						</p>
         						<p>
         				    		<u>Example:</u>
@@ -113,8 +113,8 @@
             		<p><scheduler_element name="script" attribute="language">&lt;script language="java"&gt;</scheduler_element></p>
             		<div class="indent">
         						<p>
-        								The Job Scheduler starts a JVM for the execution of the Java class. 
-        						<!--Der Job Scheduler startet eine JVM für die Ausführung der Java-Klasse. -->
+        								The JobScheduler starts a JVM for the execution of the Java class. 
+        						<!--Der JobScheduler startet eine JVM für die Ausführung der Java-Klasse. -->
         						</p>
         						<p>
         				    		<u>Example:</u>
@@ -131,8 +131,8 @@
         		<br/>
         	  <div class="indent">
         				<p>
-        				    The Job Scheduler starts the program without a separate shell.
-        				<!--Der Job Scheduler startet das Programm ohne separate Shell.-->
+        				    The JobScheduler starts the program without a separate shell.
+        				<!--Der JobScheduler startet das Programm ohne separate Shell.-->
         				</p>
         				<p>
         						<u>Example:</u>
@@ -155,21 +155,21 @@
     </div>
     
     
-    <p><b>Implementation with the Job Scheduler API</b></p>
-<!--<p><b>Implementierungen mit dem Job Scheduler API</b></p>-->
+    <p><b>Implementation with the JobScheduler API</b></p>
+<!--<p><b>Implementierungen mit dem JobScheduler API</b></p>-->
     <div class="indent">
       <p>
-         Job implementations can use the Job Scheduler API - for example for
+         Job implementations can use the JobScheduler API - for example for
          logging, informing per e-mail, calling job, task and order objects, etc.
-     <!--Job-Implementierungen können das API des Job Schedulers nutzen,
+     <!--Job-Implementierungen können das API des JobSchedulers nutzen,
          z.B. zur Protokollierung, Benachrichtigung per eMail, Zugriff auf
          Job-, Task- und Auftragsobjekte etc.-->
       </p>
       <p>
-         The Job Scheduler does not start these scrips per interpreter (see above)
+         The JobScheduler does not start these scrips per interpreter (see above)
          but instead makes use of a sub-programme interface that is provided by the respective the script language.
-         The Job Scheduler then makes the objects and methods of its API available to such languages.
-     <!--Der Job Scheduler startet diese Scripte nicht per Interpreter (s.o.) sondern
+         The JobScheduler then makes the objects and methods of its API available to such languages.
+     <!--Der JobScheduler startet diese Scripte nicht per Interpreter (s.o.) sondern
          implementiert eine Unterprogrammschnittstelle für den Aufruf von Scripten
          in diesen Sprachen und stellt ihnen Objekte und Methoden zur Verfügung.-->
       </p>
@@ -204,9 +204,9 @@
       <div class="indent">
         <p>
           JavaScript is available in the SpiderMonkey implementation (http://developer.mozilla.org/en/docs/SpiderMonkey)
-          in the Job Scheduler installation package for all platforms.
+          in the JobScheduler installation package for all platforms.
       <!--JavaScript ist in der Implementierung von SpiderMonkey (http://developer.mozilla.org/en/docs/SpiderMonkey)
-          im Auslieferungsumfang des Job Schedulers für alle Plattformen enthalten.-->
+          im Auslieferungsumfang des JobSchedulers für alle Plattformen enthalten.-->
         </p>
         <p>
           Microsoft JScript is available on Windows platforms.
@@ -228,10 +228,10 @@
       <div class="indent">
         <p>
           Perl is generally already installed on Unix platforms. 
-          The Job Scheduler installation programme attempts to configure the sub-programme interface
+          The JobScheduler installation programme attempts to configure the sub-programme interface
           to an existing Perl installation.
       <!--Perl ist auf Unix-Plattformen i.d.R. vorinstalliert. Das Installationsprogramm
-          des Job Schedulers versucht die Unterprogrammschnittstelle passend
+          des JobSchedulers versucht die Unterprogrammschnittstelle passend
           zur vorhandenen Perl Version zu installieren.-->
         </p>
         <p>
@@ -285,11 +285,11 @@
         <tr>
             <td><scheduler_keyword keyword="stopping"/><code>stopping</code></td>
             <td>
-                The job is stopping. The Job Scheduler will not start another task and all current tasks are being stopped.
+                The job is stopping. The JobScheduler will not start another task and all current tasks are being stopped.
                 As soon as all tasks are stopped, the job status changes to <code>stopped</code>.
                 <br/>
                 See also the command: <scheduler_element name="modify_job" attribute="cmd" value="stop"/>.
-            <!--Der Job stoppt. Der Scheduler startet keine weitere Task und die laufenden Tasks werden beendet.
+            <!--Der Job stoppt. Der JobScheduler startet keine weitere Task und die laufenden Tasks werden beendet.
                 Sobald alle Tasks des Jobs beendet sind, wechselt der Job in den Zustand <code>stopped</code>.
                 <br/>
                 Siehe das Kommando <scheduler_element name="modify_job" attribute="cmd" value="stop"/>.-->
@@ -298,10 +298,10 @@
         <tr>
             <td><scheduler_keyword keyword="stopped"/><code>stopped</code></td>
             <td>
-                No tasks are running and no further tasks will be started by the Job Scheduler.
+                No tasks are running and no further tasks will be started by the JobScheduler.
                 <br/>
                 See also the command: <scheduler_element name="modify_job" attribute="cmd" value="stop"/>.
-            <!--Keine Task läuft und der Scheduler startet keine weitere Task.
+            <!--Keine Task läuft und der JobScheduler startet keine weitere Task.
                 <br/>
                 Siehe das Kommando <scheduler_element name="modify_job" attribute="cmd" value="stop"/>.-->
             </td>
@@ -322,8 +322,8 @@
         <tr>
             <td><scheduler_keyword keyword="error"/><code>error</code></td>
             <td>
-                The Job Scheduler does not start any new tasks after an error has occurred.
-            <!--Wenn eine Task mit Fehler geendet hat, startet der Scheduler keine weitere Task.-->
+                The JobScheduler does not start any new tasks after an error has occurred.
+            <!--Wenn eine Task mit Fehler geendet hat, startet der JobScheduler keine weitere Task.-->
                 <!--Der Aufruf <scheduler_method class="Job" property="error"/> liefert den Fehler.-->
             </td>
         </tr>
@@ -337,10 +337,10 @@
 
     <p>
         The <scheduler_element name="modify_job"/> element is used to change the status of a job.
-        The Job Scheduler has a built-in <scheduler_a href="http.xml">HTML interface</scheduler_a> 
+        The JobScheduler has a built-in <scheduler_a href="http.xml">HTML interface</scheduler_a> 
         with provision for the necessary operations.
     <!--Mit dem Kommando <scheduler_element name="modify_job"/> können Sie den Zustand des Jobs ändern.
-        Die eingebaute <scheduler_a href="http.xml">HTML-Oberfläche</scheduler_a> des Job Schedulers bietet hierfür die  entsprechenden Operationen an.-->
+        Die eingebaute <scheduler_a href="http.xml">HTML-Oberfläche</scheduler_a> des JobSchedulers bietet hierfür die  entsprechenden Operationen an.-->
     </p>
 
 
@@ -459,9 +459,9 @@
 <!--<h2>Verzeichnisüberwachung</h2>-->
 
     <p>
-        The scheduler can start a job when a change takes place in a monitored directory.
+        The JobScheduler can start a job when a change takes place in a monitored directory.
         Further details can be found in the chapter <a href="directory_watch.xml">Directory Monitoring</a>.
-    <!--Der Job Scheduler kann einen Job bei Änderungen in einem Dateiverzeichnis starten.
+    <!--Der JobScheduler kann einen Job bei Änderungen in einem Dateiverzeichnis starten.
         Näheres im Kapitel <a href="directory_watch.xml">Verzeichnisüberwachung</a>.-->
     </p>
 
@@ -471,10 +471,10 @@
 
     <p>
         A monitor script can be configured for a job . 
-        The Job Scheduler calls the functions of this script at the beginning and end of a task
+        The JobScheduler calls the functions of this script at the beginning and end of a task
         and before and after the <scheduler_method class="Job_impl" method="spooler_process"/> methods.
     <!--Für einen Job kann ein Monitor Script konfiguriert werden. 
-        Der Job Scheduler ruft Funktionen des Monitor Scripts  bei Start und Ende der Task auf
+        Der JobScheduler ruft Funktionen des Monitor Scripts  bei Start und Ende der Task auf
         sowie vor und nach der Methode <scheduler_method class="Job_impl" method="spooler_process"/>.-->
     </p>
     <p>
@@ -511,7 +511,7 @@
     ]]>]]&gt;&lt;/script&gt;
   &lt;/monitor&gt;
 &lt;/job&gt;</pre>
-       The monitor script uses a standard job included with the Job Scheduler installation package to transfer a file per FTP.
+       The monitor script uses a standard job included with the JobScheduler installation package to transfer a file per FTP.
        Thereby the job parameters for the name of the file to be transferred is dynamically created from the current date.
    <!--Das Monitor Script verwendet einen Standard-Job der Auslieferung für den FTP-Transfer einer Datei.
        Dabei wird der Job-Parameter für den Namen der zu übertragenden Datei dynamisch aus dem Tagesdatum zusammengesetzt.-->

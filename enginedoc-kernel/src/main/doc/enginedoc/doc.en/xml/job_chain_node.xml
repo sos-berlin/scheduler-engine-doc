@@ -92,30 +92,30 @@
                 <p>
                     After an order processing step, 
                     which the order designates as containing an error,
-                    the Job Scheduler normally allocates the order the <code>error_state</code> state.
+                    the JobScheduler normally allocates the order the <code>error_state</code> state.
                     The <code>on_error</code> attribute can, however, be used to define another behaviour.
                 <!--Nach einem Auftragsschritt, der den Auftrag als fehlerhaft gekennzeichnet hat,
-                    versetzt der Scheduler den Auftrag in den Fehlerzustand <code>error_state</code>.
+                    versetzt der JobScheduler den Auftrag in den Fehlerzustand <code>error_state</code>.
                     Das kann mit diesem Attribut geändert werden.-->
                 </p>
                 <p>
                     <code>on_error="suspend"</code> has the same effect as 
                     <scheduler_method class="Order" property="suspended"/><code>=true</code>: 
-                    the Job Scheduler leaves the order in its current state, however,
+                    the JobScheduler leaves the order in its current state, however,
                     the next processing step is not carried out and the order is suspended.
                 <!--<code>on_error="suspend"</code> wirkt wie 
                     <scheduler_method class="Order" property="suspended"/><code>=true</code>: 
-                    Der Scheduler belässt den Auftrag in seinem Zustand,
+                    Der JobScheduler belässt den Auftrag in seinem Zustand,
                     er bleibt also vor dem Job stehen und wird suspendiert.-->
                 </p>
                 <p>
                     <code>on_error="setback"</code> has the same effect as 
                     <scheduler_method class="Order" method="setback"/>:
-                    the Job Scheduler leaves the order in its current state,
+                    the JobScheduler leaves the order in its current state,
                     the next processing step is not carried out and the order is treated in the same way as 
                     <scheduler_element name="delay_order_after_setback"/>.
                 <!--<code>on_error="setback"</code> wirkt wie <scheduler_method class="Order" method="setback"/>:
-                    Der Scheduler belässt den Auftrag in seinem Zustand,
+                    Der JobScheduler belässt den Auftrag in seinem Zustand,
                     er bleibt also vor dem Job stehen,
                     so wie es im Job mit <scheduler_element name="delay_order_after_setback"/> eingestellt ist.-->
                 </p>

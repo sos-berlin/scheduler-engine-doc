@@ -23,7 +23,7 @@
     </ul>
     <scheduler_example>
         <pre>var mail = spooler.create_mail();
-//mail.from übernehmen wir vom Scheduler        
+//mail.from übernehmen wir vom JobScheduler        
 mail.to = "meier@example.com";
 mail.subject = "Hallo";
 mail.body = "Hallo ...";

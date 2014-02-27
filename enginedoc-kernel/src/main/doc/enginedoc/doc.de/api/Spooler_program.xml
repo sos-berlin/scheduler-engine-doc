@@ -44,12 +44,12 @@
     <scheduler_keyword keyword="Eclipse"/>
     
     <p>
-        Startet den Scheduler über Java, 
+        Startet den JobScheduler über Java, 
         so dass in Java geschriebene Jobs debuggt werden können (z.B. mit Eclipse).
         Zu den Methoden siehe <a href="../javadoc/sos/spooler/Spooler_program.html">Javadoc</a>.
     </p>
     <p>
-        Der Scheduler wird als Windows-Applikation, nicht als Konsol-Programm gestartet. 
+        Der JobScheduler wird als Windows-Applikation, nicht als Konsol-Programm gestartet. 
         Ausgaben nach <code>stderr</code> gehen verloren.
         <scheduler_option name="log-dir" value="*stderr"/> liefert keine Ausgabe.
     </p>

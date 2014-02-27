@@ -19,7 +19,7 @@
         </p>
         <p>
             Wenn Sie das Element <code>&lt;params></code> angegeben,
-            erstellt der Scheduler ein <scheduler_method class="Variable_set"/>
+            erstellt der JobScheduler ein <scheduler_method class="Variable_set"/>
             und stellt es dem Job in <scheduler_method class="Order" method="payload"/> zur Verfügung.
         </p>
     </description>

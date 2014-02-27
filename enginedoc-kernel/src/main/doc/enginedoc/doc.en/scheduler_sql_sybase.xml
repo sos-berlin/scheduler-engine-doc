@@ -2,10 +2,10 @@
 <?xml-stylesheet href="scheduler.xsl" type="text/xsl"?>
 
 <!--$Id$-->
-<!--title               = "Vom Scheduler verwendete SQL-Anweisungen für Sybase ASE"-->
+<!--title               = "Vom JobScheduler verwendete SQL-Anweisungen für Sybase ASE"-->
 
 <description
-    title               = "SQL Instructions Used by the Job Scheduler for Sybase ASE"
+    title               = "SQL Instructions Used by the JobScheduler for Sybase ASE"
     base_dir            = ""
     parent_page         = "scheduler_sql.xml"
     author              = "$Author: jz $"

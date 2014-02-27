@@ -46,8 +46,8 @@
 
     <description>
         <p>
-            The Job Scheduler only returns one of the child elements.
-        <!--Der Scheduler liefert nur eins der Kind-Elemente.-->
+            The JobScheduler only returns one of the child elements.
+        <!--Der JobScheduler liefert nur eins der Kind-Elemente.-->
         </p>
     </description>
     

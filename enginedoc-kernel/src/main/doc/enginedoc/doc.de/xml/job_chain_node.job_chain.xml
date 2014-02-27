@@ -91,7 +91,7 @@
             um beim Einfügen eines Auftrags die Eindeutigkeit der Auftragskennung sicherstellen zu können.
         </p>
         <p>
-            Der Scheduler lehnt das Einfügen eines Auftrags in eine Jobkette ab,
+            Der JobScheduler lehnt das Einfügen eines Auftrags in eine Jobkette ab,
             wenn die Auftragskennung im Order_id_space bereits vergeben ist.
         </p>
         <p>

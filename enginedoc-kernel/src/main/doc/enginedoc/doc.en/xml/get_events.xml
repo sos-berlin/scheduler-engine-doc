@@ -20,23 +20,23 @@
         <p>
             Delivers a series of event reports
             <scheduler_element directory="xml/answer/" name="events"/>
-            until the Job Scheduler stops
+            until the JobScheduler stops
             or the client either sends a new command or an empty line
             (a second newline <code>\n</code> after <code>&lt;get_events</code>) .
         <!--Liefert eine Folge von Ereignismeldungen 
             <scheduler_element directory="xml/answer/" name="events"/>
-            bis der Scheduler endet 
+            bis der JobScheduler endet 
             oder der Client ein neues Kommando oder eine Leerzeile 
             (ein zweites Newline <code>\n</code> nach <code>&lt;get_events</code>) 
             überträgt.-->
         </p>
         <p>
-            Should the Job Scheduler not be able to send the event reports quickly enough - 
+            Should the JobScheduler not be able to send the event reports quickly enough - 
             for example, because of a slow TCP connection or client - 
             then it will puffer the reports, so that none is lost.
-        <!--Falls der Scheduler die Ereignismeldungen nicht schnell genug versenden kann
+        <!--Falls der JobScheduler die Ereignismeldungen nicht schnell genug versenden kann
             (wegen langsamer TCP-Verbindung oder Clients)
-            puffert der Scheduler die Meldungen, so dass keine verloren geht.-->
+            puffert der JobScheduler die Meldungen, so dass keine verloren geht.-->
         </p>
     </description>
 

@@ -16,7 +16,7 @@
 
 
     <p>
-      Jobs können auf einem entfernten Job Scheduler ausgeführt werden, wenn dieser als Agent konfiguriert ist. Nur Agenten erlauben es, remote Kommandos
+      Jobs können auf einem entfernten JobScheduler ausgeführt werden, wenn dieser als Agent konfiguriert ist. Nur Agenten erlauben es, remote Kommandos
       von aufrufenden Schedulern entgegen zu nehmen.
     </p>
     
@@ -24,28 +24,28 @@
       Agenten zeichnen sich durch folgenden Merkmale aus:
       <ul>
           <li>Agenten müssen keinen live-folder haben.</li>
-          <li>Evtl. vorhandene lokale Jobs werden nicht ausgeführt. Das gilt auch für scheduler Standardjobs wie <i>scheduler_event_service.</i></li>
+          <li>Evtl. vorhandene lokale Jobs werden nicht ausgeführt. Das gilt auch für JobScheduler Standardjobs wie <i>scheduler_event_service.</i></li>
           <li>Wird die Ausführung lokaler Jobs unterdrückt, wird dies mit einer entsprechenden Meldung protokolliert.</li>
           <li>Interne Jobs (<i>scheduler_file_order_sink</i> und <i>scheduler_web_service</i>) werden nicht ausgeführt.</li>
-          <li>Nur Agenten sind in der Lage, remote Kommandos aufrufender Job Scheduler auszuführen. Wird versucht ein remote Kommando auf einem Scheduler auszuführen, der kein Agent ist, wird dies mit einer Fehlermeldung protokolliert.</li>
+          <li>Nur Agenten sind in der Lage, remote Kommandos aufrufender JobScheduler auszuführen. Wird versucht ein remote Kommando auf einem JobScheduler auszuführen, der kein Agent ist, wird dies mit einer Fehlermeldung protokolliert.</li>
       </ul>
     </p>
     
     <p>
-      Entfernt ausgeführte Jobs verhalten sich gegenüber dem aufrufenden Job Scheduler so wie lokal ausgeführte Jobs. 
-      Lediglich die Rechenlast wird auf einen anderen Job Scheduler übertragen.
+      Entfernt ausgeführte Jobs verhalten sich gegenüber dem aufrufenden JobScheduler so wie lokal ausgeführte Jobs. 
+      Lediglich die Rechenlast wird auf einen anderen JobScheduler übertragen.
     </p>
     
     <p>
-      Das bedeutet z.B., dass alle API-Aufrufe sich auf das lokale Job Scheduler Objekt beziehen.
+      Das bedeutet z.B., dass alle API-Aufrufe sich auf das lokale JobScheduler Objekt beziehen.
     </p>
     
     <p>
-      Die Protokollausgaben des Jobs, sowie der Endzustand und eventuelle Fehler werden an den aufrufenden Job Scheduler geleitet.
+      Die Protokollausgaben des Jobs, sowie der Endzustand und eventuelle Fehler werden an den aufrufenden JobScheduler geleitet.
     </p>
     
     <p>
-      Es ist möglich dass eine Scheduler Installation gleichzeitig Job Scheduler und Job Scheduler Agent ist, indem sie mit den entsprechenden Lizenzschlüsseln gestartet wird.
+      Es ist möglich dass eine JobScheduler Installation gleichzeitig JobScheduler und JobScheduler Agent ist, indem sie mit den entsprechenden Lizenzschlüsseln gestartet wird.
     </p>
     
     
@@ -53,7 +53,7 @@
     <h2>Verwendung</h2>
     
     <p>
-      Überwiegend werden Job Scheduler mit der Ausführung von Jobs beauftragt, die auf einem anderen physikalischen Rechner installiert sind.
+      Überwiegend werden JobScheduler mit der Ausführung von Jobs beauftragt, die auf einem anderen physikalischen Rechner installiert sind.
     </p>
     <p>
       Beispiele für die Verwendung:
@@ -78,19 +78,19 @@
     <ol>
       <li>Einstellungen in der Firewall
         <p>
-          Der lokale Job Scheduler muss den Agenten erreichen können. 
+          Der lokale JobScheduler muss den Agenten erreichen können. 
           Alle Sicherheitseinstellungen in den Firewalls müssen das berücksichtigen. 
           Für die Kommunikation in Richtung Agent muss der Port des Agenten in der Firewall freigeschaltet sein. 
-          In der entgegengesetzten Richtung verbindet sich die Task mit dem aufrufenden Job Scheduler über 
+          In der entgegengesetzten Richtung verbindet sich die Task mit dem aufrufenden JobScheduler über 
           einen Port &lt;=59999 abwärts zählend pro laufende Task.
           Entsprechend der erwarteten Anzahl Tasks müssen diese Ports in der Firewall freigeschaltet sein.
           <br/><br/>
         </p>
       </li>
       <li>
-        Security-Einstellungen in der Job Scheduler Konfiguration
+        Security-Einstellungen in der JobScheduler Konfiguration
         <p>
-          Der Agent muss im Security Element den aufrufenden Job Scheduler legitimieren. 
+          Der Agent muss im Security Element den aufrufenden JobScheduler legitimieren. 
           <br/><br/>
           Beispiel
           <pre>
@@ -104,13 +104,13 @@
 	<!--<li>
 	      Deklaration eines speziellen Lizenzschlüssels in der Datei <scheduler_a href="sos_ini.xml">sos.ini</scheduler_a>
 	      <p>
-	      Für den Job Scheduler, der als Agent betrieben werden soll, muss ein spezieller Lizenzschlüssel im Abschnitt <scheduler_a href="sos_ini_licence.xml">[licence]</scheduler_a> deklariert worden sein.
+	      Für den JobScheduler, der als Agent betrieben werden soll, muss ein spezieller Lizenzschlüssel im Abschnitt <scheduler_a href="sos_ini_licence.xml">[licence]</scheduler_a> deklariert worden sein.
 	      </p>
           <br/><br/>
 	    </li>-->
 
       <li>
-        Beide Job Scheduler müssen gestartet sein.
+        Beide JobScheduler müssen gestartet sein.
           <br/><br/>
       </li>
 	    
@@ -121,8 +121,8 @@
     <h2>Konfiguration</h2>
 
     <p>
-      Die Job-Definition steht in der Konfigurationsdatei des lokalen, aufrufenden Job Scheduler.<br/>
-      Um einen Job auf einem Agenten ausführen zu lassen, sind beim lokalen, aufrufenden Job Scheduler folgende Konfigurationen nötig:
+      Die Job-Definition steht in der Konfigurationsdatei des lokalen, aufrufenden JobScheduler.<br/>
+      Um einen Job auf einem Agenten ausführen zu lassen, sind beim lokalen, aufrufenden JobScheduler folgende Konfigurationen nötig:
     </p>
     <p>
       <ol>
@@ -172,8 +172,8 @@ function spooler_process_before() {
     <h2>Kontext der API-Aufrufe</h2>
     
     <p>
-      Alle API-Aufrufe beziehen sich auf den lokalen, aufrufenden Job Scheduler. 
-      Allerdings liefern einige Methoden Werte des Agenten und nicht des aufrufenden Job Schedulers zurück:
+      Alle API-Aufrufe beziehen sich auf den lokalen, aufrufenden JobScheduler. 
+      Allerdings liefern einige Methoden Werte des Agenten und nicht des aufrufenden JobSchedulers zurück:
     </p>
     <ul>
         <li>
@@ -195,11 +195,11 @@ function spooler_process_before() {
     <h2>Konfigurations-Dateien></h2>
   
     <p>
-      Alle Einstellungen werden beim lokalen, aufrufenden Job Scheduler gelesen.
+      Alle Einstellungen werden beim lokalen, aufrufenden JobScheduler gelesen.
     </p>
     
     <p>
-      Einige Einstellungen werden vom Agenten statt vom lokalen, aufrufenden Job Scheduler übernommen:
+      Einige Einstellungen werden vom Agenten statt vom lokalen, aufrufenden JobScheduler übernommen:
     </p>
     <ul> 
       <li> sos.ini (Abschnitt [java], Eintrag javac=…)</li>
@@ -214,11 +214,11 @@ function spooler_process_before() {
     <h2>Protokolldateien</h2>
     
     <p>
-      Protokollausgaben werden in die Dateien des lokalen, aufrufenden Job Schedulers geschrieben. 
+      Protokollausgaben werden in die Dateien des lokalen, aufrufenden JobSchedulers geschrieben. 
       Das betrifft sowohl das Auftragsprotokoll als auch das Task-Protokoll.
       Ausgaben nach <code>stdout</code> und <code>stderr</code> werden in die Protokolldateien des lokalen, 
-      aufrufenden Job Schedulers übernommen. 
-      Andere Protokollausgaben, die der Job Scheduler protokolliert, 
+      aufrufenden JobSchedulers übernommen. 
+      Andere Protokollausgaben, die der JobScheduler protokolliert, 
       werden in die Protokolldatei des Agenten geschrieben.
     </p>
     
@@ -231,7 +231,7 @@ function spooler_process_before() {
       wenn die Standard Job-Implementierung <i>sos.scheduler.process.JobSchedulerProcessSubprocessJob</i> 
       verwendet wird (siehe Dokumentation der Klasse). 
       Die von den Shell Scripten produzierten Ausgaben nach <code>stdout</code> und <code>stderr</code> werden im Protoll beim lokalen, 
-      aufrufenden Job Scheduler ausgegeben. 
+      aufrufenden JobScheduler ausgegeben. 
       Ein beim Job angegebener <scheduler_element name="job" attribute="timeout"/> wird nicht ausgewertet, 
       d.h. die Task wird nicht abgebrochen, wenn der als Timeout angegebene Wert erreicht ist.
     </p>

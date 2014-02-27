@@ -116,7 +116,7 @@
 
         <description>
             <p>
-                Wenn noch Tasks in der Prozessklasse laufen, verzögert der Scheduler das Löschen bis die letzte Task geendet hat.
+                Wenn noch Tasks in der Prozessklasse laufen, verzögert der JobScheduler das Löschen bis die letzte Task geendet hat.
                 Solange werden keine neuen Tasks gestartet.
             </p>
             <p>

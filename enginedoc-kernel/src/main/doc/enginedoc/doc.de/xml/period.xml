@@ -31,7 +31,7 @@
                 <p>
                     Um diese Zeit endet die Periode.
                     Wenn dann <code>let_run="no"</code> gesetzt ist und keine weitere Periode gilt,
-                    beendet der Scheduler laufende Tasks (durch Aufruf von <code>spooler_close()</code>).
+                    beendet der JobScheduler laufende Tasks (durch Aufruf von <code>spooler_close()</code>).
                 </p>
             </description>
         </xml_attribute>
@@ -40,7 +40,7 @@
             <description>
                 <p>
                     Der Job wird, wenn er nicht schon läuft, zu Beginn der Periode gestartet.
-                    Nach Jobende soll der Scheduler den Job nach ablauf der angegebenen Zeit erneut starten,
+                    Nach Jobende soll der JobScheduler den Job nach ablauf der angegebenen Zeit erneut starten,
                     soweit die <code>&lt;run_time></code> das zulässt.
                     Die Wiederholung kann im Format <i>hh:mm</i> oder <i>hh:mm:ss</i> oder in Sekunden angegeben werden.
                 </p>
@@ -93,11 +93,11 @@
                     Für auftragsgesteuerte Jobs sollte Einstellung <code>let_run="no"</code> eingestellt werden.
                 </p>
                 <p>
-                    <code>let_run="yes"</code> gibt an, dass der Scheduler die Task weiterlaufen lassen soll,
+                    <code>let_run="yes"</code> gibt an, dass der JobScheduler die Task weiterlaufen lassen soll,
                     auch wenn die <code>&lt;run_time></code> das eigentlich nicht mehr zulässt.
                 </p>
                 <p>
-                    Bei <code>let_run="no"</code> beendet der Scheduler die Task
+                    Bei <code>let_run="no"</code> beendet der JobScheduler die Task
                     (ruft also nicht mehr spooler_process, sondern spooler_close auf),
                     sobald die <code>&lt;run_time></code> nicht mehr gilt.
                 </p>

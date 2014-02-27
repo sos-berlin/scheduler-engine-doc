@@ -58,7 +58,7 @@ spooler.job( "process" ).start( params );
         <xml_attribute name="log_file" type="dateiname" subst_env="yes">
             <description>
                 <p>
-                    Der Scheduler übernimmt nach Prozessende den Inhalt dieser Datei in sein Protokoll.
+                    Der JobScheduler übernimmt nach Prozessende den Inhalt dieser Datei in sein Protokoll.
                 </p>
             </description>
         </xml_attribute>
@@ -117,7 +117,7 @@ spooler.job( "process" ).start( params );
     <description>
         <p>
             Beim Start des Jobs, also zu Beginn einer Task, wird ein Prozess eingerichtet.
-            Der Job Scheduler überwacht den Prozess und beendet die Task nachdem der Prozess sich beendet hat.
+            Der JobScheduler überwacht den Prozess und beendet die Task nachdem der Prozess sich beendet hat.
         </p>
         <!--p>
             Das Element kann nicht verwendet werden bei Ausführung auf einem entfernten Rechner mit <scheduler_element name="process_class" attribute="remote_scheduler"/>.
@@ -129,7 +129,7 @@ spooler.job( "process" ).start( params );
                 Ein Exit-Code verschieden von 0 wird als Fehler (<scheduler_message code="SCHEDULER-280"/>) interpretiert.
             </li>
             <li>
-                Unter Unix setzt der Scheduler den Exit-Codes eines mit Signal abgebrochenen Prozesses auf den negativen Wert des Signals.
+                Unter Unix setzt der JobScheduler den Exit-Codes eines mit Signal abgebrochenen Prozesses auf den negativen Wert des Signals.
             </li>
             <li>
                 Der Exit-Code wird in <scheduler_method class="Task" property="exit_code"/> bereitgestellt
@@ -144,7 +144,7 @@ spooler.job( "process" ).start( params );
         <scheduler_keyword keyword="Umgebungsvariablen"/>
 
         <p>
-            Der Scheduler übergibt Umgebungsvariablen:
+            Der JobScheduler übergibt Umgebungsvariablen:
         </p>
         
         <dl>

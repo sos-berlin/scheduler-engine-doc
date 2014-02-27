@@ -3,10 +3,10 @@
 
 <!--$Id$-->
 
-<!--title               = "Vom Scheduler verwendete SQL-Anweisungen für PostgreSQL"-->
+<!--title               = "Vom JobScheduler verwendete SQL-Anweisungen für PostgreSQL"-->
 
 <description
-    title               = "SQL Instructions Used by the Job Scheduler for PostgreSQL"
+    title               = "SQL Instructions Used by the JobScheduler for PostgreSQL"
     base_dir            = ""
     parent_page         = "scheduler_sql.xml"
     author              = "$Author: ap $"

@@ -27,15 +27,15 @@
 
 
     <example programming_language="java">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory() );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
 
     <example programming_language="javascript">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
     </example>
 	
     <example programming_language="perl">
-        <pre>$spooler_log->debug( 'The working directory of the Scheduler is ' . $spooler->directory );</pre>
+        <pre>$spooler_log->debug( 'The working directory of the JobScheduler is ' . $spooler->directory );</pre>
     </example>
 
 </property>
@@ -126,7 +126,7 @@
             <com.type type="bool"/>
             <description>
                 <code>false</code> beendet die Task.
-                Der Scheduler setzt mit 
+                Der JobScheduler setzt mit 
                 <scheduler_method class="Job_impl" method="spooler_exit"/> fort.
                 Wenn die Task einen Auftrag verarbeiten soll, wird die Task mit Fehler beendet,
                 was den Job stoppt (wenn nicht
@@ -143,7 +143,7 @@
 
     <description>
         <p>
-            Der Scheduler ruft diese Methode nach dem Konstruktor und vor
+            Der JobScheduler ruft diese Methode nach dem Konstruktor und vor
             <scheduler_method class="Job_impl" method="spooler_open"/>
             genau einmal auf.
             Gegenstück ist
@@ -182,7 +182,7 @@
 
         <description>
             <code>false</code> beendet die Task.
-            Der Scheduler setzt mit
+            Der JobScheduler setzt mit
             <scheduler_method class="Job_impl" method="spooler_close"/>.
             fort.
         </description>

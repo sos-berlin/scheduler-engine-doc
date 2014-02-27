@@ -51,14 +51,14 @@
 </p>
 <p>
     Darüber hinaus bietet die <scheduler_a href="http.xml">HTML-Oberfläche</scheduler_a> des
-    Job Schedulers Operationen zum manuellen Starten von Aufträgen.
+    JobSchedulers Operationen zum manuellen Starten von Aufträgen.
 </p>
 
 <h2>Job-Ketten</h2>
 <p>
     Job-Ketten definieren eine Abfolge von Jobs, deren Ausführung durch einen Auftrag ausgelöst wird.
     Sie definieren Job-Abhängigkeiten für die erfolgreiche und fehlerhafte Ausführung von Jobs.
-    Sie sind wiederanlauffähig, d.h. der Job Scheduler speichert den Zustand eines Auftrags innerhalb
+    Sie sind wiederanlauffähig, d.h. der JobScheduler speichert den Zustand eines Auftrags innerhalb
     einer Job-Kette persistent in einer Datenbank und restauriert einen Auftrag nach dem 
     Wiederanlaufen innerhalb der Job-Kette für den Job, an dem die Verarbeitung abgebrochen wurde.
 </p>
@@ -81,13 +81,13 @@
     Jeder auftragsgesteuerte Job hat eine Auftragswarteschlange,
     die die Aufträge aufnimmt, die der Job verarbeiten soll.
     Sobald ein Auftrag in der Warteschlange ist und die <scheduler_element name="run_time"/> dies zulässt,
-    startet der Job Scheduler eine Task.
+    startet der JobScheduler eine Task.
     Wenn mehrere Aufträge in der Warteschlange sind und der Job mehrere Tasks erlaubt
     (<scheduler_element name="job" attribute="tasks"/>),
-    dann startet der Job Scheduler mehrere Tasks.
+    dann startet der JobScheduler mehrere Tasks.
 </p>
 <p>
-    Der Job Scheduler übergibt einen Auftrag einer Task,
+    Der JobScheduler übergibt einen Auftrag einer Task,
     indem er in <scheduler_method class="Task" property="order"/> den Auftrag ablegt und
     <scheduler_method class="Job_impl" method="spooler_process"/> aufruft.
     <code>spooler_process()</code> endet mit <code>true</code> oder <code>false</code>,
@@ -100,7 +100,7 @@
     schon eingetragen ist (nur, wenn <code>id</code> gesetzt ist).
     Hat die Auftragswarteschlange oder die Job-Kette bereits einen Auftrag mit derselben <code>id</code>,
     dann wird er ersetzt.
-    Wenn der neue Auftrag eine andere Priorität hat, wird diese vom Scheduler berücksichtigt.
+    Wenn der neue Auftrag eine andere Priorität hat, wird diese vom JobScheduler berücksichtigt.
 </p-->
 
     
@@ -116,24 +116,24 @@
 <h2>Priorität</h2>
 <p>
     Aufträge mit höherer Priorität <scheduler_method class="Order" property="priority"/>
-    stellt der Job Scheduler an den Anfang der Warteschlange.
+    stellt der JobScheduler an den Anfang der Warteschlange.
 </p>
 
 
 <h2>Wann enden die Tasks?</h2>
 <p>
-    Wenn kein Auftrag mehr zu verarbeiten ist, lässt der Job Scheduler die Tasks stehen,
+    Wenn kein Auftrag mehr zu verarbeiten ist, lässt der JobScheduler die Tasks stehen,
     solange die <scheduler_element name="run_time"/> gilt.
     Sie sind dann im Zustand <code>running_waiting_for_order</code>.
 </p>
 <p>
     Mit <scheduler_element name="job" attribute="idle_timeout" value="dauer"/> können Sie eine Frist bestimmen,
-    nach der der Job Scheduler eine wartende Task automatisch beendet.
+    nach der der JobScheduler eine wartende Task automatisch beendet.
     Diese Frist sollte auf z.B. 30 Sekunden eingestellt werden,
     um während der Verarbeitungspausen Ressourcen freizugeben.
 </p>
 <p>
-    Wenn der Job Scheduler für einen anderen Job
+    Wenn der JobScheduler für einen anderen Job
     eine Task starten will,
     die Prozessklasse aber erschöpft ist, die die Anzahl gleichzeitig ablaufender Tasks festlegt,
     dann beendet er automatisch eine Task mit derselben Prozessklasse,
@@ -159,7 +159,7 @@
 <p>
     Aufträge, die in der Job-Kette weiter fortgeschritten sind, sollen bevorzugt verarbeitet werden.
     Damit werden Staus vermieden und die ersten Aufträge werden schneller abgeschlossen.
-    Das erreicht der Job Scheduler durch Bevorzugung der Jobs,
+    Das erreicht der JobScheduler durch Bevorzugung der Jobs,
     die weiter am Ende der Job-Kette stehen als andere.
     Die Maschinen am Ende des Fließbands laufen flotter als die am Anfang.
 </p>

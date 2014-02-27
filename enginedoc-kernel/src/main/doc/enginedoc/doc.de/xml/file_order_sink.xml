@@ -72,7 +72,7 @@
             Damit wird verhindert, dass die noch vorhandene Datei erneut zu einem Dateiauftrag wird.
             Aufträge auf der Schwarzen Liste können mit 
             <scheduler_element name="remove_order"/> entfernt werden.
-            Wenn der Scheduler bemerkt, dass die Datei entfernt worden ist, 
+            Wenn der JobScheduler bemerkt, dass die Datei entfernt worden ist, 
             streicht er den Auftrag von der Schwarzen Liste.
             Die Datei kann dann erneut ins Verzeichnis gestellt werden.
         </p>

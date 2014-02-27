@@ -52,15 +52,15 @@
         <xml_attribute name="start_time_function" type="name">
             <description>
                 <p>
-                    Gives the name of a function in the Job Scheduler script which returns the next start time.
-                    The Job Scheduler hands over two parameters to this function.
+                    Gives the name of a function in the JobScheduler script which returns the next start time.
+                    The JobScheduler hands over two parameters to this function.
                 <!--Gibt gibt den Namen einer Funktion im Scheduler-Skript an, die die nächste Startzeit liefert.-->
                 </p>
                 <p>
-                    In the first parameter, the Job Scheduler specifies the point in time 
+                    In the first parameter, the JobScheduler specifies the point in time 
                     after which the function should return a start time.
                     This time is specified as a string with the format <code>"yyyy-mm-dd HH:MM:SS"</code>.
-                <!--Der Scheduler übergibt der Funktion im ersten Parameter den Zeitpunkt, 
+                <!--Der JobScheduler übergibt der Funktion im ersten Parameter den Zeitpunkt, 
                     ab dem sie eine Startzeit liefern soll,
                     als Zeichenkette im Format <code>"yyyy-mm-dd HH:MM:SS"</code>.-->
                 </p>
@@ -71,10 +71,10 @@
                 <p>
                     The function returns a point in time after that specified in the first parameter,
                     or nothing (i.e. <code>""</code> or <code>Empty</code>).
-                    The Job Scheduler expects the script to return a string in the format <code>"yyyy-mm-dd hh:mm:ss"</code>.
+                    The JobScheduler expects the script to return a string in the format <code>"yyyy-mm-dd hh:mm:ss"</code>.
                 <!--Rückgabe der Funktion ist ein Zeitpunkt, der nicht vor dem ersten Parameter liegen darf,
                     oder nichts (d.h. <code>""</code> oder <code>Empty</code>).
-                    Der Scheduler erwartet als Rückgabe eine Zeichenkette im Format <code>"yyyy-mm-dd hh:mm:ss"</code>.-->
+                    Der JobScheduler erwartet als Rückgabe eine Zeichenkette im Format <code>"yyyy-mm-dd hh:mm:ss"</code>.-->
                 </p>
             </description>
 
@@ -114,12 +114,12 @@
                 <p>
                     Should the <code>&lt;run_time&gt;</code> element be empty 
                     (i.e. it does not contain a <code>&lt;period&gt;</code>), 
-                    then the Job Scheduler will generate an operating period using this setting.
+                    then the JobScheduler will generate an operating period using this setting.
                     This setting is also the default setting for the <code>&lt;run_time&gt;</code>
                     child elements
                     (see the <a href="#defaults">shortened form</a> above).
                 <!--Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung, 
+                    generiert der JobScheduler eine Periode mit dieser Einstellung, 
                     anderfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).-->
                 </p>
@@ -131,12 +131,12 @@
                 <p>
                     Should the <code>&lt;run_time&gt;</code> element be empty 
                     (i.e. it does not contain a <code>&lt;period&gt;</code>), 
-                    then the Job Scheduler will generate an operating period using this setting.
+                    then the JobScheduler will generate an operating period using this setting.
                     This setting is also the default setting for the <code>&lt;run_time&gt;</code>
                     child elements
                     (see the <a href="#defaults">shortened form</a> above).
                 <!--Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung, 
+                    generiert der JobScheduler eine Periode mit dieser Einstellung, 
                     anderfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).-->
                 </p>
@@ -149,12 +149,12 @@
                 <p>
                     Should the <code>&lt;run_time&gt;</code> element be empty 
                     (i.e. it does not contain a <code>&lt;period&gt;</code>), 
-                    then the Job Scheduler will generate an operating period using this setting.
+                    then the JobScheduler will generate an operating period using this setting.
                     This setting is also the default setting for the <code>&lt;run_time&gt;</code>
                     child elements
                     (see the <a href="#defaults">shortened form</a> above).
                 <!--Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     anderfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).-->
                 </p>
@@ -166,12 +166,12 @@
                 <p>
                     Should the <code>&lt;run_time&gt;</code> element be empty 
                     (i.e. it does not contain a <code>&lt;period&gt;</code>), 
-                    then the Job Scheduler will generate an operating period using this setting.
+                    then the JobScheduler will generate an operating period using this setting.
                     This setting is also the default setting for the <code>&lt;run_time&gt;</code>
                     child elements
                     (see the <a href="#defaults">shortened form</a> above).
                 <!--Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     anderfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).-->
                 </p>
@@ -217,12 +217,12 @@
                 <p>
                     Should the <code>&lt;run_time&gt;</code> element be empty 
                     (i.e. it does not contain a <code>&lt;period&gt;</code>), 
-                    then the Job Scheduler will generate an operating period using this setting.
+                    then the JobScheduler will generate an operating period using this setting.
                     This setting is also the default setting for the <code>&lt;run_time&gt;</code>
                     child elements
                     (see the <a href="#defaults">shortened form</a> above).
                 <!--Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).-->
                 </p>
@@ -233,11 +233,11 @@
             <description>
                 <p>
                     When this element is empty (i.e. does not contain any <code>&lt;period></code>),
-                    then the Job Scheduler generates a period with this setting.
+                    then the JobScheduler generates a period with this setting.
                     Otherwise, this is the default setting for the child elements
                     (see <a href="#defaults">Shortened Form</a> above).
                 <!--Wenn das Element leer ist (also kein <code>&lt;period></code> enthält),
-                    generiert der Scheduler eine Periode mit dieser Einstellung,
+                    generiert der JobScheduler eine Periode mit dieser Einstellung,
                     andernfalls ist es die Voreinstellung für die Kind-Elemente
                     (siehe oben <a href="#defaults">Verkürzte Schreibweise</a>).-->
                 </p>
@@ -318,14 +318,14 @@
     
     <description>
         <p>
-            <code>&lt;run_time></code> defines the times at which the Job Scheduler allows the tasks of this job to run.
+            <code>&lt;run_time></code> defines the times at which the JobScheduler allows the tasks of this job to run.
             This is achieved through the use of operating periods (see <scheduler_element name="period"/>).
-            At startup the Job Scheduler selects the first period which is valid (that is, which has not yet ended).
-            This operating period remains valid until its end. The Job Scheduler then selects the next possible period.
-        <!--<code>&lt;run_time></code> gibt an, zu welchen Zeiten der Scheduler Tasks dieses Jobs laufen lässt.
+            At startup the JobScheduler selects the first period which is valid (that is, which has not yet ended).
+            This operating period remains valid until its end. The JobScheduler then selects the next possible period.
+        <!--<code>&lt;run_time></code> gibt an, zu welchen Zeiten der JobScheduler Tasks dieses Jobs laufen lässt.
             Das wird realisiert durch Perioden (s. <scheduler_element name="period"/>).
-            Der Scheduler wählt die erste Periode aus, die zu einer Zeit gilt (deren Ende noch nicht abgelaufen ist).
-            Diese Periode gilt bis zu ihrem Ende. Dann wählt der Scheduler erneut eine Periode aus.-->
+            Der JobScheduler wählt die erste Periode aus, die zu einer Zeit gilt (deren Ende noch nicht abgelaufen ist).
+            Diese Periode gilt bis zu ihrem Ende. Dann wählt der JobScheduler erneut eine Periode aus.-->
         </p>
         <p>
             An operating period with <code>single_start</code> is only valid at one point in time.
@@ -336,9 +336,9 @@
         <h3>Daylight Saving Time</h3>
     <!--<h3>Sommer- und Winterzeit</h3>-->
         <p>
-            The Scheduler recognizes the time changes at the beginning and end of daylight saving time. 
+            The JobScheduler recognizes the time changes at the beginning and end of daylight saving time. 
             It always uses local time.
-        <!--Der Scheduler berücksichtigt die Zeitumstellung zu Beginn und Ende der Sommerzeit. 
+        <!--Der JobScheduler berücksichtigt die Zeitumstellung zu Beginn und Ende der Sommerzeit. 
             Es gilt stets die lokale Zeit.-->
         </p>
         <p>
@@ -414,7 +414,7 @@
             <code>let_run=</code> and
             <code>single_start=</code> attributes
             apply when <scheduler_element name="period"/> is specified,
-            and allow the Job Scheduler to create a similar attribute of the same name.
+            and allow the JobScheduler to create a similar attribute of the same name.
         <!--Die Attribute
             <code>begin=</code>,
             <code>end=</code>,
@@ -422,7 +422,7 @@
             <code>let_run=</code> und
             <code>single_start=</code>
             wirken, wenn kein <scheduler_element name="period"/> angegeben ist,
-            und lassen den Scheduler eins mit denselben Attributen erzeugen.-->
+            und lassen den JobScheduler eins mit denselben Attributen erzeugen.-->
         </p>
         <pre>&lt;run_time begin="07:00" end="09:00"/></pre>
         <p>becomes</p>

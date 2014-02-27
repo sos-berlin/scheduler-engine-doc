@@ -96,7 +96,7 @@ $job_chain->LetProperty( 'name', 'Jobkette' );</pre>
     <description>
         <p>
             Diesem Knoten ist kein Job zugeordnet.
-            Ein Auftrag, der einen Endknoten erreicht, hat die Jobkette durchlaufen und wird vom Scheduler aus ihr entfernt.
+            Ein Auftrag, der einen Endknoten erreicht, hat die Jobkette durchlaufen und wird vom JobScheduler aus ihr entfernt.
         </p>
     </description>
 </method>
@@ -128,7 +128,7 @@ $job_chain->LetProperty( 'name', 'Jobkette' );</pre>
 
     <description>
         <p>
-            Wenn der Auftrag in einer anderen Jobkette enthalten ist, entfernt der Scheduler ihn daraus.
+            Wenn der Auftrag in einer anderen Jobkette enthalten ist, entfernt der JobScheduler ihn daraus.
         </p>
         <p>
             Der Auftrag wird in die Auftragswarteschlange des Jobs, der seinem Zustand entspricht,
@@ -137,7 +137,7 @@ $job_chain->LetProperty( 'name', 'Jobkette' );</pre>
         <p>
             Die Jobkette mit muss <scheduler_element name="job_chain"/> oder 
             <scheduler_method class="Spooler" method="add_job_chain"/>
-            dem Scheduler bekannt gemacht worden sein.
+            dem JobScheduler bekannt gemacht worden sein.
         </p>
         <p>
             Wenn die Jobkette bereits einen Auftrag mit gleicher <scheduler_method class="Order" property="id"/>
@@ -283,12 +283,12 @@ sub xml_attribute
         </p>
         <p>
             Solange eine Task den vorhandenen Auftrag ausführt,
-            sind im Scheduler zwei Aufträge mit gleicher Kennung vorhanden.
+            sind im JobScheduler zwei Aufträge mit gleicher Kennung vorhanden.
             Allerdings ist der vorhandene Auftrag aus der Jobkette und aus der Datenbank bereits entfernt.
             Er ist nur noch für die Task nutzbar und verschwindet nach der Ausführung.
         </p>
         <p>
-            In diesem Fall wartet der Scheduler die Ausführung des neuen Auftrags ab,
+            In diesem Fall wartet der JobScheduler die Ausführung des neuen Auftrags ab,
             bis die Ausführung des alten Auftrags beendet ist.
         </p>
         <p>
@@ -310,12 +310,12 @@ sub xml_attribute
     <description>
         <p>
             Wenn gerade Aufträge der Jobkette verarbeitet werden (in <scheduler_method class="Job_impl" method="spooler_process"/>),
-            dann entfernt der Scheduler die Jobkette, sobald der letzte Auftrag verarbeitet worden ist.
+            dann entfernt der JobScheduler die Jobkette, sobald der letzte Auftrag verarbeitet worden ist.
         </p>
         <p>
             Die Aufträge bleiben in der Datenbank erhalten.
             Wenn später eine Jobkette mit gleichen Namen hinzugefügt wird (<scheduler_method class="Spooler" method="add_job_chain"/>),
-            dann lädt der Scheduler diese Aufträge erneut. 
+            dann lädt der JobScheduler diese Aufträge erneut. 
             Die Zustände der Aufträge müssen in der erneuerten Jobkette vorhanden sein. 
         </p>
     </description>
@@ -367,13 +367,13 @@ sub xml_attribute
     </p>
     <p>
         Jeder Stelle in der Jobkette ist ein Zustand und ein Job zugeordnet.
-        Wenn ein Auftrag der Jobkette hinzugefügt wird, setzt der Scheduler ihn an die seinem Zustand entsprechende Stelle.
+        Wenn ein Auftrag der Jobkette hinzugefügt wird, setzt der JobScheduler ihn an die seinem Zustand entsprechende Stelle.
         Der dieser Stelle zugeordnete Job führt den Auftrag aus.
     </p>
     <p>
         Jede Stelle hat außerdem einen Folgezustand und einen Fehlerzustand.
-        Nach der Verarbeitung eines Auftrags durch einen Jobschritt ändert der Scheduler den Zustand des Auftrags.
-        Wenn der Jobschritt (spooler_process) true liefert, stellt der Scheduler den Folgezustand,
+        Nach der Verarbeitung eines Auftrags durch einen Jobschritt ändert der JobScheduler den Zustand des Auftrags.
+        Wenn der Jobschritt (spooler_process) true liefert, stellt der JobScheduler den Folgezustand,
         sonst den Fehlerzustand ein.
         Der Auftrag rutscht damit an eine andere Stelle der Jobkette, die dem neuen Zustand zugeordnet ist.
 

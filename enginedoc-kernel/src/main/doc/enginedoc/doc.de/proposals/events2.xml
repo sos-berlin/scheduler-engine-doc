@@ -12,7 +12,7 @@
     <description>
         <scheduler_keyword keyword="Ereignisse"/>
         <p>
-            Der Scheduler kann bei bestimmten Ereignissen eMails verschicken.
+            Der JobScheduler kann bei bestimmten Ereignissen eMails verschicken.
         </p>
         <p>
 
@@ -53,7 +53,7 @@
     <event name="scheduler_fatal_error">
         <description>
             <p>
-                Der Scheduler wird wegen eines Fehlers beendet.
+                Der JobScheduler wird wegen eines Fehlers beendet.
                 Das kann eine Exception im Scheduler-Skript, ein Datenbankfehler oder ein internes Problem sein.
             </p>
             <p>
@@ -113,7 +113,7 @@
                 weil nicht genügend Plattenplatz zur Verfügung steht.
             </p>
             <p>
-                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der Scheduler fortgesetzt werden.
+                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der JobScheduler fortgesetzt werden.
             </p>
         </description>
 
@@ -134,7 +134,7 @@
                 Die Datenbank hat einen Fehler gemeldet.
             </p>
             <p>
-                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der Scheduler fortgesetzt werden.
+                Mit <code>&lt;modify_spooler cmd="continue"></code> kann der JobScheduler fortgesetzt werden.
             </p>
         </description>
 

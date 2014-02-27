@@ -22,7 +22,7 @@
       </com>
 
         <title>
-            Fügt dem Scheduler eine Prozessklasse hinzu
+            Fügt dem JobScheduler eine Prozessklasse hinzu
         </title>
       
         <messages>
@@ -47,7 +47,7 @@
                 Liefert eine neues <scheduler_method class="Process_class"/>.
                 Diese Prozessklasse kann 
                 mit <scheduler_method class="Process_classes" method="add_process_class"/>
-                dem Scheduler hinzugefügt werden.
+                dem JobScheduler hinzugefügt werden.
             </p>
         </description>
     </method>

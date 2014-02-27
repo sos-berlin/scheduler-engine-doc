@@ -42,7 +42,7 @@
 
     <description>
         <p>
-            Der Scheduler liefert nur eins der Kind-Elemente.
+            Der JobScheduler liefert nur eins der Kind-Elemente.
         </p>
     </description>
 

@@ -5,7 +5,7 @@
 <!--         title    = "Scheduler-Variablen zeigen"-->
 
 <xml_element name     = "params.get"
-             title    = "Show Job Scheduler variables"
+             title    = "Show JobScheduler variables"
              base_dir = "../"
              parent_page = "../xml_commands.xml"
              author   = "$Author: jz $"
@@ -20,7 +20,7 @@
     <description>
         <p>
             Returns <scheduler_element directory="xml/answer/" name="params"/> 
-            including all Job Scheduler variables.
+            including all JobScheduler variables.
         <!--Liefert <scheduler_element directory="xml/answer/" name="params"/> 
             mit allen Scheduler-Variablen.-->
         </p>

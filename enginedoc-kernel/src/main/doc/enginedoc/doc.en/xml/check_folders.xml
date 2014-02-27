@@ -16,18 +16,18 @@
     <description>
         <p>
             Checks the configuration directories for changes and updates the respective objects
-            in the Job Scheduler. On Windows operating systems changes to a directory are 
+            in the JobScheduler. On Windows operating systems changes to a directory are 
             noticed immediately, on Unix systems this could take up to 60 seconds.
-        <!--Prüft die Konfigurationsverzeichnisse auf Änderung und aktualisiert die Objekte im Job Scheduler.
+        <!--Prüft die Konfigurationsverzeichnisse auf Änderung und aktualisiert die Objekte im JobScheduler.
             Unter Windows werden Änderungen in Konfigurationsverzeichnissen sofort
             erkannt, unter Unix wird dies innerhalb von max. 60s erkannt.-->
         </p>
         <p>
             The command is available in the built-in HTML interface and is used. for example,
             when developing jobs for Unix in order to shorten the waiting time until
-            changes to the configuration are noticed by the  Job Scheduler.
+            changes to the configuration are noticed by the  JobScheduler.
         <!--Das Kommando ist in der HTML-Oberfläche
-            des Job Schedulers verfügbar und wird bspw. eingesetzt, um während der Entwicklung von Jobs unter Unix
+            des JobSchedulers verfügbar und wird bspw. eingesetzt, um während der Entwicklung von Jobs unter Unix
             die Wartezeit zu verkürzen bis eine Änderung im Konfigurationsverzeichnis wirkt.-->
         </p>
     </description>

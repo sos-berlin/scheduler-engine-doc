@@ -14,9 +14,9 @@
         <xml_parent_element directory="xml/" name="config">
             <description>
                 <p>
-                    The Job Scheduler carries out commands after the configuration has been loaded
-                    and before Scheduler scripts are executed.
-                <!--Der Scheduler führt die Kommandos nach dem Laden der Konfiguration
+                    The JobScheduler carries out commands after the configuration has been loaded
+                    and before JobScheduler scripts are executed.
+                <!--Der JobScheduler führt die Kommandos nach dem Laden der Konfiguration
                     und vor dem Scheduler-Skript aus.-->
                     <code>&lt;commands></code> from the <scheduler_element name="base"/> configurations
                     are executed first.
@@ -24,7 +24,7 @@
                     werden zuerst ausgeführt.-->
                 </p>
                 <p>
-                    The Job Scheduler will be stopped in the event of an error.
+                    The JobScheduler will be stopped in the event of an error.
                 <!--Ein Fehler beendet den Scheduler.-->
                 </p>
             </description>
@@ -33,11 +33,11 @@
         <xml_parent_element directory="xml/" name="job">
             <description>
                 <p>
-                    The Job Scheduler executes commands after a task has been completed.
+                    The JobScheduler executes commands after a task has been completed.
                     Note that for some commands, the parameters of a task which has just ended
                     or (in particular situations) the parameters of the last order carried out,
                     can be handed over using <scheduler_element name="copy_params"/>.
-                <!--Der Scheduler führt die Kommandos aus, wenn eine Task sich beendet.
+                <!--Der JobScheduler führt die Kommandos aus, wenn eine Task sich beendet.
                     Für manche Kommandos lassen sich die Parameter der beendeten Task 
                     oder (unter bestimmten Bedingungen) des zuletzt ausgeführten Auftrags
                     mit <scheduler_element name="copy_params"/> übernehmen.-->

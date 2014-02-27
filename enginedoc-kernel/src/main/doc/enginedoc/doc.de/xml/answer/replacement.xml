@@ -37,7 +37,7 @@
             <scheduler_element directory="xml/answer/" name="job"/><scheduler_element directory="xml/answer/" name="replacement"/><scheduler_element directory="xml/answer/" name="job"/>.
             Das Kind-Element enthält das neue Objekt, 
             das vorhandene noch nicht ersetzen kann.
-            Sobald das zu ersetzende Objekt bereit ist, nimmt der Scheduler die Ersetzung vor.
+            Sobald das zu ersetzende Objekt bereit ist, nimmt der JobScheduler die Ersetzung vor.
         </p>
     </description>
 

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="scheduler.xsl" type="text/xsl"?>
 <description 
-		title								= "Job Scheduler Editor" 
+		title								= "JobScheduler Editor" 
 		base_dir						= "" 
 		author							= "$Author: ts $" 
 		date								= "$Date: 2007-03-29 11:45:00 +0200 (Do, 05 Okt 2006) $"
@@ -10,14 +10,14 @@
   <h2>GUI für Konfiguration und Dokumentation</h2>
   
   <p>
-			Der Job Scheduler liest seine Konfiguration aus XML-Dateien, die mit einem Text-Editor erstellt und bearbeitet werden können.
+			Der JobScheduler liest seine Konfiguration aus XML-Dateien, die mit einem Text-Editor erstellt und bearbeitet werden können.
 		</p>
   <p>
-			Alternativ kann die XML-Konfiguration mit dem Job Scheduler Editor gepflegt werden. Der Editor stellt eine grafische Benutzeroberfläche
+			Alternativ kann die XML-Konfiguration mit dem JobScheduler Editor gepflegt werden. Der Editor stellt eine grafische Benutzeroberfläche
 			mit Formularen für alle Elemente der Scheduler-Konfiguration zur Verfügung. Anwender werden durch Tooltips und Wizards unterstützt.
 		</p>
   <p>
-			Der Scheduler Editor erzeugt für jeden Eintrag in eines seiner Formulare das entsprechende XML-Element der Scheduler-Konfiguration. Beim Speichern wird jeweils die 
+			Der JobScheduler Editor erzeugt für jeden Eintrag in eines seiner Formulare das entsprechende XML-Element der Scheduler-Konfiguration. Beim Speichern wird jeweils die 
 			Konfigurationsdatei des Schedulers, in der Regel die Datei <em>scheduler.xml</em>, neu geschrieben. Der Editor validiert alle Einträge mit dem
 			aktuellen Schema des Schedulers - Fehler in der XML-Konfiguration werden sofort bemerkt.
 		</p>
@@ -25,9 +25,9 @@
 			Scheduler Jobs können mit dem Editor dokumentiert werden - der Editor generiert die Dokumentation in einem XML-Format, das über ein 
 			entsprechendes Stylesheet als HTML mit Navigationselementen im Browser dargestellt werden kann.
 		</p>
-  <h3>Aufruf Scheduler Editor</h3>
+  <h3>Aufruf JobScheduler Editor</h3>
   <p>
-			Der Scheduler Editor gehört zur Standard-Auslieferung des Job Schedulers. Das Installationsverzeichnis des Schedulers enthält die Datei <em>bin/jobeditor.cmd</em> zum Aufruf des Editors. 
+			Der JobScheduler Editor gehört zur Standard-Auslieferung des JobSchedulers. Das Installationsverzeichnis des Schedulers enthält die Datei <em>bin/jobeditor.cmd</em> zum Aufruf des Editors. 
 			In dieser Datei ist für INSTALL_PATH das Scheduler-Installationsverzeichnis einzutragen.
 		</p>
   
@@ -89,7 +89,7 @@
 				</li>
       <li>
         <p>
-						Tragen Sie im Formular <em>Jobs</em> die Jobs mit den Job-Parametern ein, die der Scheduler ausführen soll. 
+						Tragen Sie im Formular <em>Jobs</em> die Jobs mit den Job-Parametern ein, die der JobScheduler ausführen soll. 
 						
 						Der Editor erstellt für jeden Job einen Zweig in der Baumansicht aller Jobs.
 						Jeder Job hat zusätzliche Formulare, in die weitere Eigenschaften, z.B. der auszuführende Programm-Code, die Startzeiten etc. einzutragen sind. 
@@ -182,7 +182,7 @@
   <h3>Hot Folder editieren</h3>
   
   <p> 
-			Der Job Scheduler Editor kann einen ganzen hot folder öffnen und bearbeiten. Dazu wird im File Menü mit dem Befehl
+			Der JobScheduler Editor kann einen ganzen hot folder öffnen und bearbeiten. Dazu wird im File Menü mit dem Befehl
 			<strong>Open Hot Folder</strong> der live folder oder einer seiner Unterordner geöffnet.			
 		</p>
   <p>
@@ -198,9 +198,9 @@
     <img src="images/editor_new_job2.jpg" width="890" height="620" style="margin: 20px 0px ; border:1px solid gray;"/>
   </p>
   <p>
-		  Wenn Sie nun <strong>Save</strong> aus dem File Menü wählen, speichert der Job Scheduler Editor alle in diesem
+		  Wenn Sie nun <strong>Save</strong> aus dem File Menü wählen, speichert der JobScheduler Editor alle in diesem
 		  Verzeichnis geänderten oder hinzugefügten Objekte. Dateinamen müssen dabei nicht angegeben werden. Diese erzeugt der
-		  Job Scheduler Editor aus den Objektnamen selbstständig.
+		  JobScheduler Editor aus den Objektnamen selbstständig.
 		</p>
   
   
@@ -209,7 +209,7 @@
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    FTP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <h4>FTP/SFTP</h4>
   <p>
-			Der Job Scheduler kann eine XML-Konfigurationsdateien per FTP (File Transfer Protocol) bzw. 
+			Der JobScheduler kann eine XML-Konfigurationsdateien per FTP (File Transfer Protocol) bzw. 
 			SFTP (Secure FTP) öffnen bzw.eine offene Datei per FTP/SFTP speichern. 
 			Sie können über den Menüpunkt File -> FTP oder über den Toolbar den FTP Dialog öffnen:
 		</p>
@@ -324,7 +324,7 @@
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   WEBDAV ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <h4>WebDAV</h4>
   <p>
-			Der Job Scheduler kann eine XML-Konfigurationsdateien per WebDAV öffnen bzw.
+			Der JobScheduler kann eine XML-Konfigurationsdateien per WebDAV öffnen bzw.
 			eine offene Datei per WebDAV speichern. 
 			Sie können über den Menüpunkt File -> WebDAV  den WebDAV Dialog öffnen:
 		</p>
@@ -334,7 +334,7 @@
   <p>
 			Der Menüpunkt WebDAV ist nur aktiv, 
 			wenn die notwendigen Bibliotheken für die WebDAV-Verbindungen vorhanden sind.
-			Diese Bibliotheken sind aus Lizenzgründen nicht Teil der Job Scheduler Distribution. 
+			Diese Bibliotheken sind aus Lizenzgründen nicht Teil der JobScheduler Distribution. 
 			Sie können z.B. vom Sourceforge Projekt <code>webdavclient4j</code> unter
 			<a href="https://sourceforge.net/projects/webdavclient4j/">https://sourceforge.net/projects/webdavclient4j/</a> 
 			heruntergeladen werden. 
@@ -352,7 +352,7 @@
     <li>commons-httpclient-3.0.1.jar</li>
   </ul>
   <p>
-			Der Job Scheduler Editor wird über eine Kommandodatei aufgerufen, 
+			Der JobScheduler Editor wird über eine Kommandodatei aufgerufen, 
 			die sich unter <code>
       <i>scheduler_installation_directory</i>/bin</code> befindet. 
 			Hier muss der <code>CLASSPATH</code> um die oben genannten Bibliotheken erweitert werden. 

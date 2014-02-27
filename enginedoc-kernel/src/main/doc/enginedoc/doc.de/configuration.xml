@@ -34,7 +34,7 @@
             </p>
             <p>
                 Änderungen in dieser Konfigurationsdatei erfordern einen
-                Neustart des Job Schedulers.
+                Neustart des JobSchedulers.
             </p>
         </dd>
 
@@ -47,13 +47,13 @@
                 in einzelnen Dateien definiert.
             </p>
             <p>
-                Vom Installationsprogramm wird dem Job Scheduler das Verzeichnis
-                <code>./config/live</code> zugeiwesen. Der Job Scheduler überwacht das Anlegen,
+                Vom Installationsprogramm wird dem JobScheduler das Verzeichnis
+                <code>./config/live</code> zugeiwesen. Der JobScheduler überwacht das Anlegen,
                 Ändern und Löschen von Konfigurationsdateien in diesem Verzeichnis.
             </p>
             <p>
                 Änderungen von Konfigurationsdateien in diesem Verzeichnis werden
-                zur Laufzeit sofort vom Job Scheduler berücksichtigt, sie erfordern
+                zur Laufzeit sofort vom JobScheduler berücksichtigt, sie erfordern
                 keinen Neustart.
             </p>
         </dd>
@@ -85,9 +85,9 @@
                 mit anderen Programmen von SOS GmbH verwendet.
             </p>
             <p>
-                Für den Job Scheduler wird aus dieser Datei der 
+                Für den JobScheduler wird aus dieser Datei der 
                 technische Lizenzschlüssel gelesen. Für den Betrieb des
-                Job Schedulers mit einer Open Source Lizenz wird folgender
+                JobSchedulers mit einer Open Source Lizenz wird folgender
                 Lizenzschlüssel verwendet:
                 <br/><br/><code>
                 [licence]<br/>
@@ -105,7 +105,7 @@
         </dt>
         <dd>
             <p>
-                Der Job Scheduler kann direkt von der Kommandozeile mit Hilfe der 
+                Der JobScheduler kann direkt von der Kommandozeile mit Hilfe der 
                 <scheduler_a href="command_line.xml">Kommandozeilenptionen</scheduler_a> gestartet werden.
                 Zur Vereinfachung werden die <scheduler_a href="command_line.xml">Kommandozeilenptionen</scheduler_a> vom Installationsprogramm
                 in das Startskript <code>.\bin\jobscheduler.cmd</code> (Windows) bzw. 

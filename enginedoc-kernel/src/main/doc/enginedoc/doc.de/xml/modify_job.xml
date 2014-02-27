@@ -47,7 +47,7 @@
                         <td><code>cmd="stop"</code></td>
                         <td>
                             <p>
-                                Stoppt den Job. Der Scheduler versetzt den Job in den Zustand <code>stopping</code> solange noch eine Task läuft,
+                                Stoppt den Job. Der JobScheduler versetzt den Job in den Zustand <code>stopping</code> solange noch eine Task läuft,
                                 dann in den Zustand <code>stopped</code>.
                             </p>
                             <p>
@@ -72,7 +72,7 @@
                             <p>
                                 Wertet die XML-Elemente <scheduler_element name="include"/> in <scheduler_element name="script"/> neu aus,
                                 sobald der Job neu gestartet wird.
-                                Der Scheduler liest die Dateien neu ein und lässt die nächste Task mit dem neuen Programmcode starten.
+                                Der JobScheduler liest die Dateien neu ein und lässt die nächste Task mit dem neuen Programmcode starten.
                             </p>
                             <p>
                                 Bei einem Fehler (z.B. wenn eine Datei nicht mehr lesbar ist), gelangt der Job in den Zustand <code>read_error</code>.
@@ -114,7 +114,7 @@
                                 Auf alle laufenden Tasks, die im Zustand <code>running</code>, <code>running_delayed</code> oder
                                 <code>running_waiting_for_order</code> sind,
                                 wird das Kommando <code>suspend</code> angewendet,
-                                d.h. der Scheduler ruft keine weitere Methode des Jobs auf.
+                                d.h. der JobScheduler ruft keine weitere Methode des Jobs auf.
                             </p>
                         </td>
                     </tr>

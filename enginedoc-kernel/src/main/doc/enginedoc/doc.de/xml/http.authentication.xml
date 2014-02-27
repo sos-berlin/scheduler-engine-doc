@@ -34,7 +34,7 @@
     
     <description>
         <p>
-            Mit diesem Element verlangt der Scheduler vom HTTP-Client (Browser) eine Authentifizierung
+            Mit diesem Element verlangt der JobScheduler vom HTTP-Client (Browser) eine Authentifizierung
             nach <a href="http://www.ietf.org/rfc/rfc2617.txt">RFC 2617</a>, Verfahren »Basic«.
         </p>
         <p>

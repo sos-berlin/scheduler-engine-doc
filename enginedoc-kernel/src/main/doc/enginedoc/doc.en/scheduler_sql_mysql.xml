@@ -3,10 +3,10 @@
 
 <!--$Id$-->
 
-<!--title               = "Vom Scheduler verwendete SQL-Anweisungen für MySQL®"-->
+<!--title               = "Vom JobScheduler verwendete SQL-Anweisungen für MySQL®"-->
 
 <description
-    title               = "SQL Instructions Used by the Job Scheduler for MySQL®"
+    title               = "SQL Instructions Used by the JobScheduler for MySQL®"
     base_dir            = ""
     parent_page         = "scheduler_sql.xml"
     author              = "$Author: ap $"

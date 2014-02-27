@@ -167,7 +167,7 @@
         
         <h3>period und single_start trennen</h3>
         <p>
-            Der Scheduler unterscheidet Perioden von Single_starts. 
+            Der JobScheduler unterscheidet Perioden von Single_starts. 
             Perioden erlauben den Start einer Task. 
             Sie veranlassen eine Task nur, wenn <code>repeat=</code> angegeben ist.
             Ein single_start dagegen sorgt dafür, dass zur angegebenen Zeit eine Task läuft.
@@ -196,7 +196,7 @@
         <h3>Spätester Startzeitpunkt</h3>
         <pre>&lt;at time="02:00" end="05:00"/></pre>
         <p>
-            Wenn der Scheduler den Job nicht bis 5 Uhr starten kann, lässt er es.
+            Wenn der JobScheduler den Job nicht bis 5 Uhr starten kann, lässt er es.
             Das kann passieren, wenn die Prozessklasse erschöpft ist.
             Zusätzlich kann vielleicht noch <code>let_run="no"</code> angegeben werden.
         </p>

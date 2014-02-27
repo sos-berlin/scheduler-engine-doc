@@ -15,7 +15,7 @@
         Ein Job, der in einem Verzeichnis eintreffende Dateien verarbeitet,
         kann sich der Verzeichnisüberwachung bedienen.
         Mit dem Aufruf <scheduler_method class="Job" method="start_when_directory_changed" java_signature="java.lang.String"/>
-        sorgt der Scheduler dafür, dass eine Task läuft, sobald sich das Verzeichnis ändert.
+        sorgt der JobScheduler dafür, dass eine Task läuft, sobald sich das Verzeichnis ändert.
     </p>
     <p>
         Sie können den Aufruf für mehrere Verzeichnisse wiederholen.
@@ -41,7 +41,7 @@
         <p>
             Der Methode <scheduler_method class="Job" method="start_when_directory_changed" java_signature="java.lang.String, java.lang.String"/>
             können Sie einen Regulären Ausdruck (nach POSIX 1003.2) übergeben.
-            Der Scheduler betrachtet dann das Verzeichnis nur als geändert,
+            Der JobScheduler betrachtet dann das Verzeichnis nur als geändert,
             wenn es nach der Änderung eine Datei oder ein Verzeichnis enthält,
             dessen Name zum Regulären Ausdruck passt.
         </p>
@@ -75,7 +75,7 @@
 
         <p>
             Wenn z.B. ein Verzeichnis nicht mehr zugreifbar ist (gelöscht oder nicht mehr erreichbar),
-            gilt das als Änderung und der Scheduler startet eine Task.
+            gilt das als Änderung und der JobScheduler startet eine Task.
         </p>
         <p>
             Ein wiederholter Aufruf von

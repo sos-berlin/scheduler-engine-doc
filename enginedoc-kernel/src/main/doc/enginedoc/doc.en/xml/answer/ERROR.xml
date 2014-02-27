@@ -18,8 +18,8 @@
         <xml_parent_element name="answer">
             <description>
                 <p>
-                    The Job Scheduler responds with an <code>&lt;ERROR></code> element should a command lead to an error.
-                <!--Wenn das Kommando zu einem Fehler führt, antwortet der Scheduler mit diesem <code>&lt;ERROR></code>-Element.-->
+                    The JobScheduler responds with an <code>&lt;ERROR></code> element should a command lead to an error.
+                <!--Wenn das Kommando zu einem Fehler führt, antwortet der JobScheduler mit diesem <code>&lt;ERROR></code>-Element.-->
                 </p>
             </description>
         </xml_parent_element>

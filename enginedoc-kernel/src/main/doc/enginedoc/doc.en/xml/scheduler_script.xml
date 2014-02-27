@@ -2,18 +2,18 @@
 <?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
 
 <!--$Id$-->
-         <!--title    = "Job Scheduler Skript"-->
+         <!--title    = "JobScheduler Skript"-->
 
 <xml_element name     = "scheduler_script"
-             title    = "Job Scheduler Script"
+             title    = "JobScheduler Script"
              category = "Configuration"
              base_dir = "../"
              parent_page = "../konfiguration.xml"
              author   = "$Author: jz $"
              date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
 
-    <scheduler_keyword keyword="Job Scheduler Script"/>
-<!--<scheduler_keyword keyword="Job Scheduler Skript"/>-->
+    <scheduler_keyword keyword="JobScheduler Script"/>
+<!--<scheduler_keyword keyword="JobScheduler Skript"/>-->
 
     <xml_parent_elements>
         <xml_parent_element name="config"/>
@@ -24,7 +24,7 @@
         <xml_attribute name="name" type="Name" intial="scheduler">
             <description>
                 <p>
-                    More than one Job Scheduler script can be specified,
+                    More than one JobScheduler script can be specified,
                     as long as each script has a unique name.
                 <!--Mehrere Scheduler-Skripte können angegeben werden,
                     wenn jedem ein eigener Name gegeben wird.-->
@@ -35,11 +35,11 @@
         <xml_attribute name="ordering" type="number">
             <description>
                 <p>
-                    Job Scheduler scripts with a lower value of the <scheduler_element name="script" attribute="ordering"/> attribute are called first.
-                    The opposite is true when the Job Scheduler is being ended:
+                    JobScheduler scripts with a lower value of the <scheduler_element name="script" attribute="ordering"/> attribute are called first.
+                    The opposite is true when the JobScheduler is being ended:
                     <scheduler_method class="Job_impl" method="spooler_exit"/> is called in reverse order.
-                <!--Job Scheduler Skripte mit kleinerem <code>ordering</code> werden vorranging aufgerufen.
-                    Umgekehrt beim Beenden des Job Schedulers:
+                <!--JobScheduler Skripte mit kleinerem <code>ordering</code> werden vorranging aufgerufen.
+                    Umgekehrt beim Beenden des JobSchedulers:
                     <scheduler_method class="Job_impl" method="spooler_exit"/> werden nachrangig aufgerufen.-->
                 </p>
             </description>
@@ -59,13 +59,13 @@
         </p>
         <p>
             <scheduler_method class="Job_impl" method="spooler_init"/> 
-            is called when the Job Scheduler is started (before jobs are started).
-        <!--wird beim Start des Job Schedulers (vor dem Start der Jobs) aufgerufen.-->
+            is called when the JobScheduler is started (before jobs are started).
+        <!--wird beim Start des JobSchedulers (vor dem Start der Jobs) aufgerufen.-->
         </p>
         <p>
             <scheduler_method class="Job_impl" method="spooler_exit"/> 
-            is called after the Job Scheduler has ended (after all jobs have ended).
-        <!--wird bei Beendigung des Job Schedulers (nach Beendigung aller Jobs) aufgerufen.-->
+            is called after the JobScheduler has ended (after all jobs have ended).
+        <!--wird bei Beendigung des JobSchedulers (nach Beendigung aller Jobs) aufgerufen.-->
         </p>
     </description>
 

@@ -26,7 +26,7 @@
 
     <description>
         <p>
-            Setzt einen Feiertag fest, an dem der Scheduler einen Job nicht laufen lassen soll.
+            Setzt einen Feiertag fest, an dem der JobScheduler einen Job nicht laufen lassen soll.
         </p>
     </description>
 

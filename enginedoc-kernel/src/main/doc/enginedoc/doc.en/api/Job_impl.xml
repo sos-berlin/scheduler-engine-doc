@@ -22,21 +22,21 @@
 
 
     <title>
-        The job scheduler base object
+        The JobScheduler base object
     <!--Das allgemeine Objekt des Schedulers-->
     </title>
 
 
     <example programming_language="java">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory() );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
 
     <example programming_language="javascript">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
     </example>
 
     <example programming_language="perl">
-        <pre>$spooler_log->debug( 'The working directory of the Scheduler is ' . $spooler->directory );</pre>
+        <pre>$spooler_log->debug( 'The working directory of the JobScheduler is ' . $spooler->directory );</pre>
     </example>
 	
 </property>
@@ -130,12 +130,12 @@
             <com.type type="bool"/>
             <description>
                 <code>false</code> ends a task.
-                The Job Scheduler continues using the <scheduler_method class="Job_impl" method="spooler_exit"/> method.
-                When the task is processing an order, then this return value makes the Job Scheduler terminate the job 
+                The JobScheduler continues using the <scheduler_method class="Job_impl" method="spooler_exit"/> method.
+                When the task is processing an order, then this return value makes the JobScheduler terminate the job 
                 with an error. That is, unless a repeated start interval has been set using
                 <scheduler_method class="Job" property="delay_after_error"/>
             <!--<code>false</code> beendet die Task.
-                Der Scheduler setzt mit spooler_exit().
+                Der JobScheduler setzt mit spooler_exit().
                 <scheduler_method class="Job_impl" method="spooler_exit"/> fort.
                 Wenn die Task einen Auftrag verarbeiten soll, wird die Task mit Fehler beendet,
                 was den Job stoppt (wenn nicht
@@ -153,13 +153,13 @@
 
     <description>
         <p>
-            The Job Scheduler calls these methods once before
+            The JobScheduler calls these methods once before
             <scheduler_method class="Job_impl" method="spooler_open"/>.
             This is analog to 
             <scheduler_method class="Job_impl" method="spooler_exit"/>.
             This method is suitable for initializing purposes
             (e.g. connecting to a database).
-        <!--Der Scheduler ruft diese Methode nach dem Konstruktor und vor
+        <!--Der JobScheduler ruft diese Methode nach dem Konstruktor und vor
             <scheduler_method class="Job_impl" method="spooler_open"/>
             genau einmal auf.
             Gegenstück ist
@@ -201,11 +201,11 @@
 
         <description>
             <code>false</code> ends the task.
-            The Job Scheduler proceeds using the 
+            The JobScheduler proceeds using the 
             <scheduler_method class="Job_impl" method="spooler_close"/>.
             method.
         <!--<code>false</code> beendet die Task.
-            Der Scheduler setzt mit
+            Der JobScheduler setzt mit
             <scheduler_method class="Job_impl" method="spooler_close"/>.
             fort.-->
         </description>
@@ -265,8 +265,8 @@
             <description>
                 <p>
                     In the event of standard jobs <scheduler_element name="job" attribute="order" value="no"/>:
-                    <code>false</code> the Job Scheduler ends processing of this job;
-                    <code>true></code> the Job Scheduler continues calling the <scheduler_method class="Job_impl" method="spooler_process"/> method.
+                    <code>false</code> the JobScheduler ends processing of this job;
+                    <code>true></code> the JobScheduler continues calling the <scheduler_method class="Job_impl" method="spooler_process"/> method.
                 <!--Bei <scheduler_element name="job" attribute="order" value="no"/>:
                     <code>false</code> beendet den Joblauf.-->
                 </p>
@@ -327,7 +327,7 @@
 
     <description>
         <p>
-            This method is called by the Job Scheduler after <scheduler_method class="Job_impl" method="spooler_close"/>
+            This method is called by the JobScheduler after <scheduler_method class="Job_impl" method="spooler_close"/>
             and before <scheduler_method class="Job_impl" method="spooler_exit"/>;
             should no error have occurred.
         <!--Wird nach <scheduler_method class="Job_impl" method="spooler_close"/>,
@@ -364,7 +364,7 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <title>
-    Super Class for a Job or the Job Scheduler Script
+    Super Class for a Job or the JobScheduler Script
 <!--Oberklasse für einen Job oder das Scheduler-Skript-->
 </title>
 

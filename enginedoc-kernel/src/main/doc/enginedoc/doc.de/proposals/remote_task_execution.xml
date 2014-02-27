@@ -22,7 +22,7 @@
 
     <ul>
         <li>
-            Auf dem entfernten Rechner läuft ein Scheduler, der beliebige Jobs anderer Scheduler ausführen kann.
+            Auf dem entfernten Rechner läuft ein Scheduler, der beliebige Jobs anderer JobScheduler ausführen kann.
         </li>
         <li>
             Die Task kommuniziert nach dem Start allein mit dem Client-Scheduler. 
@@ -31,15 +31,15 @@
         </li>
     </ul>
 
-    <!--pre>&lt;job scheduler="remote_host:4444"></pre>
+    <!--pre>&lt;JobScheduler="remote_host:4444"></pre>
 
     <p>
         Besser wäre, das Attribut <code>scheduler</code> an die Prozessklassen zu binden, um diese nicht nutzlos zu machen.
     </p-->
     <p>
-        Das ein Job von einem entfernten Scheduler (auf einem entfernten Rechner) ausgeführt werden soll,
+        Das ein Job von einem entfernten JobScheduler (auf einem entfernten Rechner) ausgeführt werden soll,
         wird über die Prozessklasse definert.
-        Die Prozessklasse wird dem entfernten Scheduler zugeordnet.
+        Die Prozessklasse wird dem entfernten JobScheduler zugeordnet.
     </p>
 
     <pre>&lt;process_class name="remote" scheduler="remote_host:4444" max_processes="3">
@@ -48,15 +48,15 @@
 
 
     <p>
-        Der entfernte Scheduler dient nur dazu, einen Task-Prozess zu starten.
+        Der entfernte JobScheduler dient nur dazu, einen Task-Prozess zu starten.
         Anschließend hat er mit diesem Prozess nichts zu tun
         und der Task-Prozess verbindet sich mit dem steuernden Scheduler.
     </p>
 
     <h3>Am Server ist fast nichts einstellbar</h3>
     <p>
-        Der Scheduler lässt mit <scheduler_element name="allowed_host" attribute="level" value="all"/> den Start externer Jobs zu.
-        Der externe Scheduler übergibt die Einstellungen des <scheduler_element name="job"/>.
+        Der JobScheduler lässt mit <scheduler_element name="allowed_host" attribute="level" value="all"/> den Start externer Jobs zu.
+        Der externe JobScheduler übergibt die Einstellungen des <scheduler_element name="job"/>.
     </p>
     <p>
         Doch einige Einstellungen des Servers werden berücksichtigt.
@@ -100,7 +100,7 @@
 
     <h3>Prozessregister</h3>
     <p>
-        Der entfernte Scheduler führt ein Prozessregister,
+        Der entfernte JobScheduler führt ein Prozessregister,
         das mit <scheduler_element name="show_state"/> eingesehen werden kann.
         Die Prozesse sind dem Client-Scheduler zugeordnet,
         der sie auch abbrechen kann (entferntes <scheduler_element name="kill_task"/>).
@@ -148,7 +148,7 @@
         Lokale Dateinamen werden lokal eingestellt. Das ist noch nicht ausgearbeitet.
     </p-->
     <!--p>
-        Dabei werden folgende Angaben zum entfernten Scheduler übertragen und dort verarbeitet:
+        Dabei werden folgende Angaben zum entfernten JobScheduler übertragen und dort verarbeitet:
     </p>
     <ul>
         <li>

@@ -32,8 +32,8 @@
             <!--<code>&lt;select_event event_type="…"/></code> einzelne Ereignistypen (sonst alle Ereignistypen)-->
             </li>
             <li>
-                <code>&lt;select_event scheduler_id="…"/></code> einzelne Scheduler (sonst alle Scheduler)
-            <!--<code>&lt;select_event scheduler_id="…"/></code> einzelne Scheduler (sonst alle Scheduler)-->
+                <code>&lt;select_event scheduler_id="…"/></code> einzelne JobScheduler (sonst alle Scheduler)
+            <!--<code>&lt;select_event scheduler_id="…"/></code> einzelne JobScheduler (sonst alle Scheduler)-->
             </li>
         </ul>
     </description>
@@ -71,8 +71,8 @@
         <xml_attribute name="scheduler_id" type="id">
             <description>
                 <p>
-                    A &lt;scheduler_a href="../supervisor.xml">Supervisor&lt;/scheduler_a> Job Scheduler,
-                    can deliver the event reports from other Job Schedulers, whose IDs are specified here.
+                    A &lt;scheduler_a href="../supervisor.xml">Supervisor&lt;/scheduler_a> JobScheduler,
+                    can deliver the event reports from other JobSchedulers, whose IDs are specified here.
                     More than one <code>&lt;get_events></code> with differing <code>event_type="…"</code> can be specified.
                 <!--Ein &lt;scheduler_a href="../supervisor.xml">Supervisor&lt;/scheduler_a> kann Ereignismeldungen von anderen Schedulern
                     liefern, die hier ausgewählt werden können.

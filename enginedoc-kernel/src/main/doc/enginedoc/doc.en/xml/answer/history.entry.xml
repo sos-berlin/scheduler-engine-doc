@@ -37,8 +37,8 @@
     <!--<xml_attribute name="spooler_id" type="name" title="Scheduler-Id">-->
             <description>
                 <p>
-                    The Job Scheduler id (or <code>"-"</code>, should the scheduler not have an id).
-                <!--Kennung des Schedulers oder <code>"-"</code>, wenn der Scheduler keine Kennung hat.-->
+                    The JobScheduler id (or <code>"-"</code>, should the scheduler not have an id).
+                <!--Kennung des Schedulers oder <code>"-"</code>, wenn der JobScheduler keine Kennung hat.-->
                 <!--<scheduler_comment>Das sollte in "" geändert werden.</scheduler_comment>-->
                 </p>
             </description>

@@ -31,7 +31,7 @@ Wie spooler.var("name1")=value
 
 <h2>Ereignisse</h2>
 <p>
-    Der Scheduler kennt Ereignisse.
+    Der JobScheduler kennt Ereignisse.
     Einem Ereigniss kann eine eMail oder der Aufruf einer Funktion des Scheduler-Skripts zugeordnet werden.
 </p>
 <p>
@@ -43,7 +43,7 @@ Wie spooler.var("name1")=value
     <col style="padding-left: 2ex"/>
 
     <tr>
-        <td>- Scheduler startet</td>
+        <td>- JobScheduler startet</td>
         <td>
             <p>
             </p>
@@ -51,7 +51,7 @@ Wie spooler.var("name1")=value
     </tr>
 
     <tr>
-        <td>- Scheduler beendet sich</td>
+        <td>- JobScheduler beendet sich</td>
         <td>
             <p>
                 Einleitung der Beendigung (warten auf Tasks).<br/>
@@ -61,16 +61,16 @@ Wie spooler.var("name1")=value
     </tr>
 
     <tr>
-        <td>- Scheduler hat ein Problem mit der Datenbank</td>
+        <td>- JobScheduler hat ein Problem mit der Datenbank</td>
         <td>
             <p>
-                Scheduler wartet, schaltet auf Textdateien um oder beendet sich.
+                JobScheduler wartet, schaltet auf Textdateien um oder beendet sich.
             </p>
         </td>
     </tr>
 
     <tr>
-        <td>- Scheduler beendet sich wegen eines Fehlers</td>
+        <td>- JobScheduler beendet sich wegen eines Fehlers</td>
         <td>
             <p>
             </p>
@@ -129,12 +129,12 @@ Wie spooler.var("name1")=value
 
 
 
-<h2>Windows Job-Objekte für Scheduler nutzen</h2>
+<h2>Windows Job-Objekte für JobScheduler nutzen</h2>
 <p>
     Windows kennt Job-Objekte, die aus Prozessen gebildet
-    werden und die abgefragt und beschränkt werden können. Im Scheduler könnte aus
+    werden und die abgefragt und beschränkt werden können. Im JobScheduler könnte aus
     einer Task ein Job-Objekt gebildet werden. Alle von der Task direkt oder
-    indirekt gestarteten Prozesse (auch die, die der Scheduler nicht kennt), gehören
+    indirekt gestarteten Prozesse (auch die, die der JobScheduler nicht kennt), gehören
     dann zum Job-Objekt.
 </p>
 <p>

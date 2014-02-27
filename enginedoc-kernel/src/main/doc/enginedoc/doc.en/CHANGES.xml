@@ -63,9 +63,9 @@
     </change>
 
 		<change date="2010-05-04" version="2.1.1" subversion_revision="6096">
-        <revision jira="JS-380" type="correction" title="Job Scheduler not 'freeze' any longer if a job is set to 'suspend'.">
+        <revision jira="JS-380" type="correction" title="JobScheduler not 'freeze' any longer if a job is set to 'suspend'.">
             <description>
-            API jobs had once a while the problem that the Job Scheduler 'freezed' if a job is set to 'suspend'. 
+            API jobs had once a while the problem that the JobScheduler 'freezed' if a job is set to 'suspend'. 
             This was happend when the 'suspend' was called inside of an operation (spooler_start, spooler_process ...).
             </description>
         </revision>
@@ -96,7 +96,7 @@
     </change>
 	  
 	  <change date="2010-04-13" version="2.1.0" subversion_revision="6078">
-        <revision jira="JS-444" type="correction" title="Includes are extended in the running Scheduler instance for monitor scripts too.">
+        <revision jira="JS-444" type="correction" title="Includes are extended in the running JobScheduler instance for monitor scripts too.">
             <description>
 	            Files which are denotes with the live_file attribute are reloaded after changes. For this the file must be LOCAL stored.
             </description>
@@ -148,10 +148,10 @@
     <!--<revision type="new" title="&lt;job warn_if_shorter_than und warn_if_longer_than>">-->
             <description>
                 <p>
-                    The Job Scheduler issues a warning when the time a job step takes
+                    The JobScheduler issues a warning when the time a job step takes
                     lies outside a predefined time span.
                 <!--Wenn die Dauer eines Jobschritts von einer Vorgabe abweicht, 
-                    gibt der Scheduler eine Warnung aus.-->
+                    gibt der JobScheduler eine Warnung aus.-->
                 </p>
                 <ul>
                     <li>
@@ -204,7 +204,7 @@
     
 
     <change date="2009-03-02" version="2.0.220" subversion_revision="5972">
-        <revision type="correction" title="Standing Orders are No Longer Immediately Started With the Next Job Scheduler Run After kill -9"/>
+        <revision type="correction" title="Standing Orders are No Longer Immediately Started With the Next JobScheduler Run After kill -9"/>
     <!--<revision type="correction" title="Nach kill -9 wird Dauerauftrag nicht mehr sofort beim nächsten Scheduler-Lauf gestartet"/>-->
         
         <revision type="new" title="&lt;settings> in &lt;job>">
@@ -255,16 +255,16 @@
     </change>
 
     <change date="2009-02-25" version="2.0.220" subversion_revision="5970">
-        <revision type="modification" title="Job Schedulers Running as Unix-Daemons Now Divert stdout/stderr to a File">
+        <revision type="modification" title="JobSchedulers Running as Unix-Daemons Now Divert stdout/stderr to a File">
     <!--<revision type="modification" title="Scheduler als Unix-Daemon leitet stdout/stderr in Datei um">-->
             <description>
                 <p>
                     As one would expect from a program riunning as a Daemon, 
-                    the Job Scheduler now closes stdout and stderr diverts the output to the 
+                    the JobScheduler now closes stdout and stderr diverts the output to the 
                     <code>scheduler.out</code> file. 
                     Note that this file must be writable.
                 <!--Wie es sich für einen Daemon gehört, 
-                    schließt der Scheduler stdout und stderr und leitet die Ausgaben in die Datei 
+                    schließt der JobScheduler stdout und stderr und leitet die Ausgaben in die Datei 
                     <code>scheduler.out</code>. 
                     Diese Datei muss beschreibbar sein.-->
                 </p>
@@ -280,13 +280,13 @@
     </change>
 
     <change date="2009-01-27" version="2.0.219" subversion_revision="5968">
-        <revision type="correction" title="libhostjava.so for HP-UX/Itanium is now Integrated in the Job Scheduler">
-    <!--<revision type="correction" title="libhostjava.so im Scheduler für HP-UX/Itanium eingebunden">-->
+        <revision type="correction" title="libhostjava.so for HP-UX/Itanium is now Integrated in the JobScheduler">
+    <!--<revision type="correction" title="libhostjava.so im JobScheduler für HP-UX/Itanium eingebunden">-->
             <description>
                 <p>
-                    In contrast to HP-UX/PA-RISC, the Itanium libhosthava.so is now integrated in the Job Scheduler.
+                    In contrast to HP-UX/PA-RISC, the Itanium libhosthava.so is now integrated in the JobScheduler.
                     This means that the "com_construct problem" no longer occurs.
-                <!--Im Gegensatz zu HP-UX/PA-RISC ist jetzt für Itanium die libhosthava.so in den Scheduler eingebunden.
+                <!--Im Gegensatz zu HP-UX/PA-RISC ist jetzt für Itanium die libhosthava.so in den JobScheduler eingebunden.
                     Damit tritt das "com_construct-Problem" nicht mehr auf.-->
                 </p>
             </description>
@@ -304,12 +304,12 @@
             </description>
         </revision>
 
-        <revision jira="JS-321" type="correction" title="Backup Job Schedulers Take Over Job, Task, Job Chain and Order Settings Once More">
+        <revision jira="JS-321" type="correction" title="Backup JobSchedulers Take Over Job, Task, Job Chain and Order Settings Once More">
     <!--<revision jira="JS-321" type="correction" title="Backup-Scheduler übernimmt wieder Job-, Task-, Jobketten- und Auftragseinstellungen">-->
             <description>
                 <p>
                     The cluster_member_id database columns are no longer filled when 
-                    operating with a backup Job Scheduler.
+                    operating with a backup JobScheduler.
                     They are only filled when operating with distributed orders, 
                     so that records are now only directly allocated to cluster members.
                 <!--Im Betrieb mit einem Backup-Scheduler werden die Spalten cluster_member_id nicht mehr gefüllt.
@@ -346,14 +346,14 @@
                 <p>
                     Windows requires that verlangt OEM coding (CP437) is used for batch files.
                     When a character from <scheduler_element name="script"/> cannot be interpreted,
-                    the Job Scheduler terminates the job with a <scheduler_message code="SCHEDULER-471"/> message.
+                    the JobScheduler terminates the job with a <scheduler_message code="SCHEDULER-471"/> message.
                     Note, however, that when reading the XML configuration file, 
-                    the Job Scheduler ignores chararcters that are not in Latin1: 
+                    the JobScheduler ignores chararcters that are not in Latin1: 
                     see here <scheduler_a href="konfiguration.xml#encoding" quote="yes"/>.
                 <!--Windows verlangt für Batch-Dateien die OEM-Codierung.
                     Wenn ein Zeichen aus <scheduler_element name="script"/> nicht umgesetzt werden kann,
-                    bricht der Scheduler den Job mit der Meldung <scheduler_message code="SCHEDULER-471"/> ab.
-                    Jedoch ignoriert der Scheduler schon beim Einlesen der XML-Konfiguration Zeichen, die nicht in Latin1 sind,
+                    bricht der JobScheduler den Job mit der Meldung <scheduler_message code="SCHEDULER-471"/> ab.
+                    Jedoch ignoriert der JobScheduler schon beim Einlesen der XML-Konfiguration Zeichen, die nicht in Latin1 sind,
                     siehe <scheduler_a href="konfiguration.xml#encoding" quote="yes"/>.-->
                 </p>
                 <scheduler_message level="error" code="SCHEDULER-471"/>
@@ -427,15 +427,15 @@
     </change>
     
     <change date="2008-10-22" version="2.0.215" subversion_revision="5937">
-        <revision type="new" title="Special License Keys Now Allow the Job Scheduler to Return the Database Password">
-    <!--<revision type="new" title="Bei besonderem Lizenzsschlüssel liefert der Scheduler das Datenbankkennwort">-->
+        <revision type="new" title="Special License Keys Now Allow the JobScheduler to Return the Database Password">
+    <!--<revision type="new" title="Bei besonderem Lizenzsschlüssel liefert der JobScheduler das Datenbankkennwort">-->
             <description>
                 <p>
                     <scheduler_element name="licence.use"/> can return the license key.
-                    The Job Scheduler no longer supresses the characters which begin with <code>-password=</code> 
+                    The JobScheduler no longer supresses the characters which begin with <code>-password=</code> 
                     in its response to <scheduler_element name="show_state"/>.
                 <!--Der Lizenzschlüssel kann per <scheduler_element name="licence.use"/> übergeben werden.
-                    Daraufhin unterdrückt der Scheduler nicht länger in der Antwort von 
+                    Daraufhin unterdrückt der JobScheduler nicht länger in der Antwort von 
                     <scheduler_element name="show_state"/> die Zeichenfolge, die mit <code>-password=</code> beginnt.-->
                 </p>
                 <ul>
@@ -456,7 +456,7 @@
             <description>
                 <p>
                     When the general, central configuration directory is deleted, 
-                    then the supervisory Job Scheduler deletes the corresponding objects in all connected Job Schedulers.
+                    then the supervisory JobScheduler deletes the corresponding objects in all connected JobSchedulers.
                 <!--Wenn das zentrale allgemeine Konfigurationsverzeichnis gelöscht wird,
                     lässt der Supervisor in allen angeschlossenen Schedulern die entsprechenden Objekte löschen.-->
                 </p>
@@ -487,7 +487,7 @@
                 <ul>
                     <li>
                         <scheduler_element name="modify_job" attribute="cmd" value="stopped"/>.
-                        The Job Scheduler is being shut down or restarted and any job modifications made will not be noted in the database.
+                        The JobScheduler is being shut down or restarted and any job modifications made will not be noted in the database.
                     <!--Wenn der Job wegen Herunterfahrens des Schedulers gestoppt wird, wird das nicht in der Datenbank vermerkt.-->
                     </li>
                     <li>
@@ -509,10 +509,10 @@
     <!--<revision type="correction" title="Verschachtelte Jobketten mit Großbuchstaben funktionieren">-->
             <description>
                 <p>
-                    Capital letters in the names of parent job chains could cause the Job Scheduler to fail.
+                    Capital letters in the names of parent job chains could cause the JobScheduler to fail.
                     This has now been cured.
                     Capital letters in job chain names are now treated the same as lower case ones.
-                <!--Großbuchstaben im Namen der übergeordneten Jobkette konnten den Scheduler abbrechen lassen.
+                <!--Großbuchstaben im Namen der übergeordneten Jobkette konnten den JobScheduler abbrechen lassen.
                     Das ist behoben.
                     In Jobkettennamen werden große wie kleine Buchstaben angesehen.-->
                 </p>
@@ -534,7 +534,7 @@
             <description>
                 <p>
                     The main protocol is no longer cut off in a browser window
-                    when the main protocol had been sent because of an error which had taken place as the Job Scheduler was starting.
+                    when the main protocol had been sent because of an error which had taken place as the JobScheduler was starting.
                 <!--Das Hauptprotokoll im Browser-Fenster bricht jetzt nicht mehr ab.
                     Das passierte, nachdem das Hauptprotokoll wegen eines Fehler beim Scheduler-Start versendet worden ist.-->
                 </p>
@@ -596,7 +596,7 @@
     <!--<revision type="new" title="&quot;..&quot; ist in allen Pfaden möglich">-->
             <description>
                 <p>
-                    Paths to Job Scheduler objects (job, job chain, etc.) can now use ".." to point to a higher directory level.
+                    Paths to JobScheduler objects (job, job chain, etc.) can now use ".." to point to a higher directory level.
                     For example, in
                 <!--Pfade, die auf ein Scheduler-Objekt verweisen (Job, Jobkette usw.) können mit ".." ins obere Verzeichnis verweisen.
                     Zum Beispiel in-->
@@ -625,9 +625,9 @@
             <description>
                 <p>
                     When a non-API process cannot be started on a Unix system (error on <code>execvp</code>),
-                    then the Job Scheduler returns the  <code>execvp</code> parameter list and environment variabes.
+                    then the JobScheduler returns the  <code>execvp</code> parameter list and environment variabes.
                 <!--Wenn ein Nicht-API-Prozess unter Unix sich nicht starten lässt (Fehler bei <code>execvp</code>),
-                    gibt der Scheduler die <code>execvp</code>-Parameterliste und die Umgebungsvariablen aus.-->
+                    gibt der JobScheduler die <code>execvp</code>-Parameterliste und die Umgebungsvariablen aus.-->
                 </p>
                 <ul>
                     <li>
@@ -709,7 +709,7 @@ $spooler_log->info( $a )</pre>
     
     
     <change date="2008-07-22" version="2.0.210" subversion_revision="5837">
-        <revision type="new" title="XML Commands for Setting and Reading Job Scheduler Parameters Added">
+        <revision type="new" title="XML Commands for Setting and Reading JobScheduler Parameters Added">
     <!--<revision type="new" title="XML-Kommandos zum Setzen und Lesen der Scheduler-Parameter">-->
             <description>
                 <ul>
@@ -742,8 +742,8 @@ $spooler_log->info( $a )</pre>
                 </ul>
                 
                 <p>
-                    The Job Scheduler can now handle holidays up to 2038.
-                <!--Der Scheduler sieht zwanzig Jahre voraus, längstens aber bis 2038.-->
+                    The JobScheduler can now handle holidays up to 2038.
+                <!--Der JobScheduler sieht zwanzig Jahre voraus, längstens aber bis 2038.-->
                 </p>
             </description>
         </revision>
@@ -791,12 +791,12 @@ $spooler_log->info( $a )</pre>
     <!--<revision type="correction" title="Dateiaufträge beschleunigt">-->
             <description>
                 <p>
-                    The Job Scheduler now feeds file orders more quickly to a job chain 
+                    The JobScheduler now feeds file orders more quickly to a job chain 
                     when the first job in the job chain allows more than one task
                     (<scheduler_element name="job" attribute="tasks"/>).
                 <!--Wenn der erste Job der Jobkette mehrere Tasks erlaubt
                     (<scheduler_element name="job" attribute="tasks"/>), 
-                    füttert der Scheduler die Jobkette jetzt schneller mit den Dateiaufträgen.-->
+                    füttert der JobScheduler die Jobkette jetzt schneller mit den Dateiaufträgen.-->
                 </p>
             </description>
         </revision>
@@ -971,7 +971,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="Verteilte Aufträge schreiben wieder nur einen Historiensatz">-->
             <description>
                 <p>
-                    The Job Scheduler has been writing history entries for every step of distributed orders completed 
+                    The JobScheduler has been writing history entries for every step of distributed orders completed 
                     since version 2.0.194.8488 (2008-01-05). 
                     This has now been corrected.
                 <!--Seit Version 2.0.194.8488 (2008-01-05) schrieben verteilte Aufträge für jeden Schritt einen Historiensatz. 
@@ -1073,13 +1073,13 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     </change>
 
     <change date="2008-04-21" version="2.0.202" subversion_revision="5728">
-        <revision type="correction" title="Problem When Starting Two Cluster Job Schedulers Simultaneously Cured">
+        <revision type="correction" title="Problem When Starting Two Cluster JobSchedulers Simultaneously Cured">
             <description>
                 <p>
-                    When two Job Schedulers in the same clusters are started at the same time, 
+                    When two JobSchedulers in the same clusters are started at the same time, 
                     one of them could fail to start.
                     This has now been corrected.
-                <!--Beim gleichzeitigen Start zweier Scheduler desselben Clusters konnte ein Scheduler beim Start hängen bleiben.
+                <!--Beim gleichzeitigen Start zweier JobScheduler desselben Clusters konnte ein JobScheduler beim Start hängen bleiben.
                     Das ist behoben.-->
                 </p>
             </description>
@@ -1118,7 +1118,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-60" type="modification" title="&lt;script> &lt;/script> wirkt wie &lt;script/>">.-->
             <description>
                 <p>
-                    The Job Scheduler now ignores empty text nodes (only blank spaces, new line and tabulators) 
+                    The JobScheduler now ignores empty text nodes (only blank spaces, new line and tabulators) 
                     in the <scheduler_element name="script"/> XML element.
                     When the <code>&lt;script></code> element only contains one empty text node, 
                     this is now treated as unspecified source code.
@@ -1134,8 +1134,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="modification" title="Jobprotokolldatei wird nicht mehr offengehalten">.-->
             <description>
                 <p>
-                    The Job Scheduler now closes job log files after writing in them and reopens them as required.
-                <!--Wenn der Scheduler etwas ins Jobprotokoll schreibt, 
+                    The JobScheduler now closes job log files after writing in them and reopens them as required.
+                <!--Wenn der JobScheduler etwas ins Jobprotokoll schreibt, 
                     öffnet er die Datei zuvor und schließt sie danach wieder..-->
                 </p>
             </description>
@@ -1149,14 +1149,14 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 <p>
                     With JS-150, the <code>SCHEDULER_ORDER_HISTORY.END_TIME</code> database column
                     needs to be able to accept <code>NULL</code>.
-                    The Job Scheduler checks this on starting and modifies the column.
+                    The JobScheduler checks this on starting and modifies the column.
                     Access demands that a special procedure is followed: 
-                    the Job Scheduler creates a copy of the column, 
+                    the JobScheduler creates a copy of the column, 
                     which it then copies back into the modified column.
-                    This operation is carried out once as the Job Scheduler is starting and should not be interrupted.
+                    This operation is carried out once as the JobScheduler is starting and should not be interrupted.
                 <!--Die Datenbank-Spalte <code>SCHEDULER_ORDER_HISTORY.END_TIME</code> muss mit JS-150 <code>NULL</code> aufnehmen können.
-                    Der Scheduler prüft das beim Start und ändert die Spalte.
-                    Access verlangt dazu ein besonders Verfahren: Der Scheduler legt eine Kopie der Spalte an, die er dann in die erneuerte zurückkopiert.
+                    Der JobScheduler prüft das beim Start und ändert die Spalte.
+                    Access verlangt dazu ein besonders Verfahren: Der JobScheduler legt eine Kopie der Spalte an, die er dann in die erneuerte zurückkopiert.
                     Diese Operation, die einmal beim Start des Schedulers durchgeführt wird,
                     sollte nicht unterbrochen werden..-->
                 </p>
@@ -1169,7 +1169,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-150" type="new" title="Neue Spalten ERROR, ERROR_CODE und ERROR_TEXT in der Auftragsschritthistorie">.-->
             <description>
                 <p>
-                    When a task error occurs, the Job Scheduler now records information about the error in the new columns in the 
+                    When a task error occurs, the JobScheduler now records information about the error in the new columns in the 
                     <code>SCHEDULER_ORDER_STEP_HISTORY</code> table.
                 <!--Bei einem Task-Fehler werden die neuen Felder der Tabelle <code>SCHEDULER_ORDER_STEP_HISTORY</code> gefüllt..-->
                 </p>
@@ -1185,11 +1185,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     Days in <scheduler_element name="weekdays"/> and
                     <scheduler_element name="monthdays"/>
                     can now be repeated. 
-                    The Job Scheduler now combines the times specified.
+                    The JobScheduler now combines the times specified.
                 <!--In <scheduler_element name="weekdays"/> und
                     <scheduler_element name="monthdays"/>
                     können Tage wiederholt angegeben werden. 
-                    Der Scheduler mischt die Perioden..-->
+                    Der JobScheduler mischt die Perioden..-->
                     
                     The <code>SCHEDULER 444</code> message has been dropped.
                 <!--Die Meldung <code>SCHEDULER-444</code> entfällt..-->
@@ -1308,15 +1308,15 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-221" type="new" title="Cache für zentrale Konfiguration und parallele lokale Konfiguration">-->
             <description>
                 <p>
-                    Configurations replicated by a supervisory Job Scheduler are stored in 
-                    the new <code>./config/cache</code> directory of a local Job Scheduler.
+                    Configurations replicated by a supervisory JobScheduler are stored in 
+                    the new <code>./config/cache</code> directory of a local JobScheduler.
                 <!--Eine vom Supervisor geladene <a href="central_configuration.xml">zentrale Konfiguration</a> wird im neuen Verzeichnis <code>./config/cache</code>
                     gehalten.-->
                 </p>
                 <p>
-                    The Job Scheduler merges central and local configurations.
+                    The JobScheduler merges central and local configurations.
                     A centrally configured object cannot be overwritten locally.
-                <!--Der Job Scheduler mischt die zentrale mit der lokalen Konfiguration.
+                <!--Der JobScheduler mischt die zentrale mit der lokalen Konfiguration.
                     Ein zentral konfiguriertes Objekt kann nicht lokal überschrieben werden.-->
                 </p>
                 <p>
@@ -1378,13 +1378,13 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             </description>
         </revision>
 
-        <revision jira="JS-213" type="new" title="Non-API jobs can be executed on remote Job Schedulers">
-    <!--<revision jira="JS-213" type="new" title="Nicht-API-Tasks lassen sich unter entferntem Scheduler ausführen">-->
+        <revision jira="JS-213" type="new" title="Non-API jobs can be executed on remote JobSchedulers">
+    <!--<revision jira="JS-213" type="new" title="Nicht-API-Tasks lassen sich unter entferntem JobScheduler ausführen">-->
             <description>
                 <p>
-                    A process class for job execution by a remote Job Scheduler can now be assigned to non-API jobs.
+                    A process class for job execution by a remote JobScheduler can now be assigned to non-API jobs.
                 <!--Für Nicht-API-Jobs 
-                    lässt sich eine Prozessklasse mit entferntem Scheduler angeben.-->
+                    lässt sich eine Prozessklasse mit entferntem JobScheduler angeben.-->
                 </p>
                 <ul>
                     <li>
@@ -1414,10 +1414,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-204" type="new" title="Zentrale Konfiguration">-->
             <description>
                 <p>
-                    A Job Scheduler running as Supervisor can replicate configuration files &amp; directories from a <a href="central_configuration.xml">central configuration</a> to other Job Schedulers.
+                    A JobScheduler running as Supervisor can replicate configuration files &amp; directories from a <a href="central_configuration.xml">central configuration</a> to other JobSchedulers.
                     Configuration changes made in this manner on a local host are immediately forwarded by the Supervisor 
-                    to remote Job Schedulers. Any changes become effective without the remote Job Scheduler having to be restarted.
-                <!--Ein als Supervisor laufender Scheduler kann Konfigurationsdateien (-verzeichnisse) für andere Scheduler bereitstellen.
+                    to remote JobSchedulers. Any changes become effective without the remote JobScheduler having to be restarted.
+                <!--Ein als Supervisor laufender JobScheduler kann Konfigurationsdateien (-verzeichnisse) für andere JobScheduler bereitstellen.
                     Änderungen werden laufen übernommen.-->
                 </p>
                 <ul>
@@ -1458,11 +1458,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     Das geschieht sekündlich. Wenn keine Ausgabe kommt, verlängert sich die Period auf zehn Sekunden.-->
                 </p>
                 <p>
-                    For API tasks, which are executed on a remote Job Scheduler 
+                    For API tasks, which are executed on a remote JobScheduler 
                     (<scheduler_element name="process_class" attribute="remote_scheduler"/>),
                     output is not written to the log file after the script has ended 
                     (that is just before the process is ended).
-                <!--Bei API-Tasks, die auf einem entfernten Scheduler laufen (<scheduler_element name="process_class" attribute="remote_scheduler"/>),
+                <!--Bei API-Tasks, die auf einem entfernten JobScheduler laufen (<scheduler_element name="process_class" attribute="remote_scheduler"/>),
                     werden Ausgaben nach Beendigung des Skripts (also kurz vor Beendigung des Prozesses) nicht übernommen.-->
                 </p>
             </description>
@@ -1492,7 +1492,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
 
     <change date="2008-01-14" version="2.0.196" subversion_revision="5515">
 
-        <revision type="new" title="Job Scheduler Ready for AIX">
+        <revision type="new" title="JobScheduler Ready for AIX">
     <!--<revision type="new" title="Scheduler für AIX bereitgestellt">-->
         </revision>
     </change>
@@ -1622,7 +1622,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     <scheduler_element name="config" attribute="central_configuration_directory"/>
                 </p>
                 <p>
-                    The supervising Job Scheduler can now overwrite the local configurations of other Job Schedulers
+                    The supervising JobScheduler can now overwrite the local configurations of other JobSchedulers
                     by a <a href="central_configuration.xml">central configuration</a>
                 <!--Der Supervisor kann jetzt die Konfiguration überschreiben.-->
                 </p>
@@ -1641,23 +1641,23 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
 
     <change date="2007-12-21" version="2.0.192" subversion_revision="5444">
 
-        <revision type="correction" title="&lt;file_order_source> Without regex= Could Cause the Job Scheduler to Abort">
-    <!--<revision type="correction" title="&lt;file_order_source> ohne regex= konnte Scheduler abbrechen">-->
+        <revision type="correction" title="&lt;file_order_source> Without regex= Could Cause the JobScheduler to Abort">
+    <!--<revision type="correction" title="&lt;file_order_source> ohne regex= konnte JobScheduler abbrechen">-->
             <description>
                 <p>
                     An empty <code>regex=</code> attribute in <scheduler_element name="file_order_source"/> 
-                    could cause the Job Scheduler to abort, 
+                    could cause the JobScheduler to abort, 
                     after a file name had been set on the blacklist
                     (because it is still present after an order has been completed).
                     This has been resolved.
                 <!--Bei <scheduler_element name="file_order_source"/> mit leerem Attribut <code>regex=</code>
-                    konnte der Scheduler abbrechen, 
+                    konnte der JobScheduler abbrechen, 
                     nachdem ein Dateiname auf die Schwarze Liste gesetzt worden ist
                     (weil er nach Auftragsführung noch vorhanden ist).
                     Das ist behoben.-->
                 </p>
                 <p>
-                    Interim solution in the current Job Scheduler version: <code>regex="."</code>
+                    Interim solution in the current JobScheduler version: <code>regex="."</code>
                 <!--Zwischenlösung im bisherigen Scheduler: <code>regex="."</code>-->
                 </p>
             </description>
@@ -1703,9 +1703,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <revision type="correction" title="&lt;show_order>">
             <description>
                 <p>
-                    The <scheduler_element name="show_order"/> command could cause the Job Scheduler to abort,
+                    The <scheduler_element name="show_order"/> command could cause the JobScheduler to abort,
                     when an order was no longer available. This has now been cured.
-                <!--Das Kommando <scheduler_element name="show_order"/> konnte den Scheduler abbrechen,
+                <!--Das Kommando <scheduler_element name="show_order"/> konnte den JobScheduler abbrechen,
                     wenn der Auftrag nicht mehr vorhanden war. Das ist behoben.-->
                 </p>
             </description>
@@ -1795,9 +1795,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     Because some PostgresQL installations do not support Latin-1 characters, 
-                    the Job Scheduler now only tests the ASCII character set (basic latin).
+                    the JobScheduler now only tests the ASCII character set (basic latin).
                 <!--Weil manche PostgresQL-Installationen Latin-1 nicht unterstützen, 
-                    prüft der Scheduler nur noch den ASCII-Zeichenvorrat (Basic Latin).-->
+                    prüft der JobScheduler nur noch den ASCII-Zeichenvorrat (Basic Latin).-->
                 </p>
                 <scheduler_message level="error" code="SCHEDULER-452"/>
             </description>
@@ -1814,10 +1814,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 <p>
                     Internal XML documents were being made invalid because variables such as 
                     <code>ERASE</code> can contain characters which are not recognised in UNICODE.
-                    The Job Scheduler now codes these characters in hexadecimal.
+                    The JobScheduler now codes these characters in hexadecimal.
                 <!--Weil Umgebungsvariablen (z.B. <code>ERASE</code>) Zeichen enthalten können, 
                     die UNICODE nicht kennt, wurden interne XML-Dokumente ungültig.
-                    Solche Zeichen codiert der Scheduler jetzt hexadezimal.-->
+                    Solche Zeichen codiert der JobScheduler jetzt hexadezimal.-->
                 </p>
             </description>
         </revision>
@@ -1827,12 +1827,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
 
     <change date="2007-11-18" version="2.0.192" subversion_revision="5394">
 
-        <revision type="new" title="PostgresQL is Better Supported - the Job Scheduler Now Tests the Database">
-    <!--<revision type="new" title="PostgresQL wird besser unterstützt, Scheduler prüft Datenbank">-->
+        <revision type="new" title="PostgresQL is Better Supported - the JobScheduler Now Tests the Database">
+    <!--<revision type="new" title="PostgresQL wird besser unterstützt, JobScheduler prüft Datenbank">-->
             <description>
                 <p>
-                    On starting, the Job Scheduler now carries out simple tests on the database:
-                <!--Beim Start führt der Scheduler einfache Tests des Datenbankmoduls durch:-->
+                    On starting, the JobScheduler now carries out simple tests on the database:
+                <!--Beim Start führt der JobScheduler einfache Tests des Datenbankmoduls durch:-->
                 </p>
                 <ul>
                     <li>
@@ -1851,8 +1851,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     </li>
                 </ul>
                 <p>
-                    The Job Scheduler does not start should one of these tests fail.
-                <!--Bei einem Fehlschlag startet der Scheduler nicht.-->
+                    The JobScheduler does not start should one of these tests fail.
+                <!--Bei einem Fehlschlag startet der JobScheduler nicht.-->
                 </p>
                 <scheduler_message level="error" code="SCHEDULER-451"/>
                 <scheduler_message level="error" code="SCHEDULER-452"/>
@@ -1860,7 +1860,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             </description>
         </revision>
 
-        <revision type="modification" title="Remote Task Execution: Spooler.directory, .log_dir, .ini_path and .include_path Return Values for the Remote Job Scheduler">
+        <revision type="modification" title="Remote Task Execution: Spooler.directory, .log_dir, .ini_path and .include_path Return Values for the Remote JobScheduler">
     <!--<revision type="modification" title="Entfernte Task-Ausführung: Spooler.directory, .log_dir, .ini_path und .include_path liefern Werte des entfernten Schedulers">-->
             <description>
                 <ul>
@@ -1927,8 +1927,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-180" type="correction" title="Java-Quellcode kann jetzt mit Blank im Classpath übersetzt werden">-->
             <description>
                 <p>
-                    The Job Scheduler sets the <code>CLASSPATH</code> environment variable.
-                <!--Der Scheduler setzt dazu die Umgebungsvariable <code>CLASSPATH</code>.-->
+                    The JobScheduler sets the <code>CLASSPATH</code> environment variable.
+                <!--Der JobScheduler setzt dazu die Umgebungsvariable <code>CLASSPATH</code>.-->
                 </p>
             </description>
         </revision>
@@ -1962,11 +1962,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     On Windows systems, a change in the capitalization of the name of a Java class lead to an error
                     when the source code of the class was directly specified in 
                     <scheduler_element name="script" attribute="language" value="java"/>.
-                    The Job Scheduler now deletes the generated <code>.java</code> file, 
+                    The JobScheduler now deletes the generated <code>.java</code> file, 
                     in order to force Windows to accept the changed capitalization.
                 <!--Unter Windows führte die Änderung der Großschreibung des Namens einer Java-Klasse zu einem Fehler, 
                     wenn deren Quell-Code direkt in <scheduler_element name="script" attribute="language" value="java"/> angegeben war.
-                    Der Scheduler löscht jetzt die generierte <code>.java</code>-Datei, um Windows zu der geänderten Großschreibungsweise zu zwingen.-->
+                    Der JobScheduler löscht jetzt die generierte <code>.java</code>-Datei, um Windows zu der geänderten Großschreibungsweise zu zwingen.-->
                 </p>
             </description>
         </revision>
@@ -2033,9 +2033,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     When a file is deleted and then re-added a short time later
-                    then the Job Scheduler interprets this as the modification of the object.
+                    then the JobScheduler interprets this as the modification of the object.
                 <!--Wenn eine Datei in sehr kurzer Zeit gelöscht und wieder eingefügt wird,
-                    interpretiert der Job Scheduler das als Änderung, nicht als Löschen und Hinzufügen eines Objekts.-->
+                    interpretiert der JobScheduler das als Änderung, nicht als Löschen und Hinzufügen eines Objekts.-->
                 </p>
             </description>
         </revision>
@@ -2049,12 +2049,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-136" type="new" title="Authentifizierung für SMTP-Server (eMail-Versand)">-->
             <description>
                 <p>
-                   The Job Scheduler now supports SMTP authentification when sending e-mails.
-               <!--Der Job Scheduler unterstützt Authentifizierung für den Versand von Mail via SMTP.-->
+                   The JobScheduler now supports SMTP authentification when sending e-mails.
+               <!--Der JobScheduler unterstützt Authentifizierung für den Versand von Mail via SMTP.-->
                 </p>
                 <p>
-                    The Job Scheduler now only runs with the new <code>sos.mail.jar</code> file!
-                <!--Der Job Scheduler läuft nur mit der neuen Datei <code>sos.mail.jar</code>!-->
+                    The JobScheduler now only runs with the new <code>sos.mail.jar</code> file!
+                <!--Der JobScheduler läuft nur mit der neuen Datei <code>sos.mail.jar</code>!-->
                 </p>
                 <ul>
                     <li>
@@ -2068,10 +2068,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                <p>
                    Checks the configuration directories for changes and updates the respective objects
-                   in the Job Scheduler. On Windows operating systems changes to a directory are 
+                   in the JobScheduler. On Windows operating systems changes to a directory are 
                    noticed immediately, for Unix this could take up to 60 seconds.
                <!--Checks the configuration directories for changes and updates the respective objects
-                   in the Job Scheduler. On Windows operating systems changes to a directory are 
+                   in the JobScheduler. On Windows operating systems changes to a directory are 
                    noticed immediately, for Unix this could take up to 60 seconds.-->
                </p>
                 <ul>
@@ -2147,14 +2147,14 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     </change>
     
     <change date="2007-10-10" version="2.0.187" subversion_revision="5325">
-    <!--<revision type="new" title="Linux Job Scheduler now with Removable Debug-Information">
-        <revision type="new" title="Linux Job Scheduler mit entfernbaren Debug-Informationen">
+    <!--<revision type="new" title="Linux JobScheduler now with Removable Debug-Information">
+        <revision type="new" title="Linux JobScheduler mit entfernbaren Debug-Informationen">
             <description>
                 <p>
-                    The Linux Job Scheduler has now been released with Debug Information.
+                    The Linux JobScheduler has now been released with Debug Information.
                     This makes error finding easier but increases the size of the Job Schdeduler.
                     The 
-                    Den Linux Job Scheduler gebe ich mit Debug-Informationen frei.
+                    Den Linux JobScheduler gebe ich mit Debug-Informationen frei.
                     Das erleichtert die Fehlerdiagnose, macht ihn aber größer.
                     Das Kommando
                 </p>
@@ -2162,23 +2162,23 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     <code>strip - preserve-dates bin/scheduler</code>
                 </p>
                 <p>
-                    command removes the debug-information, and reduces the Job Scheduler to its previous size. 
+                    command removes the debug-information, and reduces the JobScheduler to its previous size. 
                     This command should be available on every Suse installation (binutils package).
-                    entfernt die Debug-Information, und der Scheduler schrumpft auf seine frühere Größe. 
+                    entfernt die Debug-Information, und der JobScheduler schrumpft auf seine frühere Größe. 
                     Das Kommando sollte auf jeder Suse-Installation vorhanden sein (Paket binutils).
                 </p>
             </description>
         </revision>-->
 
 
-        <revision jira="JS-134" type="new" title="Scripts for Multiple Job Schedulers ">
-    <!--<revision jira="JS-134" type="new" title="Mehrere Job Scheduler Skripte">-->
+        <revision jira="JS-134" type="new" title="Scripts for Multiple JobSchedulers ">
+    <!--<revision jira="JS-134" type="new" title="Mehrere JobScheduler Skripte">-->
             <description>
                 <p>
                     The new <scheduler_element name="scheduler_script"/> XML element
-                    allows scripts to be submitted to more than one Job Schedulers.
+                    allows scripts to be submitted to more than one JobSchedulers.
                 <!--Mit dem neuen XML-Element <scheduler_element name="scheduler_script"/>
-                    lassen sich mehrere Job Scheduler Skripte angegeben.-->
+                    lassen sich mehrere JobScheduler Skripte angegeben.-->
                 </p>
             </description>
         </revision>
@@ -2303,10 +2303,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <!--p>
                     Die Meldung <scheduler_message code="SCHEDULER-827"/> ist dennoch als Warnung zu verstehen,
-                    denn ein anderer Scheduler kann bei verspätetem Herzschlag annehmen,
-                    dass dieser Scheduler nicht mehr aktiv ist, und dessen Datenbankeintrag deaktivieren.
-                    Daraufhin bricht der Scheduler mit der Meldung <scheduler_message code="SCHEDULER-377"/> ab.
-                    Der Scheduler kann sich auch selbst abbrechen (Meldung <scheduler_message code="SCHEDULER-386"/>).
+                    denn ein anderer JobScheduler kann bei verspätetem Herzschlag annehmen,
+                    dass dieser JobScheduler nicht mehr aktiv ist, und dessen Datenbankeintrag deaktivieren.
+                    Daraufhin bricht der JobScheduler mit der Meldung <scheduler_message code="SCHEDULER-377"/> ab.
+                    Der JobScheduler kann sich auch selbst abbrechen (Meldung <scheduler_message code="SCHEDULER-386"/>).
                 </p-->
                 <ul>
                     <li>
@@ -2449,16 +2449,16 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             </description>
         </revision>
 
-        <revision jira="JS-82" type="correction" title="Unix: numerous instances of &lt;start_when_directory_changed> no longer block the Job Scheduler">
+        <revision jira="JS-82" type="correction" title="Unix: numerous instances of &lt;start_when_directory_changed> no longer block the JobScheduler">
     <!--<revision jira="JS-82" type="correction" title="Unix: Viele &lt;start_when_directory_changed> blockieren nicht mehr den Scheduler">-->
             <description>
                 <p>
                     On Unix systems where many directories are being monitored with 
                     <scheduler_element name="start_when_directory_changed"/>, 
-                    the Job Scheduler was so occupied that tasks were no longer being processed.
+                    the JobScheduler was so occupied that tasks were no longer being processed.
                     This has now been cured.
                 <!--Unter Unix konnten viele Verzeichnisüberwachungen mit <scheduler_element name="start_when_directory_changed"/> 
-                    den Scheduler so beschäftigen, dass die Tasks nicht mehr fortgesetzt wurden.
+                    den JobScheduler so beschäftigen, dass die Tasks nicht mehr fortgesetzt wurden.
                     Das ist behoben.-->
                 </p>
             </description>
@@ -2468,9 +2468,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-81" type="correction" title="Date-Header fehlte beim Erzeugen der eMail mit JavaMail ohne Versand">-->
             <description>
                 <p>
-                    E-mails, which the Job Scheduler creates with JavaMail and stores in the mail directory, 
+                    E-mails, which the JobScheduler creates with JavaMail and stores in the mail directory, 
                     i.e. which have not been sent, now have a date header.
-                <!--EMails, die der Scheduler mit JavaMail erzeugt und im Mail-Verzeichnis abgelegt, also nicht versendet hat,
+                <!--EMails, die der JobScheduler mit JavaMail erzeugt und im Mail-Verzeichnis abgelegt, also nicht versendet hat,
                     haben jetzt auch einen Date-Header.-->
                 </p>
             </description>
@@ -2517,10 +2517,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-55" type="correction" title="&lt;job tasks='0'> startet keine Task mehr">-->
             <description>
                 <p>
-                    In the <code>pending</code> state the Job Scheduler checks the 
+                    In the <code>pending</code> state the JobScheduler checks the 
                     <scheduler_element name="job" attribute="tasks"/> attribute.
                     It does not start a task when <code>tasks="0"</code> is set.
-                <!--Auch im Zustand <code>pending</code> prüft der Scheduler das Attribut
+                <!--Auch im Zustand <code>pending</code> prüft der JobScheduler das Attribut
                     <scheduler_element name="job" attribute="tasks"/>
                     Bei <code>tasks="0"</code> startet er keine Task.-->
                 </p>
@@ -2536,8 +2536,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     When creation of the <code>scheduler.log.gz</code> cannot run in the background, 
-                    then the Job Scheduler does not create it at all, because this delays starting too much.
-                <!--Solange der Scheduler die <code>scheduler.log.gz</code> nicht im Hintergrund 
+                    then the JobScheduler does not create it at all, because this delays starting too much.
+                <!--Solange der JobScheduler die <code>scheduler.log.gz</code> nicht im Hintergrund 
                     erzeugen kann, erzeugt er sich erstmal gar nicht, weil das den Start zu lange verzögern kann.-->
                 </p>
             </description>
@@ -2548,10 +2548,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     URLs in HTML log files which have been transferred by HTTP now function as links.
-                    The Job Scheduler recognises the <code>http://</code> identifier and
+                    The JobScheduler recognises the <code>http://</code> identifier and
                     places the URL in an <code>&lt;a href="…" target="_blank">...&lt;/a></code> tag.
                 <!--Urls in einem über HTTP in HTML gelieferten Protokoll sind klickbar.
-                    Der Job Scheduler erkennt das Kennzeichen <code>http://</code> und
+                    Der JobScheduler erkennt das Kennzeichen <code>http://</code> und
                     setzt den Url in ein <code>&lt;a href="…" target="_blank">...&lt;/a></code>-->
                 </p>
             </description>
@@ -2577,7 +2577,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     with ¿, so that the file remains valid.
                     All other characters of the Latin1 character set (ISO-8859-1) remain supported.
                 <!--Die Zeichen U-0 bis U-1F (außer U-9, U-A, U-D) und U-80 bis U-9F 
-                    ersetzt der Scheduler beim Erzeugen eines XML-Dokuments durch ¿, damit es nicht ungültig wird.
+                    ersetzt der JobScheduler beim Erzeugen eines XML-Dokuments durch ¿, damit es nicht ungültig wird.
                     Alle anderen Zeichen des Zeichenvorrats Latin1 (ISO-8859-1) werden weiter unterstützt.-->
                 </p>
             </description>
@@ -2600,11 +2600,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 <p>
                     After  process jobs 
                     (<scheduler_element name="process"/> and <scheduler_element name="script" attribute="language" value="shell"/>,
-                    i.e. non API-Jobs) have ended, the Job Scheduler fills
+                    i.e. non API-Jobs) have ended, the JobScheduler fills
                     <scheduler_method class="Job" property="state_text"/> and
                     <scheduler_method class="Order" property="state_text"/> 
                     with the first line of stdout, up to a maximum of 100 characters.
-                <!--Der Scheduler füllt nach Beendigung eines Prozess-Jobs 
+                <!--Der JobScheduler füllt nach Beendigung eines Prozess-Jobs 
                     (<scheduler_element name="process"/> und <scheduler_element name="script" attribute="language" value="shell"/>,
                     also nicht API-Jobs) 
                     <scheduler_method class="Job" property="state_text"/> und
@@ -2618,8 +2618,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="Datenbank-Indices werden automatisch angelegt">-->
             <description>
                 <p>
-                    The Job Scheduler now creates indices for database tables.
-                <!--Der Scheduler legt jetzt zusammen mit den Datenbanktabellen auch die Indices an.-->
+                    The JobScheduler now creates indices for database tables.
+                <!--Der JobScheduler legt jetzt zusammen mit den Datenbanktabellen auch die Indices an.-->
                 </p>
             </description>
         </revision>
@@ -2639,10 +2639,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision jira="JS-45" type="correction" title="Umgang mit Backslash in MySQL">-->
             <description>
                 <p>
-                    The Job Scheduler now takes account of the peculiarities of the backslash in MySQL strings
+                    The JobScheduler now takes account of the peculiarities of the backslash in MySQL strings
                     when operating with a MySQL database.
                 <!--Beim Betrieb mit einer MySQL-Datenbank
-                    berücksichtigt der Scheduler die Besonderheit der Backslashs in MySQL-Strings.-->
+                    berücksichtigt der JobScheduler die Besonderheit der Backslashs in MySQL-Strings.-->
                 </p>
             </description>
         </revision>
@@ -2656,7 +2656,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     Only for Windows systems:
-                    The Job Scheduler delays the end of a Task by half a second,
+                    The JobScheduler delays the end of a Task by half a second,
                     until the temporary files created for 
                     <code>stdin</code>, <code>stdout</code> and <code>stderr</code>
                     can be deleted.
@@ -2665,7 +2665,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     and which will continue to run after the task itself has come to an end.
                     Or by a virus scanner holding the files for a moment.
                 <!--Nur Windows:
-                    Der Scheduler verzögert das Ende einer Task eine halbe Sekunde,
+                    Der JobScheduler verzögert das Ende einer Task eine halbe Sekunde,
                     bis die für <code>stdin</code>, <code>stdout</code> und <code>stderr</code>
                     angelegten temporären Dateien löschbar sind.
                     Die Dateien können von Enkelprozessen blockiert sein, 
@@ -2716,25 +2716,25 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="modification" title="distributed='no', Cluster-Member-ID ist nur noch für Rechnername und Port eindeutig">-->
             <description>
                 <p>
-                    A distributing Job Scheduler (<scheduler_option name="distributed-orders"/>)
-                    executes jobs locally on other Job Schedulers.
-                <!--Ein Verteilter Scheduler (<scheduler_option name="distributed-orders"/>)
-                    führt Jobs lokal im einzelnen Scheduler aus.-->
+                    A distributing JobScheduler (<scheduler_option name="distributed-orders"/>)
+                    executes jobs locally on other JobSchedulers.
+                <!--Ein Verteilter JobScheduler (<scheduler_option name="distributed-orders"/>)
+                    führt Jobs lokal im einzelnen JobScheduler aus.-->
                 </p>
                 <p>
                     <scheduler_element name="job_chain" attribute="distributed"/>
-                    can be set so that a job chain is either executed locally on a single Job Scheduler or 
-                    divided amongst the Job Schedulers in a cluster.
+                    can be set so that a job chain is either executed locally on a single JobScheduler or 
+                    divided amongst the JobSchedulers in a cluster.
                     Local job chains <i>must</i> have a unique name in a cluster, 
                     although this is not tested.
                 <!--Für eine Job-Kette kann mit <scheduler_element name="job_chain" attribute="distributed"/>
-                    eingestellt werden, ob sie lokal im einzelnen Job Scheduler oder verteilt im ganzen Cluster gilt.
+                    eingestellt werden, ob sie lokal im einzelnen JobScheduler oder verteilt im ganzen Cluster gilt.
                     Lokale Job-Ketten <i>müssen</i> im Cluster einen eindeutigen Namen haben
                     (das wird nicht geprüft).-->
                 </p>
                 <p>
-                    Up to now, the Cluster-Member-ID for each run of a Job Scheduler operating in a cluster had to be unique.
-                    This ID is now assembled from the Scheduler ID, the computer name and the TCP port number.
+                    Up to now, the Cluster-Member-ID for each run of a JobScheduler operating in a cluster had to be unique.
+                    This ID is now assembled from the JobScheduler ID, the computer name and the TCP port number.
                     This means that it is important that two computers working in the same cluster do not have the same name.
                 <!--Bisher war die Cluster-Member-ID für jeden Lauf eines Schedulers (eines Cluster-Mitglieds) eindeutig.
                     Jetzt wird die ID aus Scheduler-ID, Rechnernamen und TCP-Portnummer gebildet.
@@ -2815,9 +2815,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     A distributed order with a start time (for example, set with <scheduler_method class="Order" method="setback"/>)
-                    could bring the Job Scheduler in a loop after a restart. This problem has been solved.
+                    could bring the JobScheduler in a loop after a restart. This problem has been solved.
                 <!--Ein verteilter Auftrag mit Startzeit (z.B. durch <scheduler_method class="Order" method="setback"/>)
-                    konnte nach Neustart den Scheduler in eine Schleife bringen. Das ist behoben.-->
+                    konnte nach Neustart den JobScheduler in eine Schleife bringen. Das ist behoben.-->
                 </p>
             </description>
         </revision>
@@ -2839,9 +2839,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     um beim Einfügen eines Auftrags die Eindeutigkeit der Auftragskennung sicherstellen zu können.-->
                 </p>
                 <p>
-                    The Job Scheduler rejects the submission of an order to a job chain,
+                    The JobScheduler rejects the submission of an order to a job chain,
                     when the order identifier has already been allocated in the Order_id_space.
-                <!--Der Scheduler lehnt das Einfügen eines Auftrags in eine Job-Kette ab,
+                <!--Der JobScheduler lehnt das Einfügen eines Auftrags in eine Job-Kette ab,
                     wenn die Auftragskennung im Order_id_space bereits vergeben ist.-->
                 </p>
                 <p>
@@ -3089,7 +3089,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
 
 
     <change date="2007-03-19" version="2.0.168" subversion_revision="4912">
-        <revision type="new" title="The Execution of Tasks on a Remote Job Scheduler">
+        <revision type="new" title="The Execution of Tasks on a Remote JobScheduler">
     <!--<revision type="new" title="Ausführung von Tasks auf entferntem Scheduler">-->
             <description>
                 <ul>
@@ -3103,7 +3103,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
 
 
     <change date="2007-03-08" version="2.0.167" subversion_revision="4877">
-        <revision type="correction" title="Order Log Files are not Always Written in the Job Scheduler Log">
+        <revision type="correction" title="Order Log Files are not Always Written in the JobScheduler Log">
     <!--<revision type="correction" title="Auftragsprokolle wurden nicht immer in die Historie aufgenommen">-->
             <description>
                 <p>
@@ -3195,11 +3195,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             </description>
         </revision>
 
-        <revision type="modification" title="Order Logs When the Job Scheduler is Restarted">
+        <revision type="modification" title="Order Logs When the JobScheduler is Restarted">
     <!--<revision type="modification" title="Auftragsprokolle bei Scheduler-Neustart">-->
             <description>
                 <p>
-                    Log files from orders which have not been completed persist after a restart of the Job Scheduler
+                    Log files from orders which have not been completed persist after a restart of the JobScheduler
                     and are continued.
                     To this end they are saved in the database.
                 <!--Die Protokolle nicht abgeschlossener Aufträge bleiben jetzt bei Scheuler-Neustart erhalten 
@@ -3313,10 +3313,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="Address-in-use-Problem unter Windows gelöst">-->
             <description>
                 <p>
-                    Sub-processes, which the Job Scheduler did not know and could not terminate,
-                    blocked Job Scheduler ports.
+                    Sub-processes, which the JobScheduler did not know and could not terminate,
+                    blocked JobScheduler ports.
                     These ports can no longer be inherited and no longer blocked by subprocesses.
-                <!--Enkel-Prozesse, die der Scheduler nicht kennt und also nicht abbrechen kann,
+                <!--Enkel-Prozesse, die der JobScheduler nicht kennt und also nicht abbrechen kann,
                     blockierten bislang die Scheduler-Ports.
                     Jetzt sind diese nicht mehr vererbbar und könenn von den Enkeln auch nicht mehr blockiert werden.-->
                 </p>
@@ -3332,13 +3332,13 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     Windows: 
-                    Subprocesses, which the Job Scheduler did not know and could not terminate,
-                    blocked Job Scheduler ports.
+                    Subprocesses, which the JobScheduler did not know and could not terminate,
+                    blocked JobScheduler ports.
                     These ports can no longer be inherited and no longer blocked by subprocesses.
                 <!--Windows: 
-                    Enkel-Prozesse, die der Scheduler nicht kennt und also nicht abbrechen kann,
+                    Enkel-Prozesse, die der JobScheduler nicht kennt und also nicht abbrechen kann,
                     blockieren die temporären Dateien für stdout und stderr 
-                    und können deshalb vom Scheduler nicht gelöscht werden.-->
+                    und können deshalb vom JobScheduler nicht gelöscht werden.-->
                 </p>
             </description>
         </revision>
@@ -3365,7 +3365,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     <scheduler_element name="run_time" attribute="start_time_function"/>
-                    can be used to specify a function in the Job Scheduler script 
+                    can be used to specify a function in the JobScheduler script 
                     (i.e. the &lt;config>&lt;script> script),
                     which returns the next start time.
                 <!--Mit <scheduler_element name="run_time" attribute="start_time_function"/>
@@ -3378,7 +3378,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <!--revision type="modification" title="Job_chain.order_count und Order_queue.length sind im Scheduler-Skript 0">
             <description>
                 <p>
-                    Bei nicht verteilten Aufträgen lädt der Scheduler die Aufträge 
+                    Bei nicht verteilten Aufträgen lädt der JobScheduler die Aufträge 
                     erst nach der Ausführung des Scheduler-Skripts
                     aus der Datenbank.
                 </p>
@@ -3409,7 +3409,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 </p>
                 <p>
                     <scheduler_element name="run_time" attribute="start_time_function"/> 
-                    can be used to specify a function in the Job Scheduler script
+                    can be used to specify a function in the JobScheduler script
                     which returns the next start time.
                 <!--Mit <scheduler_element name="run_time" attribute="start_time_function"/> 
                     kann eine Funktion aus dem Scheduler-Skript angegeben werden,
@@ -3422,10 +3422,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="modification" title="Solaris: Neue Module libstdc++.so.6.0.8 und libgcc_s.so.1">-->
             <description>
                 <p>
-                    As the Job Scheduler now supports the Solaris gcc 4.1.1 library,
+                    As the JobScheduler now supports the Solaris gcc 4.1.1 library,
                     the libstdc++.so.6.0.8 and libgcc_s.so.1 modules are required.
                     A symbolic link must be created:
-                <!--Weil der Scheduler für Solaris jetzt mit gcc 4.1.1 übersetzt wird,
+                <!--Weil der JobScheduler für Solaris jetzt mit gcc 4.1.1 übersetzt wird,
                     werden die neuen Module libstdc++.so.6.0.8 und libgcc_s.so.1 benötigt.
                     Ein symbolischer Link muss eingerichtet werden:-->
                 </p>
@@ -3538,8 +3538,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     </li>
                 </ul>
                 <p>
-                    Should no other option have been set, then the Job Scheduler stops itself immediately.
-                <!--Wenn keine anderen Optionen angegeben sind, beendet sich der Scheduler sofort.-->
+                    Should no other option have been set, then the JobScheduler stops itself immediately.
+                <!--Wenn keine anderen Optionen angegeben sind, beendet sich der JobScheduler sofort.-->
                 </p>
             </description>
         </revision>
@@ -3624,8 +3624,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="debug9 protokolliert SQL-Kommandos">-->
             <description>
                 <p>
-                    The Job Scheduler now writes SQL commands in the main log file at <scheduler_option name="log-level" value="debug9"/>.
-                <!--Bei <scheduler_option name="log-level" value="debug9"/> schreibt der Scheduler seine SQL-Kommandos ins Hauptprotokoll.-->
+                    The JobScheduler now writes SQL commands in the main log file at <scheduler_option name="log-level" value="debug9"/>.
+                <!--Bei <scheduler_option name="log-level" value="debug9"/> schreibt der JobScheduler seine SQL-Kommandos ins Hauptprotokoll.-->
                 </p>
             </description>
         </revision>
@@ -3727,9 +3727,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <revision type="error" title="Order.setback()">
             <description>
                 <p>
-                    <scheduler_method class="Order" method="setback"/> terminates in this version of the Job Scheduler
+                    <scheduler_method class="Order" method="setback"/> terminates in this version of the JobScheduler
                     (corrected in 2.0.162.4705 from 2007-01-05).
-                <!--<scheduler_method class="Order" method="setback"/> bricht in dieser Version den Scheduler ab
+                <!--<scheduler_method class="Order" method="setback"/> bricht in dieser Version den JobScheduler ab
                     (korrigiert in 2.0.162.4705 von 2007-01-05).-->
                 </p>
             </description>
@@ -3800,19 +3800,19 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
 
 
     <change date="2006-10-03" version="2.0.160" subversion_revision="4591">
-        <revision type="correction" title="An Order in the Database Without Parameters Causes the Job Scheduler to Terminate">
-    <!--<revision type="correction" title="Auftrag ohne Parameter in der Datenbank ließ Scheduler abbrechen">-->
+        <revision type="correction" title="An Order in the Database Without Parameters Causes the JobScheduler to Terminate">
+    <!--<revision type="correction" title="Auftrag ohne Parameter in der Datenbank ließ JobScheduler abbrechen">-->
             <description>
                 <p>
-                    This error was introduced to the Job Scheduler with the file orders (version 2.0.158.4484 2006-09-13)
+                    This error was introduced to the JobScheduler with the file orders (version 2.0.158.4484 2006-09-13)
                     and has now been corrected.
                 <!--Der Fehler ist mit den Dateiaufträgen (Version 2.0.158.4484 2006-09-13)
-                    in den Scheduler gelangt und jetzt behoben.-->
+                    in den JobScheduler gelangt und jetzt behoben.-->
                 </p>
             </description>
         </revision>
 
-        <revision type="modification" title='After the 26. September 2006 the Job Scheduler Requires a New sos.mail.jar'>
+        <revision type="modification" title='After the 26. September 2006 the JobScheduler Requires a New sos.mail.jar'>
     <!--<revision type="modification" title='Scheduler braucht seit 26. September 2006 eine aktuelle sos.mail.jar'>-->
             <description>
                 <p>
@@ -3930,10 +3930,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="Protokolldateien werden früher gelöscht">-->
             <description>
                 <p>
-                    The new Job Scheduler deletes log files earlier,
+                    The new JobScheduler deletes log files earlier,
                     also where the corresponding object (usually an <scheduler_method class="Order"/>)
                     is retained.
-                <!--Der neue Scheduler entfernt die Protokolldateien früher,
+                <!--Der neue JobScheduler entfernt die Protokolldateien früher,
                     auch wenn das entsprechende Objekt (in der Regel ein <scheduler_method class="Order"/>)
                     noch gehalten wird.-->
                 </p>
@@ -3987,15 +3987,15 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             </description>
         </revision>
 
-        <revision type="correction" title="&lt;process>-processes are Waited for When Ending the Job Scheduler ">
+        <revision type="correction" title="&lt;process>-processes are Waited for When Ending the JobScheduler ">
     <!--<revision type="correction" title="Beim Beenden des Schedulers werden &lt;process>-Prozesse abgewartet">-->
             <description>
                 <p>
-                    The Job Scheduler did not wait for 
+                    The JobScheduler did not wait for 
                     <scheduler_element name="process"/>-Tasks
                     on <scheduler_element name="terminate"/>. 
                     It now does this.
-                <!--Bei <scheduler_element name="terminate"/> wartete der Scheduler das Ende von 
+                <!--Bei <scheduler_element name="terminate"/> wartete der JobScheduler das Ende von 
                     <scheduler_element name="process"/>-Tasks nicht ab. Jetzt tut er das.-->
                 </p>
             </description>
@@ -4104,12 +4104,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="Tabellenspalten werden verbreitert">-->
             <description>
                 <p>
-                    The Job Scheduler checks the width of columns in the
+                    The JobScheduler checks the width of columns in the
                     <code>scheduler_orders.id</code> and <code>scheduler_order_history.order_id</code>
                     and if necessary increases them to 255 characters.
                     This allows more room for order identifiers in file orders.
                     Errors which may occur are ignored.
-                <!--Der Scheduler prüft beim Start die Spaltenbreiten von
+                <!--Der JobScheduler prüft beim Start die Spaltenbreiten von
                     <code>scheduler_orders.id</code> und <code>scheduler_order_history.order_id</code>
                     und erweitert sie ggfs. auf 255 Zeichen,
                     damit die Auftragskennungen der Dateiaufträge Platz finden.
@@ -4122,12 +4122,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="Dateiaufträge mit zu langen Pfaden">-->
             <description>
                 <p>
-                    The new database column widths allow the Job Scheduler to process paths up to 255 characters long.
+                    The new database column widths allow the JobScheduler to process paths up to 255 characters long.
                     Longer paths are ignored with a warning. 
-                    The Job Scheduler notes such paths, in order to avoid repeating such error messages.
-                <!--Mit den neuen Datenbankspaltenbreiten verarbeitet der Scheduler Pfade bis 255 Zeichen Länge.
+                    The JobScheduler notes such paths, in order to avoid repeating such error messages.
+                <!--Mit den neuen Datenbankspaltenbreiten verarbeitet der JobScheduler Pfade bis 255 Zeichen Länge.
                     Längere Pfade werden mit Warnung ignoriert. 
-                    Der Scheduler merkt sie sich, um die Fehlermeldung nicht zu wiederholen.-->
+                    Der JobScheduler merkt sie sich, um die Fehlermeldung nicht zu wiederholen.-->
                 </p>
             </description>
         </revision>
@@ -4216,12 +4216,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     <scheduler_method class="Task" properties="changed_directories"/>
-                    could contain duplicate entries if the Job Scheduler noted multiple changes in the same directory,
+                    could contain duplicate entries if the JobScheduler noted multiple changes in the same directory,
                     before a task could be started.
                     Each directory is now only included once.
                 <!--<scheduler_method class="Task" properties="changed_directories"/>
                     konnte mehrfache Einträge enthalten, 
-                    wenn der Scheduler mehrfache Änderungen desselben Verzeichnisses bemerkte,
+                    wenn der JobScheduler mehrfache Änderungen desselben Verzeichnisses bemerkte,
                     Verzeichnisänderungen bemerkt, bevor die Task gestartet werden konnte.
                     Jetzt wird jedes Verzeichnis nur einmal eingetragen.-->
                 </p>
@@ -4318,8 +4318,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <revision type="correction" title="&lt;show_state what=&quot;job_commands&quot; liefert alle &lt;commands>">
     <!--<revision type="correction" title="&lt;show_state what=&quot;job_commands&quot; liefert alle &lt;commands>">-->
             <description>
-                Previously the Job Scheduler returned just the first <scheduler_element name="commands"/> element of a job.
-            <!--Bisher lieferte der Scheduler nur das erste <scheduler_element name="commands"/> eines Jobs.-->
+                Previously the JobScheduler returned just the first <scheduler_element name="commands"/> element of a job.
+            <!--Bisher lieferte der JobScheduler nur das erste <scheduler_element name="commands"/> eines Jobs.-->
             </description>
         </revision>
     </change>
@@ -4332,7 +4332,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 <ul>
                     <li>
                         <scheduler_option name="send-cmd"/> 
-                        now sends the Job Scheduler's answer without the zero byte transferred via TCP.
+                        now sends the JobScheduler's answer without the zero byte transferred via TCP.
                         This means that a well-formed XML document is written to stdout.
                     <!--<scheduler_option name="send-cmd"/> gibt die Antwort des Schedulers ohne das über TCP übertragene Nullbyte aus.
                         Damit wird nach stdout ein wohlgeformtes XML-Dokument geschrieben.-->
@@ -4368,12 +4368,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     <li>
                         <scheduler_element name="job" attribute="stop_on_error" value="no"/>
                         allows the stopping of a job in the event of an error to be prevented.
-                        The Job Scheduler then returns either <scheduler_message code="SCHEDULER-977"/> or 
+                        The JobScheduler then returns either <scheduler_message code="SCHEDULER-977"/> or 
                         <scheduler_message code="SCHEDULER-978"/> message when 
                         <scheduler_option name="log-level" value="debug3"/>.
                     <!--<scheduler_element name="job" attribute="stop_on_error" value="no"/>
                         verhindert den Stopp des Jobs wegen einer Fehlermeldung einer Task.
-                        Bei <scheduler_option name="log-level" value="debug3"/> gibt der Scheduler am
+                        Bei <scheduler_option name="log-level" value="debug3"/> gibt der JobScheduler am
                         Ende einer fehlerhaften Task die Meldungen 
                         <scheduler_message code="SCHEDULER-977"/> oder <scheduler_message code="SCHEDULER-978"/> aus.-->
                     </li>
@@ -4400,10 +4400,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="&lt;environment>: Originalgroßschreibung der Umgebungsvariablennamen">-->
             <description>
                 <p>
-                    The Job Scheduler wrote environment variables in lower case.
+                    The JobScheduler wrote environment variables in lower case.
                     Now they are written as specified in <scheduler_element name="environment"/>.
                     This has no effect on Windows systems, where the case is not relevant.
-                <!--Der Scheduler setzte die Umgebungsvariablennamen in Kleinschreibung.
+                <!--Der JobScheduler setzte die Umgebungsvariablennamen in Kleinschreibung.
                     Jetzt verwendet er die Schreibung wie in <scheduler_element name="environment"/> angegeben.
                     Unter Windows hat das keine Auswirkung, weil die Schreibung keine Rolle spielt.-->
                 </p>
@@ -4414,10 +4414,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="Aufträge mit &lt;period repeat=&quot;...&quot;>: jeder zweite Tag wurde ausgelassen">-->
             <description>
                 <p>
-                    When the next start time calculated by the Job Scheduler using <code>repeat=</code>
+                    When the next start time calculated by the JobScheduler using <code>repeat=</code>
                     was outside of the current period (i.e. after midnight),
                     then it took as the period for the next start time the next but one period and not the next.
-            <!--Wenn der Scheduler als nächsten Startzeit mit <code>repeat=</code> eine Startzeit errechnete,
+            <!--Wenn der JobScheduler als nächsten Startzeit mit <code>repeat=</code> eine Startzeit errechnete,
                     die außerhalb der Periode lag (immer nach Mitternacht), dann nahm er die auf die errechnete Startzeit folgende Periode,
                     die aber nicht die nächste, sondern die übernächste ist.-->
                 </p>
@@ -4425,11 +4425,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     This led, in the case of a simple <scheduler_element name="run_time" attribute="period" value="300"/>,
                     to a day being missed out around midnight.
                     This has been corrected.
-                    The Job Scheduler calculates the next period from the end of the current period.
+                    The JobScheduler calculates the next period from the end of the current period.
                 <!--Bei einem einfachen <scheduler_element name="run_time" attribute="period" value="300"/>
                     führte das um Mitternacht zum Überspringen des folgenden Tags.
                     Das ist korrigiert.
-                    Der Scheduler ermittelt die folgende Periode aus der Endzeit der aktuellen Periode.-->
+                    Der JobScheduler ermittelt die folgende Periode aus der Endzeit der aktuellen Periode.-->
                 </p>
             </description>
         </revision>
@@ -4597,10 +4597,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     The new <code>wait_until</code> attribute returns the time of the next planned action.
-                    After circa 20 Minutes idle time the Job Scheduler sends out a notification of 
+                    After circa 20 Minutes idle time the JobScheduler sends out a notification of 
                     what it is waiting for and when this should occur.
                 <!--Neues Attribut <code>wait_until</code> liefert den Zeitpunkt der nächsten geplanten Aktion.
-                    Nach etwa 20 Minuten Nichtstun gibt der Scheduler eine Meldung aus, 
+                    Nach etwa 20 Minuten Nichtstun gibt der JobScheduler eine Meldung aus, 
                     bis wann und worauf er wartet.-->
                 </p>
 
@@ -4621,11 +4621,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 <p>
                     <scheduler_element name="show_state"/> and other commands which showed the state of task
                     returned an error when a subprocess or the task process had ended itself
-                    and the Job Scheduler had not registered this.
+                    and the JobScheduler had not registered this.
                     The reason: the system call for reading the priority returned an error.
                 <!--<scheduler_element name="show_state"/> und andere Kommandos, die den Task-Zustand zeigen,
                     lieferte einen Fehler, wenn ein Subprozess oder der Task-Prozess selbst beendet war
-                    und der Scheduler dies noch nicht zur Kenntnis genommmen hatte.
+                    und der JobScheduler dies noch nicht zur Kenntnis genommmen hatte.
                     Grund: Der Systemaufruf zum Lesen der Priorität liefert einen Fehler.-->
                 </p>
                 <p>
@@ -4657,10 +4657,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="&lt;process param=&quot;&quot;>: Task-Parameter werden ersetzt">-->
             <description>
                 <p>
-                    The Job Scheduler now replaces the task parameters in the <code>param=</code> attribute.
+                    The JobScheduler now replaces the task parameters in the <code>param=</code> attribute.
                     These have priority over environment variables.
                     This means that a different parameter row can be handed over for each task.
-                <!--Im Attribut <code>param=</code> ersetzt der Scheduler jetzt auch Task-Parameter.
+                <!--Im Attribut <code>param=</code> ersetzt der JobScheduler jetzt auch Task-Parameter.
                     Die haben Vorrang vor den Umgebungsvariablen.
                     Damit kann für jede Task eine andere Parameterzeile übergeben werden.-->
                 </p>
@@ -4687,16 +4687,16 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="Strg-C bricht nicht mehr die Prozesse ab">-->
             <description>
                 <p>
-                    Strg-C is now only effective on the Job Scheduler process, 
+                    Strg-C is now only effective on the JobScheduler process, 
                     and no longer on the task processes
                     (with the exception of <scheduler_element name="process"/> and 
                     <scheduler_element name="script" language="shell" /> on Windows systems).
-                    This allows the Scheduler to properly end tasks after Strg-C.
-                    Note however that a second Strg-C still leads to an immediate end of all tasks and the Job Scheduler.
+                    This allows the JobScheduler to properly end tasks after Strg-C.
+                    Note however that a second Strg-C still leads to an immediate end of all tasks and the JobScheduler.
                 <!--Strg-C wirkt nur noch auf den Scheduler-Prozess, 
                     aber nicht mehr auf die Task-Prozesse 
                     (außer unter Windows <scheduler_element name="process"/> und <scheduler_element name="script" language="shell" />).
-                    Damit kann der Scheduler nach Strg-C die Tasks ordentlich beenden.
+                    Damit kann der JobScheduler nach Strg-C die Tasks ordentlich beenden.
                     Ein zweites Strg-C führt nach wie vor zum sofortigen Ende aller Tasks und des Schedulers.-->
                 </p>
             </description>
@@ -4766,23 +4766,23 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                         <scheduler_method class="Log" object="spooler_task" property="exit_code"/><code>=1</code>.
                         <code>exit_code</code> can also now be set by the job itself,
                         but is overwritten under the conditions listed above.
-                        This means that every task possible in the Job Scheduler will now return an <code>exit_code</code>.
+                        This means that every task possible in the JobScheduler will now return an <code>exit_code</code>.
                     <!--Neue Eigenschaft <scheduler_method class="Task" property="exit_code"/> (int), anfänglich 0.
                         <scheduler_method class="Log" object="spooler_log" method="error"/>,
                         <scheduler_method class="Task" object="spooler_task" method="error"/> oder
                         eine Exception der Task setzen
                         <scheduler_method class="Log" object="spooler_task" property="exit_code"/><code>=1</code>.
                         <code>exit_code</code> kann auch vom Job selbst gesetzt werden,
-                        wird aber unter den oben aufgeführten Bedingungen vom Scheduler überschrieben.
-                        Damit liefert jede im Scheduler mögliche Task am Ende einen <code>exit_code</code>.-->
+                        wird aber unter den oben aufgeführten Bedingungen vom JobScheduler überschrieben.
+                        Damit liefert jede im JobScheduler mögliche Task am Ende einen <code>exit_code</code>.-->
                     </li>
                     <li>
                         The <code>exit_code</code> is now written in the <code>scheduler_history</code> database table
                         in the new <code>exit_code</code> column,
-                        which is automatically created by the Job Scheduler.
+                        which is automatically created by the JobScheduler.
                     <!--Der <code>exit_code</code> wird in die Datenbanktabelle <code>scheduler_history</code> 
                         in die neue Spalte <code>exit_code</code> geschrieben,
-                        die der Scheduler automatisch anlegt.-->
+                        die der JobScheduler automatisch anlegt.-->
                     </li>
                     <li>
                         On Unix systems a process which has been broken off now returns the negative signal code number 
@@ -4876,7 +4876,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     Orders can now have a start time which is saved in the database. Such start times are thereby 
-                    retained after the Job Scheduler has been restarted.
+                    retained after the JobScheduler has been restarted.
                     An order which has not been executed but whose start time has passed will be started immediately
                     (as long as the job <scheduler_element name="run_time"/> allows this).
                 <!--Aufträge können einen Startzeit haben, 
@@ -4941,8 +4941,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="language=&quot;perl&quot; unter Windows">-->
             <description>
                 <p>
-                    On Windows systems the Job Scheduler only gave the following instruction:
-                <!--Unter Windows übergab der Scheduler nur bei
+                    On Windows systems the JobScheduler only gave the following instruction:
+                <!--Unter Windows übergab der JobScheduler nur bei
                     <scheduler_element name="script" attribute="language" value="perlscript"/> die folgende Anweisung:-->
                 </p>
                 <pre>Win32::OLE->Option( Warn => 3 );</pre>
@@ -4951,7 +4951,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 </p>
                 <p>
                     <scheduler_element name="script" attribute="language" value="perl"/> now has the same behavior.
-                    This means that an error occuring when calling a Job Scheduler method is no longer ignored by Perl.
+                    This means that an error occuring when calling a JobScheduler method is no longer ignored by Perl.
                 <!--<scheduler_element name="script" attribute="language" value="perl"/> hat jetzt dasselbe Verhalten.
                     Damit ignoriert Perl nicht länger einen Fehler bei einem Aufruf einer Scheduler-Methode.-->
                 </p>
@@ -5006,7 +5006,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="spooler_task.params korrigiert">-->
             <description>
                 <p>
-                    The call could cause the Job Scheduler to crash.
+                    The call could cause the JobScheduler to crash.
                 <!--Der Aufruf konnte zum Abbruch des Schedulers führen.-->
                 </p>
                 <ul>
@@ -5022,8 +5022,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <revision type="new" title="&lt;job min_tasks=...>">
             <description>
                 <p>
-                    The Job Scheduler can now ensure that a minimum number of tasks are kept running.
-                <!--Der Scheduler kann dafür sorgen, dass eine minimale Anzahl Tasks läuft.-->
+                    The JobScheduler can now ensure that a minimum number of tasks are kept running.
+                <!--Der JobScheduler kann dafür sorgen, dass eine minimale Anzahl Tasks läuft.-->
                 </p>
                 <ul>
                     <li>
@@ -5145,12 +5145,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     und keine weitere Task wurde mehr gestartet.-->
                 </p>
                 <p>
-                    Now the Job Scheduler no longer stops the job directly.
+                    Now the JobScheduler no longer stops the job directly.
                     Directory monitoring is repeated at the end of the task
                     (after <scheduler_method class="Job_impl" method="spooler_exit"/>).
                     An error then causes the job to be stopped - but in a way which can be caught by
                     <scheduler_element name="delay_after_error"/>.
-                <!--Jetzt stoppt der Scheduler den Job nicht mehr direkt.
+                <!--Jetzt stoppt der JobScheduler den Job nicht mehr direkt.
                     Die Verzeichnisüberwachung wird am Ende der Task 
                     (nach <scheduler_method class="Job_impl" method="spooler_exit"/>)
                     wiederholt.
@@ -5231,13 +5231,13 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="command_line.xml neu strukturiert">-->
             <description>
                 scheduler_client has been made obsolete. 
-                The options have been integrated in the Job Scheduler.
-                The different calls of the Job Scheduler have now been documented,
-                see, for example <a href="command_line.xml#options__start_job">"Handing over a Job to Running Job Scheduler"</a>.
+                The options have been integrated in the JobScheduler.
+                The different calls of the JobScheduler have now been documented,
+                see, for example <a href="command_line.xml#options__start_job">"Handing over a Job to Running JobScheduler"</a>.
             <!--scheduler_client entfällt wieder. 
                 Die Optionen sind im Programm scheduler integriert.
                 Die verschiedenen Aufrufe des Schedulers sind jetzt dokumentiert,
-                siehe z.B. <a href="command_line.xml#options__start_job">"Laufendem Scheduler einen Job übergeben"</a>.-->
+                siehe z.B. <a href="command_line.xml#options__start_job">"Laufendem JobScheduler einen Job übergeben"</a>.-->
             </description>
         </revision>
     </change>
@@ -5279,8 +5279,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <revision type="new" title="scheduler_client">
             <description>
                 <p>
-                    The new <code>scheduler_client</code> Program can Forward Jobs and Orders to the Job Scheduler.
-                <!--Das neue Programm <code>scheduler_client</code> kann dem Scheduler Jobs und Aufträge übergeben.-->
+                    The new <code>scheduler_client</code> Program can Forward Jobs and Orders to the JobScheduler.
+                <!--Das neue Programm <code>scheduler_client</code> kann dem JobScheduler Jobs und Aufträge übergeben.-->
                 </p>
                 <p>
                     The start of a job, whose script is entered by way of <code>stdin</code> is written so:
@@ -5351,8 +5351,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     </change>
 
     <change date="2006-03-17" version="2.0.148" subversion_revision="4199">
-        <revision type="correction" title="The Job Scheduler Runs on Windows 2000 Once More">
-    <!--<revision type="correction" title="Der Scheduler läuft wieder unter Windows 2000">-->
+        <revision type="correction" title="The JobScheduler Runs on Windows 2000 Once More">
+    <!--<revision type="correction" title="Der JobScheduler läuft wieder unter Windows 2000">-->
             <description>
                 <p>
                     A work around for the defective SafeArrayGetVartype() routine in Windows 2000 has been developed.
@@ -5382,8 +5382,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
         <revision type="new" title="Messages Translated into English and Given Codes">
     <!--<revision type="new" title="Meldungen ins Englische übersetzt und mit Codes versehen">-->
             <description>
-                The messages (with the exception of some debug messages) are now coded - for example "<code>SCHEDULER-900 Scheduler is starting ...</code>".
-            <!--Die Meldungen (außer einige Debug-Meldungen) sind jetzt codiert, wie z.B. "<code>SCHEDULER-900 Scheduler is starting ...</code>".-->
+                The messages (with the exception of some debug messages) are now coded - for example "<code>SCHEDULER-900 JobScheduler is starting ...</code>".
+            <!--Die Meldungen (außer einige Debug-Meldungen) sind jetzt codiert, wie z.B. "<code>SCHEDULER-900 JobScheduler is starting ...</code>".-->
                 <ul>
                     <li>
                         <a href="messages/index.xml">List of Message Codes</a>
@@ -5576,9 +5576,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     queue_dir can be set in the factory.ini file once more. 
-                    Affects the Job Scheduler since version 2.0.139.3889 (2005-09-15).
+                    Affects the JobScheduler since version 2.0.139.3889 (2005-09-15).
                 <!--queue_dir kann wieder in der Datei factory.ini eingestellt werden. 
-                    Betrifft Scheduler ab 2.0.139.3889 (2005-09-15).-->
+                    Betrifft JobScheduler ab 2.0.139.3889 (2005-09-15).-->
                 </p>
                 <p>
                     The best place for this setting remains the 
@@ -5651,10 +5651,10 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     When a task ends with an error or warning, 
-                    then the Job Scheduler overwrites the setting from <code>log_mail_subject</code>.
+                    then the JobScheduler overwrites the setting from <code>log_mail_subject</code>.
                     This can be changed by the e-mail style sheet.
                 <!--Wenn eine Task mit Fehler oder Warnung endet,
-                    überschreibt der Scheduler die Einstellung von <code>log_mail_subject</code>.
+                    überschreibt der JobScheduler die Einstellung von <code>log_mail_subject</code>.
                     Das eMail-Stylesheet kann dies ändern.-->
                 </p>
             </description>
@@ -5666,9 +5666,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="Auftrag mit &lt;run_time&gt; weckt jetzt auf Auftrag wartende Task">-->
             <description>
                 <p>
-                    Up to now the Job Scheduler had ignored an order repeated through <code>run_time</code>,
+                    Up to now the JobScheduler had ignored an order repeated through <code>run_time</code>,
                     when a task was already waiting on the order (i.e. in the <code>running_waiting_for_order</code> state).
-                <!--Bislang hat der Scheduler einen wegen <code>run_time</code> wiederholten Auftrag verschlafen,
+                <!--Bislang hat der JobScheduler einen wegen <code>run_time</code> wiederholten Auftrag verschlafen,
                     wenn bereits eine Task auf den Auftrag wartete (im Zustand <code>running_waiting_for_order</code>).-->
                 </p>
             </description>
@@ -5680,7 +5680,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="correction" title="SQL-Tabellenamen ohne &quot;&quot;; Große order.payload möglich">-->
             <description>
                 <p>
-                    In the Job Scheduler SQL commands table names are written in upper case without inverted commas.
+                    In the JobScheduler SQL commands table names are written in upper case without inverted commas.
                     (Exception: queries coming from SQL files).
                 <!--Die SQL-Anweisungen des Schedulers verwenden die Tabellennamen großgeschrieben ohne Anführungszeichen.
                     (Ausnahme: Zugriffe über den Dateityp sql).-->
@@ -5694,8 +5694,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             </description>
         </revision>
 
-        <revision type="modification" title="HPUX: Hostjava Integrated in the Job Scheduler">
-    <!--<revision type="modification" title="HPUX: Hostjava ist im Scheduler eingebunden">-->
+        <revision type="modification" title="HPUX: Hostjava Integrated in the JobScheduler">
+    <!--<revision type="modification" title="HPUX: Hostjava ist im JobScheduler eingebunden">-->
             <description>
                 <p>
                    Because of a problem with gcc 3.2 when loading the libhostjava.sl file
@@ -5717,9 +5717,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     The "value" column is now an integer. The new "textvalue" column is a Varchar(250)
-                    (is not used by the Job Scheduler at the moment).
+                    (is not used by the JobScheduler at the moment).
                 <!--Die Spalte "wert" ist jetzt ein Integer. Die neue Spalte Textwert ist ein Varchar(250)
-                    (wird vom Scheduler zurzeit nicht verwendet).-->
+                    (wird vom JobScheduler zurzeit nicht verwendet).-->
                 </p>
             </description>
         </revision>
@@ -5840,8 +5840,8 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 </p>
                 <ul>
                     <li>
-                        the Job Scheduler now closes the order log file, 
-                    <!--schließt der Scheduler das Auftragsprotokoll, -->
+                        the JobScheduler now closes the order log file, 
+                    <!--schließt der JobScheduler das Auftragsprotokoll, -->
                     </li>
                     <li>
                         writes an entry in the order history - 
@@ -5864,18 +5864,18 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
             <description>
                 <p>
                     The first Ctrl-C 
-                    ends the Job Scheduler in the same way as 
+                    ends the JobScheduler in the same way as 
                     <scheduler_element name="modify_spooler" attribute="cmd" value="terminate"/>.
                 <!--Das erste Ctrl-C 
-                    beendet den Scheduler wie <scheduler_element name="modify_spooler" attribute="cmd" value="terminate"/>.-->
+                    beendet den JobScheduler wie <scheduler_element name="modify_spooler" attribute="cmd" value="terminate"/>.-->
                 </p>
                 <p>
                     The second then stops all processes.
                 <!--Das zweite Ctrl-C führt dann zum Abbruch aller Prozesse.-->
                 </p>
                 <p>
-                    The third Ctrl-C lets the operating system stop the Job Scheduler.
-                <!--Erst das dritte lässt das Betriebssystem den Scheduler abbrechen.-->
+                    The third Ctrl-C lets the operating system stop the JobScheduler.
+                <!--Erst das dritte lässt das Betriebssystem den JobScheduler abbrechen.-->
                 </p>
             </description>
         </revision>
@@ -5884,11 +5884,11 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     <!--<revision type="new" title="Terminate mit Frist">-->
             <description>
                 <p>
-                    The Job Scheduler can now be stopped with a time limit.
-                    When the tasks have not stopped within the limit specified, then the Scheduler stops the task processes.
+                    The JobScheduler can now be stopped with a time limit.
+                    When the tasks have not stopped within the limit specified, then the JobScheduler stops the task processes.
                     It then stops itself after waiting on the tasks at the most for a further 30 seconds.
-                <!--Der Scheduler kann jetzt mit Frist beendet werden.
-                    Wenn innerhalb der Frist die Tasks nicht enden, bricht der Scheduler die Prozesse der Tasks ab,
+                <!--Der JobScheduler kann jetzt mit Frist beendet werden.
+                    Wenn innerhalb der Frist die Tasks nicht enden, bricht der JobScheduler die Prozesse der Tasks ab,
                     und wartet dann längstens weitere 30s auf die Tasks, bevor er sich beendet.-->
                 </p>
                 <p>
@@ -5923,7 +5923,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
     </change>
 
     <change date="2005-09-07" version="2.0.138" subversion_revision="3866">
-        <revision type="correction" title="spooler_log.debug1() to spooler_log.debug9() no Longer Suppressed in Scheduler Script"/>
+        <revision type="correction" title="spooler_log.debug1() to spooler_log.debug9() no Longer Suppressed in JobScheduler Script"/>
     <!--<revision type="correction" title="spooler_log.debug1() bis spooler_log.debug9() im Scheduler-Skript werden nicht mehr unterdrückt"/>-->
         <revision type="modification" title="Database Tables Created With varchar Instead of char"/>
     <!--<revision type="modification" title="Datenbanktabellen werden mit varchar statt char angelegt"/>-->
@@ -6062,9 +6062,9 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 </p>
                 <p>
                     Should the order to be replaced be carried out by a task,
-                    then the Job Scheduler will wait until this has been finished before the new order can be carried out.
+                    then the JobScheduler will wait until this has been finished before the new order can be carried out.
                 <!--Falls der ersetzte Auftrag gerade von einer Task ausgeführt wird,
-                    dann wartet der Scheduler die Ausführung ab, bevor der neue Auftrag ausgeführt werden kann.-->
+                    dann wartet der JobScheduler die Ausführung ab, bevor der neue Auftrag ausgeführt werden kann.-->
                 </p>
                 <p>
                     The order which has been replaced appears in the XML response as
@@ -6214,12 +6214,12 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                 <p>
                     A task for which
                     <scheduler_method class="Job" property="delay_after_error" java_signature="int, double" access="write"/>
-                    is set, is now re-added by the Job Scheduler, with an new identifier, to the task order queue.
+                    is set, is now re-added by the JobScheduler, with an new identifier, to the task order queue.
                     The task parameters are taken over once more.
                 <!--Eine Task, für die nach einem Fehler
                     <scheduler_method class="Job" property="delay_after_error" java_signature="int, double" access="write"/>
                     wirksam wird,
-                    fügt der Scheduler jetzt (mit neuer Kennung) erneut in die Task-Warteschlange ein.
+                    fügt der JobScheduler jetzt (mit neuer Kennung) erneut in die Task-Warteschlange ein.
                     Dabei werden die Task-Parameter übernommen.-->
                 </p>
                 <p>

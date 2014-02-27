@@ -20,10 +20,10 @@
         </p>
         <p>
             When the <code>&lt;params></code> element is specified, 
-            then the Scheduler creates a <scheduler_method class="Variable_set"/> 
+            then the JobScheduler creates a <scheduler_method class="Variable_set"/> 
             and makes it available in <scheduler_method class="Order" method="payload"/>.
         <!--Wenn Sie das Element <code>&lt;params></code> angegeben, 
-            erstellt der Scheduler ein <scheduler_method class="Variable_set"/> 
+            erstellt der JobScheduler ein <scheduler_method class="Variable_set"/> 
             und stellt es dem Job in <scheduler_method class="Order" method="payload"/> zur Verfügung.-->
         </p>
     </description>

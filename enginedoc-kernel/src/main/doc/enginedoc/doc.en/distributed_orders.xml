@@ -31,13 +31,13 @@
 		(approx. 1-2 minutes), then it takes over the processing of the orders started by the missing JobScheduler.
 <!--In einem Cluster zeigen alle JobScheduler ihre Verfügbarkeit durch das Versenden von Herzschlägen an. 
 		Alle JobScheduler prüfen, ob die jeweils anderen JobScheduler verfügbar sind. 
-		Stellt ein JobScheduler fest, dass vom anderen Scheduler die Herzschläge über einen längeren Zeitraum
+		Stellt ein JobScheduler fest, dass vom anderen JobScheduler die Herzschläge über einen längeren Zeitraum
 		(ca. 1-2 Minuten) ausbleiben, so übernimmt dieser die Verarbeitung der angefangenen Aufträge.-->
 	</p>
 	<p>
 		The conditions under which a JobScheduler cluster can be used for distributed orders are 
 		schematically represented on the following diagram and described in the next section.
-<!--Die Voraussetzungen für die Operation eines Scheduler Clusters für verteilte Aufträge
+<!--Die Voraussetzungen für die Operation eines JobScheduler Clusters für verteilte Aufträge
 		sind schematisch in der folgende Zeichnung abgebildet, und werden im Detail in den nächsten Abschnitt beschreiben.-->
 	</p>
 	<img src="images/job_scheduler_distributed_orders_1.jpg" style="margin: 20px 0px ; border:1px solid gray;"/>
@@ -68,7 +68,7 @@
 	<!--Alle JobScheduler verwenden die selbe Konfigurationsdatei bzw. eine genaue Kopie.-->
 		</li>
 		<li>
-			All the JobSchedulers must be started with the same Scheduler ID. 
+			All the JobSchedulers must be started with the same JobScheduler ID. 
 	<!--Alle JobScheduler werden mit der gleichen Scheduler-ID gestartet. -->
 		</li>
 		<li>
@@ -94,10 +94,10 @@
 	<p>
 		The JobSchedulers making up the cluster can be started in any order. 
 		Any JobScheduler belonging to the cluster can be removed or added as required whilst the cluster is in operation. 
-		When a Scheduler is removed from a cluster it should, where possible, be stopped (terminated) normally,
+		When a JobScheduler is removed from a cluster it should, where possible, be stopped (terminated) normally,
 		to allow any orders which are being processed at the time to be completed.
 <!--Die JobScheduler, die den Cluster bilden, werden in beliebiger Reihenfolge gestartet. 
-		Es können während der Laufzeit beliebig Scheduler entfernt oder hinzugefügt werden. Beim entfernen
+		Es können während der Laufzeit beliebig JobScheduler entfernt oder hinzugefügt werden. Beim entfernen
 		von JobScheduler Instanzen, sollten diese, wenn möglich, normal beendet (Terminate) werden,
 		damit sie die Möglichkeit haben, Aufträge zu beenden, die gerade verarbeitet werden.-->
 	</p>
@@ -155,7 +155,7 @@
 	<p>
 		Independent jobs which do not process orders are processed in a JobScheduler cluster by the JobSchedulers 
 		with which they were configured.
-<!--Eigenständige Jobs, die keine Aufträge verarbeiten, werden in einem Scheduler Cluster nur von dem JobScheduler ausgeführt,
+<!--Eigenständige Jobs, die keine Aufträge verarbeiten, werden in einem JobScheduler Cluster nur von dem JobScheduler ausgeführt,
 		in dem sie konfiguriert werden..-->
 	</p>
 

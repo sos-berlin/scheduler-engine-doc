@@ -58,7 +58,7 @@
             <description>
                 <p>
                     Wenn zum Entwickeln von Java-Jobs der Quell-Code direkt in <scheduler_element name="script"/> notiert wird,
-                    übersetzt der Scheduler mit dem hier eingestellten Java-Compiler.
+                    übersetzt der JobScheduler mit dem hier eingestellten Java-Compiler.
                 </p>
             </description>
         </ini_entry>

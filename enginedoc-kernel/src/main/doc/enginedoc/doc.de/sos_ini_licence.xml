@@ -29,7 +29,7 @@
 
     <description>
         <p>
-            Der Scheduler verlangt einen Lizenzschlüssel, der hier eingetragen werden kann.
+            Der JobScheduler verlangt einen Lizenzschlüssel, der hier eingetragen werden kann.
         </p>
     </description>
 </ini_section>

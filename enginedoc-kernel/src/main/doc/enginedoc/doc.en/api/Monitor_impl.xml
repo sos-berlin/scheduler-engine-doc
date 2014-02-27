@@ -22,7 +22,7 @@
 
 
     <title>
-        The Scheduler Object
+        The JobScheduler Object
     <!--Das allgemeine Objekt des Schedulers-->
     </title>
     
@@ -35,15 +35,15 @@
 
 
     <example programming_language="java">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory() );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
 
     <example programming_language="javascript">
-        <pre>spooler_log.debug( "The working directory of the Scheduler is " + spooler.directory );</pre>
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
     </example>
 	
     <example programming_language="perl">
-        <pre>$spooler_log->debug( 'The working directory of the Scheduler is ' . $spooler->directory );</pre>
+        <pre>$spooler_log->debug( 'The working directory of the JobScheduler is ' . $spooler->directory );</pre>
     </example>
 
 </property>
@@ -173,8 +173,8 @@
 
     <description>
         <p>
-            This method is called by the Job Scheduler before a task is loaded.
-        <!--Vor dem Laden der Task ruft der Scheduler diese Methode auf.-->
+            This method is called by the JobScheduler before a task is loaded.
+        <!--Vor dem Laden der Task ruft der JobScheduler diese Methode auf.-->
         </p>
     </description>
 
@@ -202,8 +202,8 @@
 
     <description>
         <p>
-            This method is called by the Job Scheduler after a task has been completed.
-        <!--Der Scheduler ruft diese Methode, nachdem die Task geendet hat.-->
+            This method is called by the JobScheduler after a task has been completed.
+        <!--Der JobScheduler ruft diese Methode, nachdem die Task geendet hat.-->
         </p>
     </description>
 
@@ -223,19 +223,19 @@
             <com.type type="bool"/>
             <description>
                 <code>false</code> prevents further calls to <scheduler_method class="Job_impl" method="spooler_process"/>.
-                The Job Scheduler continues as though <code>false</code> had been returned by 
+                The JobScheduler continues as though <code>false</code> had been returned by 
                 <scheduler_method class="Job_impl" method="spooler_process"/> <code>false</code>.
             <!--<code>false</code> verhindert den folgenden Aufruf von <scheduler_method class="Job_impl" method="spooler_process"/>.
-                Der Scheduler setzt fort, als hätte <scheduler_method class="Job_impl" method="spooler_process"/> <code>false</code> geliefert.-->
+                Der JobScheduler setzt fort, als hätte <scheduler_method class="Job_impl" method="spooler_process"/> <code>false</code> geliefert.-->
             </description>
         </com.result>
     </com>
 
     <description>
         <p>
-            This method is called by the Job Scheduler before each call of 
+            This method is called by the JobScheduler before each call of 
             <scheduler_method class="Job_impl" method="spooler_process"/>.
-        <!--Der Scheduler ruft diese Methode vor jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.-->
+        <!--Der JobScheduler ruft diese Methode vor jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.-->
         </p>
     </description>
 
@@ -305,9 +305,9 @@
 
     <description>
         <p>
-            The Job Scheduler calls this method after 
+            The JobScheduler calls this method after 
             <scheduler_method class="Job_impl" method="spooler_process"/> has been carried out.
-        <!--Der Scheduler ruft diese Methode nach jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.-->
+        <!--Der JobScheduler ruft diese Methode nach jedem <scheduler_method class="Job_impl" method="spooler_process"/> auf.-->
         </p>
     </description>
 

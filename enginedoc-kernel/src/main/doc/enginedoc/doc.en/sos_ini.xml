@@ -33,16 +33,16 @@
         </p>
         
         <p>
-            When calling the Job Scheduler from the command line, 
+            When calling the JobScheduler from the command line, 
             the path to the file can be specified using the <scheduler_option name="sos.ini"/> option. 
             For example,
         <!--Beim Aufruf des Schedulers können Sie den Pfad dieser Datei mit der Option <scheduler_option name="sos.ini"/> angeben, z.B.:-->
             <pre>…<i>scheduler installation path</i>…\bin\scheduler.exe -sos.ini=C:/Programme/scheduler/config/sos.ini</pre>
         </p>
         <p>
-          During installation of the Job Scheduler, the <code>sos.ini</code> file is written to the
+          During installation of the JobScheduler, the <code>sos.ini</code> file is written to the
           <pre>…<i>scheduler installation path</i>…\config</pre> directory.
-          Calls using the Job Scheduler start script automatically set this path corrrectly.
+          Calls using the JobScheduler start script automatically set this path corrrectly.
       <!--Bei der Installation durch den Scheduler-Setup wird die Datei sos.ini im Verzeichnis
           <pre>…<i>scheduler installation path</i>…\config</pre>
           abgelegt. Aufrufe über das Startskript setzen den Pfad automatisch richtig.-->
@@ -52,9 +52,9 @@
           then this file can be saved centrally.
         </p>
         <p>
-          Should the <code>sos.ini</code> file not be specified when starting the Job Scheduler, 
-          then the Scheduler will attempt to find it by looking according to the following criteria:
-      <!--Sollen Einstellungen aus sos.ini neben dem Scheduler auch für andere SOS-Produkte gelten, kann diese Ini-Datei zentral abgelegt werden.
+          Should the <code>sos.ini</code> file not be specified when starting the JobScheduler, 
+          then the JobScheduler will attempt to find it by looking according to the following criteria:
+      <!--Sollen Einstellungen aus sos.ini neben dem JobScheduler auch für andere SOS-Produkte gelten, kann diese Ini-Datei zentral abgelegt werden.
           <br/><br/>
           Falls beim Scheduler-Aufruf der Pfad zur Datei sos.ini nicht angegeben wird, gelten folgende Vorgaben:-->
         </p>

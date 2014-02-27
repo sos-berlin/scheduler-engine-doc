@@ -35,7 +35,7 @@
                     <scheduler_element name="show_state"/> unsichtbar.
                 </p>
                 <p>
-                    Bei <code>visible="no"</code> setzt der Scheduler die Jobkette sichtbar, sobald eine Task eingereiht wird.
+                    Bei <code>visible="no"</code> setzt der JobScheduler die Jobkette sichtbar, sobald eine Task eingereiht wird.
                     Bei <code>visible="never"</code> ist das nicht der Fall.
                 </p>
             </description>
@@ -49,24 +49,24 @@
                 </p>
                 <div class="indent">
                     <p style="margin-top: 0pt;">
-                        Der Scheduler hält die Aufträge in der Datenbank.
+                        Der JobScheduler hält die Aufträge in der Datenbank.
                         Sobald ein Auftrag in die Auftragswarteschlange eines Jobs eingereiht wird,
-                        speichert der Scheduler ihn auch in der Datenbank.
+                        speichert der JobScheduler ihn auch in der Datenbank.
                         Wenn der Auftrag die Jobkette durchlaufen hat, wird er aus der Datenbank entfernt.
                     </p>
                     <p>
-                        Beim Einrichten der Jobkette (beim Start des Schedulers) lädt der Scheduler die Aufträge aus der Datenbank.
+                        Beim Einrichten der Jobkette (beim Start des Schedulers) lädt der JobScheduler die Aufträge aus der Datenbank.
                         Siehe <scheduler_method class="Spooler" method="add_job_chain"/>.
                     </p>
                     <p>
-                        Wirkungslos, wenn der Scheduler ohne Datenbank arbeitet, siehe <scheduler_ini_entry file="factory.ini" section="spooler" entry="db"/>.
+                        Wirkungslos, wenn der JobScheduler ohne Datenbank arbeitet, siehe <scheduler_ini_entry file="factory.ini" section="spooler" entry="db"/>.
                     </p>
                 </div>
                 <p>
                     <code>orders_recoverable="no"</code>
                 </p>
                 <p class="indent" style="margin-top: 0pt;">
-                    Der Scheduler hält nicht die Aufträge in der Datenbank und lädt sie auch nicht daraus.
+                    Der JobScheduler hält nicht die Aufträge in der Datenbank und lädt sie auch nicht daraus.
                 </p>
                 <p>
                     Siehe <a href="../datenbank.xml">Datenbank</a>.
@@ -83,7 +83,7 @@
                 </p>
                 <p>
                     <code>distributed="no"</code> lässt die Jobkette nicht verteilt,
-                    sondern nur auf diesem Scheduler ausführen,
+                    sondern nur auf diesem JobScheduler ausführen,
                     wie bei einem nicht-verteiltem Scheduler.
                     Der Name der Jobkette <i>muss</i> in diesem Fall im Cluster eindeutig sein
                     (das wird nicht geprüft).

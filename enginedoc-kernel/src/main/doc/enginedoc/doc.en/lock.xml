@@ -17,12 +17,12 @@
     
     
     <p>
-        Locks in the Job Scheduler stop the execution of a job, 
+        Locks in the JobScheduler stop the execution of a job, 
         as long as a particular lock has been acquired by one or more jobs.
         Locks are available for individual jobs and for jobs in job chains. 
         Should a job be waiting for a lock to be released (lock contention), 
         then it will be automatically started as soon as the lock has been freed.
-    <!--Sperren im Job Scheduler verhindern die Ausführung eines Jobs, 
+    <!--Sperren im JobScheduler verhindern die Ausführung eines Jobs, 
         solange eine bestimmte Sperre von einem oder mehreren anderen Job(s) belegt ist. 
         Sperren stehen für Jobs in Job-Ketten und für einzelne Jobs zur Verfügung. 
         Wartet ein Job auf die Freigabe einer Sperre, wird er automatisch gestartet,
@@ -67,8 +67,8 @@
     die Zahl der nicht exklusiven Belegungen begrenzt werden. 
     Die Voreinstellung für die Verwendung einer Sperre ist die exklusive Belegung</p>  -->
     
-    <p>The Job Scheduler does not start a job when a lock is used which has not been declared.</p>
-<!--<p>Wenn eine Sperre verwendet wird, die nicht deklariert wurde, startet der job Scheduler den Jobnicht.</p>-->
+    <p>The JobScheduler does not start a job when a lock is used which has not been declared.</p>
+<!--<p>Wenn eine Sperre verwendet wird, die nicht deklariert wurde, startet der JobScheduler den Jobnicht.</p>-->
     <p><b>Careful:</b> Lock names are case-sensitive! </p>
 <!--<p><b>Achtung:</b> Bei Namen von Sperren wird Groß- und Kleinschreibung unterschieden! </p>-->
     
@@ -175,7 +175,7 @@
         <code>sqlldr</code> zum Beispiel läuft in einem eigenen Prozess.
     </p>
     <p>
-        Wenn der Scheduler neu gestartet worden ist, aber der die Task ausführende Prozess oder ein Subprozess
+        Wenn der JobScheduler neu gestartet worden ist, aber der die Task ausführende Prozess oder ein Subprozess
         noch läuft (das passiert bei kill -9 auf den Scheduler),
         dann ist die Sperre frei, obwohl die zu schützende Operation noch läuft.
         <!- -Unter Windows könnte das anscheinend mit den <a href="windows_job_objects.xml">Windows-Jobs</a> 
@@ -211,7 +211,7 @@
         wenn die Sperre gesetzt werden konnte. 
         Wenn der Aufruf <code>false</code> liefert, 
         verlässt man spooler_process(). 
-        Der Scheduler wiederholt den Aufruf von spooler_process(), 
+        Der JobScheduler wiederholt den Aufruf von spooler_process(), 
         sobald die Sperre frei ist. 
         Die Sperre wird freigegeben, 
         wenn die Task kein weiteres spooler_process() ausführt (return false, Task.end(), Task.delay_next_process()). 

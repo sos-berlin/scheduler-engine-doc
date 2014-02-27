@@ -39,7 +39,7 @@
 	<!--<li>Endzeit (falls erreicht)</li>-->
 			<li>
 				The start event (should there be more than one start event, 
-				the Job Scheduler will attempt to define the most important event)
+				the JobScheduler will attempt to define the most important event)
 			</li>
 	<!--<li>Anlass des Starts (falls es mehrere Start-Anlässe gibt, wird der möglicherweise wichtigste Anlass genommen)</li>-->
 			<li>Parameter (in XML)</li>
@@ -169,15 +169,15 @@
 		</p>
 		
 		<p>
-			The file is rewritten each time the Job Scheduler is started.
-			A previously existing file can be renamed and/or compressed before a Job Scheduler start.
-	<!--Die Datei wird beim Job Scheduler Start neu angelegt. 
+			The file is rewritten each time the JobScheduler is started.
+			A previously existing file can be renamed and/or compressed before a JobScheduler start.
+	<!--Die Datei wird beim JobScheduler Start neu angelegt. 
 			Eine bereits vorhandene Datei kann zurvor umbenannt und komprimiert werden.-->
 		</p>
 		
 		<p>
-			The Job Scheduler writes column names in the first row of the file.
-	<!--Der Job Scheduler schreibt in die erste Zeile die Spaltennamen.-->
+			The JobScheduler writes column names in the first row of the file.
+	<!--Der JobScheduler schreibt in die erste Zeile die Spaltennamen.-->
 		</p>
 		
 		<p>
@@ -196,10 +196,10 @@
 <!--<p class="zwischentitel">Archivierung</p>-->
 		
 		<p>
-			Existing history files are overwritten when the Job Scheduler is started.
+			Existing history files are overwritten when the JobScheduler is started.
 			However, these files can be archived using the <code>history_archive</code> entry in the
 			<a href="factory_ini.xml"><code>factory.ini</code></a>:
-	<!--Beim Start des Job Schedulers werden die Historien der Jobs überschrieben. 
+	<!--Beim Start des JobSchedulers werden die Historien der Jobs überschrieben. 
 			Die vorhandenen Historien können mit dem Eintrag <code>history_archive</code> in der Konfigurationsdatei
 			<a href="factory_ini.xml"><code>factory.ini</code></a> archiviert werden:-->
 		</p>
@@ -281,11 +281,11 @@ db = odbc -db=scheduler</pre>
 		<p class="zwischentitel">need_db</p-->
 		
 		<p>
-			The <font class="mono">need_db=no</font> entry is used to allow the Job Scheduler to start
+			The <font class="mono">need_db=no</font> entry is used to allow the JobScheduler to start
 			when the history database cannot be opened.
 			The default setting here is <font class="mono">need_db=yes</font>.&#160;
 	<!--Mit dem Eintrag <font class="mono">need_db=no</font> kann eingestellt werden,
-			dass der Job Scheduler auch anlaufen soll, wenn die Datenbank sich nicht öffnen
+			dass der JobScheduler auch anlaufen soll, wenn die Datenbank sich nicht öffnen
 			lässt. Voreingestellt ist <font class="mono">need_db=yes</font>.&#160;-->
 		</p>
 		
@@ -297,11 +297,11 @@ need_db = no</pre>
 		When only a database file name is specified with <font class="mono">db=</font> and
 			<font class="mono">log_dir=*stderr</font> is set, 
 			then the database cannot be opened because of the missing directory. 
-			In this case the Job Scheduler does not start if <font class="mono">need_db=yes</font> is set.
+			In this case the JobScheduler does not start if <font class="mono">need_db=yes</font> is set.
 	<!--Wenn mit <font class="mono">db=</font> nur ein Datenbankdateiname und<font class="mono">
 			log_dir=*stderr</font> eingestellt sind, kann die Datenbank mangels Verzeichnis
 			nicht geöffnet werden. Bei <font class="mono">need_db=yes</font> startet dann
-			der Job Scheduler nicht.-->
+			der JobScheduler nicht.-->
 		</p>
 		
 		<p class="zwischentitel">
@@ -311,11 +311,11 @@ need_db = no</pre>
 		
 		<p>
 			Should only a simple file name be specified with <font class="mono">db=</font>, 
-			then the Job Scheduler can automatically create a Microsoft MS Access database when 
+			then the JobScheduler can automatically create a Microsoft MS Access database when 
 			&#160; &quot;<font class="mono">odbc -create</font>&quot; is set 
 			(see ODBC file type).
 	<!--Wenn bei <font class="mono">db=</font> nur ein einfacher Dateiname angegeben
-			ist, stellt der Job Scheduler ihm&#160; &quot;<font class="mono">odbc -create</font>&quot;
+			ist, stellt der JobScheduler ihm&#160; &quot;<font class="mono">odbc -create</font>&quot;
 			voran.&#160;Damit wird eine Microsoft MS-Access-Datenbank automatisch angelegt 
 			(s. Dateityp ODBC).-->
 		</p>
@@ -338,17 +338,17 @@ db_variables_table = <i>tabellenname</i> | <u>spooler_variables</u></pre>-->
 		
 		
 		<p class="zwischentitel">
-			Job Scheduler Start Entry
-	<!--Satz für Job Scheduler Start-->
+			JobScheduler Start Entry
+	<!--Satz für JobScheduler Start-->
 		</p>
 		
 		<p>
-			The Job Scheduler makes an entry in the history with its own ID on starting. 
-			On ending, the Job Scheduler writes the time in this entry, so that both start and end times are noted. 
+			The JobScheduler makes an entry in the history with its own ID on starting. 
+			On ending, the JobScheduler writes the time in this entry, so that both start and end times are noted. 
 			The job name is &quot;<font class="mono">(Spooler)</font>&quot;.&#160;
-	<!--Der Job Scheduler schreibt beim Start einen Satz mit einer eigenen ID in die
+	<!--Der JobScheduler schreibt beim Start einen Satz mit einer eigenen ID in die
 			Historie. Beim Beenden trägt er in diesen Satz die Zeit ein, so dass ein Satz
-			mit Start- und Endezeit des Job Schedulers vorliegt. 
+			mit Start- und Endezeit des JobSchedulers vorliegt. 
 			Jobname ist &quot;<font class="mono">(Spooler)</font>&quot;.&#160;-->
 		</p>
 		
@@ -391,9 +391,9 @@ history_archive    = no|yes|gzip</pre>
 		
 		<p>
 			<font class="mono">history=no</font> suppresses the history. 
-			Should a database be specified, however, the entry for the start of the Job Scheduler will still be made.
+			Should a database be specified, however, the entry for the start of the JobScheduler will still be made.
 	<!--<font class="mono">history=no</font> unterdrückt die Historie. Wenn eine
-			Datenbank angegeben ist, wird dennoch der Satz für den Job Scheduler Start
+			Datenbank angegeben ist, wird dennoch der Satz für den JobScheduler Start
 			geschrieben.-->
 		</p>
 		
@@ -495,20 +495,20 @@ history_archive    = no|yes|gzip</pre>
 		
 		<p>
 			Every task has an identifier.
-			When a database is used, the Job Scheduler obtains this identifier from the 
+			When a database is used, the JobScheduler obtains this identifier from the 
 			<font class="mono">SCHEDULER_VARIABLES</font> table. 
-			This identifier is then unique to all Job Schedulers which use this database table.
+			This identifier is then unique to all JobSchedulers which use this database table.
 			Otherwise consecutive numbers are given.
 			The first task is given the number 1.
 	<!--Jeder Task erhält eine Kennung. Wenn eine Datenbank verwendet wird, ermittelt
-			der Job Scheduler sie aus der Tabelle <font class="mono">SCHEDULER_VARIABLES</font>. Die
-			Kennung ist dann für alle Job Scheduler eindeutig, die diese Datenbanktabelle nutzen.
+			der JobScheduler sie aus der Tabelle <font class="mono">SCHEDULER_VARIABLES</font>. Die
+			Kennung ist dann für alle JobScheduler eindeutig, die diese Datenbanktabelle nutzen.
 			Andernfalls wird eine fortlaufende Nummer vergeben. Der erste Task hat die Nummer 1.-->
 		</p>
 		
 		<p>
-			The identifier can then be recalled in scripts, which use the Job Scheduler API, with the <code>id</code> property:
-	<!--Die Kennung kann im Skripten, die das Job Scheduler API verwenden, mit der Eigenschaft <code>id</code> abgefragt werden:-->
+			The identifier can then be recalled in scripts, which use the JobScheduler API, with the <code>id</code> property:
+	<!--Die Kennung kann im Skripten, die das JobScheduler API verwenden, mit der Eigenschaft <code>id</code> abgefragt werden:-->
 		</p>
 		
 		<pre>meine_id = spooler_task.id</pre>
@@ -572,10 +572,10 @@ history_columns = <i>columnlist</i></pre>
 	<!--<p>Die zusätzlichen Spalten in der Historientabelle werden automatisch erkannt.&#160;-->
 		</p>
 		
-		<p>When the Job Scheduler creates the <font class="mono">SCHEDULER_HISTORY</font> table, 
+		<p>When the JobScheduler creates the <font class="mono">SCHEDULER_HISTORY</font> table, 
 		it also creates the necessary rows as defined in <font class="mono">history_columns</font>.
 		These rows are defined as <font class="mono">char(250)</font> type.</p>
-<!--<p>Wenn der Job Scheduler die Tabelle <font class="mono">SCHEDULER_HISTORY</font>
+<!--<p>Wenn der JobScheduler die Tabelle <font class="mono">SCHEDULER_HISTORY</font>
 		anlegt, richtet er auch die extra Spalten ein, die in <font class="mono">history_columns</font>
 		aufgeführt sind. Als Typ wird <font class="mono">char(250)</font> verwendet.</p>-->
 		
@@ -668,8 +668,8 @@ history_columns = <i>columnlist</i></pre>
 <!--<h2>5.&#160; Fehlerbehandlung</h2>-->
 		
 		<p>
-			Errors on opening or writing the history are noted in the Job Scheduler protocol and otherwise ignored.
-	<!--Fehler beim Öffnen oder Schreiben der Historie werden ins Job Scheduler Protokoll geschrieben und ignoriert.-->
+			Errors on opening or writing the history are noted in the JobScheduler protocol and otherwise ignored.
+	<!--Fehler beim Öffnen oder Schreiben der Historie werden ins JobScheduler Protokoll geschrieben und ignoriert.-->
 		</p>
 		
 		</description>

@@ -27,7 +27,7 @@
                 <code>&lt;select_event event_type="…"/></code> einzelne Ereignistypen (sonst alle Ereignistypen)
             </li>
             <li>
-                <code>&lt;select_event scheduler_id="…"/></code> einzelne Scheduler (sonst alle Scheduler)
+                <code>&lt;select_event scheduler_id="…"/></code> einzelne JobScheduler (sonst alle Scheduler)
             </li>
         </ul>
     </description>
@@ -43,12 +43,12 @@
         <xml_attribute name="proxy" type="host:port">
             <description>
                 <p>
-                    Gibt mit Rechnernamen (oder IP-Adresse) und TCP-Portnummer den Scheduler an,
+                    Gibt mit Rechnernamen (oder IP-Adresse) und TCP-Portnummer den JobScheduler an,
                     der die eigene Supervisor-Funktion zusätzlich annehmen soll und 
                     als Stellvertreter angesprochen werden kann.
                 </p>
                 <p>
-                    Andere Scheduler, die sich an diesen Scheduler (den Supervisor) mit
+                    Andere Scheduler, die sich an diesen JobScheduler (den Supervisor) mit
                     <scheduler_element name="config" attribute="supervisor"/> anschließen,
                     bekommen die Liste der Stellvertreter.
                 </p>

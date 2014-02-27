@@ -55,10 +55,10 @@
                 <!--Begrenzt die Zahl der Prozesse.-->
                 </p>
                 <p>
-                    Some operating systems limit the number of processes which the Job Scheduler can start.
+                    Some operating systems limit the number of processes which the JobScheduler can start.
                     The number of processes configured here should not exceed the number allowed by the operating system.
                     A value below 64 is usually safe.
-                <!--Manche Betriebsysteme limitieren die Zahl der Prozesse, die der Scheduler starten darf.
+                <!--Manche Betriebsysteme limitieren die Zahl der Prozesse, die der JobScheduler starten darf.
                     Es sollten nicht mehr Prozesse konfiguriert werden als das Betriebssystem erlaubt.-->
                 </p>
                 <p>
@@ -86,11 +86,11 @@
                 <p>
                     The remote computer must allow access with
                     <scheduler_element name="allowed_host" attribute="level" value="all"/>.
-                <!--Der entfernte Scheduler muss den Zugriff mit
+                <!--Der entfernte JobScheduler muss den Zugriff mit
                     <scheduler_element name="allowed_host" attribute="level" value="all"/> erlauben.-->
                 </p>
                 <p>
-                    Tasks executed communicate with the controlling Job Scheduler via the API.
+                    Tasks executed communicate with the controlling JobScheduler via the API.
                     However, the following points should be noted:
                 <!--Die ausgeführten Tasks kommunizieren über die API mit dem steuernden Scheduler.
                     Dabei gibt es einige Besonderheiten:-->
@@ -107,14 +107,14 @@
                         The <scheduler_method class="Subprocess" property="timeout"/> and 
                         <scheduler_method class="Task" object="spooler_task" method="add_pid"/> 
                         methods do not work.
-                        The Job Scheduler cannot terminate remote subprocesses whose time limits have been exceeded.
+                        The JobScheduler cannot terminate remote subprocesses whose time limits have been exceeded.
                     <!--<scheduler_method class="Subprocess" property="timeout"/> und 
                         <scheduler_method class="Task" object="spooler_task" method="add_pid"/> wirken nicht.
-                        Der Scheduler kann entfernte Subprozesse, deren Frist abgelaufen ist, nicht abbrechen.-->
+                        Der JobScheduler kann entfernte Subprozesse, deren Frist abgelaufen ist, nicht abbrechen.-->
                     </li>
                     <li>
                         <scheduler_method class="Log" method="log_file"/> is,
-                        as with almost all methods, carried out on the computer on which the Job Scheduler is running
+                        as with almost all methods, carried out on the computer on which the JobScheduler is running
                         and thereby accesses the files of its local file system.
                     <!--<scheduler_method class="Log" method="log_file"/> wird,
                         wie fast alle Methoden, auf dem Rechner des Schedulers ausgeführt,
@@ -122,8 +122,8 @@
                     </li>
                 </ul>
                 <p>
-                    Some settings are taken from the remote instead of from the controlling Job Scheduler:
-                <!--Einige Einstellungen werden vom entfernten statt vom eigenen Scheduler übernommen:-->
+                    Some settings are taken from the remote instead of from the controlling JobScheduler:
+                <!--Einige Einstellungen werden vom entfernten statt vom eigenen JobScheduler übernommen:-->
                 </p>
                 <ul>
                     <li>

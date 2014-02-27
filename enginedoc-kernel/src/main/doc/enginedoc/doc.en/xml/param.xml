@@ -18,7 +18,7 @@
         <!--Siehe <scheduler_element name="params" />.-->
         </p>
         <p>
-            Defines the individual parameters for the <a href="#param_scheduler">Job Scheduler</a>, 
+            Defines the individual parameters for the <a href="#param_scheduler">JobScheduler</a>, 
 						a <a href="#param_job">Job</a> or an <a href="#param_auftrag">Order</a>. In general all parameters are available with the API calls 
 						<scheduler_method class="Spooler" object="spooler" method="variables"/>, <scheduler_method class="Task" method="params" /> respectively
             <scheduler_method class="Order" method="payload" /> or in shell Jobs as environment variable (with leading <b>SCHEDULER_PARAM_</b>)
@@ -151,7 +151,7 @@
           </p>
 
           <p>
-              Scheduler parameters can be called using the  
+              JobScheduler parameters can be called using the  
 							<scheduler_method class="Spooler" object="spooler" method="variables"/> method.
           <!--Scheduler-Parameter können mit der Methode 
 							<scheduler_method class="Spooler" object="spooler" method="variables"/> abgerufen werden.-->

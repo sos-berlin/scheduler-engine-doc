@@ -19,16 +19,16 @@
         <xml_attribute name="heart_beat_timeout" type="seconds" initial="60">
             <description>
                 <p>
-                    The time limit allowed for the heartbeat of another active Job Scheduler in a cluster 
-                    to be delayed before the Scheduler is declared dead.
+                    The time limit allowed for the heartbeat of another active JobScheduler in a cluster 
+                    to be delayed before the JobScheduler is declared dead.
                 <!--Wenn der Herzschlag eines anderen aktiven Schedulers im Cluster sich um diese Frist verspätet,
-                    wird der dieser Scheduler für tot erklärt.-->
+                    wird der dieser JobScheduler für tot erklärt.-->
                 </p>
                 <p>
-                    When a Job Scheduler is inactive and operated with the 
+                    When a JobScheduler is inactive and operated with the 
                     <scheduler_option name="exclusive"/> option set,
                     then it may then become active.
-                <!--Wenn der eigene Scheduler inaktiv ist und 
+                <!--Wenn der eigene JobScheduler inaktiv ist und 
                     mit der Option <scheduler_option name="exclusive"/> betrieben wird,
                     kann er anschließend aktiv werden.-->
                 </p>
@@ -42,16 +42,16 @@
         <xml_attribute name="heart_beat_own_timeout" type="seconds" initial="55">
             <description>
                 <p>
-                    This setting is used for self-regulation of a Job Scheduler.
-                    When a Job Scheduler notices that its own heartbeat has been delayed 
+                    This setting is used for self-regulation of a JobScheduler.
+                    When a JobScheduler notices that its own heartbeat has been delayed 
                     longer than the time specified in this parameter, 
                     then it immediately stops and restarts itself.
-                    This means that a Job Scheduler preempts being deactivated by another Scheduler
+                    This means that a JobScheduler preempts being deactivated by another Scheduler
                     and avoids the short-term possibility of parallel operation because of a delayed heartbeat.
                 <!--Die Einstellung dient zur Selbstkontrolle des Schedulers.
                     Wenn der eigene Herzschlag sich um diese Frist verspätet,
-                    bricht der Scheduler sofort ab und startet sich neu.
-                    Damit kommt der Scheduler der Deaktivierung durch einen anderen Scheduler zuvor,
+                    bricht der JobScheduler sofort ab und startet sich neu.
+                    Damit kommt der JobScheduler der Deaktivierung durch einen anderen JobScheduler zuvor,
                     und verhindert den kurzzeitigen Parallelbetrieb wegen verzögerten Herzschlags.-->
                 </p>
             </description>
@@ -63,7 +63,7 @@
         <xml_attribute name="heart_beat_warn_timeout" type="seconds" initial="10">
             <description>
                 <p>
-                    The time allowed for a delay in the heartbeat of a Job Scheduler before a 
+                    The time allowed for a delay in the heartbeat of a JobScheduler before a 
                     warning is given out.
                 <!--Wenn der Herzschlag eines Schedulers sich um diese Frist verspätet,
                     wird eine Warnung ausgegeben.-->

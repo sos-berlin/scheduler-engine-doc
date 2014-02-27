@@ -18,16 +18,16 @@
     <com/>
 
     <title>
-        Bricht den Scheduler augenblicklich ab
+        Bricht den JobScheduler augenblicklich ab
     </title>
   
     <description>
         <p>
-            Bricht den Scheduler augenblicklich ab.
+            Bricht den JobScheduler augenblicklich ab.
             Kein Job hat Gelegenheit, darauf zu reagieren.
         </p>
         <p>
-            Der Scheduler bricht zuvor alle gestarteten Prozesse ab.
+            Der JobScheduler bricht zuvor alle gestarteten Prozesse ab.
             Das sind die Tasks und die Prozesse von <scheduler_method class="Task" method="create_subprocess"/>
             und <scheduler_method class="Task" method="add_pid"/>.
         </p>
@@ -44,13 +44,13 @@
     <com/>
 
     <title>
-        Bricht den Scheduler augenblicklich ab und startet ihn neu.
+        Bricht den JobScheduler augenblicklich ab und startet ihn neu.
     </title>
 
     <description>
         <p>
             Wie <scheduler_method class="Spooler" method="abort_immediately"/>,
-            nur dass der Scheduler sich erneut startet.
+            nur dass der JobScheduler sich erneut startet.
             Dabei verwendet er die Kommandozeilenparameter wieder.
         </p>
         <p>
@@ -72,7 +72,7 @@
     <description>
         <p>
             Bei <scheduler_method class="Job_chain" property="orders_recoverable"/><code>=true</code>
-            lädt der Scheduler die Aufträge der Jobkette aus der Datenbank.
+            lädt der JobScheduler die Aufträge der Jobkette aus der Datenbank.
         </p>
         <p>
             Siehe <scheduler_method class="Spooler" method="create_job_chain"/>
@@ -109,7 +109,7 @@
             Liefert eine neue <scheduler_method class="Job_chain"/>.
             Diese Jobkette kann, nachdem sie mit Jobs gefüllt worden ist,
             mit <scheduler_method class="Spooler" method="add_job_chain"/>
-            dem Scheduler hinzugefügt werden
+            dem JobScheduler hinzugefügt werden
         </p>
         <p>
             Siehe <scheduler_element name="job_chain"/>.
@@ -293,7 +293,7 @@
 
     <description>
         <p>
-            Eine auf einem entfernten Scheduler ausgeführte Task 
+            Eine auf einem entfernten JobScheduler ausgeführte Task 
             (<scheduler_element name="process_class" attribute="remote_scheduler"/>)
             liefert den Wert des entfernten Schedulers.
         </p>
@@ -353,7 +353,7 @@
     </com>
 
     <title>
-        Name des Rechners, auf dem der Scheduler läuft.
+        Name des Rechners, auf dem der JobScheduler läuft.
     </title>
 </property>
 
@@ -386,7 +386,7 @@
 
     <description>
         <p>
-            Eine auf einem entfernten Scheduler ausgeführte Task
+            Eine auf einem entfernten JobScheduler ausgeführte Task
             (<scheduler_element name="process_class" attribute="remote_scheduler"/>)
             liefert den Wert des entfernten Schedulers.
         </p>
@@ -408,7 +408,7 @@
 
     <description>
         <p>
-            Eine auf einem entfernten Scheduler ausgeführte Task
+            Eine auf einem entfernten JobScheduler ausgeführte Task
             (<scheduler_element name="process_class" attribute="remote_scheduler"/>)
             liefert den Wert des entfernten Schedulers.
         </p>
@@ -425,7 +425,7 @@
         <com.result>
             <com.type type="bool"/>
             <description>
-                true, genau dann wenn der Scheduler als Dienst (in Windows) oder als Daemon (in Unix) läuft.
+                true, genau dann wenn der JobScheduler als Dienst (in Windows) oder als Daemon (in Unix) läuft.
             </description>
         </com.result>
     </com>
@@ -532,7 +532,7 @@
     
     <description>
         <p>
-            Eine auf einem entfernten Scheduler ausgeführte Task
+            Eine auf einem entfernten JobScheduler ausgeführte Task
             (<scheduler_element name="process_class" attribute="remote_scheduler"/>)
             liefert den Wert des entfernten Schedulers.
         </p>
@@ -597,7 +597,7 @@
 
 <method name="terminate">
     <title>
-        Scheduler mit allen Tasks ordentlich beenden
+        JobScheduler mit allen Tasks ordentlich beenden
     </title>
 
     <com>
@@ -605,9 +605,9 @@
             <com.type type="int"/>
 
             <description>
-                Frist in Sekunden, die der Scheduler auf die Beendigung der Tasks wartet
-                und nach der der Scheduler alle Prozesse abbricht, um sich schließlich selbst zu beenden.
-                Ohne diesen Parameter wartet der Scheduler endlos auf die Tasks.
+                Frist in Sekunden, die der JobScheduler auf die Beendigung der Tasks wartet
+                und nach der der JobScheduler alle Prozesse abbricht, um sich schließlich selbst zu beenden.
+                Ohne diesen Parameter wartet der JobScheduler endlos auf die Tasks.
             </description>
         </com.parameter>
 
@@ -615,7 +615,7 @@
             <com.type type="bool"/>
 
             <description>
-                <code>restart=true</code> lässt den Scheduler nach Beendigung neu starten.
+                <code>restart=true</code> lässt den JobScheduler nach Beendigung neu starten.
             </description>
         </com.parameter>
 
@@ -623,7 +623,7 @@
             <com.type type="boolean"/>
 
             <description>
-                <code>all_schedulers=true</code> beendet alle Scheduler im Cluster 
+                <code>all_schedulers=true</code> beendet alle JobScheduler im Cluster 
                 (s. <scheduler_option name="exclusive"/>)
                 Das kann eine Minute dauern.
             </description>
@@ -648,7 +648,7 @@
             und schließlich sich selbst.
         </p>
         <p>
-            Wenn eine Frist angegeben ist, bricht der Scheduler nach Ablauf alle noch laufenden Prozesse ab
+            Wenn eine Frist angegeben ist, bricht der JobScheduler nach Ablauf alle noch laufenden Prozesse ab
             (das sind Tasks, die zulange in einem Aufruf wie <scheduler_method class="Job_impl" method="spooler_process"/> verharren).
         </p>
         <p>
@@ -662,7 +662,7 @@
 
 <method name="terminate_and_restart">
     <title>
-        Scheduler mit allen Tasks ordentlich beenden und erneut starten
+        JobScheduler mit allen Tasks ordentlich beenden und erneut starten
     </title>
 
     <com>
@@ -670,9 +670,9 @@
             <com.type type="int"/>
 
             <description>
-                Frist in Sekunden, die der Scheduler auf die Beendigung der Tasks wartet
-                und nach der der Scheduler alle Prozesse abbricht, um sich schließlich selbst zu beenden.
-                Ohne diesen Parameter wartet der Scheduler endlos auf die Tasks.
+                Frist in Sekunden, die der JobScheduler auf die Beendigung der Tasks wartet
+                und nach der der JobScheduler alle Prozesse abbricht, um sich schließlich selbst zu beenden.
+                Ohne diesen Parameter wartet der JobScheduler endlos auf die Tasks.
             </description>
         </com.parameter>
     </com>
@@ -681,7 +681,7 @@
     <description>
         <p>
             Wie <scheduler_method class="Spooler" method="terminate"/>,
-            aber der Scheduler startet sich neu.
+            aber der JobScheduler startet sich neu.
         </p>
         <p>
             Siehe <scheduler_element name="modify_spooler" attribute="cmd" value="terminate_and_restart"/>
@@ -698,10 +698,10 @@
     <description>
         <p>
             Sobald alle Aufträge abgearbeitet sind,
-            beendet der Scheduler alle Tasks
+            beendet der JobScheduler alle Tasks
             (durch Aufruf von <scheduler_method class="Job_impl" name="spooler_close"/>)
             und beendet dann sich selbst.
-            Ein neuer Scheduler mit unveränderten Kommandozeilenparametern wird gestartet.
+            Ein neuer JobScheduler mit unveränderten Kommandozeilenparametern wird gestartet.
         </p>
         <p>
             Siehe <scheduler_element name="modify_spooler" attribute="cmd" value="let_run_terminate_and_restart"/>
@@ -757,7 +757,7 @@
 
     <description>
         <p>
-            Die Variablen sind überall im Scheduler benutzbar.
+            Die Variablen sind überall im JobScheduler benutzbar.
         </p>
     </description>
 </property>

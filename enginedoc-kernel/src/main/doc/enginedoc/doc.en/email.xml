@@ -80,8 +80,8 @@ spooler_log.mail().set_to( "admin@xxx.com" );
 <!--<h2>eMails nach dem Ende einer Task</h2>-->
 
         <p>
-            On completion of a task, the Job Scheduler can send an E-mail containing the task protocol.
-        <!--Wenn eine Task endet, kann der Scheduler eine eMail mit dem Task-Protokoll verschicken.-->
+            On completion of a task, the JobScheduler can send an E-mail containing the task protocol.
+        <!--Wenn eine Task endet, kann der JobScheduler eine eMail mit dem Task-Protokoll verschicken.-->
         </p>
         <p>
             The following settings are used to determine the general conditions under which a protocol should be sent 
@@ -114,10 +114,10 @@ spooler_log.mail().set_to( "admin@xxx.com" );
         <div class="indent">
             The 
             <scheduler_method class="Log" property="mail_it"/>
-            request is used to determine whether the Job Scheduler sends a protocol on completion of a task.
+            request is used to determine whether the JobScheduler sends a protocol on completion of a task.
         <!--Mit dem Aufruf 
             <scheduler_method class="Log" property="mail_it"/>
-            können Sie einstellen, ob der Scheduler beim Ende der Task das Protokoll sendet.-->
+            können Sie einstellen, ob der JobScheduler beim Ende der Task das Protokoll sendet.-->
         </div>
         
         
@@ -130,11 +130,11 @@ spooler_log.mail().set_to( "admin@xxx.com" );
             <!--Das Job-Skript kann Einstellungen mit der Klasse <scheduler_method class="Mail"/> vornehmen.-->
             </li>
             <li>
-                Should an error occur, the Job Scheduler overwrites the mail subject 
+                Should an error occur, the JobScheduler overwrites the mail subject 
                 - i.e. the job
                 <scheduler_method class="Mail" property="log_mail_subject"/> 
                 setting.
-            <!--Im Fehlerfall setzt der Scheduler den Betreff, 
+            <!--Im Fehlerfall setzt der JobScheduler den Betreff, 
                 überschreibt also die Einstellung
                 <scheduler_method class="Mail" property="log_mail_subject"/> 
                 des Jobs.-->
@@ -167,38 +167,38 @@ spooler_log.mail().set_to( "admin@xxx.com" );
             
     
     
-    <h2>E-mails Sent when the Job Scheduler Terminates because of an Error</h2>
-<!--<h2>eMails, wenn der Scheduler wegen eines Fehlers sich beendet</h2>-->
+    <h2>E-mails Sent when the JobScheduler Terminates because of an Error</h2>
+<!--<h2>eMails, wenn der JobScheduler wegen eines Fehlers sich beendet</h2>-->
 
         <p>
-            The settings for e-mails sent when the Scheduler terminates because of an error 
+            The settings for e-mails sent when the JobScheduler terminates because of an error 
             are to be found in section <code>[spooler]</code> of the <code>factory.ini</code> file.
         <!--Für diese eMails werden die Einstellungen im Abschnit <code>[spooler]</code> 
             der Datei <code>factory.ini</code> verwendet.-->
         </p>
         <p>
             Should a error occur before the <scheduler_option name="ini"/> option can be carried out,
-            the Job Scheduler uses the (default) settings from the <code>factory.ini</code> file under its original name.
+            the JobScheduler uses the (default) settings from the <code>factory.ini</code> file under its original name.
         <!--Wenn ein Fehler auftritt, 
             bevor die Option <scheduler_option name="ini"/> berücksichtigt werden konnte,
-            verwendet der Scheduler die Einstellungen aus der Datei <code>factory.ini</code> mit unverändertem Namen.-->
+            verwendet der JobScheduler die Einstellungen aus der Datei <code>factory.ini</code> mit unverändertem Namen.-->
         </p>
         <p>
-            When running as a service or daemon the Job Scheduler will send an e-mail containing the relevant error message,
-            should an error occur which is so serious that the Job Scheduler must abort.
-        <!--Wenn der Scheduler als Dienst oder Daemon läuft und 
-            ein Fehler auftritt, der so ernst ist, dass der Scheduler abbrechen muss,
+            When running as a service or daemon the JobScheduler will send an e-mail containing the relevant error message,
+            should an error occur which is so serious that the JobScheduler must abort.
+        <!--Wenn der JobScheduler als Dienst oder Daemon läuft und 
+            ein Fehler auftritt, der so ernst ist, dass der JobScheduler abbrechen muss,
             verschickt er eine eMail mit der Fehlermeldung.-->
         </p>    
         <p>
-            The Job Scheduler sends an e-mail should a database error occur.
+            The JobScheduler sends an e-mail should a database error occur.
             Further e-mails about errors caused by subsequent attempts to reopen the database are not sent.
-        <!--Wenn ein Datenbankfehler auftritt, verschickt der Scheduler eine eMail.
+        <!--Wenn ein Datenbankfehler auftritt, verschickt der JobScheduler eine eMail.
             Fehler, die bei den Versuchen auftreten, die Datenbank erneut zu öffnen, führen nicht zu einer eMail.-->
         </p>
         <p>
-            An e-mail is also sent should the Job Scheduler have to stop using a database after an error.
-        <!--Wenn der Scheduler nach einem Fehler den Datenbankbetrieb aufgibt, schickt er eine eMail.-->
+            An e-mail is also sent should the JobScheduler have to stop using a database after an error.
+        <!--Wenn der JobScheduler nach einem Fehler den Datenbankbetrieb aufgibt, schickt er eine eMail.-->
         </p>
 
     
@@ -222,8 +222,8 @@ spooler_log.mail().set_to( "admin@xxx.com" );
                         sos.mail.jar
                     </td>
                     <td class="small" style="padding-left: 2ex">
-                        (is delivered with the Job Scheduler)
-                    <!--(wird mit dem Scheduler geliefert)-->
+                        (is delivered with the JobScheduler)
+                    <!--(wird mit dem JobScheduler geliefert)-->
                     </td>
                 </tr>
                 <tr>

@@ -18,15 +18,15 @@
         <p>
             Liefert eine Folge von Ereignismeldungen 
             <scheduler_element directory="xml/answer/" name="events"/>
-            bis der Scheduler endet 
+            bis der JobScheduler endet 
             oder der Client ein neues Kommando oder eine Leerzeile 
             (ein zweites Newline <code>\n</code> nach <code>&lt;get_events</code>) 
             überträgt.
         </p>
         <p>
-            Falls der Scheduler die Ereignismeldungen nicht schnell genug versenden kann
+            Falls der JobScheduler die Ereignismeldungen nicht schnell genug versenden kann
             (wegen langsamer TCP-Verbindung oder Clients)
-            puffert der Scheduler die Meldungen, so dass keine verloren geht.
+            puffert der JobScheduler die Meldungen, so dass keine verloren geht.
         </p>
     </description>
 

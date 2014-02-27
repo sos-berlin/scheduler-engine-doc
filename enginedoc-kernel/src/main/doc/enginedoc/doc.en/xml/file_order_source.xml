@@ -48,12 +48,12 @@
                 </p>
                 <p>
                     Should the directory not be readable,
-                    then the Job Scheduler will first send an e-mail and then
+                    then the JobScheduler will first send an e-mail and then
                     repeatedly try to read the directory until it is successful.
-                    The Scheduler will then send a further mail.
+                    The JobScheduler will then send a further mail.
                 <!--Wenn das Verzeichnis nicht lesbar ist,
                     verschickt er eine eMail und
-                    versucht der Scheduler es periodisch erneut,
+                    versucht der JobScheduler es periodisch erneut,
                     bis er Erfolg hat.
                     Dann verschickt er eine weitere eMail.-->
                     
@@ -67,28 +67,28 @@
         <xml_attribute name="repeat" type="no|seconds">
             <description>
                 <p>
-                    The Job Scheduler checks for changes in the directory on a regular basis.
-                <!--Der Scheduler prüft periodisch das Verzeichnis auf Veränderung-->
+                    The JobScheduler checks for changes in the directory on a regular basis.
+                <!--Der JobScheduler prüft periodisch das Verzeichnis auf Veränderung-->
                     <!--,
                     wenn der erste Job bereit für einen neuen Auftrag ist  
-                    (der Scheduler setzt fort, auch wenn der Job keine <run_time> mehr hat,
+                    (der JobScheduler setzt fort, auch wenn der Job keine <run_time> mehr hat,
                     weil es zu request_order() kein Gegenstück gibt-->.
                     The length of time between these checks can be set here.
                 <!--Die Länge der Periode kann hier angegeben werden.-->
                 </p>
                 <p>
                     The default setting on Windows systems is <code>repeat="60"</code>.
-                    Further, the Job Scheduler also uses the Windows system directory monitoring,
+                    Further, the JobScheduler also uses the Windows system directory monitoring,
                     in order to be able to react immediately to a change in a directory.
                     This is renewed regularly after the repeat interval has elapsed.
                 <!--Unter Windows ist <code>repeat="60"</code> voreingestellt.
-                    Außerdem nutzt der Scheduler zusätzlich die in Windows integrierte Verzeichnisüberwachung,
+                    Außerdem nutzt der JobScheduler zusätzlich die in Windows integrierte Verzeichnisüberwachung,
                     so dass er auf eine Änderung des Verzeichnisses sofort reagiert.
                     Sie wird nach Ablauf des Wiederholungsintervalls erneuert.-->
                 </p>
                 <!--p>
                     Unter Windows ist <code>repeat="no"</code> möglich und voreingestellt,
-                    denn der Scheduler nutzt die in Windows integrierte Verzeichnisüberwachung.
+                    denn der JobScheduler nutzt die in Windows integrierte Verzeichnisüberwachung.
                     Unter Unix sollte <code>"no"</code> nicht verwendet werden.
                 </p-->
                 <p>

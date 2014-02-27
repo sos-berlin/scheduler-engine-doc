@@ -35,10 +35,10 @@
     
     <ul>
         <li>
-            Ein Client-Scheduler kann Tasks und Aufträge auf entfernten Scheduler ausführen.
+            Ein Client-Scheduler kann Tasks und Aufträge auf entfernten JobScheduler ausführen.
         </li>
         <li>
-            Die Jobs sind im entfernten Scheduler definiert (vollständig mit <scheduler_element name="job"/>).
+            Die Jobs sind im entfernten JobScheduler definiert (vollständig mit <scheduler_element name="job"/>).
         </li>
         <li>
             Zusätzlich zu den Perioden <scheduler_element name="run_time"/> des entfernten Schedulers
@@ -809,7 +809,7 @@
 
     <ul>
         <li>
-            Sobald der Scheduler einen entfernten Job starten will,
+            Sobald der JobScheduler einen entfernten Job starten will,
             teilt er dies dem Server mit.
         </li>
         <li>
@@ -850,7 +850,7 @@
         </li>
         <li>
             <scheduler_element name="commands"/> für lokal auszuführende Kommandos
-            (die <scheduler_element name="commands"/> der entfernten Job-Definition werden auf dem entfernten Scheduler ausgeführt)
+            (die <scheduler_element name="commands"/> der entfernten Job-Definition werden auf dem entfernten JobScheduler ausgeführt)
         </li>
     </ul>
 
@@ -866,7 +866,7 @@
     <pre>&lt;job name="mein_job" remote_scheduler="remote_host:4444"></pre>
 
     <p>
-        Die <scheduler_element name="run_time"/> wird auf dem entfernten Scheduler festgelegt.
+        Die <scheduler_element name="run_time"/> wird auf dem entfernten JobScheduler festgelegt.
     </p>
 
     
@@ -887,9 +887,9 @@
 
     <h3>Verbindung</h3>
     <p>
-        Der Scheduler verbindet sich mit allen entfernten Schedulern.
+        Der JobScheduler verbindet sich mit allen entfernten Schedulern.
         Solange eine Verbindung nicht steht, wird keine entfernte Task gestartet.
-        Wenn die Verbindung steht, prüft der Scheduler, ob der entfernte Scheduler eine passende Job-Definition hat.
+        Wenn die Verbindung steht, prüft der Scheduler, ob der entfernte JobScheduler eine passende Job-Definition hat.
         Wenn nicht, wird der lokale Job gestoppt.
     </p>
 
@@ -897,7 +897,7 @@
     <ul>
         <li>
             Wenn der Client-Scheduler eine Task in die Warteschlange eines entfernten Jobs einreiht,
-            wird sie zugleich auf dem entfernten Scheduler eingereiht.
+            wird sie zugleich auf dem entfernten JobScheduler eingereiht.
         </li>
         <li>
             Client und Server vergeben die Task-Id unabhängig.
@@ -929,19 +929,19 @@
 
     <h3>kill</h3>
     <p>
-        Ein <scheduler_element name="kill_task"/> wird an den entfernten Scheduler gereicht, der die Operation ausführt.
+        Ein <scheduler_element name="kill_task"/> wird an den entfernten JobScheduler gereicht, der die Operation ausführt.
     </p-->
 
 
     <h2>Schutz</h2>
     <p>
-        Damit der Scheduler ein Skript von einem anderen Rechner annimmt,
+        Damit der JobScheduler ein Skript von einem anderen Rechner annimmt,
         muss der andere Rechner das Zugriffsrecht <scheduler_element name="allowed_host" attribute="level" value="all"/> haben.
         Das ist derselbe Schutz wie für <scheduler_element name="add_jobs"/> und eigentlich ungenügend,
         weil nur die IP-Adresse geprüft wird.
     </p>
     <p>
-        Kann auf ssh zurückgegriffen werden? Der Scheduler bekäme einen ssh-Server, 
+        Kann auf ssh zurückgegriffen werden? Der JobScheduler bekäme einen ssh-Server, 
         der öffentliche/private Schlüssel und Kennwörter unterstützt.
     </p>
     

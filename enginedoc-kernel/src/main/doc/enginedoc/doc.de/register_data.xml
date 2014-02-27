@@ -163,7 +163,7 @@
     <register_entry register_file='settings.xml' register_title='Einstellungen'  register_keyword='Arbeitsverzeichnis'/>
 </register_keyword>
 <register_keyword keyword='ASE, Sybase'>
-    <register_entry register_file='scheduler_sql_sybase.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für Sybase ASE'  register_keyword='ASE, Sybase'/>
+    <register_entry register_file='scheduler_sql_sybase.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für Sybase ASE'  register_keyword='ASE, Sybase'/>
 </register_keyword>
 <register_keyword keyword='at'>
     <register_keyword_display><code>&lt;at&gt;</code></register_keyword_display>
@@ -402,7 +402,7 @@
     <register_entry register_file='api/Job.xml#use_element__config' register_title='Job'  register_keyword='config'/>
     <register_entry register_file='api/Spooler.xml#use_element__config' register_title='Spooler'  register_keyword='config'/>
     <register_entry register_file='api/Supervisor_client.xml#use_element__config' register_title='Supervisor_client'  register_keyword='config'/>
-    <register_entry register_file='central_configuration.xml#use_element__config' register_title='Zentrale Konfiguration durch einen Supervisor Job Scheduler'  register_keyword='config'/>
+    <register_entry register_file='central_configuration.xml#use_element__config' register_title='Zentrale Konfiguration durch einen Supervisor JobScheduler'  register_keyword='config'/>
     <register_entry register_file='command_line.xml#use_element__config' register_title='Kommandozeilenoptionen'  register_keyword='config'/>
     <register_entry register_file='directory_watch.xml#use_element__config' register_title='Verzeichnisüberwachung'  register_keyword='config'/>
     <register_entry register_file='dynamic_configuration.xml#use_element__config' register_title='Konfiguration aus Hot Folders'  register_keyword='config'/>
@@ -512,7 +512,7 @@
     <register_entry register_file='api/Variable_set.xml#method__count' register_title='Variable_set.count' register_keyword='count' type='definition'/>
 </register_keyword>
 <register_keyword keyword='create table (SQL)'>
-    <register_entry register_file='scheduler_sql.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen'  register_keyword='create table (SQL)'/>
+    <register_entry register_file='scheduler_sql.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen'  register_keyword='create table (SQL)'/>
 </register_keyword>
 <register_keyword keyword='create_job_chain'>
     <register_keyword_display><code>create_job_chain()</code></register_keyword_display>
@@ -547,7 +547,7 @@
     <register_entry register_file='xml/answer/order.xml#attribute_created' register_title='&lt;order&gt; (Antwort)'  register_keyword='created' type='definition'/>
 </register_keyword>
 <register_keyword keyword='Daemon'>
-    <register_entry register_file='service.xml' register_title='Der Job Scheduler als Dienst'  register_keyword='Daemon'/>
+    <register_entry register_file='service.xml' register_title='Der JobScheduler als Dienst'  register_keyword='Daemon'/>
 </register_keyword>
 <register_keyword keyword='date'>
     <register_keyword_display><code>&lt;date&gt;</code></register_keyword_display>
@@ -576,7 +576,7 @@
     <register_entry register_file='protokolle.xml' register_title='Protokolle'  register_keyword='Datenbank'/>
 </register_keyword>
 <register_keyword keyword='Datenbanktabellen'>
-    <register_entry register_file='scheduler_sql.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen'  register_keyword='Datenbanktabellen'/>
+    <register_entry register_file='scheduler_sql.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen'  register_keyword='Datenbanktabellen'/>
 </register_keyword>
 <register_keyword keyword='day'>
     <register_keyword_display><code>&lt;day&gt;</code></register_keyword_display>
@@ -599,7 +599,7 @@
     <register_ini_entry register_file='xml/job_chain.xml' register_title='&lt;job_chain&gt; (Konfiguration)' file='factory.ini' section='spooler' entry='db'/>
 </register_keyword>
 <register_keyword keyword='DB2'>
-    <register_entry register_file='scheduler_sql_db2.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für DB2®'  register_keyword='DB2'/>
+    <register_entry register_file='scheduler_sql_db2.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für DB2®'  register_keyword='DB2'/>
 </register_keyword>
 <register_keyword keyword='db_check_integrity'>
     <register_keyword_display><code>db_check_integrity=</code></register_keyword_display>
@@ -793,7 +793,7 @@
 </register_keyword>
 <register_keyword keyword='Dienst'>
     <register_entry register_file='command_line.xml' register_title='Kommandozeilenoptionen'  register_keyword='Dienst'/>
-    <register_entry register_file='service.xml' register_title='Der Job Scheduler als Dienst'  register_keyword='Dienst'/>
+    <register_entry register_file='service.xml' register_title='Der JobScheduler als Dienst'  register_keyword='Dienst'/>
 </register_keyword>
 <register_keyword keyword='directory'>
     <register_keyword_display><code>directory=</code></register_keyword_display>
@@ -1428,7 +1428,7 @@
     <register_entry register_file='api/Spooler.xml#method__include_path' register_title='Spooler.include_path' register_keyword='include_path' type='definition'/>
 </register_keyword>
 <register_keyword keyword='Indices (SQL)'>
-    <register_entry register_file='scheduler_sql.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen'  register_keyword='Indices (SQL)'/>
+    <register_entry register_file='scheduler_sql.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen'  register_keyword='Indices (SQL)'/>
 </register_keyword>
 <register_keyword keyword='info'>
     <register_keyword_display><code>info()</code></register_keyword_display>
@@ -1616,8 +1616,8 @@
     <register_entry register_file='api/Spooler.xml#method__job' register_title='Spooler.job' register_keyword='job' type='definition'/>
     <register_entry register_file='api/Task.xml#method__job' register_title='Task.job' register_keyword='job' type='definition'/>
 </register_keyword>
-<register_keyword keyword='Job Scheduler Skript'>
-    <register_entry register_file='xml/scheduler_script.xml' register_title='&lt;scheduler_script&gt; (Konfiguration)'  register_keyword='Job Scheduler Skript'/>
+<register_keyword keyword='JobScheduler Skript'>
+    <register_entry register_file='xml/scheduler_script.xml' register_title='&lt;scheduler_script&gt; (Konfiguration)'  register_keyword='JobScheduler Skript'/>
 </register_keyword>
 <register_keyword keyword='job-chain'>
     <register_keyword_display><code>-job-chain=</code></register_keyword_display>
@@ -2438,7 +2438,7 @@
     <register_entry register_file='api/Variable_set.xml#method__merge' register_title='Variable_set.merge()' register_keyword='merge()' type='definition'/>
 </register_keyword>
 <register_keyword keyword='Microsoft SQL Server'>
-    <register_entry register_file='scheduler_sql_microsoft_sql_server.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für Microsoft SQL Server'  register_keyword='Microsoft SQL Server'/>
+    <register_entry register_file='scheduler_sql_microsoft_sql_server.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für Microsoft SQL Server'  register_keyword='Microsoft SQL Server'/>
 </register_keyword>
 <register_keyword keyword='min_tasks'>
     <register_keyword_display><code>min_tasks=</code></register_keyword_display>
@@ -2524,7 +2524,7 @@
     <register_entry register_file='lock.xml' register_title='Sperren'  register_keyword='Mutex'/>
 </register_keyword>
 <register_keyword keyword='MySQL'>
-    <register_entry register_file='scheduler_sql_mysql.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für MySQL®'  register_keyword='MySQL'/>
+    <register_entry register_file='scheduler_sql_mysql.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für MySQL®'  register_keyword='MySQL'/>
 </register_keyword>
 <register_keyword keyword='name'>
     <register_keyword_display><code>name</code></register_keyword_display>
@@ -2681,7 +2681,7 @@
     <register_ini_entry register_file='command_line.xml' register_title='Kommandozeilenoptionen' file='sos.ini' section='java' entry='options'/>
 </register_keyword>
 <register_keyword keyword='Oracle'>
-    <register_entry register_file='scheduler_sql_oracle.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für Oracle®'  register_keyword='Oracle'/>
+    <register_entry register_file='scheduler_sql_oracle.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für Oracle®'  register_keyword='Oracle'/>
 </register_keyword>
 <register_keyword keyword='order'>
     <register_keyword_display><code>&lt;order&gt;</code></register_keyword_display>
@@ -2948,7 +2948,7 @@
     <register_entry register_file='xml/config.xml#attribute_port' register_title='&lt;config&gt; (Konfiguration)'  register_keyword='port' type='definition'/>
 </register_keyword>
 <register_keyword keyword='PostgresSQL'>
-    <register_entry register_file='scheduler_sql_postgresql.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für PostgreSQL'  register_keyword='PostgresSQL'/>
+    <register_entry register_file='scheduler_sql_postgresql.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für PostgreSQL'  register_keyword='PostgresSQL'/>
 </register_keyword>
 <register_keyword keyword='prev'>
     <register_keyword_display><code>prev=</code></register_keyword_display>
@@ -3839,7 +3839,7 @@
     <register_entry register_file='api/Monitor_impl.xml#method__spooler_task_before' register_title='Monitor_impl.spooler_task_before()' register_keyword='spooler_task_before()' type='definition'/>
 </register_keyword>
 <register_keyword keyword='SQL Server, Microsoft'>
-    <register_entry register_file='scheduler_sql_microsoft_sql_server.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für Microsoft SQL Server'  register_keyword='SQL Server, Microsoft'/>
+    <register_entry register_file='scheduler_sql_microsoft_sql_server.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für Microsoft SQL Server'  register_keyword='SQL Server, Microsoft'/>
 </register_keyword>
 <register_keyword keyword='start'>
     <register_keyword_display><code>start()</code></register_keyword_display>
@@ -4061,7 +4061,7 @@
     <register_entry register_file='api/Variable_set.xml#method__substitute' register_title='Variable_set.substitute()' register_keyword='sustitution_string'/>
 </register_keyword>
 <register_keyword keyword='Sybase ASE'>
-    <register_entry register_file='scheduler_sql_sybase.xml' register_title='Vom Scheduler verwendete SQL-Anweisungen für Sybase ASE'  register_keyword='Sybase ASE'/>
+    <register_entry register_file='scheduler_sql_sybase.xml' register_title='Vom JobScheduler verwendete SQL-Anweisungen für Sybase ASE'  register_keyword='Sybase ASE'/>
 </register_keyword>
 <register_keyword keyword='task'>
     <register_keyword_display><code>&lt;task&gt;</code></register_keyword_display>

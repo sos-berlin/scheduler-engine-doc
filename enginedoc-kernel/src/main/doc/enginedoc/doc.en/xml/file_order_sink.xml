@@ -83,7 +83,7 @@
             This ensures that the still existing file can result in a new order being started.
             Blacklisted orders can still be removed using
             <scheduler_element name="remove_order"/>.
-            Once the Job Scheduler realises that a blacklisted file has been removed, 
+            Once the JobScheduler realises that a blacklisted file has been removed, 
             then the file will be deleted from the list.
             The file can then be re-added to the monitored directory if required.
         <!--Wenn die Datei nicht entfernt oder verschoben werden kann,
@@ -91,7 +91,7 @@
             Damit wird verhindert, dass die noch vorhandene Datei erneut zu einem Dateiauftrag wird.
             Aufträge auf der Schwarzen Liste können mit 
             <scheduler_element name="remove_order"/> entfernt werden.
-            Wenn der Scheduler bemerkt, dass die Datei entfernt worden ist, 
+            Wenn der JobScheduler bemerkt, dass die Datei entfernt worden ist, 
             streicht er den Auftrag von der Schwarzen Liste.
             Die Datei kann dann erneut ins Verzeichnis gestellt werden.-->
         </p>

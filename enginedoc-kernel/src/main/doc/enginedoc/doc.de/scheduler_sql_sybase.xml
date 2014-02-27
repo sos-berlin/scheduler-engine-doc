@@ -4,7 +4,7 @@
 <!--$Id: scheduler_sybase.xml 5355 2007-10-22 17:57:36Z jz $-->
 
 <description
-    title               = "Vom Scheduler verwendete SQL-Anweisungen für Sybase ASE"
+    title               = "Vom JobScheduler verwendete SQL-Anweisungen für Sybase ASE"
     base_dir            = ""
     parent_page         = "scheduler_sql.xml"
     author              = "$Author: jz $"

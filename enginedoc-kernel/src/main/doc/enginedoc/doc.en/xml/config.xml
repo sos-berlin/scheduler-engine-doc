@@ -28,21 +28,21 @@
                     siehe <scheduler_option name="config"/>.-->
                 </p>
                 <p>
-                    This directory is for operation as a supervisory Job Scheduler.
-                    Other Workload Job Schedulers register with the supervisory Job Scheduler using
+                    This directory is for operation as a supervisory JobScheduler.
+                    Other Workload JobSchedulers register with the supervisory JobScheduler using
                     <scheduler_element name="config" attribute="main_scheduler"/>.
                     This directory can contain a sub-directory, also containing configuration files, 
-                    which the supervisory Job Scheduler replicates when in operation.
+                    which the supervisory JobScheduler replicates when in operation.
                 <!--Das Verzeichnis ist für den Supervisor-Betrieb,
-                    bei dem andere Scheduler sich anmelden mit
+                    bei dem andere JobScheduler sich anmelden mit
                     <scheduler_element name="config" attribute="main_scheduler"/>.
-                    Das Verzeichnis kann für jeden Scheduler ein Unterverzeichnis mit Konfigurationsdateien enthalten,
-                    die der Supervisor zum Scheduler laufend repliziert.-->
+                    Das Verzeichnis kann für jeden JobScheduler ein Unterverzeichnis mit Konfigurationsdateien enthalten,
+                    die der Supervisor zum JobScheduler laufend repliziert.-->
                 </p>
                 <p>
                     Schedulers in a 
                     <scheduler_option name="exclusive"/> or <scheduler_option name="distributed-orders"/> cluster 
-                    obtain their configuration from a directory with the name of the Scheduler ID
+                    obtain their configuration from a directory with the name of the JobScheduler ID
                     (<scheduler_option name="id"/>).
                 <!--Scheduler in einem Cluster 
                     (<scheduler_option name="exclusive"/> oder <scheduler_option name="distributed-orders"/>)
@@ -50,7 +50,7 @@
                     (<scheduler_option name="id"/>).-->
                 </p>
                 <p>
-                    Job Schedulers that do not belong to a cluster obtain their configuration from a directory
+                    JobSchedulers that do not belong to a cluster obtain their configuration from a directory
                     whose name is made up from the computer's name and  TCP port number (<scheduler_element name="config" attribute="tcp_port"/>):
                     <code><i>hostname</i>#<i>tcpport</i></code>.
                 <!--Scheduler, die nicht zu einem Cluster gehören, erhalten Ihre Konfiguration aus einem Verzeichnis,
@@ -58,16 +58,16 @@
                     gebildet wird: <code><i>hostname</i>#<i>tcpport</i></code>.-->
                 </p>
                 <p>
-                    In both cases, additional configuration files will be forwarded by the supervisory Scheduler from its <code>_all</code> directory .
+                    In both cases, additional configuration files will be forwarded by the supervisory JobScheduler from its <code>_all</code> directory .
                     These files are of lesser priority.
                 <!--Für beide Fälle gilt, dass zusätzlich Dateien aus dem Verzeichnis <code>_all</code> übertragen werden.
                     Diese Dateien sind nachrangig.-->
                 </p>
                 <p>
-                    It is possible that no directory is specified for a Workload Job Scheduler.
+                    It is possible that no directory is specified for a Workload JobScheduler.
                     In this case, however, the configuration from the <code>_all</code> directory, if available, 
                     will still be transmitted.
-                <!--Es ist möglich, für einen Scheduler kein Verzeichnis anzugeben. 
+                <!--Es ist möglich, für einen JobScheduler kein Verzeichnis anzugeben. 
                     Dann wird nur die Konfiguration aus dem Verzeichnis <code>_all</code>, falls vorhanden, übertragen.-->
                 </p>
             </description>
@@ -93,9 +93,9 @@
                 </p>
                 <p>
                     Use of this directory takes the definitions of jobs, job chains and other objects 
-                    away from the Job Scheduler - 
+                    away from the JobScheduler - 
                     see <scheduler_a href="../dynamic_configuration.xml" quote="yes"/>.
-                <!--Diesem Verzeichnis entnimmt der Scheduler die
+                <!--Diesem Verzeichnis entnimmt der JobScheduler die
                     Definitionen der Jobs usw., 
                     siehe <scheduler_a href="../dynamic_configuration.xml" quote="yes"/>.-->
                 </p>
@@ -107,19 +107,19 @@
     <!--<xml_attribute name="configuration_add_event" type="job_path" title="Job für neue Konfigurationsdatei">-->
             <description>
                 <p>
-                    The job in question is started when the Job Scheduler loads a <i>new</i> file
+                    The job in question is started when the JobScheduler loads a <i>new</i> file
                     from its configuration directory.
                 <!--Der angegebene Job wird gestartet,
-                    wenn der Scheduler eine <i>neue</i> Datei aus dem Konfigurationsverzeichnis geladen hat.-->
+                    wenn der JobScheduler eine <i>neue</i> Datei aus dem Konfigurationsverzeichnis geladen hat.-->
                 </p>
 
                 <p>
                     The job is started when allowed by its <scheduler_element name="run_time"/> parameter.
-                    It should be defined in the Job Scheduler configuration file, 
-                    so that it is recognised when the Job Scheduler reads the configuration directory.
+                    It should be defined in the JobScheduler configuration file, 
+                    so that it is recognised when the JobScheduler reads the configuration directory.
                 <!--Der Job wird gestartet, so wie es seine <scheduler_element name="run_time"/> zulässt.
                     Er sollte in der Scheduler-Konfigurationsdatei definiert sein, 
-                    damit er bekannt ist, wenn der Scheduler das Konfigurationsverzeichnis liest.-->
+                    damit er bekannt ist, wenn der JobScheduler das Konfigurationsverzeichnis liest.-->
                 </p>
 
                 <p>
@@ -166,18 +166,18 @@
     <!--<xml_attribute name="configuration_modify_event" type="job_path" title="Job für geänderte Konfigurationsdatei">-->
             <description>
                 <p>
-                    The job in question is started when the Job Scheduler loads a <i>modified</i> file
+                    The job in question is started when the JobScheduler loads a <i>modified</i> file
                     from its configuration directory.
                 <!--Der angegebene Job wird gestartet,
-                    wenn der Scheduler eine <i>geänderte</i> Datei aus dem Konfigurationsverzeichnis geladen hat.-->
+                    wenn der JobScheduler eine <i>geänderte</i> Datei aus dem Konfigurationsverzeichnis geladen hat.-->
                 </p>
                 <p>
                     The job is started when allowed by its <scheduler_element name="run_time"/> parameter.
-                    It should be defined in the Job Scheduler configuration file, 
-                    so that it is recognised when the Job Scheduler reads the configuration directory.
+                    It should be defined in the JobScheduler configuration file, 
+                    so that it is recognised when the JobScheduler reads the configuration directory.
                 <!--Der Job wird gestartet, so wie es seine <scheduler_element name="run_time"/> zulässt.
                     Er sollte in der Scheduler-Konfigurationsdatei definiert sein,
-                    damit er bekannt ist, wenn der Scheduler das Konfigurationsverzeichnis liest.-->
+                    damit er bekannt ist, wenn der JobScheduler das Konfigurationsverzeichnis liest.-->
                 </p>
                 <p>
                     Parameters and environment variables are set as for 
@@ -192,18 +192,18 @@
     <!--<xml_attribute name="configuration_delete_event" type="job_path" title="Job für gelöschte Konfigurationsdatei">-->
             <description>
                 <p>
-                    The job in question is started when a file which has been loaded by the Job Scheduler is removed
+                    The job in question is started when a file which has been loaded by the JobScheduler is removed
                     from its configuration directory.
                 <!--Der angegebene Job wird gestartet,
-                    wenn aus dem Konfigurationsverzeichnis eine im Scheduler geladene Datei entfernt worden ist.-->
+                    wenn aus dem Konfigurationsverzeichnis eine im JobScheduler geladene Datei entfernt worden ist.-->
                 </p>
                 <p>
                     The job is started when allowed by its <scheduler_element name="run_time"/> parameter.
-                    It should be defined in the Job Scheduler configuration file, 
-                    so that it is recognised when the Job Scheduler reads the configuration directory.
+                    It should be defined in the JobScheduler configuration file, 
+                    so that it is recognised when the JobScheduler reads the configuration directory.
                 <!--Der Job wird gestartet, so wie es seine <scheduler_element name="run_time"/> zulässt.
                     Er sollte in der Scheduler-Konfigurationsdatei definiert sein,
-                    damit er bekannt ist, wenn der Scheduler das Konfigurationsverzeichnis liest.-->
+                    damit er bekannt ist, wenn der JobScheduler das Konfigurationsverzeichnis liest.-->
                 </p>
                 <p>
                     Parameters and environment variables are set as for 
@@ -217,24 +217,24 @@
         <xml_attribute name="supervisor" type="host:port">
             <description>
                 <p>
-                    The supervisory Job Scheduler, at which the current Scheduler should log on and off.
+                    The supervisory JobScheduler, at which the current JobScheduler should log on and off.
                     This takes place asynchronously and errors do not affect operation.
-                <!--Der supervisor, bei dem sich dieser Scheduler an- und abmelden soll.
+                <!--Der supervisor, bei dem sich dieser JobScheduler an- und abmelden soll.
                     Das geschieht asynchron und Fehler beeinträchtigen nicht den Betrieb.-->
                 </p>
                 <p>
                     No more than 4 other (Workload) Schedulers should log on 
-                    to a supervisory Job Scheduler running on Windows.
+                    to a supervisory JobScheduler running on Windows.
                 <!--Wenn der Haupt-Scheduler unter Windows läuft, 
-                    sollten nicht mehr als vier Scheduler sich bei ihn anmelden.-->
+                    sollten nicht mehr als vier JobScheduler sich bei ihn anmelden.-->
                 </p>
                 <p>
-                    The supervisor can set the configuration for the Workload (secondary) Job Schedulers,
+                    The supervisor can set the configuration for the Workload (secondary) JobSchedulers,
                     see. <scheduler_element name="config" attribute="central_configuration_directory"/>.
-                    The Job Scheduler retains this new configuration in its <code>cache</code> directory.
-                <!--Der Supervisor kann für den Scheduler die Konfiguration bestimmen,
+                    The JobScheduler retains this new configuration in its <code>cache</code> directory.
+                <!--Der Supervisor kann für den JobScheduler die Konfiguration bestimmen,
                     s. <scheduler_element name="config" attribute="central_configuration_directory"/>.
-                    Die übernommene Konfiguration hält der Scheduler im Verzeichnis <code>cache</code>.-->
+                    Die übernommene Konfiguration hält der JobScheduler im Verzeichnis <code>cache</code>.-->
                 </p>
             </description>
         </xml_attribute>
@@ -244,8 +244,8 @@
             <!-- Diese Beschreibung wird auch von anderen Elementen verwendet. Also allgemein halten! -->
             <description>
                 This element is only effective when its attribute is identical to the <code>-id=</code> 
-                parameter which was set as the Job Scheduler was started, or when the <code>-id=</code> parameter 
-                was not set as the Job Scheduler was started.
+                parameter which was set as the JobScheduler was started, or when the <code>-id=</code> parameter 
+                was not set as the JobScheduler was started.
             <!--Das Element ist nur wirksam, wenn dieses Attribut gleich dem
                 Parameter <code>-id=</code> vom Scheduler-Start ist,
                 oder wenn beim Scheduler-Start der Parameter <code>-id=</code> nicht angegeben worden ist.-->
@@ -304,12 +304,12 @@
     <!--<xml_attribute name="log_dir" type="verzeichnis" option="log-dir" title="Verzeichnis der Protokolle">-->
             <description>
                 <p>
-                    The directory in which the scheduler writes protocols.
-                <!--Gibt das Verzeichnis an, an das der Scheduler die Protokoll schreibt.-->
+                    The directory in which the JobScheduler writes protocols.
+                <!--Gibt das Verzeichnis an, an das der JobScheduler die Protokoll schreibt.-->
                 </p>
                 <p>
-                    <code>log_dir="*stderr"</code> allows the Job Scheduler to write the main protocol to the standard error output (stderr).
-                <!--<code>log_dir="*stderr"</code> lässt den Scheduler das Hauptprotokoll nach stderr schreiben.-->
+                    <code>log_dir="*stderr"</code> allows the JobScheduler to write the main protocol to the standard error output (stderr).
+                <!--<code>log_dir="*stderr"</code> lässt den JobScheduler das Hauptprotokoll nach stderr schreiben.-->
                 </p>
             </description>
         </xml_attribute>
@@ -343,10 +343,10 @@
         <xml_child_element name="base" multiple="yes" title="Basic configuration">
     <!--<xml_child_element name="base" multiple="yes" title="Basiskonfiguration">-->
             <description>
-                A basic configuration which will be interpreted by the scheduler can be entered here.
+                A basic configuration which will be interpreted by the JobScheduler can be entered here.
                 The settings contained in this file form presets for the configuration file called up by the 
                 <code>&lt;base></code> element.
-            <!--Eine Basiskonfigurationsdatei kann hier angegeben werden, die der Scheduler zuerst auswertet. 
+            <!--Eine Basiskonfigurationsdatei kann hier angegeben werden, die der JobScheduler zuerst auswertet. 
                 Die Einstellungen darin bilden die Voreinstellungen für die Konfigurationsdatei, die das Element
                 <code>&lt;base></code> enthält.-->
             </description>
@@ -374,7 +374,7 @@
                 <!--Jede Prozessklasse stellt eine Anzahl Prozesse zum Betrieb der Jobs bereit.-->
                 </p>
                 <p>
-                    It is important that this element is specified, otherwise the jobs will be run in the scheduler processes.
+                    It is important that this element is specified, otherwise the jobs will be run in the JobScheduler processes.
                     This is only recommended when debugging.
                 <!--Dieses Element sollte angegeben werden, denn sonst laufen die Jobs im Prozess des Schedulers, was nur zum Debuggen 
                     empfehlenswert ist.-->
@@ -398,22 +398,22 @@
     <!--<xml_child_element name="scheduler_script" title="Scheduler-Skript">-->
             <description>
                 <p>
-                    The script contained in this element is executed by the Job Scheduler once on startup before every job.
-                    This script is called up by the scheduler when the <scheduler_method class="Job_impl" method="spooler_init"/> 
+                    The script contained in this element is executed by the JobScheduler once on startup before every job.
+                    This script is called up by the JobScheduler when the <scheduler_method class="Job_impl" method="spooler_init"/> 
                     method is implemented.
-                    It may be used to set variables for the Job Scheduler.
-                <!--Das hierin enthaltene Skript führt der Scheduler beim Start, vor jedem Job aus.
+                    It may be used to set variables for the JobScheduler.
+                <!--Das hierin enthaltene Skript führt der JobScheduler beim Start, vor jedem Job aus.
                     Wenn die Methode <scheduler_method class="Job_impl" method="spooler_init"/> implementiert ist,
-                    ruft der Scheduler sie auf.
+                    ruft der JobScheduler sie auf.
                     Es eignet sich zum Setzen von Scheduler-Variablen.-->
                 </p>
                 <p>
-                    The Job Scheduler aborts in the event of an error caused by this script.
-                <!--Bei einem Fehler bricht der Scheduler ab.-->
+                    The JobScheduler aborts in the event of an error caused by this script.
+                <!--Bei einem Fehler bricht der JobScheduler ab.-->
                 </p>
                 <p>
-                    This script will remain active until the Job Scheduler stops running.
-                <!--Das Skript wird erst geschlossen, wenn der Scheduler endet.-->
+                    This script will remain active until the JobScheduler stops running.
+                <!--Das Skript wird erst geschlossen, wenn der JobScheduler endet.-->
                 </p>
             </description>
             <example>
@@ -458,8 +458,8 @@
         <xml_child_element name="commands">
             <description>
                 <p>
-                    These commands are executed by the Job Scheduler script when the Scheduler is starting.
-                    An error caused the Job Scheduler to abort.
+                    These commands are executed by the JobScheduler script when the JobScheduler is starting.
+                    An error caused the JobScheduler to abort.
                 <!--Die Kommandos werden beim Start des Schedulers vor dem Scheduler-Skript ausgeführt.
                     Ein Fehler führt zum Abbruch des Schedulers.-->
                 </p>
@@ -472,10 +472,10 @@
 
     <description>
         <p>
-            <code>&lt;config></code> contains the Job Scheduler configuration information - 
+            <code>&lt;config></code> contains the JobScheduler configuration information - 
             in particular, information related to the configuration of jobs.
             The <code>&lt;config></code> element can be repeated when the the <code>spooler_id</code> attribute changes.
-            Should the <code>-id=</code> parameter not be specified on starting the Job Scheduler, 
+            Should the <code>-id=</code> parameter not be specified on starting the JobScheduler, 
             then the first specified <code>&lt;config&gt;</code> will be used.
             Otherwise the <code>spooler_id</code> attribute with the same value will be used.
        <!--<code>&lt;config></code> enthält die Konfiguration des Schedulers, vor allem die Jobs.

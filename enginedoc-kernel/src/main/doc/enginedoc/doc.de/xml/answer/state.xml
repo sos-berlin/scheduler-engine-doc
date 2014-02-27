@@ -59,38 +59,38 @@
                     <tr>
                         <td><code>state="starting"</code></td>
                         <td>
-                            Der Scheduler startet.
+                            Der JobScheduler startet.
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="running"</code></td>
                         <td>
-                            Der Scheduler läuft.
+                            Der JobScheduler läuft.
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="paused"</code></td>
                         <td>
-                            Der Scheduler ist angehalten.
+                            Der JobScheduler ist angehalten.
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="stopping"</code></td>
                         <td>
-                            Der Scheduler ist dabei, sich zu beenden.
+                            Der JobScheduler ist dabei, sich zu beenden.
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="stopping_let_run"</code></td>
                         <td>
-                            Der Scheduler ist dabei, sich zu beenden, lässt aber laufende Tasks noch selbst zum Ende kommen.
+                            Der JobScheduler ist dabei, sich zu beenden, lässt aber laufende Tasks noch selbst zum Ende kommen.
                             Zur Beendigung des Schedulers siehe <a href="../../termination.xml">hier</a>.
                         </td>
                     </tr>
                     <tr>
                         <td><code>state="stopped"</code></td>
                         <td>
-                            Der Scheduler ist gestoppt (gleich beendet er sich).
+                            Der JobScheduler ist gestoppt (gleich beendet er sich).
                             Zur Beendigung des Schedulers siehe <a href="../../termination.xml">hier</a>.
                         </td>
                     </tr>
@@ -141,9 +141,9 @@
         <xml_attribute name="db_waiting" type="yes|no" initial="no" title="Scheduler erneuert Datenbankverbindung">
             <description>
                 <p>
-                    Wenn der Scheduler die Datenbankverbindung verloren hat und versucht, sie wiederherzustellen,
+                    Wenn der JobScheduler die Datenbankverbindung verloren hat und versucht, sie wiederherzustellen,
                     ist <code>db_waiting="yes"</code> gesetzt.
-                    Der Scheduler führt währenddessen keinen Job aus.
+                    Der JobScheduler führt währenddessen keinen Job aus.
                 </p>
             </description>
         </xml_attribute>
@@ -155,7 +155,7 @@
                     Kommandos über TCP, UDP und HTTP.
                 </p>
                 <p>
-                    Der Scheduler kann mit
+                    Der JobScheduler kann mit
                     <scheduler_element name="modify_spooler" attribute="cmd" value="continue"/>
                     fortgesetzt werden.
                 </p>
@@ -169,7 +169,7 @@
         <xml_attribute name="loop" type="zahl" title="Interner Wert: Anzahl der Server-Zyklen">
             <description>
                 <p>
-                    Der Wert erhöht sich, wenn der Scheduler Opertionen ausführt,
+                    Der Wert erhöht sich, wenn der JobScheduler Opertionen ausführt,
                     z.B. ein Jobschritt oder ein Methodenaufruf aus einem Job heraus.
                 </p>
             </description>
@@ -178,7 +178,7 @@
         <xml_attribute name="waits" type="zahl" title="Interner Wert: Anzahl der Wartezustände">
             <description>
                 <p>
-                    Der Wert erhöht sich um eins, wenn der Scheduler im Wartezustand ist,
+                    Der Wert erhöht sich um eins, wenn der JobScheduler im Wartezustand ist,
                     weil gerade nichts zu tun ist.
                 </p>
             </description>

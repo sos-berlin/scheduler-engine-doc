@@ -73,8 +73,8 @@ spooler.job( "process" ).start( params );
     <!--<xml_attribute name="log_file" type="dateiname" subst_env="yes">-->
             <description>
                 <p>
-                    The Job Scheduler includes the content of this file in its protocol after the process has ended.
-                <!--Der Scheduler übernimmt nach Prozessende den Inhalt dieser Datei in sein Protokoll.-->
+                    The JobScheduler includes the content of this file in its protocol after the process has ended.
+                <!--Der JobScheduler übernimmt nach Prozessende den Inhalt dieser Datei in sein Protokoll.-->
                 </p>
             </description>
         </xml_attribute>
@@ -134,8 +134,8 @@ spooler.job( "process" ).start( params );
             <description>
                 <p>
                     The environment variables listed here are carried over to the new process together with 
-                    the environment variables for the Job Scheduler processes.
-                    The environment variables listed here overwrite the Scheduler process environment variables having the same name.
+                    the environment variables for the JobScheduler processes.
+                    The environment variables listed here overwrite the JobScheduler process environment variables having the same name.
                 <!--Die hier aufgeführten Umgebungsvariablen werden zusammen mit den Umgebungsvariablen des Scheduler-Prozesses
                     dem neuen Prozess übergeben.
                     Erste überschreiben letztere gleichen Namens.-->
@@ -148,7 +148,7 @@ spooler.job( "process" ).start( params );
     <description>
         <p>
             A process is mounted at the start of a job - that is at the start of a task.
-            The Job Scheduler monitors this process and closes the task after the process has ended.
+            The JobScheduler monitors this process and closes the task after the process has ended.
             An exit code other than 0 will be interpreted as an error.
             The exit code is the result of the task and is to be found in <code>task.result</code>.
         <!--Beim Start des Jobs, also zu Beginn einer Task, wird ein Prozess eingerichtet. 
@@ -170,9 +170,9 @@ spooler.job( "process" ).start( params );
             <!--Ein Exit-Code verschieden von 0 wird als Fehler (<scheduler_message code="SCHEDULER-280"/>) interpretiert.-->
             </li>
             <li>
-                On Unix systems, the Job Scheduler the error code of a process terminated with a signal to the
+                On Unix systems, the JobScheduler the error code of a process terminated with a signal to the
                 negative value of the signal.
-            <!--Unter Unix setzt der Scheduler den Exit-Codes eines mit Signal abgebrochenen Prozesses auf den negativen Wert des Signals.-->
+            <!--Unter Unix setzt der JobScheduler den Exit-Codes eines mit Signal abgebrochenen Prozesses auf den negativen Wert des Signals.-->
             </li>
             <li>
                 The exit code is made available in the <scheduler_method class="Task" property="exit_code"/> method
@@ -192,8 +192,8 @@ spooler.job( "process" ).start( params );
     <!--<scheduler_keyword keyword="Umgebungsvariablen"/>-->
 
         <p>
-            The Job Scheduler hands over the following environment variables:
-        <!--Der Scheduler übergibt eine Umgebungsvariable:-->
+            The JobScheduler hands over the following environment variables:
+        <!--Der JobScheduler übergibt eine Umgebungsvariable:-->
         </p>
         
         <dl>

@@ -54,8 +54,8 @@
 &lt;/job></pre>
 
         <p>
-            Nach einem Fehler wiederholt der Scheduler den Job sofort.<br/>
-            Nach dem zweiten bis zum vierten Fehler verzögert der Scheduler den Job um 10 Sekunden,<br/>
+            Nach einem Fehler wiederholt der JobScheduler den Job sofort.<br/>
+            Nach dem zweiten bis zum vierten Fehler verzögert der JobScheduler den Job um 10 Sekunden,<br/>
             nach dem fünften bis zum neunten Fehler um eine Minute,<br/>
             nach dem zehnten bis zum neunzehnten um 24 Stunden, <br/>
             nach dem zwanzigsten aufeinanderfolgenden Fehler schließlich stoppt der Job.

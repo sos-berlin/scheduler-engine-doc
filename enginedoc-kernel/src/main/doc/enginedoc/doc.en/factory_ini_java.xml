@@ -18,10 +18,10 @@
     <!--<ini_entry name="class_path" type="class_path" title="Für Java">-->
             <description>
                 <p>
-                    This file is used to extend the <code>class_path</code> of directories or jars which are only valid for the Job Scheduler.
+                    This file is used to extend the <code>class_path</code> of directories or jars which are only valid for the JobScheduler.
                     This setting precedes changes in the <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/> file.
                 <!--Hier können Sie den <code>class_path</code> um Verzeichnisse oder Jars erweitern, 
-                    die nur für den Scheduler gelten.
+                    die nur für den JobScheduler gelten.
                     Die Angaben werden der Einstellung in <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/>
                     vorangestellt.-->
                 </p>

@@ -15,8 +15,8 @@
 			The cluster comprises this primary JobScheduler and one or more reserve (backup) JobSchedulers.
 			A fail-safe system consists of a primary JobScheduler and at least one backup, 
 			with both these JobSchedulers running on different computers.
-	<!--Ein Scheduler Backup-Cluster sorgt für Ausfallsicherheit für einen Scheduler indem ein oder mehrere Ersatz-Scheduler (Backup Scheduler) auf anderen Rechnern gestartet 
-			werden. Eine ausfallsicheres System besteht demnach aus einem primären Scheduler und mindestens einem Backup Scheduler. -->
+	<!--Ein JobScheduler Backup-Cluster sorgt für Ausfallsicherheit für einen JobScheduler indem ein oder mehrere Ersatz-Scheduler (Backup Scheduler) auf anderen Rechnern gestartet 
+			werden. Eine ausfallsicheres System besteht demnach aus einem primären JobScheduler und mindestens einem Backup Scheduler. -->
 		</p>
 		
 		<p>
@@ -28,7 +28,7 @@
 			This means that it will continue to process the open orders and jobs started by the primary JobScheduler and, 
 			if required, start new jobs.
 	<!--In einem Backup-Cluster zeigen alle JobScheduler ihre Verfügbarkeit durch das Versenden von Herzschlägen an. Alle JobScheduler prüfen, ob die 
-			jeweils anderen JobScheduler verfügbar sind. Stellt ein Backup Scheduler fest, dass vom primären Scheduler die Herzschläge über einen längeren Zeitraum
+			jeweils anderen JobScheduler verfügbar sind. Stellt ein Backup JobScheduler fest, dass vom primären JobScheduler die Herzschläge über einen längeren Zeitraum
 			(ca. 1-2 Minuten) ausbleiben, übernimmt dieser die Verarbeitung. Dabei werden die offenen Aufträge und laufenden Jobs fortgeführt und entsprechend
 			der Konfiguration neue Jobs gestartet.-->
 		</p>
@@ -79,7 +79,7 @@
 			</li>
 			<li>
 				The primary JobScheduler and the backups in the cluster are all started using the same JobScheduler ID.
-		<!--Der primäre Scheduler und die Backup Scheduler werden mit der gleichen Scheduler-ID gestartet.-->
+		<!--Der primäre JobScheduler und die Backup JobScheduler werden mit der gleichen Scheduler-ID gestartet.-->
 			</li>
 			<li>
 				All the JobSchedulers - that is, the primary and the backups - must be started using <scheduler_option name="exclusive"/>.
@@ -376,7 +376,7 @@
 		
 		
 		<h3>Making an Inactive Backup JobScheduler the Active Primary JobScheduler</h3>
-<!--<h3>Einen inaktiven Backup-Scheduler zum aktiven primären Scheduler machen</h3>-->
+<!--<h3>Einen inaktiven Backup-Scheduler zum aktiven primären JobScheduler machen</h3>-->
 		<p>
 			When an active backup JobScheduler has been stopped and is then restarted, then it will be inactive.
 			Should in this situation the primary JobScheduler then be unavailable for a longer period of time, 
@@ -384,9 +384,9 @@
 			This can be done by using the <code>start_exclusive</code> parameter instead of <code>start</code> 
 			when calling the <code>jobscheduler.cmd</code> shell script.
 	<!--Wenn ein aktiver backupScheduler beendet wird, wird er beim Neustart inaktiv sein. 
-			Falls der primäre Scheduler längere Zeit ausfällt, 
-			muss der backup-Scheduler daher als primärer Scheduler gestartet werden.
-			Ein Backup-Scheduler wird als primärer Scheduler gestartet wenn beim Aufruf von jobscheduler.cmd der 
+			Falls der primäre JobScheduler längere Zeit ausfällt, 
+			muss der backup-Scheduler daher als primärer JobScheduler gestartet werden.
+			Ein Backup-Scheduler wird als primärer JobScheduler gestartet wenn beim Aufruf von jobscheduler.cmd der 
 			Parameter "start_exclusive" anstelle von "start" angegeben wird. -->
 		</p>
 		
@@ -399,7 +399,7 @@
 			The JobScheduler starts as specified in the Setup when the [start] parameter is given,
 			without any further information.
 	<!--Wenn beim der Parameter [start] ohne weitere Angaben angegeben wird,
-			wird der Scheduler so gestartet, wie es beim Setup angegeben wurde.-->
+			wird der JobScheduler so gestartet, wie es beim Setup angegeben wurde.-->
 		</p>
 		<p>
 			The following additional commands are available for the operation of a JobScheduler in a backup cluster:
@@ -410,25 +410,25 @@
 				<b>terminate_cluster</b>
 				Shuts down all the JobSchedulers in a backup cluster
 		<!--<b>terminate_cluster</b>
-				Fährt alle Scheduler des Backup-Clusters herunter-->
+				Fährt alle JobScheduler des Backup-Clusters herunter-->
 			</li>
 			<li>
 				<b>restart_cluster</b>
 				Restarts all the JobSchedulers in a backup cluster. The primary JobScheduler active before the restart remains active.
 		<!--<b>restart_cluster</b>
-				Startet alle Scheduler des Backup-Clusters neu. Anschließend ist der primäre Scheduler aktiv.-->
+				Startet alle JobScheduler des Backup-Clusters neu. Anschließend ist der primäre JobScheduler aktiv.-->
 			</li>
 			<li>
 				<b>terminate_fail-safe</b>
 				Stops a JobScheduler. Another (inactive) JobScheduler in the cluster becomes active.
 		<!--<b>terminate_fail-safe</b>
-				Beendet den Scheduler. Ein anderer inaktiver Scheduler im Backup-Cluster wird aktiv.-->
+				Beendet den Scheduler. Ein anderer inaktiver JobScheduler im Backup-Cluster wird aktiv.-->
 			</li>
 			<li>
 				<b>start -exclusive</b>
 				Starts a primary JobScheduler in a backup cluster.
 		<!--<b>start -exclusive</b>
-				Startet einen primären Scheduler im Backup-Cluster.-->
+				Startet einen primären JobScheduler im Backup-Cluster.-->
 			</li>
 			<li>
 				<b>start -exclusive -backup</b>

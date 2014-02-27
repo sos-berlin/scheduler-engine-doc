@@ -29,8 +29,8 @@
             <!--<code>&lt;select_event event_type="…"/></code> einzelne Ereignistypen (sonst alle Ereignistypen)-->
             </li>
             <li>
-                <code>&lt;select_event scheduler_id="…"/></code> individual Job Scheduler (otherwise all Job Schedulers)
-            <!--<code>&lt;select_event scheduler_id="…"/></code> einzelne Scheduler (sonst alle Scheduler)-->
+                <code>&lt;select_event scheduler_id="…"/></code> individual JobScheduler (otherwise all JobSchedulers)
+            <!--<code>&lt;select_event scheduler_id="…"/></code> einzelne JobScheduler (sonst alle Scheduler)-->
             </li>
         </ul>
     </description>

@@ -22,7 +22,7 @@
         </com>
         
         <title>
-            The name or IPnumber of the host computer on which the suupervising Job Scheduler is running
+            The name or IPnumber of the host computer on which the suupervising JobScheduler is running
         <!--Name oder IP-Nummer des Rechners, auf dem der Supervisor läuft-->
         </title>
         

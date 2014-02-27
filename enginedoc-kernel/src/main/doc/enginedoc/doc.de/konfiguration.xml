@@ -15,7 +15,7 @@
 <scheduler_keyword keyword="XML-Konfiguration"/>
 
 <p>
-    Beim Start des Scheduler geben Sie die Datei an, die die mit XML formulierte Konfiguration enthält.
+    Beim Start des JobScheduler geben Sie die Datei an, die die mit XML formulierte Konfiguration enthält.
 </p>
 
 <h2>Beispiel</h2>
@@ -44,17 +44,17 @@
 &lt;/spooler></pre>
 
 <p>
-    Konfiguriert ist hier der Job <code>hallo_welt</code>, den der Scheduler alle 10 Sekunden wiederholen wird. 
+    Konfiguriert ist hier der Job <code>hallo_welt</code>, den der JobScheduler alle 10 Sekunden wiederholen wird. 
 </p>
 <p>
     Wenn diese Konfiguration
-    in der Datei <code>hallo_welt.xml</code> abgelegt ist, können Sie den Scheduler so starten (für Windows):
+    in der Datei <code>hallo_welt.xml</code> abgelegt ist, können Sie den JobScheduler so starten (für Windows):
 </p>
 
 <pre>…<i>scheduler installation path</i>…\bin\scheduler.exe -config=hallo_welt.xml</pre>
 
 <p>
-    Ein gestarteter Scheduler kann mit Ctrl-C abgebrochen werden.
+    Ein gestarteter JobScheduler kann mit Ctrl-C abgebrochen werden.
 </p>
 
 
@@ -74,7 +74,7 @@
 </pre>
 <p>
     Wenn diese Konfiguration
-    in der Datei <code><i>scheduler installation path</i>/config/live/hallo_welt.job.xml</code> abgelegt ist, wird sie automatisch von einem laufenden Job Scheduler verwendet:
+    in der Datei <code><i>scheduler installation path</i>/config/live/hallo_welt.job.xml</code> abgelegt ist, wird sie automatisch von einem laufenden JobScheduler verwendet:
 </p>
 
 
@@ -85,14 +85,14 @@
     <code>&lt;?xml encoding="ISO-8859-1"?></code>&#160; sind möglich.<br/>
 </p>
 <p>
-    Der Scheduler verarbeitet nur 8bit-Zeichen (ISO-8859-1).
+    Der JobScheduler verarbeitet nur 8bit-Zeichen (ISO-8859-1).
 </p>
 
 
 <h2>Schema der Konfiguration</h2>
 
 <p>
-    Der Scheduler prüft die XML-Konfiguration gegen das 
+    Der JobScheduler prüft die XML-Konfiguration gegen das 
     <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a> (Nur im IE korekt dargestellt.)
 </p>
 <p>

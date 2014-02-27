@@ -34,7 +34,7 @@
             Ebenso, wenn ein »<code>\</code>« vorangestellt ist: »<code>\$</code>« liefert »<code>$</code>«.-->
         </p>
         <p>
-            The values of the environment variables as the Job Scheduler started remain valid.
+            The values of the environment variables as the JobScheduler started remain valid.
         <!--Es gelten die Werte der Umgebungsvariablen vom Start des Schedulers.-->
         </p>
         <p>

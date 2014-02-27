@@ -203,13 +203,13 @@
         <p>
             Should a task not wait for the end of a subprocess with the 
             <scheduler_method class="Subprocess" property="wait_for_termination"/> method,
-            then the Job Scheduler waits at the end of the task for the end of any subprocesses.
+            then the JobScheduler waits at the end of the task for the end of any subprocesses.
             In this case the job is stopped with an error when a subprocess ends with
             <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code>. 
         <!--Wenn das Ende des Subprocesses nicht mit
             <scheduler_method class="Subprocess" property="wait_for_termination"/>
             abgewartet worden ist,
-            tut das der Scheduler bei Task-Ende.
+            tut das der JobScheduler bei Task-Ende.
             Wenn dann der Subprocess mit
             <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code> endet,
             stoppt der Job mit Fehler.-->
@@ -257,8 +257,8 @@
 
     <description>
         <p>
-            After the time allowed, the Job Scheduler stops the subprocess (UNIX: with <code>SIGKILL</code>).
-        <!--Nach Ablauf der Zeit bricht der Scheduler den Subprozess ab (Unix: mit <code>SIGKILL</code>).-->
+            After the time allowed, the JobScheduler stops the subprocess (UNIX: with <code>SIGKILL</code>).
+        <!--Nach Ablauf der Zeit bricht der JobScheduler den Subprozess ab (Unix: mit <code>SIGKILL</code>).-->
         </p>
         <p>
             This time limit does not apply to processes running on remote computers with
@@ -316,7 +316,7 @@
         <p>
             This object cannot be handed over to other objects 
             - it is a part of the task process, 
-            whereas the majority of other objects are part of the Job Scheduler process.
+            whereas the majority of other objects are part of the JobScheduler process.
         <!--Das Objekt lässt sich nicht anderen Objekten übergeben
             (denn es befindet sich im Prozess der Task, 
             während die meisten anderen Objekte sich im Prozess des Schedulers befinden).-->
@@ -623,10 +623,10 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             <p>
                 <code>own_process_group</code> allows a subprocess to run in its own process group,
                 by executing the <code>setpgid(0,0)</code> system call.
-                When the Job Scheduler then stops the subprocess, then it stops the complete process group.
+                When the JobScheduler then stops the subprocess, then it stops the complete process group.
             <!--<code>own_process_group</code> lÃ¤sst den Subprozess in einer eigenen Prozessgruppe starten,
                 indem der Systemaufruf <code>setpgid(0,0)</code> ausgefÃ¼hrt wird.
-                Wenn der Scheduler den Subprozess abbricht, bricht er die ganze Prozessgruppe ab.-->
+                Wenn der JobScheduler den Subprozess abbricht, bricht er die ganze Prozessgruppe ab.-->
             </p>
             
         </description>
