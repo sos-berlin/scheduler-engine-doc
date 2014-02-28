@@ -129,7 +129,7 @@ Characteristics of JobScheduler Agents:
 	      If a JobScheduler should be run as Agent, a special licence key has to defined in section <scheduler_a href="sos_ini_licence.xml">[licence]</scheduler_a>.
 	      </p>
 			<br/>
-			<br/>
+			<br/>-->
 			<!--
 	      Deklaration eines speziellen Lizenzschlüssels in der Datei <scheduler_a href="sos_ini.xml">sos.ini</scheduler_a>
 	      <p>
