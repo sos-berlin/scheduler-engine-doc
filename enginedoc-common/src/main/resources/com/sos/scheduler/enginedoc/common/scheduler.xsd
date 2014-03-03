@@ -542,6 +542,10 @@
                                     </xsd:attribute>
                                     <xsd:attribute name="suspend" type="Yes_no"/>
                                     <xsd:attribute name="delay" type="xsd:nonNegativeInteger"/>
+                                    <xsd:attribute name="previous_state" type="String"/>
+                                    <xsd:attribute name="node_type" type="xsd:nonNegativeInteger"/>
+                                    <xsd:attribute name="title" type="String"/>
+                                    <xsd:attribute name="seq_no" type="xsd:nonNegativeInteger"/>
                                 </xsd:complexType>
                             </xsd:element>
                             <xsd:element name="file_order_sink">
