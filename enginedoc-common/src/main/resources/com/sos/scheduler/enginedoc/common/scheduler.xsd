@@ -527,6 +527,7 @@
                                 <xsd:complexType>
                                     <xsd:sequence>
                                         <xsd:element ref="extensions" minOccurs="0"/>
+                                        <xsd:element ref="params" minOccurs="0"/>
                                     </xsd:sequence>
                                     <xsd:attribute name="state" type="String" use="required"/>
                                     <xsd:attribute name="job" type="Path"/>
