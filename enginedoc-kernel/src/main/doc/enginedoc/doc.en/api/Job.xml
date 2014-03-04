@@ -707,7 +707,7 @@ spooler_job.max_order_setbacks = 5;              		 // The 5th setback sets the 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <property name="max_order_setbacks" access="write">
+    <property name="max_order_setbacks">
         <com>
             <com.result>
                 <com.type type="int"/>
