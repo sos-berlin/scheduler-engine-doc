@@ -601,7 +601,7 @@ $spooler_job->LetProperty( 'max_order_setbacks', 5 );               	# Die 5. R�
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <property name="max_order_setbacks" access="write">
+    <property name="max_order_setbacks">
         <com>
             <com.result>
                 <com.type type="int"/>
@@ -747,26 +747,6 @@ $spooler_job->LetProperty( 'max_order_setbacks', 5 );               	# Die 5. R�
                     für einen Job außerhalb des Live-Verzeichnisses wird <code>""</code> (Leerstring) zurückgeliefert
                 </li>
             </ul>
-        </description>
-    </property>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-    <property name="setback_max">
-        <com>
-            <com.result>
-                <com.type type="int"/>
-            </com.result>
-        </com>
-
-        <title>
-            Wie oft kann ein Auftrag zurückgestellt werden?
-        </title>
-
-        <description>
-            <p>
-                Siehe <scheduler_element name="delay_order_after_setback" attribute="is_maximum" value="yes"/>.
-            </p>
         </description>
     </property>
 
