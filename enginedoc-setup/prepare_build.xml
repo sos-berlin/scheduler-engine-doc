@@ -4,14 +4,14 @@
   <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${env.USERPROFILE}/.m2/repository/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar"/>
   
   <propertyregex property="base" override="true" global="true" input="${basedir}" regexp="\\" replace="/" defaultValue="${basedir}" />  
-  <property name="source.root"        value="${base}/src/main" />
-  <property name="script.root"        value="${source.root}/scripts" />
+  <property name="source.root"        value="${base}/target/" />
+  <property name="script.root"        value="${base}/src/main/scripts" />
   <property name="perl.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml.pl" />
   <property name="script.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml" />
-  <property name="generated.dir" value="${basedir}/target/generated" />
+  <property name="generated.dir" value="${basedir}/target/common-files" />
   <property name="dependency.dir" value="${basedir}/target/dependency" />
-  <property name="doc.target.dir.de" value="${source.root}/doc/enginedoc/doc.de/common-engine-files" />
-  <property name="doc.target.dir.en" value="${source.root}/doc/enginedoc/doc.en/common-engine-files" />
+  <property name="doc.target.dir.de" value="${source.root}/enginedoc/doc.de/common-engine-files" />
+  <property name="doc.target.dir.en" value="${source.root}/enginedoc/doc.en/common-engine-files" />
   <property name="common.generated.dir" value="${generated.dir}/com/sos/scheduler/enginedoc/common" />
 
   <property name="output.r" value="register_data.xml"/>
@@ -26,6 +26,11 @@
     <unzip dest="${generated.dir}">
       <fileset dir="${dependency.dir}">
           <include name="enginedoc-common-*.jar"/>
+      </fileset>
+    </unzip>
+    <unzip dest="${source.root}">
+      <fileset dir="${dependency.dir}">
+          <include name="enginedoc-kernel-*.jar"/>
       </fileset>
     </unzip>
   </target>

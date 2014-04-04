@@ -15,56 +15,6 @@
     
 
     <build>
-        <!-- finalName>${project.groupId}</finalName -->
-        
-        <plugins>
-
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-dependency-plugin</artifactId>
-              <executions>
-                  <execution>
-                      <id>copy</id>
-                      <phase>initialize</phase>
-                      <goals>
-                          <goal>copy</goal>
-                      </goals>
-                      <configuration>
-                          <artifactItems>
-                              <artifactItem>
-                                  <groupId>com.sos.scheduler.enginedoc</groupId>
-                                  <artifactId>enginedoc-common</artifactId>
-                                  <version>${project.version}</version>
-                                  <type>jar</type>
-                              </artifactItem>
-                          </artifactItems>
-                      </configuration>
-                  </execution>
-              </executions>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <id>prepare</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <target>
-                                <ant antfile="prepare_build.xml" target="all">
-                                    <property name="settings.localRepository" value="${settings.localRepository}" />
-                                </ant>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            
-        </plugins>
 
         <resources>
             <resource>
