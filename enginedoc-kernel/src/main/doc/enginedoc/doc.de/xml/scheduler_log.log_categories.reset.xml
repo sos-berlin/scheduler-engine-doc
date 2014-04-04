@@ -17,7 +17,7 @@
             Setzt alle Log-Kategorien auf die für den Scheduler-Start eingestellten Werte zurück.
         </p>
         <p>
-            Siehe auch <scheduler_a href="../log_categories.xml" quote="yes"/>
+            Siehe auch <scheduler_a href="../common-engine-files/log_categories.xml" quote="yes"/>
         </p>
     </description>
 

@@ -1054,7 +1054,7 @@
                     <hr/>
                 </xsl:if>
 
-                <xsl:apply-templates select="document( 'register_data.xml' )/*"/>
+                <xsl:apply-templates select="document( 'common-engine-files/register_data.xml' )/*"/>
 
                 <xsl:call-template name="bottom"/>
             </body>
@@ -1671,7 +1671,7 @@
 
     <xsl:template name="show_message_text">
         <xsl:param name="code"/>
-        <xsl:apply-templates select="document('messages/scheduler_messages.xml')/messages//message[ @code=$code ]/text[ @xml:lang='en' ]/title"/>
+        <xsl:apply-templates select="document('common-engine-files/messages/scheduler_messages.xml')/messages//message[ @code=$code ]/text[ @xml:lang='en' ]/title"/>
     </xsl:template>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~scheduler_ignore-->

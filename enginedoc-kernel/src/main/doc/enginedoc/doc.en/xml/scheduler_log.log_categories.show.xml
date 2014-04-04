@@ -16,8 +16,8 @@
 
     <description>
         <p>
-            See also <scheduler_a href="../log_categories.xml" quote="yes"/>
-        <!--Siehe auch <scheduler_a href="../log_categories.xml" quote="yes"/>-->
+            See also <scheduler_a href="../common-engine-files/log_categories.xml" quote="yes"/>
+        <!--Siehe auch <scheduler_a href="../common-engine-files/log_categories.xml" quote="yes"/>-->
         </p>
     </description>
 

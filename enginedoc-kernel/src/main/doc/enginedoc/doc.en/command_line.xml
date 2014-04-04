@@ -175,8 +175,8 @@
                     der die XML-Kommandos und die XML-Konfiguration entsprechen müssen.-->
 						<!--</p>
 								<p>
-                    See the <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">JobScheduler XML Schema</a>.-->
-                <!--Siehe <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.-->
+                    See the <a href="common-engine-files/scheduler.xsd" type="text/plain" charset="utf-8">JobScheduler XML Schema</a>.-->
+                <!--Siehe <a href="common-engine-files/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.-->
 						<!--</p>
                 <p>
                     Example: -->

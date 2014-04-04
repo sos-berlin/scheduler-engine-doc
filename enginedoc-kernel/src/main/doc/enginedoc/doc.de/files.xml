@@ -58,11 +58,11 @@
     <file path="job_com.xml"/>
     <file path="konfiguration.xml"/>
     <file path="lock.xml"/>
-    <file path="log_categories.xml"/>
-    <!--file path="messages/charset_messages.xml"/>
-    <file path="messages/com_remote_messages.xml"/>
+    <file path="common-engine-files/log_categories.xml"/>
+    <!--file path="common-engine-files/messages/charset_messages.xml"/>
+    <file path="common-engine-files/messages/com_remote_messages.xml"/>
     <file path="messages/index.xml"/>
-    <file path="messages/scheduler_messages.xml"/-->
+    <file path="common-engine-files/messages/scheduler_messages.xml"/-->
     <file path="order.xml"/>
     <!--
     <file path="proposals/access_rights.xml"/>
@@ -97,7 +97,7 @@
     <file path="protokolle.xml"/>
     <file path="remote_execution.xml"/>
     <!--file path="register.xml"/>
-    <file path="register_data.xml"/-->
+    <file path="common-engine-files/register_data.xml"/-->
     <file path="scheduler_sql.xml"/>
     <file path="scheduler_sql_db2.xml"/>
     <file path="scheduler_sql_microsoft_sql_server.xml"/>

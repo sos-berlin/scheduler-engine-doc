@@ -207,7 +207,7 @@
     <a href="xml_commands.xml">XML-Kommandos</a> und
     <scheduler_keyword keyword="Schema"/>
     <scheduler_keyword keyword="XML-Schema"/>
-    <a href="xml/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.
+    <a href="common-engine-files/scheduler.xsd" type="text/plain" charset="utf-8">XML-Schema des Schedulers</a>.
 </p>
 
 

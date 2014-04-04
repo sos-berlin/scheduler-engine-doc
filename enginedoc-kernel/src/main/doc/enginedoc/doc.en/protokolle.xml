@@ -120,8 +120,8 @@
     In dieser Dokumentation steht <code>factory.ini</code> für den hier eingestellten Dateinamen.-->
 	</p>
 <p>
-    For further information see the <a href="log_categories.xml">List of Log Categories</a>.
-<!--Hier die <a href="log_categories.xml">Liste der Log-Kategorien</a>.-->
+    For further information see the <a href="common-engine-files/log_categories.xml">List of Log Categories</a>.
+<!--Hier die <a href="common-engine-files/log_categories.xml">Liste der Log-Kategorien</a>.-->
 </p>
 
 
