@@ -6,7 +6,7 @@ my $script_name     = "scheduler_keyword_to_xml.pl";
 my ( $year, $month, $mday, $hour, $min, $sec ) = (gmtime)[ 5, 4, 3, 2, 1, 0 ];  $year += 1900;  $month++;
 
 print '<?xml version="1.0" encoding="utf-8"?>' ."\n";
-print '<?xml-stylesheet href="scheduler.xsl" type="text/xsl"?>' ."\n";
+print '<?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>' ."\n";
 print "\n";
 print "<!-- ACHTUNG: NICHT AENDERN! DIESE DATEI IST GENERIERT VON $script_name -->\n";
 print "\n";

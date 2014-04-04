@@ -4527,7 +4527,7 @@ if( a != true )  spooler_log.error( a + "!=" + true );  // Okay ab Spidermonkey 
                     Die XML-Konfiguration und die XML-Kommandos werden gegen ein eingebautes XML-Schema geprüft.
                     Die neue Option <scheduler_option name="show-xml-schema"/> liefert das XML-Schema.
                     Zum Test ist eine aktuelle Version übers Internet erreichbar:
-                    <a href="http://www.zschimmer.com/2006/scheduler.xsd">http://www.zschimmer.com/2006/scheduler.xsd</a>.
+                    <a href="http://www.sos-berlin.com/repository/scheduler/current/scheduler.xsd">http://www.sos-berlin.com/repository/scheduler/current/scheduler.xsd</a>.
                 </p>
                 <p>Neue Kommandozeilen-Optionen:</p>
                 <ul>
