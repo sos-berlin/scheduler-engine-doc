@@ -935,14 +935,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-206">
+        <!--message code="SCHEDULER-206">
             <text xml:lang="de">
                 <title>need_db=<p1/>, erlaubt sind aber nur yes, no, strict</title>
             </text>
             <text xml:lang="en">
                 <title>With need_db=<p1/>, only "yes", "no" and "strict" are allowed</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-207">
             <text xml:lang="de">
@@ -1455,14 +1455,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-265">
+        <!--message code="SCHEDULER-265">
             <text xml:lang="de">
                 <title>SCHEDULER WIRD BEENDET WEGEN FEHLERS BEIM ZUGRIFF AUF DATENBANK</title>
             </text>
             <text xml:lang="en">
                 <title>SCHEDULER IS ABORTING DUE TO A PROBLEM WITH THE DATABASE: <p1/></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-266">
             <text xml:lang="de">
@@ -2198,15 +2198,15 @@
 
         <message code="SCHEDULER-357">
             <text xml:lang="en">
-                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs a database</title>
+                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs role 'scheduler'</title>
             </text>
         </message>
 
-        <message code="SCHEDULER-358">
+        <!--message code="SCHEDULER-358">
             <text xml:lang="en">
-                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs a database. need_db=<p1/> is not allowed</title>
+                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs role 'scheduler'</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-359">
             <text xml:lang="en">
@@ -3454,14 +3454,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-959">
+        <!--message code="SCHEDULER-959">
             <text xml:lang="de">
                 <title>Historie wird von Datenbank auf Dateien umgeschaltet</title>
             </text>
             <text xml:lang="en">
                 <title>Switching history from database to plain files</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-960">
             <text xml:lang="en">
