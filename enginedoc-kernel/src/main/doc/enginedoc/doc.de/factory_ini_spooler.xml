@@ -24,7 +24,6 @@
 
         <ini_entry setting="history" />
         <ini_entry setting="db" />
-        <ini_entry setting="need_db" />
         <ini_entry setting="db_variables_table" />
         <ini_entry setting="db_tasks_table"/>
         <ini_entry setting="db_orders_table" />
@@ -41,7 +40,6 @@
             </description>
         </ini_entry>
         
-        <ini_entry setting="max_db_errors" />
         <ini_entry setting="history_file" />
         <ini_entry setting="history_columns" />
         <ini_entry setting="history_on_process" />

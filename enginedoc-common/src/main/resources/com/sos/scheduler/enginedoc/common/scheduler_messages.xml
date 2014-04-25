@@ -422,14 +422,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-142">
+        <!--message code="SCHEDULER-142">
             <text xml:lang="de">
                 <title>Relativer Datenbankdateiname kann bei need_db=yes und log_dir=*stderr nicht verwendet werden</title>
             </text>
             <text xml:lang="en">
                 <title>Relative database file path cannot be used with need_db=yes and log_dir=*stderr</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-143">
             <text xml:lang="de">
@@ -1904,11 +1904,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-314">
+        <!--message code="SCHEDULER-314">
             <text xml:lang="en">
                 <title>Cannot open database. JobScheduler is aborting immediately because of need_db=<p1/></title>
             </text>
-        </message>
+        </message-->
 
         <!--<message code="SCHEDULER-315">
             <text xml:lang="en">

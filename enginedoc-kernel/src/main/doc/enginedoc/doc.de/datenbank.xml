@@ -60,8 +60,6 @@
     <dt>Datenbank und Fehlerbehandlung</dt>
     <dd>
         <scheduler_ini_entry file="factory.ini" section="spooler" entry="db"/><br/>
-        <scheduler_ini_entry file="factory.ini" section="spooler" entry="need_db"/><br/>
-        <scheduler_ini_entry file="factory.ini" section="spooler" entry="max_db_errors"/><br/>
     </dd>
 
     <!--scheduler_keyword keyword="Tabelle (Datenbank)"/-->
@@ -137,13 +135,15 @@
 <p>
     Der JobScheduler toleriert Datenbankfehler.
     Dadurch kann er mit einer vorübergehend heruntergefahrenen Datenbank umgehen.
-    Näheres hierzu finden sie hier: <scheduler_ini_entry file="factory.ini" section="spooler" entry="need_db"/>.
 </p>
 <p>
-    Wenn eingestellt ist, dass der JobScheduler nach Verbindungsverlust auf eine erneute Verbindung zur Datenbank warten soll,
-    hält der JobScheduler solange an.
-    Nur Kommandos über TCP oder HTTP verarbeitet er.
-    Er kann nicht beendet, nur abgebrochen werden (s. <a href="termination.xml">Beendigung</a>).
+    Bei einem Datenbankfehler schließt der JobScheduler die Datenbank und öffnet sie erneut.
+    Wenn das fehlschlägt,
+    schickt der JobScheduler eine <a href="email.xml">eMail</a> und
+    versucht endlos im Abstand von einer Minute die Datenbank erneut zu öffnen.
+    Die Tasks werden währenddessen nicht bedient.
+    Über HTTP und TCP hereinkommende XML-Kommandos, die ohne Datenbank auskommen, werden akzeptiert.
+    Der JobScheduler während dessen nicht beendet, nur abgebrochen werden (s. <a href="termination.xml">Beendigung</a>).
 </p>
 
 </description>
