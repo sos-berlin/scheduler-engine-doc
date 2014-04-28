@@ -2958,6 +2958,12 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-487">
+            <text xml:lang="en">
+                <title>Role '<p1/>' needed for this operation</title>
+            </text>
+        </message>
+
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->
@@ -4387,11 +4393,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-716" weight="warn" object="Scheduler">
+        <!--message code="SCHEDULER-716" weight="warn" object="Scheduler">
             <text xml:lang="en">
                 <title>jobs are not allowed for the current licence-key(s)</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-717" weight="warn" object="Scheduler">
             <text xml:lang="en">
