@@ -3594,10 +3594,6 @@
     <register_keyword_display><code>setback_count</code> (property)</register_keyword_display>
     <register_entry register_file='api/Order.xml#method__setback_count' register_title='Order.setback_count' register_keyword='setback_count' type='definition'/>
 </register_keyword>
-<register_keyword keyword='setback_max (property)'>
-    <register_keyword_display><code>setback_max</code> (property)</register_keyword_display>
-    <register_entry register_file='api/Job.xml#method__setback_max' register_title='Job.setback_max' register_keyword='setback_max' type='definition'/>
-</register_keyword>
 <register_keyword keyword='settings'>
     <register_keyword_display><code>&lt;settings&gt;</code></register_keyword_display>
     <register_entry register_file='CHANGES.xml#use_element__settings' register_title='Änderungsprotokoll'  register_keyword='settings'/>
