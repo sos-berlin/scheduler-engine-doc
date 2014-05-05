@@ -47,6 +47,25 @@ $job_chain->LetProperty( 'name', 'JobChain' );</pre>
 </property>
 
 
+<property name="path" access="read">
+    <com>
+        <com.result>
+            <com.type type="BSTR"/>
+        </com.result>
+    </com>
+
+    <title>
+        Job chain path
+    </title>
+
+    <description>
+        <p>
+            Returns the path of the job chain relative to the live folder.
+            The path starts with a slash "/".
+        </p>
+    </description>
+</property>
+
 
 <property name="order_count" access="read">
     <com>
