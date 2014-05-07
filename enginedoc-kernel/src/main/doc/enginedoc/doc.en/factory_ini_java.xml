@@ -9,17 +9,17 @@
     weight   = "20"
     title    = "factory.ini File, [java] Section"
     base_dir = ""
-    author   = "$Author: jz $"
-    date     = "$Date: 2012-06-12 21:42:49 +0200 (Di, 12 Jun 2012) $">
-
+    author   = "$Author: aa $"
+    date     = "$Date: 2014-05-07 11:32:49 +0200 (Mi, 07 Mai 2014) $">
 
     <ini_entries>
-        <ini_entry name="class_path" type="class_path" title="for Java">
+    
+        <ini_entry name="class_path" type="class_path" title="Class path for the Java virtual machine">
     <!--<ini_entry name="class_path" type="class_path" title="Für Java">-->
             <description>
                 <p>
                     This file is used to extend the <code>class_path</code> of directories or jars which are only valid for the JobScheduler.
-                    This setting precedes changes in the <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/> file.
+                <!--This setting precedes changes in the <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/> file.-->
                 <!--Hier können Sie den <code>class_path</code> um Verzeichnisse oder Jars erweitern, 
                     die nur für den JobScheduler gelten.
                     Die Angaben werden der Einstellung in <scheduler_ini_entry file="sos.ini" section="java" entry="class_path"/>
@@ -28,7 +28,23 @@
             </description>
         </ini_entry>
             
+        <ini_entry name="options" type="text" title="Options for Java">
+    <!--<ini_entry name="options" type="text" title="Options für Java">-->
+            <description>
+                <p>
+                    Java VM parameters and Java properties can be specified using this setting.
+                    Java properties can be specified using the "-D" notation. For example:
+		            <pre>options  = -Dlog4j.configuration="file:///${SCHEDULER_HOME}/lib/log4j.properties"</pre>
+		            See the <a href="http://www.oracle.com/technetwork/java/javase/documentation/index.html">Java Documentation</a> for a list of parameters.
+                </p>
+                <p>
+                    This setting precedes changes in the <scheduler_ini_entry file="sos.ini" section="java" entry="options"/> file.
+                </p>
+            </description>
+        </ini_entry>
+            
         <!--ini_entry setting="smtp" /-->
+        
     </ini_entries>
     
     <description>

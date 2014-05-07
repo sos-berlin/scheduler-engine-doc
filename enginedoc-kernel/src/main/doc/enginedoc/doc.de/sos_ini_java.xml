@@ -9,8 +9,8 @@
     weight   = "10"
     title    = ""
     base_dir = ""
-    author   = "$Author: jz $"
-    date     = "$Date: 2007-05-09 15:48:15 +0200 (Wed, 09 May 2007) $">
+    author   = "$Author: aa $"
+    date     = "$Date: 2014-05-07 11:32:49 +0200 (Mi, 07 Mai 2014) $">
 
     <ini_entries>
         <ini_entry name="vm" type="path" title="Dateipfad der Java virtual machine">
@@ -42,7 +42,23 @@
 
         <ini_entry name="class_path" setting="java_class_path"/>
 
-        <ini_entry name="options" type="text" setting="java_options"/>
+        <ini_entry name="options" type="text" setting="java_options">
+            <description>
+                <p>
+                    Java VM Parametern und Java Eigenschaften können mit dieser Einstellung spezifiziert werden.
+                    Java Properties werden mit der "-D" Schreibweise gesetzt. 
+                </p>
+                <p>
+                    Z.B.:
+		            <pre>options  = -Dlog4j.configuration="file:///${SCHEDULER_HOME}/lib/log4j.properties"</pre>
+		            Sehe auch die <a href="http://www.oracle.com/technetwork/java/javase/documentation/index.html">Java Documentation</a>.
+                </p>
+                <p>
+                    Die Angaben werden der Einstellung in <scheduler_ini_entry file="factory.ini" section="java" entry="options"/> 
+                    nachgestellt.
+                </p>
+            </description>
+        </ini_entry>
 
         <ini_entry name="debug" type="yes_no">
             <description>
