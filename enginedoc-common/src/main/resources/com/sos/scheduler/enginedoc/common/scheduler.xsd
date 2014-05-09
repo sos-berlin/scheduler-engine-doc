@@ -527,7 +527,7 @@
                                 <xsd:complexType>
                                     <xsd:sequence>
                                         <xsd:element ref="extensions" minOccurs="0"/>
-                                        <xsd:element ref="params" minOccurs="0"/>
+																				<xsd:any namespace="##other" minOccurs="0"/>
                                     </xsd:sequence>
                                     <xsd:attribute name="state" type="String" use="required"/>
                                     <xsd:attribute name="job" type="Path"/>
@@ -543,10 +543,7 @@
                                     </xsd:attribute>
                                     <xsd:attribute name="suspend" type="Yes_no"/>
                                     <xsd:attribute name="delay" type="xsd:nonNegativeInteger"/>
-                                    <xsd:attribute name="previous_state" type="String"/>
-                                    <xsd:attribute name="node_type" type="xsd:nonNegativeInteger"/>
-                                    <xsd:attribute name="title" type="String"/>
-                                    <xsd:attribute name="seq_no" type="xsd:nonNegativeInteger"/>
+																		<xsd:anyAttribute namespace="##other"/>
                                 </xsd:complexType>
                             </xsd:element>
                             <xsd:element name="file_order_sink">
