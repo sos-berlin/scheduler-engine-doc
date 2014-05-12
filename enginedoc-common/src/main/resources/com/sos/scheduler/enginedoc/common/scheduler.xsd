@@ -994,7 +994,7 @@
             <xsd:attribute name="order_state" type="String" use="required"/>
         </xsd:complexType>
     </xsd:element>
-    <xsd:element name="settings.set">
+    <xsd:element name="setting.set">
         <xsd:complexType>
             <xsd:attribute name="name" type="String" use="required"/>
             <xsd:attribute name="value" type="String" use="required"/>
