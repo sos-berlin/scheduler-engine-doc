@@ -695,14 +695,14 @@
             </text>
         </message-->
 
-        <message code="SCHEDULER-177">
+        <!--message code="SCHEDULER-177">
             <text xml:lang="de">
                 <title>Java steht nicht zur Verfügung (siehe Fehler beim Start des Schedulers)</title>
             </text>
             <text xml:lang="en">
                 <title>Java is not available (see error message when JobScheduler started)</title>
             </text>
-        </message>
+        </message-->
 
         <!--message code="SCHEDULER-178">
             <text xml:lang="de">
