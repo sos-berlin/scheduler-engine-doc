@@ -1500,14 +1500,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-270">
+        <!--message code="SCHEDULER-270">
             <text xml:lang="de">
                 <title>Historie lässt sich nicht öffnen: <p1/></title>
             </text>
             <text xml:lang="en">
                 <title>Cannot open history: <p1/></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-271">
             <text xml:lang="de">
