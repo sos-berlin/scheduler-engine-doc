@@ -178,46 +178,8 @@
 			In der Tabelle <font class="mono">SCHEDULER_VARIABLES</font> wird in einem Eintrag die nächste freie Job-Nummer gehalten.
 		</p>
 		
-		<!--p>Die Datenbank wird verwendet, wenn die Option history_filename nicht gesetzt, aber db gesetzt ist.&#160;</p-->
-		
-		<!--pre>[spooler]
-		db = spooler.mdb                 <i>(dasselbe wie nächste Zeile)</i>
-		db = odbc -create spooler.mdb</pre>
-		
 		<pre>[spooler]
-		db = odbc -db=scheduler</pre-->
-		
-		<p class="zwischentitel">
-			need_db
-		</p>
-		
-		<p>
-			Mit dem Eintrag <font class="mono">need_db=no</font> kann eingestellt werden,
-			dass der JobScheduler auch starten soll, wenn die Datenbank sich nicht öffnen lässt. 
-			Voreingestellt ist <font class="mono">need_db=yes</font>.&#160;
-		</p>
-		
-		<pre>[spooler]
-		db = odbc -db=scheduler
-		need_db = no</pre>
-		
-		<p>
-			Wenn mit <font class="mono">db=</font> nur ein Datenbankdateiname und<font class="mono">
-			log_dir=*stderr</font> eingestellt sind, kann die Datenbank mangels Verzeichnis
-			nicht geöffnet werden. Bei <font class="mono">need_db=yes</font> startet dann
-			der JobScheduler nicht.
-		</p>
-		
-		<p class="zwischentitel">
-			Microsoft-Access-Datenbank wird automatisch angelegt
-		</p>
-		
-		<p>
-			Wenn bei <font class="mono">db=</font> nur ein einfacher Dateiname angegeben
-			ist, stellt der JobScheduler ihm&#160; &quot;<font class="mono">odbc -create</font>&quot;
-			voran.&#160;Damit wird eine Microsoft MS-Access automatisch angelegt (s. Dateityp
-			ODBC).
-		</p>
+		db = odbc -db=scheduler</pre>
 		
 		<p>
 			In der Datenbank werden die Tabellen <font class="mono">SCHEDULER_HISTORY</font> und 
