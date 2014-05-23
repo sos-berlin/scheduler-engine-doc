@@ -689,6 +689,31 @@ $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+    <property name="ignore_max_orders">
+        <com>
+            <com.result>
+                <com.type type="bool"/>
+            </com.result>
+        </com>
+
+        <title>
+            Eigenschaft des Auftrags, die Ausführungsbeschränkung durch das Jobketten-Attribut "max_orders" aufzuheben.
+        </title>
+
+        <description>
+            <p>
+                Mit dieser Funktion kann dem Auftrag erlaubt werden in der Jobkette zu laufen,
+                auch wenn das Jobketten-Attribut <scheduler_element name="job_chain" attribute="max_orders"/>
+                verhindern würde, dass weitere Aufträge zu dem Zeitpunkt ausgeführt werden.
+                Der default-Wert dieser Eigenschaft ist <code>false</code>.
+                Wird diese Eigenschaft auf <code>true</code> gesetzt,
+                wird eine mögliche Beschränkung der Ausführung, wegen "max_orders", für diesen Auftrag aufgehoben.
+            </p>
+        </description>
+    </property>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
     <property name="log" access="read">
         <com>
             <com.result>

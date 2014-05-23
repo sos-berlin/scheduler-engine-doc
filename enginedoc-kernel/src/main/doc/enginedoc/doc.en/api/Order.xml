@@ -860,6 +860,31 @@ $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+    <property name="ignore_max_orders">
+        <com>
+            <com.result>
+                <com.type type="bool"/>
+            </com.result>
+        </com>
+
+        <title>
+            Property for cancelling an execution limit defined by job_chain-attribute "max_orders".
+        </title>
+
+        <description>
+            <p>
+                This property allows an order to run in a job chain even when the
+                <scheduler_element name="job_chain" attribute="max_orders"/> job_chain attribute
+                is set to prevent additional orders being started.
+                By setting this property to <code>true</code> an order can run in the job_chain
+                even though the execution limit has already been reached.
+                The default value of this property is <code>false</code>.
+            </p>
+        </description>
+    </property>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
     <property name="log" access="read">
         <com>
             <com.result>
