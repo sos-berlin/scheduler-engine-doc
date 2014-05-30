@@ -4411,11 +4411,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-719" weight="error" object="Job_chain">
+        <!--message code="SCHEDULER-719" weight="error" object="Job_chain">
             <text xml:lang="en">
                 <title>max_orders="<p1/>" but <p2/> orders are now started (excluding <p3/> orders ignoring max_orders)</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-720" weight="info" object="Scheduler">
             <text xml:lang="en">
