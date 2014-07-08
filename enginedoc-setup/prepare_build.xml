@@ -7,14 +7,14 @@
   <property name="source.root"        value="${base}/target/" />
   <property name="script.root"        value="${base}/src/main/scripts" />
   <property name="perl.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml.pl" />
-  <property name="script.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml" />
   <property name="generated.dir" value="${basedir}/target/common-files" />
   <property name="dependency.dir" value="${basedir}/target/dependency" />
   <property name="doc.target.dir.de" value="${source.root}/enginedoc/doc.de/common-engine-files" />
   <property name="doc.target.dir.en" value="${source.root}/enginedoc/doc.en/common-engine-files" />
   <property name="common.generated.dir" value="${generated.dir}/com/sos/scheduler/enginedoc/common" />
 
-  <property name="output.r" value="register_data.xml"/>
+  <property name="output.register.de" value="register_data.de.xml"/>
+  <property name="output.register.en" value="register_data.en.xml"/>
 
   <target name="all" depends="-prepare, -keywords.to.register_data.win, -keywords.to.register_data.ux, -copy.generated-files, -copy.common-files">
     <echo>DONE!</echo>
@@ -36,8 +36,8 @@
   </target>
 
   <target name="-copy.generated-files" description="copy the generated files to the doc folder">
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${doc.target.dir.de}/${output.r}" />
-    <copy verbose="true" file="${generated.dir}/${output.r}" tofile="${doc.target.dir.en}/${output.r}" />
+    <copy verbose="true" file="${generated.dir}/${output.register.de}" tofile="${doc.target.dir.de}/register_data.xml" />
+    <copy verbose="true" file="${generated.dir}/${output.register.en}" tofile="${doc.target.dir.en}/register_data.xml" />
   </target>
 
   <target name="-copy.common-files" description="copy the common files to the doc folder">
@@ -65,19 +65,28 @@
 
   <target name="-keywords.to.register_data.win" depends="-check.os" if="isWindows" description="generates register_data.xml">
     <echo>generating register-data.xml ...</echo>
-    <propertyregex property="script.cygwin" override="true" global="true" input="${script.root}/scheduler_keyword_to_xml" regexp="^(.):(.*)" replace="/cygdrive/\1\2" />
-    <echo>cygbase=${script.cygwin}</echo>
-    <exec executable="bash" dir="${script.root}" output="${generated.dir}/${output.r}" logError="false">
+    <echo>basedir=${basedir}</echo>
+    <propertyregex property="path.cygwin.scripts" override="true" global="true" input="${script.root}" regexp="^(.):(.*)" replace="/cygdrive/\1\2" />
+    <exec executable="bash" dir="${basedir}" output="${generated.dir}/${output.register.de}" logError="false">
       <arg value="-c" />
       <arg value="&quot;" />
-      <arg value="${script.cygwin}" />
+      <arg value="${path.cygwin.scripts}/scheduler_keyword_to_xml.de" />
+      <arg value="&quot;" />
+    </exec>
+    <exec executable="bash" dir="${basedir}" output="${generated.dir}/${output.register.en}" logError="false">
+      <arg value="-c" />
+      <arg value="&quot;" />
+      <!-- currently the english version contains a lot of XXX entries -->
+      <!-- arg value="${path.cygwin.scripts}/scheduler_keyword_to_xml.en" / -->
+      <arg value="${path.cygwin.scripts}/scheduler_keyword_to_xml.de" />
       <arg value="&quot;" />
     </exec>
   </target>
 
   <target name="-keywords.to.register_data.ux" depends="-check.os" if="isLinux" description="generates register_data.xml">
     <echo>generating register-data.xml ...</echo>
-    <exec executable="${script.keywordtoxml}" dir="${script.root}" output="${generated.dir}/${output.r}" />
+    <exec executable="${script.root}/scheduler_keyword_to_xml.de" dir="${script.root}" output="${generated.dir}/${output.register.de}" />
+    <exec executable="${script.root}/scheduler_keyword_to_xml.en" dir="${script.root}" output="${generated.dir}/${output.register.en}" />
   </target>
   
   <target name="-check.os">
