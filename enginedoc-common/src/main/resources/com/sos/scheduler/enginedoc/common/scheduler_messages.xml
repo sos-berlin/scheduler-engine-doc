@@ -3992,7 +3992,7 @@
 
         <message code="SCHEDULER-848" weight="info">
             <text xml:lang="en">
-                <title>Task pid=<p1/> started for remote scheduler</title>
+                <title>Task pid=<p1/> started for remote scheduler <p2/></title>
             </text>
         </message>
 
