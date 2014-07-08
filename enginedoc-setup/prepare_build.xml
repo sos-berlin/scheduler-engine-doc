@@ -7,7 +7,6 @@
   <property name="source.root"        value="${base}/target/" />
   <property name="script.root"        value="${base}/src/main/scripts" />
   <property name="perl.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml.pl" />
-  <property name="script.keywordtoxml"  value="${script.root}/scheduler_keyword_to_xml" />
   <property name="generated.dir" value="${basedir}/target/common-files" />
   <property name="dependency.dir" value="${basedir}/target/dependency" />
   <property name="doc.target.dir.de" value="${source.root}/enginedoc/doc.de/common-engine-files" />
@@ -86,7 +85,8 @@
 
   <target name="-keywords.to.register_data.ux" depends="-check.os" if="isLinux" description="generates register_data.xml">
     <echo>generating register-data.xml ...</echo>
-    <exec executable="${script.keywordtoxml}" dir="${script.root}" output="${generated.dir}/${output.register.de}" />
+    <exec executable="${script.root}/scheduler_keyword_to_xml.de" dir="${script.root}" output="${generated.dir}/${output.register.de}" />
+    <exec executable="${script.root}/scheduler_keyword_to_xml.en" dir="${script.root}" output="${generated.dir}/${output.register.en}" />
   </target>
   
   <target name="-check.os">
