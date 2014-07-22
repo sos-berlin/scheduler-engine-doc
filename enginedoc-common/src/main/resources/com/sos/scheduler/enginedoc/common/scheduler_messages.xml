@@ -2904,45 +2904,45 @@
             </text>
         </message>
 
-       <message code="SCHEDULER-478">
-          <text xml:lang="en">
-             <title>Could not re-open '<p1/>' log file. Following lines are lost. <p2/></title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-479">
-          <text xml:lang="en">
-             <title>No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-480">
-          <text xml:lang="en">
-             <title>No appropriate config element found in scheduler.xml - please remove attribute @spooler_id of the config-element or start JS with the appropriate -id option.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-481">
-          <text xml:lang="en">
-             <title>Method '<p1/>' with signature '<p2/>' is not implemented.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-482">
-          <text xml:lang="en">
-             <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-483">
-          <text xml:lang="en">
-             <title>Order parameter 'scheduler.remote_scheduler' cannot be used in a cluster (option -exclusive or -distributed-orders)</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-484">
+        <message code="SCHEDULER-478">
             <text xml:lang="en">
-                <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs</title>
+                <title>Could not re-open '<p1/>' log file. Following lines are lost. <p2/></title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-479">
+            <text xml:lang="en">
+                <title>No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-480">
+            <text xml:lang="en">
+                <title>No appropriate config element found in scheduler.xml - please remove attribute @spooler_id of the config-element or start JS with the appropriate -id option.</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-481">
+            <text xml:lang="en">
+                <title>Method '<p1/>' with signature '<p2/>' is not implemented.</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-482">
+            <text xml:lang="en">
+                <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-483">
+            <text xml:lang="en">
+                <title>Order parameter 'scheduler.remote_scheduler' cannot be used in a cluster (option -exclusive or -distributed-orders)</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-484">
+            <text xml:lang="en">
+                <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs and is ignored for API jobs</title>
             </text>
         </message>
 
