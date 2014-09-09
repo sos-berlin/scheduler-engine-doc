@@ -1,12 +1,10 @@
 # .gitignore
 
+# Windows
 Thumbs.db
 
-# SUBVERSION
-.svn/
-
 # MAVEN
-target/
+/target/
 
 # ECLIPSE
 .classpath
@@ -21,6 +19,3 @@ target/
 atlassian-ide-plugin.xml
 
 common-engine-files/
-
-
-
