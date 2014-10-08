@@ -2964,6 +2964,12 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-488">
+            <text xml:lang="en">
+                <title>Waiting until Remote JobScheduler becomes accessible</title>
+            </text>
+        </message>
+
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->
