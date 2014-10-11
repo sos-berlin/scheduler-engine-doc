@@ -1331,6 +1331,19 @@
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="process_class">
+        <xsd:sequence>
+            <xsd:element name="remote_schedulers" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="remote_scheduler" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                                <xsd:attribute name="remote_scheduler" type="String"/>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
         <xsd:attribute name="name" type="Name"/>
         <xsd:attribute name="max_processes" type="xsd:nonNegativeInteger"/>
         <xsd:attribute name="remote_scheduler" type="String"/>

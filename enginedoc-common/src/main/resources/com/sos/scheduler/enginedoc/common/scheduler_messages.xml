@@ -2966,7 +2966,13 @@
 
         <message code="SCHEDULER-488">
             <text xml:lang="en">
-                <title>Waiting until Remote JobScheduler becomes accessible</title>
+                <title>This remote JobScheduler '<p1/>' is not accessible: <p2/></title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-489">
+            <text xml:lang="en">
+                <title>No remote JobScheduler is accessible. Waiting before trying again</title>
             </text>
         </message>
 
