@@ -991,7 +991,7 @@
     <xsd:element name="job_chain.check_distributed">
         <xsd:complexType>
             <xsd:attribute name="job_chain" type="Path" use="required"/>
-            <xsd:attribute name="order_state" type="String" use="required"/>
+            <xsd:attribute name="order_state" type="String"/>
         </xsd:complexType>
     </xsd:element>
     <xsd:element name="setting.set">
