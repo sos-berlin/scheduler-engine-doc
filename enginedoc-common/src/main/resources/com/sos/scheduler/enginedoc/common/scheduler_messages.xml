@@ -1659,14 +1659,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-288">
-            <text xml:lang="de">
-                <title>-reuse-port (SO_REUSEADDR): <p1/> wird verwendet, auch wenn er schon von einer anderen Anwendung belegt ist</title>
-            </text>
+        <!--message code="SCHEDULER-288">
             <text xml:lang="en">
                 <title>-reuse-port (SO_REUSEADDR): using <p1/>, but another application can use it too</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-289">
             <text xml:lang="de">
