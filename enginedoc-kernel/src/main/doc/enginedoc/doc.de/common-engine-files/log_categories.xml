@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
+
+<log_categories 
+    title="Log Categories"
+    base_dir=""
+    author="$Author: jz $"
+    date = "$Date: 2012-06-12 21:42:49 +0200 (Di, 12 Jun 2012) $"
+>
+    <scheduler_keyword keyword="Log Categories"/>
+
+    <scheduler_keyword keyword="Categories for Log Files"/>
+
+    <log_category name="all" title="All categories (with exception of explicit categories)">
+    </log_category>
+
+    <!--
+    <log_category name="async"          title="Asynchrone Aufrufe (für den nebenläufigen Betrieb der Scheduler-Tasks)">
+        <log_category name="continue"       title="Fortsetzen einer asynchronen Operation"/>
+    </log_category>
+    -->
+
+    <log_category name="com" title="COM-Operations">
+        <log_category name="invoke" title="Calling a COM object method"/>
+    </log_category>
+
+    <log_category name="env"            title="Environment variables">
+    </log_category>
+
+    <log_category name="exception" title="Particular error codes">
+        <log_category name="*"              default="yes"		title="All error codes"/>
+        <log_category name="D310"           mode="explicit"		title="End of file"/>
+        <log_category name="D311"           mode="explicit"		title="Expression not found"/>
+    </log_category>
+
+    <log_category name="factory" title="DocumentFactory">
+        <log_category name="parameter" />
+        <log_category name="processor" title="Factory Processor (hostole.dll)"/>
+    </log_category>
+
+    <log_category name="file"           title="">
+        <log_category name="directory"/>
+        <log_category name="mmap"       title="mmap()"/>
+    </log_category>
+
+    <log_category name="hostole" title="HostOLE calls (with exception of the factory processor)">
+    </log_category>
+
+    <log_category name="ini"            title="Windows call GetPrivateProfile()">
+        <description>
+            <p>
+                Read the .ini file: <code>GetPrivateProfile()</code>.
+            </p>
+        </description>
+    </log_category>
+
+    <log_category name="java" title="Java">
+    </log_category>
+
+    <log_category name="jdbc" title="JDBC Calls">
+    </log_category>
+
+    <log_category name="mail"           >
+    </log_category>
+
+    <log_category name="mutex"          mode="explicit" title="Mutual exclusion locks, blocking for thread serialisation">
+    </log_category>
+
+    <log_category name="object_server" title="JobScheduler interface for tasks running in their own processes">
+        <log_category name="call" title="Method Call"/>
+        <log_category name="continue"       />
+        <log_category name="push" title="Stack-Operation for nested method calls"/>
+        <log_category name="wait"           />
+        <log_category name="Invoke" title="COM operation"/>
+        <log_category name="QueryInterface" title="COM operation"/>
+        <!--<log_category name="object_server"      title="Schnittstelle des Schedulers zu den in eigenen Prozessen laufenden Tasks"-->
+    </log_category>
+
+    <log_category name="odbc" title="ODBC calls">
+    </log_category>
+
+    <log_category name="rtf" title="RTF Processor">
+        <log_category name="map_next_line" title="Positions of script line numbers found in RTF documents"/>
+        <log_category name="merge" title="Merge different templates"/>
+        <log_category name="learn" title="Learned (unknown) RTF codes"/>
+    </log_category>
+
+    <log_category name="scheduler"   mode="implicit"  title="JobScheduler">
+        <log_category name="call"          mode="implicit"   title="Start and end call of a job method, e.g. spooler_process()"/>
+        <log_category name="cluster"                         title="Cluster operation"/>
+        <log_category name="directory"                       title="Open a directory"/>
+        <log_category name="file_order"                      title="&lt;file_order_source>"/>
+        <log_category name="http"                            title="HTTP server"/>
+        <log_category name="log"                             title="Access to protocol files"/>
+    <!--<log_category name="loop"           mode="explicit"  title="A JobScheduler micro-cycle"/>--><!-- Auskommentiert nach Telefonat JZ -->
+        <log_category name="order"          mode="implicit"  title="Operations on orders (temporary payload setting)"/>
+        <log_category name="service"        mode="implicit"  title="Windows service controller"/>
+        <log_category name="signal"    />
+        <log_category name="wait"                            title="The JobScheduler enters the waiting state"/>
+        <log_category name="xml"                             title="XML/DOM operations"/>
+        <log_category name="nothing_done"                    title="When a job is idle"/>
+    </log_category>
+
+    <log_category name="socket"     title="Socket operations (network)">
+        <log_category name="accept"     title="System call accept(): accept TCP connections"/>
+        <log_category name="close"      title="System call close(): close socket"/>
+        <log_category name="connect"    title="System call connect(): establish TCP connection"/>
+        <log_category name="listen"     title="System call listen(): waiting for TCP connection request (listening)"/>
+        <log_category name="send"       title="System call send(): send file"/>
+        <log_category name="recv"       title="System call send(): receive file"/>
+        <log_category name="select"     title="System call select(): waiting for TCP result"/>
+        <log_category name="setsockopt" title="System call setsockopt()"/>
+        <log_category name="shutdown"   title="System call shutdown(): end connection"/>
+        <log_category name="data"       mode="explicit" title="Data from recv() and send()"/>
+    </log_category>
+
+    <log_category name="spidermonkey"   title="The Spidermonkey JavaScript implementation">
+        <log_category name="callback"       mode="explicit" title="Spidermonkey call backs"/>
+        <log_category name="idispatch"      mode="explicit" title="COM object management"/>
+    </log_category>
+
+    <log_category name="sossql" title="SQL-Processor (file type sossql)">
+        <log_category name="get_key" title="Operation get_key()"/>
+    </log_category>
+
+    <log_category name="windows"        title="Betriebssystem Microsoft Windows">
+        <log_category name="PeekMessage"   title="Aufruf PeekMessage()"/>
+    </log_category>
+
+
+    <description>
+        <p>
+            Many of the entries made in the log file (<code>scheduler.log</code>) are categorised.
+            These categories are used to regulate whether or not an entry is made in a log file.
+        </p>
+        <p>
+            A log category is specified in front of the file name,
+            with a ">" symbol inserted between the category and the file name.
+            Multiple categories are separated by an empty space. 
+            For example (in an .ini file):
+            <code>log = scheduler.* socket.* >c:/tmp/scheduler.log</code>.
+        </p>
+        <p>
+            The special category <code>all</code> selects all categories 
+            other than those which must be explicitly selected.
+        </p>
+        <p>
+            Log file categories are organised in hierarchies.
+            Categories can be selected together with their subcategories 
+            by appending an asterisk ("<code>.*</code>") to the category name thus:
+            <code>scheduler.*</code>.
+        </p>
+        <p>
+            See also the commands:
+        </p>
+        <ul>
+            <li>
+                <scheduler_element name="scheduler_log.log_categories.show" />
+            </li>
+            <li>
+                <scheduler_element name="scheduler_log.log_categories.set" />
+            </li>
+            <li>
+                <scheduler_element name="scheduler_log.log_categories.reset" />
+            </li>
+        </ul>
+    </description>
+</log_categories>

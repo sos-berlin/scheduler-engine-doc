@@ -1,0 +1,2 @@
+Die Dateien in diesem Verzeichnis sind ausschließlich für die Konvertierung zu SOSDoc vorhanden.
+Es handelt sich um eine Kopie aus enginedoc-common\src\main\resources\com\sos\scheduler\enginedoc\common.
