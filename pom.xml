@@ -42,6 +42,7 @@
         <connection>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</connection>
         <developerConnection>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</developerConnection>
         <url>https://github.com/sos-berlin/scheduler-engine-doc</url>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
 
 </project>
