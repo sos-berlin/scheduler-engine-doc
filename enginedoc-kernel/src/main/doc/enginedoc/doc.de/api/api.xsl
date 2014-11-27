@@ -217,7 +217,7 @@
 
                         <xsl:call-template name="programming_language_selector">
                             <xsl:with-param name="this_programming_language">javax.script</xsl:with-param>
-                            <xsl:with-param name="this_programming_language_title">javax.script:rhino</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">javax.script:JavaScript</xsl:with-param>
                         </xsl:call-template>
 
                         <xsl:call-template name="programming_language_selector">

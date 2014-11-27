@@ -33,12 +33,12 @@
                 <tr>
                     <td>java:JavaScript</td>
                     <td style="white-space:nowrap;">&lt;script language="java:JavaScript"&gt;</td>
-                    <td>Provides jobs in JavaScript. Usage of the "Rhino with Beans" implementation.</td>
+                    <td>Provides jobs in JavaScript. Usage of the "Rhino with Beans" implementation. Compatibility Syntax for Spidermonkey Syntax on 64Bit JobScheduler</td>
                 </tr>
                 <tr>
-                    <td>javax.script:rhino</td>
-                    <td style="white-space:nowrap;">&lt;script language="javax.script:rhino"&gt;</td>
-                    <td>Provides the script language Rhino, that implements the "javax.script" scripting API.
+                    <td>javax.script:JavaScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="javax.script:JavaScript"&gt;</td>
+                    <td>Provides jobs in JavaScript. Usage of Rhino engine (Java 1.7) / Nashorn engine (Java 1.8), that implements the "javax.script" scripting API.
                         Other script languages implementing the "javax.script" scripting API can be used with <nobr>&lt;script language="javax.script:<i>language</i>"&gt;.</nobr>
                     </td>
                 </tr>
