@@ -234,11 +234,8 @@
         </message>
 
         <message code="SCHEDULER-121">
-            <text xml:lang="de">
-                <title>Die Sicherheitseinstellungen lassen die Operation nicht zu</title>
-            </text>
             <text xml:lang="en">
-                <title>The security settings do not allow this operation</title>
+                <title>The security settings do not allow this operation (or JobScheduler is waiting for database)</title>
             </text>
         </message>
 
