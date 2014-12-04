@@ -88,6 +88,54 @@
             </description>
         </xml_attribute>
 
+        <xml_attribute name="force" type="yes|no" initial="yes">
+            <description>
+                <p>
+                    <code>force="no"</code>:
+                </p>
+                <ul>
+                    <li>
+                        A job that with the "stopped" state will remain in this state.
+                    <!--Wenn der Job gestoppt ist, bleibt er gestoppt.-->
+                    </li>
+                    <li>
+                        If a start time has been specified with either 
+                        <scheduler_element name="run_time"/> or <scheduler_element name="schedule"/>
+                        and this does not allow a job to start 
+                        then the JobScheduler will postpone the start to the next period.
+                    <!--Wenn mit <code>at=</code> eine Startzeit angegeben ist,
+                        zu dem Zeitpunkt 
+                        <scheduler_element name="run_time"/> oder <scheduler_element name="schedule"/>
+                        keine Start zulassen, 
+                        dann verschiebt der JobScheduler den Start bis zur nächsten Periode.-->
+                    </li>
+                    <li>
+                        This means that <code>at="now"</code> has the same effect as <code>at="period"</code>.
+                    <!--Daraus ergibt sich, dass <code>at="now"</code> wie <code>at="period"</code> wirkt.-->
+                    </li>
+                </ul>
+                <p>
+                    <code>force="yes"</code>:
+                </p>
+                <ul>
+                    <li>
+                        This means that <code>at="now"</code> has the same effect as <code>at="period"</code>.
+                        A job that with the "stopped" state will be immediately started.
+                    <!--Daraus ergibt sich, dass <code>at="now"</code> wie <code>at="period"</code> wirkt.
+                        Der Job wird sofort entstoppt (falls er gestoppt ist)-->
+                    </li>
+                    <li>
+                        A job with a start time specified using <code>at=</code> will be started at this time, 
+                        regardless of whether or not a run-time period has been specified using 
+												<scheduler_element name="run_time"/> or <scheduler_element name="schedule"/>.
+                    <!--Eine mit <code>at=</code> angegebene Startzeit nimmt keine Rücksicht auf
+                        <scheduler_element name="run_time"/> oder <scheduler_element name="schedule"/>,
+                        die Task wird also auch zu dem Zeitpunkt gestartet, wenn keine Periode vorliegt.-->
+                    </li>
+                </ul>
+            </description>
+        </xml_attribute>
+
         <xml_attribute name="web_service" type="name">
             <description>
                 <p>

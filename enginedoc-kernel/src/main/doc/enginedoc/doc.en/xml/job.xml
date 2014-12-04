@@ -559,6 +559,48 @@
             </messages>
         </xml_attribute>
 
+        <xml_attribute name="warn_if_shorter_than" type="HH:MM:SS|seconds|percentage%">
+            <description>
+                <p>
+                    If a job is completed in less than the specified time allowed then
+                    the JobScheduler will give out the <scheduler_message code="SCHEDULER-711"/> warning.
+                <!--Wenn ein Jobschritt vor der angegebenen Zeit beendet wird,
+                    gibt der JobScheduler die Warnung <scheduler_message code="SCHEDULER-711"/> aus.-->
+                </p>
+                <p>
+                    The time can be specified in <code>HH:MM</code> or <code>HH:MM:SS</code> formats,
+                    as a number of seconds or as a percentage. 
+                    A percentage value is calculated from the average length of the job steps carried out 
+										up to this point as specified in the <code>SCHEDULER_HISTORY</code> database table.
+                <!--Die Zeit kann im den Formaten <code>HH:MM</code>, <code>HH:MM:SS</code>,
+                    als Sekundenzahl oder als Prozentangabe angegeben werden.
+                    Dabei sind 100% die durchschnittliche Laufzeit der bisherigen Jobschritte,
+                    ermittelt aus der Datenbanktabelle <code>SCHEDULER_HISTORY</code>.-->
+                </p>
+            </description>
+        </xml_attribute>
+
+        <xml_attribute name="warn_if_longer_than" type="HH:MM:SS|seconds|percentage%">
+            <description>
+                <p>
+                    If a job is completed in more than the specified time allowed then
+                    the JobScheduler will give out the <scheduler_message code="SCHEDULER-711"/> warning.
+                <!--Wenn ein Jobschritt länger als die angegebenen Zeit dauert,
+                    gibt der JobScheduler die Warnung <scheduler_message code="SCHEDULER-711"/> aus.-->
+                </p>
+                <p>
+                    The time can be specified in <code>HH:MM</code> or <code>HH:MM:SS</code> formats,
+                    as a number of seconds or as a percentage. 
+                    A percentage value is calculated from the average length of the job steps carried out 
+										up to this point as specified in the <code>SCHEDULER_HISTORY</code> database table.
+                <!--Die Zeit kann im den Formaten <code>HH:MM</code>, <code>HH:MM:SS</code>,
+                    als Sekundenzahl oder als Prozentangabe angegeben werden.
+                    Dabei sind 100% die durchschnittliche Laufzeit der bisherigen Jobschritte,
+                    ermittelt aus der Datenbanktabelle <code>SCHEDULER_HISTORY</code>.-->
+                </p>
+            </description>
+        </xml_attribute>
+
         <xml_attribute name="enabled" type="yes|no" initial="yes" title="Disable a Job." >
             <description>
                 <p>
