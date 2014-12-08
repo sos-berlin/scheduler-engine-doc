@@ -480,6 +480,11 @@
             </p-->
         </description>
 
+        <example programming_language="javax.script">
+            <pre>spooler_log.error( "This call of spooler_log.error() sets the exit code to 1" );
+spooler_task.set_exit_code(0);   // Reset the exit code</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_log.error( "This call of spooler_log.error() sets the exit code to 1" );
 spooler_task.exit_code = 0;   // Reset the exit code</pre>
@@ -518,6 +523,9 @@ spooler_task.exit_code = 0;   // Reset the exit code</pre>
             <scheduler_ini_entry file="factory.ini" section="job" entry="history_columns"/>
             deklariert sein.-->
 		</description>
+        <example programming_language="javax.script">
+            <pre>spooler_task.set_history_field( "extra", 4711 );</pre>
+        </example>
 		<example programming_language="javascript">
 			<pre>spooler_task.history_field( "extra" ) = 4711;</pre>
 		</example>
@@ -594,17 +602,27 @@ spooler_task.exit_code = 0;   // Reset the exit code</pre>
 			</ul>
 		</description>
 		<example programming_language="java">
-			<pre>String value = spooler_task.params().var( "parameter3" );</pre>
-		</example>
-		<example programming_language="java">
-			<pre>Variable_set parameters = spooler_task.params();
+        <pre>String value = spooler_task.params().var( "parameter3" );</pre>
+    </example>
+        <example programming_language="java">
+            <pre>Variable_set parameters = spooler_task.params();
 if( parameters.count() > 0 )  spooler_log.info( "Parameters given" );
 
 String value1 = parameters.var( "parameter1" );   // "", should the variable not exist
-
-String value1 = parameters.var( "parameter1" );   // "", wenn die Variable nicht vorhanden ist
 String value2 = parameters.var( "parameter2" );</pre>
-		</example>
+        </example>
+
+        <example programming_language="javax.script">
+            <pre>value = spooler_task.params().var( "parameter3" );</pre>
+        </example>
+        <example programming_language="javax.script">
+            <pre>parameters = spooler_task.params();
+if( parameters.count() > 0 )  spooler_log.info( "Parameters given" );
+
+String value1 = parameters.var( "parameter1" );   // "", should the variable not exist
+String value2 = parameters.var( "parameter2" );</pre>
+        </example>
+
 		<example programming_language="javascript">
 			<pre>var value = spooler_task.params.value( "parameter3" );</pre>
 		</example>
@@ -673,6 +691,10 @@ my $value2 = $parameters->var( "parameter2" );</pre>
                 <scheduler_method class="Task" property="priority_class"/>.
             </p>
         </description>
+
+        <example programming_language="javax.script">
+            <pre>spooler_task.set_priority(5);    // Unix: reduce the priority a little</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>spooler_task.priority = +5;    // Unix: reduce the priority a little</pre>
@@ -758,6 +780,10 @@ my $value2 = $parameters->var( "parameter2" );</pre>
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>spooler_task.set_priority_class("below_normal");</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_task.priority_class = "below_normal";</pre>
 		</example>
@@ -820,10 +846,17 @@ my $value2 = $parameters->var( "parameter2" );</pre>
         <!--Der zu verarbeitende Auftrag-->
 		</title>
 		<example programming_language="java">
-			<pre>Order order = spooler_task.order();
+        <pre>Order order = spooler_task.order();
+
+            spooler_log.info( "order.id=" + order.id() + ", order.title=" + order.title() );</pre>
+        </example>
+
+        <example programming_language="javax.script">
+            <pre>var order = spooler_task.order();
 
 spooler_log.info( "order.id=" + order.id() + ", order.title=" + order.title() );</pre>
-		</example>
+        </example>
+
 		<example programming_language="javascript">
 			<pre>var order = spooler_task.order;
 
@@ -1105,6 +1138,26 @@ spooler_log.info( "order.id=" + order.id + ", order.title=" + order.title );</pr
             <!--Siehe auch <scheduler_element name="lock.use"/>.-->
             </p>
         </description>
+
+        <example programming_language="javax.script">
+            <pre><![CDATA[function spooler_process()
+{
+    var result = false;
+
+    if( spooler_task.try_hold_lock( "Georgien" )  &&
+        spooler_task.try_hold_lock_non_exlusive( "Venezuela" ) )
+    {
+        // Task is holding the two locks. Insert processing code here.
+        result = ...
+    }
+    else
+    {
+        spooler_task.call_me_again_when_locks_available();
+    }
+
+    return result;
+}]]></pre>
+        </example>
 
         <example programming_language="javascript">
             <pre><![CDATA[function spooler_process() 

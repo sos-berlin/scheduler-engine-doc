@@ -323,6 +323,13 @@
         </p>
     </description>
 
+    <example programming_language="javax.script">
+        <pre>
+var subprocess = spooler_task.create_subprocess();
+subprocess.start( subprocess.env().substitute( "${MY_HOME}/my_program" ) );
+subprocess.wait_for_termination();</pre>
+    </example>
+
     <example programming_language="javascript">
         <pre>var subprocess = spooler_task.create_subprocess();
 subprocess.start( subprocess.env.substitute( "${MY_HOME}/my_program" ) );
@@ -372,6 +379,11 @@ $subprocess->wait_for_termination();</pre>
         <!--Siehe auch <scheduler_method class="Subprocess" property="env"/>.-->
         </p>
     </description>
+    <example programming_language="javax.script">
+        <pre>// The following two statements have the same effect
+subprocess.set_environment( "my_variable", "my_value" );
+subprocess.env().set_value( "my_variable", "my_value" );</pre>
+    </example>
     <example programming_language="javascript">
         <pre>// The following two statements have the same effect
 subprocess.environment( "my_variable" ) = "my_value"
@@ -497,6 +509,10 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>spooler_task.set_priority(5);    // UNIX: reduce the priority a little</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_task.priority = +5;    // UNIX: reduce the priority a little</pre>
         <!--<pre>spooler_task.priority = +5;    // Unix: Priorität etwas verschlechtern</pre>-->
@@ -585,6 +601,10 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>subprocess.set_priority_class("below_normal");</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>subprocess.priority_class = "below_normal";</pre>
         </example>
@@ -648,6 +668,51 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
         gestartet werden kann.-->
     </p>
 </description>
+
+    <example programming_language="javax.script" title="system() - the Simple Execution of a Command">
+        <pre>
+exit_code = my_system( "backup /" );
+
+function my_system( cmd, timeout )
+{
+    var subprocess = spooler_task.create_subprocess();
+
+    try {
+        if( timeout ) subprocess.set_timeout(timeout);
+        subprocess.start( cmd );
+        subprocess.wait_for_termination();
+
+        return subprocess.exit_code();
+    }
+    finally {
+        subprocess.close();
+    }
+}</pre>
+    </example>
+
+    <example programming_language="javax.script">
+        <pre>
+var subprocess = spooler_task.create_subprocess();
+
+subprocess.set_environment( "test1", "one");
+subprocess.set_environment( "test2", "two");
+subprocess.set_ignore_error(true);
+
+subprocess.start( "sleep 20" );
+
+spooler_log.info( "pid=" + subprocess.pid() );
+subprocess.set_timeout(10);
+
+spooler_log.info( "wait_for_termination ..." );
+var ok = subprocess.wait_for_termination( 10 );
+spooler_log.info( "wait_for_termination ok=" + ok );
+
+if( subprocess.terminated() )
+{
+    spooler_log.info( "exit code=" + subprocess.exit_code() );
+    spooler_log.info( "termination signal=" + subprocess.termination_signal() );
+}</pre>
+    </example>
 
 
     <example programming_language="javascript" title="system() - the Simple Execution of a Command">

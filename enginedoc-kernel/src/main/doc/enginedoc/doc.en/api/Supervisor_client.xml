@@ -22,7 +22,7 @@
         </com>
         
         <title>
-            The name or IPnumber of the host computer on which the suupervising JobScheduler is running
+            The name or IP number of the host computer on which the supervising JobScheduler is running
         <!--Name oder IP-Nummer des Rechners, auf dem der Supervisor läuft-->
         </title>
         
@@ -64,6 +64,10 @@
         <!--<scheduler_method class="Spooler" property="supervisor_client"/> liefert dieses Objekt.-->
         </p>
     </description>
+
+    <example programming_language="javax.script">
+        <pre>var supervisor_hostname = spooler.supervisor_client().hostname();</pre>
+    </example>
 
     <example programming_language="javascript">
         <pre>var supervisor_hostname = spooler.supervisor_client.hostname;</pre>

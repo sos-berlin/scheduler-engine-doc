@@ -28,6 +28,10 @@
             <pre>spooler_log.mail().set_smtp( "mail.company.com" );</pre>
         </example>
 
+        <example programming_language="javax.script">
+            <pre>spooler_log.mail().set_smtp( "mail.company.com" );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_log.mail.smtp = "mail.company.com";</pre>
         </example>
@@ -69,6 +73,10 @@
             <pre>spooler_log.mail().set_from( "scheduler@company.com" );</pre>
         </example>
 
+        <example programming_language="javax.script">
+            <pre>spooler_log.mail().set_from( "scheduler@company.com" );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_log.mail.from = "scheduler@company.com";</pre>
         </example>
@@ -103,6 +111,10 @@
         </description>
 
         <example programming_language="java">
+            <pre>spooler_log.mail().set_to( "admin@company.com" );</pre>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_log.mail().set_to( "admin@company.com" );</pre>
         </example>
 
@@ -143,6 +155,10 @@
             <pre>spooler_log.mail().set_cc( "hans@company.com" );</pre>
         </example>
 
+        <example programming_language="javax.script">
+            <pre>spooler_log.mail().set_cc( "hans@company.com" );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_log.mail.cc = "hans@company.com";</pre>
         </example>
@@ -180,6 +196,10 @@
             <pre>spooler_log.mail().set_bcc( "hans@company.com" );</pre>
         </example>
 
+        <example programming_language="javax.script">
+            <pre>spooler_log.mail().set_bcc( "hans@company.com" );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_log.mail.bcc = "hans@company.com";</pre>
         </example>
@@ -204,6 +224,10 @@
         </title>
 
         <example programming_language="java">
+            <pre>spooler_log.mail().set_subject( "Job succeeded" );</pre>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_log.mail().set_subject( "Job succeeded" );</pre>
         </example>
 
@@ -236,6 +260,10 @@
         </description>
 
         <example programming_language="java">
+            <pre>spooler_log.mail().set_body( "Job succeeded" );</pre>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_log.mail().set_body( "Job succeeded" );</pre>
         </example>
 
@@ -294,6 +322,10 @@
         </title>
 
         <example programming_language="java">
+            <pre>spooler_log.mail().add_file( "c:/tmp/1.txt", "1.txt", "text/plain", "quoted-printable" );</pre>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_log.mail().add_file( "c:/tmp/1.txt", "1.txt", "text/plain", "quoted-printable" );</pre>
         </example>
 
@@ -370,7 +402,13 @@
             <!--Siehe <scheduler_method class="Mail" method="dequeue"/>.-->
             </p>
         </description>
-        
+
+        <example programming_language="javax.script">
+            <pre>var count = spooler_log.mail().dequeue();
+spooler_log.info( count + " messages from mail queue sent" );
+spooler_log.info( spooler_log.mail().dequeue_log() );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>var count = spooler_log.mail.dequeue();
 spooler_log.info( count + " messages from mail queue sent" );
@@ -416,6 +454,10 @@ $spooler_log->info( $spooler_log->mail->dequeue_log );</pre>
         </title>
 
         <example programming_language="java">
+            <pre>spooler_log.mail().set_xslt_stylesheet_path( "c:/stylesheets/mail.xslt" );</pre>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_log.mail().set_xslt_stylesheet_path( "c:/stylesheets/mail.xslt" );</pre>
         </example>
 

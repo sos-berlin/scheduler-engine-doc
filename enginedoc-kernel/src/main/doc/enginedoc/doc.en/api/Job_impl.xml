@@ -31,6 +31,10 @@
         <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
 
+    <example programming_language="javax.script">
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
+    </example>
+
     <example programming_language="javascript">
         <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
     </example>
@@ -59,6 +63,10 @@
         <pre>spooler_log.info( "Something has happened" );</pre>
     </example>
 
+    <example programming_language="javax.script">
+        <pre>spooler_log.info( "Something has happened" );</pre>
+    </example>
+
     <example programming_language="perl">
         <pre>$spooler_log->info( 'Something has happened' );</pre>
     </example>
@@ -81,6 +89,10 @@
     </title>
 
     <example programming_language="java">
+        <pre>spooler_log.info( "The name of this job is " + spooler_job.name() );</pre>
+    </example>
+
+    <example programming_language="javax.script">
         <pre>spooler_log.info( "The name of this job is " + spooler_job.name() );</pre>
     </example>
 
@@ -109,6 +121,10 @@
     </title>
 
     <example programming_language="java">
+        <pre>spooler_log.info( "The task id is " + spooler_task.id() );</pre>
+    </example>
+
+    <example programming_language="javax.script">
         <pre>spooler_log.info( "The task id is " + spooler_task.id() );</pre>
     </example>
 

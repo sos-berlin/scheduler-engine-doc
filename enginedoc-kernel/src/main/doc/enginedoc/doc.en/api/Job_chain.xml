@@ -32,6 +32,12 @@ job_chain.set_name( "JobChain" );</pre>
 job_chain.set_name( "Jobkette" );</pre>-->
     </example>
 
+    <example programming_language="javax.script">
+        <pre>
+var job_chain = spooler.create_job_chain();
+job_chain.set_name( "JobChain" );</pre>
+    </example>
+
     <example programming_language="javascript">
         <pre>var job_chain = spooler.create_job_chain();
 job_chain.name = "JobChain";</pre>
@@ -486,6 +492,17 @@ sub xml_attribute
     <pre>Job_chain my_job_chain = spooler.create_job_chain();
 my_job_chain.set_name( "JobChain" );
 <!--my_job_chain.set_name( "Jobkette" );-->
+my_job_chain.add_job( "job_100", 100,  200, 999 );
+my_job_chain.add_job( "job_200", 200, 1000, 999 );
+my_job_chain.add_end_state(  999 );
+my_job_chain.add_end_state( 1000 );
+spooler.add_job_chain( my_job_chain );</pre>
+</example>
+
+<example programming_language="javax.script">
+<pre>var my_job_chain = spooler.create_job_chain();
+my_job_chain.set_name( "JobChain" );
+
 my_job_chain.add_job( "job_100", 100,  200, 999 );
 my_job_chain.add_job( "job_200", 200, 1000, 999 );
 my_job_chain.add_end_state(  999 );

@@ -108,6 +108,11 @@
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>spooler.locks().lock( "my_lock" ).remove();</pre>
+        </example>
+
+
         <example programming_language="javascript">
             <pre>spooler.locks.lock( "my_lock" ).remove();</pre>
         </example>
@@ -132,6 +137,14 @@
         <!--Siehe auch <scheduler_element name="lock" attribute="name"/>.-->
         </p>
     </description>
+
+    <example programming_language="javax.script">
+        <pre>
+var locks = spooler.locks();
+var lock = locks.create_lock();
+lock.set_name("my_lock");
+locks.add_lock( lock );</pre>
+    </example>
 
     <example programming_language="javascript">
         <pre>var locks = spooler.locks;
