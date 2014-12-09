@@ -104,6 +104,12 @@
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>spooler_job.start_when_directory_changed( "c:/tmp" );</pre>
+            <pre>// Nur Dateien beachten, deren Name nicht auf "~" endet.
+spooler_job.start_when_directory_changed( "c:/tmp", "^.*[^~]$" );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_job.start_when_directory_changed( "c:/tmp" );</pre>
             <pre>// Nur Dateien beachten, deren Name nicht auf "~" endet.
@@ -185,8 +191,17 @@ $spooler_job->start_when_directory_changed( 'c:/tmp', '^.*[^~]$' );</pre>
             <pre>spooler.job( "job_a" ).start();</pre>
 
             <pre>sos.spooler.Variable_set parameters = spooler.create_variable_set();
-parameter.set_var( "my_parameter", "my_value" );
-parameter.set_var( "other_parameter", "other_value" );
+parameters.set_var( "my_parameter", "my_value" );
+parameters.set_var( "other_parameter", "other_value" );
+spooler.job( "job_a" ).start( parameters );</pre>
+        </example>
+
+        <example programming_language="javax.script">
+            <pre>spooler.job( "job_a" ).start();</pre>
+
+            <pre>var parameters = spooler.create_variable_set();
+parameters.set_var( "my_parameter", "my_value" );
+parameters.set_var( "other_parameter", "other_value" );
 spooler.job( "job_a" ).start( parameters );</pre>
         </example>
 
@@ -305,6 +320,10 @@ $spooler->job( 'job_a' )->start( $parameters );</pre>
             <pre>spooler_job.set_state_text( "Step C succeeded" );</pre>
         </example>
 
+        <example programming_language="javax.script">
+            <pre>spooler_job.set_state_text( "Step C succeeded" );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_job.state_text = "Step C succeeded";</pre>
         </example>
@@ -334,6 +353,10 @@ $spooler->job( 'job_a' )->start( $parameters );</pre>
         </description>
 
         <example programming_language="java">
+            <pre>spooler_log.info( "Job title=" + spooler_job.title() );</pre>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_log.info( "Job title=" + spooler_job.title() );</pre>
         </example>
 
@@ -418,6 +441,21 @@ $spooler->job( 'job_a' )->start( $parameters );</pre>
         </description>
 
         <example programming_language="java">
+        <pre>spooler_job.set_delay_after_error(  2,  10 );          // Ab dem 2. aufeinanderfolgenden Fehler um 10 Sekunden verzögern
+            spooler_job.set_delay_after_error(  5, "00:01" );      // Ab dem 5. aufeinanderfolgenden Fehler um eine Minute verzögern
+            spooler_job.set_delay_after_error( 10, "24:00" );      // Ab dem 10. aufeinanderfolgenden Fehler um einen Tag verzögern
+            spooler_job.set_delay_after_error( 20, "STOP" );       // Beim 20. aufeinanderfolgenden Fehler den Job stoppen</pre>
+
+        <p>
+            Nach einem Fehler wiederholt der JobScheduler den Job sofort.<br/>
+            Nach dem zweiten bis zum vierten Fehler verzögert der JobScheduler den Job um 10 Sekunden,<br/>
+            nach dem fünften bis zum neunten Fehler um eine Minute,<br/>
+            nach dem zehnten bis zum neunzehnten um 24 Stunden, <br/>
+            nach dem zwanzigsten aufeinanderfolgenden Fehler schließlich stoppt der Job.
+        </p>
+        </example>
+
+        <example programming_language="javax.script">
             <pre>spooler_job.set_delay_after_error(  2,  10 );          // Ab dem 2. aufeinanderfolgenden Fehler um 10 Sekunden verzögern
 spooler_job.set_delay_after_error(  5, "00:01" );      // Ab dem 5. aufeinanderfolgenden Fehler um eine Minute verzögern
 spooler_job.set_delay_after_error( 10, "24:00" );      // Ab dem 10. aufeinanderfolgenden Fehler um einen Tag verzögern
@@ -494,6 +532,10 @@ $spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       # Beim 20. a
                 <scheduler_method class="Job_chain" method="add_job"/>.
             </p>
         </description>
+
+        <example programming_language="javax.script">
+            <pre>spooler_log.info( 'order=' + ( spooler_job.order_queue() ? "yes" : "no" ) );</pre>
+        </example>
 
         <example programming_language="perl">
             <pre>$spooler_log->info( 'order=' . ( defined $spooler_job->order_queue ? "yes" : "no" ) );</pre>
@@ -575,6 +617,17 @@ $spooler_job->LetProperty( 'delay_after_error', 20, 'STOP' );       # Beim 20. a
                 <scheduler_method class="Job" method="delay_after_error"/>.
             </p>
         </description>
+
+        <example programming_language="javax.script">
+            <pre>
+spooler_job.set_delay_order_after_setback( 1, 60 );         // 1. bis 2. aufeinderfolgende Rückstellung desselben Auftrags:
+                                                            // Auftrag um 60s verzögern.
+
+spooler_job.set_delay_order_after_setback( 3, "01:00" );    // Ab 3. aufeinanderfolgender Rückstellung desselben Auftrags:
+                                                            // Auftrag um eine Stunde verzögern.
+
+spooler_job.set_max_order_setbacks(5);                      // Die 5. Rückstellung versetzt den Auftrag in den Fehlerzustand</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>

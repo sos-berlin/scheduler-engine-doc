@@ -63,6 +63,10 @@
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>spooler_log.info( "Content-Type: " + spooler_task.order().web_service_operation().header( "Content-Type" ) );</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order.web_service_operation.header( "Content-Type" ) );</pre>
         </example>
@@ -111,7 +115,15 @@
                 Zugriff auf den Parameter <code>charset=</code> aus dem Kopfeintrag <code>Content-Type:</code>.
             </p>
         </description>
-        
+
+        <example programming_language="javax.script">
+            <pre>var request = spooler_task.order().web_service_operation().request();
+
+spooler_log.info( request.header( "Content-Type" ) );   // ==> text/xml; charset=utf-8
+spooler_log.info( request.content_type() );               // ==> text/xml
+spooler_log.info( request.charset_name() );               // ==> utf-8</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>var request = spooler_task.order.web_service_operation.request;
 
@@ -162,6 +174,14 @@ $spooler_log->info( $request->charset_name );               // ==> utf-8</pre>
             </p>
         </description>
 
+        <example programming_language="javax.script">
+            <pre>var response = spooler_task.order().web_service_operation().response();
+response.set_content_type("text/plain");
+response.set_charset_name("iso-8859-1");
+response.set_string_content("This is the answer");
+                response.send();</pre>
+        </example>
+
         <example programming_language="javascript">
             <pre>var response = spooler_task.order.web_service_operation.response;
 response.content_type = "text/plain";
@@ -172,10 +192,10 @@ response.send();</pre>
 		
         <example programming_language="perl">
             <pre>my $response = $spooler_task->order->web_service_operation->response;
-				$response->LetProperty( 'content_type', 'text/plain' );
-				$response->LetProperty( 'charset_name', 'iso-8859-1' );
-				$response->LetProperty( 'string_content', 'This is the answer' );
-				$response->send();</pre>
+$response->LetProperty( 'content_type', 'text/plain' );
+$response->LetProperty( 'charset_name', 'iso-8859-1' );
+$response->LetProperty( 'string_content', 'This is the answer' );
+$response->send();</pre>
         </example>
 
     </property>

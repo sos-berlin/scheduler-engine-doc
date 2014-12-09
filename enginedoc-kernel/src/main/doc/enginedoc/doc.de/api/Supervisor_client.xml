@@ -60,6 +60,10 @@
         </p>
     </description>
 
+    <example programming_language="javax.script">
+        <pre>var supervisor_hostname = spooler.supervisor_client().hostname();</pre>
+    </example>
+
     <example programming_language="javascript">
         <pre>var supervisor_hostname = spooler.supervisor_client.hostname;</pre>
     </example>

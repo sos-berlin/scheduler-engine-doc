@@ -527,6 +527,15 @@ spooler_log.mail().set_to     ( "admin@company.com" );
 spooler_log.mail().set_subject( "Task ended" );</pre>
 </example>
 
+<example programming_language="javax.script">
+    <pre>spooler_log.info( "Something for the Log" );
+
+spooler_log.set_mail_on_warning( true );
+spooler_log.mail().set_from   ( "scheduler@company.com" );
+spooler_log.mail().set_to     ( "admin@company.com" );
+spooler_log.mail().set_subject( "Task ended" );</pre>
+</example>
+
 <example programming_language="javascript">
     <pre>spooler_log.info( "Something for the Log" );
 

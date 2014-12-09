@@ -333,6 +333,10 @@
         </p>
     </description>
 
+    <example programming_language="javax.script">
+        <pre>spooler_log.info( spooler.execute_xml( "&lt;show_state/>" ) );</pre>
+    </example>
+
     <example programming_language="javascript">
     <pre>spooler_log.info( spooler.execute_xml( "&lt;show_state/>" ) );</pre>
     </example>
