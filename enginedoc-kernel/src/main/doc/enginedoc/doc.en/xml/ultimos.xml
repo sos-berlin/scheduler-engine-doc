@@ -42,8 +42,7 @@
     <behavior_with_xml_element element="base" complete="yes"/>
     
     <example>
-        <pre>
-&lt;montdays>
+        <pre>&lt;ultimos>
     &lt;day day="0">
         &lt;period begin="10:00" end="12:00"/>
     &lt;/day>
@@ -51,8 +50,8 @@
         &lt;period begin="08:00" end="12:00"/>
         &lt;period begin="15:00" end="18:00"/>
     &lt;/day>
-&lt;/day>
-        </pre>
+&lt;/ultimos></pre>
+
         <p>
             Defines the operating periods as being the last day of the month, from 10:00 to 12:00 and
              the second last day of the month from 08:00 to 12:00 and 15:00 to 18:00.
