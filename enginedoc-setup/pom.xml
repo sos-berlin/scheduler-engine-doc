@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>com.sos.scheduler.enginedoc</groupId>
+        <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
         <artifactId>enginedoc</artifactId>
         <version>1.9-SNAPSHOT</version>
     </parent>
@@ -32,13 +32,13 @@
                       <configuration>
                           <artifactItems>
                               <artifactItem>
-                                  <groupId>com.sos.scheduler.enginedoc</groupId>
+                                  <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
                                   <artifactId>enginedoc-common</artifactId>
                                   <version>${project.version}</version>
                                   <type>jar</type>
                               </artifactItem>
                               <artifactItem>
-                                  <groupId>com.sos.scheduler.enginedoc</groupId>
+                                  <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
                                   <artifactId>enginedoc-kernel</artifactId>
                                   <version>${project.version}</version>
                                   <type>jar</type>
