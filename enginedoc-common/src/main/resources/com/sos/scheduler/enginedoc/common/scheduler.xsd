@@ -147,6 +147,7 @@
             </xsd:element>
         </xsd:sequence>
         <xsd:attribute name="java_class" type="String"/>
+        <!-- dont_activate is for internal testing only. -->
         <xsd:attribute name="dont_activate" type="xsd:boolean"/>
     </xsd:complexType>
     <xsd:element name="plugin.command">
@@ -529,6 +530,25 @@
                                     <xsd:sequence>
                                         <xsd:element ref="extensions" minOccurs="0"/>
 										<xsd:any namespace="##other"  processContents="lax" minOccurs="0" />
+                                        <xsd:element name="on_return_codes" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence maxOccurs="unbounded">
+                                                    <xsd:element name="on_return_code">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                                                                <xsd:element name="to_state" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:attribute name="state" type="String"/>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                            <xsd:attribute name="return_code"/>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
                                     </xsd:sequence>
                                     <xsd:attribute name="state" type="String" use="required"/>
                                     <xsd:attribute name="job" type="Path"/>
