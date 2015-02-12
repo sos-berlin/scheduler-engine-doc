@@ -2970,6 +2970,12 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-490">
+            <text xml:lang="en">
+                <title>The Windows operating system does not support Unix signals (like SIGTERM). kill_task with timeout > 0 is not supported</title>
+            </text>
+        </message>
+
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->

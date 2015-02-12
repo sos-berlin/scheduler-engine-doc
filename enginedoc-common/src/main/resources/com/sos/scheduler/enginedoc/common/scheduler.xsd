@@ -216,6 +216,7 @@
             <xsd:element ref="subsystem.show"/>
             <xsd:element ref="remote_scheduler.start_remote_task"/>
             <xsd:element ref="remote_scheduler.remote_task.close"/>
+            <xsd:element ref="remote_scheduler.remote_task.kill"/>
             <xsd:element ref="terminate"/>
             <!-- Nicht für den Scheduler, sondern für Mürüvet Öksüzs Konfigurations-Editor. 2007-10-04 -->
             <!--xsd:element ref="signal_object"/-->
@@ -633,6 +634,20 @@
             <xsd:attribute name="job" type="Path" use="required"/>
             <xsd:attribute name="id" type="Task_id" use="required"/>
             <xsd:attribute name="immediately" type="Yes_no"/>
+            <xsd:attribute name="timeout">
+                <xsd:simpleType>
+                    <xsd:union>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:nonNegativeInteger"/>
+                        </xsd:simpleType>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:NMTOKEN">
+                                <xsd:enumeration value="never"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:union>
+                </xsd:simpleType>
+            </xsd:attribute>
         </xsd:complexType>
     </xsd:element>
     <xsd:element name="licence.use">
@@ -1151,6 +1166,18 @@
             </xsd:attribute>
             <xsd:attribute name="java_options" type="String"/>
             <xsd:attribute name="java_classpath" type="String"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="remote_scheduler.remote_task.kill">
+        <xsd:complexType>
+            <xsd:attribute name="process_id" type="xsd:long" use="required"/>
+            <xsd:attribute name="signal">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:NMTOKEN">
+                        <xsd:enumeration value="SIGTERM"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
         </xsd:complexType>
     </xsd:element>
     <xsd:element name="remote_scheduler.remote_task.close">
