@@ -2922,11 +2922,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-482">
+        <!--message code="SCHEDULER-482">
             <text xml:lang="en">
                 <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-483">
             <text xml:lang="en">
