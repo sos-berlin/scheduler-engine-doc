@@ -1717,14 +1717,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-294">
+        <!--message code="SCHEDULER-294">
             <text xml:lang="de">
                 <title>Die Java-Klasse <p1/> konnte nicht geladen werden. Die Java-Quelle wird neu übersetzt, mal sehen, ob's dann geht</title>
             </text>
             <text xml:lang="en">
                 <title>Java class <p1/> could not be loaded. Java source is being recompiled before retrying </title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-295">
             <text xml:lang="de">
