@@ -351,15 +351,15 @@
                         </xsd:complexType>
                     </xsd:element>
                 </xsd:choice>
-                <xsd:element name="monitor" minOccurs="0" maxOccurs="unbounded">
-                    <xsd:complexType>
-                        <xsd:sequence>
-                            <xsd:element ref="script"/>
-                        </xsd:sequence>
-                        <xsd:attribute name="name" type="Name"/>
-                        <xsd:attribute name="ordering" type="xsd:nonNegativeInteger"/>
-                    </xsd:complexType>
-                </xsd:element>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element ref="monitor"/>
+                    <xsd:element name="monitor.use">
+                        <xsd:complexType>
+                            <xsd:attribute name="monitor" type="Absolute_path" use="required"/>
+                            <xsd:attribute name="ordering" type="xsd:nonNegativeInteger"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
                 <xsd:element name="start_when_directory_changed" minOccurs="0" maxOccurs="unbounded">
                     <xsd:complexType>
                         <xsd:attribute name="directory" type="File" use="required"/>
@@ -487,6 +487,15 @@
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+    <xsd:element name="monitor">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="script"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="Name"/>
+            <xsd:attribute name="ordering" type="xsd:nonNegativeInteger"/>
+        </xsd:complexType>
+    </xsd:element>
     <xsd:element name="job_chain">
         <xsd:complexType>
             <xsd:sequence>
@@ -1594,6 +1603,11 @@
         </xsd:restriction>
         <!-- Eine engere Beschränkung wäre gut: Buchstabe gefolgt von (Buchstabe, Ziffer, _ und vielleicht -)*  -->
         <!-- Regulärer Ausdruck wie bei Path -->
+    </xsd:simpleType>
+    <xsd:simpleType name="Absolute_path">
+        <xsd:restriction base="Path">
+            <xsd:pattern value="/.*"/>
+        </xsd:restriction>
     </xsd:simpleType>
     <xsd:simpleType name="Path">
         <xsd:restriction base="String">
