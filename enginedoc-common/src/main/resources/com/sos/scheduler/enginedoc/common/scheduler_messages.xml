@@ -2976,6 +2976,11 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-491">
+            <text xml:lang="en">
+                <title>The process class (<p1/>) of an API task cannot be changed (to <p2/>) between two order steps</title>
+            </text>
+        </message>
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->
