@@ -355,7 +355,7 @@
                     <xsd:element ref="monitor"/>
                     <xsd:element name="monitor.use">
                         <xsd:complexType>
-                            <xsd:attribute name="monitor" type="Absolute_path" use="required"/>
+                            <xsd:attribute name="monitor" type="Path" use="required"/>
                             <xsd:attribute name="ordering" type="xsd:nonNegativeInteger"/>
                         </xsd:complexType>
                     </xsd:element>
