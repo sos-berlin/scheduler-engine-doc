@@ -61,6 +61,7 @@
                             <xsd:element ref="jobs" minOccurs="0"/>
                             <xsd:element ref="job_chains" minOccurs="0"/>
                             <xsd:element ref="commands" minOccurs="0"/>
+              							<xsd:element ref="monitors" minOccurs="0"/>
                         </xsd:sequence>
                         <xsd:attribute name="spooler_id" type="Name"/>
                         <xsd:attribute name="port" type="xsd:nonNegativeInteger"/>
@@ -639,6 +640,13 @@
             <xsd:field xpath="@name"/>
         </xsd:key-->
     </xsd:element>
+	  <xsd:element name="monitors">
+	  	<xsd:complexType>
+	  		<xsd:sequence>
+	  			<xsd:element ref="monitor" minOccurs="0" maxOccurs="unbounded"/>
+	  		</xsd:sequence>
+	  	</xsd:complexType>
+	  </xsd:element>      
     <xsd:element name="kill_task">
         <xsd:complexType>
             <xsd:attribute name="job" type="Path" use="required"/>
