@@ -61,7 +61,7 @@
                             <xsd:element ref="jobs" minOccurs="0"/>
                             <xsd:element ref="job_chains" minOccurs="0"/>
                             <xsd:element ref="commands" minOccurs="0"/>
-              							<xsd:element ref="monitors" minOccurs="0"/>
+                            <xsd:element ref="monitors" minOccurs="0"/>
                         </xsd:sequence>
                         <xsd:attribute name="spooler_id" type="Name"/>
                         <xsd:attribute name="port" type="xsd:nonNegativeInteger"/>
@@ -540,7 +540,7 @@
                                 <xsd:complexType>
                                     <xsd:sequence>
                                         <xsd:element ref="extensions" minOccurs="0"/>
-										<xsd:any namespace="##other"  processContents="lax" minOccurs="0" />
+                                        <xsd:any namespace="##other" processContents="lax" minOccurs="0"/>
                                         <xsd:element name="on_return_codes" minOccurs="0">
                                             <xsd:complexType>
                                                 <xsd:sequence maxOccurs="unbounded">
@@ -575,7 +575,7 @@
                                     </xsd:attribute>
                                     <xsd:attribute name="suspend" type="Yes_no"/>
                                     <xsd:attribute name="delay" type="xsd:nonNegativeInteger"/>
-									<xsd:anyAttribute namespace="##other"  processContents="lax" />
+                                    <xsd:anyAttribute namespace="##other" processContents="lax"/>
                                 </xsd:complexType>
                             </xsd:element>
                             <xsd:element name="file_order_sink">
@@ -640,13 +640,13 @@
             <xsd:field xpath="@name"/>
         </xsd:key-->
     </xsd:element>
-	  <xsd:element name="monitors">
-	  	<xsd:complexType>
-	  		<xsd:sequence>
-	  			<xsd:element ref="monitor" minOccurs="0" maxOccurs="unbounded"/>
-	  		</xsd:sequence>
-	  	</xsd:complexType>
-	  </xsd:element>      
+    <xsd:element name="monitors">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="monitor" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
     <xsd:element name="kill_task">
         <xsd:complexType>
             <xsd:attribute name="job" type="Path" use="required"/>
