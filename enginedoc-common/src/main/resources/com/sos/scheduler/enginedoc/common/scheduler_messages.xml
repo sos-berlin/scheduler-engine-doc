@@ -3699,7 +3699,7 @@
 
         <message code="SCHEDULER-992">
             <text xml:lang="en">
-                <title>Order ist not longer suspended, next start <p1/></title>
+                <title>Order is no longer suspended, next start <p1/></title>
             </text>
         </message>
 
