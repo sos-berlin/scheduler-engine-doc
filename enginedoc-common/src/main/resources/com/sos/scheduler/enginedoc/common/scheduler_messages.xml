@@ -3655,7 +3655,7 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-985">
+        <!--message code="SCHEDULER-985">
             <text xml:lang="en">
                 <title><p1>number</p1> more file orders will be added later, after previous orders have been processed</title>
             </text>
@@ -3665,7 +3665,7 @@
             <text xml:lang="en">
                 <title>Continuing reading buffered directory (as of <p1>time</p1>)</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-987">
             <text xml:lang="en">
