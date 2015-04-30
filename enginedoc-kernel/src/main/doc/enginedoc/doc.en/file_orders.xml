@@ -307,7 +307,7 @@
         As soon as the first job to create an order is ready to be carried out for the first time,
         the JobScheduler will read the relevant directory (within any constraints set using regular expressions)
         and creates the file orders
-    <!--Sobald der erste Job zum ersten Mal bereit ist, einen Auftrag auszuführen, 
+    <!--Sobald der erste Job zum ersten Mal bereit ist, einen Auftrag auszuführen,
         liest der JobScheduler das Verzeichnis (mit der Beschränkung durch den Regulären Ausdruck)
         und erzeugt daraus Dateiaufträge.-->
     </p>
@@ -323,9 +323,6 @@
         aus der der JobScheduler später die weiteren Dateiaufträge erzeugt.
         Die Meldungen dazu sind:-->
     </p>
-
-    <scheduler_message level="info" code="SCHEDULER-985"/>
-    <scheduler_message level="info" code="SCHEDULER-986"/>
 
     <p>
         The JobScheduler re-reads a directory when:
