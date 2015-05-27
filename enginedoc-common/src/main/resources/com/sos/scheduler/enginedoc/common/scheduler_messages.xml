@@ -2100,11 +2100,11 @@
             </text>
         </message>
 
-        <!--message code="SCHEDULER-341">
+        <message code="SCHEDULER-341">
             <text xml:lang="en">
-                <title></title>
+                <title>Order has been set on the blacklist and is removed as soon as the Agent confirms the file removal</title>
             </text>
-        </message-->
+        </message>
 
         <message code="SCHEDULER-342">
             <text xml:lang="en">
