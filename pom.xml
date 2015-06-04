@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
         <artifactId>enginedoc-parent</artifactId>
-        <version>1.9.TEST.1-SNAPSHOT</version>
+        <version>1.9.TEST.1</version>
         <relativePath>enginedoc-parent</relativePath>
     </parent>
 
@@ -42,7 +42,7 @@
         <connection>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</connection>
         <developerConnection>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</developerConnection>
         <url>https://github.com/sos-berlin/scheduler-engine-doc</url>
-        <tag>HEAD</tag>
+        <tag>v${releaseVersion}</tag>
     </scm>
 
     <profiles>
@@ -65,7 +65,7 @@
 		                            <skip>${skip.repo.clean}</skip>
 		                            <target name="clean-local-repo">                            
 		                                <echo>Purging ${settings.localRepository}/com/sos-berlin...</echo>
-		                                <delete dir="${settings.localRepository}/com/sos-berlin" verbose="true"/>
+		                                <delete dir="${settings.localRepository}/com/sos-berlin" verbose="true" />
 		                            </target>
 		                            <failOnError>false</failOnError>
 		                        </configuration>
