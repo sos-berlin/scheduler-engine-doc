@@ -43,7 +43,7 @@
         </xml_attribute>
         
         
-        <xml_attribute name="start_time_function" type="name">
+    <!--<xml_attribute name="start_time_function" type="name">Commented out - see JS-1319
             <description>
                 <p>
                     Gibt gibt den Namen einer Funktion im Scheduler-Skript an, die die nächste Startzeit liefert.
@@ -63,16 +63,16 @@
                 </p>
             </description>
 
-            <!--example>
+            <!-example>
                 Das ist zu kompliziert.                
-            </example-->
+            </example>
 
             <messages>
                 <message level="error" code="SCHEDULER-393"/>
-             <!--message level="error" code="SCHEDULER-395"/-->
+             <message level="error" code="SCHEDULER-395"/>
                 <message level="warn"  code="SCHEDULER-394"/>
             </messages>
-        </xml_attribute>
+        </xml_attribute>-->
         
         
         <xml_attribute name="once" type="yes_no" initial="no">

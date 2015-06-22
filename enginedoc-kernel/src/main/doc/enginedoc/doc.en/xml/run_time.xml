@@ -49,45 +49,45 @@
             </description>
         </xml_attribute>
 
-        <xml_attribute name="start_time_function" type="name">
+    <!--<xml_attribute name="start_time_function" type="name">Commented out - see JS-1319
             <description>
                 <p>
                     Gives the name of a function in the JobScheduler script which returns the next start time.
-                    The JobScheduler hands over two parameters to this function.
+                    The JobScheduler hands over two parameters to this function.-->
                 <!--Gibt gibt den Namen einer Funktion im Scheduler-Skript an, die die nächste Startzeit liefert.-->
-                </p>
+            <!--</p>
                 <p>
                     In the first parameter, the JobScheduler specifies the point in time 
                     after which the function should return a start time.
-                    This time is specified as a string with the format <code>"yyyy-mm-dd HH:MM:SS"</code>.
+                    This time is specified as a string with the format <code>"yyyy-mm-dd HH:MM:SS"</code>.-->
                 <!--Der JobScheduler übergibt der Funktion im ersten Parameter den Zeitpunkt, 
                     ab dem sie eine Startzeit liefern soll,
                     als Zeichenkette im Format <code>"yyyy-mm-dd HH:MM:SS"</code>.-->
-                </p>
+            <!--</p>
                 <p>
-                    The function is given the job name or order id in the second parameter.
+                    The function is given the job name or order id in the second parameter.-->
                 <!--Im zweiten Parameter erhält die Funktion den Jobnamen bzw. die Auftragskennung.-->
-                </p>
+            <!--</p>
                 <p>
                     The function returns a point in time after that specified in the first parameter,
                     or nothing (i.e. <code>""</code> or <code>Empty</code>).
-                    The JobScheduler expects the script to return a string in the format <code>"yyyy-mm-dd hh:mm:ss"</code>.
+                    The JobScheduler expects the script to return a string in the format <code>"yyyy-mm-dd hh:mm:ss"</code>.-->
                 <!--Rückgabe der Funktion ist ein Zeitpunkt, der nicht vor dem ersten Parameter liegen darf,
                     oder nichts (d.h. <code>""</code> oder <code>Empty</code>).
                     Der JobScheduler erwartet als Rückgabe eine Zeichenkette im Format <code>"yyyy-mm-dd hh:mm:ss"</code>.-->
-                </p>
-            </description>
+            <!--</p>
+            </description>-->
 
-            <!--example>
+            <!--<example>
                 Das ist zu kompliziert.                
-            </example-->
+            </example>-->
 
-            <messages>
-                <message level="error" code="SCHEDULER-393"/>
+        <!--<messages>
+                <message level="error" code="SCHEDULER-393"/>-->
             <!--<message level="error" code="SCHEDULER-395"/>-->
-                <message level="warn"  code="SCHEDULER-394"/>
+            <!--<message level="warn"  code="SCHEDULER-394"/>
             </messages>
-        </xml_attribute>
+        </xml_attribute>-->
         
         
         <xml_attribute name="once" type="yes_no" initial="no">
