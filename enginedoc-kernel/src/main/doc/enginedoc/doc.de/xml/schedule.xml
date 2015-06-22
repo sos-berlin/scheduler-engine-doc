@@ -86,7 +86,7 @@
     <description>
         <p>
             Außer den hier beschriebenen Attributen und Elementen können die von <scheduler_element name="run_time"/> angegeben werden,
-            aber nicht <code>schedule=</code>.
+            aber nicht <code>schedule=</code> oder <code>time-zone</code>.
         </p>
         <p>
             Bei verteilten Aufträgen wirkt die Änderung eines <code>&lt;schedule></code> erst, 
