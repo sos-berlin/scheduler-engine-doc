@@ -100,9 +100,9 @@
         <p>
             The other elements and attributes that can be specified for 
             <scheduler_element name="run_time"/> can also be specified here,
-            with the exception of <code>schedule=</code>.
+            with the exception of <code>schedule=</code> and <code>time-zone</code>.
         <!--Außer den hier beschriebenen Attributen und Elementen können die von <scheduler_element name="run_time"/> angegeben werden,
-            aber nicht <code>schedule=</code>.-->
+            aber nicht <code>schedule=</code> oder <code>time-zone</code>.-->
         </p>
         <p>
             With distributed orders, a change in <code>&lt;schedule></code> only takes effect 
