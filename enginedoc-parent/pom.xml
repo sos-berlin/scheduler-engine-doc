@@ -4,7 +4,7 @@
     
     <groupId>com.sos.scheduler.enginedoc</groupId>
     <artifactId>enginedoc-parent</artifactId>
-    <version>1.7.6-SNAPSHOT</version>
+    <version>1.7.6</version>
 
     <description>parent pom of scheduler-engine-doc with the global settings</description>
 
@@ -127,7 +127,7 @@
 		                            <skip>${skip.repo.clean}</skip>
 		                            <target name="clean-local-repo">
 		                                <echo>Purging ${settings.localRepository}/com/sos-berlin...</echo>
-		                                <delete dir="${settings.localRepository}/com/sos-berlin" verbose="true"/>
+		                                <delete dir="${settings.localRepository}/com/sos-berlin" verbose="true" />
 		                            </target>
 		                            <failOnError>false</failOnError>
 		                        </configuration>
