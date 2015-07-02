@@ -60,6 +60,7 @@
     <!--<xml_attribute name="priority" type="zahl">-->
             <description>
                 <p>
+                   If two orders should be started at the same time then orders with a higher priority are processed first.
                 </p>
             </description>
         </xml_attribute>

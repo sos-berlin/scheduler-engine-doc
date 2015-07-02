@@ -27,6 +27,7 @@
         <xml_attribute name="priority" type="zahl">
             <description>
                 <p>
+                   Sollen mehrere Aufträge zur gleichen Zeit gestartet werden, dann werden Aufträge mit höherer Priorität zuerst verarbeitet.
                 </p>
             </description>
         </xml_attribute>
