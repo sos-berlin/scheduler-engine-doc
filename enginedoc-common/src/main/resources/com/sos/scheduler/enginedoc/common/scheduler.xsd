@@ -599,6 +599,7 @@
             <xsd:attribute name="title" type="String"/>
             <xsd:attribute name="max_orders" type="xsd:nonNegativeInteger"/>
             <xsd:attribute name="process_class" type="Path"/>
+            <xsd:attribute name="file_watching_process_class" type="Path"/>
         </xsd:complexType>
         <!--libxslt xsd:key name="job_chain_node">
             <xsd:selector xpath="job_chain_node"/>
