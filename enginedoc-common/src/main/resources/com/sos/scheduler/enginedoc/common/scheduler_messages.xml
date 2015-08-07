@@ -3214,7 +3214,7 @@
                 <title>Task <p1/> gestartet, Anlass: <p2/></title>
             </text>
             <text xml:lang="en">
-                <title>Task <p1/> started - cause: <p2/></title>
+                <title>Task <p1/> started - cause: <p2/>, process class '<p3/>'</title>
             </text>
         </message>
 
