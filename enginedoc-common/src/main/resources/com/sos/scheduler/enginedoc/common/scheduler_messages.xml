@@ -3973,7 +3973,7 @@
 
         <message code="SCHEDULER-842" weight="info">
             <text xml:lang="en">
-                <title>Task is going to process <p1>order</p1>, state=<p2/>, on JobScheduler <p3/></title>
+                <title>Task is going to process <p1>order</p1>, state=<p2/>, on JobScheduler <p3/> (in process class '<p4/>')</title>
             </text>
         </message>
 
