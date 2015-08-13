@@ -133,6 +133,14 @@
             </description>
         </xml_attribute>
 
+        <xml_attribute name="alert_when_directory_missing" type="boolean">
+            <description>
+                <p>
+                    The warning for a missing directory can be activated/deactivated using this attribute.
+                </p>
+            </description>
+        </xml_attribute>
+
     </xml_attributes>
 
 

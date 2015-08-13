@@ -103,7 +103,15 @@
             </description>
         </xml_attribute>
 
-    </xml_attributes>
+        <xml_attribute name="alert_when_directory_missing" type="boolean">
+            <description>
+                <p>
+                    Die Warnung ob das der Ordner nicht existiert, kann hier aktiviert/deaktiviert werden.
+                </p>
+            </description>
+        </xml_attribute>
+
+		</xml_attributes>
 
 
 
