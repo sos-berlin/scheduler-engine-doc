@@ -3392,7 +3392,7 @@
 
         <message code="SCHEDULER-949">
             <text xml:lang="en">
-                <title>Delaying until a process of process class '<p1/>' becomes available</title>
+                <title>Execution is deferred until a process of process class '<p1/>' becomes available</title>
             </text>
         </message>
 
