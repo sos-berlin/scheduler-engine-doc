@@ -1508,10 +1508,10 @@
 
         <message code="SCHEDULER-271">
             <text xml:lang="de">
-                <title>Zugunsten des Jobs <p1/> wird die Task beendet</title>
+                <title>Zugunsten <p1/> wird die Task beendet</title>
             </text>
             <text xml:lang="en">
-                <title>Task is being terminated in favour of job <p1/></title>
+                <title>Task is being terminated in favour of <p1/></title>
             </text>
         </message>
 
@@ -3392,7 +3392,7 @@
 
         <message code="SCHEDULER-949">
             <text xml:lang="en">
-                <title>Job will be executed when a process of process class '<p1/>' becomes available</title>
+                <title>Execution is deferred until a process of process class '<p1/>' becomes available</title>
             </text>
         </message>
 
@@ -4473,6 +4473,12 @@
         <message code="SCHEDULER-726">
             <text xml:lang="en">
                 <title>Task runs on <p1/></title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-727">
+            <text xml:lang="en">
+                <title>Keep-alive package sent to Agent</title>
             </text>
         </message>
 
