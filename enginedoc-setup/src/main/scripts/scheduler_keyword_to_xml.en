@@ -1,3 +1,3 @@
 #! /bin/bash
-cd ./target/enginedoc/doc.en
+cd ../../../target/enginedoc/doc.en
 perl ../../../src/main/scripts/scheduler_keyword_to_xml.pl *.xml xml/*.xml xml/answer/*.xml api/*.xml
