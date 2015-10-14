@@ -246,15 +246,6 @@
                     &lt;<scheduler_a href="xml/include.xml">include</scheduler_a> file="…"/>
                     &lt;![CDATA[ <i>program-code</i>… ]]&gt;
                 &lt;/script>
-              <i>or</i>
-          <!--<i>oder</i>-->
-                &lt;<scheduler_a href="xml/process.xml">process</scheduler_a> file         = "…"
-                         ignore_error = "no"
-                         ignore_signal= "no" 
-                         log_file     = ""
-                         param        = ""  >
-                &lt;/process>
-
                 &lt;<scheduler_a href="xml/monitor.xml">monitor</scheduler_a> name         = "…"
                          ordering     = "…">
                    &lt;<scheduler_a href="xml/script.xml">script language="…" …></scheduler_a>…&lt;script/>

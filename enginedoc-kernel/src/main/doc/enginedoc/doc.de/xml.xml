@@ -95,7 +95,6 @@
                 <scheduler_element name="param"/><br/>
                 <scheduler_element name="params"/><br/>
                 <scheduler_element name="period"/><br/>
-                <scheduler_element name="process"/><br/>
                 <scheduler_element name="process_class"/><br/>
                 <scheduler_element name="process_classes"/><br/>
                 <scheduler_element name="run_time"/><br/>

@@ -16,7 +16,7 @@
     <description>
         <p>
             Eine Nicht-API-Task
-            (<scheduler_element name="process"/> oder <scheduler_element name="script" attribute="language" value="shell"/>)
+            (<scheduler_element name="script" attribute="language" value="shell"/>)
             wird mitsamt ihren Kindprozessen abgebrochen.
             Dazu ermittelt der JobScheduler alle Kindprozesse und 
             bricht sie ab.

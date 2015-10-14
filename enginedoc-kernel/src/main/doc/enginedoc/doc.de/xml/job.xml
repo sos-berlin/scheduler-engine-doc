@@ -164,12 +164,12 @@
                 <p>
                     Befristet eine Task-Operation (spooler_open, spooler_process etc.)
                     oder bei einer Nicht-API-Task 
-                    (<scheduler_element name="process"/> oder <scheduler_element name="script" attribute="language" value="shell"/>)
+                    (<scheduler_element name="script" attribute="language" value="shell"/>)
                     die ganze Task.
                     Nach Ablauf der Frist bricht der JobScheduler die Task ab.
                 </p>
                 <p>
-                    <i>dauer</i> kann in Sekunden oder im Format <code>HH:MM</code> oder <code>HH:MM:SS</code> angegeben werden.
+                    <i>Dauer</i> kann in Sekunden oder im Format <code>HH:MM</code> oder <code>HH:MM:SS</code> angegeben werden.
                 </p>
             </description>
         </xml_attribute>
@@ -458,7 +458,6 @@
         <xml_child_element name="params"/>
         <xml_child_element name="environment"/>
         <xml_child_element name="script"/>
-        <xml_child_element name="process"/>
         <xml_child_element name="monitor"/>
         <xml_child_element name="start_when_directory_changed" multiple="yes"/>
         <xml_child_element name="delay_after_error"            multiple="yes"/>

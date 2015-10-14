@@ -380,19 +380,12 @@
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <h2>Order Controlled Non-API Jobs (&lt;process> and &lt;script language="shell">)</h2>
-<!--<h2>Auftragsgesteuerte Nicht-API-Jobs (&lt;process> und &lt;script language="shell">)</h2>-->
+    <h2>Order Controlled Non-API Jobs (&lt;script language="shell">)</h2>
 
     <p>
         The JobScheduler API (Application Programme Interface) is a way of allowing program code to control the JobScheduler.
         XML jobs, or jobs which cause an executable file to be started are examples of non-API jobs - 
         i.e. jobs which do not use the API.
-    </p>
-    <p>
-        The JobScheduler starts an order controlled <scheduler_element name="process"/> Job 
-        for every file order.
-    <!--Einen auftragsgesteuerten <scheduler_element name="process"/>-Job 
-        startet der JobScheduler für jeden Dateiauftrag.-->
     </p>
     <p>
         The file path is contained in the <scheduler_env name="SCHEDULER_TASK_TRIGGER_FILES"/> environment variable.

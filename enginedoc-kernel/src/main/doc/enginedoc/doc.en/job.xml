@@ -126,31 +126,6 @@
                 		</p>
                 </div>
         		</div>
-
-        		<p><b><scheduler_element name="process" attribute="file"/></b></p>
-        		<br/>
-        	  <div class="indent">
-        				<p>
-        				    The JobScheduler starts the program without a separate shell.
-        				<!--Der JobScheduler startet das Programm ohne separate Shell.-->
-        				</p>
-        				<p>
-        						<u>Example:</u>
-        				<!--<u>Beispiele:</u>-->
-<pre>&lt;job name="simple_job"&gt;
-  &lt;process file="c:\my_prog.exe"/&gt;
-&lt;/job&gt;
-
-&lt;job name="interpreter_job"&gt;
-  &lt;process file="c:\php\php.exe"
-           param="-f 'c:\test\phpinfo.php'"/&gt;
-&lt;/job&gt;</pre>
-                    Inhterpreting programmes must be configured as the executing programmes for programme files,
-                    which are to be started per interpreter.
-                <!--Für Programmdateien, die per Interpreter gestartet werden, muss dieser als auszuführendes Programm
-                    konfiguriert sein.-->
-        				</p>
-        		</div>
     		</p>
     </div>
     
