@@ -220,7 +220,6 @@
     <file path="xml/params.get.xml"/>
     <file path="xml/payload.xml"/>
     <file path="xml/period.xml"/>
-    <file path="xml/process.xml"/>
     <file path="xml/process_class.xml"/>
     <file path="xml/process_classes.xml"/>
     <file path="xml/remove_job_chain.xml"/>

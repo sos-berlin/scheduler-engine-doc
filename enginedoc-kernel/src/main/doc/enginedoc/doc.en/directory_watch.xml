@@ -76,10 +76,9 @@
             auf die der Reguläre Ausdruck (wenn vorhanden) zutrifft.-->
         </p>
         <p>
-            For non-API jobs (<scheduler_element name="process"/> and 
-            <scheduler_element name="script" attribute="language" value="shell"/>)
+            For non-API jobs (<scheduler_element name="script" attribute="language" value="shell"/>)
             the paths are provided in the environment variable <code>SCHEDULER_TASK_TRIGGER_FILES</code>.
-        <!--Nicht-API-Jobs (<scheduler_element name="process"/> und <scheduler_element name="script" attribute="language" value="shell"/>)
+        <!--Nicht-API-Jobs (<scheduler_element name="script" attribute="language" value="shell"/>)
             steht der Inhalt von  
             <scheduler_method class="Task" property="trigger_files"/>
             in der Umgebungsvariablen <code>SCHEDULER_TASK_TRIGGER_FILES</code> zur Verfügung.-->

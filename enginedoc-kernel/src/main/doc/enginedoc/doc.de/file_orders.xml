@@ -288,9 +288,9 @@
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <h2>Auftragsgesteuerte Nicht-API-Jobs (&lt;process> und &lt;script language="shell">)</h2>
+    <h2>Auftragsgesteuerte Nicht-API-Jobs (&lt;script language="shell">)</h2>
     <p>
-        Einen auftragsgesteuerten <scheduler_element name="process"/>-Job 
+        Einen auftragsgesteuerten Job 
         startet der JobScheduler für jeden Dateiauftrag.
     </p>
     <p>

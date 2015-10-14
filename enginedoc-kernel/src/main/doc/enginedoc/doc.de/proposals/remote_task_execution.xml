@@ -12,8 +12,7 @@
     document_state      = "proposal"
 >
     <p>
-        <scheduler_element name="process"/>-Jobs können mit <code>ssh</code> auf einem entfernten Rechner gestartet werden.
-        Wie Jobs mit Zugriff auf die Scheduler-API auf einen entfernten Rechner ausgeführt werden könnten, 
+        Wie Jobs auf einen entfernten Rechner ausgeführt werden könnten, 
         beschreibt der hier beschriebene Vorschlag A.
         Zu Vorschlag B und C siehe <scheduler_a href="remote_jobs.xml" quote="yes"/>.
     </p>

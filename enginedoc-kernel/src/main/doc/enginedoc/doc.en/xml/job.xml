@@ -188,12 +188,10 @@
                     </li>
                     <li>
                         The task is a process
-                        (<scheduler_element name="process"/> or 
-                        <scheduler_element name="script" attribute="language" value="shell"/>)
+                        (<scheduler_element name="script" attribute="language" value="shell"/>)
                         and the process has not terminated itself immediately after starting
                     <!--Die Task ist ein Prozess 
-                        (<scheduler_element name="process"/> oder 
-                        <scheduler_element name="script" attribute="language" value="shell"/>)
+                        (<scheduler_element name="script" attribute="language" value="shell"/>)
                         und der Prozess hat sich nicht sofort nach Start beendet.-->
                     </li>
                 </ul>
@@ -213,12 +211,12 @@
                 <p>
                     Limits the duration of a task operation (spooler_open, spooler_process etc.)
                     or the whole task for a non-API task 
-                    (<scheduler_element name="process"/> or <scheduler_element name="script" attribute="language" value="shell"/>). 
+                    (<scheduler_element name="script" attribute="language" value="shell"/>). 
                     An error does not occur when the priority of a job has not been set.
                     Should a task exceed the time allowed, then the JobScheduler aborts the task.
                 <!--Befristet eine Task-Operation (spooler_open, spooler_process etc.)
                     oder bei einer Nicht-API-Task 
-                    (<scheduler_element name="process"/> oder <scheduler_element name="script" attribute="language" value="shell"/>)
+                    (<scheduler_element name="script" attribute="language" value="shell"/>)
                     die ganze Task. 
                     Nach Ablauf der Frist bricht der JobScheduler die Task ab.-->
                 </p>
@@ -624,7 +622,6 @@
         <xml_child_element name="environment"/>
         <xml_child_element name="params"/>
         <xml_child_element name="script"/>
-        <xml_child_element name="process"/>
         <xml_child_element name="monitor"/>
         <xml_child_element name="start_when_directory_changed" multiple="yes"/>
         <xml_child_element name="delay_after_error"            multiple="yes"/>

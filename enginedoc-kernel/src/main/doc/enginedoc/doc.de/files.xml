@@ -81,7 +81,6 @@
     <file path="proposals/mail.xml"/>
     <file path="proposals/order_source.xml"/>
     <file path="proposals/order_source_directory.xml"/>
-    <file path="proposals/process_order.xml"/>
     <file path="proposals/remote_jobs.xml"/>
     <file path="proposals/remote_task_execution.xml"/>
     <file path="proposals/run_time.xml"/>
@@ -231,7 +230,6 @@
     <file path="xml/params.get.xml"/>
     <file path="xml/payload.xml"/>
     <file path="xml/period.xml"/>
-    <file path="xml/process.xml"/>
     <file path="xml/process_class.xml"/>
     <file path="xml/process_classes.xml"/>
     <file path="xml/remove_job_chain.xml"/>

@@ -114,14 +114,107 @@
                     <!--Unter UNIX wird das Skript aufgerufen wie ein <i>executable</i>.-->
                     </dd>
                     <dd>
-                        Behaviour is the same as <scheduler_element name="process"/>.
-                    <!--Das Verhalten ist dasselbe wie von <scheduler_element name="process"/>.-->
-                    </dd>
-                    <dd>
                         The setting cannot be used when executed on a remote computer using 
                         <scheduler_element name="process_class" attribute="remote_scheduler"/>.
                      <!--Die Einstellung kann nicht verwendet werden bei Ausführung auf einem entfernten Rechner mit <scheduler_element name="process_class" attribute="remote_scheduler"/>.-->
                     </dd>
+                    <dd><dl>
+            <dt>The JobScheduler hands over the following <strong>environment variables</strong> for <code>language="shell"</code>
+               <scheduler_keyword keyword="Environment Variables"/>
+            </dt>
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_HOST"/>
+                <code>SCHEDULER_HOST</code>
+            </dt>
+            <dd>
+                Is the same as <scheduler_method class="Spooler" property="hostname"/>.
+            <!--Dasselbe wie <scheduler_method class="Spooler" property="hostname"/>.-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_JOB_CHAIN"/>
+                <code>SCHEDULER_JOB_CHAIN</code>
+            </dt>
+            <dd>
+                For an order controlled job (<scheduler_element name="job" attribute="order" value="yes"/>)
+                <scheduler_method class="Task" object="spooler_task" property="order"/><code>.</code><scheduler_method class="Order" object="" property="job_chain"/>.<scheduler_method class="Job_chain" object="" property="name"/>.
+            <!--Bei einem auftragsgesteuerten Job (<scheduler_element name="job" attribute="order" value="yes"/>)
+                <scheduler_method class="Task" object="spooler_task" property="order"/><code>.</code><scheduler_method class="Order" object="" property="job_chain"/>.<scheduler_method class="Job_chain" object="" property="name"/>.-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_JOB_NAME"/>
+                <code>SCHEDULER_JOB_NAME</code>
+            </dt>
+            <dd>
+                The job name
+                <!--Dasselbe wie 
+                <scheduler_method class="Task" object="spooler_task" property="job"/>.<scheduler_method class="Job" object="" property="name"/>.-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_ORDER_ID"/>
+                <code>SCHEDULER_ORDER_ID</code>
+            </dt>
+            <dd>
+                For an order controlled job (<scheduler_element name="job" attribute="order" value="yes"/>)
+                <scheduler_method class="Task" object="spooler_task" property="order"/><code>.</code><scheduler_method class="Order" object="" property="id"/>.
+            <!--Bei einem auftragsgesteuerten Job (<scheduler_element name="job" attribute="order" value="yes"/>)
+                <scheduler_method class="Task" object="spooler_task" property="order"/><code>.</code><scheduler_method class="Order" object="" property="id"/>.-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_SUPERVISOR_HOST"/>
+                <code>SCHEDULER_SUPERVISOR_HOST</code>
+            </dt>
+            <dd>
+                The computer name from <scheduler_element name="config" attribute="supervisor"/>
+            <!--Rechnername aus <scheduler_element name="config" attribute="supervisor"/>-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_SUPERVISOR_PORT"/>
+                <code>SCHEDULER_SUPERVISOR_PORT</code>
+            </dt>
+            <dd>
+                Port number from <scheduler_element name="config" attribute="supervisor"/>
+            <!--Portnummer aus <scheduler_element name="config" attribute="supervisor"/>-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_TASK_ID"/>
+                <code>SCHEDULER_TASK_ID</code>
+            </dt>
+            <dd>
+                The same as <scheduler_method class="Task" object="spooler_task" property="id"/>.
+            <!--Dassselbe wie <scheduler_method class="Task" object="spooler_task" property="id"/>.-->
+            </dd>
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_TASK_TRIGGER_FILES"/>
+                <code>SCHEDULER_TASK_TRIGGER_FILES</code>
+            </dt>
+            <dd>
+                Is the same as <scheduler_method class="Task" object="spooler_task" property="trigger_files"/>.
+            <!--Dasselbe wie <scheduler_method class="Task" object="spooler_task" property="trigger_files"/>.-->
+            </dd>
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_TCP_PORT"/>
+                <code>SCHEDULER_TCP_PORT</code>
+            </dt>
+            <dd>
+                As per <scheduler_method class="Spooler" property="tcp_port"/>  or empty, when a port has not been set.
+            <!--Wie <scheduler_method class="Spooler" property="tcp_port"/> oder leer, wenn kein Port festgelegt ist.-->
+            </dd>
+
+            <dt>
+                <scheduler_keyword keyword="SCHEDULER_UDP_PORT"/>
+                <code>SCHEDULER_UDP_PORT</code>
+            </dt>
+            <dd>
+                As per <scheduler_method class="Spooler" property="udp_port"/> or empty, when a port has not been set.
+            <!--Wie <scheduler_method class="Spooler" property="udp_port"/> oder leer, wenn kein Port festgelegt ist.-->
+            </dd>
+        </dl></dd>
                 </dl>
             </description>
         </xml_attribute>
