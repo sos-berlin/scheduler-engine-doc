@@ -295,6 +295,7 @@
                 </xsd:element>
                 <xsd:element ref="holiday"/>
                 <xsd:element ref="include"/>
+                <xsd:element ref="run_time"/>
             </xsd:choice>
         </xsd:complexType>
     </xsd:element>
