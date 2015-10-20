@@ -246,7 +246,7 @@ while( t.hasMoreTokens() )
 			$spooler_log->info( '"' . $variable_set->names . '"' );        # ==> "variable_1;variable_2"
 
 			my @names = $variable_set->names->split( ";" );
- 			foreach my $name(@names){$spooler_log->info( $name . " = " . $variable_set.value( $name ) );</pre>
+ 			foreach my $name(@names){$spooler_log->info( $name . " = " . $variable_set->value( $name ) );</pre>
     </example>
 
 </property>
