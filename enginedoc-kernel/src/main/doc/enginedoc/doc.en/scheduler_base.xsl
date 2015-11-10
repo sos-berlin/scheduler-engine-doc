@@ -146,7 +146,13 @@
 
     <xsl:template match="xml_element">
 
-        <xsl:variable name="title"><xsl:value-of select="$phrases/phrase [ @id='xml_element.chapter_title.prefix' ]"/>&#160; &lt;<xsl:value-of select="@name"/>><xsl:if test="@category">&#160; &#160; (<xsl:value-of select="@category"/>)</xsl:if></xsl:variable>
+        <xsl:variable name="name">
+				  <xsl:choose>
+					  <xsl:when test="contains(@name,'-')"><xsl:value-of select="substring-before(@name, '-')"/></xsl:when>
+						<xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<xsl:variable name="title"><xsl:value-of select="$phrases/phrase [ @id='xml_element.chapter_title.prefix' ]"/>&#160; &lt;<xsl:value-of select="$name"/>><xsl:if test="@category">&#160; &#160; (<xsl:value-of select="@category"/>)</xsl:if></xsl:variable>
 
         <html>
             <xsl:call-template name="html_head">
@@ -161,7 +167,7 @@
                 </xsl:call-template>
 
                 <div class="example">
-                    <code>&lt;<xsl:value-of select="@name"/></code>
+                    <code>&lt;<xsl:value-of select="$name"/></code>
 
                     <xsl:if test="xml_attributes/xml_attribute">
                         <div class="indent">
@@ -210,6 +216,12 @@
                                     <col/>
                                     <col/>
                                     <xsl:for-each select="xml_child_elements/xml_child_element">
+																				<xsl:variable name="childname">
+				  <xsl:choose>
+					  <xsl:when test="contains(@name,'-')"><xsl:value-of select="substring-before(@name, '-')"/></xsl:when>
+						<xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
                                         <xsl:variable name="path"><xsl:value-of select="@directory"/><xsl:if test="not( @directory )"><xsl:value-of select="concat( 'xml/', /*/@sub_directory )"/></xsl:if><xsl:value-of select="concat( @name, '.xml' )"/></xsl:variable>
                                         <xsl:variable name="element" select="document( string($path) )/xml_element[ @name=current()/@name ]"/>
                                         
@@ -228,7 +240,7 @@
                                                             <xsl:attribute name="href"><xsl:value-of select="concat( /*/@base_dir, $path )"/></xsl:attribute>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
-                                                    <code>&lt;<xsl:value-of select="@name"/></code> ...<code>></code><br/>
+                                                    <code>&lt;<xsl:value-of select="$childname"/></code> ...<code>></code><br/>
                                                 </xsl:element>
                                             </td>
                                             <td valign="baseline" style="padding-left: 4ex">
@@ -249,7 +261,7 @@
                             </div>
 
                             <br/>
-                            <code>&lt;/<xsl:value-of select="@name"/>></code>
+                            <code>&lt;/<xsl:value-of select="$name"/>></code>
                         </xsl:when>
                         <xsl:otherwise>
                             <code>/></code>
@@ -327,7 +339,13 @@
 
     <xsl:template match="xml_parent_element | xml_child_element">
 
-        <xsl:variable name="path"><xsl:value-of select="@directory"/><xsl:if test="not( @directory )"><xsl:value-of select="concat( 'xml/', /*/@sub_directory )"/></xsl:if><xsl:value-of select="concat( @name, '.xml' )"/></xsl:variable>
+        <xsl:variable name="name">
+				  <xsl:choose>
+					  <xsl:when test="contains(@name,'-')"><xsl:value-of select="substring-before(@name, '-')"/></xsl:when>
+						<xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<xsl:variable name="path"><xsl:value-of select="@directory"/><xsl:if test="not( @directory )"><xsl:value-of select="concat( 'xml/', /*/@sub_directory )"/></xsl:if><xsl:value-of select="concat( @name, '.xml' )"/></xsl:variable>
         <xsl:variable name="element" select="document( string($path) )/xml_element[ @name=current()/@name ]"/>
 
         <xsl:if test="self::xml_child_element">
@@ -354,7 +372,7 @@
                                     <xsl:attribute name="class">silent</xsl:attribute>
                                     <xsl:attribute name="href"><xsl:value-of select="concat( /*/@base_dir, $path )"/></xsl:attribute>
                                     <xsl:text>&lt;</xsl:text>
-                                    <xsl:value-of select="@name"/>
+                                    <xsl:value-of select="$name"/>
                                     <xsl:text>></xsl:text>
                                 </xsl:element>
                             </code>
@@ -389,7 +407,7 @@
                 <p>
                     <xsl:apply-templates select="." mode="phrase">
                         <xsl:with-param name="element">
-                            <code>&lt;<xsl:value-of select="@name"/>></code>
+                            <code>&lt;<xsl:value-of select="$name"/>></code>
                         </xsl:with-param>
                     </xsl:apply-templates>
                 </p>
