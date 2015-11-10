@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
+
+<!--$Id$-->
+
+<xml_element name     = "params" 
+             title    = "Parameters in the NodeOrderPlugin Namespace"
+             base_dir = "../"
+             parent_page = "../konfiguration.xml"
+             author   = "$Author: jz $"
+             date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
+
+    <xml_parent_elements>
+        <xml_parent_element name="add_order-node_order_plugin" />
+    </xml_parent_elements>
+
+        
+    <xml_child_elements>
+        <xml_child_element name="param-node_order_plugin"         multiple="yes">
+            <description>
+                <p>
+                    Can be used in <code>&lt;params></code> directly under
+                <!--<scheduler_element name="add_order-node_order_plugin"/>-->
+                    <a href="add_order-node_order_plugin.xml">&lt;add_order&gt;</a>
+                    when the &lt;add_order&gt; element is used in the correct namespace.
+                </p>
+            </description>
+        </xml_child_element>
+    <!--<xml_child_element name="copy_params"   multiple="yes"/>-->
+    <!--<xml_child_element name="include"       multiple="yes">
+            <description>
+                <p>
+                    Can be used in <code>&lt;params></code> directly under
+                    <scheduler_element name="job"/> and under 
+                    <scheduler_element name="order"/>.
+                </p>
+            </description>
+        </xml_child_element>-->
+    </xml_child_elements>
+
+    
+    <behavior_with_xml_element element="base" complete="yes"/>
+
+    <description>
+        <p>
+            This element is derived from a different namespace
+            <code>https://www.sos-berlin.com/repository/scheduler/1.9/scheduler.xsd</code>
+            that includes support for the NodeOrderPlugin.
+        </p>
+        <p>
+            This element can only be used when its parent 
+        <!--<scheduler_element name="add_order-node_order_plugin"/>-->
+            <a href="add_order-node_order_plugin.xml">&lt;add_order&gt;</a> 
+            element is used in the correct namespace.
+        </p>
+        <p>
+            The <code>&lt;params&gt;</code> element functions as a container for <code>&lt;param&gt;</code> elements used to specify the parameters for an order.
+        </p>
+        <p>
+            See also <a href="param-node_order_plugin.xml">&lt;param&gt;</a>.
+        </p>
+        
+      <!--<p>
+            The parameters can be overwritten and extended whilst the JobScheduler is running.
+        </p>-->
+    <!--<p>
+            JobScheduler parameters can be called up using the 
+            <scheduler_method class="Spooler" object="spooler" method="variables"/> method.
+        </p>-->
+    <!--<p>
+            Job parameters are called using the <scheduler_method class="Task" method="params" /> method.
+        </p>-->
+    <!--<p>
+            The parameters for an order can be called using the <scheduler_method class="Order" method="payload" /> method.
+        </p>-->
+    <!--<p>
+            See also the <scheduler_method class="Variable_set" /> and <scheduler_element name="sos.spooler.variable_set"/> classes.
+        </p>-->
+    </description>
+        
+</xml_element>

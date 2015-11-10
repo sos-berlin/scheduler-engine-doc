@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
+
+<!--$Id$-->
+
+<xml_element name     = "to_state"
+             title    = "To State"
+             category = "Configuration"
+             base_dir = "../"
+             parent_page = "../konfiguration.xml"
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-10-23 12:40:00 +0200 (Fr, 23 Oct 2015) $">
+
+    <scheduler_keyword keyword="On Return Code"/>
+    <scheduler_keyword keyword="To State"/>
+
+    <xml_parent_elements>
+        <xml_parent_element name="on_return_code"/>
+    </xml_parent_elements>
+
+    <xml_attributes>
+        <xml_attribute name="state" type="integer">
+            <description>
+                <p>
+                    The state within the current job chain that is to be moved to next.
+                </p>
+            </description>
+            
+       </xml_attribute>
+       
+    </xml_attributes>
+
+
+
+    <description>
+        
+        <p>
+            <code>&lt;to_state&gt;</code> specifies the state within the current job chain that is to be moved to next.
+            This element will be triggered if a job returns the return code specified in the <code>return_code</code> attribute of a parent <code>&lt;on_return_code&gt;</code> element.
+        </p>
+        <p>
+            The function of the <code>&lt;to_state&gt;</code> element - in particular when used together with <code>&lt;add_order&gt;</code> in an <code>&lt;on_return_code&gt;</code> element is described on the <scheduler_element name="on_return_code"/> element page.
+        </p>
+        
+   </description>
+</xml_element>

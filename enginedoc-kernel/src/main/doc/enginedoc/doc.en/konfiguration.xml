@@ -147,6 +147,11 @@
             …
         &lt;/security>
 
+        &lt;plugins&gt;
+            &lt;plugin java_class="…"/>
+            …
+        &lt;/plugins>
+
         &lt;<scheduler_a href="xml/cluster.xml">cluster</scheduler_a> heart_beat_own_timeout  = "…" 
                  heart_beat_timeout      = "…"
                  heart_beat_warn_timeout = "…"/>
@@ -389,7 +394,31 @@
                     next_state  = "…"  
                     on_error    = "suspend|resume"  
                     state       = "…"  
-                />
+                >
+                
+                    &lt;<scheduler_a href="xml/on_return_codes.xml">on_return_codes</scheduler_a>
+                    >asd
+                        
+                        &lt;<scheduler_a href="xml/on_return_code.xml">on_return_code</scheduler_a>
+                            return_code    = "…"
+                        >asd
+                            &lt;<a href="xml/add_order-node_order_plugin.xml">add_order</a> 
+                                xmlns       = "https://jobscheduler-plugins.sos-berlin.com/NodeOrderPlugin"  
+                                job_chain   = "…"  
+                                id          = "…" 
+                            >
+                                &lt;<a href="xml/params-node_order_plugin.xml">params</a>&gt;
+                                    &lt;<a href="xml/param-node_order_plugin.xml">param</a> name="…" value="…"/>
+                                    …
+                                &lt;/params>
+                            &lt;/add_order>
+                            …
+                            &lt;<a href="xml/to_state.xml">to_state</a> state="…" />
+                        &lt;/on_return_code>
+                        …
+                    &lt;/on_return_codes>
+                    
+                &lt;/job_chain_node>
                 …
                 &lt;<scheduler_a href="xml/file_order_sink.xml">file_order_sink</scheduler_a> 
                     move_to     = "…"
