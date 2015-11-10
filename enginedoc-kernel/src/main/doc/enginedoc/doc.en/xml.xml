@@ -92,6 +92,8 @@
                 <scheduler_element name="month"/><br/>
                 <scheduler_element name="monthdays"/><br/>
                 <scheduler_element name="order"/><br/>
+                <scheduler_element name="on_return_code"/><br/>
+                <scheduler_element name="on_return_codes"/><br/>
                 <scheduler_element name="param"/><br/>
                 <scheduler_element name="params"/><br/>
                 <scheduler_element name="period"/><br/>
@@ -107,6 +109,7 @@
                 <scheduler_element name="security"/><br/>
                 <scheduler_element name="spooler"/><br/>
                 <scheduler_element name="start_when_directory_changed"/><br/>
+                <scheduler_element name="to_state"/><br/>
                 <scheduler_element name="ultimos"/><br/>
                 <scheduler_element name="variable"/><br/>
                 <scheduler_element name="web_service"/><br/>
@@ -196,6 +199,35 @@
                 <scheduler_element directory="xml/"        name="payload"/><br/>
                 <scheduler_element directory="xml/"        name="service_request"/><br/>
                 <scheduler_element directory="xml/"        name="sos.spooler.variable_set"/><br/>
+								<br/>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th style="padding-left: 2ex">
+                                Namespace Commands
+                            </th>
+                        </tr>
+                        <tr><td>asd<br/></td></tr>
+                        <tr>
+                            <td>
+                                Commands for the NodeOrderPlugin
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <!--<scheduler_element name="add_order-node_order_plugin"/>-->
+                                <a href="xml/add_order-node_order_plugin.xml" >&lt;add_order&gt;</a>
+                            <!--<scheduler_element name="params-node_order_plugin"/>-->
+                                <br/>
+                                <a href="xml/params-node_order_plugin.xml" >&lt;params&gt;</a>
+                                <br/>
+                            <!--<scheduler_element name="param-node_order_plugin"/>-->
+                                <a href="xml/param-node_order_plugin.xml" >&lt;param&gt;</a>
+                                <br/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
     </tbody>
