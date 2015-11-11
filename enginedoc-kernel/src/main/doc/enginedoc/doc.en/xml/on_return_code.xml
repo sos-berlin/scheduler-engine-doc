@@ -68,6 +68,9 @@
         <h3>
             Syntax
         </h3>
+        <p>
+            The <code>&lt;on_return_code&gt;</code> element can be used to specify the following operations:
+        </p>
         <ul>
             <li>
                 Individual values, separated by a blank space:<br/>
@@ -136,7 +139,7 @@
                 Behavior with non-zero <code>return_code</code> values depends on the behavior specified in the <code>&lt;on_return_code&gt;</code> child element(s):
                 <ul>
                     <li>
-                        With an <code>&lt;to_state&gt;</code> element:<br/> 
+                        With a <code>&lt;to_state&gt;</code> element:<br/> 
                         <ul>
                             <li>
                                 An error will be logged for the job task.
