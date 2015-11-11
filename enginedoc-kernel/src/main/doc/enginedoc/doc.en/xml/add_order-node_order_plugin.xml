@@ -120,11 +120,11 @@
 
             <example>
                 <pre>
-&lt;<a href="xml/on_return_codes.xml">on_return_codes</a>&gt;
-    &lt;<a href="xml/on_return_code.xml">on_return_code</a>  return_code="0"&gt;
+&lt;<a href="on_return_codes.xml">on_return_codes</a>&gt;
+    &lt;<a href="on_return_code.xml">on_return_code</a>  return_code="0"&gt;
         &lt;add_order id="myOrderId" xmlns="https://jobscheduler-plugins.sos-berlin.com/NodeOrderPlugin" job_chain="Chain_B"&gt;
-            &lt;<a href="xml/params.xml">params</a> &gt;
-                &lt;<a href="xml/param.xml">param</a>  name="parameterName" value="parameterValue"/&gt;
+            &lt;<a href="params-node_order_plugin.xml">params</a> &gt;
+                &lt;<a href="param-node_order_plugin.xml">param</a>  name="parameterName" value="parameterValue"/&gt;
             &lt;/params&gt;
         &lt;/add_order&gt;
     &lt;/on_return_code&gt;
@@ -138,11 +138,11 @@
     
     <example>
         <pre>
-&lt;<a href="xml/on_return_codes.xml">on_return_codes</a>&gt;
-    &lt;<a href="xml/on_return_code.xml">on_return_code</a>  return_code="0"&gt;
+&lt;<a href="on_return_codes.xml">on_return_codes</a>&gt;
+    &lt;<a href="on_return_code.xml">on_return_code</a>  return_code="0"&gt;
         &lt;add_order id="myOrderId" xmlns="https://jobscheduler-plugins.sos-berlin.com/NodeOrderPlugin" job_chain="Chain_B"&gt;
-            &lt;<a href="xml/params.xml">params</a> &gt;
-                &lt;<a href="xml/param.xml">param</a>  name="parameterName" value="parameterValue"/&gt;
+            &lt;<a href="params-node_order_plugin.xml">params</a> &gt;
+                &lt;<a href="param-node_order_plugin.xml">param</a>  name="parameterName" value="parameterValue"/&gt;
             &lt;/params&gt;
         &lt;/add_order&gt;
     &lt;/on_return_code&gt;
