@@ -9,7 +9,7 @@
              category = "Command"
              title    = "Add an order"
              base_dir = "../"
-             author   = "$Author: jz $"
+             author   = "$Author: aa $"
              date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
 
 
@@ -56,6 +56,19 @@
         </xml_attribute>
         
 
+        <xml_attribute name="replace" type="yes|no" initial="yes">
+            <description>
+                <p>
+                    <code>replace="no"</code>: <scheduler_method class="Job_chain" method="add_order" java_signature="sos.spooler.Order" />
+                    will be called.
+                    <br/>
+                    <code>replace="yes"</code>: <scheduler_method class="Job_chain" method="add_or_replace_order" java_signature="sos.spooler.Order" />
+                    will be called.
+                </p>
+            </description>
+        </xml_attribute>
+
+
         <xml_attribute name="priority" type="number">
     <!--<xml_attribute name="priority" type="zahl">-->
             <description>
@@ -77,14 +90,6 @@
 
 
         <xml_attribute name="state" type="text">
-            <description>
-                <p>
-                </p>
-            </description>
-        </xml_attribute>
-
-
-        <xml_attribute name="job" type="name">
             <description>
                 <p>
                 </p>
