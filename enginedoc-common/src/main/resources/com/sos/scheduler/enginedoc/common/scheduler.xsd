@@ -1405,6 +1405,8 @@
                         <xsd:element name="remote_scheduler" minOccurs="0" maxOccurs="unbounded">
                             <xsd:complexType>
                                 <xsd:attribute name="remote_scheduler" type="String"/>
+                                <xsd:attribute name="http_heartbeat_period" type="xsd:positiveInteger"/>
+                                <xsd:attribute name="http_heartbeat_timeout" type="xsd:positiveInteger"/>
                             </xsd:complexType>
                         </xsd:element>
                     </xsd:sequence>
