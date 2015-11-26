@@ -69,7 +69,7 @@
         <!--<phrase id="head.link_to_index">Register</phrase>-->
             <phrase id="head.link_to_sos">Software- und Organisations-Service GmbH</phrase>
         <!--<phrase id="head.link_to_sos">Software- und Organisations-Service GmbH</phrase>-->
-            <phrase id="head.last_updated_by">Last updated by</phrase>
+            <phrase id="head.last_updated_by">Page last updated by</phrase>
         <!--<phrase id="head.last_updated_by">Zuletzt geändert von</phrase>-->
 
             <phrase id="index.title">Registry</phrase>
