@@ -6,13 +6,13 @@
 <!--         title    = "Prozessklasse"-->
 
 <xml_element name     = "process_class" 
-             title    = "Process classes"
+             title    = "Process class"
              category = "Configuration"
              base_dir = "../"
              parent_page = "../konfiguration.xml"
-             author   = "$Author: jz $"
-             date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
-
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-11-27 11:42:49 +0200 (Fri, 27 Nov 2015) $"
+>
     <description>
         <p>
             Defines or modifies a process class.
@@ -43,6 +43,9 @@
                 <p>
                     See the <code>process_class=</code> attribute of the <scheduler_element name="job"/> element.
                 <!--Siehe <scheduler_element name="job"/>, Attribut <code>process_class=</code>.-->
+                </p>
+                <p>
+                    See the <code>process_class=</code> attribute of the <scheduler_element name="job_chain"/> element.
                 </p>
             </description>
         </xml_attribute>
@@ -149,7 +152,9 @@
                 <message level="warn" code="SCHEDULER-849"/>
                 <message level="warn" code="SCHEDULER-850"/>
             </messages>
+            
         </xml_attribute>
+
 
         <xml_attribute name="replace" type="yes|no" initial="yes">
             <description>
@@ -163,6 +168,47 @@
                 </p>
             </description>
         </xml_attribute>
+
+
+        <!-- JOE 204 -->
+        <xml_attribute name="http_heartbeat_period" type="number" initial="10">
+            <description>
+                <p>
+                    <code>http_heartbeat_period</code> specifies a number of seconds after which the Agent will send a heartbeat signal to the Master if a HTTP operation with the Master is not otherwise performed.
+                </p>
+                <p>
+                    The HTTP Heartbeat Period attribute should be a positive integer and less than the HTTP Heartbeat Timeout.
+                </p>
+                <example>
+                    <pre>&lt;process_classes&gt;
+    &lt;process_class max_processes="10" remote_scheduler="http://MY-SERVER:4445" 
+      name="agent-1" http_heartbeat_period="20" http_heartbeat_timeout="30" /&gt;
+&lt;/process_classes&gt;
+</pre>
+                </example>
+            </description>
+        </xml_attribute>
+
+        
+        <!-- JOE 204 -->
+        <xml_attribute name="http_heartbeat_timeout" type="number" initial="15">
+            <description>
+                <p>
+                    <code>http_heartbeat_timeout</code> specifies the number of seconds within which the Agent expects to receive a heartbeat from the Master.
+                </p>
+                <p>
+                    The HTTP Heartbeat Timeout attribute should be an integer and larger than the HTTP Heartbeat Period.
+                </p>
+                 <example>
+                    <pre>&lt;process_classes&gt;
+    &lt;process_class max_processes="10" remote_scheduler="http://MY-SERVER:4445" 
+      name="agent-1" http_heartbeat_period="20" http_heartbeat_timeout="30" /&gt;
+&lt;/process_classes&gt;
+</pre>
+                </example>
+           </description>
+        </xml_attribute>
+
 
     </xml_attributes>
     
