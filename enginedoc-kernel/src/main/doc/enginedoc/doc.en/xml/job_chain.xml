@@ -7,9 +7,9 @@
              category = "Configuration"
              base_dir = "../"
              parent_page = "../konfiguration.xml"
-             author   = "$Author: jz $"
-             date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
-
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-11-27 11:42:49 +0200 (Fri, 27 Nov 2015) $"
+>
     <scheduler_keyword keyword="Job chain"/>
 
     <xml_parent_elements>
@@ -126,7 +126,7 @@
             </description>
         </xml_attribute>
 
-				<!-- JS-538 -->
+        <!-- JS-538 -->
         <xml_attribute name="max_orders" type="postive integer" initial="99999" >
             <description>
                 <p>
@@ -144,9 +144,82 @@
                     <!-- Fehlt diese Angabe, ist die Anzahl der parallel laufenden Order einer Jobkette nicht begrenzt. -->
                 </p>
                 <p>
-                    <b>This attribute take only effect, if the order starts with the first node of the job chain.</b>
+                    <b>This attribute will take only effect if the order starts with the first node of the job chain.</b>
                     <!-- <b>Diese Einstellung gilt nur für order, die mit dem ersten Knoten der Jobkette starten.</b> -->
                 </p>
+            </description>
+        </xml_attribute>
+
+
+        <!-- JS-1301 -->
+        <xml_attribute name="process_class" type="String" >
+            <description>
+                <p>
+                    A <scheduler_element name="process_class"/> can be used to 
+                    to specify the default Agent or Remote JobScheduler to be used for processing the job chain.
+                </p>
+                <p>
+                    See <a href="https://kb.sos-berlin.com/x/FwTj">How to execute Jobs and Job Chains with Agents</a> for more information.
+                </p>
+                <example>
+                    <pre>&lt;process_classes&gt;
+    &lt;process_class max_processes="10" remote_scheduler="http://MY-SERVER:4445" name="agent-1" /&gt;
+&lt;/process_classes&gt;
+&lt;job_chains&gt;
+    &lt;job_chain title="Job Chain 1" process_class="agent-1" name="job_chain_1"&gt;
+        &lt;job_chain_node state="1" job="job_1" next_state="2" error_state="error" /&gt;
+        &lt;job_chain_node state="2" job="job_2" next_state="success" error_state="error" /&gt;
+        &lt;job_chain_node state="success" /&gt;
+        &lt;job_chain_node state="error" /&gt;
+    &lt;/job_chain&gt;
+&lt;/job_chains&gt;
+</pre>
+                </example>
+            </description>
+        </xml_attribute>
+
+
+        <!-- JS-1399 -->
+        <xml_attribute name="file_watching_process_class" type="String" >
+            <description>
+                <p>
+                    A <scheduler_element name="process_class"/> can be used to 
+                    to specify an Agent that is to be used to watch for files arriving at the Agent host.
+                    This Agent triggers file orders for incoming files.
+                </p>
+                <p>
+                    This process class is used to define both the <scheduler_element name="file_order_source"/> and <scheduler_element name="file_order_sink"/>.
+                </p>
+                <p>
+                    If the <code>file_watching_process_class</code> attribute is empty, it defaults to the process class of the job chain.
+                </p>
+                <p>
+                    The process class must denote only one agent.
+                </p>
+                <p>
+                    Changing the process class at runtime will have no effect on the <code>file_order_source</code> or <code>file_order_sink</code>.
+                </p>
+                <p>
+                    When the process contains both the <code>remote_scheduler</code> attribute and the <scheduler_element name="remote_schedulers"/> element, the <code>remote_schedulers</code> element will be ignored when the process class is used for the <code>file_watching_process_class</code> attribute or <code>file_watching_process_class</code> in the <scheduler_element name="job_chain"/> element.
+                </p>
+                <p>
+                    See the <a href="https://kb.sos-berlin.com/x/NwCs">JobScheduler Universal Agent - Remote File Watching</a> article for more information.
+                </p>
+                <example>
+                    <pre>&lt;process_classes&gt;
+    &lt;process_class max_processes="10" remote_scheduler="http://MY-SERVER:4445" name="agent-1" /&gt;
+&lt;/process_classes&gt;
+&lt;job_chains&gt;
+    &lt;job_chain title="Job Chain 1" process_class="agent-1" file_watching_process_class"agent-2" name="job_chain_1"&gt;
+        &lt;file_order_source directory="/tmp/jobscheduler/file/incoming/agent_file_watching" regex=".*" /&gt;
+        &lt;job_chain_node state="1" job="job_1" next_state="2" error_state="error" /&gt;
+        &lt;job_chain_node state="2" job="job_2" next_state="success" error_state="error" /&gt;
+        &lt;job_chain_node state="success" /&gt;
+        &lt;job_chain_node state="error" /&gt;
+    &lt;/job_chain&gt;
+&lt;/job_chains&gt;
+</pre>
+                </example>
             </description>
         </xml_attribute>
 
@@ -213,7 +286,6 @@
     <example>
 <pre>&lt;job_chains>
     &lt;job_chain name="Chain_A">
-<!--&lt;job_chain name="Kette_A">-->
         &lt;job_chain_node state=  "1" job="job_a" next_state=  "2" error_state="999" />            
         &lt;job_chain_node state=  "2" job="job_b" next_state="100" error_state="999" />            
         &lt;job_chain_node state="100" />
@@ -222,12 +294,10 @@
 &lt;/job_chains></pre>
 
 This is the same as the following JobScheduler script:
-<!--Das ist dasselbe wie folgendes Scheduler-Skript:-->
 
 <pre>&lt;script language="javascript">&lt;![CDATA[
     var job_chain = spooler.create_job_chain();
         job_chain.name = "Chain_A";
-    <!--job_chain.name = "Kette_A";-->
         job_chain.add_job( "job_a", 1,   2, 999 );
         job_chain.add_job( "job_b", 2, 100, 999 );
         job_chain.add_end_state( 100 );
