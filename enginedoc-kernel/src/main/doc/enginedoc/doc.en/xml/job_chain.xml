@@ -188,7 +188,7 @@
                     This Agent triggers file orders for incoming files.
                 </p>
                 <p>
-                    This process class is used to define both the <scheduler_element name="file_order_source"/> and <scheduler_element name="file_order_sink"/>.
+                    This process class is used to define both the <scheduler_element name="file_order_source"/> and <scheduler_element name="file_order_sink"/> elements.
                 </p>
                 <p>
                     If the <code>file_watching_process_class</code> attribute is empty, it defaults to the process class of the job chain.
@@ -200,7 +200,7 @@
                     Changing the process class at runtime will have no effect on the <code>file_order_source</code> or <code>file_order_sink</code>.
                 </p>
                 <p>
-                    When the process contains both the <code>remote_scheduler</code> attribute and the <scheduler_element name="remote_schedulers"/> element, the <code>remote_schedulers</code> element will be ignored when the process class is used for the <code>file_watching_process_class</code> attribute or <code>file_watching_process_class</code> in the <scheduler_element name="job_chain"/> element.
+                    When the process contains both the <code>remote_scheduler</code> attribute and the <code>remote_schedulers</code> element, the <code>remote_schedulers</code> element will be ignored when the process class is used for the <code>file_watching_process_class</code> attribute or <code>file_watching_process_class</code> in the <scheduler_element name="job_chain"/> element.
                 </p>
                 <p>
                     See the <a href="https://kb.sos-berlin.com/x/NwCs">JobScheduler Universal Agent - Remote File Watching</a> article for more information.
