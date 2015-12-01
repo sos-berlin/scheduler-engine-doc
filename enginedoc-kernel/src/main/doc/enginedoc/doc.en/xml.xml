@@ -8,8 +8,8 @@
 <description
     title    = "All XML Elements"
     base_dir = ""
-    author   = "$Author: fs $"
-    date     = "$Date: 2013-12-17 11:42:49 +0200 (Tue, 17 Dec 2013) $"
+    author   = "$Author: aa $"
+    date     = "$Date: 2015-11-30 11:42:49 +0200 (Mon, 30 Nov 2015) $"
 >
 
 <!--
@@ -131,6 +131,7 @@
                 <scheduler_element name="param.get"/><br/>
                 <scheduler_element name="params.get"/><br/>
                 <scheduler_element name="process_class"/><br/>
+                <scheduler_element name="process_classes"/><br/>
                 <scheduler_element name="process_class.remove"/><br/>
                 <scheduler_element name="remove_job_chain"/><br/>
                 <scheduler_element name="remove_order"/><br/>
