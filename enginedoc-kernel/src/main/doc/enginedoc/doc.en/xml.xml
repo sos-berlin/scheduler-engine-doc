@@ -8,8 +8,8 @@
 <description
     title    = "All XML Elements"
     base_dir = ""
-    author   = "$Author: aa $"
-    date     = "$Date: 2015-11-30 11:42:49 +0200 (Mon, 30 Nov 2015) $"
+    author   = "$Author: fs $"
+    date     = "$Date: 2013-12-17 11:42:49 +0200 (Tue, 17 Dec 2013) $"
 >
 
 <!--
@@ -97,8 +97,11 @@
                 <scheduler_element name="param"/><br/>
                 <scheduler_element name="params"/><br/>
                 <scheduler_element name="period"/><br/>
+            <!--<scheduler_element name="process"/><br/>--><!-- JS-1173 -->
                 <scheduler_element name="process_class"/><br/>
                 <scheduler_element name="process_classes"/><br/>
+                <scheduler_element name="remote_scheduler"/><br/>
+                <scheduler_element name="remote_schedulers"/><br/>
                 <scheduler_element name="run_time"/><br/>
                 <scheduler_element name="schedule"/><br/>
                 <scheduler_element name="scheduler_script"/><br/>
@@ -122,7 +125,6 @@
                 <scheduler_element name="job.why"/><br/>
                 <scheduler_element name="kill_task"/><br/>
                 <scheduler_element name="licence.use"/><br/>
-                <scheduler_element name="lock"/><br/>
                 <scheduler_element name="lock.remove"/><br/>
                 <scheduler_element name="modify_job"/><br/>
                 <scheduler_element name="modify_hot_folder"/><br/>
@@ -130,8 +132,6 @@
                 <scheduler_element name="modify_spooler"/><br/>
                 <scheduler_element name="param.get"/><br/>
                 <scheduler_element name="params.get"/><br/>
-                <scheduler_element name="process_class"/><br/>
-                <scheduler_element name="process_classes"/><br/>
                 <scheduler_element name="process_class.remove"/><br/>
                 <scheduler_element name="remove_job_chain"/><br/>
                 <scheduler_element name="remove_order"/><br/>

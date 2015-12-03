@@ -5,11 +5,11 @@
 
 <xml_element name     = "mail_on_error"
              setting  = "mail_on_error"
-             category = "Konfiguration"
+             category = "Configuration"
              base_dir = "../"
-             parent_page = "../konfiguration.xml"
-             author   = "$Author: jz $"
-             date     = "$Date: 2009-03-01 18:14:58 +0100 (Sun, 01 Mar 2009) $">
+             parent_page = "../settings.xml"
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-12-02 18:14:58 +0100 (We, 02 Dec 2015) $">
 
     <xml_parent_elements>
         <xml_parent_element name="settings"/>
