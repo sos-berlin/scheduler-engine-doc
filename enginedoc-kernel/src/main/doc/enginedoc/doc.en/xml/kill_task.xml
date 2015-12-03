@@ -8,8 +8,8 @@
              title    = ""
              base_dir = "../"
              parent_page = "../xml_commands.xml"
-             author   = "$Author: jz $"
-             date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-11-30 21:25:54 +0200 (Mo, 30 Nov 2015) $">
 
 
     <description>
@@ -36,23 +36,63 @@
 
 
     <xml_attributes>
+        <xml_attribute name="timeout" type="duration_or_never">
+            <description>
+                <p>
+                    The period of time allowed for a process to end after receipt of a SIGTERM signal. If the process does not end within this time it will be killed with a SIGKILL signal. 
+                </p>
+                <h3>Implementation on a JobScheduler Master</h3>
+                 <ol>
+                    <li>Operation: <i>kill immediately</i>
+                        <ul>
+                            <li>
+                                JOC sends <code>&lt;kill_task immediately="yes"/&gt;</code>
+                            </li>
+                            <li>
+                                The process is killed immediately using the SIGKILL signal.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Operation: <i>terminate with timeout</i>
+                        <ul>
+                            <li>
+                                JOC sends <code>&lt;kill_task immediately="yes" timeout="15"/&gt;</code>
+                            </li>
+                            <li>
+                                The process receives a SIGTERM signal. Should that process not terminate within the specified timeout period then it will be killed with a SIGKILL signal.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Operation: <i>terminate</i>
+                        <ul>
+                            <li>
+                                JOC sends <code>&lt;kill_task immediately="yes" timeout="never"/&gt;</code>
+                            </li>
+                            <li>
+                                The process receives a SIGTERM signal. Monitoring of the process termination as described in Operation 2 above is not carried out.
+                            </li>
+                        </ul>
+                    </li>
+               </ol>
+                <p>
+                    See <a href="https://kb.sos-berlin.com/x/1gDG">How to Terminate Tasks</a> for more information.
+                </p>
+            </description>
+        </xml_attribute>
+        
         <xml_attribute name="job" type="job_name">
             <description>
                 <p>
                     The job name.
-                <!--Der Jobname.-->
                 </p>
             </description>
         </xml_attribute>
         
         <xml_attribute name="id" type="number">
-            <!-- Text wird von anderen XML-Dokumenten mitbenutzt. Also allgemein halten! -->
             <description>
                 <p>
                     The task Id.
                     (<i>The attribute may not be named <code>id</code> - this term is a reserved word in XML.</i>)
-                <!--Die Task-Id.
-                    (<i>Das Attribut sollte nicht <code>id</code> heißen, das Wort ist in XML reserviert.</i>)-->
                 </p>
             </description>
         </xml_attribute>
@@ -68,7 +108,12 @@
 
     <example>
         <pre>
-&lt;kill_task job="my_job" id="4711"/>
+&lt;kill_task job="my_job" id="4711"/&gt;
+        </pre>
+    </example>
+    <example>
+        <pre>
+&lt;kill_task job="my_job" id="4711" timeout="never"/&gt;
         </pre>
     </example>
 </xml_element>

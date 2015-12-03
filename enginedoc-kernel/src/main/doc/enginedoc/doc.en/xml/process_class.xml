@@ -11,7 +11,7 @@
              base_dir = "../"
              parent_page = "../konfiguration.xml"
              author   = "$Author: aa $"
-             date     = "$Date: 2015-11-27 11:42:49 +0200 (Fri, 27 Nov 2015) $"
+             date     = "$Date: 2015-11-30 11:42:49 +0200 (Mon, 30 Nov 2015) $"
 >
     <description>
         <p>
@@ -74,59 +74,41 @@
         </xml_attribute>   
 
         <xml_attribute name="remote_scheduler" type="host:port" title="Task execution on remote computers">
-    <!--<xml_attribute name="remote_scheduler" type="host:port" title="Ausführung der Tasks auf entferntem Rechner">-->
             <description>
                 <p>
                     Specifies the remote computer 
                     on which the tasks of this process class are to be executed.
                     This computer is specified using its host name or IP number and TCP port
                     (see <scheduler_element name="config" attribute="tcp_port"/>).
-                <!--Bestimmt den entfernten Scheduler,
-                    auf dem die Tasks dieser Prozessklasse ausgeführt werden sollen,
-                    durch Hostnamen oder IP-Nummer und TCP-Port
-                    (s. <scheduler_element name="config" attribute="tcp_port"/>).-->
                 </p>
                 <p>
                     The remote computer must allow access with
                     <scheduler_element name="allowed_host" attribute="level" value="all"/>.
-                <!--Der entfernte JobScheduler muss den Zugriff mit
-                    <scheduler_element name="allowed_host" attribute="level" value="all"/> erlauben.-->
                 </p>
                 <p>
                     Tasks executed communicate with the controlling JobScheduler via the API.
                     However, the following points should be noted:
-                <!--Die ausgeführten Tasks kommunizieren über die API mit dem steuernden Scheduler.
-                    Dabei gibt es einige Besonderheiten:-->
                 </p>
                 <ul>
                     <li>
                         <scheduler_element name="include"/> within <scheduler_element name="script"/> 
                         is executed by a task process.
                         The file to be included is thereby read by the computer which carries out the task.
-                    <!--<scheduler_element name="include"/> innerhalb von <scheduler_element name="script"/> wird vom Task-Prozess ausgeführt.
-                        Die einzuschließende Datei wird also vom Rechner, der die Task ausführt, gelesen.-->
                     </li>
                     <li>
                         The <scheduler_method class="Subprocess" property="timeout"/> and 
                         <scheduler_method class="Task" object="spooler_task" method="add_pid"/> 
                         methods do not work.
                         The JobScheduler cannot terminate remote subprocesses whose time limits have been exceeded.
-                    <!--<scheduler_method class="Subprocess" property="timeout"/> und 
-                        <scheduler_method class="Task" object="spooler_task" method="add_pid"/> wirken nicht.
-                        Der JobScheduler kann entfernte Subprozesse, deren Frist abgelaufen ist, nicht abbrechen.-->
                     </li>
                     <li>
                         <scheduler_method class="Log" method="log_file"/> is,
                         as with almost all methods, carried out on the computer on which the JobScheduler is running
                         and thereby accesses the files of its local file system.
-                    <!--<scheduler_method class="Log" method="log_file"/> wird,
-                        wie fast alle Methoden, auf dem Rechner des Schedulers ausgeführt,
-                        greift also auf die Dateien des dortigen Dateisystems zu.-->
                     </li>
                 </ul>
                 <p>
                     Some settings are taken from the remote instead of from the controlling JobScheduler:
-                <!--Einige Einstellungen werden vom entfernten statt vom eigenen JobScheduler übernommen:-->
                 </p>
                 <ul>
                     <li>
@@ -170,48 +152,14 @@
         </xml_attribute>
 
 
-        <!-- JOE 204 -->
-        <xml_attribute name="http_heartbeat_period" type="number" initial="10">
-            <description>
-                <p>
-                    <code>http_heartbeat_period</code> specifies a number of seconds after which the Agent will send a heartbeat signal to the Master if a HTTP operation with the Master is not otherwise performed.
-                </p>
-                <p>
-                    The HTTP Heartbeat Period attribute should be a positive integer and less than the HTTP Heartbeat Timeout.
-                </p>
-                <example>
-                    <pre>&lt;process_classes&gt;
-    &lt;process_class max_processes="10" remote_scheduler="http://MY-SERVER:4445" 
-      name="agent-1" http_heartbeat_period="20" http_heartbeat_timeout="30" /&gt;
-&lt;/process_classes&gt;
-</pre>
-                </example>
-            </description>
-        </xml_attribute>
-
-        
-        <!-- JOE 204 -->
-        <xml_attribute name="http_heartbeat_timeout" type="number" initial="15">
-            <description>
-                <p>
-                    <code>http_heartbeat_timeout</code> specifies the number of seconds within which the Agent expects to receive a heartbeat from the Master.
-                </p>
-                <p>
-                    The HTTP Heartbeat Timeout attribute should be an integer and larger than the HTTP Heartbeat Period.
-                </p>
-                 <example>
-                    <pre>&lt;process_classes&gt;
-    &lt;process_class max_processes="10" remote_scheduler="http://MY-SERVER:4445" 
-      name="agent-1" http_heartbeat_period="20" http_heartbeat_timeout="30" /&gt;
-&lt;/process_classes&gt;
-</pre>
-                </example>
-           </description>
-        </xml_attribute>
-
 
     </xml_attributes>
     
+    <xml_child_elements>
+        <xml_child_element name="remote_schedulers">
+        </xml_child_element>
+    </xml_child_elements>
+
     
     <behavior_with_xml_element element="base" complete="yes"/>
 </xml_element>
