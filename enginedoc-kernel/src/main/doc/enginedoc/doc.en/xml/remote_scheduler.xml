@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
+
+<!--$Id$-->
+
+<xml_element name     = "remote_scheduler" 
+             title    = "Remote Scheduler"
+             category = "Configuration"
+             base_dir = "../"
+             parent_page = "../remote_execution.xml"
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-11-30 11:42:49 +0200 (Mon, 30 Nov 2015) $"
+>
+    <xml_parent_elements>
+        <xml_parent_element name="remote_schedulers">
+        </xml_parent_element>
+    </xml_parent_elements>
+
+    <xml_attributes>
+        
+        <xml_attribute name="remote_scheduler" type="string">
+            <description>
+                <p>
+                    The URL of the remote scheduler - e.g. <code>http://127.0.0.2:5000</code>
+                </p>
+            </description>
+        </xml_attribute>
+
+
+        <!-- JOE 204 -->
+        <xml_attribute name="http_heartbeat_period" type="number" initial="10">
+            <description>
+                <p>
+                    <code>http_heartbeat_period</code> specifies a number of seconds after which the Agent will send a heartbeat signal to the Master if a HTTP operation with the Master is not otherwise performed.
+                </p>
+                <p>
+                    The HTTP Heartbeat Period attribute should be a positive integer and less than the HTTP Heartbeat Timeout.
+                </p>
+            </description>
+        </xml_attribute>
+
+        
+        <!-- JOE 204 -->
+        <xml_attribute name="http_heartbeat_timeout" type="number" initial="15">
+            <description>
+                <p>
+                    <code>http_heartbeat_timeout</code> specifies the number of seconds within which the Agent expects to receive a heartbeat from the Master.
+                </p>
+                <p>
+                    The HTTP Heartbeat Timeout attribute should be an integer and larger than the HTTP Heartbeat Period.
+                </p>
+           </description>
+        </xml_attribute>
+
+    </xml_attributes>
+    
+
+    <description>
+        <p>
+            Defines a remote JobScheduler.
+        </p>
+    </description>
+    
+    <behavior_with_xml_element element="base" complete="yes"/>
+
+                 <example>
+                    <pre>&lt;process_class  max_processes="10"&gt;
+    &lt;remote_schedulers&gt;
+        &lt;remote_scheduler remote_scheduler="http://127.0.0.2:5000"
+               http_heartbeat_period="10"
+               http_heartbeat_timeout="15"/&gt;
+    &lt;/remote_schedulers&gt;
+&lt;/process_class&gt;
+</pre>
+                </example>
+
+</xml_element>

@@ -8,8 +8,8 @@
 <description 
     title    = "XML Configuration" 
     base_dir = ""
-    author   = "$Author: jz $"
-    date     = "$Date: 2012-06-12 21:42:49 +0200 (Di, 12 Jun 2012) $"
+    author   = "$Author: aa $"
+    date     = "$Date: 2015-12-01 21:42:49 +0200 (Tu, 01 Dec 2015) $"
 >
 
 		<scheduler_keyword keyword="Configuration"/>
@@ -159,7 +159,15 @@
         &lt;<scheduler_a href="xml/process_classes.xml">process_classes</scheduler_a> ignore  = "no">
             &lt;<scheduler_a href="xml/process_class.xml">process_class</scheduler_a> max_processes = "…"
                            name          = "…"
-                           spooler_id    = "…"/>
+                           spooler_id    = "…">
+                &lt;<scheduler_a href="xml/remote_schedulers.xml">remote_schedulers</scheduler_a> ignore  = "no">
+                    &lt;<scheduler_a href="xml/remote_scheduler.xml">remote_scheduler</scheduler_a> 
+                        remote_scheduler       = "…"
+                        http_heartbeat_period  = "…"
+                        http_heartbeat_timeout  = "…">
+                    &lt;/remote_scheduler>
+                &lt;/remote_schedulers>
+            &lt;/process_class>
             …
         &lt;/process_classes>
 
@@ -251,6 +259,15 @@
                     &lt;<scheduler_a href="xml/include.xml">include</scheduler_a> file="…"/>
                     &lt;![CDATA[ <i>program-code</i>… ]]&gt;
                 &lt;/script>
+          <!-- JS-1173 -->
+          <!--<i>or</i>
+                &lt;<scheduler_a href="xml/process.xml">process</scheduler_a> file         = "…"
+                         ignore_error = "no"
+                         ignore_signal= "no" 
+                         log_file     = ""
+                         param        = ""  >
+                &lt;/process>-->
+
                 &lt;<scheduler_a href="xml/monitor.xml">monitor</scheduler_a> name         = "…"
                          ordering     = "…">
                    &lt;<scheduler_a href="xml/script.xml">script language="…" …></scheduler_a>…&lt;script/>

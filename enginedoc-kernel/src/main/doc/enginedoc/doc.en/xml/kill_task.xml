@@ -8,8 +8,6 @@
              title    = ""
              base_dir = "../"
              parent_page = "../xml_commands.xml"
-             author   = "$Author: jz $"
-             date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
              author   = "$Author: aa $"
              date     = "$Date: 2015-11-30 21:25:54 +0200 (Mo, 30 Nov 2015) $">
 
