@@ -9,8 +9,8 @@
              title    = "Individual Parameters"
              base_dir = "../"
              parent_page = "../konfiguration.xml"
-             author   = "$Author: jz $"
-             date     = "$Date: 2012-06-12 21:25:54 +0200 (Di, 12 Jun 2012) $">
+             author   = "$Author: aa $"
+             date     = "$Date: 2015-12-04 21:25:54 +0200 (Fr, 04 Dec 2015) $">
 
     <description>
         <p>
@@ -262,9 +262,77 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
                 The standard load balancing method distributes orders mainly to the JobScheduler that initiates order execution and tends to cause this JobScheduler to work near to its allowed number of processes.
                 Order distribution only occurs when one JobScheduler is running at full capacity.
             </p>
+            <p>
+            See also: <a href="../distributed_orders.xml#use_option__distributed-orders">distributed orders</a>
             <br/>
-            see also: <a href="../distributed_orders.xml#use_option__distributed-orders">distributed orders</a>
-
+            <br/>
+            </p>
+            <li>
+                <a name="scheduler.agent.keep_alive"/>
+                <b>scheduler.agent.keep_alive</b>
+                <p>
+                    The JobScheduler Master and Classic Agent can be configured to prevent connections from timing out by 
+                    adding a <code>scheduler.agent.keep_alive</code> parameter to the <code>&lt;params&gt;</code> section 
+                    of the Master's scheduler.xml file. 
+                    This file is located in the <code>$SCHEDULER_DATA/config</code> folder, 
+                    where <code>$SCHEDULER_DATA</code> is the directory used for JobScheduler's configuration and log files.
+                </p>
+                <example>
+                    <pre>&lt;params&gt;
+   &lt;param name="scheduler.agent.keep_alive" value="300" /&gt;
+&lt;/params&gt;</pre>
+                </example>
+                <p>
+                    
+                </p>
+                <ul>
+                    <li>
+                        The value attribute sets the interval in seconds between keep-alive packets.<br/>
+                        A duration lower than 30s will be silently replaced by 30s.
+                    </li>
+                    <li>
+                        Keep-alive packets will not be sent if the parameter is not set or if the value attribute is empty.
+                    </li>
+                    <li>
+                        The keep-alive parameter will be forwarded to the Agent along with other task configuration parameters 
+                        for use when the Agent initiates a connection.
+                    </li>
+                    <li>
+                        Keep-alive packets will be sent across the network by the JobScheduler (either Master or Agent) that initiates a task.
+                    </li>
+                </ul>
+                <p>
+                    <b>JobScheduler Master</b>
+                </p>
+                <ul>
+                    <li>
+                        The Master sends keep-alive commands to Classic Agents (up to and including Classic Agent release 1.9) via TCP connections.
+                    </li>
+                    <li>
+                        The Master log will show a <scheduler_message code="SCHEDULER-711"/> message at the info level 
+                        stating that a keep-alive command has been successfully sent.
+                    </li>
+                </ul>
+                <p>
+                    <b>Master / Agent Feature Compatibility</b>
+                </p>
+                <ul>
+                    <li>
+                        See the <a href="https://kb.sos-berlin.com/x/igLj">Master / Agent Compatibility article</a> for detailed information.
+                    </li>
+                </ul>
+                <p>
+                    <b>Delimiation</b>
+                </p>
+                <ul>
+                    <li>
+                        Keep-alive packets are not created if <a href="https://kb.sos-berlin.com/x/NwCs">Remote File Watching</a> is performed by the Agent.
+                    </li>
+                    <li>
+                        Keep-alive packets are only sent for running jobs.
+                    </li>
+                </ul>
+            </li>
         </ul>
                 
         <a name="param_job" />
@@ -276,14 +344,14 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
         </p>
 
         <a name="param_auftrag" />
-        <h3>Auftrags Parameters</h3>
+        <h3>Order Parameters</h3>
     <!--<h3>Auftrags-Parameter</h3>-->
         <p>
             Order parameters can be called using the <scheduler_method class="Order" method="params" /> method.
         <!--Parameter eines Auftrags können mit der Methode <scheduler_method class="Order" method="params" /> abgerufen werden.-->
         </p>
-
     </description>
+
 
     <xml_parent_elements>
         <xml_parent_element name="params">
@@ -292,7 +360,7 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
 
     <xml_attributes>
         <xml_attribute name="name" title="Unique Names"/>
-		<!--<xml_attribute name="name" title="Eindeutiger Name"/>-->
+    <!--<xml_attribute name="name" title="Eindeutiger Name"/>-->
         <xml_attribute name="value" subst_env="yes">
             <description>
             </description>
