@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0"?>
-<?xml-stylesheet href="../scheduler.xsl" type="text/xsl"?>
+<?xml-stylesheet href="../../scheduler.xsl" type="text/xsl"?>
 
 <messages
     xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
@@ -234,11 +234,8 @@
         </message>
 
         <message code="SCHEDULER-121">
-            <text xml:lang="de">
-                <title>Die Sicherheitseinstellungen lassen die Operation nicht zu</title>
-            </text>
             <text xml:lang="en">
-                <title>The security settings do not allow this operation</title>
+                <title>The security settings do not allow this operation (or JobScheduler is waiting for database)</title>
             </text>
         </message>
 
@@ -422,14 +419,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-142">
+        <!--message code="SCHEDULER-142">
             <text xml:lang="de">
                 <title>Relativer Datenbankdateiname kann bei need_db=yes und log_dir=*stderr nicht verwendet werden</title>
             </text>
             <text xml:lang="en">
                 <title>Relative database file path cannot be used with need_db=yes and log_dir=*stderr</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-143">
             <text xml:lang="de">
@@ -695,14 +692,14 @@
             </text>
         </message-->
 
-        <message code="SCHEDULER-177">
+        <!--message code="SCHEDULER-177">
             <text xml:lang="de">
                 <title>Java steht nicht zur Verfügung (siehe Fehler beim Start des Schedulers)</title>
             </text>
             <text xml:lang="en">
                 <title>Java is not available (see error message when JobScheduler started)</title>
             </text>
-        </message>
+        </message-->
 
         <!--message code="SCHEDULER-178">
             <text xml:lang="de">
@@ -935,14 +932,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-206">
+        <!--message code="SCHEDULER-206">
             <text xml:lang="de">
                 <title>need_db=<p1/>, erlaubt sind aber nur yes, no, strict</title>
             </text>
             <text xml:lang="en">
                 <title>With need_db=<p1/>, only "yes", "no" and "strict" are allowed</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-207">
             <text xml:lang="de">
@@ -1455,14 +1452,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-265">
+        <!--message code="SCHEDULER-265">
             <text xml:lang="de">
                 <title>SCHEDULER WIRD BEENDET WEGEN FEHLERS BEIM ZUGRIFF AUF DATENBANK</title>
             </text>
             <text xml:lang="en">
                 <title>SCHEDULER IS ABORTING DUE TO A PROBLEM WITH THE DATABASE: <p1/></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-266">
             <text xml:lang="de">
@@ -1500,14 +1497,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-270">
+        <!--message code="SCHEDULER-270">
             <text xml:lang="de">
                 <title>Historie lässt sich nicht öffnen: <p1/></title>
             </text>
             <text xml:lang="en">
                 <title>Cannot open history: <p1/></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-271">
             <text xml:lang="de">
@@ -1659,14 +1656,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-288">
-            <text xml:lang="de">
-                <title>-reuse-port (SO_REUSEADDR): <p1/> wird verwendet, auch wenn er schon von einer anderen Anwendung belegt ist</title>
-            </text>
+        <!--message code="SCHEDULER-288">
             <text xml:lang="en">
                 <title>-reuse-port (SO_REUSEADDR): using <p1/>, but another application can use it too</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-289">
             <text xml:lang="de">
@@ -1723,14 +1717,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-294">
+        <!--message code="SCHEDULER-294">
             <text xml:lang="de">
                 <title>Die Java-Klasse <p1/> konnte nicht geladen werden. Die Java-Quelle wird neu übersetzt, mal sehen, ob's dann geht</title>
             </text>
             <text xml:lang="en">
                 <title>Java class <p1/> could not be loaded. Java source is being recompiled before retrying </title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-295">
             <text xml:lang="de">
@@ -1904,11 +1898,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-314">
+        <!--message code="SCHEDULER-314">
             <text xml:lang="en">
                 <title>Cannot open database. JobScheduler is aborting immediately because of need_db=<p1/></title>
             </text>
-        </message>
+        </message-->
 
         <!--<message code="SCHEDULER-315">
             <text xml:lang="en">
@@ -2198,15 +2192,15 @@
 
         <message code="SCHEDULER-357">
             <text xml:lang="en">
-                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs a database</title>
+                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs role 'scheduler'</title>
             </text>
         </message>
 
-        <message code="SCHEDULER-358">
+        <!--message code="SCHEDULER-358">
             <text xml:lang="en">
-                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs a database. need_db=<p1/> is not allowed</title>
+                <title>This is a member of a cluster (option -exclusive or -distributed-orders), and therefore needs role 'scheduler'</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-359">
             <text xml:lang="en">
@@ -2300,7 +2294,7 @@
 
         <message code="SCHEDULER-373">
             <text xml:lang="en">
-                <title>UNEXPECTED DEACTIVATION BY SCHEDULER MEMBER <p1/></title>
+                <title>UNEXPECTED DEACTIVATION BY JOBSCHEDULER MEMBER <p1/></title>
             </text>
         </message>
 
@@ -2904,45 +2898,45 @@
             </text>
         </message>
 
-       <message code="SCHEDULER-478">
-          <text xml:lang="en">
-             <title>Could not re-open '<p1/>' log file. Following lines are lost. <p2/></title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-479">
-          <text xml:lang="en">
-             <title>No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-480">
-          <text xml:lang="en">
-             <title>No appropriate config element found in scheduler.xml - please remove attribute @spooler_id of the config-element or start JS with the appropriate -id option.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-481">
-          <text xml:lang="en">
-             <title>Method '<p1/>' with signature '<p2/>' is not implemented.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-482">
-          <text xml:lang="en">
-             <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-483">
-          <text xml:lang="en">
-             <title>Order parameter 'scheduler.remote_scheduler' cannot be used in a cluster (option -exclusive or -distributed-orders)</title>
-          </text>
-       </message>
-
-       <message code="SCHEDULER-484">
+        <message code="SCHEDULER-478">
             <text xml:lang="en">
-                <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs</title>
+                <title>Could not re-open '<p1/>' log file. Following lines are lost. <p2/></title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-479">
+            <text xml:lang="en">
+                <title>No entry config/@spooler_id='<p1/>' found in configuration file 'scheduler.xml'.</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-480">
+            <text xml:lang="en">
+                <title>No appropriate config element found in scheduler.xml - please remove attribute @spooler_id of the config-element or start JS with the appropriate -id option.</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-481">
+            <text xml:lang="en">
+                <title>Method '<p1/>' with signature '<p2/>' is not implemented.</title>
+            </text>
+        </message>
+
+        <!--message code="SCHEDULER-482">
+            <text xml:lang="en">
+                <title>Language '<p1/>' is not supported on 64 bit. Please check the script element.</title>
+            </text>
+        </message-->
+
+        <message code="SCHEDULER-483">
+            <text xml:lang="en">
+                <title>Order parameter 'scheduler.remote_scheduler' cannot be used in a cluster (option -exclusive or -distributed-orders)</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-484">
+            <text xml:lang="en">
+                <title>Order parameter 'scheduler.remote_scheduler' can be used only for shell script jobs and is ignored for API jobs</title>
             </text>
         </message>
 
@@ -2958,6 +2952,35 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-487">
+            <text xml:lang="en">
+                <title>Role '<p1/>' needed for this operation</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-488">
+            <text xml:lang="en">
+                <title>This remote JobScheduler '<p1/>' is not accessible: <p2/></title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-489">
+            <text xml:lang="en">
+                <title>No remote JobScheduler is accessible. Waiting before trying again</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-490">
+            <text xml:lang="en">
+                <title>The Windows operating system does not support Unix signals (like SIGTERM). kill_task with timeout > 0 is not supported</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-491">
+            <text xml:lang="en">
+                <title>The process class (<p1/>) of an API task cannot be changed (to <p2/>) between two order steps</title>
+            </text>
+        </message>
     </messages>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~INFO-MELDUNGEN-->
@@ -3454,14 +3477,14 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-959">
+        <!--message code="SCHEDULER-959">
             <text xml:lang="de">
                 <title>Historie wird von Datenbank auf Dateien umgeschaltet</title>
             </text>
             <text xml:lang="en">
                 <title>Switching history from database to plain files</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-960">
             <text xml:lang="en">
@@ -3632,7 +3655,7 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-985">
+        <!--message code="SCHEDULER-985">
             <text xml:lang="en">
                 <title><p1>number</p1> more file orders will be added later, after previous orders have been processed</title>
             </text>
@@ -3642,7 +3665,7 @@
             <text xml:lang="en">
                 <title>Continuing reading buffered directory (as of <p1>time</p1>)</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-987">
             <text xml:lang="en">
@@ -3676,7 +3699,7 @@
 
         <message code="SCHEDULER-992">
             <text xml:lang="en">
-                <title>Order ist not longer suspended, next start <p1/></title>
+                <title>Order is no longer suspended, next start <p1/></title>
             </text>
         </message>
 
@@ -3986,7 +4009,7 @@
 
         <message code="SCHEDULER-848" weight="info">
             <text xml:lang="en">
-                <title>Task pid=<p1/> started for remote scheduler</title>
+                <title>Task pid=<p1/> started for remote scheduler <p2/></title>
             </text>
         </message>
 
@@ -4387,11 +4410,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-716" weight="warn" object="Scheduler">
+        <!--message code="SCHEDULER-716" weight="warn" object="Scheduler">
             <text xml:lang="en">
                 <title>jobs are not allowed for the current licence-key(s)</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-717" weight="warn" object="Scheduler">
             <text xml:lang="en">
@@ -4405,11 +4428,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-719" weight="error" object="Job_chain">
+        <!--message code="SCHEDULER-719" weight="error" object="Job_chain">
             <text xml:lang="en">
-                <title>max_orders="<p1/>" but <p2/> orders are now started</title>
+                <title>max_orders="<p1/>" but <p2/> orders are now started (excluding <p3/> orders ignoring max_orders)</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-720" weight="info" object="Scheduler">
             <text xml:lang="en">
@@ -4444,6 +4467,12 @@
         <message code="SCHEDULER-725">
             <text xml:lang="en">
                 <title>Persistent Order deleted from database</title>
+            </text>
+        </message>
+
+        <message code="SCHEDULER-727">
+            <text xml:lang="en">
+                <title>Keep-alive package sent to Agent</title>
             </text>
         </message>
 
