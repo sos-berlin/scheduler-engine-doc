@@ -4,6 +4,7 @@
 Thumbs.db
 
 # MAVEN
+.surefire-*
 /target/
 
 # ECLIPSE
