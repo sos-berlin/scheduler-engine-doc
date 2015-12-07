@@ -314,15 +314,16 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
                     </li>
                 </ul>
                 <p>
-                    <b>Master / Agent Feature Compatibility</b>
+                    <b>Connection Keep-Alive for Master and Agent</b>
                 </p>
                 <ul>
                     <li>
-                        See the <a href="https://kb.sos-berlin.com/x/igLj">Master / Agent Compatibility article</a> for detailed information.
+                        See the <a href="https://kb.sos-berlin.com/x/igLj">Connection Keep-Alive for Master and Agent</a> 
+                        article for more detailed information.
                     </li>
                 </ul>
                 <p>
-                    <b>Delimiation</b>
+                    <b>Delimitation</b>
                 </p>
                 <ul>
                     <li>
