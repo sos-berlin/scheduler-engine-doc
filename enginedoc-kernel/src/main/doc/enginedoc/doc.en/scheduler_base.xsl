@@ -1072,7 +1072,10 @@
                     <hr/>
                 </xsl:if>
 
+				<!--
                 <xsl:apply-templates select="document( 'common-engine-files/register_data.xml' )/*"/>
+				-->
+                <xsl:apply-templates select="document( 'register_data.xml' )/*"/>
 
                 <xsl:call-template name="bottom"/>
             </body>
@@ -1622,6 +1625,7 @@
 
         <xsl:choose>
             <xsl:when test="$level or $show_text">
+		
                 <table cellspacing="0" cellpadding="0">
                     <tr>
                         <xsl:if test="$level">
@@ -1631,7 +1635,7 @@
                                 </xsl:call-template>
                             </td>
                         </xsl:if>
-
+						
                         <td style="padding-right: 1em">
                             <xsl:call-template name="scheduler_message_code">
                                 <xsl:with-param name="code" select="@code"/>
@@ -1645,10 +1649,11 @@
                         </td>
                     </tr>
                 </table>
+	
             </xsl:when>
-            
             <xsl:otherwise>
                 <xsl:element name="span">
+
                     <xsl:attribute name="title">
                         <xsl:call-template name="show_message_text">
                             <xsl:with-param name="code" select="$code"/>
@@ -1658,6 +1663,7 @@
                     <xsl:call-template name="scheduler_message_code">
                         <xsl:with-param name="code" select="@code"/>
                     </xsl:call-template>
+
                 </xsl:element>
             </xsl:otherwise>
         </xsl:choose>
@@ -1682,14 +1688,17 @@
                 <xsl:value-of select="$code"/>
             </xsl:element>
         </xsl:element>
-        
+
     </xsl:template>
     
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~show_message_text-->
 
     <xsl:template name="show_message_text">
         <xsl:param name="code"/>
+		<!--
         <xsl:apply-templates select="document('common-engine-files/messages/scheduler_messages.xml')/messages//message[ @code=$code ]/text[ @xml:lang='en' ]/title"/>
+		-->
+        <xsl:apply-templates select="document('messages/scheduler_messages.xml')/messages//message[ @code=$code ]/text[ @xml:lang='en' ]/title"/>
     </xsl:template>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~scheduler_ignore-->
@@ -2400,7 +2409,8 @@
         <xsl:apply-templates select="." mode="without_title">
             <xsl:with-param name="show_level" select="$show_level"/>
         </xsl:apply-templates>
-    </xsl:template>
+
+	</xsl:template>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~messages-->
 
@@ -2424,7 +2434,7 @@
 
         <div class="message">
             <table cellspacing="0" cellpadding="0">
-                <xsl:apply-templates select="$message_set[ @level='error' ]">
+				<xsl:apply-templates select="$message_set[ @level='error' ]">
                     <xsl:sort select="@code"/>
                     <xsl:with-param name="show_level" select="$show_level"/>
                 </xsl:apply-templates>
@@ -2433,7 +2443,6 @@
                     <xsl:sort select="@code"/>
                     <xsl:with-param name="show_level" select="$show_level"/>
                 </xsl:apply-templates>
-
                 <xsl:apply-templates select="$message_set[ @level='info' ]">
                     <xsl:sort select="@code"/>
                     <xsl:with-param name="show_level" select="$show_level"/>
@@ -2444,6 +2453,7 @@
                     <xsl:sort select="@code"/>
                     <xsl:with-param name="show_level" select="$show_level"/>
                 </xsl:apply-templates>
+				
             </table>
         </div>
         
@@ -2455,6 +2465,7 @@
         <xsl:param name="show_level"/>
 
         <tr>
+
             <xsl:if test="$show_level">
                 <td style="padding-right: 1ex">
                     <xsl:call-template name="message_level">
@@ -2468,25 +2479,26 @@
                     <xsl:with-param name="code" select="@code"/>
                 </xsl:call-template>
             </td>
-
+	
+<!--
             <td style="padding-left: 2ex">
                 <xsl:call-template name="show_message_text">
                     <xsl:with-param name="code" select="@code"/>
                 </xsl:call-template>
-                
-                <xsl:text>&#160;</xsl:text> <!-- Ein Zeichen <code>, um Zeilenhöhe zu halten -->
+                <xsl:text>&#160;</xsl:text>
                 <br/>
-                
                 <xsl:apply-templates select="description"/>
             </td>
+-->			
         </tr>
+
     </xsl:template>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~message_level-->
 
     <xsl:template name="message_level">
         <xsl:param name="level"/>
-                  
+
         <xsl:if test="@level">
             <code>
                 <xsl:choose>
@@ -2507,6 +2519,7 @@
                 </xsl:choose>
             </code>
         </xsl:if>
+
     </xsl:template>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~command_line-->
@@ -3002,6 +3015,7 @@
                 <xsl:apply-templates select=".//message" mode="tr"/>
             </tbody>
         </table>
+		
     </xsl:template>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~messages-->
@@ -3102,9 +3116,11 @@
         </xsl:if>
 
 
+<!--		
         <xsl:variable name="files" select="document( 'files.xml' )/files/file 
                                             [    document( @path )//scheduler_message [ @code=current()/@code ]
                                               or document( @path )//message           [ @code=current()/@code ] ]"/>
+
         <xsl:if test="$files">
             <tr>
                 <td></td>
@@ -3119,10 +3135,10 @@
                             <xsl:with-param name="base_dir" select="$my_root/@base_dir"/>
                             <xsl:with-param name="quote" select="'yes'"/>
                         </xsl:call-template>
-
+-->
                         <!--xsl:variable name="references" select="document( @path )/*/scheduler_message [ @code=current()/@code ]
                                                                  | document( @path )/*/message           [ @code=current()/@code ] "/-->
-                        
+<!--																 
                         <xsl:if test="position() &lt; last()">
                             <xsl:text>, &#160; </xsl:text>
                         </xsl:if>
@@ -3130,7 +3146,7 @@
                 </td>
             </tr>
         </xsl:if>
-
+-->		
         <xsl:if test="position() != last()">
             <tr>
                 <td colspan="99" style="border-bottom: 1px solid white; line-height: 4pt">
@@ -3138,6 +3154,7 @@
                 </td>
             </tr>
         </xsl:if>
+
 
     </xsl:template>
 
