@@ -91,6 +91,15 @@
               </td>
           </tr>
           <tr>
+              <td><b><a href="#scheduler.agent.keep_alive">scheduler.agent.keep_alive</a></b></td>
+              <td>-</td>
+              <td>
+                  Prevents connections between a JobScheduler Master and Classic Agent from timing out.
+                  The value attribute sets the interval in seconds between keep-alive packets.
+                  Keep-alive packets will not be sent if the parameter is not set or if the value attribute is empty.
+              </td>
+          </tr>
+          <tr>
             <th width="30%"></th>
             <th width="10%"></th>
             <th width="70%"></th>
