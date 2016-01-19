@@ -36,6 +36,12 @@
                 <p>
                     The HTTP Heartbeat Period attribute should be a positive integer and less than the HTTP Heartbeat Timeout.
                 </p>
+                <p>
+                    The HTTP Heartbeat Timeout attribute is only available with JobScheduler Universal Agents 
+                    (available with JobScheduler 1.10 and later). 
+                    JobScheduler Classic Agents (version 1.9) use keep-alive packets.
+                    See the <scheduler_element name="param" /> element for more information.
+                </p>
             </description>
         </xml_attribute>
 
@@ -48,6 +54,12 @@
                 </p>
                 <p>
                     The HTTP Heartbeat Timeout attribute should be an integer and larger than the HTTP Heartbeat Period.
+                </p>
+                <p>
+                    The HTTP Heartbeat Timeout attribute is only available with JobScheduler Universal Agents 
+                    (available with JobScheduler 1.10 and later). 
+                    JobScheduler Classic Agents (version 1.9) use keep-alive packets.
+                    See the <scheduler_element name="param" /> element for more information.
                 </p>
            </description>
         </xml_attribute>

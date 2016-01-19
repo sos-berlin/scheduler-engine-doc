@@ -315,11 +315,11 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
                 </p>
                 <ul>
                     <li>
-                        The Master sends keep-alive commands to Classic Agents (up to and including Classic Agent release 1.9) via TCP connections.
+                        The Master sends keep-alive packets to Classic Agents (up to and including Classic Agent release 1.9) via TCP connections.
                     </li>
                     <li>
                         The Master log will show a <scheduler_message code="SCHEDULER-711"/> message at the info level 
-                        stating that a keep-alive command has been successfully sent.
+                        stating that a keep-alive packet has been successfully sent.
                     </li>
                 </ul>
                 <p>
@@ -340,6 +340,17 @@ echo JOB_PARAM=%MYPREFIX_JOB_PARAM%
                     </li>
                     <li>
                         Keep-alive packets are only sent for running jobs.
+                    </li>
+                </ul>
+                <p>
+                    <b>Important</b>
+                </p>
+                <ul>
+                    <li>
+                        The JobScheduler Universal Agent (available with JobScheduler 1.10 and later) does not use keep-alive packets. 
+                        Instead,  the Universal Agent sends so-called heartbeats using a secure HTTP connection.
+                        See the <scheduler_element name="remote_scheduler" /> element for information about 
+                        the configuration of heartbeats. 
                     </li>
                 </ul>
             </li>
