@@ -416,25 +416,12 @@
             <p>
                 The exit code resulting from an operating system process
                 executing a task is not relevant here
-                and, in contrast to jobs with <scheduler_element name="process"/> or
+                and, in contrast to jobs with 
                 <scheduler_element name="script" attribute="language" value="shell"/>,
                 is not automatically handed over to this property.
-            <!--Der Exit-Codes des (Betriebssystem-)Prozesses, der die Task ausführt, ist ohne Belang und wird nicht übernommen,
-                im Gegensatz zu Jobs mit <scheduler_element name="process"/> oder
-                <scheduler_element name="script" attribute="language" value="shell"/>.-->
+
             </p>
-            <!--ul>
-                <li>
-                    Jobs mit <scheduler_element name="process"/> oder 
-                    <scheduler_element name="script" attribute="language" value="shell"/>:
-                    Der Exit-Code des Prozesses ist der Exit-Code der (Scheduler-)Task.
-                    Wenn der Prozess mit Signal endet (nur Unix), wird der negative Wert des Signals zum Exit-Code.
-                </li>
-                <li>
-                    Andere Jobs, also solche, die Zugriff auf die API haben:
-                    Der Exit-Codes des Prozesses, der die Task ausführt, ist ohne Belang und wird nicht übernommen.
-                </li>
-            </ul-->
+
             <!--p>
                 Wenn der Prozess der Task endet mit Exit-Code ungleich 0 (Fehler <scheduler_message code="SCHEDULER-280"/>).
                 Der JobScheduler setzt <scheduler_method class="Task" object="spooler_task" property="exit_code"/><code>=1</code>.
@@ -456,12 +443,6 @@
                     <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/terminateprocess.asp"><code>TerminateProcess(,</code><i class="small">exitcode</i><code>)</code></a>
                     abgebrochen wird.
                 </li- ->
-                <!- -li>
-                    Der Exit-Code einer Nicht-API-Task 
-                    (<scheduler_element name="process"/> oder <scheduler_element name="script" language="shell"/>, 
-                    wo diese Methode allerdings nicht benutzt werden kann) wird übernommen,
-                    wenn er nicht 0 ist.
-                </li- ->
             </ul-->
             <p>
                 The exit code determines the commands to be subsequently carried out.
@@ -475,9 +456,6 @@
             <!--Der Exit-Codes hat keinen Einfluss darauf, ob der Job gestoppt wird
                 (eine Fehlermeldung der Task lässt den Job stoppen).-->
             </p>
-            <!--p>
-                Für Tasks ohne API siehe <scheduler_element name="process"/>.
-            </p-->
         </description>
 
         <example programming_language="javax.script">
@@ -1023,14 +1001,11 @@ spooler_log.info( "order.id=" + order.id + ", order.title=" + order.title );</pr
                 angegeben ist und dem Dateinamen zusammengesetzt.-->
             </p>
             <p>
-                The non-API <scheduler_element name="process"/> and 
+                The non-API 
                 <scheduler_element name="script" attribute="language" value="shell"/> jobs make the content of
                 <scheduler_method class="Task" property="trigger_files"/>
                 available to the <code>SCHEDULER_TASK_TRIGGER_FILES</code> environment variable.
-            <!--Nicht-API-Jobs (<scheduler_element name="process"/> und <scheduler_element name="script" attribute="language" value="shell"/>)
-                steht der Inhalt von
-                <scheduler_method class="Task" property="trigger_files"/>
-                in der Umgebungsvariablen <code>SCHEDULER_TASK_TRIGGER_FILES</code> zur Verfügung.-->
+
             </p>
             <p>
                 See <scheduler_method class="Job" method="start_when_directory_changed"/> and
