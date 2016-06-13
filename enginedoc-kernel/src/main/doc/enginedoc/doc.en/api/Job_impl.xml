@@ -34,6 +34,10 @@
     <example programming_language="javax.script">
         <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
+	
+	<example programming_language="powershell">
+        <pre>$spooler_log.debug( "The working directory of the JobScheduler is " + $spooler.directory() )</pre>
+    </example>
 
     <example programming_language="javascript">
         <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
@@ -66,6 +70,10 @@
     <example programming_language="javax.script">
         <pre>spooler_log.info( "Something has happened" );</pre>
     </example>
+	
+	<example programming_language="powershell">
+        <pre>$spooler_log.info( "something has happened" )</pre>
+    </example>
 
     <example programming_language="perl">
         <pre>$spooler_log->info( 'Something has happened' );</pre>
@@ -94,6 +102,10 @@
 
     <example programming_language="javax.script">
         <pre>spooler_log.info( "The name of this job is " + spooler_job.name() );</pre>
+    </example>
+	
+	<example programming_language="powershell">
+        <pre>$spooler_log.info( "The name of this job is " + $spooler_job.name() )</pre>
     </example>
 
     <example programming_language="javascript">
