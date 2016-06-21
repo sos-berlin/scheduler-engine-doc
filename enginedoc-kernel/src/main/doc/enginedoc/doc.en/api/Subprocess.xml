@@ -329,6 +329,13 @@ var subprocess = spooler_task.create_subprocess();
 subprocess.start( subprocess.env().substitute( "${MY_HOME}/my_program" ) );
 subprocess.wait_for_termination();</pre>
     </example>
+	
+	 <example programming_language="powershell">
+        <pre>
+$subprocess = $spooler_task.create_subprocess()
+$subprocess.start( $subprocess.env().substitute( "${MY_HOME}/my_program" ) )
+$subprocess.wait_for_termination()</pre>
+    </example>
 
     <example programming_language="javascript">
         <pre>var subprocess = spooler_task.create_subprocess();
@@ -383,6 +390,11 @@ $subprocess->wait_for_termination();</pre>
         <pre>// The following two statements have the same effect
 subprocess.set_environment( "my_variable", "my_value" );
 subprocess.env().set_value( "my_variable", "my_value" );</pre>
+    </example>
+	<example programming_language="powershell">
+        <pre># The following two statements have the same effect
+$subprocess.set_environment( "my_variable", "my_value" )
+$subprocess.env().set_value( "my_variable", "my_value" )</pre>
     </example>
     <example programming_language="javascript">
         <pre>// The following two statements have the same effect
@@ -512,6 +524,10 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
         <example programming_language="javax.script">
             <pre>spooler_task.set_priority(5);    // UNIX: reduce the priority a little</pre>
         </example>
+		
+		 <example programming_language="powershell">
+            <pre>$spooler_task.set_priority(5);    # UNIX: reduce the priority a little</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>spooler_task.priority = +5;    // UNIX: reduce the priority a little</pre>
@@ -603,6 +619,10 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
 
         <example programming_language="javax.script">
             <pre>subprocess.set_priority_class("below_normal");</pre>
+        </example>
+		
+		 <example programming_language="powershell">
+            <pre>$subprocess.set_priority_class("below_normal");</pre>
         </example>
 
         <example programming_language="javascript">

@@ -41,6 +41,10 @@
     <example programming_language="javax.script">
         <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory() );</pre>
     </example>
+	
+    <example programming_language="powershell">
+        <pre>$spooler_log.debug( "The working directory of the JobScheduler is " + $spooler.directory() );</pre>
+    </example>
 
     <example programming_language="javascript">
         <pre>spooler_log.debug( "The working directory of the JobScheduler is " + spooler.directory );</pre>
@@ -81,6 +85,10 @@
         <pre>spooler_log.info( "Something has happened" );</pre>
     </example>
 	
+	<example programming_language="powershell">
+        <pre>$spooler_log.info( "Something has happened" )</pre>
+    </example>
+	
     <example programming_language="perl">
         <pre>$spooler_log->info( 'Something has happened' );</pre>
     </example>
@@ -115,6 +123,10 @@
 
     <example programming_language="javax.script">
         <pre>spooler_log.info( "The name of this job is " + spooler_job.name() );</pre>
+    </example>
+	
+	<example programming_language="powershell">
+        <pre>$spooler_log.info( "The name of this job is " + $spooler_job.name() );</pre>
     </example>
 
     <example programming_language="javascript">
@@ -154,6 +166,10 @@
 
     <example programming_language="javax.script">
         <pre>spooler_log.info( "The task id is " + spooler_task.id() );</pre>
+    </example>
+	
+	<example programming_language="powershell">
+        <pre>$spooler_log.info( "The task id is " + $spooler_task.id() );</pre>
     </example>
 
     <example programming_language="javascript">
@@ -212,6 +228,16 @@ function spooler_task_before()
     //return false;  // Task will not be started
 }</pre>
     </example>
+	
+	 <example programming_language="powershell">
+        <pre>
+function spooler_task_before()
+{
+    $spooler_log.info( "SPOOLER_TASK_BEFORE()" );
+    return $true;   # Task will be started
+    # return $false; Task will not be started
+}</pre>
+    </example>
     
 </method>
 
@@ -247,6 +273,15 @@ function spooler_task_after()
     spooler_log.info( "SPOOLER_TASK_AFTER()" );
 }</pre>
     </example>
+	
+	 <example programming_language="powershell">
+        <pre>
+function spooler_task_after()
+{
+    $spooler_log.info( "SPOOLER_TASK_AFTER()" );
+}</pre>
+    </example>
+	
 </method>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -307,6 +342,15 @@ function spooler_process_before()
 {
     spooler_log.info( "SPOOLER_PROCESS_BEFORE()" );
     return true;   // spooler_process() will be executed
+}</pre>
+    </example>
+	
+    <example programming_language="powershell">
+        <pre>
+function spooler_process_before()
+{
+    $spooler_log.info( "SPOOLER_PROCESS_BEFORE()" );
+    return $true;   # spooler_process() will be executed
 }</pre>
     </example>
 
@@ -389,6 +433,18 @@ function spooler_task_after( spooler_process_result )
     return spooler_process_result;   // Unchanged result
 }</pre>
     </example>
+	
+	  <example programming_language="powershell">
+        <pre>
+function spooler_task_after( $spooler_process_result )
+{
+    $spooler_log.info( "SPOOLER_TASK_BEFORE()" );
+    $spooler_log.info( "$spooler_process() didn't throw an exception and delivered " + $spooler_process_result );
+
+    return $spooler_process_result;   # Unchanged result
+}</pre>
+    </example>
+	
 </method>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

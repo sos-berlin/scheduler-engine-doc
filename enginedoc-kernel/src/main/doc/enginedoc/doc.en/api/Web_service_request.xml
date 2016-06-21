@@ -69,6 +69,10 @@
         <example programming_language="javax.script">
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order().web_service_operation().request().header( "Content-Type" ) );</pre>
         </example>
+		
+		<example programming_language="powershell">
+            <pre>$spooler_log.info( "Content-Type: " + $spooler_task.order().web_service_operation().request().header( "Content-Type" ) )</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order.web_service_operation.request.header( "Content-Type" ) );</pre>
@@ -131,6 +135,15 @@ spooler_log.info( request.header( "Content-Type" ) );   // ==> text/xml; charset
 spooler_log.info( request.content_type() );             // ==> text/xml
 spooler_log.info( request.charset_name() );             // ==> utf-8</pre>
         </example>
+		
+		<example programming_language="powershell">
+            <pre>$request = $spooler_task.order().web_service_operation().request()
+
+$spooler_log.info( $request.header( "Content-Type" ) )   # ==> text/xml; charset=utf-8
+$spooler_log.info( $request.content_type() )             # ==> text/xml
+$spooler_log.info( $request.charset_name() )             # ==> utf-8</pre>
+        </example>
+
 
         <example programming_language="javascript">
             <pre>var request = spooler_task.order.web_service_operation.request;
@@ -143,9 +156,9 @@ spooler_log.info( request.charset_name );               // ==> utf-8</pre>
         <example programming_language="perl">
             <pre>my $request = $spooler_task->order->web_service_operation->request;
 
-$spooler_log->info( $request->header( 'Content-Type' ) );   # ==> text/xml; charset=utf-8
-$spooler_log->info( $request->content_type );               # ==> text/xml
-$spooler_log->info( $request->charset_name );               # ==> utf-8</pre>
+$spooler_log->info( $request->header( 'Content-Type' ) );    # ==> text/xml; charset=utf-8
+$spooler_log->info( $request->content_type );                # ==> text/xml
+$spooler_log->info( $request->charset_name );                # ==> utf-8</pre>
         </example>
 
     </property>

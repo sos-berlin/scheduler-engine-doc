@@ -160,6 +160,20 @@ spooler_log.info( variable_set.xml() );
 spooler_log.info( "nachname=" + variable_set.value( "surname" ) );
 spooler_log.info( "vorname =" + variable_set.value( "christian name" ) );</pre></example>
 
+	 <example programming_language="powershell">
+        <pre>$variable_set = $spooler.create_variable_set();
+$spooler_log.info( $variable_set.xml() );   # Liefert &lt;?xml version='1.0'?>&lt;sos.spooler.variable_set/>
+
+$variable_set.set_xml( "&lt;?xml version='1.0'?>" +
+                      "&lt;params>" +
+                          "&lt;param name='surname' value='Meier'/>" +
+                          "&lt;param name='christian name' value='Hans'/>" +
+                      "&lt;/params>" );
+
+$spooler_log.info( $variable_set.xml() );
+$spooler_log.info( "nachname=" + $variable_set.value( "surname" ) );
+$spooler_log.info( "vorname =" + $variable_set.value( "christian name" ) );</pre></example>
+
     <example programming_language="javascript">
         <pre>var variable_set = spooler.create_variable_set();
 spooler_log.info( variable_set.xml );   // Liefert &lt;?xml version='1.0'?>&lt;sos.spooler.variable_set/>
@@ -222,6 +236,24 @@ $spooler_log->info( 'vorname =' . $variable_set->value( 'christian name' ) );</p
     </title>
 
     <example programming_language="javax.script">
+        <pre>
+var variable_set = spooler.create_variable_set();
+spooler_log.info( "\"" + variable_set.names() + "\"" );    // ==> ""
+
+variable_set.set_var( "variable_1", "edno" );
+variable_set.set_var( "variable_2", "dwa" );
+
+spooler_log.info( "\"" + variable_set.names() + "\"" );    // ==> "variable_1;variable_2"
+
+var t = new java.util.StringTokenizer( variable_set.names(), ";" );
+while( t.hasMoreTokens() )
+{
+    name = t.nextToken();
+    spooler_log.info( name + "=" + variable_set.var( name ) );
+}</pre>
+    </example>
+	
+	 <example programming_language="javax.script">
         <pre>
 var variable_set = spooler.create_variable_set();
 spooler_log.info( "\"" + variable_set.names() + "\"" );    // ==> ""
@@ -348,6 +380,10 @@ while( t.hasMoreTokens() )
 
     <example programming_language="javax.script">
         <pre>subprocess.start( subprocess.env().substitute( "${MY_HOME}/my_program" ) );</pre>
+    </example>
+	
+    <example programming_language="powershell">
+        <pre>$subprocess.start( $subprocess.env().substitute( "${MY_HOME}/my_program" ) )</pre>
     </example>
 
     <example programming_language="javascript">

@@ -71,6 +71,10 @@
         <example programming_language="javax.script">
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order().web_service_operation().response().header( "Content-Type" ) );</pre>
         </example>
+		
+		<example programming_language="powershell">
+            <pre>$spooler_log.info( "Content-Type: " + $spooler_task.order().web_service_operation().response().header( "Content-Type" ) )</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order.web_service_operation.response.header( "Content-Type" ) );</pre>
@@ -128,27 +132,35 @@
         </description>
 
         <example programming_language="javax.script">
-            <pre>var request = spooler_task.order().web_service_operation().request();
+            <pre>var response = spooler_task.order().web_service_operation().response();
 
-spooler_log.info( request.header( "Content-Type" ) );   // ==> text/xml; charset=utf-8
-spooler_log.info( request.content_type() );             // ==> text/xml
-spooler_log.info( request.charset_name() );             // ==> utf-8</pre>
+spooler_log.info( response.header( "Content-Type" ) );   // ==> text/xml; charset=utf-8
+spooler_log.info( response.content_type() );             // ==> text/xml
+spooler_log.info( response.charset_name() );             // ==> utf-8</pre>
+        </example>
+		
+		<example programming_language="powershell">
+            <pre>$response = $spooler_task.order().web_service_operation().response()
+
+$spooler_log.info( $response.header( "Content-Type" ) )   # ==> text/xml; charset=utf-8
+$spooler_log.info( $response.content_type() )             # ==> text/xml
+$spooler_log.info( $response.charset_name() )             # ==> utf-8</pre>
         </example>
 
         <example programming_language="javascript">
-            <pre>var request = spooler_task.order.web_service_operation.request;
+            <pre>var response = spooler_task.order.web_service_operation.response;
 
-spooler_log.info( request.header( "Content-Type" ) );   // ==> text/xml; charset=utf-8
-spooler_log.info( request.content_type );               // ==> text/xml
-spooler_log.info( request.charset_name );               // ==> utf-8</pre>
+spooler_log.info( response.header( "Content-Type" ) );   // ==> text/xml; charset=utf-8
+spooler_log.info( response.content_type );               // ==> text/xml
+spooler_log.info( response.charset_name );               // ==> utf-8</pre>
         </example>
 
         <example programming_language="perl">
-            <pre>my $request = $spooler_task->order->web_service_operation->request;
+            <pre>my $response = $spooler_task->order->web_service_operation->response;
 
-$spooler_log->info( $request->header( 'Content-Type' ) );   // ==> text/xml; charset=utf-8
-$spooler_log->info( $request->content_type );               // ==> text/xml
-$spooler_log->info( $request->charset_name );               // ==> utf-8</pre>
+$spooler_log->info( $response->header( 'Content-Type' ) );   // ==> text/xml; charset=utf-8
+$spooler_log->info( $response->content_type );               // ==> text/xml
+$spooler_log->info( $response->charset_name );               // ==> utf-8</pre>
         </example>
 
     </property>
@@ -198,6 +210,15 @@ response.set_content_type( "text/plain" );
 response.set_charset_name( "iso-8859-1" );
 response.set_string_content( "This is the answer" );
 response.send();</pre>
+        </example>
+		
+		<example programming_language="powershell">
+            <pre>$response = $spooler_task.order().web_service_operation().response()
+$response.set_content_type( "text/plain" )
+$response.set_charset_name( "iso-8859-1" )
+$response.set_header( "text/plain", "iso-8859-1" )
+$response.set_string_content( "This is the answer" )
+$response.send()</pre>
         </example>
 
         <example programming_language="javascript">
