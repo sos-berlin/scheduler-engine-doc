@@ -112,6 +112,9 @@
             <pre>spooler.locks().lock( "my_lock" ).remove();</pre>
         </example>
 
+		<example programming_language="powershell">
+            <pre>$spooler.locks().lock( "my_lock" ).remove()</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>spooler.locks.lock( "my_lock" ).remove();</pre>
@@ -144,6 +147,14 @@ var locks = spooler.locks();
 var lock = locks.create_lock();
 lock.set_name("my_lock");
 locks.add_lock( lock );</pre>
+    </example>
+	
+	 <example programming_language="powershell">
+        <pre>
+$locks = $spooler.locks()
+$lock = $locks.create_lock()
+$lock.set_name("my_lock")
+$locks.add_lock( $lock )</pre>
     </example>
 
     <example programming_language="javascript">

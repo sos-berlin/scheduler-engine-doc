@@ -38,7 +38,7 @@ spooler_log.info( "state=" + job_chain_node.state() );  // "state=100"</pre>
 	
 	 <example programming_language="powershell">
         <pre>$job_chain_node = $spooler.job_chain( "Jobchain" ).node( 100 );
-$spooler_log.info( "state=" + $job_chain_node.state() );  // "state=100"</pre>
+$spooler_log.info( "state=" + $job_chain_node.state() );  # "state=100"</pre>
     </example>
 
     <example programming_language="javascript">
@@ -88,28 +88,28 @@ $spooler_log->info( 'state=' . $job_chain_node->state );                        
     <example programming_language="java">
         <pre>Job_chain_node job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
     <!--<pre>Job_chain_node job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
-spooler_log.debug( "error state=" + job_chain_node.error_node().state() );   // "state=999"</pre>
+spooler_log.debug( "state=" + job_chain_node.error_node().state() );   // "state=999"</pre>
     </example>
 
     <example programming_language="javax.script">
         <pre>var job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
-spooler_log.debug( "error state=" + job_chain_node.error_node().state() );   // "state=999"</pre>
+spooler_log.debug( "state=" + job_chain_node.error_node().state() );   // "state=999"</pre>
     </example>
 	
 	<example programming_language="powershell">
-        <pre>$job_chain_node = $spooler.job_chain( "Jobchain3" ).node( 100 );
-$spooler_log.debug( "error state=" + $job_chain_node.error_node().state() );  // "state=999"</pre>
+        <pre>$job_chain_node = $spooler.job_chain( "Jobchain" ).node( 100 );
+$spooler_log.debug( "state=" + $job_chain_node.error_node().state() );  # "state=999"</pre>
     </example>
 
     <example programming_language="javascript">
         <pre>var job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
     <!--<pre>var job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
-     spooler_log.debug( "error state=" + job_chain_node.error_node.state );       // "state=999"</pre>
+     spooler_log.debug( "state=" + job_chain_node.error_node.state );       // "state=999"</pre>
     </example>
 
     <example programming_language="perl">
         <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
-     $spooler_log->debug( 'error state=' . $job_chain_node->error_node->state );       // "state=999"</pre>
+     $spooler_log->debug( 'state=' . $job_chain_node->error_node->state );       // "state=999"</pre>
     </example>
 
 </property>
@@ -140,7 +140,7 @@ spooler_log.debug( "job=" + job_chain_node.job().name() );  // "job=job_100"</pr
 	
 	 <example programming_language="powershell">
         <pre>$job_chain_node = $spooler.job_chain( "Jobchain" ).node( 100 );
-$spooler_log.debug( "job=" + $job_chain_node.job().name() );  // "job=job_100"</pre>
+$spooler_log.debug( "job=" + $job_chain_node.job().name() );  # "job=job_100"</pre>
     </example>
 
     <example programming_language="javascript">
@@ -182,7 +182,7 @@ spooler_log.debug( "next state=" + job_chain_node.next_state() );   // "state=20
 	
 	 <example programming_language="powershell">
        <pre>$job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
-$spooler_log.debug( "next state=" + $job_chain_node.next_state() );   // "state=200"</pre>
+$spooler_log.debug( "next state=" + $job_chain_node.next_state() );   # "state=200"</pre>
     </example>
 
     <example programming_language="javascript">
@@ -214,28 +214,28 @@ $spooler_log->debug( 'next_state=' . $job_chain_node->next_state );             
     <example programming_language="java">
         <pre>Job_chain_node job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
     <!--<pre>Job_chain_node job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
-spooler_log.debug( "error state=" + job_chain_node.error_node().state() );   // "error state=999"</pre>
+spooler_log.debug( "error state=" + job_chain_node.error_state() );   // "error state=999"</pre>
     </example>
 
     <example programming_language="javax.script">
         <pre>var job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
-spooler_log.debug( "error state=" + job_chain_node.error_node().state() );  // "error state=999"</pre>
+spooler_log.debug( "error state=" + job_chain_node.error_state() );  // "error state=999"</pre>
     </example>
 	
 	 <example programming_language="powershell">
         <pre>$job_chain_node = $spooler.job_chain( "Jobchain" ).node( 100 );
-$spooler_log.debug( "error state=" + $job_chain_node.error_node().state() );  // "error state=999"</pre>
+$spooler_log.debug( "error state=" + $job_chain_node.error_state() );  # "error state=999"</pre>
     </example>
 
     <example programming_language="javascript">
         <pre>var job_chain_node = spooler.job_chain( "Jobchain" ).node( 100 );
     <!--<pre>var job_chain_node = spooler.job_chain( "Jobkette" ).node( 100 );-->
-spooler_log.debug( "error state=" + job_chain_node.error_node.state );       // "error state=999"</pre>
+spooler_log.debug( "error state=" + job_chain_node.error_state );       // "error state=999"</pre>
     </example>
 
     <example programming_language="perl">
         <pre>my $job_chain_node = $spooler->job_chain( 'Jobchain' )->node( 100 );
-$spooler_log->debug( 'error state=' . $job_chain_node->error_node->state );       # "error state=999"</pre>
+$spooler_log->debug( 'error state=' . $job_chain_node->error_state );       # "error state=999"</pre>
     </example>
 
 </property>

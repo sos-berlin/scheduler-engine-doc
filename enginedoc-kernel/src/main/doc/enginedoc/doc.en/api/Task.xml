@@ -461,6 +461,11 @@
         <example programming_language="javax.script">
             <pre>spooler_log.error( "This call of spooler_log.error() sets the exit code to 1" );
 spooler_task.set_exit_code(0);   // Reset the exit code</pre>
+        </example>	
+		
+        <example programming_language="powershell">
+            <pre>$spooler_log.error( "This call of $spooler_log.error() sets the exit code to 1" )
+$spooler_task.set_exit_code(0)   # Reset the exit code</pre>
         </example>
 
         <example programming_language="javascript">
@@ -503,6 +508,8 @@ spooler_task.exit_code = 0;   // Reset the exit code</pre>
 		</description>
         <example programming_language="javax.script">
             <pre>spooler_task.set_history_field( "extra", 4711 );</pre>
+        </example>
+		<example programming_language="powershell">
         </example>
 		<example programming_language="javascript">
 			<pre>spooler_task.history_field( "extra" ) = 4711;</pre>
@@ -600,6 +607,17 @@ if( parameters.count() > 0 )  spooler_log.info( "Parameters given" );
 String value1 = parameters.var( "parameter1" );   // "", should the variable not exist
 String value2 = parameters.var( "parameter2" );</pre>
         </example>
+		
+		 <example programming_language="powershell">
+            <pre>$value = $spooler_task.params().var( "parameter3" )</pre>
+        </example>
+        <example programming_language="powershell">
+            <pre>$params = $spooler_task.params()
+if( $params.count() > 0 )  {$spooler_log.info( "Parameters given" )}
+
+[string]$value1 = params.var( "parameter1" )   # "", should the variable not exist
+[string]$value2 = params.var( "parameter2" )</pre>
+        </example>
 
 		<example programming_language="javascript">
 			<pre>var value = spooler_task.params.value( "parameter3" );</pre>
@@ -672,6 +690,10 @@ my $value2 = $parameters->var( "parameter2" );</pre>
 
         <example programming_language="javax.script">
             <pre>spooler_task.set_priority(5);    // Unix: reduce the priority a little</pre>
+        </example>
+		
+		<example programming_language="powershell">
+            <pre>$spooler_task.set_priority(5)    # Unix: reduce the priority a little</pre>
         </example>
 
         <example programming_language="javascript">
@@ -761,6 +783,10 @@ my $value2 = $parameters->var( "parameter2" );</pre>
         <example programming_language="javax.script">
             <pre>spooler_task.set_priority_class("below_normal");</pre>
         </example>
+		
+        <example programming_language="powershell">
+            <pre>$spooler_task.set_priority_class("below_normal")</pre>
+        </example>
 
         <example programming_language="javascript">
             <pre>spooler_task.priority_class = "below_normal";</pre>
@@ -833,6 +859,12 @@ my $value2 = $parameters->var( "parameter2" );</pre>
             <pre>var order = spooler_task.order();
 
 spooler_log.info( "order.id=" + order.id() + ", order.title=" + order.title() );</pre>
+        </example>
+		
+		     <example programming_language="powershell">
+            <pre>$order = $spooler_task.order()
+
+$spooler_log.info( "order id =" + $order.id() + ", order title =" + $order.title() )</pre>
         </example>
 
 		<example programming_language="javascript">
@@ -1132,6 +1164,28 @@ spooler_log.info( "order.id=" + order.id + ", order.title=" + order.title );</pr
 
     return result;
 }]]></pre>
+        </example>
+		
+		
+        <example programming_language="powershell">
+            <pre><![CDATA[function spooler_process()
+{
+    $result = $false;
+
+    if( $spooler_task.try_hold_lock( "Georgien" )  -and
+        $spooler_task.try_hold_lock_non_exlusive( "Venezuela" ) )
+    {
+        # Task is holding the two locks. Insert processing code here.
+        $result = $false
+    }
+    else
+    {
+        $spooler_task.call_me_again_when_locks_available();
+    }
+
+    return $result;
+}
+]]></pre>
         </example>
 
         <example programming_language="javascript">
