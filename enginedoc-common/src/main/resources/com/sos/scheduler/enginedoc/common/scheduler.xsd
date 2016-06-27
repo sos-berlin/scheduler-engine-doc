@@ -336,22 +336,7 @@
                         <xsd:attribute name="user" type="String" use="required"/>
                     </xsd:complexType>
                 </xsd:element>
-                <xsd:choice minOccurs="0">
-                    <xsd:element ref="script"/>
-                    <xsd:element name="process">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="environment" type="environment" minOccurs="0"/>
-                                <!-- Veraltet -->
-                            </xsd:sequence>
-                            <xsd:attribute name="file" type="File" use="required"/>
-                            <xsd:attribute name="param" type="String"/>
-                            <xsd:attribute name="log_file" type="File"/>
-                            <xsd:attribute name="ignore_error" type="Yes_no"/>
-                            <xsd:attribute name="ignore_signal" type="Yes_no"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:choice>
+                <xsd:element ref="script" minOccurs="0"/>
                 <xsd:choice minOccurs="0" maxOccurs="unbounded">
                     <xsd:element ref="monitor"/>
                     <xsd:element name="monitor.use">
@@ -966,6 +951,8 @@
             <xsd:attribute name="recompile" type="Yes_no"/>
             <xsd:attribute name="encoding" type="Code_page_encoding"/>
             <xsd:attribute name="java_class_path" type="String"/>
+            <xsd:attribute name="dll" type="String"/>
+            <xsd:attribute name="dotnet_class" type="String"/>
             <!-- JS-540 -->
             <!--xsd:attribute name="process_class"         type="Path"    s. eMail von Püschel 2007-11-06 12:55 /-->
         </xsd:complexType>

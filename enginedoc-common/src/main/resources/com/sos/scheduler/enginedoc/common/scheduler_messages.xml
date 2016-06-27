@@ -4482,22 +4482,15 @@
             </text>
         </message>
 
+        <message code="SCHEDULER-728">
+            <text xml:lang="en">
+                <title>Terminating task after &lt;kill_task> command</title>
+            </text>
+        </message>
+
         <!-- HINWEIS FÜR NEUE MELDUNGEN: Das Attribut object= nur angeben, wenn die Objektklasse auch bekannt ist. Zschimmer 2009-11-05 -->
         <!-- <title>...</title> soll in einer Zeile liegen, sonst enthält die Fehlermeldungen die Zeilenwechsel. -->
         <!-- Meldungsnummern ab SCHEDULER-100 sind für Fehler, Nummern ab 700 (oder bald 600) sind für andere Meldungen. -->
-
-
-        <!--message code="SCHEDULER-704">
-            <text xml:lang="en">
-                <title>Database table <p1/> is being rebuild</title>
-            </text>
-        </message-->
-
-        <!--message code="SCHEDULER-703">
-            <text xml:lang="en">
-                <title>Column '<p2/>' is being changed to accept null in database table '<p1/>': cmd</title>
-            </text>
-        </message-->
 
     </messages>
 
