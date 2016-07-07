@@ -112,7 +112,7 @@
             <pre>spooler.locks().lock( "my_lock" ).remove();</pre>
         </example>
 
-		<example programming_language="powershell">
+        <example programming_language="powershell">
             <pre>$spooler.locks().lock( "my_lock" ).remove()</pre>
         </example>
 
@@ -122,6 +122,10 @@
 
         <example programming_language="perl">
             <pre>$spooler->locks->lock( 'my_lock' )->remove();</pre>
+        </example>
+        
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler.locks.lock( "my_lock" ).remove()</pre>
         </example>
         
         <messages>
@@ -169,6 +173,13 @@ locks.add_lock( lock );</pre>
 my $lock = $locks->create_lock();
 $lock->LetProperty( 'name', 'my_lock' );
 $locks->add_lock( $lock );</pre>
+    </example>
+
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>locks = spooler.locks()
+lock = locks.create_lock()
+lock.set_name( "my_lock" )
+locks.add_lock( lock )</pre>
     </example>
 
 </api.class>

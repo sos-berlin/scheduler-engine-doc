@@ -475,9 +475,14 @@ spooler_task.exit_code = 0;   // Reset the exit code</pre>
 		
         <example programming_language="perl">
             <pre>$spooler_log->error( 'This call of spooler_log.error() sets the exit code to 1' );
-				$spooler_task->LetProperty( 'exit_code', 0 );   # Reset the exit code</pre>
+$spooler_task->LetProperty( 'exit_code', 0 );   # Reset the exit code</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.error( "This call of spooler_log.error() sets the exit code to 1" )
+spooler_task.set_exit_code( 0 )   ' Reset the exit code</pre>
+        </example>
+		
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -506,17 +511,26 @@ spooler_task.exit_code = 0;   // Reset the exit code</pre>
             <scheduler_ini_entry file="factory.ini" section="job" entry="history_columns"/>
             deklariert sein.-->
 		</description>
+		
         <example programming_language="javax.script">
             <pre>spooler_task.set_history_field( "extra", 4711 );</pre>
         </example>
+        
 		<example programming_language="powershell">
         </example>
+        
 		<example programming_language="javascript">
 			<pre>spooler_task.history_field( "extra" ) = 4711;</pre>
 		</example>
+		
 		<example programming_language="perl">
 			<pre>$spooler_task->LetProperty( 'history_field', 'extra', 4711 );</pre>
 		</example>
+		
+    <example programming_language="scriptcontrol.vbscript">
+			<pre>spooler_task.set_history_field( "extra", 4711 )</pre>
+		</example>
+		
 	</property>
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<property name="id" access="read">
@@ -586,9 +600,11 @@ spooler_task.exit_code = 0;   // Reset the exit code</pre>
                 </li>
 			</ul>
 		</description>
+		
 		<example programming_language="java">
         <pre>String value = spooler_task.params().var( "parameter3" );</pre>
     </example>
+    
         <example programming_language="java">
             <pre>Variable_set parameters = spooler_task.params();
 if( parameters.count() > 0 )  spooler_log.info( "Parameters given" );
@@ -600,6 +616,7 @@ String value2 = parameters.var( "parameter2" );</pre>
         <example programming_language="javax.script">
             <pre>value = spooler_task.params().var( "parameter3" );</pre>
         </example>
+        
         <example programming_language="javax.script">
             <pre>parameters = spooler_task.params();
 if( parameters.count() > 0 )  spooler_log.info( "Parameters given" );
@@ -608,9 +625,10 @@ String value1 = parameters.var( "parameter1" );   // "", should the variable not
 String value2 = parameters.var( "parameter2" );</pre>
         </example>
 		
-		 <example programming_language="powershell">
+		    <example programming_language="powershell">
             <pre>$value = $spooler_task.params().var( "parameter3" )</pre>
         </example>
+        
         <example programming_language="powershell">
             <pre>$params = $spooler_task.params()
 if( $params.count() > 0 )  {$spooler_log.info( "Parameters given" )}
@@ -622,6 +640,7 @@ if( $params.count() > 0 )  {$spooler_log.info( "Parameters given" )}
 		<example programming_language="javascript">
 			<pre>var value = spooler_task.params.value( "parameter3" );</pre>
 		</example>
+		
 		<example programming_language="javascript">
 			<pre>var parameters = spooler_task.params;
 if( parameters.count > 0 )  spooler_log.info( "Parameters given" );
@@ -629,6 +648,7 @@ if( parameters.count > 0 )  spooler_log.info( "Parameters given" );
 var value1 = parameters.value( "parameter1" );
 var value2 = parameters.value( "parameter2" );</pre>
 		</example>
+		
 		<example programming_language="perl">
 			<pre>my $value = $spooler_task->params->var( "parameter3" );
 
@@ -636,6 +656,18 @@ my $parameters = $spooler_task->params;
 my $value1 = $parameters->var( "parameter1" );
 my $value2 = $parameters->var( "parameter2" );</pre>
         </example>
+        
+    <example programming_language="scriptcontrol.vbscript">
+			<pre>value = spooler_task.params.value( "parameter3" )</pre>
+		</example>
+		
+    <example programming_language="scriptcontrol.vbscript">
+			<pre>Set parameters = spooler_task.params();
+if ( parameters.count > 0 )  spooler_log.info( "Parameters given" )
+
+value1 = parameters.value( "parameter1" )
+value2 = parameters.value( "parameter2" )</pre>
+		</example>
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -705,6 +737,10 @@ my $value2 = $parameters->var( "parameter2" );</pre>
             <pre>$spooler_task->LetProperty('priority', +5 );    // Unix: reduce the priority a little</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_task.set_priority( +5 )  ' Unix: reduce the priority a little</pre>
+        </example>
+		
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -790,12 +826,16 @@ my $value2 = $parameters->var( "parameter2" );</pre>
 
         <example programming_language="javascript">
             <pre>spooler_task.priority_class = "below_normal";</pre>
-		</example>
+        </example>
 		
-		<example programming_language="perl">
+		    <example programming_language="perl">
             <pre>$spooler_task->LetProperty('priority_class', 'below_normal' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_task.set_priority_class( "below_normal" )</pre>
+        </example>
+		
 	</property>
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<property name="repeat" access="write">
@@ -849,11 +889,12 @@ my $value2 = $parameters->var( "parameter2" );</pre>
             The current order
         <!--Der zu verarbeitende Auftrag-->
 		</title>
+		
 		<example programming_language="java">
         <pre>Order order = spooler_task.order();
 
             spooler_log.info( "order.id=" + order.id() + ", order.title=" + order.title() );</pre>
-        </example>
+    </example>
 
         <example programming_language="javax.script">
             <pre>var order = spooler_task.order();
@@ -872,11 +913,19 @@ $spooler_log.info( "order id =" + $order.id() + ", order title =" + $order.title
 
 spooler_log.info( "order.id=" + order.id + ", order.title=" + order.title );</pre>
 		</example>
+		
 		<example programming_language="perl">
 			<pre>my $order = $spooler_task->order();
 
 				$spooler_log->info( 'order.id=' . $order->id . ', order.title=' . $order->title );</pre>
 		</example>
+		
+    <example programming_language="scriptcontrol.vbscript">
+			<pre>order = spooler_task.order()
+
+spooler_log.info( "order.id=" &amp; order.id() &amp; ", order.title=" &amp; order.title() )</pre>
+		</example>
+		
 	</property>
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<property name="stdout_path" access="read">
@@ -1206,6 +1255,24 @@ spooler_log.info( "order.id=" + order.id + ", order.title=" + order.title );</pr
     
     return result;
 }]]></pre>
+        </example>
+        
+        <example programming_language="scriptcontrol.vbscript">
+            <pre><![CDATA[function spooler_process() 
+
+    result = false
+    
+    If ( spooler_task.try_hold_lock( "Georgien" ) AND &_
+        spooler_task.try_hold_lock_non_exlusive( "Venezuela" ) ) Then
+        ' Task is holding the two locks. Insert processing code here.
+        result = ...
+    Else
+        spooler_task.call_me_again_when_locks_available()
+    End If
+    
+    spooler_process = result
+
+end function]]></pre>
         </example>
         
         <messages>

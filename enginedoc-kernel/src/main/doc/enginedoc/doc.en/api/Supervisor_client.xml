@@ -22,14 +22,12 @@
         </com>
         
         <title>
-            The name or IP number of the host computer on which the supervising JobScheduler is running
-        <!--Name oder IP-Nummer des Rechners, auf dem der Supervisor läuft-->
+            The name or IP number of the host computer on which the JobScheduler Supervisor is running
         </title>
         
         <description>
             <p>
                 See also <scheduler_element name="config" attribute="supervisor"/>.
-            <!--Siehe auch <scheduler_element name="config" attribute="supervisor"/>.-->
             </p>
         </description>
     </property>
@@ -44,14 +42,12 @@
         </com>
 
         <title>
-            the TCP port of the supervisor
-        <!--TCP-Port des Supervisors-->
+            the TCP port of the Supervisor
         </title>
 
         <description>
             <p>
                 See also <scheduler_element name="config" attribute="supervisor"/>.
-            <!--Siehe auch <scheduler_element name="config" attribute="supervisor"/>.-->
             </p>
         </description>
     </property>
@@ -61,7 +57,6 @@
     <description>
         <p>
             This object is returned by <scheduler_method class="Spooler" property="supervisor_client"/> .
-        <!--<scheduler_method class="Spooler" property="supervisor_client"/> liefert dieses Objekt.-->
         </p>
     </description>
 
@@ -79,6 +74,10 @@
 
     <example programming_language="perl">
         <pre>my $supervisor_hostname = $spooler->supervisor_client->hostname;</pre>
+    </example>
+
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>supervisor_hostname = spooler.supervisor_client.hostname()</pre>
     </example>
 
 </api.class>

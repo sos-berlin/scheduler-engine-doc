@@ -47,6 +47,10 @@
         <pre>$spooler_log->debug( 'The working directory of the JobScheduler is ' . $spooler->directory );</pre>
     </example>
 	
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>spooler_log.debug( "The working directory of the JobScheduler is " &amp; spooler.directory() );</pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -77,6 +81,10 @@
 
     <example programming_language="perl">
         <pre>$spooler_log->info( 'Something has happened' );</pre>
+    </example>
+	
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>spooler_log.info( "Something has happened" )</pre>
     </example>
 	
 </property>
@@ -116,6 +124,10 @@
         <pre>$spooler_log->info( 'The name of this job is ' . $spooler_job->name );</pre>
     </example>
 
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>spooler_log.info( "The name of this job is " &amp; spooler_job.name() );</pre>
+    </example>
+	
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -139,6 +151,10 @@
     <example programming_language="javax.script">
         <pre>spooler_log.info( "The task id is " + spooler_task.id() );</pre>
     </example>
+	
+	 <example programming_language="powershell">
+        <pre>$spooler_log.info( "The task id is " + $spooler_task.id() )</pre>
+    </example>
 
     <example programming_language="javascript">
         <pre>spooler_log.info( "The task id is " + spooler_task.id );</pre>
@@ -148,6 +164,10 @@
         <pre>$spooler_log->info( 'The task id is ' . $spooler_task->id );</pre>
     </example>
 
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>spooler_log.info( "The task id is " &amp; spooler_task.id() )</pre>
+    </example>
+	
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

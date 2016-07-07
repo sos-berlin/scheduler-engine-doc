@@ -45,22 +45,27 @@
                 <tr>
                     <td>Spidermonkey (32bit)</td>
                     <td style="white-space:nowrap;">&lt;script language="Spidermonkey"&gt;</td>
-                    <td>Provides jobs in JavaScript. Usage of the "spidermonkey" Implementation. Only available on 32 bit.</td>
+                    <td>Provides jobs in JavaScript. Usage of the "spidermonkey" Implementation. Only available on 32Bit.</td>
                 </tr>
                 <tr>
                     <td>PowerShell</td>
                     <td style="white-space:nowrap;">&lt;script language="PowerShell"&gt;</td>
-                    <td>Provides jobs in Jobs in PowerShell. Only available on Windows.</td>
+                    <td>Provides jobs in PowerShell. Only available on Windows with Agents.</td>
                 </tr>
                 <tr>
                     <td>VBScript</td>
                     <td style="white-space:nowrap;">&lt;script language="VBScript"&gt;</td>
-                    <td>Provides jobs in Jobs in VBScript. Only available on Windows.</td>
+                    <td>Provides jobs in VBScript. Only available on Windows with JobScheduler Master.</td>
                 </tr>
                 <tr>
                     <td>Perl</td>
                     <td style="white-space:nowrap;">&lt;script language="Perl"&gt;</td>
                     <td>Provides jobs in Perl.</td>
+                </tr>
+                <tr>
+                    <td>ScriptControl:VBScript</td>
+                    <td style="white-space:nowrap;">&lt;script language="scriptcontrol:vbscript"&gt;</td>
+                    <td>Provides jobs in VBScript 32Bit. Only available on Windows with JobScheduler Agent 32Bit.</td>
                 </tr>
 
             </table>

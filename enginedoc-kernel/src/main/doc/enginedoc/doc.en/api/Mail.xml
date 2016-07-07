@@ -44,6 +44,10 @@
             <pre>$spooler_log->mail->LetProperty( 'smtp', 'mail.company.com' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_smtp( "mail.company.com" )</pre>
+        </example>
+		
     </property>
 
 
@@ -93,6 +97,10 @@
             <pre>$spooler_log->mail->LetProperty( 'from', 'scheduler@company.com' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_from( "scheduler@company.com" )</pre>
+        </example>
+		
     </property>
 
 
@@ -138,6 +146,10 @@
             <pre>$spooler_log->mail->LetProperty( 'to', 'admin@company.com' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_to( "admin@company.com" )</pre>
+        </example>
+		
     </property>
 
 
@@ -183,6 +195,10 @@
             <pre>$spooler_log->mail->LetProperty( 'cc', 'hans@company.com' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_cc( "hans@company.com" )</pre>
+        </example>
+		
     </property>
 
 
@@ -228,6 +244,10 @@
             <pre>$spooler_log->mail->LetProperty( 'bcc', 'hans@company.com' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_bcc( "hans@company.com" )</pre>
+        </example>
+		
     </property>
 
 
@@ -263,6 +283,10 @@
             <pre>$spooler_log->mail->LetProperty( 'subject', 'Job succeeded' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_subject( "Job succeeded" )</pre>
+        </example>
+		
     </property>
 
 
@@ -303,6 +327,10 @@
             <pre>$spooler_log->mail->LetProperty( 'body', 'Job succeeded' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_body( "Job succeeded" )</pre>
+        </example>
+		
     </property>
 
 
@@ -369,6 +397,10 @@
             <pre>$spooler_log->mail->add_file( 'c:/tmp/1.txt', '1.txt', 'text/plain', 'quoted-printable' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.add_file( "c:/tmp/1.txt", "1.txt", "text/plain", "quoted-printable" )</pre>
+        </example>
+		
     </method>
 
 
@@ -459,6 +491,12 @@ $spooler_log->info( $count . ' messages from mail queue sent' );
 $spooler_log->info( $spooler_log->mail->dequeue_log );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>count = spooler_log.mail.dequeue()
+spooler_log.info( count &amp; " messages from mail queue sent" )
+spooler_log.info( spooler_log.mail.dequeue_log() )</pre>
+        </example>
+		
     </property>
 
 
@@ -511,6 +549,10 @@ $spooler_log->info( $spooler_log->mail->dequeue_log );</pre>
             <pre>$spooler_log->mail->LetProperty( 'xslt_stylesheet_path', 'c:/stylesheets/mail.xslt' );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.mail.set_xslt_stylesheet_path( "c:/stylesheets/mail.xslt" )</pre>
+        </example>
+		
     </property>
 
 

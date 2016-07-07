@@ -240,6 +240,11 @@
                             <xsl:with-param name="this_programming_language_title">Perl</xsl:with-param>
                         </xsl:call-template>
 
+                        <xsl:call-template name="programming_language_selector">
+                            <xsl:with-param name="this_programming_language">scriptcontrol.vbscript</xsl:with-param>
+                            <xsl:with-param name="this_programming_language_title">ScriptControl:VBScript</xsl:with-param>
+                        </xsl:call-template>
+
                     </td>
 
                     <xsl:if test="/api.class/@name != 'api' and not( /api.class/not_implemented/@programming_language='java' )">

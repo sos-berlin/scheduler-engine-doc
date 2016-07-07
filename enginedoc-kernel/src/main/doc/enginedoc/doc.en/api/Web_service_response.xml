@@ -72,7 +72,7 @@
             <pre>spooler_log.info( "Content-Type: " + spooler_task.order().web_service_operation().response().header( "Content-Type" ) );</pre>
         </example>
 		
-		<example programming_language="powershell">
+        <example programming_language="powershell">
             <pre>$spooler_log.info( "Content-Type: " + $spooler_task.order().web_service_operation().response().header( "Content-Type" ) )</pre>
         </example>
 
@@ -82,6 +82,10 @@
 		
         <example programming_language="perl">
             <pre>$spooler_log->info( 'Content-Type: ' . $spooler_task->order->web_service_operation->response->header( 'Content-Type' ) );</pre>
+        </example>
+
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.info( "Content-Type: " &amp; spooler_task.order.web_service_operation.response.header( "Content-Type" ) )</pre>
         </example>
 
     </property>
@@ -163,6 +167,14 @@ $spooler_log->info( $response->content_type );               // ==> text/xml
 $spooler_log->info( $response->charset_name );               // ==> utf-8</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>response = spooler_task.order.web_service_operation.response()
+
+spooler_log.info( response.header( 'Content-Type' ) )     ' ==> text/xml; charset=utf-8
+spooler_log.info( response.content_type() )               ' ==> text/xml
+spooler_log.info( response.charset_name() )               ' ==> utf-8</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -237,6 +249,14 @@ $response->LetProperty( 'string_content', 'This is the answer' );
 $response->send();</pre>
         </example>
 
+        <example programming_language="scriptcontrol:vbscript">
+            <pre>response = spooler_task.order.web_service_operation.response()
+response.set_content_type( "text/plain" )
+response.set_charset_name( "iso-8859-1" )
+response.set_string_content( "This is the answer" )
+response.send()</pre>
+        </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -283,6 +303,7 @@ writer.close();
 response.set_binary_content( byos.toByteArray() );
 response.send();</pre>
         </example>
+
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

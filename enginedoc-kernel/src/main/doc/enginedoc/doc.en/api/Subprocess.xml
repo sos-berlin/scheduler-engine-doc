@@ -83,19 +83,11 @@
             Shell operators such as <code>|</code>, <code>&amp;&amp;</code> and <code>></code> are not interpreted.
             The <code>/bin/sh</code> or <code>c:\windows\system32\cmd.exe</code> programs must be used to do this.
             (Note that the actual paths will depend on the installation.)
-        <!--Shell-Operatoren wie <code>|</code>, <code>&amp;&amp;</code> und <code>></code> werden nicht interpretiert.
-            Verwenden Sie dazu die Programme <code>/bin/sh</code> bzw. <code>c:\windows\system32\cmd.exe</code>
-            (das Verzeichnis ist installations-abhÃ¤ngig).-->
         </p>
         <p>
             This process is started on UNIX systems using <code>execvp()</code> and with 
             <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/createprocess.asp"><code>CreateProcess()</code></a>
             on Windows systems.
-        <!--Der Prozess wird 
-            unter Unix mit <code>execvp()</code> und
-            unter Windows mit 
-            <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/createprocess.asp"><code>CreateProcess()</code></a>
-            gestartet.-->
         </p>
     </description>
 </method>
@@ -111,7 +103,6 @@
 
     <title>
         Process identification
-    <!--Prozesskennung-->
     </title>
 </property>
 
@@ -131,11 +122,6 @@
             <scheduler_method class="Subprocess" property="exit_code"/> and
             <scheduler_method class="Subprocess" property="termination_signal"/>
             classes may be called.
-        <!--Prüft, ob der Prozess geendet hat.
-            Wenn er geendet hat, kann anschließend
-            <scheduler_method class="Subprocess" property="exit_code"/> und
-            <scheduler_method class="Subprocess" property="termination_signal"/>
-            gerufen werden.-->
         </p>
     </description>
 </property>
@@ -151,7 +137,6 @@
 
     <description>
         Is only called after
-    <!--Erst aufrufen, wenn-->
         <scheduler_method class="Subprocess" property="terminated"/><code> == true</code>.
     </description>
 </property>
@@ -167,12 +152,10 @@
 
     <title>
         Signal with which a process (only on UNIX systems) ends	
-    <!--Signal, mit dem sich der Prozess beendet hat (nur Unix)-->
     </title>
 
     <description>
         Is only called, after
-    <!--Erst aufrufen, wenn-->
         <scheduler_method class="Subprocess" property="terminated"/><code> == true</code>.
     </description>
 </property>
@@ -188,7 +171,6 @@
 
     <title>
         Prevents that a job is stopped, should <code>exit_code != 0</code>.
-    <!--Verhindert, dass bei <code>exit_code != 0</code> der Job stoppt-->
     </title>
 
     <description>
@@ -196,9 +178,6 @@
             Prevents a job from being stopped, 
             when at the end of a task the subprocess ends with
             <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code>.
-        <!--Verhindert, dass der Job stoppt, wenn der Subprozess bei Task-Ende mit
-            <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code>
-            geendet hat.-->
         </p>
         <p>
             Should a task not wait for the end of a subprocess with the 
@@ -206,17 +185,9 @@
             then the JobScheduler waits at the end of the task for the end of any subprocesses.
             In this case the job is stopped with an error when a subprocess ends with
             <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code>. 
-        <!--Wenn das Ende des Subprocesses nicht mit
-            <scheduler_method class="Subprocess" property="wait_for_termination"/>
-            abgewartet worden ist,
-            tut das der JobScheduler bei Task-Ende.
-            Wenn dann der Subprocess mit
-            <scheduler_method class="Subprocess" property="exit_code"/><code> != 0</code> endet,
-            stoppt der Job mit Fehler.-->
         </p>
         <p>
             This may be avoided using <code>ignore_error</code>.
-        <!--Mit <code>ignore_error</code> kann das verhindert werden.-->
         </p>
     </description>
 </property>
@@ -232,12 +203,10 @@
 
     <title>
         Prevents a job from being stopped when the task is stopped with a UNIX signal.
-    <!--Verhindert, dass bei einem Abbruch des Prozesses mit Signal der Job stoppt-->
     </title>
 
     <description>
         This property does not work on Windows systems, as this system does not support signals.
-    <!--Wirkt nicht unter Windows, weil es hier keine Signale gibt.-->
     </description>
 </property>
 
@@ -252,19 +221,15 @@
 
     <title>
         Time limit for a subprocess
-    <!--Frist für den Subprozess-->
     </title>
 
     <description>
         <p>
             After the time allowed, the JobScheduler stops the subprocess (UNIX: with <code>SIGKILL</code>).
-        <!--Nach Ablauf der Zeit bricht der JobScheduler den Subprozess ab (Unix: mit <code>SIGKILL</code>).-->
         </p>
         <p>
             This time limit does not apply to processes running on remote computers with
             <scheduler_element name="process_class" attribute="remote_scheduler"/>.
-        <!--Bei Ausführung auf einem entfernten Rechner mit <scheduler_element name="process_class" attribute="remote_scheduler"/>
-            wirkt die Frist nicht.-->
         </p>
     </description>
 
@@ -284,42 +249,30 @@
 
     <title>
         Environment Variables as Variable_sets
-    <!--Umgebungsvariablen als Variable_set-->
     </title>
 
     <description>
         <p>
             Returns a <scheduler_method class="Variable_set"/>
             for the environment variables.
-        <!--Liefert ein <scheduler_method class="Variable_set"/> der Umgebungsvariablen.-->
         </p>
         <p>
             Initially the environment is filled by the environment variables from the calling process.
             Environment variables can be removed in that they are set to <code>""</code>.
             Calling <scheduler_method class="Subprocess" method="start"/> 
             hands over environment variables to the subprocess.
-        <!--Anfänglich ist die Umgebung mit den Umgebungsvariablen des rufenden Prozesses gefüllt.
-            Umgebungsvariablen können entfernt werden, indem sie auf <code>""</code> gesetzt werden.
-            Der Aufruf <scheduler_method class="Subprocess" method="start"/> übergibt die Umgebungsvariablen
-            dem Subprozess.-->
         </p>
         <p>
             Note that the names of environment variables are case sensitive on UNIX systems.
-        <!--Unter Unix werden groß und klein geschriebene Umgebungsvariablen unterschieden.-->
         </p>
         <p>
             Changes made to environment variables after the start of a subprocess have no effect.
             This is also true for environment variables changed by the process.
-        <!--Nach dem Start des Subprozesses haben Änderungen an den Umgebungsvariablen keine Wirkung.
-            Auch können vom Prozess geänderte Umgebungsvariablen nicht gelesen werden.-->
         </p>
         <p>
             This object cannot be handed over to other objects 
             - it is a part of the task process, 
             whereas the majority of other objects are part of the JobScheduler process.
-        <!--Das Objekt lässt sich nicht anderen Objekten übergeben
-            (denn es befindet sich im Prozess der Task, 
-            während die meisten anderen Objekte sich im Prozess des Schedulers befinden).-->
         </p>
     </description>
 
@@ -348,7 +301,7 @@ subprocess.wait_for_termination();</pre>
 $subprocess->LetProperty( 'start', $subprocess->env->substitute( '${MY_HOME}/my_program' ) );
 $subprocess->wait_for_termination();</pre>
     </example>
-
+	
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -366,46 +319,45 @@ $subprocess->wait_for_termination();</pre>
 
     <title>
         Environment variables
-    <!--Umgebungsvariablen-->
     </title>
 
     <description>
         <p>
             Variables set here are handed over to a new subprocess together with any other
             environment variables belonging to the process.
-        <!--Die hier gesetzten Variablen werden zusammen
-            mit den übrigen Umgebungsvariablen des laufenden Prozesses
-            dem neuen Subprozess übergeben.-->
         </p>
         <p>
             Note that the names of environment variables are case sensitive on UNIX systems.
-        <!--Unter Unix werden groß und klein geschriebene Umgebungsvariablen unterschieden.-->
         </p>
         <p>
             See also <scheduler_method class="Subprocess" property="env"/>.
-        <!--Siehe auch <scheduler_method class="Subprocess" property="env"/>.-->
         </p>
     </description>
+    
     <example programming_language="javax.script">
         <pre>// The following two statements have the same effect
 subprocess.set_environment( "my_variable", "my_value" );
 subprocess.env().set_value( "my_variable", "my_value" );</pre>
     </example>
+    
 	<example programming_language="powershell">
         <pre># The following two statements have the same effect
 $subprocess.set_environment( "my_variable", "my_value" )
 $subprocess.env().set_value( "my_variable", "my_value" )</pre>
     </example>
+    
     <example programming_language="javascript">
         <pre>// The following two statements have the same effect
 subprocess.environment( "my_variable" ) = "my_value"
 subprocess.env.value( "my_variable" ) = "my_value"</pre>
     </example>
+    
     <example programming_language="java">
         <pre>// The following two statements have the same effect
 subprocess.set_environment( "my_variable", "my_value" )
 subprocess.env().set_value( "my_variable" ) = "my_value"</pre>
     </example>
+    
     <example programming_language="perl">
         <pre>// The following two statements have the same effect
 $subprocess->LetProperty( 'environment', 'my_variable', 'my_value' )
@@ -426,8 +378,6 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             <description>
                 Waiting time.
                 Should this parameter not be specified, then the call will take place after the subprocess has ended.
-            <!--Wartezeit.
-                Fehlt der Parameter, dann wartet der Aufruf bis der Subprozess geendet hat.-->
             </description>
         </com.parameter>
 
@@ -435,10 +385,8 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             <com.type type="bool"/>
             <description>
                 <code>true</code>, after a subprocess has ended.
-            <!--<code>true</code>, wenn der Subprozess geendet hat.-->
                             <br/>
                 <code>false</code>, should the subprocess continue beyond the waiting time.
-            <!--<code>false</code>, wenn der Subprozess nach Ablauf der Wartezeit noch lÃ¤uft.-->
             </description>
         </com.result>
     </com>
@@ -454,20 +402,16 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             <description>
                 Only on UNIX systems: The <code>kill()</code> signal.
                 0 is interpreted here as 9 (<code>SIGKILL</code>, immediate ending).
-            <!--Nur unter Unix: Das Signal für <code>kill()</code>.
-                0 wird als 9 (<code>SIGKILL</code>, sofortiges Ende) interpretiert.-->
             </description>
         </com.parameter>
     </com>
 
     <title>
         Stops a subprocess
-    <!--Bricht den Subprozess ab-->
     </title>
 </method>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- Siehe auch dieselben Methoden in Task.xml -->
     
     <property name="priority">
         <com>
@@ -478,45 +422,34 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
 
         <title>
             Process Priority
-        <!--Prozess-Priorität-->
         </title>
 
         <description>
             <p>
                 UNIX: The highest priority is -20, the lowest 20.
                 The priority of a task can generally only be reduced and not increased.
-            <!--Unix: Die höchste Priorität ist -20, die niedrigste 20.
-                Üblicherweise kann die Priorität nur gesenkt, nicht erhöht werden.-->
             </p>
             <p>
                 The following priority classes are available on Windows systems
-            <!--Windows kennt die Prioritätsklassen-->
                 4 <code>"idle"</code>,
                 6 <code>"below_normal"</code>,
                 8 <code>"normal"</code>,
                 10 <code>"above_normal"</code> and
-            <!--10 <code>"above_normal"</code> und-->
                 13 <code>"high"</code>
                 (other values are rounded down).
-            <!--(andere Werte werden abgerundet).-->
                 See also <scheduler_method class="Task" property="priority_class"/>.
-            <!--Siehe auch <scheduler_method class="Task" property="priority_class"/>.-->
             </p>
             <p>
                 Note that an error does not occur, 
                 should it not be possible to set the priority of a task.
-            <!--Wenn die Priorität nicht gesetzt werden kann, führt das nicht zu einem Fehler.-->
             </p>
             <p>
                 Note also that a process with a higher priority can block a computer.
-            <!--Ein Prozess mit hoher Priorität kann Ihren Rechner blockieren.-->
             </p>
             <p>
                 The priority of a task can be set independently of the operating system with
-            <!--Die Priorität kann betriebsystem-unabhängig eingestellt werden mit-->
                 <scheduler_method class="Subprocess" property="priority_class"/>.
                 See also
-            <!--Siehe auch-->
                 <scheduler_method class="Task" property="priority"/>.
             </p>
         </description>
@@ -525,13 +458,12 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
             <pre>spooler_task.set_priority(5);    // UNIX: reduce the priority a little</pre>
         </example>
 		
-		 <example programming_language="powershell">
+		   <example programming_language="powershell">
             <pre>$spooler_task.set_priority(5);    # UNIX: reduce the priority a little</pre>
         </example>
 
         <example programming_language="javascript">
             <pre>spooler_task.priority = +5;    // UNIX: reduce the priority a little</pre>
-        <!--<pre>spooler_task.priority = +5;    // Unix: Priorität etwas verschlechtern</pre>-->
         </example>
 		
         <example programming_language="perl">
@@ -551,19 +483,16 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
 
         <title>
             Priority Class
-        <!--Prioritätsklasse-->
         </title>
 
         <description>
             <p>
                 The following priority classes can be used to set priorities on Windows and UNIX Systems:
-            <!--Gesetzt werden können folgende Prioritätsklassen, die verschiedenen Prioritäten unter Windows und Unix entsprechen:-->
             </p>
 
             <table cellspacing="0" cellpadding="0" style="margin-top: 1em; margin-left: 3ex">
                 <tr>
                     <td style="border-bottom: black 1pt solid">Priority Class</td>
-                <!--<td style="border-bottom: black 1pt solid">Prioritätsklasse</td>-->
                     <td style="border-bottom: black 1pt solid; padding-left: 2ex">Windows</td>
                     <td style="border-bottom: black 1pt solid; padding-left: 2ex">UNIX</td>
                 </tr>
@@ -599,20 +528,15 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
                 then this must not cause an error.
                 On the other hand, an error will occur should it be attempted to 
                 allocate a task a priority class not listed here.
-            <!--Wenn die Priorität nicht gesetzt werden kann, z.B. wegen mangelndem Recht, führt das nicht zu einem Fehler.
-                Dagegen führt das Setzen einer nicht hier aufgeführten Prioritätsklasse zu einem Fehler.-->
             </p>
             <p>
                 Note also that a higher priority process can block a computer.
-            <!--Ein Prozess mit hoher Priorität kann Ihren Rechner blockieren.-->
             </p>
             <p>
                 See also
-            <!--Siehe auch-->
                 <scheduler_method class="Subprocess" property="priority"/>,
                 <scheduler_method class="Task" property="priority_class"/>
                 and
-            <!--und-->
                 <a href="http://msdn.microsoft.com/library/en-us/dllproc/base/scheduling_priorities.asp">Microsoft® Windows® Scheduling Priorities</a>.
             </p>
         </description>
@@ -646,27 +570,20 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
 
         <title>
             Subprocesses as a Process Group
-        <!--Subprozess als Prozessgruppe-->
         </title>
 
         <description>
             <p>
                 Only available for UNIX systems.
-            <!--Nur unter Unix.-->
             </p>
             <p>
                 The default setting can be made using 
                 <scheduler_ini_entry file="factory.ini" section="spooler" entry="subprocess.own_process_group"/>.
-            <!--Der Default kann mit <scheduler_ini_entry file="factory.ini" section="spooler" entry="subprocess.own_process_group"/>
-                eingestellt werden.-->
             </p>
             <p>
                 <code>own_process_group</code> allows a subprocess to run in its own process group,
                 by executing the <code>setpgid(0,0)</code> system call.
                 When the JobScheduler then stops the subprocess, then it stops the complete process group.
-            <!--<code>own_process_group</code> lÃ¤sst den Subprozess in einer eigenen Prozessgruppe starten,
-                indem der Systemaufruf <code>setpgid(0,0)</code> ausgefÃ¼hrt wird.
-                Wenn der JobScheduler den Subprozess abbricht, bricht er die ganze Prozessgruppe ab.-->
             </p>
             
         </description>
@@ -680,16 +597,13 @@ $subprocess->env->LetProperty( 'value', 'my_variable', 'my_value' )</pre>
         <scheduler_method class="Task" method="create_subprocess"/>
         or
         <scheduler_method class="Subprocess" method="start"/>.
-    <!--Ein Subprozess ist irgendein Prozess,
-        der mit
-        <scheduler_method class="Task" method="create_subprocess"/>
-        oder
-        <scheduler_method class="Subprocess" method="start"/>
-        gestartet werden kann.-->
     </p>
+	<p>
+		Consider that the subprocess object is not available for the scripting language ScriptControl:VBScript.
+	</p>
 </description>
 
-    <example programming_language="javax.script" title="system() - the Simple Execution of a Command">
+    <example programming_language="javax.script" title="my_system() - the Simple Execution of a Command">
         <pre>
 exit_code = my_system( "backup /" );
 
@@ -735,11 +649,10 @@ if( subprocess.terminated() )
     </example>
 
 
-    <example programming_language="javascript" title="system() - the Simple Execution of a Command">
-<!--<example programming_language="javascript" title="system() - Einfache AusfÃ¼hrung eines Kommandos">-->
+    <example programming_language="javascript" title="my_system() - the Simple Execution of a Command">
         <pre>exit_code = my_system( "backup /" );
 
-function system( cmd, timeout )
+function my_system( cmd, timeout )
 {
     var subprocess = spooler_task.create_subprocess();
     
@@ -758,7 +671,6 @@ function system( cmd, timeout )
     </example>
 
     <example programming_language="perl" title="my_system() - the Simple Execution of a Command">
-<!--<example programming_language="perl" title="my_system() - Einfache AusfÃ¼hrung eines Kommandos">-->
         <pre>sub my_system
 {
     # Executes the command without processing the shell characters
@@ -835,6 +747,8 @@ if( $subprocess->terminated )
     $spooler_log->info( "exit code=" . $subprocess->exit_code );
     $spooler_log->info( "termination signal=" . $subprocess->termination_signal );
 }</pre>
+
+
 </example>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

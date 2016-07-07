@@ -657,4 +657,13 @@ $spooler_log->mail->LetProperty( 'to', 'admin@company.com' );
 $spooler_log->mail->LetProperty( 'subject', 'ended' );</pre>
 </example>
 
+<example programming_language="scriptcontrol.vbscript">
+    <pre>spooler_log.info( "Something for the Log" )
+
+spooler_log.set_mail_on_warning( true )
+spooler_log.mail.set_from( "scheduler@company.com" )
+spooler_log.mail.set_to( "admin@company.com" )
+spooler_log.mail.set_subject( "ended"  )</pre>
+</example>
+
 </api.class>
