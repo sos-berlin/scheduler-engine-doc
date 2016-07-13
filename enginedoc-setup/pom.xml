@@ -21,8 +21,8 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>copy</id>
-                        <phase>initialize</phase>
+                        <id>copy-jars</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -45,14 +45,13 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
                 <executions>
                     <execution>
                         <id>prepare</id>
-                        <phase>generate-sources</phase>
+                        <phase>package</phase>
                         <configuration>
                             <target>
                                 <ant antfile="prepare_build.xml" target="all">
