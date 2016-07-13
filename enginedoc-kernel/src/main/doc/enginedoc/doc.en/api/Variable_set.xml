@@ -203,7 +203,7 @@ spooler_log.info( "vorname =" + variable_set.value( "vorname" ) );</pre></exampl
 
     <example programming_language="perl">
         <pre>my $variable_set = $spooler->create_variable_set();
-$spooler_log->info( $variable_set->xml );   // Liefert &lt;?xml version='1.0'?>&lt;sos.spooler.variable_set/>
+$spooler_log->info( $variable_set->xml );   // Returns &lt;?xml version='1.0'?>&lt;sos.spooler.variable_set/>
 
 my $variable_set->LetProperty( 'xml', '&lt;?xml version='1.0'?>' .
                   '&lt;params>' .
@@ -213,6 +213,19 @@ my $variable_set->LetProperty( 'xml', '&lt;?xml version='1.0'?>' .
 $spooler_log->info( $variable_set->xml );
 $spooler_log->info( 'nachname=' . $variable_set->value( 'surname' ) );
 $spooler_log->info( 'vorname =' . $variable_set->value( 'christian name' ) );</pre></example>
+
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>variable_set = spooler.create_variable_set()
+spooler_log.info( variable_set.xml() )   ' Returns &lt;?xml version='1.0'?>&lt;sos.spooler.variable_set/>
+
+variable_set.set_xml( "&lt;?xml version='1.0'?>" &amp; _
+                  "&lt;params>" &amp; _
+                      "&lt;param name='surname' value='Meier'/>" &amp; _
+                      "&lt;param name='christian name' value='Hans'/>" &amp; _
+                  "&lt;/params>" )
+spooler_log.info( variable_set.xml() )
+spooler_log.info( "nachname=" &amp; variable_set.value( "surname" ) )
+spooler_log.info( "vorname =" &amp; variable_set.value( "christian name" ) )</pre></example>
 
 </property>
 
@@ -224,15 +237,13 @@ $spooler_log->info( 'vorname =' . $variable_set->value( 'christian name' ) );</p
             <com.type type="BSTR"/>
 
             <description>
-                All variable names should be separated by semicolons.
-            <!--Die Namen aller Variablen durch Semikolon getrennt.-->
+                All variable names separated by semicolons.
             </description>
         </com.result>
     </com>
 
     <title>
         The separation of variable names by semicolons
-    <!--Alle Variablennamen durch Semikolon getrennt-->
     </title>
 
     <example programming_language="javax.script">
@@ -314,6 +325,21 @@ while( t.hasMoreTokens() )
  			foreach my $name(@names){$spooler_log->info( $name . " = " . $variable_set->value( $name ) );</pre>
     </example>
 
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>Set variable_set = spooler.create_variable_set()
+spooler_log.info( "variable set names: " &amp; variable_set.names() )          ' ==> ""
+
+Call variable_set.set_var( "variable_1", "edno" )
+Call variable_set.set_var( "variable_2", "dwa" )
+
+spooler_log.info( "variable set names: " &amp; variable_set.names() )        ' ==> "variable_1;variable_2"
+
+names = Split( variable_set.names(), ";" )
+For i = LBound(names) to UBound(names)
+    spooler_log.info( names(i) &amp; "=" &amp; variable_set.value( names(i) ) )
+Next</pre>
+    </example>
+
 
 </property>
 
@@ -389,6 +415,11 @@ while( t.hasMoreTokens() )
     <example programming_language="javascript">
         <pre>subprocess.start( subprocess.env.substitute( "${MY_HOME}/my_program" ) );</pre>
     </example>
+
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>subprocess.start( subprocess.env.substitute( "${MY_HOME}/my_program" ) )</pre>
+    </example>
+    
 </method>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

@@ -430,6 +430,11 @@
     </example>
     $order->run_time->LetProperty( 'xml', '<run_time><period repeat="10"/>
     </run_time>' );
+    
+    <example programming_language="scriptcontrol.vbscript">
+        <pre><![CDATA[order.run_time.set_xml( "<run_time><at at='2006-05-23 11:43:00'/></run_time>" )]]></pre>
+    </example>
+
 </property>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -815,6 +820,11 @@ spooler.job_chain( "my_job_chain" ).add_order( order );</pre>
 $spooler->job_chain( "my_job_chain" )->add_order( $order );</pre>
     </example>
 
+    <example programming_language="scriptcontrol.vbscript">
+        <pre>order.set_at( "now+65" )
+spooler.job_chain( "my_job_chain" ).add_order( order )</pre>
+    </example>
+
     <messages>
         <message code="SCHEDULER-217" level="error"/>
     </messages>
@@ -937,11 +947,16 @@ $spooler_log.info( "For both order log and task log" );
 spooler_log.info( "For both order log and task log" );</pre>
         </example>
 
-		<example programming_language="perl">
+		    <example programming_language="perl">
             <pre>$spooler_task->order->log->info( 'Only for order log, not for task log' );
-                 $spooler_log->info( 'For both order log and task log' );
-			</pre>
+$spooler_log->info( 'For both order log and task log' );
+</pre>
 		</example>
+			
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_task.order.log.info( "Only for order log, not for task log" )
+spooler_log.info( "For both order log and task log" )</pre>
+        </example>
 
     </property>
 
@@ -1054,6 +1069,29 @@ function spooler_process()
 }</pre>
 </example>
 
+
+		<example programming_language="javascript" title="An Order with a simple Payload">
+    <pre>// Create order:
+{
+    var order = spooler.create_order();
+    order.id         = 1234;
+    order.title      = "This is my order";
+    order.state_text = "This is my state text";
+    order.payload    = "This is my payload";
+    spooler.job_chain( "my_job_chain" ).add_order( order );
+}
+...
+
+// Process order:
+function spooler_process()
+{
+    var order = spooler_task.order;
+    spooler_log.info( "order.payload=" + order.payload );
+    return true;
+}</pre>
+</example>
+
+
 <example programming_language="powershell" title="Creating an Order">
     <pre>
 # Create order:
@@ -1074,6 +1112,51 @@ function spooler_process()
 
     return $true;
 }</pre>
+</example>
+
+
+		<example programming_language="perl" title="An Order with a simple Payload">
+    <pre># Create order:
+{
+    my $order = $spooler->create_order();
+    $order->LetProperty( 'id'        , 1234 );
+    $order->LetProperty( 'title'     , 'This is my order' );
+    $order->LetProperty( 'state_text', 'This is my state text' );
+    $order->LetProperty( 'payload'   , 'This is my payload' );
+    $spooler->job_chain( 'my_job_chain' )->add_order( $order );
+}
+  ...
+
+# Process order:
+sub spooler_process()
+{
+    my $order = $spooler_task->order;
+    $spooler_log->info( 'order.payload=' + $order->payload );
+    return 1;
+}</pre>
+</example>
+
+
+    <example programming_language="scriptcontrol.vbscript" title="An Order with a simple Payload">
+    <pre>' Create order:
+
+    order = spooler.create_order()
+    order.set_id( 1234 )
+    order.set_title( "This is my order" )
+    order.set_state_text( "This is my state text" )
+    order.set_payload( "This is my payload" )
+    spooler.job_chain( "my_job_chain" ).add_order( order )
+
+...
+
+' Process order:
+function spooler_process()
+
+    order = spooler_task.order()
+    spooler_log.info( "order.payload=" &amp; order.payload() )
+    spooler_process = true
+
+end function</pre>
 </example>
 
 
@@ -1104,6 +1187,32 @@ function spooler_process()
 }</pre>
 </example>
 
+		<example programming_language="javascript" title="Creating an Order with a Variable_set as a Payload">
+    <pre>// Create order:
+{
+    var variable_set = spooler.create_variable_set();
+    variable_set.value( "param_one" ) = "11111";
+    variable_set.value( "param_two" ) = "22222";
+
+    var order = spooler.create_order();
+    order.id      = 1234;
+    order.payload = variable_set;
+    spooler.job_chain( "my_job_chain" ).add_order( order );
+}
+...
+
+// Process order:
+function spooler_process()
+{
+    var order = spooler_task.order;
+    var variable_set = order.payload;
+    spooler_log.info( "param_one=" + variable_set.value( "param_one" ) );
+    spooler_log.info( "param_two=" + variable_set.value( "param_two" ) );
+    return true;
+}</pre>
+
+</example>
+
 <example programming_language="powershell" title="Creating an Order with a Variable_set">
     <pre>
 # Create order:
@@ -1131,82 +1240,8 @@ function spooler_process()
 }</pre>
 </example>
 
-		<example programming_language="javascript" title="An Order with a simple Payload">
-<!--<example programming_language="javascript" title="Auftrag mit einfacher Nutzlast">-->
-    <pre>// Create order:
-{
-    var order = spooler.create_order();
-    order.id         = 1234;
-    order.title      = "This is my order";
-    order.state_text = "This is my state text";
-    order.payload    = "This is my payload";
-    spooler.job_chain( "my_job_chain" ).add_order( order );
-}
-...
-
-// Process order:
-function spooler_process()
-{
-    var order = spooler_task.order;
-    spooler_log.info( "order.payload=" + order.payload );
-    return true;
-}</pre>
-</example>
-
-
-		<example programming_language="javascript" title="Creating an Order with a Variable_set as a Payload">
-<!--<example programming_language="javascript" title="Erzeugen eines Auftrags mit Variable_set als Nutzlast">-->
-    <pre>// Create order:
-{
-    var variable_set = spooler.create_variable_set();
-    variable_set.value( "param_one" ) = "11111";
-    variable_set.value( "param_two" ) = "22222";
-
-    var order = spooler.create_order();
-    order.id      = 1234;
-    order.payload = variable_set;
-    spooler.job_chain( "my_job_chain" ).add_order( order );
-}
-...
-
-// Process order:
-function spooler_process()
-{
-    var order = spooler_task.order;
-    var variable_set = order.payload;
-    spooler_log.info( "param_one=" + variable_set.value( "param_one" ) );
-    spooler_log.info( "param_two=" + variable_set.value( "param_two" ) );
-    return true;
-}</pre>
-
-</example>
-
-
-		<example programming_language="perl" title="An Order with a simple Payload">
-<!--<example programming_language="perl" title="Auftrag mit einfacher Nutzlast">-->
-    <pre># Create order:
-{
-    my $order = $spooler->create_order();
-    $order->LetProperty( 'id'        , 1234 );
-    $order->LetProperty( 'title'     , 'This is my order' );
-    $order->LetProperty( 'state_text', 'This is my state text' );
-    $order->LetProperty( 'payload'   , 'This is my payload' );
-    $spooler->job_chain( 'my_job_chain' )->add_order( $order );
-}
-  ...
-
-# Process order:
-sub spooler_process()
-{
-    my $order = $spooler_task->order;
-    $spooler_log->info( 'order.payload=' + $order->payload );
-    return 1;
-}</pre>
-</example>
-
 
 		<example programming_language="perl" title="Creating an Order with a Variable_set as a Payload">
-<!--<example programming_language="perl" title="Erzeugen eines Auftrags mit Variable_set als Nutzlast">-->
     <pre># Create order:
 {
     my $variable_set = $spooler->create_variable_set();
@@ -1229,8 +1264,34 @@ sub spooler_process()
     $spooler_log->info( 'param_two=' . $variable_set->value( 'param_two' ) );
     return 1;
 }</pre>
-
 </example>
 
+
+    <example programming_language="scriptcontrol.vbscript" title="Creating an Order with a Variable_set as a Payload">
+    <pre>' Create order:
+
+    Set variable_set = spooler.create_variable_set()
+    Call variable_set.set_var( "param_one", "11111" )
+    Call variable_set.set_var( "param_two", "22222" )
+
+    order = spooler.create_order()
+    order.set_id( 1234 )
+    order.set_payload( variable_set )
+    spooler.job_chain( "my_job_chain" ).add_order( order )
+
+...
+
+' Process order:
+function spooler_process()
+
+    order = spooler_task.order()
+    Set variable_set = order.payload()
+    spooler_log.info( "param_one=" &amp; variable_set.value( "param_one" ) )
+    spooler_log.info( "param_two=" &amp; variable_set.value( "param_two" ) )
+    spooler_process = true
+
+end function</pre>
+
+</example>
 
 </api.class>

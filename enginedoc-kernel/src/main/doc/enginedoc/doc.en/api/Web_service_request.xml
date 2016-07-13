@@ -82,6 +82,10 @@
             <pre>$spooler_log->info( 'Content-Type: ' . $spooler_task->order->web_service_operation->request->header( 'Content-Type' ) );</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>spooler_log.info( "Content-Type: " &amp; spooler_task.order.web_service_operation.request.header( "Content-Type" ) )</pre>
+        </example>
+		
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -161,6 +165,14 @@ $spooler_log->info( $request->content_type );                # ==> text/xml
 $spooler_log->info( $request->charset_name );                # ==> utf-8</pre>
         </example>
 
+        <example programming_language="scriptcontrol.vbscript">
+            <pre>request = spooler_task.order.web_service_operation.request()
+
+spooler_log.info( request.header( "Content-Type" ) )   ' ==> text/xml; charset=utf-8
+spooler_log.info( request.content_type() )             ' ==> text/xml
+spooler_log.info( request.charset_name() )             ' ==> utf-8</pre>
+        </example>
+		
     </property>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
