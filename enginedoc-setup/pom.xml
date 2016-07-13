@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
         <artifactId>enginedoc</artifactId>
@@ -12,41 +13,37 @@
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <inceptionYear>2012</inceptionYear>
-    
 
     <build>
-        <!-- finalName>${project.groupId}</finalName -->
-        
         <plugins>
-
             <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-dependency-plugin</artifactId>
-              <executions>
-                  <execution>
-                      <id>copy</id>
-                      <phase>initialize</phase>
-                      <goals>
-                          <goal>copy</goal>
-                      </goals>
-                      <configuration>
-                          <artifactItems>
-                              <artifactItem>
-                                  <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
-                                  <artifactId>enginedoc-common</artifactId>
-                                  <version>${project.version}</version>
-                                  <type>jar</type>
-                              </artifactItem>
-                              <artifactItem>
-                                  <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
-                                  <artifactId>enginedoc-kernel</artifactId>
-                                  <version>${project.version}</version>
-                                  <type>jar</type>
-                              </artifactItem>
-                          </artifactItems>
-                      </configuration>
-                  </execution>
-              </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
+                                    <artifactId>enginedoc-common</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
+                                    <artifactId>enginedoc-kernel</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
@@ -59,7 +56,7 @@
                         <configuration>
                             <target>
                                 <ant antfile="prepare_build.xml" target="all">
-                                    <property name="settings.localRepository" value="${settings.localRepository}" />
+                                    <property name="settings.localRepository" value="${settings.localRepository}"/>
                                 </ant>
                             </target>
                         </configuration>
@@ -69,32 +66,30 @@
                     </execution>
                 </executions>
             </plugin>
-        
-		        <plugin>
-		            <groupId>org.apache.maven.plugins</groupId>
-		            <artifactId>maven-assembly-plugin</artifactId>
-		            <executions>
-		                <execution>
-		                    <id>package-all</id>
-		                    <phase>package</phase>
-		                    <goals>
-		                        <goal>single</goal>
-		                    </goals>
-		                    <configuration>
-		                        <appendAssemblyId>false</appendAssemblyId>
-		                        <descriptors>
-		                            <descriptor>src/main/assembly/complete.xml</descriptor>
-		                        </descriptors>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>package-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptors>
+                                <descriptor>src/main/assembly/complete.xml</descriptor>
+                            </descriptors>
                             <archive>
                                 <manifest>
                                     <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                                 </manifest>
                             </archive>
-		                    </configuration>
-		                </execution>
-		            </executions>
-		        </plugin>
-
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <resources>
@@ -102,7 +97,5 @@
                 <directory>${basedir}/src/main/doc</directory>
             </resource>
         </resources>
-        
     </build>
-
 </project>
