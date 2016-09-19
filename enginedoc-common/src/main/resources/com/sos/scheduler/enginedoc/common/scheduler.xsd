@@ -65,6 +65,7 @@
                         </xsd:sequence>
                         <xsd:attribute name="spooler_id" type="Name"/>
                         <xsd:attribute name="port" type="xsd:nonNegativeInteger"/>
+                        <xsd:attribute name="http_port" type="xsd:nonNegativeInteger"/>
                         <xsd:attribute name="tcp_port" type="xsd:nonNegativeInteger"/>
                         <xsd:attribute name="udp_port" type="xsd:nonNegativeInteger"/>
                         <xsd:attribute name="ip_address" type="String"/>
@@ -116,6 +117,7 @@
                 <xsd:element ref="show_job_chains"/>
                 <xsd:element ref="show_job_chain"/>
                 <xsd:element ref="show_order"/>
+                <xsd:element ref="show_process_classes"/>
                 <xsd:element ref="s"/>
                 <xsd:element ref="show_schedulers"/>
                 <xsd:element ref="show_state"/>
@@ -208,6 +210,7 @@
             <xsd:element ref="show_job_chains"/>
             <xsd:element ref="show_job_chain"/>
             <xsd:element ref="show_order"/>
+            <xsd:element ref="show_process_classes"/>
             <xsd:element ref="s"/>
             <xsd:element ref="show_schedulers"/>
             <xsd:element ref="show_state"/>
@@ -1124,6 +1127,11 @@
             <xsd:attribute name="job_chain" type="Path" use="required"/>
             <xsd:attribute name="order" type="Order_id"/>
             <xsd:attribute name="history_id" type="xsd:nonNegativeInteger"/>
+            <xsd:attribute name="what" type="What"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="show_process_classes">
+        <xsd:complexType>
             <xsd:attribute name="what" type="What"/>
         </xsd:complexType>
     </xsd:element>
