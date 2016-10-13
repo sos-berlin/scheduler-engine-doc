@@ -65,7 +65,8 @@
                         </xsd:sequence>
                         <xsd:attribute name="spooler_id" type="Name"/>
                         <xsd:attribute name="port" type="xsd:nonNegativeInteger"/>
-                        <xsd:attribute name="http_port" type="xsd:nonNegativeInteger"/>
+                        <xsd:attribute name="http_port" type="String"/>
+                        <xsd:attribute name="https_port" type="String"/>
                         <xsd:attribute name="tcp_port" type="xsd:nonNegativeInteger"/>
                         <xsd:attribute name="udp_port" type="xsd:nonNegativeInteger"/>
                         <xsd:attribute name="ip_address" type="String"/>
