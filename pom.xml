@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
         <artifactId>enginedoc-parent</artifactId>
-        <version>1.11.0</version>
+        <version>1.11.0-SNAPSHOT</version>
         <relativePath>enginedoc-parent</relativePath>
     </parent>
 
@@ -30,7 +30,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <tagBase>scm:git:git@github.com:sos-berlin/scheduler-engine-doc.git</tagBase>
                     <!--tagNameFormat>{1}</tagNameFormat--><!-- {0} ist ${project.artifactId}, {1} ist ${project.version} -->
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <tagNameFormat>v@{project.version}-RC1</tagNameFormat>
                     <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                 </configuration>
             </plugin>
