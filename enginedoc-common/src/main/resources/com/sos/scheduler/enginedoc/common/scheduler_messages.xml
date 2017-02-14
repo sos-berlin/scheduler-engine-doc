@@ -2394,11 +2394,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-393">
+        <!--message code="SCHEDULER-393">
             <text xml:lang="en">
                 <title>Error when calling &lt;run_time> function '<p1/>': <p2/></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-394">
             <text xml:lang="en">
@@ -2424,11 +2424,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-398">
+        <!--message code="SCHEDULER-398">
             <text xml:lang="en">
                 <title>After last error, next_start_function='<p1/>' will no longer be executed for this &lt;run_time></title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-399">
             <text xml:lang="en">
@@ -3983,11 +3983,11 @@
             </text>
         </message>
 
-        <message code="SCHEDULER-844" weight="warn">
+        <!--message code="SCHEDULER-844" weight="warn">
             <text xml:lang="en">
                 <title>Scheduler script is not yet active. Operation is executed without the call of function '<p1/>'</title>
             </text>
-        </message>
+        </message-->
 
         <message code="SCHEDULER-845" weight="warn">
             <text xml:lang="en">
