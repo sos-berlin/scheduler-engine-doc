@@ -1493,7 +1493,6 @@
         <xsd:attribute name="repeat" type="Duration"/>
         <xsd:attribute name="when_holiday" type="When_holiday"/>
         <xsd:attribute name="once" type="Yes_no"/>
-        <xsd:attribute name="start_time_function" type="xsd:NMTOKEN"/>
         <!-- Nur zum Abruf ("<schedule.use>") -->
         <!-- Nur zur Definition eines benannten <schedule> -->
         <!-- Für überdeckendes <schedule> -->
