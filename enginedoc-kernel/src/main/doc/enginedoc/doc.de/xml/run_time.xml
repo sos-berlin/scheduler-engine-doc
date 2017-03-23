@@ -43,38 +43,6 @@
         </xml_attribute>
         
         
-    <!--<xml_attribute name="start_time_function" type="name">Commented out - see JS-1319
-            <description>
-                <p>
-                    Gibt gibt den Namen einer Funktion im Scheduler-Skript an, die die nächste Startzeit liefert.
-                </p>
-                <p>
-                    Der JobScheduler übergibt der Funktion im ersten Parameter den Zeitpunkt, 
-                    ab dem sie eine Startzeit liefern soll,
-                    als Zeichenkette im Format <code>"yyyy-mm-dd HH:MM:SS"</code>.
-                </p>
-                <p>
-                    Im zweiten Parameter erhält die Funktion den Jobnamen bzw. die Auftragskennung.
-                </p>
-                <p>
-                    Rückgabe der Funktion ist ein Zeitpunkt, der nicht vor dem ersten Parameter liegen darf,
-                    oder nichts (d.h. <code>""</code> oder <code>Empty</code>).
-                    Der JobScheduler erwartet als Rückgabe eine Zeichenkette im Format <code>"yyyy-mm-dd hh:mm:ss"</code>.
-                </p>
-            </description>
-
-            <!-example>
-                Das ist zu kompliziert.                
-            </example>
-
-            <messages>
-                <message level="error" code="SCHEDULER-393"/>
-             <message level="error" code="SCHEDULER-395"/>
-                <message level="warn"  code="SCHEDULER-394"/>
-            </messages>
-        </xml_attribute>-->
-        
-        
         <xml_attribute name="once" type="yes_no" initial="no">
             <description>
                 <p>
