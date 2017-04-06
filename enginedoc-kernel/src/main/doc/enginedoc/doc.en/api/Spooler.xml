@@ -793,6 +793,36 @@
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+<property name="uri" access="read">
+    
+    <com>
+        <com.result>
+            <com.type type="BSTR"/>
+            <description>
+                <p>
+                    Returns the URI of a JobScheduler Master in the form "<code>scheme://host:port:/jobscheduler</code>".
+                </p>
+                <p>
+                    The scheme is HTTP or HTTPS; the host is 127.0.0.1 if the protocol is not bound to another interface. The URI is an empty string when neither HTTP nor HTTPS are used.
+                </p>
+            </description>
+        </com.result>
+    </com>
+
+    <title>
+        The JobScheduler URI
+    </title>
+
+<!--<description>
+        <p>
+            
+        </p>
+    </description>-->
+    
+</property>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <property name="var">
     <not_implemented programming_language="javascript"/>    <!-- var ist Schlüsselwort -->
 
