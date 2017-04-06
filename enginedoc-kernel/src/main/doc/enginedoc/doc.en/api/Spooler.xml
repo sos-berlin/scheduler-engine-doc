@@ -870,6 +870,30 @@
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+<property name="web_service_access_token" access="read">
+    
+    <com>
+        <com.result>
+            <com.type type="BSTR"/>
+            <description>
+                <p>
+                    The JobScheduler provides a running task with authentication credentials to allow access to secured web services.
+                </p>
+                <p>
+                    Provides the access token for a task. The token is only valid as long as the task is running. 
+                </p>
+            </description>
+        </com.result>
+    </com>
+    
+    <title>
+        The Web Service Access Token 
+    </title>
+
+</property>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <description>
     <p>
         There is only one class for this object: <scheduler_method class="Job_impl" property="spooler"/>.
