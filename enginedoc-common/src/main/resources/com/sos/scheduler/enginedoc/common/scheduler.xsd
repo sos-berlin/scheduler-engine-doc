@@ -1442,6 +1442,7 @@
                         <xsd:element ref="period" minOccurs="0" maxOccurs="unbounded"/>
                     </xsd:sequence>
                     <xsd:attribute name="date" type="String" use="required"/>
+                    <xsd:attribute name="calendar" type="xsd:string"/>
                 </xsd:complexType>
             </xsd:element>
             <xsd:element name="weekdays" type="weekdays" minOccurs="0">
