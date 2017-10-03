@@ -744,6 +744,7 @@
             <xsd:attribute name="cmd">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:NMTOKEN">
+                        <xsd:enumeration value="rotate_logs"/>
                         <xsd:enumeration value="pause"/>
                         <xsd:enumeration value="continue"/>
                         <xsd:enumeration value="stop"/>
