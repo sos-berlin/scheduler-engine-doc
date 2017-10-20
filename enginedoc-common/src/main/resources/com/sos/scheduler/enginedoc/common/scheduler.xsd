@@ -935,6 +935,9 @@
             <xsd:attribute name="order" type="Order_id" use="required"/>
         </xsd:complexType>
     </xsd:element>
+    <xsd:element name="publish_event">
+        <xsd:complexType mixed="true"/>
+    </xsd:element>
     <xsd:element name="run_time" type="run_time"/>
     <!-- Für Order.Run_time.xml = "<run_time>" -->
     <xsd:element name="s" type="Show_state"/>
