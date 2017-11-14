@@ -1429,6 +1429,7 @@
         <xsd:attribute name="remote_scheduler" type="String"/>
         <xsd:attribute name="spooler_id" type="Name"/>
         <xsd:attribute name="replace" type="Yes_no"/>
+        <xsd:attribute name="timeout" type="xsd:nonNegativeInteger"/>
     </xsd:complexType>
     <xsd:complexType name="process_class.remove">
         <xsd:attribute name="process_class" type="Path"/>
