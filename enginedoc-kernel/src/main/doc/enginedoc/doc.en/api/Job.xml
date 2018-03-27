@@ -79,7 +79,7 @@
             <p>
                 Should there not be a task belonging to this job running and a notification be received that 
                 a change in the directory being monitored has occurred
-                (that a file has been added, changed or deleted), 
+                (that a file has been added, renamed or deleted), 
                 then this change can be used to prompt the JobScheduler to start a task 
                 if the current time falls within that allowed by the <scheduler_element name="run_time"/> parameter.
             <!--Wenn keine Task des Jobs läuft und sich das Verzeichnis geändert hat
