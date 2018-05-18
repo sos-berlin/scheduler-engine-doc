@@ -97,9 +97,9 @@
             This implementation is available on 32 bit as well as on 64 bit.
             The "Rhino with Beans" implementation is an extension to rhino and it replaces the Spidermonkey implementation.
             The "Rhino with Beans" implementation suits the purpose to port already existing javascript jobs to 64 bit.
-            The usage of both implementations differs slightly, see:
-            <a href="http://www.sos-berlin.com/mediawiki/index.php/Differences_between_the_spidermonkey_and_%22rhino_with_beans%22_engines">
-                Differences between the Spidermonkey and "Rhino with Beans" engines
+            The usage of both implementations differs slightly, see:<br/>
+            <a href="https://kb.sos-berlin.com/x/U4I3">
+                What are the differences between the SpiderMonkey, Rhino and Nashorn scripting engines?
             </a>
             <p/>
             <p/>
@@ -130,9 +130,9 @@
         <hr/>
         <p style="color:red">
             In order to use the API in Powershell, a seperate download and installation of the
-            JobScheduler Powershell Adapter is required. See
-            <a href="http://sourceforge.net/apps/mediawiki/jobscheduler/index.php?title=JSApi_Powershell">
-            http://sourceforge.net/apps/mediawiki/jobscheduler/index.php?title=JSApi_Powershell
+            JobScheduler Powershell Adapter is required. See: <br/>
+            <a href="https://kb.sos-berlin.com/x/Z4Q3">
+            How to program the JobScheduler API in PowerShell
             </a> 
         </p>
         <p/>
