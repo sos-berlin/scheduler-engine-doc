@@ -1488,6 +1488,7 @@
                 <xsd:element ref="holidays"/>
                 <xsd:element ref="holiday" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:choice>
+            <xsd:element name="calendars" type="xsd:anyType" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attribute name="schedule" type="String"/>
         <xsd:attribute name="name" type="Name"/>
