@@ -4,7 +4,7 @@
     
     <groupId>com.sos-berlin.jobscheduler.enginedoc</groupId>
     <artifactId>enginedoc-parent</artifactId>
-    <version>1.13.1-SNAPSHOT</version>
+    <version>1.13.1</version>
 
     <description>parent pom of scheduler-engine-doc with the global settings</description>
 
